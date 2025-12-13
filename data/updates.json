@@ -1,0 +1,68 @@
+[
+  {
+    "id": "lum-man-01",
+    "title": "Lummi Nation: Severe Flood Warning",
+    "type": "Tribal",
+    "severity": "Extreme",
+    "desc": "ACTIVE FLOOD WARNING: Coastal flooding reported along Haxton Way. Please evacuate low-lying areas immediately.",
+    "link": "https://www.lummi-nsn.gov",
+    "lat": 48.78,
+    "lng": -122.64,
+    "date": "2025-12-13T10:48:10.688241"
+  },
+  {
+    "id": "snoq-man-01",
+    "title": "Snoqualmie Tribe: Environmental Alert",
+    "type": "Tribal",
+    "severity": "Severe",
+    "desc": "Snoqualmie River has reached Phase 3 flood levels. Bank erosion possible near Fall City.",
+    "link": "https://snoqualmietribe.us",
+    "lat": 47.53,
+    "lng": -121.84,
+    "date": "2025-12-13T10:48:10.688247"
+  },
+  {
+    "id": "Sno-68",
+    "title": "Snoqualmie Tribe: Friday\u2019s Update on the Tribal State of Emergency Related to Flooding",
+    "type": "Tribal",
+    "severity": "Severe",
+    "desc": "As of 1pm on Friday, December 12, 2025, the Snoqualmie River Flood Phase has receded to Phase 2 (Minor flooding with some road closures and increased monitoring). MAJOR ROAD CLOSURE [&#8230;]...",
+    "link": "https://snoqualmietribe.us/fridays-update-on-the-tribal-state-of-emergency-related-to-flooding/",
+    "lat": 47.53,
+    "lng": -121.84,
+    "date": "2025-12-13T10:48:11.094733"
+  },
+  {
+    "id": "Sno-69",
+    "title": "Snoqualmie Tribe: What steps to take if your home has flooded and it is SAFE to RETURN!",
+    "type": "Tribal",
+    "severity": "Severe",
+    "desc": "What steps to take if your home has flooded and it is SAFE to RETURN! After a flood, prioritize safety by waiting for official clearance before entering and ensuring electricity [&#8230;]...",
+    "link": "https://snoqualmietribe.us/what-steps-to-take-if-your-home-has-flooded-and-it-is-safe-to-return/",
+    "lat": 47.53,
+    "lng": -121.84,
+    "date": "2025-12-13T10:48:11.094750"
+  },
+  {
+    "id": "Sno-62",
+    "title": "Snoqualmie Tribe: An Update on the Tribal State of Emergency Related to Flooding",
+    "type": "Tribal",
+    "severity": "Severe",
+    "desc": "The Snoqualmie River is still at Phase 4 (severe flooding) with some residential areas experiencing dangerously high velocities and flooding of homes. The South Fork Skykomish River and Issaquah Creek...",
+    "link": "https://snoqualmietribe.us/an-update-on-the-tribal-state-of-emergency-related-to-flooding/",
+    "lat": 47.53,
+    "lng": -121.84,
+    "date": "2025-12-13T10:48:11.094759"
+  },
+  {
+    "id": "Sno-129",
+    "title": "Snoqualmie Tribe: Snoqualmie Tribal Council Passes Motion to Approve Resolution #345-2025 Declaring a Tribal State of Emergency Related to Flooding",
+    "type": "Tribal",
+    "severity": "Severe",
+    "desc": "In an emergency Council Meeting, Tribal Council passed the following motions: Motion to close Tribal Campus for the rest of this week due to the Tribal State of Emergency. Motion [&#8230;]...",
+    "link": "https://snoqualmietribe.us/snoqualmie-tribal-council-passes-motion-to-approve-resolution-345-2025-declaring-a-tribal-state-of-emergency-related-to-flooding/",
+    "lat": 47.53,
+    "lng": -121.84,
+    "date": "2025-12-13T10:48:11.094768"
+  }
+]
