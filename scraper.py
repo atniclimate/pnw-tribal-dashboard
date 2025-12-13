@@ -1,142 +1,117 @@
 import json
 import requests
 import feedparser
+from bs4 import BeautifulSoup
 from datetime import datetime
 import os
+import time
 
-# --- 1. CONFIGURATION ---
-
-# The specific keywords we look for in news feeds
+# --- CONFIGURATION ---
 KEYWORDS = [
     "flood", "emergency", "evacuation", "closure", "high water", 
-    "storm", "severe", "warning", "watch"
+    "storm", "severe", "warning", "watch", "resolution", "state of emergency"
 ]
 
-# Coordinate Lookup Table (The Map needs these to know where to zoom)
-# Add more tribes here as needed.
-TRIBE_COORDS = {
-    "lummi": {"lat": 48.78, "lng": -122.64},
-    "snoqualmie": {"lat": 47.53, "lng": -121.84},
-    "makah": {"lat": 48.36, "lng": -124.60},
-    "tulalip": {"lat": 48.06, "lng": -122.25},
-    "yakama": {"lat": 46.33, "lng": -120.69},
-    "colville": {"lat": 48.26, "lng": -118.86},
-    "spokane": {"lat": 47.88, "lng": -117.96},
-    "default": {"lat": 47.50, "lng": -120.50} # Center of WA
-}
+# Census API: AIANNHA = American Indian/Alaska Native/Native Hawaiian Areas
+# We request 'geojson' format to get the polygon shape.
+CENSUS_URL = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/AIANNHA/MapServer/0/query"
 
-# The List of Sources to Scan
 SOURCES = [
-    {
-        "name": "Lummi Nation",
-        "url": "https://www.lummi-nsn.gov",
-        "feed": "", # No RSS, we will simulate or scrape HTML if needed
-        "type": "tribal"
-    },
-    {
-        "name": "Snoqualmie Tribe",
-        "url": "https://snoqualmietribe.us/news/",
-        "feed": "https://snoqualmietribe.us/feed/",
-        "type": "tribal"
-    },
-    {
-        "name": "Makah Tribe",
-        "url": "https://makah.com/news/",
-        "feed": "", 
-        "type": "tribal"
-    }
+    { "name": "Snoqualmie Tribe", "feed": "https://snoqualmietribe.us/feed/", "search_name": "Snoqualmie" },
+    { "name": "Lummi Nation", "url": "https://www.lummi-nsn.gov", "feed": "", "search_name": "Lummi" },
+    { "name": "Makah Tribe", "feed": "https://makah.com/feed/", "search_name": "Makah" },
+    { "name": "Yakama Nation", "feed": "https://www.yakama.com/feed/", "search_name": "Yakama" },
+    { "name": "Colville Tribes", "feed": "", "url": "https://www.colvilletribes.com", "search_name": "Colville" }
 ]
 
-# --- 2. THE ENGINE ---
+# --- HELPER FUNCTIONS ---
 
-def get_coords(name):
-    """Finds lat/lng based on the tribe name."""
-    name_clean = name.lower().split()[0] # e.g. "Lummi Nation" -> "lummi"
-    return TRIBE_COORDS.get(name_clean, TRIBE_COORDS["default"])
-
-def scan_rss(source):
-    """Scans an RSS feed for keywords."""
-    alerts = []
-    if not source.get("feed"): return []
-    
+def get_census_geometry(tribe_name_fragment):
+    """
+    Queries Census API for the actual Polygon Shape (GeoJSON) of the reservation.
+    """
     try:
-        feed = feedparser.parse(source["feed"])
-        for entry in feed.entries[:5]: # Check latest 5 posts
-            text_blob = (entry.title + " " + entry.description).lower()
-            
-            # Check if any keyword matches
-            if any(k in text_blob for k in KEYWORDS):
-                coords = get_coords(source["name"])
-                alerts.append({
-                    "id": f"{source['name'][:3]}-{len(entry.title)}", # Simple ID
-                    "title": f"{source['name']}: {entry.title}",
-                    "type": "Tribal",
-                    "severity": "Severe", # Assume severe if it matches keywords
-                    "desc": entry.description[:200] + "...",
-                    "link": entry.link,
-                    "lat": coords["lat"],
-                    "lng": coords["lng"],
-                    "date": datetime.now().isoformat()
-                })
-    except Exception as e:
-        print(f"Error scanning {source['name']}: {e}")
-        
-    return alerts
-
-def scan_manual_overrides():
-    """
-    Returns hardcoded alerts if web scraping fails or for testing.
-    This ensures your map always looks good.
-    """
-    return [
-        {
-            "id": "lum-man-01",
-            "title": "Lummi Nation: Severe Flood Warning",
-            "type": "Tribal",
-            "severity": "Extreme",
-            "desc": "ACTIVE FLOOD WARNING: Coastal flooding reported along Haxton Way. Please evacuate low-lying areas immediately.",
-            "link": "https://www.lummi-nsn.gov",
-            "lat": 48.78, "lng": -122.64,
-            "date": datetime.now().isoformat()
-        },
-        {
-            "id": "snoq-man-01",
-            "title": "Snoqualmie Tribe: Environmental Alert",
-            "type": "Tribal",
-            "severity": "Severe",
-            "desc": "Snoqualmie River has reached Phase 3 flood levels. Bank erosion possible near Fall City.",
-            "link": "https://snoqualmietribe.us",
-            "lat": 47.53, "lng": -121.84,
-            "date": datetime.now().isoformat()
+        params = {
+            "where": f"NAME LIKE '%{tribe_name_fragment}%'",
+            "outFields": "NAME",
+            "returnGeometry": "true",
+            "f": "geojson",  # Critical: Get the Shape, not just text
+            "outSR": "4326"  # Output in WGS84 (Lat/Lng)
         }
-    ]
+        resp = requests.get(CENSUS_URL, params=params, timeout=15)
+        data = resp.json()
+        
+        if data.get("features"):
+            print(f"  [Geo] Found boundary shape for {data['features'][0]['properties']['NAME']}")
+            # Return the full geometry object (Polygon/MultiPolygon)
+            return data["features"][0]["geometry"]
+            
+    except Exception as e:
+        print(f"  [Geo] Failed lookup for {tribe_name_fragment}: {e}")
+    
+    return None
 
-# --- 3. EXECUTION ---
+def extract_full_text(url):
+    """Extracts full article text for the PDF report."""
+    if not url: return "No URL provided."
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0 (TribalDash/1.0)'}
+        resp = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(resp.content, 'html.parser')
+        
+        # Try finding the main content area common in WordPress/Tribal sites
+        content = soup.find('div', class_='entry-content') or \
+                  soup.find('div', class_='post-content') or \
+                  soup.find('article')
+        
+        if content:
+            return content.get_text(separator='\n\n', strip=True)
+            
+        return "Full text could not be extracted automatically. Please click Source."
+    except:
+        return "Description unavailable."
+
+# --- MAIN ENGINE ---
 
 def main():
-    print("Starting Tribal Scraper...")
+    print("--- Starting Shape-Aware Scraper ---")
     all_alerts = []
 
-    # 1. Add Manual Overrides (So map is never empty)
-    all_alerts.extend(scan_manual_overrides())
-
-    # 2. Scan Real Feeds
     for source in SOURCES:
         print(f"Scanning {source['name']}...")
-        found = scan_rss(source)
-        if found:
-            print(f"  > Found {len(found)} alerts!")
-            all_alerts.extend(found)
+        
+        # 1. RSS Strategy
+        if source.get("feed"):
+            try:
+                feed = feedparser.parse(source["feed"])
+                for entry in feed.entries[:3]:
+                    blob = (entry.title + " " + entry.description).lower()
+                    if any(kw in blob for kw in KEYWORDS):
+                        print(f"  > Hit: {entry.title}")
+                        
+                        # Fetch the Shape
+                        geometry = get_census_geometry(source["search_name"])
+                        full_text = extract_full_text(entry.link)
+                        
+                        all_alerts.append({
+                            "id": f"{source['search_name']}-{int(time.time())}",
+                            "title": entry.title,
+                            "type": "Tribal Declaration",
+                            "severity": "Severe",
+                            "desc": full_text,
+                            "link": entry.link,
+                            "geometry": geometry, # This is the Polygon!
+                            "date": datetime.now().strftime("%Y-%m-%d")
+                        })
+            except Exception as e:
+                print(f"  Feed Error: {e}")
 
-    # 3. Save to JSON file
-    # Ensure directory exists
+    # Save to JSON
     os.makedirs("data", exist_ok=True)
-    
-    output_path = "data/updates.json"
-    with open(output_path, "w") as f:
+    with open("data/updates.json", "w") as f:
         json.dump(all_alerts, f, indent=2)
     
-    print(f"Done. Saved {len(all_alerts)} alerts to {output_path}")
+    print(f"--- Done. Saved {len(all_alerts)} alerts with shapes. ---")
 
 if __name__ == "__main__":
     main()
