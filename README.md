@@ -35,8 +35,7 @@ The "Daily Breakdown" panel is labeled **SAMPLE** — those values are illustrat
 
 - [NWS / weather.gov](https://www.weather.gov) — alerts, point forecasts
 - [USGS Water Services](https://waterservices.usgs.gov) — real-time gauge heights
-- [NOAA NWRFC](https://www.nwrfc.noaa.gov) — QPF maps
-- [NOAA WPC](https://www.wpc.ncep.noaa.gov) — backup QPF imagery
+- [NOAA WPC](https://www.wpc.ncep.noaa.gov) — QPF maps (24h / 48h / 7-day national imagery)
 - [Iowa Environmental Mesonet](https://mesonet.agron.iastate.edu) — radar and forecast tile layers
 - [CARTO Basemaps](https://carto.com) — dark base tiles
 - Tribal boundaries: BIA Federal Register 89 FR 944 (Jan 2024), simplified GeoJSON hosted at `atniclimate/maps`

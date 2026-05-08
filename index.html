@@ -1002,6 +1002,17 @@
   display: block;
 }
 
+.qpf-error-message {
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  color: var(--text-primary);
+  background: var(--danger-warning-bg);
+  border: 1px solid var(--danger-warning);
+  font-size: var(--text-small);
+  line-height: 1.6;
+}
+.qpf-error-message a { color: var(--accent-primary); }
+
 /* Daily Breakdown Panel */
 .daily-breakdown-header {
   padding: var(--space-sm) var(--space-md);
@@ -1769,8 +1780,8 @@
             <div class="qpf-map-container">
               <img
                 id="qpf-map-image"
-                src="https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1.png"
-                alt="Northwest precipitation forecast map"
+                src="https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif"
+                alt="National precipitation forecast map (24-hour QPF)"
                 class="qpf-map-image"
               >
             </div>
@@ -3070,10 +3081,14 @@
   // ============================================================================
   // LOCAL FORECAST - QPF MAP AND DAILY BREAKDOWN
   // ============================================================================
+  // Primary QPF maps from NOAA WPC. The previous NWRFC URLs (fcstprecipday1.png)
+  // started 404'ing when NWRFC reorganized; WPC's national QPF imagery is the
+  // long-stable replacement. Coverage is CONUS rather than PNW-cropped, but the
+  // PNW corner is large enough to read.
   const QPF_URLS = {
-    today: 'https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1.png',
-    '3day': 'https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1-3.png',
-    '7day': 'https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1-7.png'
+    today: 'https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif',
+    '3day': 'https://www.wpc.ncep.noaa.gov/qpf/93ewbg.gif',
+    '7day': 'https://www.wpc.ncep.noaa.gov/qpf/p168i.gif'
   };
 
   let currentForecastPeriod = 'today';
@@ -3151,56 +3166,29 @@
 
   function updateQPFMap(period) {
     const mapImage = domCache.qpfMapImage || document.getElementById('qpf-map-image');
-    if (mapImage && QPF_URLS[period]) {
-      const fallbackUrls = {
-        today: 'https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif',
-        '3day': 'https://www.wpc.ncep.noaa.gov/qpf/93ewbg.gif',
-        '7day': 'https://www.wpc.ncep.noaa.gov/qpf/p168i.gif'
-      };
+    if (!mapImage || !QPF_URLS[period]) return;
 
-      const container = mapImage.closest('.qpf-map-container') || mapImage.parentElement;
-      const existingNotice = container?.querySelector('.fallback-notice');
-      if (existingNotice) existingNotice.remove();
+    const container = mapImage.closest('.qpf-map-container') || mapImage.parentElement;
+    const existingError = container?.querySelector('.qpf-error-message');
+    if (existingError) existingError.remove();
+    mapImage.style.display = '';
 
-      mapImage.style.display = '';
-      delete mapImage.dataset.fallbackAttempted;
+    mapImage.onerror = function() {
+      this.style.display = 'none';
+      this.onerror = null;
+      if (!container) return;
+      const errorMsg = document.createElement('div');
+      errorMsg.className = 'qpf-error-message';
+      errorMsg.innerHTML = `
+        <strong>⚠️ Forecast image unavailable</strong><br>
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/qpf_fill.html" target="_blank" rel="noopener">
+          View at NOAA WPC →
+        </a>
+      `;
+      container.appendChild(errorMsg);
+    };
 
-      mapImage.onerror = function() {
-        if (!this.dataset.fallbackAttempted && fallbackUrls[period]) {
-          this.dataset.fallbackAttempted = 'true';
-          console.warn(`Primary QPF image failed for ${period}, trying fallback`);
-
-          if (container) {
-            const notice = document.createElement('div');
-            notice.className = 'fallback-notice';
-            notice.style.cssText = 'position:absolute;top:4px;left:4px;background:rgba(234,179,8,0.9);color:#000;padding:4px 8px;font-size:11px;z-index:10;';
-            notice.textContent = 'Using backup forecast image';
-            container.appendChild(notice);
-          }
-
-          this.src = fallbackUrls[period];
-        } else {
-          console.error('Both primary and fallback QPF images failed');
-          this.style.display = 'none';
-          this.onerror = null;
-
-          if (container) {
-            const errorMsg = document.createElement('div');
-            errorMsg.className = 'qpf-error-message';
-            errorMsg.style.cssText = 'padding:20px;text-align:center;color:#EF4444;background:var(--glass-bg);';
-            errorMsg.innerHTML = `
-              <strong>⚠️ Forecast image unavailable</strong><br>
-              <a href="https://www.wpc.ncep.noaa.gov/qpf/qpf_fill.html" target="_blank" style="color:#3B82F6;">
-                View at NOAA WPC →
-              </a>
-            `;
-            container.appendChild(errorMsg);
-          }
-        }
-      };
-
-      mapImage.src = QPF_URLS[period];
-    }
+    mapImage.src = QPF_URLS[period];
   }
 
   function setForecastPeriod(period) {
