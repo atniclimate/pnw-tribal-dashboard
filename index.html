@@ -1,0 +1,3335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weather and hazard monitoring dashboard for Pacific Northwest Tribal Nations">
+  <title>PNW Tribal Dashboard | IndigenousACCESS</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<style>
+/* ============================================================================
+   GOOGLE FONTS - Poppins (Display) + Nunito Sans (Body)
+   ============================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+/* ============================================================================
+   CSS CUSTOM PROPERTIES - Glassmorphism Environmental Theme
+   ============================================================================ */
+:root {
+  /* GLASSMORPHISM CORE */
+  --glass-blur: blur(20px);
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-bg-hover: rgba(30, 30, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.15);
+  --glass-border-glow: rgba(255, 255, 255, 0.2);
+
+  /* Environmental Background Colors */
+  --env-deep: #0a1628;
+  --env-mid: #0d2847;
+  --env-light: #1a4a6e;
+  --env-accent: #2d6a8f;
+  --env-highlight: rgba(100, 180, 220, 0.3);
+
+  /* Text colors - WCAG AA compliant on glass */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --text-dim: rgba(255, 255, 255, 0.45);
+
+  /* SEMANTIC DANGER LEVELS */
+  --danger-safe: #22c55e;
+  --danger-safe-bg: rgba(34, 197, 94, 0.15);
+  --danger-safe-glow: 0 0 clamp(1rem, 2vw, 1.5rem) rgba(34, 197, 94, 0.4);
+
+  --danger-watch: #eab308;
+  --danger-watch-bg: rgba(234, 179, 8, 0.15);
+  --danger-watch-glow: 0 0 clamp(1rem, 2vw, 1.5rem) rgba(234, 179, 8, 0.4);
+
+  --danger-warning: #ef4444;
+  --danger-warning-bg: rgba(239, 68, 68, 0.2);
+  --danger-warning-glow: 0 0 clamp(1.25rem, 2.5vw, 2rem) rgba(239, 68, 68, 0.5);
+
+  --danger-extreme: #dc2626;
+  --danger-extreme-bg: rgba(220, 38, 38, 0.25);
+  --danger-extreme-glow: 0 0 clamp(1.5rem, 3vw, 2.5rem) rgba(220, 38, 38, 0.6);
+
+  /* Legacy mappings */
+  --severity-none: var(--danger-safe);
+  --severity-none-bg: var(--danger-safe-bg);
+  --severity-none-glow: var(--danger-safe-glow);
+  --severity-watch: var(--danger-watch);
+  --severity-watch-bg: var(--danger-watch-bg);
+  --severity-watch-glow: var(--danger-watch-glow);
+  --severity-warning: var(--danger-warning);
+  --severity-warning-bg: var(--danger-warning-bg);
+  --severity-warning-glow: var(--danger-warning-glow);
+  --severity-extreme: var(--danger-extreme);
+  --severity-extreme-bg: var(--danger-extreme-bg);
+  --severity-extreme-glow: var(--danger-extreme-glow);
+
+  /* Accent colors */
+  --accent-primary: #22d3ee;
+  --accent-hover: #14b8a6;
+  --accent-light: rgba(34, 211, 238, 0.15);
+  --primary-cyan: #22d3ee;
+  --primary-blue: #3b82f6;
+  --primary-teal: #14b8a6;
+
+  /* FLUID SPACING */
+  --space-xs: clamp(0.125rem, 0.5vw, 0.25rem);
+  --space-sm: clamp(0.25rem, 1vw, 0.5rem);
+  --space-md: clamp(0.5rem, 1.5vw, 0.75rem);
+  --space-lg: clamp(0.75rem, 2vw, 1rem);
+  --space-xl: clamp(1rem, 3vw, 1.5rem);
+  --space-2xl: clamp(1.5rem, 4vw, 2rem);
+  --space-3xl: clamp(2rem, 5vw, 3rem);
+
+  /* FLUID TYPOGRAPHY */
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+
+  --text-hero: clamp(2.5rem, 8vw, 5rem);
+  --text-data-lg: clamp(1.75rem, 5vw, 3rem);
+  --text-data-md: clamp(1.25rem, 3vw, 2rem);
+  --text-heading: clamp(1rem, 2.5vw, 1.5rem);
+  --text-body: clamp(0.875rem, 1.5vw, 1rem);
+  --text-small: clamp(0.75rem, 1.25vw, 0.875rem);
+  --text-micro: clamp(0.625rem, 1vw, 0.75rem);
+
+  /* MODULAR GRID SYSTEM */
+  --grid-gap: clamp(0.75rem, 2vw, 1.5rem);
+  --grid-columns: 4;
+  --strip-header-height: clamp(8vh, 10vh, 12vh);
+
+  /* Border radius */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+
+  /* Shadows */
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0,0,0,0.3);
+  --shadow-md: 0 0.25rem 0.75rem rgba(0,0,0,0.4);
+  --shadow-lg: 0 0.5rem 1.5rem rgba(0,0,0,0.5);
+  --shadow-glass: 0 0.5rem 2rem rgba(0, 0, 0, 0.3), inset 0 0.0625rem 0 rgba(255, 255, 255, 0.1);
+  --shadow-glow: 0 0 2rem rgba(34, 211, 238, 0.2);
+
+  /* River flood stage colors */
+  --river-below: #78716c;
+  --river-normal: var(--danger-safe);
+  --river-action: var(--danger-watch);
+  --river-near-flood: #f97316;
+  --river-flooding: var(--danger-warning);
+
+  /* Icon colors */
+  --icon-default: rgba(255, 255, 255, 0.7);
+  --icon-hover: rgba(255, 255, 255, 0.9);
+  --icon-active: #ffffff;
+
+  /* Legacy compatibility */
+  --card-bg: var(--glass-bg);
+  --card-bg-hover: var(--glass-bg-hover);
+  --card-border: var(--glass-border);
+  --card-border-hover: var(--glass-border-hover);
+}
+
+/* ============================================================================
+   BASE STYLES
+   ============================================================================ */
+.flood-dashboard * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flood-dashboard {
+  font-family: var(--font-body);
+  min-height: 100vh;
+  padding: var(--space-lg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 30%, var(--env-highlight) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 70% 60%, rgba(100, 150, 200, 0.15) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 30% at 40% 80%, rgba(80, 130, 180, 0.1) 0%, transparent 40%),
+    linear-gradient(
+      180deg,
+      var(--env-deep) 0%,
+      var(--env-mid) 35%,
+      var(--env-light) 65%,
+      var(--env-accent) 100%
+    );
+  background-size:
+    200% 200%,
+    180% 180%,
+    150% 150%,
+    100% 100%;
+  animation: environmentDrift 45s ease-in-out infinite;
+}
+
+@keyframes environmentDrift {
+  0%, 100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%;
+  }
+  25% {
+    background-position: 50% 25%, 25% 75%, 75% 25%, 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%, 50% 0%, 0% 75%, 0% 0%;
+  }
+  75% {
+    background-position: 50% 75%, 75% 50%, 25% 0%, 0% 0%;
+  }
+}
+
+.flood-dashboard::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 0;
+}
+
+.flood-dashboard > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 48rem) {
+  .flood-dashboard { padding: var(--space-xl); }
+}
+
+@media (min-width: 75rem) {
+  .flood-dashboard {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: var(--space-2xl);
+  }
+}
+
+/* GLASSMORPHISM CONTAINER */
+.glass-container {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
+  transition: all 0.3s ease;
+}
+
+.glass-container:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+}
+
+.glass-container.danger-safe { box-shadow: var(--shadow-glass), var(--danger-safe-glow); }
+.glass-container.danger-watch { box-shadow: var(--shadow-glass), var(--danger-watch-glow); }
+.glass-container.danger-warning { box-shadow: var(--shadow-glass), var(--danger-warning-glow); }
+.glass-container.danger-extreme { box-shadow: var(--shadow-glass), var(--danger-extreme-glow); }
+
+/* ============================================================================
+   STRIP HEADER
+   ============================================================================ */
+.dashboard-header {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
+
+  min-height: var(--strip-header-height);
+  max-height: 15vh;
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-lg);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 1;
+  min-width: 0;
+}
+
+.header-title h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-subtitle {
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  line-height: 1.4;
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .header-subtitle {
+    display: block;
+    margin-left: var(--space-lg);
+    padding-left: var(--space-lg);
+    border-left: 1px solid var(--glass-border);
+    max-width: 25vw;
+  }
+}
+
+/* ============================================================================
+   ALERT BANNER
+   ============================================================================ */
+.alert-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.alert-banner.status-none {
+  background: var(--danger-safe-bg);
+  border-left: clamp(0.1875rem, 0.5vw, 0.25rem) solid var(--danger-safe);
+  color: #86efac;
+  box-shadow: var(--shadow-glass), var(--danger-safe-glow);
+}
+
+.alert-banner.status-watch {
+  background: var(--danger-watch-bg);
+  border-left: clamp(0.1875rem, 0.5vw, 0.25rem) solid var(--danger-watch);
+  color: #fde047;
+  box-shadow: var(--shadow-glass), var(--danger-watch-glow);
+}
+
+.alert-banner.status-warning {
+  background: var(--danger-warning-bg);
+  border-left: clamp(0.1875rem, 0.5vw, 0.25rem) solid var(--danger-warning);
+  color: #fca5a5;
+  box-shadow: var(--shadow-glass), var(--danger-warning-glow);
+  animation: pulse-warning 2s ease-in-out infinite;
+}
+
+@keyframes pulse-warning {
+  0%, 100% { opacity: 1; box-shadow: var(--shadow-glass), var(--danger-warning-glow); }
+  50% { opacity: 0.95; box-shadow: var(--shadow-glass), 0 0 clamp(2rem, 4vw, 3rem) rgba(239, 68, 68, 0.7); }
+}
+
+.alert-icon {
+  font-size: var(--text-data-md);
+  flex-shrink: 0;
+}
+
+.alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.alert-link:hover { text-decoration: underline; }
+
+.alert-title {
+  font-size: var(--text-body);
+  margin-bottom: var(--space-xs);
+}
+
+.alert-detail {
+  font-size: var(--text-small);
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ============================================================================
+   TRIBAL SELECTOR
+   ============================================================================ */
+.selector-section {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-glass);
+}
+
+.selector-label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-body);
+}
+
+.selector-hint {
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.tribe-select {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: var(--text-body);
+  font-family: var(--font-body);
+  border: 0.125rem solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: clamp(2.75rem, 6vh, 3rem);
+}
+
+.tribe-select:hover { border-color: var(--accent-primary); }
+
+.tribe-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 clamp(0.125rem, 0.3vw, 0.1875rem) var(--accent-light);
+}
+
+.state-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.state-btn {
+  padding: var(--space-md);
+  border: 0.125rem solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: clamp(2.5rem, 5vh, 2.75rem);
+}
+
+.state-btn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.state-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================================================
+   MODULAR GRID SYSTEM
+   ============================================================================ */
+.dashboard-grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(min-content, auto);
+}
+
+@media (min-width: 48rem) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .block-landscape,
+  .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .block-square {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (min-width: 75rem) {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .block-landscape {
+    grid-column: span 3;
+  }
+
+  .block-landscape-wide {
+    grid-column: span 4;
+  }
+
+  .block-square {
+    grid-column: span 1;
+  }
+
+  .block-square-lg {
+    grid-column: span 2;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* ============================================================================
+   CARD COMPONENT
+   ============================================================================ */
+.dashboard-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+  border-color: var(--glass-border-hover);
+  transform: translateY(clamp(-0.125rem, -0.25vw, -0.1875rem));
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.card-icon {
+  font-size: var(--text-heading);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+  letter-spacing: 0.02em;
+}
+
+.card-badge {
+  font-size: var(--text-micro);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--accent-light);
+  color: var(--accent-primary);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-badge.error {
+  background: var(--danger-warning-bg);
+  color: var(--danger-warning);
+}
+
+.card-body {
+  padding: var(--space-lg);
+  flex: 1;
+}
+
+.card-footer {
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--glass-border);
+  font-size: var(--text-micro);
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.card-footer a {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.card-footer a:hover {
+  color: var(--accent-primary);
+}
+
+@media (min-width: 40rem) {
+  .card-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* ============================================================================
+   ALERT FILTERS & ACTIVE ALERTS
+   ============================================================================ */
+.alert-filter-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+@media (min-width: 40rem) {
+  .alert-filter-buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.alert-filter-btn {
+  padding: var(--space-md);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--icon-default);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: clamp(2.5rem, 5vh, 2.75rem);
+}
+
+.alert-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--glass-border-hover);
+  color: var(--icon-hover);
+}
+
+.alert-filter-btn.active {
+  background: var(--accent-light);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.active-alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  max-height: clamp(20rem, 50vh, 25rem);
+  overflow-y: auto;
+}
+
+.active-alert-item {
+  padding: var(--space-md);
+  border-left: clamp(0.1875rem, 0.4vw, 0.25rem) solid;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.active-alert-item:hover {
+  transform: translateX(clamp(0.125rem, 0.5vw, 0.25rem));
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.active-alert-item.severity-extreme {
+  background: var(--danger-extreme-bg);
+  border-color: var(--danger-extreme);
+  box-shadow: var(--danger-extreme-glow);
+}
+
+.active-alert-item.severity-severe,
+.active-alert-item.severity-warning {
+  background: var(--danger-warning-bg);
+  border-color: var(--danger-warning);
+  box-shadow: var(--danger-warning-glow);
+}
+
+.active-alert-item.severity-moderate,
+.active-alert-item.severity-watch {
+  background: var(--danger-watch-bg);
+  border-color: var(--danger-watch);
+  box-shadow: var(--danger-watch-glow);
+}
+
+.active-alert-item.severity-minor,
+.active-alert-item.severity-advisory {
+  background: rgba(234, 179, 8, 0.1);
+  border-color: var(--danger-watch);
+}
+
+.active-alert-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.active-alert-type {
+  font-weight: 600;
+  font-size: var(--text-body);
+  flex: 1;
+}
+
+.active-alert-item.severity-extreme .active-alert-type,
+.active-alert-item.severity-severe .active-alert-type,
+.active-alert-item.severity-warning .active-alert-type {
+  color: var(--danger-warning);
+}
+
+.active-alert-item.severity-moderate .active-alert-type,
+.active-alert-item.severity-watch .active-alert-type {
+  color: var(--danger-watch);
+}
+
+.active-alert-urgency {
+  font-size: var(--text-micro);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-lg);
+  background: rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.active-alert-headline {
+  font-size: var(--text-small);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+.active-alert-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  font-size: var(--text-micro);
+  color: var(--text-muted);
+}
+
+.no-active-alerts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.no-active-alerts-text {
+  font-weight: 600;
+  color: var(--danger-safe);
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-heading);
+}
+
+.no-active-alerts-sub {
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+
+/* ============================================================================
+   INTERACTIVE MAP
+   ============================================================================ */
+#tribal-map-container {
+  position: relative;
+  width: 100%;
+  height: clamp(20rem, 60vh, 31.25rem);
+  min-height: 20rem;
+  background: rgba(15, 15, 26, 0.8);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+@media (min-width: 48rem) {
+  #tribal-map-container { height: clamp(25rem, 65vh, 34.375rem); }
+}
+
+@media (min-width: 64rem) {
+  #tribal-map-container { height: clamp(30rem, 70vh, 37.5rem); }
+}
+
+#tribal-map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Map View Controls - Right Side */
+.map-view-controls {
+  position: absolute;
+  top: 50%;
+  right: var(--space-md);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  z-index: 1000;
+}
+
+.map-view-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(3rem, 8vw, 3.75rem);
+  height: clamp(3rem, 8vw, 3.75rem);
+  padding: var(--space-sm);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--icon-default);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  font-weight: 500;
+}
+
+.map-view-btn:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  color: var(--icon-hover);
+}
+
+.map-view-btn.active {
+  background: var(--accent-light);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.map-view-btn svg {
+  width: clamp(1rem, 2.5vw, 1.25rem);
+  height: clamp(1rem, 2.5vw, 1.25rem);
+  margin-bottom: var(--space-xs);
+  stroke-width: 1.5;
+}
+
+/* Center Button */
+.map-center-btn {
+  position: absolute;
+  bottom: clamp(4rem, 10vh, 4.375rem);
+  right: var(--space-md);
+  width: clamp(2.25rem, 5vw, 2.5rem);
+  height: clamp(2.25rem, 5vw, 2.5rem);
+  padding: 0;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--icon-default);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.map-center-btn:hover {
+  background: var(--glass-bg-hover);
+  color: var(--text-primary);
+}
+
+.map-center-btn svg {
+  width: clamp(1rem, 2.5vw, 1.25rem);
+  height: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* Map Legend */
+.map-legend {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  right: clamp(4rem, 12vw, 5rem);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: var(--text-micro);
+  color: var(--text-secondary);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.legend-swatch {
+  width: clamp(0.75rem, 1.5vw, 0.875rem);
+  height: clamp(0.75rem, 1.5vw, 0.875rem);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.legend-swatch.swatch-warning { background: var(--danger-warning); }
+.legend-swatch.swatch-watch { background: var(--danger-watch); }
+.legend-swatch.swatch-advisory { background: #F97316; }
+.legend-swatch.swatch-radar { background: rgba(34, 211, 238, 0.4); border: 1px solid var(--accent-primary); }
+.legend-swatch.river-below { background: var(--river-below); }
+.legend-swatch.river-normal { background: var(--river-normal); }
+.legend-swatch.river-near { background: var(--river-near-flood); }
+.legend-swatch.river-flood { background: var(--river-flooding); }
+
+.legend-swatch.flood-striped {
+  background: repeating-linear-gradient(45deg, var(--danger-warning), var(--danger-warning) 0.125rem, transparent 0.125rem, transparent 0.25rem);
+}
+
+.legend-swatch.flood-pulse {
+  background: var(--danger-warning);
+  animation: pulse-legend 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-legend {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Map Loading Overlay */
+.map-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 15, 26, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  color: var(--text-secondary);
+  gap: var(--space-md);
+  transition: opacity 0.3s ease;
+}
+
+.map-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Leaflet Popup Dark Theme */
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 15, 26, 0.95) !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 15, 26, 0.95) !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  font-family: var(--font-body) !important;
+}
+
+.popup-header {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-severity-warning { color: #EF4444; }
+.popup-severity-watch { color: #FBBF24; }
+
+.leaflet-control-zoom {
+  margin-bottom: 70px !important;
+  margin-right: 12px !important;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(15, 15, 26, 0.9) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(30, 30, 50, 0.95) !important;
+  color: #fff !important;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .map-view-controls { right: 8px; }
+  .map-view-btn { width: 48px; height: 48px; }
+  .map-view-btn span { display: none; }
+  .map-legend { right: 56px; padding: 8px 10px; font-size: 10px; gap: 8px; }
+}
+
+/* ============================================================================
+   LOCAL FORECAST
+   ============================================================================ */
+.local-forecast-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .local-forecast-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.local-forecast-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.local-forecast-panel-header {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forecast-period-controls {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.forecast-period-btn {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.forecast-period-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+}
+
+.forecast-period-btn.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.qpf-map-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.qpf-map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Daily Breakdown Panel */
+.daily-breakdown-header {
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.daily-breakdown-title {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.125rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.sample-badge {
+  font-family: var(--font-body);
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 6px;
+  background: var(--danger-watch-bg);
+  color: var(--danger-watch);
+  border: 1px solid var(--danger-watch);
+  border-radius: var(--radius-sm);
+}
+
+.sample-notice {
+  margin: 0 var(--space-md) var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(234, 179, 8, 0.08);
+  border-left: 2px solid var(--danger-watch);
+  font-size: var(--text-micro);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.daily-breakdown-location {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.daily-breakdown-chart {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.daily-bar-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 50px 40px;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.daily-bar-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.daily-bar-day {
+  font-weight: 600;
+}
+
+.daily-bar-date {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+}
+
+.daily-bar-track {
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.daily-bar-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.daily-bar-fill.rain-light {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+.daily-bar-fill.rain-moderate {
+  background: linear-gradient(90deg, #eab308, #facc15);
+}
+
+.daily-bar-fill.rain-heavy {
+  background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+.daily-bar-fill.rain-hazardous {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.daily-bar-amount {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.daily-bar-prob {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.forecast-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--glass-border);
+}
+
+.forecast-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.625rem;
+  color: var(--text-muted);
+}
+
+.forecast-legend-color {
+  width: 12px;
+  height: 12px;
+}
+
+.forecast-legend-color.light { background: #22c55e; }
+.forecast-legend-color.moderate { background: #eab308; }
+.forecast-legend-color.heavy { background: #f97316; }
+.forecast-legend-color.hazardous { background: #ef4444; }
+
+.forecast-totals {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.forecast-total-item {
+  text-align: center;
+  flex: 1;
+}
+
+.forecast-total-label {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.forecast-total-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.precip-description {
+  font-size: clamp(0.75rem, 2vw, 0.8125rem);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   FORECAST SECTION
+   ============================================================================ */
+.forecast-location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+
+.forecast-location-name {
+  font-weight: 600;
+  color: var(--accent-primary);
+  font-size: clamp(0.875rem, 2vw, 0.9375rem);
+}
+
+.forecast-grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.forecast-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  gap: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+  .forecast-item {
+    grid-template-columns: 100px auto 60px 1fr;
+  }
+}
+
+.forecast-period {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: clamp(0.8125rem, 2vw, 0.875rem);
+}
+
+.forecast-temp {
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.forecast-precip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.forecast-precip.high { color: var(--severity-warning); }
+
+.forecast-desc {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+
+@media (min-width: 640px) {
+  .forecast-desc { grid-column: auto; margin-top: 0; text-align: right; }
+}
+
+.forecast-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--accent-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-top: var(--space-md);
+  transition: all 0.2s ease;
+  justify-content: center;
+}
+
+.forecast-link-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-yellow {
+  background: #d4a012;
+  color: #1a1a1a;
+}
+.btn-yellow:hover {
+  background: #b8900f;
+  color: #1a1a1a;
+}
+
+.btn-pink {
+  background: #9d174d;
+  color: #ffffff;
+}
+.btn-pink:hover {
+  background: #831843;
+  color: #ffffff;
+}
+
+.btn-red {
+  background: #991b1b;
+  color: #ffffff;
+}
+.btn-red:hover {
+  background: #7f1d1d;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   RESOURCES
+   ============================================================================ */
+.resources-grid {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 640px) {
+  .resources-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .resources-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.resource-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg);
+  background: var(--glass-bg);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  text-align: center;
+  min-height: 80px;
+  justify-content: center;
+  border: 1px solid var(--glass-border);
+}
+
+.resource-link:hover {
+  background: var(--accent-light);
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+}
+
+.resource-name {
+  font-size: clamp(0.75rem, 2vw, 0.8125rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.resource-link-large {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--accent-primary);
+  color: white;
+  min-height: 50px;
+}
+
+.resource-link-large:hover {
+  background: var(--accent-hover);
+  color: white;
+}
+
+.resource-link-large .resource-name { font-size: 1rem; }
+
+/* ============================================================================
+   EMERGENCY CONTACTS
+   ============================================================================ */
+.emergency-contacts {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  gap: var(--space-md);
+}
+
+.contact-name {
+  font-weight: 600;
+  font-size: clamp(0.8125rem, 2vw, 0.875rem);
+  color: var(--text-primary);
+}
+
+.contact-phone {
+  font-family: var(--font-mono);
+  font-size: clamp(0.8125rem, 2vw, 0.875rem);
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact-phone:hover { text-decoration: underline; }
+
+.contact-link-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: var(--accent-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: var(--space-md);
+  transition: all 0.2s ease;
+}
+
+.contact-link-large:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ============================================================================
+   LOADING & ERROR STATES
+   ============================================================================ */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  gap: var(--space-md);
+  min-height: 200px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--card-border);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: clamp(0.8125rem, 2vw, 0.875rem);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.error-state {
+  padding: var(--space-lg);
+  background: var(--danger-warning-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--danger-warning);
+  color: var(--text-primary);
+  font-size: clamp(0.8125rem, 2vw, 0.875rem);
+  line-height: 1.6;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-glass), var(--danger-warning-glow);
+}
+
+.error-state strong { color: #fca5a5; }
+
+.error-state a {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.retry-btn {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: 8px 16px;
+  cursor: pointer;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.retry-btn:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--accent-primary);
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+.dashboard-footer {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.footer-sources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-size: 0.6875rem;
+}
+
+.footer-sources a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-sources a:hover {
+  color: rgba(255,255,255,1);
+  text-decoration: underline;
+}
+
+.footer-sources span {
+  color: rgba(255,255,255,0.3);
+}
+
+/* ============================================================================
+   UTILITIES
+   ============================================================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (hover: none) {
+  button, a, .tribe-select {
+    -webkit-tap-highlight-color: rgba(8, 145, 178, 0.1);
+  }
+}
+</style>
+</head>
+<body>
+<div class="flood-dashboard" role="main" aria-label="PNW Tribal Dashboard">
+
+  <noscript>
+    <div class="error-state" style="margin-bottom: 1rem;">
+      <strong>JavaScript is required for live weather data.</strong><br>
+      For current alerts, visit
+      <a href="https://www.weather.gov/alerts" rel="noopener">weather.gov/alerts</a>
+      or call the National Weather Service offices listed below.
+    </div>
+  </noscript>
+
+  <header class="dashboard-header">
+    <div class="header-title">
+      <h1>PNW Tribal Dashboard</h1>
+    </div>
+    <p class="header-subtitle">Real-time weather conditions, flood alerts, and forecasts for Pacific Northwest Tribal communities</p>
+
+    <div id="main-alert" class="alert-banner status-none" role="alert" aria-live="polite">
+      <span class="alert-icon" aria-hidden="true"></span>
+      <a class="alert-content alert-link" href="https://www.indigenousaccess.org/alerts" aria-label="Open detailed weather alerts">
+        <div class="alert-title" id="alert-title">Loading current conditions...</div>
+        <div class="alert-detail" id="alert-detail">Checking alerts for Oregon, Washington, and Idaho</div>
+      </a>
+    </div>
+  </header>
+
+  <section class="selector-section" aria-labelledby="selector-heading">
+    <label id="selector-heading" class="selector-label" for="tribe-select">
+      Select Your Location
+    </label>
+
+    <select id="tribe-select" class="tribe-select" aria-describedby="selector-heading">
+      <option value="">-- Select a Tribal Community --</option>
+
+      <optgroup label="Oregon (9 Tribes)">
+        <option value="43.5863,-119.0541|Burns Paiute Tribe">Burns Paiute Tribe</option>
+        <option value="43.3665,-124.2179|Confederated Tribes of Coos, Lower Umpqua and Siuslaw">Confederated Tribes of Coos, Lower Umpqua and Siuslaw</option>
+        <option value="45.0561,-123.6090|Confederated Tribes of Grand Ronde">Confederated Tribes of Grand Ronde</option>
+        <option value="44.7212,-123.9212|Confederated Tribes of Siletz Indians">Confederated Tribes of Siletz Indians</option>
+        <option value="45.6523,-118.6303|Confederated Tribes of the Umatilla">Confederated Tribes of the Umatilla</option>
+        <option value="44.7667,-121.2672|Confederated Tribes of Warm Springs">Confederated Tribes of Warm Springs</option>
+        <option value="43.4073,-124.2242|Coquille Indian Tribe">Coquille Indian Tribe</option>
+        <option value="43.2234,-123.3417|Cow Creek Band of Umpqua">Cow Creek Band of Umpqua</option>
+        <option value="42.5821,-121.8675|Klamath Tribes">Klamath Tribes</option>
+      </optgroup>
+
+      <optgroup label="Washington (29 Tribes)">
+        <option value="46.3776,-120.3080|Yakama Nation">Confederated Tribes and Bands of the Yakama Nation</option>
+        <option value="46.8404,-123.2354|Confederated Tribes of Chehalis">Confederated Tribes of the Chehalis Reservation</option>
+        <option value="48.1664,-118.9744|Colville Tribes">Confederated Tribes of the Colville Reservation</option>
+        <option value="46.1382,-122.9382|Cowlitz Indian Tribe">Cowlitz Indian Tribe</option>
+        <option value="47.7629,-124.4314|Hoh Indian Tribe">Hoh Indian Tribe</option>
+        <option value="48.0364,-123.0283|Jamestown S'Klallam Tribe">Jamestown S'Klallam Tribe</option>
+        <option value="48.3078,-117.2764|Kalispel Indian Community">Kalispel Indian Community</option>
+        <option value="48.1184,-123.5573|Lower Elwha Klallam Tribe">Lower Elwha Tribal Community</option>
+        <option value="48.8044,-122.6517|Lummi Nation">Lummi Tribe of the Lummi Reservation</option>
+        <option value="48.3678,-124.6139|Makah Tribe">Makah Indian Tribe of the Makah Reservation</option>
+        <option value="47.2818,-122.1615|Muckleshoot Indian Tribe">Muckleshoot Indian Tribe</option>
+        <option value="46.9765,-122.7097|Nisqually Indian Tribe">Nisqually Indian Tribe</option>
+        <option value="48.8057,-122.2340|Nooksack Indian Tribe">Nooksack Indian Tribe</option>
+        <option value="47.8465,-122.5697|Port Gamble S'Klallam Tribe">Port Gamble S'Klallam Tribe</option>
+        <option value="47.2284,-122.4331|Puyallup Tribe">Puyallup Tribe of the Puyallup Reservation</option>
+        <option value="47.9082,-124.6348|Quileute Tribe">Quileute Tribe of the Quileute Reservation</option>
+        <option value="47.3465,-124.0331|Quinault Indian Nation">Quinault Indian Nation</option>
+        <option value="48.5126,-122.6127|Samish Indian Nation">Samish Indian Nation</option>
+        <option value="48.2554,-121.6015|Sauk-Suiattle Indian Tribe">Sauk-Suiattle Indian Tribe</option>
+        <option value="46.7054,-123.9603|Shoalwater Bay Indian Tribe">Shoalwater Bay Indian Tribe</option>
+        <option value="47.3320,-123.1579|Skokomish Indian Tribe">Skokomish Indian Tribe</option>
+        <option value="47.5287,-121.8251|Snoqualmie Indian Tribe">Snoqualmie Indian Tribe</option>
+        <option value="47.8890,-117.9673|Spokane Tribe">Spokane Tribe of the Spokane Reservation</option>
+        <option value="47.2334,-122.9112|Squaxin Island Tribe">Squaxin Island Tribe</option>
+        <option value="48.1987,-122.1257|Stillaguamish Tribe">Stillaguamish Tribe of Indians</option>
+        <option value="47.7312,-122.5582|Suquamish Tribe">Suquamish Indian Tribe</option>
+        <option value="48.4462,-122.5175|Swinomish Indian Tribal Community">Swinomish Indian Tribal Community</option>
+        <option value="48.0690,-122.2893|Tulalip Tribes">Tulalip Tribes of Washington</option>
+        <option value="48.5184,-122.2329|Upper Skagit Indian Tribe">Upper Skagit Indian Tribe</option>
+      </optgroup>
+
+      <optgroup label="Idaho (5 Tribes)">
+        <option value="47.3343,-116.8881|Coeur d'Alene Tribe">Coeur d'Alene Tribe</option>
+        <option value="48.6914,-116.3164|Kootenai Tribe of Idaho">Kootenai Tribe of Idaho</option>
+        <option value="46.4046,-116.8047|Nez Perce Tribe">Nez Perce Tribe</option>
+        <option value="43.0300,-112.4344|Shoshone-Bannock Tribes">Shoshone-Bannock Tribes</option>
+        <option value="41.9517,-116.1092|Shoshone-Paiute Tribes">Shoshone-Paiute Tribes of Duck Valley</option>
+      </optgroup>
+    </select>
+
+    <div class="state-buttons" role="group" aria-label="Filter by state">
+      <button type="button" class="state-btn" data-state="OR" aria-pressed="false">Oregon</button>
+      <button type="button" class="state-btn" data-state="WA" aria-pressed="false">Washington</button>
+      <button type="button" class="state-btn" data-state="ID" aria-pressed="false">Idaho</button>
+    </div>
+  </section>
+
+  <div class="dashboard-grid">
+
+    <section class="dashboard-card full-width" aria-labelledby="conditions-heading">
+      <div class="card-header">
+        <h2 class="card-title" id="conditions-heading">Current Conditions and Forecast</h2>
+        <span class="card-badge">LIVE</span>
+      </div>
+      <div class="card-body">
+        <div id="tribal-map-container">
+          <div id="tribal-map"></div>
+
+          <div class="map-view-controls" role="group" aria-label="Switch map view">
+            <button type="button" class="map-view-btn active" data-view="current" aria-pressed="true" title="Current conditions and radar">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 014-4 5 5 0 019.584-1.32A4.5 4.5 0 1118 19H7a4 4 0 01-4-4z"/>
+              </svg>
+              <span>Current</span>
+            </button>
+            <button type="button" class="map-view-btn" data-view="forecast" aria-pressed="false" title="3-day precipitation forecast">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <span>Forecast</span>
+            </button>
+            <button type="button" class="map-view-btn" data-view="flooding" aria-pressed="false" title="River gauges and flooding">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2M3 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2M3 6c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2"/>
+              </svg>
+              <span>Flooding</span>
+            </button>
+          </div>
+
+          <button type="button" class="map-center-btn" title="Reset View">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </button>
+
+          <div class="map-legend" id="map-legend">
+            <div class="legend-item">
+              <span class="legend-swatch swatch-warning"></span>
+              <span>Warning</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch swatch-watch"></span>
+              <span>Watch</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch swatch-advisory"></span>
+              <span>Advisory</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch swatch-radar"></span>
+              <span>Radar</span>
+            </div>
+          </div>
+
+          <div class="map-loading" id="map-loading">
+            <div class="loading-spinner"></div>
+            <span>Loading map...</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Sources: <a href="https://www.weather.gov" target="_blank" rel="noopener" style="color:inherit;">NWS</a>, <a href="https://waterdata.usgs.gov" target="_blank" rel="noopener" style="color:inherit;">USGS</a>, <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener" style="color:inherit;">FEMA NFHL</a></span>
+        <span>Live Updates</span>
+      </div>
+    </section>
+
+    <section id="local-forecast-section" class="dashboard-card full-width" aria-labelledby="forecast-heading">
+      <div class="card-header">
+        <h2 class="card-title" id="forecast-heading">7-Day Forecast</h2>
+        <span class="card-badge">Local</span>
+      </div>
+      <div class="card-body">
+        <div class="forecast-location">
+          <span id="forecast-location-name">Select a Tribe above</span>
+        </div>
+        <div id="forecast-content" class="forecast-grid">
+          <p class="precip-description">Select a Tribal community above to view the local 7-day weather forecast.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Source: <a href="https://www.weather.gov" target="_blank" rel="noopener">National Weather Service</a></span>
+        <span id="forecast-updated">--</span>
+      </div>
+    </section>
+
+    <section class="dashboard-card full-width" aria-labelledby="hazard-alerts-heading">
+      <div class="card-header">
+        <h2 class="card-title" id="hazard-alerts-heading">Active Warnings and Hazards</h2>
+        <span class="card-badge" id="active-alerts-count">Loading...</span>
+      </div>
+      <div class="card-body">
+        <div class="alert-filter-buttons" role="group" aria-label="Filter alerts by type">
+          <button type="button" class="alert-filter-btn active" data-filter="all" aria-pressed="true">
+            All Warnings
+          </button>
+          <button type="button" class="alert-filter-btn" data-filter="flood" aria-pressed="false">
+            Flood
+          </button>
+          <button type="button" class="alert-filter-btn" data-filter="wind" aria-pressed="false">
+            Wind/Gale
+          </button>
+          <button type="button" class="alert-filter-btn" data-filter="snow" aria-pressed="false">
+            Snow/Blizzard
+          </button>
+        </div>
+
+        <div id="active-alerts-content" class="active-alerts-list">
+          <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Loading active warnings from NWS...</span>
+          </div>
+        </div>
+
+        <a href="https://www.indigenousaccess.org/alerts" class="forecast-link-btn btn-yellow">
+          Detailed Alerts and Safety
+        </a>
+      </div>
+      <div class="card-footer">
+        <span>Source: <a href="https://www.weather.gov" target="_blank" rel="noopener">National Weather Service</a></span>
+        <span id="active-alerts-updated">--</span>
+      </div>
+    </section>
+
+    <section class="dashboard-card full-width" aria-labelledby="local-forecast-heading">
+      <div class="card-header">
+        <h2 class="card-title" id="local-forecast-heading">Local Forecast</h2>
+        <span class="card-badge">QPF</span>
+      </div>
+      <div class="card-body">
+        <div class="local-forecast-grid">
+          <div class="local-forecast-panel">
+            <div class="local-forecast-panel-header">
+              <span>Precipitation Forecast Map</span>
+              <div class="forecast-period-controls">
+                <button class="forecast-period-btn active" data-period="today">Today</button>
+                <button class="forecast-period-btn" data-period="3day">3-Day</button>
+                <button class="forecast-period-btn" data-period="7day">7-Day</button>
+              </div>
+            </div>
+            <div class="qpf-map-container">
+              <img
+                id="qpf-map-image"
+                src="https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1.png"
+                alt="Northwest precipitation forecast map"
+                class="qpf-map-image"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <div class="local-forecast-panel">
+            <div class="daily-breakdown-header">
+              <div class="daily-breakdown-title">
+                Daily Breakdown
+                <span class="sample-badge" title="Illustrative sample — not a real forecast">SAMPLE</span>
+              </div>
+              <div class="daily-breakdown-location" id="forecast-location-label">Pacific Northwest</div>
+            </div>
+            <div class="sample-notice">
+              Illustrative sample only. For verified totals see the QPF map (left) and the 7-Day Forecast above.
+            </div>
+            <div class="daily-breakdown-chart" id="daily-breakdown-chart"></div>
+            <div class="forecast-legend">
+              <div class="forecast-legend-item">
+                <div class="forecast-legend-color light"></div>
+                <span>Light (&lt;2")</span>
+              </div>
+              <div class="forecast-legend-item">
+                <div class="forecast-legend-color moderate"></div>
+                <span>Moderate (2-5")</span>
+              </div>
+              <div class="forecast-legend-item">
+                <div class="forecast-legend-color heavy"></div>
+                <span>Heavy (5-10")</span>
+              </div>
+              <div class="forecast-legend-item">
+                <div class="forecast-legend-color hazardous"></div>
+                <span>Hazardous (&gt;10")</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Source: <a href="https://www.wpc.ncep.noaa.gov" target="_blank" rel="noopener">NOAA WPC</a></span>
+        <span>Updates every 6 hours</span>
+      </div>
+    </section>
+
+    <section class="dashboard-card" aria-labelledby="resources-heading">
+      <div class="card-header">
+        <h2 class="card-title" id="resources-heading">Quick Resources</h2>
+      </div>
+      <div class="card-body">
+        <div class="resources-grid">
+          <a href="https://www.indigenousaccess.org/home" class="resource-link resource-link-large btn-pink">
+            <span class="resource-name">View All Resources</span>
+          </a>
+          <a href="https://www.weather.gov/safety/flood" target="_blank" rel="noopener" class="resource-link">
+            <span class="resource-name">Flood Safety</span>
+          </a>
+          <a href="https://www.ready.gov/floods" target="_blank" rel="noopener" class="resource-link">
+            <span class="resource-name">Preparedness</span>
+          </a>
+          <a href="https://www.disasterassistance.gov/" target="_blank" rel="noopener" class="resource-link">
+            <span class="resource-name">FEMA Aid</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-card" aria-labelledby="contacts-heading">
+      <div class="card-header">
+        <h2 class="card-title" id="contacts-heading">Emergency Contacts</h2>
+      </div>
+      <div class="card-body">
+        <div class="emergency-contacts">
+          <div class="contact-item">
+            <span class="contact-name">Emergency Services</span>
+            <a href="tel:911" class="contact-phone">911</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-name">FEMA Helpline</span>
+            <a href="tel:1-800-621-3362" class="contact-phone">1-800-621-3362</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-name">NWS Seattle</span>
+            <a href="tel:206-526-6087" class="contact-phone">206-526-6087</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-name">NWS Portland</span>
+            <a href="tel:503-261-9246" class="contact-phone">503-261-9246</a>
+          </div>
+        </div>
+
+        <a href="https://www.indigenousaccess.org/contacts" class="contact-link-large btn-red">
+          View All Emergency Contacts
+        </a>
+      </div>
+    </section>
+
+  </div><footer class="dashboard-footer">
+    <div class="footer-sources">
+      <a href="https://www.weather.gov" target="_blank" rel="noopener">NOAA/NWS</a>
+      <span>|</span>
+      <a href="https://waterdata.usgs.gov" target="_blank" rel="noopener">USGS</a>
+      <span>|</span>
+      <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener">FEMA NFHL</a>
+      <span>|</span>
+      <a href="https://www.wpc.ncep.noaa.gov" target="_blank" rel="noopener">NOAA WPC</a>
+      <span>|</span>
+      <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>
+      <span>|</span>
+      <a href="https://carto.com" target="_blank" rel="noopener">CARTO</a>
+      <span>|</span>
+      <a href="https://mesonet.agron.iastate.edu" target="_blank" rel="noopener">Iowa Environmental Mesonet</a>
+      <span>|</span>
+      <span style="color: rgba(255,255,255,0.4);">Tribal data: BIA Federal Register 89 FR 944 (Jan 2024)</span>
+    </div>
+  </footer>
+
+</div><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+(function() {
+  'use strict';
+
+  // ============================================================================
+  // CONFIGURATION
+  // ============================================================================
+  const CONFIG = {
+    REFRESH_INTERVAL: 60000,
+
+    PNW_CENTER: [47.5, -122.0],
+    DEFAULT_ZOOM: 6,
+    MIN_ZOOM: 4,
+    MAX_ZOOM: 12,
+
+    API_ENDPOINTS: {
+      NWS_ALERTS: 'https://api.weather.gov/alerts/active',
+      NWS_POINTS: 'https://api.weather.gov/points',
+      USGS_WATER: 'https://waterservices.usgs.gov/nwis/iv/',
+      FEMA_NFHL: 'https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer',
+      TRIBAL_BOUNDARIES: 'https://atniclimate.github.io/maps/data/tribal-boundaries/pnw-tribal-boundaries-simplified.geojson',
+      TRIBAL_BOUNDARIES_FULL: 'https://atniclimate.github.io/maps/data/tribal-boundaries/pnw-tribal-boundaries.geojson',
+      ROAD_CLOSURES: null
+    },
+
+    DARK_TILE_URL: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    RADAR_TILE_URL: 'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q/{z}/{x}/{y}.png',
+    QPF_TILE_URL: 'https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/q2-p72h/{z}/{x}/{y}.png',
+
+    ALERT_CATEGORIES: {
+      flood: ['Flood', 'Flash Flood', 'Coastal Flood', 'River Flood'],
+      snow: ['Snow', 'Blizzard', 'Ice', 'Winter Storm', 'Freeze', 'Frost', 'Cold', 'Wind Chill', 'Avalanche'],
+      wind: ['Gale', 'Wind', 'Hurricane', 'Tropical Storm', 'High Wind']
+    },
+
+    RIVER_COLORS: {
+      below_normal: '#8B4513',
+      normal: '#22C55E',
+      action: '#84CC16',
+      near_flood: '#F97316',
+      flooding: '#EF4444',
+      unknown: '#6B7280'
+    },
+
+    SEVERITY_COLORS: {
+      EMERGENCY: '#7C2D12',
+      WARNING: '#EF4444',
+      WATCH: '#FBBF24',
+      ADVISORY: '#F97316',
+      STATEMENT: '#6B7280'
+    },
+
+    FLOOD_THRESHOLDS: {
+      FLOODING: 20,
+      NEAR_FLOOD: 15,
+      ACTION: 10,
+      NORMAL: 5
+    },
+
+    FETCH_TIMEOUT: 15000,
+    RADAR_REFRESH_INTERVAL: 120000,
+    RIVER_REFRESH_INTERVAL: 300000
+  };
+
+  const PNW_RIVER_GAUGES = [
+    '12048000', '12061500', '12041200', '12039500',
+    '12433000', '14105700', '14211720', '12113000',
+    '12189500', '14321000', '13317000', '12149000'
+  ];
+
+  // ============================================================================
+  // STATE
+  // ============================================================================
+  let currentAlerts = [];
+  let currentFilter = 'all';
+  let map = null;
+  let currentMapView = 'current';
+  let forecastSelectionGen = 0;
+  let layers = {
+    radar: null,
+    forecast: null,
+    alerts: null,
+    rivers: null,
+    floodZones: null,
+    tribalBoundaries: null,
+    roadClosures: null
+  };
+
+  let domCache = {};
+
+  let intervals = {
+    alertRefresh: null,
+    radarRefresh: null,
+    riverRefresh: null
+  };
+
+  // ============================================================================
+  // UTILITY FUNCTIONS
+  // ============================================================================
+
+  /**
+   * Fetch with timeout - prevents indefinite waiting on slow APIs
+   */
+  async function fetchWithTimeout(url, options = {}, timeoutMs = CONFIG.FETCH_TIMEOUT) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+        headers: {
+          'Accept': 'application/geo+json, application/json;q=0.9',
+          ...(options.headers || {})
+        }
+      });
+      clearTimeout(timeoutId);
+      return response;
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error.name === 'AbortError') {
+        throw new Error(`Request timed out after ${timeoutMs / 1000}s: ${url}`);
+      }
+      throw error;
+    }
+  }
+
+  function cacheDOMElements() {
+    domCache = {
+      alertsContent: document.getElementById('active-alerts-content'),
+      alertsCount: document.getElementById('active-alerts-count'),
+      alertsUpdated: document.getElementById('active-alerts-updated'),
+      mainAlert: document.getElementById('main-alert'),
+      alertTitle: document.getElementById('alert-title'),
+      alertDetail: document.getElementById('alert-detail'),
+      mapLoading: document.getElementById('map-loading'),
+      tribeSelect: document.getElementById('tribe-select'),
+      forecastSection: document.getElementById('local-forecast-section'),
+      forecastContent: document.getElementById('forecast-content'),
+      forecastLocationName: document.getElementById('forecast-location-name'),
+      forecastUpdated: document.getElementById('forecast-updated'),
+      qpfMapImage: document.getElementById('qpf-map-image'),
+      dailyBreakdownChart: document.getElementById('daily-breakdown-chart'),
+      forecastLocationLabel: document.getElementById('forecast-location-label')
+    };
+  }
+
+  function getElement(key) {
+    if (!domCache[key]) {
+      console.warn(`DOM element not cached: ${key}`);
+      return document.getElementById(key.replace(/([A-Z])/g, '-$1').toLowerCase());
+    }
+    return domCache[key];
+  }
+
+  function formatTime(dateString) {
+    if (!dateString) {
+      console.warn('formatTime called with empty dateString');
+      return 'Time unavailable';
+    }
+    try {
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) {
+        console.warn('formatTime: Invalid date string:', dateString);
+        return 'Invalid time';
+      }
+      return date.toLocaleString('en-US', {
+        month: 'short', day: 'numeric',
+        hour: 'numeric', minute: '2-digit', hour12: true
+      });
+    } catch (e) {
+      console.error('formatTime error:', e, 'Input:', dateString);
+      return 'Time error';
+    }
+  }
+
+  function truncate(str, maxLength) {
+    if (!str) return '';
+    return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
+  }
+
+  // HTML-escape any string before interpolating it into innerHTML.
+  // Defends against malformed/hostile values reaching us from third-party feeds
+  // (NWS alerts, USGS gauge names, GeoJSON property fields).
+  const HTML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  function escapeHtml(value) {
+    if (value === null || value === undefined) return '';
+    return String(value).replace(/[&<>"']/g, ch => HTML_ESCAPES[ch]);
+  }
+
+  function getAlertCategory(event) {
+    const eventLower = (event || '').toLowerCase();
+    for (const [category, keywords] of Object.entries(CONFIG.ALERT_CATEGORIES)) {
+      if (keywords.some(keyword => eventLower.includes(keyword.toLowerCase()))) {
+        return category;
+      }
+    }
+    return 'other';
+  }
+
+  function isWarningOrAlert(alert) {
+    const event = (alert.properties?.event || '').toLowerCase();
+    const severity = (alert.properties?.severity || '').toLowerCase();
+    return event.includes('warning') ||
+           severity === 'severe' ||
+           severity === 'extreme' ||
+           event.includes('emergency');
+  }
+
+  function getAlertSeverityClass(severity) {
+    const sev = (severity || '').toLowerCase();
+    if (sev === 'extreme') return 'severity-extreme';
+    if (sev === 'severe') return 'severity-severe';
+    if (sev === 'moderate') return 'severity-moderate';
+    if (sev === 'minor') return 'severity-minor';
+    return 'severity-warning';
+  }
+
+  function mapSeverity(nwsSeverity, urgency, event) {
+    const emergencyEvents = ['Tsunami Warning', 'Earthquake Warning', 'Tornado Warning'];
+    const warningEvents = ['High Wind Warning', 'Winter Storm Warning', 'Flood Warning', 'Flash Flood Warning', 'Blizzard Warning'];
+
+    if (emergencyEvents.some(e => event?.includes(e)) || nwsSeverity === 'Extreme' || urgency === 'Immediate') {
+      return 'EMERGENCY';
+    }
+    if (warningEvents.some(e => event?.includes(e)) || nwsSeverity === 'Severe') {
+      return 'WARNING';
+    }
+    if (event?.includes('Watch') || nwsSeverity === 'Moderate') {
+      return 'WATCH';
+    }
+    if (event?.includes('Advisory')) {
+      return 'ADVISORY';
+    }
+    return 'STATEMENT';
+  }
+
+  function getRiverFloodStatus(level) {
+    if (level == null || !Number.isFinite(level)) return 'unknown';
+    const { FLOODING, NEAR_FLOOD, ACTION, NORMAL } = CONFIG.FLOOD_THRESHOLDS;
+    if (level >= FLOODING) return 'flooding';
+    if (level >= NEAR_FLOOD) return 'near_flood';
+    if (level >= ACTION) return 'action';
+    if (level >= NORMAL) return 'normal';
+    return 'below_normal';
+  }
+
+  // ============================================================================
+  // ACTIVE ALERTS FETCHING & DISPLAY
+  // ============================================================================
+  async function fetchActiveAlerts() {
+    const alertsContent = domCache.alertsContent || document.getElementById('active-alerts-content');
+    const alertsCount = domCache.alertsCount || document.getElementById('active-alerts-count');
+    const alertsUpdated = domCache.alertsUpdated || document.getElementById('active-alerts-updated');
+    const mainAlert = domCache.mainAlert || document.getElementById('main-alert');
+    const alertTitle = domCache.alertTitle || document.getElementById('alert-title');
+    const alertDetail = domCache.alertDetail || document.getElementById('alert-detail');
+
+    try {
+      const url = `${CONFIG.API_ENDPOINTS.NWS_ALERTS}?area=OR,WA,ID&status=actual&message_type=alert`;
+      const response = await fetchWithTimeout(url);
+
+      if (!response.ok) throw new Error(`NWS API returned HTTP ${response.status}`);
+
+      const data = await response.json();
+      currentAlerts = data.features || [];
+
+      alertsUpdated.textContent = `Updated: ${formatTime(new Date().toISOString())}`;
+      alertsCount.classList.remove('error');
+
+      const warningsOnly = currentAlerts.filter(isWarningOrAlert);
+
+      if (warningsOnly.length > 0) {
+        alertsCount.textContent = warningsOnly.length;
+
+        const hasExtreme = warningsOnly.some(a => a.properties.severity === 'Extreme');
+        const hasSevere = warningsOnly.some(a => a.properties.severity === 'Severe');
+
+        if (hasExtreme) {
+          mainAlert.className = 'alert-banner status-warning';
+          alertTitle.textContent = 'EXTREME WEATHER WARNING';
+          alertDetail.textContent = 'Life-threatening conditions exist. Take immediate action.';
+        } else if (hasSevere) {
+          mainAlert.className = 'alert-banner status-warning';
+          alertTitle.textContent = `${warningsOnly.length} Active Warning${warningsOnly.length > 1 ? 's' : ''}`;
+          alertDetail.textContent = 'Hazardous conditions reported. Review warnings below.';
+        } else {
+          mainAlert.className = 'alert-banner status-watch';
+          alertTitle.textContent = `${warningsOnly.length} Active Warning${warningsOnly.length > 1 ? 's' : ''}`;
+          alertDetail.textContent = 'Weather warnings in effect. Stay informed.';
+        }
+
+        displayAlerts(currentFilter);
+
+      } else {
+        alertsCount.textContent = '0';
+        mainAlert.className = 'alert-banner status-none';
+        alertTitle.textContent = 'No Active Weather Warnings';
+        alertDetail.textContent = 'No warnings for Oregon, Washington, or Idaho.';
+
+        alertsContent.innerHTML = `
+          <div class="no-active-alerts">
+            <p class="no-active-alerts-text">No Active Warnings</p>
+            <p class="no-active-alerts-sub">Oregon, Washington, and Idaho</p>
+          </div>
+        `;
+      }
+
+      if (map && layers.alerts) {
+        renderMapAlerts(currentAlerts);
+      }
+
+    } catch (error) {
+      console.error('Alert fetch error:', error);
+
+      const isTimeout = error.message?.includes('timed out');
+      const isNetworkError = error.message?.includes('Failed to fetch') || error.name === 'TypeError';
+      const isServerError = error.message?.includes('HTTP 5');
+
+      let userMessage = 'Unable to load weather alerts. ';
+      if (isTimeout) {
+        userMessage += 'The NWS server is responding slowly. ';
+      } else if (isNetworkError) {
+        userMessage += 'Please check your internet connection. ';
+      } else if (isServerError) {
+        userMessage += 'The NWS service is experiencing issues. ';
+      }
+
+      alertsContent.innerHTML = `
+        <div class="error-state">
+          <strong>⚠️ Alert Data Unavailable</strong><br>
+          ${userMessage}<br><br>
+          <a href="https://www.weather.gov/alerts" target="_blank" rel="noopener">
+            View alerts at weather.gov →
+          </a>
+          <br>
+          <button type="button" class="retry-btn" data-retry="alerts">Retry</button>
+        </div>
+      `;
+      alertsCount.textContent = 'Error';
+      alertsCount.classList.add('error');
+    }
+  }
+
+  function displayAlerts(filter) {
+    const alertsContent = domCache.alertsContent || document.getElementById('active-alerts-content');
+
+    let filteredAlerts = currentAlerts.filter(isWarningOrAlert);
+
+    if (filter !== 'all') {
+      filteredAlerts = filteredAlerts.filter(alert => {
+        return getAlertCategory(alert.properties.event) === filter;
+      });
+    }
+
+    // Skip the rebuild if the alert set is identical to last render — preserves
+    // user scroll position and any focused element inside the list across refreshes.
+    const renderHash = filter + '|' + filteredAlerts.map(a => a.id).join(',');
+    if (alertsContent.dataset.renderHash === renderHash) return;
+    alertsContent.dataset.renderHash = renderHash;
+
+    if (filteredAlerts.length === 0) {
+      alertsContent.innerHTML = `
+        <div class="no-active-alerts">
+          <p class="no-active-alerts-text">No warnings in this category</p>
+          <p class="no-active-alerts-sub">Try a different filter or view all warnings</p>
+        </div>
+      `;
+      return;
+    }
+
+    let html = '';
+    filteredAlerts.forEach(alert => {
+      const props = alert.properties;
+      const severityClass = getAlertSeverityClass(props.severity);
+      const urgency = props.urgency || 'Unknown';
+
+      html += `
+        <div class="active-alert-item ${severityClass}">
+          <div class="active-alert-header">
+            <span class="active-alert-type">${escapeHtml(props.event || 'Weather Warning')}</span>
+            <span class="active-alert-urgency">${escapeHtml(urgency)}</span>
+          </div>
+          <p class="active-alert-headline">${escapeHtml(truncate(props.headline || props.description || 'No details available', 200))}</p>
+          <div class="active-alert-meta">
+            <span>${escapeHtml(truncate(props.areaDesc || 'Unknown area', 60))}</span>
+            <span>Expires: ${formatTime(props.expires)}</span>
+          </div>
+        </div>
+      `;
+    });
+
+    alertsContent.innerHTML = html;
+  }
+
+  // ============================================================================
+  // MAP INITIALIZATION
+  // ============================================================================
+  function initMap() {
+    if (typeof L === 'undefined') {
+      console.error('Leaflet not loaded');
+      const mapLoading = document.getElementById('map-loading');
+      if (mapLoading) {
+        mapLoading.innerHTML = `
+          <div class="error-state" style="margin: 20px;">
+            <strong>⚠️ Map Service Unavailable</strong><br>
+            Failed to load the map library. Please check your network connection and refresh the page.
+          </div>
+        `;
+      }
+      return;
+    }
+
+    layers.alerts = L.layerGroup();
+    layers.rivers = L.layerGroup();
+    layers.floodZones = L.layerGroup();
+    layers.tribalBoundaries = L.layerGroup();
+    layers.roadClosures = L.layerGroup();
+
+    map = L.map('tribal-map', {
+      center: CONFIG.PNW_CENTER,
+      zoom: CONFIG.DEFAULT_ZOOM,
+      minZoom: CONFIG.MIN_ZOOM,
+      maxZoom: CONFIG.MAX_ZOOM,
+      zoomControl: true,
+      scrollWheelZoom: false
+    });
+
+    L.tileLayer(CONFIG.DARK_TILE_URL, {
+      attribution: '© <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd'
+    }).addTo(map);
+
+    layers.tribalBoundaries.addTo(map);
+    layers.roadClosures.addTo(map);
+    layers.alerts.addTo(map);
+    layers.rivers.addTo(map);
+
+    loadTribalBoundaries();
+    loadRoadClosures();
+
+    window.dashboardMap = map;
+
+    loadMapView('current');
+
+    document.getElementById('map-loading').classList.add('hidden');
+
+    bindMapControls();
+  }
+
+  function bindMapControls() {
+    document.querySelectorAll('.map-view-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const view = this.dataset.view;
+        if (view !== currentMapView) {
+          document.querySelectorAll('.map-view-btn').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-pressed', 'true');
+          currentMapView = view;
+          loadMapView(view);
+          updateMapLegend(view);
+        }
+      });
+    });
+
+    const centerBtn = document.querySelector('.map-center-btn');
+    if (centerBtn) {
+      centerBtn.addEventListener('click', function() {
+        map.flyTo(CONFIG.PNW_CENTER, CONFIG.DEFAULT_ZOOM, { duration: 0.5 });
+      });
+    }
+  }
+
+  async function loadMapView(view) {
+    const mapLoading = domCache.mapLoading || document.getElementById('map-loading');
+    if (mapLoading) mapLoading.classList.remove('hidden');
+
+    try {
+      switch(view) {
+        case 'current':
+          if (layers.forecast) map.removeLayer(layers.forecast);
+          loadRadarOverlay();
+          if (currentAlerts.length > 0) {
+            renderMapAlerts(currentAlerts);
+          }
+          if (layers.floodZones) map.removeLayer(layers.floodZones);
+          break;
+
+        case 'forecast':
+          if (layers.radar) map.removeLayer(layers.radar);
+          loadForecastOverlay();
+          if (currentAlerts.length > 0) {
+            renderMapAlerts(currentAlerts);
+          }
+          if (layers.floodZones) map.removeLayer(layers.floodZones);
+          break;
+
+        case 'flooding':
+          if (layers.radar) map.removeLayer(layers.radar);
+          if (layers.forecast) map.removeLayer(layers.forecast);
+          await loadRiverGauges();
+          if (layers.floodZones) layers.floodZones.addTo(map);
+          break;
+      }
+    } catch (error) {
+      console.error('Error loading map view:', error);
+      if (mapLoading) {
+        mapLoading.innerHTML = `
+          <div class="error-state">
+            <strong>⚠️ Map View Failed to Load</strong><br>
+            Unable to display ${escapeHtml(view)} view.<br><br>
+            <button type="button" class="retry-btn" data-retry="mapview" data-view="${escapeHtml(view)}">Retry</button>
+          </div>
+        `;
+      }
+      return;
+    }
+    if (mapLoading) mapLoading.classList.add('hidden');
+  }
+
+  function loadRadarOverlay() {
+    if (layers.radar) {
+      map.removeLayer(layers.radar);
+    }
+    layers.radar = L.tileLayer(CONFIG.RADAR_TILE_URL, {
+      opacity: 0.6,
+      attribution: 'Radar: IEM'
+    }).addTo(map);
+  }
+
+  function loadForecastOverlay() {
+    if (layers.forecast) {
+      map.removeLayer(layers.forecast);
+    }
+    layers.forecast = L.tileLayer(CONFIG.QPF_TILE_URL, {
+      opacity: 0.7,
+      attribution: 'Forecast: IEM/NWS'
+    }).addTo(map);
+  }
+
+  async function loadTribalBoundaries() {
+    try {
+      const response = await fetchWithTimeout(CONFIG.API_ENDPOINTS.TRIBAL_BOUNDARIES, {}, 15000);
+
+      if (!response.ok) {
+        throw new Error(`Tribal boundaries fetch error: ${response.status}`);
+      }
+
+      const geojson = await response.json();
+
+      if(layers.tribalBoundaries) layers.tribalBoundaries.clearLayers();
+
+      const boundaryLayer = L.geoJSON(geojson, {
+        style: function(feature) {
+          return {
+            color: '#9B59B6',
+            weight: 2,
+            opacity: 0.8,
+            fillColor: '#9B59B6',
+            fillOpacity: 0.15,
+            dashArray: '5, 5'
+          };
+        },
+        onEachFeature: function(feature, layer) {
+          const props = feature.properties;
+          if (props && props.name) {
+            const acres = Number(props.acres);
+            layer.bindPopup(`
+              <div style="font-family: inherit; min-width: 150px;">
+                <strong style="color: #FFD700; font-size: 1.1em;">${escapeHtml(props.name)}</strong>
+                ${props.state ? `<br><span style="color: #9aa8b8;">State: ${escapeHtml(props.state)}</span>` : ''}
+                ${Number.isFinite(acres) ? `<br><span style="color: #9aa8b8;">Area: ${acres.toLocaleString()} acres</span>` : ''}
+                ${props.classification ? `<br><span style="color: #9aa8b8;">Classification: ${escapeHtml(props.classification)}</span>` : ''}
+              </div>
+            `);
+            layer.bindTooltip(escapeHtml(props.name), {
+              permanent: false,
+              direction: 'center',
+              className: 'tribal-tooltip'
+            });
+          }
+        }
+      });
+
+      layers.tribalBoundaries.addLayer(boundaryLayer);
+      console.log(`Loaded ${geojson.features?.length || 0} Tribal boundary features from GitHub Pages`);
+
+    } catch (error) {
+      console.error('Failed to load Tribal boundaries:', error);
+      const mapContainer = document.getElementById('tribal-map-container');
+      if (mapContainer && !document.getElementById('tribal-boundary-notice')) {
+        const notice = document.createElement('div');
+        notice.id = 'tribal-boundary-notice';
+        notice.innerHTML = `
+          <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 1000; background: rgba(30,40,50,0.95); padding: 8px 16px; border-radius: 6px; border: 1px solid #444; font-size: 0.85rem;">
+            ⚠️ Tribal boundary data unavailable
+            <a href="https://biamaps.geoplatform.gov/" target="_blank" style="color: #FFD700; margin-left: 8px;">View at BIA →</a>
+            <button type="button" class="dismiss-notice-btn" style="background: none; border: none; color: #888; margin-left: 8px; cursor: pointer;">✕</button>
+          </div>
+        `;
+        mapContainer.style.position = 'relative';
+        mapContainer.appendChild(notice);
+
+        const dismissBtn = notice.querySelector('.dismiss-notice-btn');
+        if (dismissBtn) {
+          dismissBtn.addEventListener('click', function() {
+            notice.remove();
+          });
+        }
+      }
+    }
+  }
+
+  async function loadRoadClosures() {
+    const knownClosures = [
+      {
+        id: 'wa-sr20-north-cascades',
+        road: 'SR 20 - North Cascades Highway',
+        status: 'full',
+        reason: 'Seasonal closure (Nov-May) - Snow/avalanche',
+        seasonal: true,
+        route: [
+          [48.7319, -121.0675], [48.7450, -121.0200], [48.7550, -120.9500],
+          [48.7600, -120.8800], [48.7550, -120.8100], [48.7400, -120.7400],
+          [48.7200, -120.6800], [48.6900, -120.6200], [48.6600, -120.5500],
+          [48.6300, -120.5000], [48.5950, -120.4500]
+        ]
+      },
+      {
+        id: 'wa-sr410-chinook',
+        road: 'SR 410 - Chinook Pass',
+        status: 'full',
+        reason: 'Seasonal closure (Nov-May) - Snow conditions',
+        seasonal: true,
+        route: [
+          [46.9150, -121.5500], [46.8950, -121.5350], [46.8750, -121.5200],
+          [46.8550, -121.4900], [46.8350, -121.4600], [46.8150, -121.4300]
+        ]
+      },
+      {
+        id: 'wa-sr542-mt-baker',
+        road: 'SR 542 - Mt. Baker Highway',
+        status: 'partial',
+        reason: 'Seasonal closure beyond ski area (Oct-Jul)',
+        seasonal: true,
+        route: [
+          [48.8615, -121.6790], [48.8550, -121.6850], [48.8480, -121.6900],
+          [48.8420, -121.6950], [48.8350, -121.7020], [48.8285, -121.7094]
+        ]
+      },
+      {
+        id: 'or-mckenzie-pass',
+        road: 'OR 242 - McKenzie Pass',
+        status: 'full',
+        reason: 'Seasonal closure (Nov-Jun) - Snow',
+        seasonal: true,
+        route: [
+          [44.2800, -121.9500], [44.2700, -121.9200], [44.2600, -121.8800],
+          [44.2567, -121.8412], [44.2450, -121.8000], [44.2300, -121.7600]
+        ]
+      },
+      {
+        id: 'wa-sr123-cayuse',
+        road: 'SR 123 - Cayuse Pass',
+        status: 'full',
+        reason: 'Seasonal closure (Nov-May) - Snow conditions',
+        seasonal: true,
+        route: [
+          [46.9100, -121.5100], [46.8950, -121.5200], [46.8800, -121.5350],
+          [46.8650, -121.5500], [46.8500, -121.5650]
+        ]
+      },
+      {
+        id: 'id-lolo-pass',
+        road: 'US 12 - Lolo Pass',
+        status: 'partial',
+        reason: 'Chain requirements - Winter weather',
+        seasonal: false,
+        route: [
+          [46.6500, -114.5200], [46.6450, -114.5400], [46.6400, -114.5600],
+          [46.6334, -114.5823], [46.6250, -114.6100], [46.6150, -114.6400]
+        ]
+      }
+    ];
+
+    const currentMonth = new Date().getMonth();
+    const isWinterSeason = currentMonth >= 10 || currentMonth <= 4;
+
+    let closures = knownClosures.filter(c => {
+      if (c.seasonal && !isWinterSeason) return false;
+      return true;
+    });
+
+    console.log('Using curated seasonal road closures');
+
+    if (layers.roadClosures) layers.roadClosures.clearLayers();
+
+    if (closures.length === 0) {
+      console.log('No active road closures to display');
+      return;
+    }
+
+    closures.forEach(closure => {
+      if (!closure.route || closure.route.length < 2) return;
+
+      const baseLine = L.polyline(closure.route, {
+        color: '#000000',
+        weight: 4,
+        opacity: 0.9,
+        lineCap: 'butt'
+      });
+
+      const hazardLine = L.polyline(closure.route, {
+        color: '#FFD700',
+        weight: 3,
+        opacity: 1,
+        dashArray: closure.status === 'full' ? '8, 8' : '4, 12',
+        lineCap: 'butt'
+      });
+
+      hazardLine.bindPopup(`
+        <div style="font-family: inherit; min-width: 180px;">
+          <strong style="color: #FFD700; font-size: 1.05em;">🚧 ${closure.road}</strong>
+          <br><span style="color: #9aa8b8;">Status: ${closure.status === 'full' ? 'CLOSED' : 'Partial/Chains Required'}</span>
+          <br><span style="color: #ccc; font-size: 0.9em;">${closure.reason}</span>
+        </div>
+      `);
+
+      hazardLine.bindTooltip(`🚧 ${closure.road}`, {
+        permanent: false,
+        direction: 'center',
+        className: 'road-closure-tooltip'
+      });
+
+      layers.roadClosures.addLayer(baseLine);
+      layers.roadClosures.addLayer(hazardLine);
+    });
+
+    console.log(`Loaded ${closures.length} road closures on map`);
+  }
+
+  function renderMapAlerts(features) {
+    if(layers.alerts) layers.alerts.clearLayers();
+    const failedAlerts = [];
+
+    (features || []).forEach(feature => {
+      const props = feature.properties;
+      const geometry = feature.geometry;
+
+      if (!geometry) return;
+
+      const severity = mapSeverity(props.severity, props.urgency, props.event);
+      const color = CONFIG.SEVERITY_COLORS[severity] || '#6B7280';
+
+      try {
+        const layer = L.geoJSON(geometry, {
+          style: {
+            color: color,
+            weight: 2,
+            opacity: 0.8,
+            fillColor: color,
+            fillOpacity: 0.2
+          }
+        });
+
+        layer.bindPopup(`
+          <div class="popup-header popup-severity-${severity.toLowerCase()}">${escapeHtml(props.event || 'Weather Alert')}</div>
+          <div><strong>Severity:</strong> ${escapeHtml(severity)}</div>
+          <div><strong>Expires:</strong> ${formatTime(props.expires)}</div>
+          <div><strong>Area:</strong> ${escapeHtml(truncate(props.areaDesc || 'N/A', 100))}</div>
+        `);
+
+        layer.on('mouseover', function() { this.setStyle({ fillOpacity: 0.4 }); });
+        layer.on('mouseout', function() { this.setStyle({ fillOpacity: 0.2 }); });
+
+        layers.alerts.addLayer(layer);
+      } catch (e) {
+        failedAlerts.push(props.event || 'Unknown Alert');
+        console.warn('Could not render alert geometry:', e);
+      }
+    });
+
+    if (failedAlerts.length > 0) {
+      console.error(`${failedAlerts.length} alert(s) could not be displayed on map:`, failedAlerts);
+    }
+  }
+
+  async function loadRiverGauges() {
+    try {
+      const sites = PNW_RIVER_GAUGES.join(',');
+      const params = new URLSearchParams({
+        sites: sites,
+        parameterCd: '00065',
+        format: 'json'
+      });
+
+      const response = await fetchWithTimeout(`${CONFIG.API_ENDPOINTS.USGS_WATER}?${params}`);
+      if (!response.ok) throw new Error(`USGS API error: ${response.status}`);
+
+      const data = await response.json();
+      const gauges = parseUSGSData(data);
+      renderRiverGauges(gauges);
+    } catch (error) {
+      console.error('Failed to load river gauges:', error);
+
+      if(layers.rivers) layers.rivers.clearLayers();
+
+      if (map) {
+        const errorPopup = L.popup()
+          .setLatLng(CONFIG.PNW_CENTER)
+          .setContent(`
+            <div style="color: #EF4444; font-weight: bold; margin-bottom: 8px;">
+              ⚠️ River Data Unavailable
+            </div>
+            <div style="font-size: 12px;">
+              Unable to load USGS river gauges.<br>
+              <a href="https://waterdata.usgs.gov" target="_blank" style="color: #3B82F6;">
+                View at waterdata.usgs.gov →
+              </a>
+            </div>
+          `)
+          .openOn(map);
+      }
+    }
+  }
+
+  function parseUSGSData(data) {
+    const gauges = [];
+    const sites = data.value?.timeSeries || [];
+
+    sites.forEach(series => {
+      const sourceInfo = series.sourceInfo || {};
+      const values = series.values?.[0]?.value?.[0];
+
+      if (!values) return;
+
+      const parsedLevel = parseFloat(values.value);
+      const lat = sourceInfo.geoLocation?.geogLocation?.latitude;
+      const lng = sourceInfo.geoLocation?.geogLocation?.longitude;
+
+      const entry = {
+        id: sourceInfo.siteCode?.[0]?.value,
+        name: sourceInfo.siteName || 'Unknown',
+        lat: lat,
+        lng: lng,
+        level: Number.isFinite(parsedLevel) ? parsedLevel : null
+      };
+
+      if (Number.isFinite(lat) && Number.isFinite(lng)) {
+        gauges.push(entry);
+      }
+    });
+
+    return gauges;
+  }
+
+  function renderRiverGauges(gauges) {
+    if(layers.rivers) layers.rivers.clearLayers();
+
+    gauges.forEach(gauge => {
+      if (!gauge.lat || !gauge.lng) return;
+
+      const status = getRiverFloodStatus(gauge.level);
+      const color = CONFIG.RIVER_COLORS[status];
+
+      const marker = L.circleMarker([gauge.lat, gauge.lng], {
+        radius: status === 'flooding' || status === 'near_flood' ? 10 : 7,
+        fillColor: color,
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+      });
+
+      const statusLabels = {
+        flooding: 'At Flood Stage',
+        near_flood: 'Near Flood Stage',
+        action: 'Action Stage',
+        normal: 'Normal',
+        below_normal: 'Below Average',
+        unknown: 'Data Unavailable'
+      };
+
+      marker.bindPopup(`
+        <div class="popup-header" style="color: ${color}">${escapeHtml(statusLabels[status])}</div>
+        <div><strong>${escapeHtml(truncate(gauge.name, 40))}</strong></div>
+        <div>Site ID: ${escapeHtml(gauge.id)}</div>
+        ${gauge.level != null ? `<div>Water Level: ${gauge.level.toFixed(2)} ft</div>` : ''}
+      `);
+
+      layers.rivers.addLayer(marker);
+    });
+  }
+
+  function updateMapLegend(view) {
+    const legendEl = document.getElementById('map-legend');
+
+    switch(view) {
+      case 'current':
+        legendEl.innerHTML = `
+          <div class="legend-item"><span class="legend-swatch swatch-warning"></span><span>Warning</span></div>
+          <div class="legend-item"><span class="legend-swatch swatch-watch"></span><span>Watch</span></div>
+          <div class="legend-item"><span class="legend-swatch swatch-advisory"></span><span>Advisory</span></div>
+          <div class="legend-item"><span class="legend-swatch swatch-radar"></span><span>Radar</span></div>
+        `;
+        break;
+
+      case 'forecast':
+        legendEl.innerHTML = `
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(0, 255, 0, 0.5);"></span><span>&lt;0.5"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 255, 0, 0.6);"></span><span>0.5-1"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 127, 0, 0.6);"></span><span>1-2"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 0, 0, 0.6);"></span><span>&gt;2"</span></div>
+        `;
+        break;
+
+      case 'flooding':
+        legendEl.innerHTML = `
+          <div class="legend-item"><span class="legend-swatch river-below"></span><span>Below Avg</span></div>
+          <div class="legend-item"><span class="legend-swatch river-normal"></span><span>Normal</span></div>
+          <div class="legend-item"><span class="legend-swatch river-near"></span><span>Near Flood</span></div>
+          <div class="legend-item"><span class="legend-swatch river-flood"></span><span>Flooding</span></div>
+        `;
+        break;
+    }
+  }
+
+  // ============================================================================
+  // LOCAL FORECAST FETCHING
+  // ============================================================================
+  async function fetchLocalForecast(lat, lon, tribeName) {
+    const forecastSection = domCache.forecastSection || document.getElementById('local-forecast-section');
+    const forecastContent = domCache.forecastContent || document.getElementById('forecast-content');
+    const forecastLocationName = domCache.forecastLocationName || document.getElementById('forecast-location-name');
+    const forecastUpdated = domCache.forecastUpdated || document.getElementById('forecast-updated');
+
+    if (!forecastSection || !forecastContent) {
+      console.error('Forecast DOM elements not found');
+      return;
+    }
+
+    const gen = ++forecastSelectionGen;
+    const isStale = () => gen !== forecastSelectionGen;
+
+    forecastLocationName.textContent = tribeName;
+
+    forecastContent.innerHTML = `
+      <div class="loading-state">
+        <div class="loading-spinner"></div>
+        <span class="loading-text">Loading forecast for ${escapeHtml(tribeName)}...</span>
+      </div>
+    `;
+
+    let errorType = 'general';
+
+    try {
+      const pointsUrl = `${CONFIG.API_ENDPOINTS.NWS_POINTS}/${lat},${lon}`;
+      const pointsResponse = await fetchWithTimeout(pointsUrl);
+
+      if (!pointsResponse.ok) {
+        errorType = 'location';
+        throw new Error(`Points API error: ${pointsResponse.status}`);
+      }
+
+      const pointsData = await pointsResponse.json();
+      const forecastUrl = pointsData.properties?.forecast;
+
+      if (!forecastUrl) {
+        errorType = 'location';
+        throw new Error('No forecast URL returned for this location');
+      }
+
+      const forecastResponse = await fetchWithTimeout(forecastUrl);
+
+      if (!forecastResponse.ok) {
+        errorType = 'forecast';
+        throw new Error(`Forecast API error: ${forecastResponse.status}`);
+      }
+
+      const forecastData = await forecastResponse.json();
+
+      const periods = forecastData.properties?.periods || [];
+      if(periods.length === 0) {
+        errorType = 'forecast';
+        throw new Error('Forecast data format is incorrect or empty');
+      }
+
+      let html = '';
+      periods.slice(0, 8).forEach(period => {
+        const precip = period.probabilityOfPrecipitation?.value || 0;
+        const precipClass = precip >= 60 ? 'high' : '';
+
+        html += `
+          <div class="forecast-item">
+            <span class="forecast-period">${escapeHtml(period.name)}</span>
+            <span class="forecast-temp">${escapeHtml(period.temperature)}°${escapeHtml(period.temperatureUnit)}</span>
+            <span class="forecast-precip ${precipClass}">${escapeHtml(precip)}%</span>
+            <span class="forecast-desc">${escapeHtml(truncate(period.shortForecast, 50))}</span>
+          </div>
+        `;
+      });
+
+      if (isStale()) return;
+
+      forecastContent.innerHTML = html;
+      forecastUpdated.textContent = `Updated: ${formatTime(forecastData.properties?.updateTime || new Date().toISOString())}`;
+
+      if (map) {
+        map.flyTo([parseFloat(lat), parseFloat(lon)], 8, { duration: 1 });
+      }
+
+    } catch (error) {
+      if (isStale()) return;
+      console.error('Forecast fetch error:', error);
+
+      const safeTribe = escapeHtml(tribeName);
+      const errorMessages = {
+        location: `Unable to find weather station for ${safeTribe}. The NWS may not have coverage for this exact area.`,
+        forecast: 'Found weather station but could not retrieve forecast data. The NWS forecast service may be temporarily unavailable or overwhelmed.',
+        general: 'Unable to load forecast. Please try again later.'
+      };
+
+      if (error.message?.includes('timed out')) {
+        errorMessages[errorType] = 'Request timed out. The NWS server is responding slowly.';
+      }
+
+      forecastContent.innerHTML = `
+        <div class="error-state">
+          <strong>⚠️ Forecast Unavailable</strong><br>
+          ${errorMessages[errorType]}<br><br>
+          <a href="https://forecast.weather.gov/MapClick.php?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}" target="_blank" rel="noopener">
+            Try NWS directly for ${safeTribe} →
+          </a>
+        </div>
+      `;
+      if (forecastUpdated) forecastUpdated.textContent = 'Update failed';
+    }
+  }
+
+  // ============================================================================
+  // LOCAL FORECAST - QPF MAP AND DAILY BREAKDOWN
+  // ============================================================================
+  const QPF_URLS = {
+    today: 'https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1.png',
+    '3day': 'https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1-3.png',
+    '7day': 'https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1-7.png'
+  };
+
+  let currentForecastPeriod = 'today';
+
+  let dailyForecastData = {
+    location: 'Pacific Northwest',
+    days: generateDefaultForecastDays()
+  };
+
+  function generateDefaultForecastDays() {
+    const days = [];
+    const today = new Date();
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    const typicalPrecip = [1.2, 0.8, 0.4, 0.2, 0.6, 1.0, 0.5];
+    const typicalProb = [85, 70, 45, 30, 55, 75, 60];
+
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() + i);
+      days.push({
+        day: i === 0 ? 'Today' : dayNames[date.getDay()],
+        date: `${date.getMonth() + 1}/${date.getDate()}`,
+        amount: typicalPrecip[i],
+        probability: typicalProb[i]
+      });
+    }
+    return days;
+  }
+
+  function getRainClass(amount) {
+    if (amount >= 10) return 'rain-hazardous';
+    if (amount >= 5) return 'rain-heavy';
+    if (amount >= 2) return 'rain-moderate';
+    return 'rain-light';
+  }
+
+  function getBarWidth(amount) {
+    const maxAmount = 15;
+    return Math.min((amount / maxAmount) * 100, 100);
+  }
+
+  function renderDailyBreakdown() {
+    const chartContainer = domCache.dailyBreakdownChart || document.getElementById('daily-breakdown-chart');
+    const locationLabel = domCache.forecastLocationLabel || document.getElementById('forecast-location-label');
+
+    if (!chartContainer) return;
+
+    if (locationLabel) {
+      locationLabel.textContent = dailyForecastData.location;
+    }
+
+    let daysToShow = 7;
+    if (currentForecastPeriod === 'today') daysToShow = 1;
+    else if (currentForecastPeriod === '3day') daysToShow = 3;
+
+    const visibleDays = dailyForecastData.days.slice(0, daysToShow);
+
+    chartContainer.innerHTML = visibleDays.map(day => `
+      <div class="daily-bar-row">
+        <div class="daily-bar-label">
+          <div class="daily-bar-day">${escapeHtml(day.day)}</div>
+          <div class="daily-bar-date">${escapeHtml(day.date)}</div>
+        </div>
+        <div class="daily-bar-track">
+          <div class="daily-bar-fill ${getRainClass(day.amount)}" style="width: ${getBarWidth(day.amount)}%"></div>
+        </div>
+        <div class="daily-bar-amount">${day.amount.toFixed(1)}"</div>
+        <div class="daily-bar-prob">${day.probability}%</div>
+      </div>
+    `).join('');
+  }
+
+  function updateQPFMap(period) {
+    const mapImage = domCache.qpfMapImage || document.getElementById('qpf-map-image');
+    if (mapImage && QPF_URLS[period]) {
+      const fallbackUrls = {
+        today: 'https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif',
+        '3day': 'https://www.wpc.ncep.noaa.gov/qpf/93ewbg.gif',
+        '7day': 'https://www.wpc.ncep.noaa.gov/qpf/p168i.gif'
+      };
+
+      const container = mapImage.closest('.qpf-map-container') || mapImage.parentElement;
+      const existingNotice = container?.querySelector('.fallback-notice');
+      if (existingNotice) existingNotice.remove();
+
+      mapImage.style.display = '';
+      delete mapImage.dataset.fallbackAttempted;
+
+      mapImage.onerror = function() {
+        if (!this.dataset.fallbackAttempted && fallbackUrls[period]) {
+          this.dataset.fallbackAttempted = 'true';
+          console.warn(`Primary QPF image failed for ${period}, trying fallback`);
+
+          if (container) {
+            const notice = document.createElement('div');
+            notice.className = 'fallback-notice';
+            notice.style.cssText = 'position:absolute;top:4px;left:4px;background:rgba(234,179,8,0.9);color:#000;padding:4px 8px;font-size:11px;z-index:10;';
+            notice.textContent = 'Using backup forecast image';
+            container.appendChild(notice);
+          }
+
+          this.src = fallbackUrls[period];
+        } else {
+          console.error('Both primary and fallback QPF images failed');
+          this.style.display = 'none';
+          this.onerror = null;
+
+          if (container) {
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'qpf-error-message';
+            errorMsg.style.cssText = 'padding:20px;text-align:center;color:#EF4444;background:var(--glass-bg);';
+            errorMsg.innerHTML = `
+              <strong>⚠️ Forecast image unavailable</strong><br>
+              <a href="https://www.wpc.ncep.noaa.gov/qpf/qpf_fill.html" target="_blank" style="color:#3B82F6;">
+                View at NOAA WPC →
+              </a>
+            `;
+            container.appendChild(errorMsg);
+          }
+        }
+      };
+
+      mapImage.src = QPF_URLS[period];
+    }
+  }
+
+  function setForecastPeriod(period) {
+    currentForecastPeriod = period;
+
+    const buttons = document.querySelectorAll('.forecast-period-btn');
+    buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.period === period);
+    });
+
+    updateQPFMap(period);
+    renderDailyBreakdown();
+  }
+
+  function updateForecastForLocation(tribeName, lat, lon) {
+    dailyForecastData.location = tribeName || 'Pacific Northwest';
+
+    const freshDays = generateDefaultForecastDays();
+
+    const basePrecip = lat > 47 ? 1.5 : (lat > 45 ? 1.2 : 0.9);
+    const coastalBonus = lon < -123 ? 0.5 : 0;
+
+    dailyForecastData.days = freshDays.map((day, i) => ({
+      ...day,
+      amount: Math.max(0, (basePrecip + coastalBonus) * (1 + Math.sin(i * 0.5) * 0.5) + (Math.random() - 0.5) * 0.3),
+      probability: Math.min(95, Math.max(20, day.probability + (coastalBonus > 0 ? 10 : 0)))
+    }));
+
+    renderDailyBreakdown();
+  }
+
+  function initLocalForecast() {
+    const periodButtons = document.querySelectorAll('.forecast-period-btn');
+    periodButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        setForecastPeriod(this.dataset.period);
+      });
+    });
+
+    renderDailyBreakdown();
+  }
+
+  // ============================================================================
+  // EVENT HANDLERS
+  // ============================================================================
+  function initializeEventListeners() {
+    const tribeSelect = domCache.tribeSelect || document.getElementById('tribe-select');
+    tribeSelect.addEventListener('change', function() {
+      const value = this.value;
+      if (value) {
+        const [coords, name] = value.split('|');
+        const [lat, lon] = coords.split(',');
+        fetchLocalForecast(lat, lon, name);
+        updateForecastForLocation(name, parseFloat(lat), parseFloat(lon));
+      } else {
+        dailyForecastData.location = 'Pacific Northwest';
+        dailyForecastData.days = generateDefaultForecastDays();
+        renderDailyBreakdown();
+      }
+    });
+
+    const stateButtons = document.querySelectorAll('.state-btn');
+    stateButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const state = this.dataset.state;
+        const wasActive = this.classList.contains('active');
+
+        stateButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+
+        const STATE_LABELS = { OR: 'oregon', WA: 'washington', ID: 'idaho' };
+        const optgroups = tribeSelect.querySelectorAll('optgroup');
+
+        if (!wasActive) {
+          this.classList.add('active');
+          this.setAttribute('aria-pressed', 'true');
+
+          const wantedLabel = STATE_LABELS[state];
+          optgroups.forEach(group => {
+            group.hidden = !group.label.toLowerCase().includes(wantedLabel);
+          });
+        } else {
+          optgroups.forEach(group => { group.hidden = false; });
+        }
+
+        // If the currently-selected option is now in a hidden group, reset.
+        const selected = tribeSelect.options[tribeSelect.selectedIndex];
+        if (selected?.parentElement?.hidden) {
+          tribeSelect.value = '';
+          tribeSelect.dispatchEvent(new Event('change'));
+        }
+      });
+    });
+
+    const filterButtons = document.querySelectorAll('.alert-filter-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        currentFilter = filter;
+
+        filterButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-pressed', 'true');
+
+        displayAlerts(filter);
+      });
+    });
+
+    // Delegated retry handler — error templates live inside an IIFE,
+    // so inline onclick can't reference IIFE-scoped functions.
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('.retry-btn');
+      if (!target) return;
+
+      const retryType = target.dataset.retry;
+      if (retryType === 'alerts') {
+        fetchActiveAlerts();
+      } else if (retryType === 'mapview') {
+        const view = target.dataset.view || currentMapView;
+        loadMapView(view);
+      }
+    });
+  }
+
+  // ============================================================================
+  // INITIALIZATION
+  // ============================================================================
+  function initialize() {
+    cacheDOMElements();
+    initializeEventListeners();
+    initMap();
+    initLocalForecast();
+    fetchActiveAlerts();
+
+    intervals.alertRefresh = setInterval(fetchActiveAlerts, CONFIG.REFRESH_INTERVAL);
+
+    intervals.radarRefresh = setInterval(function() {
+      if (currentMapView === 'current' && layers.radar && document.visibilityState === 'visible') {
+        const newUrl = CONFIG.RADAR_TILE_URL + '?t=' + Date.now();
+        layers.radar.setUrl(newUrl);
+      }
+    }, CONFIG.RADAR_REFRESH_INTERVAL);
+
+    intervals.riverRefresh = setInterval(function() {
+      if (currentMapView === 'flooding' && document.visibilityState === 'visible') {
+        loadRiverGauges();
+      }
+    }, CONFIG.RIVER_REFRESH_INTERVAL);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
+  } else {
+    initialize();
+  }
+
+})();
+</script>
+</body>
+</html>
