@@ -1,4 +1,4 @@
-# PNW Tribal Weather Dashboard
+# PNW Tribal Weather Alert Dashboard
 
 Live weather, hazard, and flood-monitoring dashboard for Pacific Northwest Tribal Nations. Single-file static site (HTML + CSS + JS), served via GitHub Pages.
 
@@ -11,7 +11,7 @@ Drop the snippet below into a single Code Block. Tested on Squarespace 7.1 / Plu
 ```html
 <iframe
   src="https://atniclimate.github.io/pnw-tribal-dashboard/"
-  title="PNW Tribal Weather Dashboard"
+  title="PNW Tribal Weather Alert Dashboard"
   style="width:100%;height:90vh;min-height:600px;border:0;display:block;"
   loading="lazy"
   allow="geolocation"
