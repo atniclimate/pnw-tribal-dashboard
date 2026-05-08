@@ -24,7 +24,6 @@
   --glass-bg-hover: rgba(30, 30, 30, 0.7);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-hover: rgba(255, 255, 255, 0.15);
-  --glass-border-glow: rgba(255, 255, 255, 0.2);
 
   /* Environmental Background Colors */
   --env-deep: #0a1628;
@@ -37,7 +36,6 @@
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.85);
   --text-muted: rgba(255, 255, 255, 0.65);
-  --text-dim: rgba(255, 255, 255, 0.45);
 
   /* SEMANTIC DANGER LEVELS */
   --danger-safe: #22c55e;
@@ -56,27 +54,10 @@
   --danger-extreme-bg: rgba(220, 38, 38, 0.25);
   --danger-extreme-glow: 0 0 clamp(1.5rem, 3vw, 2.5rem) rgba(220, 38, 38, 0.6);
 
-  /* Legacy mappings */
-  --severity-none: var(--danger-safe);
-  --severity-none-bg: var(--danger-safe-bg);
-  --severity-none-glow: var(--danger-safe-glow);
-  --severity-watch: var(--danger-watch);
-  --severity-watch-bg: var(--danger-watch-bg);
-  --severity-watch-glow: var(--danger-watch-glow);
-  --severity-warning: var(--danger-warning);
-  --severity-warning-bg: var(--danger-warning-bg);
-  --severity-warning-glow: var(--danger-warning-glow);
-  --severity-extreme: var(--danger-extreme);
-  --severity-extreme-bg: var(--danger-extreme-bg);
-  --severity-extreme-glow: var(--danger-extreme-glow);
-
   /* Accent colors */
   --accent-primary: #22d3ee;
   --accent-hover: #14b8a6;
   --accent-light: rgba(34, 211, 238, 0.15);
-  --primary-cyan: #22d3ee;
-  --primary-blue: #3b82f6;
-  --primary-teal: #14b8a6;
 
   /* FLUID SPACING */
   --space-xs: clamp(0.125rem, 0.5vw, 0.25rem);
@@ -85,55 +66,38 @@
   --space-lg: clamp(0.75rem, 2vw, 1rem);
   --space-xl: clamp(1rem, 3vw, 1.5rem);
   --space-2xl: clamp(1.5rem, 4vw, 2rem);
-  --space-3xl: clamp(2rem, 5vw, 3rem);
 
   /* FLUID TYPOGRAPHY */
   --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
 
-  --text-hero: clamp(2.5rem, 8vw, 5rem);
-  --text-data-lg: clamp(1.75rem, 5vw, 3rem);
   --text-data-md: clamp(1.25rem, 3vw, 2rem);
   --text-heading: clamp(1rem, 2.5vw, 1.5rem);
   --text-body: clamp(0.875rem, 1.5vw, 1rem);
   --text-small: clamp(0.75rem, 1.25vw, 0.875rem);
   --text-micro: clamp(0.625rem, 1vw, 0.75rem);
 
-  /* MODULAR GRID SYSTEM */
+  /* GRID */
   --grid-gap: clamp(0.75rem, 2vw, 1.5rem);
-  --grid-columns: 4;
   --strip-header-height: clamp(8vh, 10vh, 12vh);
 
-  /* Border radius */
+  /* All radii are 0 in this design — kept as a token in case the visual
+     direction shifts back to rounded corners later. */
   --radius-sm: 0;
   --radius-md: 0;
   --radius-lg: 0;
 
   /* Shadows */
-  --shadow-sm: 0 0.125rem 0.25rem rgba(0,0,0,0.3);
-  --shadow-md: 0 0.25rem 0.75rem rgba(0,0,0,0.4);
-  --shadow-lg: 0 0.5rem 1.5rem rgba(0,0,0,0.5);
   --shadow-glass: 0 0.5rem 2rem rgba(0, 0, 0, 0.3), inset 0 0.0625rem 0 rgba(255, 255, 255, 0.1);
   --shadow-glow: 0 0 2rem rgba(34, 211, 238, 0.2);
-
-  /* River flood stage colors */
-  --river-below: #78716c;
-  --river-normal: var(--danger-safe);
-  --river-action: var(--danger-watch);
-  --river-near-flood: #f97316;
-  --river-flooding: var(--danger-warning);
 
   /* Icon colors */
   --icon-default: rgba(255, 255, 255, 0.7);
   --icon-hover: rgba(255, 255, 255, 0.9);
-  --icon-active: #ffffff;
 
-  /* Legacy compatibility */
-  --card-bg: var(--glass-bg);
-  --card-bg-hover: var(--glass-bg-hover);
+  /* Legacy compatibility — only --card-border is still referenced */
   --card-border: var(--glass-border);
-  --card-border-hover: var(--glass-border-hover);
 }
 
 /* ============================================================================
@@ -216,27 +180,6 @@
     padding: var(--space-2xl);
   }
 }
-
-/* GLASSMORPHISM CONTAINER */
-.glass-container {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-glass);
-  transition: all 0.3s ease;
-}
-
-.glass-container:hover {
-  background: var(--glass-bg-hover);
-  border-color: var(--glass-border-hover);
-}
-
-.glass-container.danger-safe { box-shadow: var(--shadow-glass), var(--danger-safe-glow); }
-.glass-container.danger-watch { box-shadow: var(--shadow-glass), var(--danger-watch-glow); }
-.glass-container.danger-warning { box-shadow: var(--shadow-glass), var(--danger-warning-glow); }
-.glass-container.danger-extreme { box-shadow: var(--shadow-glass), var(--danger-extreme-glow); }
 
 /* ============================================================================
    STRIP HEADER
@@ -392,13 +335,6 @@
   font-size: var(--text-body);
 }
 
-.selector-hint {
-  font-size: var(--text-small);
-  color: var(--text-secondary);
-  margin-bottom: var(--space-md);
-  line-height: 1.5;
-}
-
 .tribe-select {
   width: 100%;
   padding: var(--space-md);
@@ -470,36 +406,14 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .block-landscape,
   .full-width {
     grid-column: 1 / -1;
-  }
-
-  .block-square {
-    aspect-ratio: 1 / 1;
   }
 }
 
 @media (min-width: 75rem) {
   .dashboard-grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .block-landscape {
-    grid-column: span 3;
-  }
-
-  .block-landscape-wide {
-    grid-column: span 4;
-  }
-
-  .block-square {
-    grid-column: span 1;
-  }
-
-  .block-square-lg {
-    grid-column: span 2;
-    aspect-ratio: 1 / 1;
   }
 }
 
@@ -686,8 +600,7 @@
   box-shadow: var(--danger-watch-glow);
 }
 
-.active-alert-item.severity-minor,
-.active-alert-item.severity-advisory {
+.active-alert-item.severity-minor {
   background: rgba(234, 179, 8, 0.1);
   border-color: var(--danger-watch);
 }
@@ -910,24 +823,12 @@
 .legend-swatch.swatch-watch { background: var(--danger-watch); }
 .legend-swatch.swatch-advisory { background: #F97316; }
 .legend-swatch.swatch-radar { background: rgba(34, 211, 238, 0.4); border: 1px solid var(--accent-primary); }
-.legend-swatch.river-below { background: var(--river-below); }
-.legend-swatch.river-normal { background: var(--river-normal); }
-.legend-swatch.river-near { background: var(--river-near-flood); }
-.legend-swatch.river-flood { background: var(--river-flooding); }
-
-.legend-swatch.flood-striped {
-  background: repeating-linear-gradient(45deg, var(--danger-warning), var(--danger-warning) 0.125rem, transparent 0.125rem, transparent 0.25rem);
-}
-
-.legend-swatch.flood-pulse {
-  background: var(--danger-warning);
-  animation: pulse-legend 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse-legend {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
+.legend-swatch.river-normal { background: #22c55e; }
+.legend-swatch.river-action { background: #eab308; }
+.legend-swatch.river-minor { background: #f97316; }
+.legend-swatch.river-moderate { background: #ef4444; }
+.legend-swatch.river-major { background: #dc2626; }
+.legend-swatch.river-unknown { background: #6b7280; }
 
 /* Map Loading Overlay */
 .map-loading {
@@ -982,8 +883,20 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.popup-severity-warning { color: #EF4444; }
-.popup-severity-watch { color: #FBBF24; }
+.popup-severity-emergency { color: var(--danger-extreme); }
+.popup-severity-warning { color: var(--danger-warning); }
+.popup-severity-watch { color: var(--danger-watch); }
+.popup-severity-advisory { color: #f97316; }
+.popup-severity-statement { color: var(--text-muted); }
+
+.gauge-stages {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.gauge-stages > div { line-height: 1.4; }
 
 .leaflet-control-zoom {
   margin-bottom: 70px !important;
@@ -1031,7 +944,7 @@
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   overflow: hidden;
-  min-height: 300px;
+  min-height: clamp(15rem, 40vh, 18.75rem);
 }
 
 .local-forecast-panel-header {
@@ -1101,29 +1014,12 @@
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.125rem;
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
 }
 
-.sample-badge {
-  font-family: var(--font-body);
-  font-size: var(--text-micro);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 2px 6px;
-  background: var(--danger-watch-bg);
-  color: var(--danger-watch);
-  border: 1px solid var(--danger-watch);
-  border-radius: var(--radius-sm);
-}
-
-.sample-notice {
-  margin: 0 var(--space-md) var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  background: rgba(234, 179, 8, 0.08);
-  border-left: 2px solid var(--danger-watch);
-  font-size: var(--text-micro);
+.daily-empty {
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  font-size: var(--text-small);
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -1325,7 +1221,7 @@
   white-space: nowrap;
 }
 
-.forecast-precip.high { color: var(--severity-warning); }
+.forecast-precip.high { color: var(--danger-warning); }
 
 .forecast-desc {
   font-size: 0.8125rem;
@@ -1865,9 +1761,9 @@
             <div class="local-forecast-panel-header">
               <span>Precipitation Forecast Map</span>
               <div class="forecast-period-controls">
-                <button class="forecast-period-btn active" data-period="today">Today</button>
-                <button class="forecast-period-btn" data-period="3day">3-Day</button>
-                <button class="forecast-period-btn" data-period="7day">7-Day</button>
+                <button type="button" class="forecast-period-btn active" data-period="today" aria-pressed="true">Today</button>
+                <button type="button" class="forecast-period-btn" data-period="3day" aria-pressed="false">3-Day</button>
+                <button type="button" class="forecast-period-btn" data-period="7day" aria-pressed="false">7-Day</button>
               </div>
             </div>
             <div class="qpf-map-container">
@@ -1876,21 +1772,14 @@
                 src="https://www.nwrfc.noaa.gov/images/nwrfc/obs/fcstprecipday1.png"
                 alt="Northwest precipitation forecast map"
                 class="qpf-map-image"
-                loading="lazy"
               >
             </div>
           </div>
 
           <div class="local-forecast-panel">
             <div class="daily-breakdown-header">
-              <div class="daily-breakdown-title">
-                Daily Breakdown
-                <span class="sample-badge" title="Illustrative sample — not a real forecast">SAMPLE</span>
-              </div>
-              <div class="daily-breakdown-location" id="forecast-location-label">Pacific Northwest</div>
-            </div>
-            <div class="sample-notice">
-              Illustrative sample only. For verified totals see the QPF map (left) and the 7-Day Forecast above.
+              <div class="daily-breakdown-title">Daily Breakdown</div>
+              <div class="daily-breakdown-location" id="forecast-location-label">—</div>
             </div>
             <div class="daily-breakdown-chart" id="daily-breakdown-chart"></div>
             <div class="forecast-legend">
@@ -2029,13 +1918,15 @@
       wind: ['Gale', 'Wind', 'Hurricane', 'Tropical Storm', 'High Wind']
     },
 
+    // Map status → marker color. Categories follow NWS gauge classifications:
+    // major/moderate/minor flood, action stage, normal, unknown.
     RIVER_COLORS: {
-      below_normal: '#8B4513',
-      normal: '#22C55E',
-      action: '#84CC16',
-      near_flood: '#F97316',
-      flooding: '#EF4444',
-      unknown: '#6B7280'
+      major: '#dc2626',
+      moderate: '#ef4444',
+      minor: '#f97316',
+      action: '#eab308',
+      normal: '#22c55e',
+      unknown: '#6b7280'
     },
 
     SEVERITY_COLORS: {
@@ -2046,16 +1937,29 @@
       STATEMENT: '#6B7280'
     },
 
-    FLOOD_THRESHOLDS: {
-      FLOODING: 20,
-      NEAR_FLOOD: 15,
-      ACTION: 10,
-      NORMAL: 5
-    },
-
     FETCH_TIMEOUT: 15000,
     RADAR_REFRESH_INTERVAL: 120000,
     RIVER_REFRESH_INTERVAL: 300000
+  };
+
+  // Per-gauge flood stages (feet) sourced from NOAA NWPS
+  // (https://api.water.noaa.gov/nwps/v1/gauges/{LID}). Some gauges have a
+  // forecast point but no classified thresholds (action/minor/moderate/major
+  // all null) — they'll render as "normal" since we can't classify against
+  // missing thresholds. Two gauges (12048000 Dungeness, 12433000) have no
+  // NWS forecast point at all and are intentionally absent from this map;
+  // they still appear on the map with raw level data and "normal" status.
+  const FLOOD_STAGES = {
+    '12061500': { lid: 'SRPW1', name: 'Skokomish River near Potlatch',          action: 15,   minor: 16.5, moderate: 17.5, major: 18 },
+    '12041200': { lid: 'HORW1', name: 'Hoh River near Forks',                   action: null, minor: null, moderate: null, major: null },
+    '12039500': { lid: 'QLTW1', name: 'Quinault River at Quinault Lake',        action: null, minor: null, moderate: null, major: null },
+    '14105700': { lid: 'TDAO3', name: 'Columbia River at The Dalles Dam',       action: null, minor: null, moderate: null, major: null },
+    '14211720': { lid: 'PRTO3', name: 'Willamette River at Portland',           action: 17,   minor: 18,   moderate: 24,   major: 28 },
+    '12113000': { lid: 'AUBW1', name: 'Green River (WA) near Auburn',           action: null, minor: null, moderate: null, major: null },
+    '12189500': { lid: 'SAKW1', name: 'Sauk River near Sauk',                   action: null, minor: null, moderate: null, major: null },
+    '14321000': { lid: 'EKTO3', name: 'Umpqua River near Elkton',               action: 25,   minor: 33,   moderate: 40,   major: 50 },
+    '13317000': { lid: 'WHBI1', name: 'Salmon River at White Bird',             action: 30,   minor: 32,   moderate: 33,   major: 35 },
+    '12149000': { lid: 'CRNZ1', name: 'Snoqualmie River near Carnation',        action: null, minor: 54,   moderate: 56,   major: 58 }
   };
 
   const PNW_RIVER_GAUGES = [
@@ -2175,6 +2079,124 @@
     return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
   }
 
+  // ---- NWS gridpoint helpers --------------------------------------------------
+
+  // Cache /points responses for 1h to avoid hitting the NWS API twice per
+  // selection (once for /forecast, once for /gridpoints).
+  const pointsCache = new Map();
+  async function getNwsPoints(lat, lon) {
+    const key = `${lat},${lon}`;
+    const cached = pointsCache.get(key);
+    if (cached && Date.now() - cached.fetchedAt < 60 * 60 * 1000) return cached;
+    const resp = await fetchWithTimeout(`${CONFIG.API_ENDPOINTS.NWS_POINTS}/${lat},${lon}`);
+    if (!resp.ok) throw new Error(`Points API ${resp.status}`);
+    const data = await resp.json();
+    const entry = {
+      forecastUrl: data.properties?.forecast,
+      gridUrl: data.properties?.forecastGridData,
+      fetchedAt: Date.now()
+    };
+    pointsCache.set(key, entry);
+    return entry;
+  }
+
+  // Parse ISO 8601 duration like "PT6H", "PT1H30M", "P1D", "P1DT12H"
+  function parseIsoDuration(str) {
+    const m = String(str || '').match(/^P(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?)?$/);
+    if (!m) return null;
+    const [, d, h, mn, s] = m;
+    return ((((+d || 0) * 24) + (+h || 0)) * 60 + (+mn || 0)) * 60_000 + (+s || 0) * 1000;
+  }
+
+  // Parse "{ISO datetime}/{ISO duration}" → { start: Date, end: Date }
+  function parseValidTime(validTime) {
+    const [startStr, durStr] = String(validTime || '').split('/');
+    const start = new Date(startStr);
+    if (isNaN(start.getTime())) return null;
+    const durMs = parseIsoDuration(durStr);
+    if (durMs == null) return null;
+    return { start, end: new Date(start.getTime() + durMs) };
+  }
+
+  function localDayKey(d) {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  // Aggregate hourly gridpoint values into per-day totals (in inches) and
+  // per-day max probability of precipitation.
+  function aggregateGridpointDaily(props) {
+    const qpfSeries = props.quantitativePrecipitation?.values || [];
+    const qpfUom = props.quantitativePrecipitation?.uom || '';
+    const popSeries = props.probabilityOfPrecipitation?.values || [];
+
+    const days = new Map();
+    const ensure = key => {
+      let day = days.get(key);
+      if (!day) { day = { mm: 0, prob: 0 }; days.set(key, day); }
+      return day;
+    };
+
+    for (const entry of qpfSeries) {
+      const interval = parseValidTime(entry.validTime);
+      if (!interval || !Number.isFinite(entry.value)) continue;
+      const totalMs = interval.end - interval.start;
+      if (totalMs <= 0) {
+        ensure(localDayKey(interval.start)).mm += entry.value;
+        continue;
+      }
+      // Distribute the interval's precip proportionally across the local days it spans.
+      let cursor = new Date(interval.start);
+      while (cursor < interval.end) {
+        const endOfLocalDay = new Date(cursor.getFullYear(), cursor.getMonth(), cursor.getDate() + 1);
+        const segEnd = endOfLocalDay < interval.end ? endOfLocalDay : interval.end;
+        ensure(localDayKey(cursor)).mm += entry.value * ((segEnd - cursor) / totalMs);
+        cursor = segEnd;
+      }
+    }
+
+    for (const entry of popSeries) {
+      const interval = parseValidTime(entry.validTime);
+      if (!interval || !Number.isFinite(entry.value)) continue;
+      let cursor = new Date(interval.start.getFullYear(), interval.start.getMonth(), interval.start.getDate());
+      while (cursor < interval.end) {
+        const day = ensure(localDayKey(cursor));
+        if (entry.value > day.prob) day.prob = entry.value;
+        cursor = new Date(cursor.getFullYear(), cursor.getMonth(), cursor.getDate() + 1);
+      }
+    }
+
+    const mmToInches = qpfUom.includes('mm') ? 0.0393701 : 1;
+    const todayKey = localDayKey(new Date());
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    return [...days.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .filter(([k]) => k >= todayKey)
+      .slice(0, 7)
+      .map(([key, val]) => {
+        const [y, m, d] = key.split('-').map(Number);
+        const date = new Date(y, m - 1, d);
+        return {
+          day: key === todayKey ? 'Today' : dayNames[date.getDay()],
+          date: `${m}/${d}`,
+          amount: val.mm * mmToInches,
+          probability: Math.round(val.prob)
+        };
+      });
+  }
+
+  async function fetchDailyQPF(lat, lon) {
+    const points = await getNwsPoints(lat, lon);
+    if (!points.gridUrl) throw new Error('No gridpoint URL for this location');
+    const resp = await fetchWithTimeout(points.gridUrl);
+    if (!resp.ok) throw new Error(`Gridpoint API ${resp.status}`);
+    const data = await resp.json();
+    return aggregateGridpointDaily(data.properties || {});
+  }
+
   // HTML-escape any string before interpolating it into innerHTML.
   // Defends against malformed/hostile values reaching us from third-party feeds
   // (NWS alerts, USGS gauge names, GeoJSON property fields).
@@ -2231,14 +2253,16 @@
     return 'STATEMENT';
   }
 
-  function getRiverFloodStatus(level) {
+  function getRiverFloodStatus(level, stages) {
     if (level == null || !Number.isFinite(level)) return 'unknown';
-    const { FLOODING, NEAR_FLOOD, ACTION, NORMAL } = CONFIG.FLOOD_THRESHOLDS;
-    if (level >= FLOODING) return 'flooding';
-    if (level >= NEAR_FLOOD) return 'near_flood';
-    if (level >= ACTION) return 'action';
-    if (level >= NORMAL) return 'normal';
-    return 'below_normal';
+    // No NWS thresholds for this gauge — we have a real reading, just no
+    // flood-stage classification, so show it as 'normal'.
+    if (!stages) return 'normal';
+    if (stages.major != null && level >= stages.major) return 'major';
+    if (stages.moderate != null && level >= stages.moderate) return 'moderate';
+    if (stages.minor != null && level >= stages.minor) return 'minor';
+    if (stages.action != null && level >= stages.action) return 'action';
+    return 'normal';
   }
 
   // ============================================================================
@@ -2582,7 +2606,6 @@
       });
 
       layers.tribalBoundaries.addLayer(boundaryLayer);
-      console.log(`Loaded ${geojson.features?.length || 0} Tribal boundary features from GitHub Pages`);
 
     } catch (error) {
       console.error('Failed to load Tribal boundaries:', error);
@@ -2682,22 +2705,15 @@
       }
     ];
 
+    // Hide seasonal-only closures (mountain passes etc.) outside Nov-May.
+    // Year-round closures (seasonal: false) always render.
     const currentMonth = new Date().getMonth();
     const isWinterSeason = currentMonth >= 10 || currentMonth <= 4;
-
-    let closures = knownClosures.filter(c => {
-      if (c.seasonal && !isWinterSeason) return false;
-      return true;
-    });
-
-    console.log('Using curated seasonal road closures');
+    const closures = knownClosures.filter(c => !(c.seasonal && !isWinterSeason));
 
     if (layers.roadClosures) layers.roadClosures.clearLayers();
 
-    if (closures.length === 0) {
-      console.log('No active road closures to display');
-      return;
-    }
+    if (closures.length === 0) return;
 
     closures.forEach(closure => {
       if (!closure.route || closure.route.length < 2) return;
@@ -2734,8 +2750,6 @@
       layers.roadClosures.addLayer(baseLine);
       layers.roadClosures.addLayer(hazardLine);
     });
-
-    console.log(`Loaded ${closures.length} road closures on map`);
   }
 
   function renderMapAlerts(features) {
@@ -2837,12 +2851,16 @@
       const lat = sourceInfo.geoLocation?.geogLocation?.latitude;
       const lng = sourceInfo.geoLocation?.geogLocation?.longitude;
 
+      const id = sourceInfo.siteCode?.[0]?.value;
+      const stages = id ? FLOOD_STAGES[id] : null;
+
       const entry = {
-        id: sourceInfo.siteCode?.[0]?.value,
+        id: id,
         name: sourceInfo.siteName || 'Unknown',
         lat: lat,
         lng: lng,
-        level: Number.isFinite(parsedLevel) ? parsedLevel : null
+        level: Number.isFinite(parsedLevel) ? parsedLevel : null,
+        stages: stages || null
       };
 
       if (Number.isFinite(lat) && Number.isFinite(lng)) {
@@ -2853,38 +2871,54 @@
     return gauges;
   }
 
+  const RIVER_STATUS_LABELS = {
+    major: 'Major Flood',
+    moderate: 'Moderate Flood',
+    minor: 'Minor Flood',
+    action: 'Action Stage',
+    normal: 'Normal',
+    unknown: 'Data Unavailable'
+  };
+
+  // Higher-severity gauges get a larger marker so they pop on the map.
+  const RIVER_STATUS_RADIUS = {
+    major: 12, moderate: 11, minor: 9, action: 8, normal: 7, unknown: 6
+  };
+
   function renderRiverGauges(gauges) {
     if(layers.rivers) layers.rivers.clearLayers();
 
     gauges.forEach(gauge => {
-      if (!gauge.lat || !gauge.lng) return;
+      if (!Number.isFinite(gauge.lat) || !Number.isFinite(gauge.lng)) return;
 
-      const status = getRiverFloodStatus(gauge.level);
-      const color = CONFIG.RIVER_COLORS[status];
+      const status = getRiverFloodStatus(gauge.level, gauge.stages);
+      const color = CONFIG.RIVER_COLORS[status] || CONFIG.RIVER_COLORS.unknown;
 
       const marker = L.circleMarker([gauge.lat, gauge.lng], {
-        radius: status === 'flooding' || status === 'near_flood' ? 10 : 7,
+        radius: RIVER_STATUS_RADIUS[status] || 7,
         fillColor: color,
         color: '#fff',
         weight: 2,
         opacity: 1,
-        fillOpacity: 0.8
+        fillOpacity: 0.85
       });
 
-      const statusLabels = {
-        flooding: 'At Flood Stage',
-        near_flood: 'Near Flood Stage',
-        action: 'Action Stage',
-        normal: 'Normal',
-        below_normal: 'Below Average',
-        unknown: 'Data Unavailable'
-      };
+      // Popup body — show stage thresholds when we have them so the user can
+      // see how close to flooding the current reading is.
+      const stageLines = gauge.stages ? `
+        <div class="gauge-stages">
+          ${gauge.stages.action != null ? `<div>Action: ${gauge.stages.action.toFixed(1)} ft</div>` : ''}
+          ${gauge.stages.minor != null ? `<div>Minor: ${gauge.stages.minor.toFixed(1)} ft</div>` : ''}
+          ${gauge.stages.moderate != null ? `<div>Moderate: ${gauge.stages.moderate.toFixed(1)} ft</div>` : ''}
+          ${gauge.stages.major != null ? `<div>Major: ${gauge.stages.major.toFixed(1)} ft</div>` : ''}
+        </div>` : '';
 
       marker.bindPopup(`
-        <div class="popup-header" style="color: ${color}">${escapeHtml(statusLabels[status])}</div>
-        <div><strong>${escapeHtml(truncate(gauge.name, 40))}</strong></div>
+        <div class="popup-header" style="color: ${color}">${escapeHtml(RIVER_STATUS_LABELS[status])}</div>
+        <div><strong>${escapeHtml(truncate(gauge.name, 50))}</strong></div>
         <div>Site ID: ${escapeHtml(gauge.id)}</div>
         ${gauge.level != null ? `<div>Water Level: ${gauge.level.toFixed(2)} ft</div>` : ''}
+        ${stageLines}
       `);
 
       layers.rivers.addLayer(marker);
@@ -2915,10 +2949,11 @@
 
       case 'flooding':
         legendEl.innerHTML = `
-          <div class="legend-item"><span class="legend-swatch river-below"></span><span>Below Avg</span></div>
           <div class="legend-item"><span class="legend-swatch river-normal"></span><span>Normal</span></div>
-          <div class="legend-item"><span class="legend-swatch river-near"></span><span>Near Flood</span></div>
-          <div class="legend-item"><span class="legend-swatch river-flood"></span><span>Flooding</span></div>
+          <div class="legend-item"><span class="legend-swatch river-action"></span><span>Action</span></div>
+          <div class="legend-item"><span class="legend-swatch river-minor"></span><span>Minor</span></div>
+          <div class="legend-item"><span class="legend-swatch river-moderate"></span><span>Moderate</span></div>
+          <div class="legend-item"><span class="legend-swatch river-major"></span><span>Major</span></div>
         `;
         break;
     }
@@ -2953,23 +2988,19 @@
     let errorType = 'general';
 
     try {
-      const pointsUrl = `${CONFIG.API_ENDPOINTS.NWS_POINTS}/${lat},${lon}`;
-      const pointsResponse = await fetchWithTimeout(pointsUrl);
-
-      if (!pointsResponse.ok) {
+      let points;
+      try {
+        points = await getNwsPoints(lat, lon);
+      } catch (e) {
         errorType = 'location';
-        throw new Error(`Points API error: ${pointsResponse.status}`);
+        throw e;
       }
-
-      const pointsData = await pointsResponse.json();
-      const forecastUrl = pointsData.properties?.forecast;
-
-      if (!forecastUrl) {
+      if (!points.forecastUrl) {
         errorType = 'location';
         throw new Error('No forecast URL returned for this location');
       }
 
-      const forecastResponse = await fetchWithTimeout(forecastUrl);
+      const forecastResponse = await fetchWithTimeout(points.forecastUrl);
 
       if (!forecastResponse.ok) {
         errorType = 'forecast';
@@ -3047,31 +3078,12 @@
 
   let currentForecastPeriod = 'today';
 
+  // state: 'idle' | 'loading' | 'ready' | 'error'
   let dailyForecastData = {
-    location: 'Pacific Northwest',
-    days: generateDefaultForecastDays()
+    location: null,
+    days: [],
+    state: 'idle'
   };
-
-  function generateDefaultForecastDays() {
-    const days = [];
-    const today = new Date();
-    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-    const typicalPrecip = [1.2, 0.8, 0.4, 0.2, 0.6, 1.0, 0.5];
-    const typicalProb = [85, 70, 45, 30, 55, 75, 60];
-
-    for (let i = 0; i < 7; i++) {
-      const date = new Date(today);
-      date.setDate(today.getDate() + i);
-      days.push({
-        day: i === 0 ? 'Today' : dayNames[date.getDay()],
-        date: `${date.getMonth() + 1}/${date.getDate()}`,
-        amount: typicalPrecip[i],
-        probability: typicalProb[i]
-      });
-    }
-    return days;
-  }
 
   function getRainClass(amount) {
     if (amount >= 10) return 'rain-hazardous';
@@ -3081,8 +3093,10 @@
   }
 
   function getBarWidth(amount) {
+    if (!(amount > 0)) return 0;
+    // Always show at least a 2% sliver so non-zero values aren't invisible
     const maxAmount = 15;
-    return Math.min((amount / maxAmount) * 100, 100);
+    return Math.max(Math.min((amount / maxAmount) * 100, 100), 2);
   }
 
   function renderDailyBreakdown() {
@@ -3092,7 +3106,26 @@
     if (!chartContainer) return;
 
     if (locationLabel) {
-      locationLabel.textContent = dailyForecastData.location;
+      locationLabel.textContent = dailyForecastData.location || '—';
+    }
+
+    if (dailyForecastData.state === 'idle') {
+      chartContainer.innerHTML = `<div class="daily-empty">Select a Tribal community to load the daily precipitation breakdown.</div>`;
+      return;
+    }
+
+    if (dailyForecastData.state === 'loading') {
+      chartContainer.innerHTML = `
+        <div class="loading-state">
+          <div class="loading-spinner"></div>
+          <span class="loading-text">Loading precipitation forecast…</span>
+        </div>`;
+      return;
+    }
+
+    if (dailyForecastData.state === 'error' || dailyForecastData.days.length === 0) {
+      chartContainer.innerHTML = `<div class="daily-empty">Daily breakdown unavailable for this location.</div>`;
+      return;
     }
 
     let daysToShow = 7;
@@ -3175,27 +3208,36 @@
 
     const buttons = document.querySelectorAll('.forecast-period-btn');
     buttons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.period === period);
+      const isActive = btn.dataset.period === period;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
 
     updateQPFMap(period);
     renderDailyBreakdown();
   }
 
-  function updateForecastForLocation(tribeName, lat, lon) {
+  async function updateForecastForLocation(tribeName, lat, lon) {
+    const gen = forecastSelectionGen; // share generation with fetchLocalForecast
     dailyForecastData.location = tribeName || 'Pacific Northwest';
+    dailyForecastData.state = 'loading';
+    dailyForecastData.days = [];
+    renderDailyBreakdown();
 
-    const freshDays = generateDefaultForecastDays();
-
-    const basePrecip = lat > 47 ? 1.5 : (lat > 45 ? 1.2 : 0.9);
-    const coastalBonus = lon < -123 ? 0.5 : 0;
-
-    dailyForecastData.days = freshDays.map((day, i) => ({
-      ...day,
-      amount: Math.max(0, (basePrecip + coastalBonus) * (1 + Math.sin(i * 0.5) * 0.5) + (Math.random() - 0.5) * 0.3),
-      probability: Math.min(95, Math.max(20, day.probability + (coastalBonus > 0 ? 10 : 0)))
-    }));
-
+    try {
+      const days = await fetchDailyQPF(lat, lon);
+      if (gen !== forecastSelectionGen) return; // newer selection superseded us
+      if (!days.length) {
+        dailyForecastData.state = 'error';
+      } else {
+        dailyForecastData.days = days;
+        dailyForecastData.state = 'ready';
+      }
+    } catch (e) {
+      if (gen !== forecastSelectionGen) return;
+      console.error('Gridpoint QPF fetch failed:', e);
+      dailyForecastData.state = 'error';
+    }
     renderDailyBreakdown();
   }
 
@@ -3223,8 +3265,10 @@
         fetchLocalForecast(lat, lon, name);
         updateForecastForLocation(name, parseFloat(lat), parseFloat(lon));
       } else {
-        dailyForecastData.location = 'Pacific Northwest';
-        dailyForecastData.days = generateDefaultForecastDays();
+        forecastSelectionGen++; // invalidate any in-flight fetch
+        dailyForecastData.location = null;
+        dailyForecastData.days = [];
+        dailyForecastData.state = 'idle';
         renderDailyBreakdown();
       }
     });
