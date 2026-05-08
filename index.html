@@ -1547,7 +1547,7 @@
     <div class="error-state" style="margin-bottom: 1rem;">
       <strong>JavaScript is required for live weather data.</strong><br>
       For current alerts, visit
-      <a href="https://www.weather.gov/alerts" rel="noopener">weather.gov/alerts</a>
+      <a href="https://www.weather.gov/alerts" rel="noopener noreferrer">weather.gov/alerts</a>
       or call the National Weather Service offices listed below.
     </div>
   </noscript>
@@ -1560,7 +1560,7 @@
 
     <div id="main-alert" class="alert-banner status-none" role="alert" aria-live="polite">
       <span class="alert-icon" aria-hidden="true"></span>
-      <a class="alert-content alert-link" href="https://www.indigenousaccess.org/alerts" aria-label="Open detailed weather alerts">
+      <a class="alert-content alert-link" href="https://www.indigenousaccess.org/alerts" target="_blank" rel="noopener noreferrer" aria-label="Open detailed weather alerts">
         <div class="alert-title" id="alert-title">Loading current conditions...</div>
         <div class="alert-detail" id="alert-detail">Checking alerts for Oregon, Washington, and Idaho</div>
       </a>
@@ -1653,11 +1653,11 @@
               </svg>
               <span>Current</span>
             </button>
-            <button type="button" class="map-view-btn" data-view="forecast" aria-pressed="false" title="3-day precipitation forecast">
+            <button type="button" class="map-view-btn" data-view="forecast" aria-pressed="false" title="Past 72-hour observed precipitation (MRMS Q2)">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
               </svg>
-              <span>Forecast</span>
+              <span>3-Day Precip</span>
             </button>
             <button type="button" class="map-view-btn" data-view="flooding" aria-pressed="false" title="River gauges and flooding">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -1699,7 +1699,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <span>Sources: <a href="https://www.weather.gov" target="_blank" rel="noopener" style="color:inherit;">NWS</a>, <a href="https://waterdata.usgs.gov" target="_blank" rel="noopener" style="color:inherit;">USGS</a>, <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener" style="color:inherit;">FEMA NFHL</a></span>
+        <span>Sources: <a href="https://www.weather.gov" target="_blank" rel="noopener noreferrer" style="color:inherit;">NWS</a>, <a href="https://waterdata.usgs.gov" target="_blank" rel="noopener noreferrer" style="color:inherit;">USGS</a>, <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener noreferrer" style="color:inherit;">FEMA NFHL</a></span>
         <span>Live Updates</span>
       </div>
     </section>
@@ -1718,7 +1718,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <span>Source: <a href="https://www.weather.gov" target="_blank" rel="noopener">National Weather Service</a></span>
+        <span>Source: <a href="https://www.weather.gov" target="_blank" rel="noopener noreferrer">National Weather Service</a></span>
         <span id="forecast-updated">--</span>
       </div>
     </section>
@@ -1751,26 +1751,26 @@
           </div>
         </div>
 
-        <a href="https://www.indigenousaccess.org/alerts" class="forecast-link-btn btn-yellow">
+        <a href="https://www.indigenousaccess.org/alerts" target="_blank" rel="noopener noreferrer" class="forecast-link-btn btn-yellow">
           Detailed Alerts and Safety
         </a>
       </div>
       <div class="card-footer">
-        <span>Source: <a href="https://www.weather.gov" target="_blank" rel="noopener">National Weather Service</a></span>
+        <span>Source: <a href="https://www.weather.gov" target="_blank" rel="noopener noreferrer">National Weather Service</a></span>
         <span id="active-alerts-updated">--</span>
       </div>
     </section>
 
     <section class="dashboard-card full-width" aria-labelledby="local-forecast-heading">
       <div class="card-header">
-        <h2 class="card-title" id="local-forecast-heading">Local Forecast</h2>
+        <h2 class="card-title" id="local-forecast-heading">Precipitation Forecast</h2>
         <span class="card-badge">QPF</span>
       </div>
       <div class="card-body">
         <div class="local-forecast-grid">
           <div class="local-forecast-panel">
             <div class="local-forecast-panel-header">
-              <span>Precipitation Forecast Map</span>
+              <span>National QPF (NOAA WPC)</span>
               <div class="forecast-period-controls">
                 <button type="button" class="forecast-period-btn active" data-period="today" aria-pressed="true">Today</button>
                 <button type="button" class="forecast-period-btn" data-period="3day" aria-pressed="false">3-Day</button>
@@ -1815,7 +1815,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <span>Source: <a href="https://www.wpc.ncep.noaa.gov" target="_blank" rel="noopener">NOAA WPC</a></span>
+        <span>Source: <a href="https://www.wpc.ncep.noaa.gov" target="_blank" rel="noopener noreferrer">NOAA WPC</a></span>
         <span>Updates every 6 hours</span>
       </div>
     </section>
@@ -1826,16 +1826,16 @@
       </div>
       <div class="card-body">
         <div class="resources-grid">
-          <a href="https://www.indigenousaccess.org/home" class="resource-link resource-link-large btn-pink">
+          <a href="https://www.indigenousaccess.org/home" target="_blank" rel="noopener noreferrer" class="resource-link resource-link-large btn-pink">
             <span class="resource-name">View All Resources</span>
           </a>
-          <a href="https://www.weather.gov/safety/flood" target="_blank" rel="noopener" class="resource-link">
+          <a href="https://www.weather.gov/safety/flood" target="_blank" rel="noopener noreferrer" class="resource-link">
             <span class="resource-name">Flood Safety</span>
           </a>
-          <a href="https://www.ready.gov/floods" target="_blank" rel="noopener" class="resource-link">
+          <a href="https://www.ready.gov/floods" target="_blank" rel="noopener noreferrer" class="resource-link">
             <span class="resource-name">Preparedness</span>
           </a>
-          <a href="https://www.disasterassistance.gov/" target="_blank" rel="noopener" class="resource-link">
+          <a href="https://www.disasterassistance.gov/" target="_blank" rel="noopener noreferrer" class="resource-link">
             <span class="resource-name">FEMA Aid</span>
           </a>
         </div>
@@ -1866,7 +1866,7 @@
           </div>
         </div>
 
-        <a href="https://www.indigenousaccess.org/contacts" class="contact-link-large btn-red">
+        <a href="https://www.indigenousaccess.org/contacts" target="_blank" rel="noopener noreferrer" class="contact-link-large btn-red">
           View All Emergency Contacts
         </a>
       </div>
@@ -1874,19 +1874,19 @@
 
   </div><footer class="dashboard-footer">
     <div class="footer-sources">
-      <a href="https://www.weather.gov" target="_blank" rel="noopener">NOAA/NWS</a>
+      <a href="https://www.weather.gov" target="_blank" rel="noopener noreferrer">NOAA/NWS</a>
       <span>|</span>
-      <a href="https://waterdata.usgs.gov" target="_blank" rel="noopener">USGS</a>
+      <a href="https://waterdata.usgs.gov" target="_blank" rel="noopener noreferrer">USGS</a>
       <span>|</span>
-      <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener">FEMA NFHL</a>
+      <a href="https://msc.fema.gov/portal/home" target="_blank" rel="noopener noreferrer">FEMA NFHL</a>
       <span>|</span>
-      <a href="https://www.wpc.ncep.noaa.gov" target="_blank" rel="noopener">NOAA WPC</a>
+      <a href="https://www.wpc.ncep.noaa.gov" target="_blank" rel="noopener noreferrer">NOAA WPC</a>
       <span>|</span>
-      <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>
+      <a href="https://leafletjs.com" target="_blank" rel="noopener noreferrer">Leaflet</a>
       <span>|</span>
-      <a href="https://carto.com" target="_blank" rel="noopener">CARTO</a>
+      <a href="https://carto.com" target="_blank" rel="noopener noreferrer">CARTO</a>
       <span>|</span>
-      <a href="https://mesonet.agron.iastate.edu" target="_blank" rel="noopener">Iowa Environmental Mesonet</a>
+      <a href="https://mesonet.agron.iastate.edu" target="_blank" rel="noopener noreferrer">Iowa Environmental Mesonet</a>
       <span>|</span>
       <span style="color: rgba(255,255,255,0.4);">Tribal data: BIA Federal Register 89 FR 944 (Jan 2024)</span>
     </div>
@@ -2361,7 +2361,7 @@
         <div class="error-state">
           <strong>⚠️ Alert Data Unavailable</strong><br>
           ${userMessage}<br><br>
-          <a href="https://www.weather.gov/alerts" target="_blank" rel="noopener">
+          <a href="https://www.weather.gov/alerts" target="_blank" rel="noopener noreferrer">
             View alerts at weather.gov →
           </a>
           <br>
@@ -2513,25 +2513,28 @@
       switch(view) {
         case 'current':
           if (layers.forecast) map.removeLayer(layers.forecast);
+          if (layers.rivers) map.removeLayer(layers.rivers);
+          if (layers.floodZones) map.removeLayer(layers.floodZones);
           loadRadarOverlay();
           if (currentAlerts.length > 0) {
             renderMapAlerts(currentAlerts);
           }
-          if (layers.floodZones) map.removeLayer(layers.floodZones);
           break;
 
         case 'forecast':
           if (layers.radar) map.removeLayer(layers.radar);
+          if (layers.rivers) map.removeLayer(layers.rivers);
+          if (layers.floodZones) map.removeLayer(layers.floodZones);
           loadForecastOverlay();
           if (currentAlerts.length > 0) {
             renderMapAlerts(currentAlerts);
           }
-          if (layers.floodZones) map.removeLayer(layers.floodZones);
           break;
 
         case 'flooding':
           if (layers.radar) map.removeLayer(layers.radar);
           if (layers.forecast) map.removeLayer(layers.forecast);
+          if (layers.rivers) layers.rivers.addTo(map);
           await loadRiverGauges();
           if (layers.floodZones) layers.floodZones.addTo(map);
           break;
@@ -2627,7 +2630,7 @@
         notice.innerHTML = `
           <div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 1000; background: rgba(30,40,50,0.95); padding: 8px 16px; border-radius: 6px; border: 1px solid #444; font-size: 0.85rem;">
             ⚠️ Tribal boundary data unavailable
-            <a href="https://biamaps.geoplatform.gov/" target="_blank" style="color: #FFD700; margin-left: 8px;">View at BIA →</a>
+            <a href="https://biamaps.geoplatform.gov/" target="_blank" rel="noopener noreferrer" style="color: #FFD700; margin-left: 8px;">View at BIA →</a>
             <button type="button" class="dismiss-notice-btn" style="background: none; border: none; color: #888; margin-left: 8px; cursor: pointer;">✕</button>
           </div>
         `;
@@ -2838,7 +2841,7 @@
             </div>
             <div style="font-size: 12px;">
               Unable to load USGS river gauges.<br>
-              <a href="https://waterdata.usgs.gov" target="_blank" style="color: #3B82F6;">
+              <a href="https://waterdata.usgs.gov" target="_blank" rel="noopener noreferrer" style="color: #3B82F6;">
                 View at waterdata.usgs.gov →
               </a>
             </div>
@@ -2950,11 +2953,16 @@
         break;
 
       case 'forecast':
+        // IEM MRMS Q2 72-hour palette: light blue (trace) → green → yellow →
+        // orange → red. The tile shows the *past* 72 hours of observed
+        // precipitation, not a forecast — see the panel-level QPF map for
+        // forecast totals.
         legendEl.innerHTML = `
-          <div class="legend-item"><span class="legend-swatch" style="background: rgba(0, 255, 0, 0.5);"></span><span>&lt;0.5"</span></div>
-          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 255, 0, 0.6);"></span><span>0.5-1"</span></div>
-          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 127, 0, 0.6);"></span><span>1-2"</span></div>
-          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 0, 0, 0.6);"></span><span>&gt;2"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(95, 175, 255, 0.7);"></span><span>&lt;0.25"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(0, 200, 0, 0.7);"></span><span>0.25-1"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 220, 0, 0.7);"></span><span>1-2"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(255, 130, 0, 0.7);"></span><span>2-4"</span></div>
+          <div class="legend-item"><span class="legend-swatch" style="background: rgba(220, 0, 0, 0.7);"></span><span>&gt;4"</span></div>
         `;
         break;
 
@@ -3069,7 +3077,7 @@
         <div class="error-state">
           <strong>⚠️ Forecast Unavailable</strong><br>
           ${errorMessages[errorType]}<br><br>
-          <a href="https://forecast.weather.gov/MapClick.php?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}" target="_blank" rel="noopener">
+          <a href="https://forecast.weather.gov/MapClick.php?lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}" target="_blank" rel="noopener noreferrer">
             Try NWS directly for ${safeTribe} →
           </a>
         </div>
@@ -3081,13 +3089,14 @@
   // ============================================================================
   // LOCAL FORECAST - QPF MAP AND DAILY BREAKDOWN
   // ============================================================================
-  // Primary QPF maps from NOAA WPC. The previous NWRFC URLs (fcstprecipday1.png)
-  // started 404'ing when NWRFC reorganized; WPC's national QPF imagery is the
-  // long-stable replacement. Coverage is CONUS rather than PNW-cropped, but the
-  // PNW corner is large enough to read.
+  // Primary QPF maps from NOAA WPC. NCEP "fill_NNqwbg.gif" naming:
+  //   94 = Day 1 (24h)     98 = Day 1-3 (72h)     99 = Day 1-7 (168h)
+  // Coverage is CONUS rather than PNW-cropped — the PNW corner is large
+  // enough to read. (We had 93ewbg.gif here for "3-day" but that's actually
+  // the 6-hour early-period QPF, not a 3-day total.)
   const QPF_URLS = {
     today: 'https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif',
-    '3day': 'https://www.wpc.ncep.noaa.gov/qpf/93ewbg.gif',
+    '3day': 'https://www.wpc.ncep.noaa.gov/qpf/fill_98qwbg.gif',
     '7day': 'https://www.wpc.ncep.noaa.gov/qpf/p168i.gif'
   };
 
@@ -3112,6 +3121,16 @@
     // Always show at least a 2% sliver so non-zero values aren't invisible
     const maxAmount = 15;
     return Math.max(Math.min((amount / maxAmount) * 100, 100), 2);
+  }
+
+  // Format daily amounts so trace values aren't visually identical to true zero.
+  // 0          → "0.0"
+  // 0..0.1"    → two decimals (e.g. "0.02")
+  // ≥ 0.1"     → one decimal
+  function formatRainAmount(amount) {
+    if (!(amount > 0)) return '0.0';
+    if (amount < 0.1) return amount.toFixed(2);
+    return amount.toFixed(1);
   }
 
   function renderDailyBreakdown() {
@@ -3158,7 +3177,7 @@
         <div class="daily-bar-track">
           <div class="daily-bar-fill ${getRainClass(day.amount)}" style="width: ${getBarWidth(day.amount)}%"></div>
         </div>
-        <div class="daily-bar-amount">${day.amount.toFixed(1)}"</div>
+        <div class="daily-bar-amount">${formatRainAmount(day.amount)}"</div>
         <div class="daily-bar-prob">${day.probability}%</div>
       </div>
     `).join('');
@@ -3181,7 +3200,7 @@
       errorMsg.className = 'qpf-error-message';
       errorMsg.innerHTML = `
         <strong>⚠️ Forecast image unavailable</strong><br>
-        <a href="https://www.wpc.ncep.noaa.gov/qpf/qpf_fill.html" target="_blank" rel="noopener">
+        <a href="https://www.wpc.ncep.noaa.gov/qpf/qpf_fill.html" target="_blank" rel="noopener noreferrer">
           View at NOAA WPC →
         </a>
       `;
@@ -3245,6 +3264,42 @@
   // ============================================================================
   function initializeEventListeners() {
     const tribeSelect = domCache.tribeSelect || document.getElementById('tribe-select');
+    const stateButtons = Array.from(document.querySelectorAll('.state-btn'));
+
+    // Cache the original optgroups in their original order so we can restore
+    // them after filtering. `hidden` on optgroup is silently ignored by every
+    // major browser, so we have to actually remove non-matching groups from
+    // the DOM and re-attach them on toggle.
+    const STATE_LABELS = { OR: 'oregon', WA: 'washington', ID: 'idaho' };
+    const labelToState = label => {
+      const l = (label || '').toLowerCase();
+      if (l.includes('oregon')) return 'OR';
+      if (l.includes('washington')) return 'WA';
+      if (l.includes('idaho')) return 'ID';
+      return null;
+    };
+    const allOptgroups = Array.from(tribeSelect.querySelectorAll('optgroup'));
+
+    function setActiveStateButton(state) {
+      stateButtons.forEach(b => {
+        const isActive = state != null && b.dataset.state === state;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    }
+
+    function applyStateFilter(state) {
+      // Detach every optgroup, then re-attach in original order — either all,
+      // or only the one matching the selected state.
+      allOptgroups.forEach(g => g.remove());
+      const wanted = state ? STATE_LABELS[state] : null;
+      allOptgroups.forEach(g => {
+        if (!wanted || g.label.toLowerCase().includes(wanted)) {
+          tribeSelect.appendChild(g);
+        }
+      });
+    }
+
     tribeSelect.addEventListener('change', function() {
       const value = this.value;
       if (value) {
@@ -3252,8 +3307,14 @@
         const [lat, lon] = coords.split(',');
         fetchLocalForecast(lat, lon, name);
         updateForecastForLocation(name, parseFloat(lat), parseFloat(lon));
+
+        // Sync state-button highlight to the picked tribe's state — but
+        // don't filter the dropdown, the user already found their tribe.
+        const selected = this.options[this.selectedIndex];
+        const state = labelToState(selected?.parentElement?.label);
+        if (state) setActiveStateButton(state);
       } else {
-        forecastSelectionGen++; // invalidate any in-flight fetch
+        forecastSelectionGen++;
         dailyForecastData.location = null;
         dailyForecastData.days = [];
         dailyForecastData.state = 'idle';
@@ -3261,35 +3322,28 @@
       }
     });
 
-    const stateButtons = document.querySelectorAll('.state-btn');
     stateButtons.forEach(btn => {
       btn.addEventListener('click', function() {
         const state = this.dataset.state;
         const wasActive = this.classList.contains('active');
 
-        stateButtons.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-pressed', 'false');
-        });
+        // Track which option was selected before we mutate the DOM, so we
+        // can detect if the user's selection got filtered out.
+        const previouslySelectedGroup =
+          tribeSelect.options[tribeSelect.selectedIndex]?.parentElement;
 
-        const STATE_LABELS = { OR: 'oregon', WA: 'washington', ID: 'idaho' };
-        const optgroups = tribeSelect.querySelectorAll('optgroup');
-
-        if (!wasActive) {
-          this.classList.add('active');
-          this.setAttribute('aria-pressed', 'true');
-
-          const wantedLabel = STATE_LABELS[state];
-          optgroups.forEach(group => {
-            group.hidden = !group.label.toLowerCase().includes(wantedLabel);
-          });
+        if (wasActive) {
+          // Toggle off — show all states.
+          setActiveStateButton(null);
+          applyStateFilter(null);
         } else {
-          optgroups.forEach(group => { group.hidden = false; });
+          setActiveStateButton(state);
+          applyStateFilter(state);
         }
 
-        // If the currently-selected option is now in a hidden group, reset.
-        const selected = tribeSelect.options[tribeSelect.selectedIndex];
-        if (selected?.parentElement?.hidden) {
+        // If the previously-selected optgroup is no longer attached, the
+        // selection is stale; clear it and notify dependent panels.
+        if (previouslySelectedGroup && !tribeSelect.contains(previouslySelectedGroup)) {
           tribeSelect.value = '';
           tribeSelect.dispatchEvent(new Event('change'));
         }
