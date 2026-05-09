@@ -1961,22 +1961,35 @@
   // NWS forecast point at all and are intentionally absent from this map;
   // they still appear on the map with raw level data and "normal" status.
   const FLOOD_STAGES = {
+    // Washington
     '12061500': { lid: 'SRPW1', name: 'Skokomish River near Potlatch',          action: 15,   minor: 16.5, moderate: 17.5, major: 18 },
     '12041200': { lid: 'HORW1', name: 'Hoh River near Forks',                   action: null, minor: null, moderate: null, major: null },
     '12039500': { lid: 'QLTW1', name: 'Quinault River at Quinault Lake',        action: null, minor: null, moderate: null, major: null },
-    '14105700': { lid: 'TDAO3', name: 'Columbia River at The Dalles Dam',       action: null, minor: null, moderate: null, major: null },
-    '14211720': { lid: 'PRTO3', name: 'Willamette River at Portland',           action: 17,   minor: 18,   moderate: 24,   major: 28 },
     '12113000': { lid: 'AUBW1', name: 'Green River (WA) near Auburn',           action: null, minor: null, moderate: null, major: null },
     '12189500': { lid: 'SAKW1', name: 'Sauk River near Sauk',                   action: null, minor: null, moderate: null, major: null },
+    '12149000': { lid: 'CRNZ1', name: 'Snoqualmie River near Carnation',        action: null, minor: 54,   moderate: 56,   major: 58 },
+    // Oregon (and OR/WA boundary)
+    '14105700': { lid: 'TDAO3', name: 'Columbia River at The Dalles Dam',       action: null, minor: null, moderate: null, major: null },
+    '14211720': { lid: 'PRTO3', name: 'Willamette River at Portland',           action: 17,   minor: 18,   moderate: 24,   major: 28 },
     '14321000': { lid: 'EKTO3', name: 'Umpqua River near Elkton',               action: 25,   minor: 33,   moderate: 40,   major: 50 },
+    // Idaho — covering Nez Perce, Coeur d'Alene, and Shoshone-Bannock tribal lands
     '13317000': { lid: 'WHBI1', name: 'Salmon River at White Bird',             action: 30,   minor: 32,   moderate: 33,   major: 35 },
-    '12149000': { lid: 'CRNZ1', name: 'Snoqualmie River near Carnation',        action: null, minor: 54,   moderate: 56,   major: 58 }
+    '13342500': { lid: 'SPDI1', name: 'Clearwater River at Spalding',           action: 17,   minor: 18,   moderate: 19,   major: 19.4 },
+    '12413500': { lid: 'CTLI1', name: "Coeur d'Alene River near Cataldo",       action: 42,   minor: 43,   moderate: 46,   major: 50 },
+    '13062500': { lid: 'SNAI1', name: 'Snake River at Blackfoot',               action: 9.5,  minor: 10.5, moderate: 11.5, major: 13 },
+    '13037500': { lid: 'HEII1', name: 'Snake River near Heise',                 action: 6.25, minor: 8,    moderate: 9.5,  major: 11 },
+    '13068500': { lid: 'BLFI1', name: 'Blackfoot River near Blackfoot (Ft Hall)', action: 5.5, minor: 5.8,  moderate: null, major: null }
   };
 
   const PNW_RIVER_GAUGES = [
+    // Washington
     '12048000', '12061500', '12041200', '12039500',
-    '12433000', '14105700', '14211720', '12113000',
-    '12189500', '14321000', '13317000', '12149000'
+    '12433000', '12113000', '12189500', '12149000',
+    // Oregon / OR-WA boundary
+    '14105700', '14211720', '14321000',
+    // Idaho
+    '13317000', '13342500', '12413500', '13062500',
+    '13037500', '13068500', '12309500'
   ];
 
   // ============================================================================
