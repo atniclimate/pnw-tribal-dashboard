@@ -19,7 +19,13 @@
    ============================================================================ */
 :root {
   /* GLASSMORPHISM CORE */
-  --glass-blur: blur(20px);
+  /* Three blur depths give the dashboard a real z-axis: near surfaces (alert
+     banners, popups) feel close, mid surfaces (cards) sit at conversational
+     distance, far surfaces (overlays, the map loading veil) push back. */
+  --glass-blur-near: blur(8px);
+  --glass-blur: blur(20px);     /* alias for backward-compat / mid depth */
+  --glass-blur-mid: blur(20px);
+  --glass-blur-far: blur(36px);
   --glass-bg: rgba(20, 20, 20, 0.6);
   --glass-bg-hover: rgba(30, 30, 30, 0.7);
   --glass-border: rgba(255, 255, 255, 0.08);
@@ -59,13 +65,15 @@
   --accent-hover: #14b8a6;
   --accent-light: rgba(34, 211, 238, 0.15);
 
-  /* FLUID SPACING */
-  --space-xs: clamp(0.125rem, 0.5vw, 0.25rem);
-  --space-sm: clamp(0.25rem, 1vw, 0.5rem);
-  --space-md: clamp(0.5rem, 1.5vw, 0.75rem);
-  --space-lg: clamp(0.75rem, 2vw, 1rem);
-  --space-xl: clamp(1rem, 3vw, 1.5rem);
-  --space-2xl: clamp(1.5rem, 4vw, 2rem);
+  /* FLUID SPACING — clamp floors are functional, not aesthetic. The previous
+     --space-xs floor of 0.125rem (2px) was below a hairline at small widths. */
+  --space-2xs: 0.25rem;
+  --space-xs: clamp(0.375rem, 0.5vw + 0.25rem, 0.5rem);
+  --space-sm: clamp(0.5rem, 1vw, 0.75rem);
+  --space-md: clamp(0.75rem, 1.5vw, 1rem);
+  --space-lg: clamp(1rem, 2vw, 1.25rem);
+  --space-xl: clamp(1.25rem, 3vw, 1.75rem);
+  --space-2xl: clamp(1.75rem, 4vw, 2.25rem);
 
   /* FLUID TYPOGRAPHY */
   --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
@@ -77,6 +85,13 @@
   --text-body: clamp(0.875rem, 1.5vw, 1rem);
   --text-small: clamp(0.75rem, 1.25vw, 0.875rem);
   --text-micro: clamp(0.625rem, 1vw, 0.75rem);
+
+  /* Differentiated leading: tight for headlines, comfortable for prose, in
+     between for stacked numeric readouts. Global `line-height: 1.6` was too
+     loose for data and too tight for marketing copy at the same time. */
+  --leading-tight: 1.18;
+  --leading-data: 1.3;
+  --leading-prose: 1.55;
 
   /* GRID */
   --grid-gap: clamp(0.75rem, 2vw, 1.5rem);
@@ -111,10 +126,12 @@
 
 .flood-dashboard {
   font-family: var(--font-body);
+  /* Tabular figures keep digit columns aligned when live data ticks. */
+  font-variant-numeric: tabular-nums lining-nums;
   min-height: 100vh;
   padding: var(--space-lg);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: var(--leading-prose);
   position: relative;
   overflow-x: hidden;
 
@@ -134,7 +151,13 @@
     180% 180%,
     150% 150%,
     100% 100%;
-  animation: environmentDrift 45s ease-in-out infinite;
+}
+
+/* Animate the background only when the user hasn't asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .flood-dashboard {
+    animation: environmentDrift 45s ease-in-out infinite;
+  }
 }
 
 @keyframes environmentDrift {
@@ -150,6 +173,15 @@
   75% {
     background-position: 50% 75%, 75% 50%, 25% 0%, 0% 0%;
   }
+}
+
+/* Universal keyboard-focus indicator — emergency dashboards must be navigable
+   without a mouse. Browser default `outline: none` would leave keyboard users
+   blind. */
+.flood-dashboard :focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .flood-dashboard::before {
@@ -217,7 +249,8 @@
   font-size: var(--text-heading);
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.022em;
+  line-height: var(--leading-tight);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -274,12 +307,20 @@
   border-left: clamp(0.1875rem, 0.5vw, 0.25rem) solid var(--danger-warning);
   color: #fca5a5;
   box-shadow: var(--shadow-glass), var(--danger-warning-glow);
-  animation: pulse-warning 2s ease-in-out infinite;
+}
+
+/* Pulse the *glow* (not text opacity) for a finite count, so the banner
+   draws attention on arrival but settles for sustained reading. Honors
+   prefers-reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .alert-banner.status-warning {
+    animation: pulse-warning 1.8s ease-in-out 6;
+  }
 }
 
 @keyframes pulse-warning {
-  0%, 100% { opacity: 1; box-shadow: var(--shadow-glass), var(--danger-warning-glow); }
-  50% { opacity: 0.95; box-shadow: var(--shadow-glass), 0 0 clamp(2rem, 4vw, 3rem) rgba(239, 68, 68, 0.7); }
+  0%, 100% { box-shadow: var(--shadow-glass), var(--danger-warning-glow); }
+  50%      { box-shadow: var(--shadow-glass), 0 0 clamp(2rem, 4vw, 3rem) rgba(239, 68, 68, 0.85); }
 }
 
 .alert-icon {
@@ -338,15 +379,40 @@
 .tribe-select {
   width: 100%;
   padding: var(--space-md);
+  padding-right: 2.5rem;
   font-size: var(--text-body);
   font-family: var(--font-body);
-  border: 0.125rem solid var(--glass-border);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
   color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   min-height: clamp(2.75rem, 6vh, 3rem);
+
+  /* Custom chevron — native triangle is invisible on dark and varies wildly
+     across browsers. */
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%2322d3ee' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 8 10 12 14 8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-size: 1.125rem 1.125rem;
+}
+
+/* The native dropdown menu can't be fully styled, but at least the option
+   list should not flash white on a dark theme. */
+.tribe-select option,
+.tribe-select optgroup {
+  background: #0d1f33;
+  color: var(--text-primary);
+}
+.tribe-select optgroup {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .tribe-select:hover { border-color: var(--accent-primary); }
@@ -355,6 +421,16 @@
   outline: none;
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 clamp(0.125rem, 0.3vw, 0.1875rem) var(--accent-light);
+}
+
+/* Brief border-flash when the state filter is toggled off — gives the user
+   visual confirmation that the action took effect. */
+.tribe-select.flash {
+  animation: filter-clear-flash 320ms ease-out;
+}
+@keyframes filter-clear-flash {
+  0%   { border-color: var(--accent-primary); box-shadow: 0 0 0 0.125rem var(--accent-light); }
+  100% { border-color: var(--glass-border);   box-shadow: 0 0 0 0 transparent; }
 }
 
 .state-buttons {
@@ -384,11 +460,29 @@
   color: var(--accent-primary);
 }
 
-.state-btn.active {
-  background: var(--accent-primary);
+/* Unified active treatment for every toggle/segmented control on the
+   dashboard. An inset bottom bar reads as a tab marker rather than a
+   primary CTA fill — keeps the real call-to-action buttons distinct. */
+.state-btn[aria-pressed="true"],
+.alert-filter-btn[aria-pressed="true"],
+.forecast-period-btn[aria-pressed="true"],
+.map-view-btn[aria-pressed="true"] {
+  background: rgba(34, 211, 238, 0.06);
   border-color: var(--accent-primary);
-  color: white;
-  box-shadow: var(--shadow-glow);
+  color: var(--text-primary);
+  box-shadow: inset 0 -2px 0 0 var(--accent-primary);
+}
+
+/* Legacy .active class kept as an alias for the same treatment, since
+   several handlers toggle .active directly. */
+.state-btn.active,
+.alert-filter-btn.active,
+.forecast-period-btn.active,
+.map-view-btn.active {
+  background: rgba(34, 211, 238, 0.06);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: inset 0 -2px 0 0 var(--accent-primary);
 }
 
 /* ============================================================================
@@ -433,9 +527,10 @@
   transition: all 0.3s ease;
 }
 
+/* Non-interactive data cards stay still on hover — only the border lights up.
+   Translation should be reserved for things the user can act on. */
 .dashboard-card:hover {
   border-color: var(--glass-border-hover);
-  transform: translateY(clamp(-0.125rem, -0.25vw, -0.1875rem));
 }
 
 .card-header {
@@ -462,22 +557,49 @@
   color: var(--text-primary);
   flex: 1;
   letter-spacing: 0.02em;
+  line-height: var(--leading-tight);
 }
 
+/* Telegraphic-style status mark instead of a pill: monospace label + a small
+   indicator dot. Reads as instrument-panel-tactile rather than SaaS-pill. */
 .card-badge {
+  font-family: var(--font-mono);
   font-size: var(--text-micro);
   font-weight: 600;
-  padding: var(--space-xs) var(--space-sm);
-  background: var(--accent-light);
+  letter-spacing: 0.18em;
+  padding: 0;
+  background: transparent;
   color: var(--accent-primary);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   white-space: nowrap;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.card-badge::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 0 currentColor;
+  flex-shrink: 0;
+}
+
+/* "LIVE"-marked badges actually pulse, so the indicator earns its label. */
+@media (prefers-reduced-motion: no-preference) {
+  .card-badge-live::before {
+    animation: live-pulse 1.6s ease-in-out infinite;
+  }
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1;    box-shadow: 0 0 0 0 currentColor; }
+  50%      { opacity: 0.45; box-shadow: 0 0 0 4px rgba(34, 211, 238, 0); }
 }
 
 .card-badge.error {
-  background: var(--danger-warning-bg);
   color: var(--danger-warning);
 }
 
@@ -550,12 +672,7 @@
   color: var(--icon-hover);
 }
 
-.alert-filter-btn.active {
-  background: var(--accent-light);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  box-shadow: var(--shadow-glow);
-}
+/* .alert-filter-btn active state — see unified [aria-pressed=true] / .active rule above */
 
 .active-alerts-list {
   display: flex;
@@ -740,12 +857,7 @@
   color: var(--icon-hover);
 }
 
-.map-view-btn.active {
-  background: var(--accent-light);
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  box-shadow: var(--shadow-glow);
-}
+/* .map-view-btn active state — see unified [aria-pressed=true] / .active rule above */
 
 .map-view-btn svg {
   width: clamp(1rem, 2.5vw, 1.25rem);
@@ -819,16 +931,36 @@
   flex-shrink: 0;
 }
 
+/* Each tier has a distinct shape signature so colorblind users (and anyone
+   on a low-contrast display) can tell categories apart. */
 .legend-swatch.swatch-warning { background: var(--danger-warning); }
-.legend-swatch.swatch-watch { background: var(--danger-watch); }
-.legend-swatch.swatch-advisory { background: #F97316; }
+.legend-swatch.swatch-watch {
+  background: linear-gradient(135deg, var(--danger-watch) 50%, transparent 50%);
+  background-color: rgba(234, 179, 8, 0.2);
+}
+.legend-swatch.swatch-advisory {
+  background: transparent;
+  border: 2px solid #F97316;
+}
 .legend-swatch.swatch-radar { background: rgba(34, 211, 238, 0.4); border: 1px solid var(--accent-primary); }
+
+/* River tiers — tone-graded, with major getting a saturated inset ring so
+   it's distinguishable from moderate at small sizes. */
 .legend-swatch.river-normal { background: #22c55e; }
-.legend-swatch.river-action { background: #eab308; }
-.legend-swatch.river-minor { background: #f97316; }
+.legend-swatch.river-action {
+  background: linear-gradient(135deg, #eab308 50%, transparent 50%);
+  background-color: rgba(234, 179, 8, 0.2);
+}
+.legend-swatch.river-minor  { background: #f97316; }
 .legend-swatch.river-moderate { background: #ef4444; }
-.legend-swatch.river-major { background: #dc2626; }
-.legend-swatch.river-unknown { background: #6b7280; }
+.legend-swatch.river-major  {
+  background: #dc2626;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+.legend-swatch.river-unknown {
+  background: transparent;
+  border: 1px dashed #9aa8b8;
+}
 
 /* Map Loading Overlay */
 .map-loading {
@@ -865,6 +997,22 @@
 
 .leaflet-popup-tip {
   background: rgba(15, 15, 26, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* The default Leaflet close button is a black "x" — invisible on a dark
+   wrapper. Lift it to a muted white that brightens on hover. */
+.leaflet-popup-close-button {
+  color: rgba(255, 255, 255, 0.5) !important;
+  padding: 6px 8px !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.leaflet-popup-close-button:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.06) !important;
 }
 
 .leaflet-popup-content {
@@ -907,12 +1055,21 @@
   background: rgba(15, 15, 26, 0.9) !important;
   color: rgba(255, 255, 255, 0.8) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
 }
 
 .leaflet-control-zoom a:hover {
   background: rgba(30, 30, 50, 0.95) !important;
   color: #fff !important;
 }
+
+/* Match every other dashboard radius (=0). The default 4px Leaflet rounding
+   on the zoom container clashes with the dashboard's sharp edges. */
+.leaflet-bar { border-radius: 0 !important; }
+.leaflet-bar a:first-child { border-top-left-radius: 0 !important; border-top-right-radius: 0 !important; }
+.leaflet-bar a:last-child  { border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important; }
 
 .leaflet-control-attribution {
   display: none !important;
@@ -981,11 +1138,7 @@
   color: var(--text-primary);
 }
 
-.forecast-period-btn.active {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #ffffff;
-}
+/* .forecast-period-btn active state — see unified [aria-pressed=true] / .active rule above */
 
 .qpf-map-container {
   position: relative;
@@ -1427,17 +1580,43 @@
   min-height: 200px;
 }
 
+/* Domain-specific loading indicator: three vertical bars animated like a
+   falling-rain bargraph. Uses ::before, the element itself (centered bar),
+   and ::after — works on existing empty .loading-spinner divs without
+   markup changes. */
 .loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid var(--card-border);
-  border-top-color: var(--accent-primary);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+  position: relative;
+  width: 32px;
+  height: 28px;
+  /* The element itself becomes the centered bar via background. */
+  background:
+    linear-gradient(to top, var(--accent-primary), rgba(34, 211, 238, 0.4))
+    no-repeat 50% 100% / 6px 100%;
+  transform-origin: bottom;
+}
+.loading-spinner::before,
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to top, var(--accent-primary), rgba(34, 211, 238, 0.4));
+  border-radius: 1px;
+  transform-origin: bottom;
+}
+.loading-spinner::before { left: 0; }
+.loading-spinner::after  { right: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading-spinner          { animation: rain-bar 0.9s ease-in-out 0.15s infinite; }
+  .loading-spinner::before  { animation: rain-bar 0.9s ease-in-out 0s    infinite; }
+  .loading-spinner::after   { animation: rain-bar 0.9s ease-in-out 0.3s  infinite; }
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+@keyframes rain-bar {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.55; }
+  50%      { transform: scaleY(1);   opacity: 1; }
 }
 
 .loading-text {
@@ -1640,7 +1819,7 @@
     <section class="dashboard-card full-width" aria-labelledby="conditions-heading">
       <div class="card-header">
         <h2 class="card-title" id="conditions-heading">Current Conditions and Forecast</h2>
-        <span class="card-badge">LIVE</span>
+        <span class="card-badge card-badge-live">LIVE</span>
       </div>
       <div class="card-body">
         <div id="tribal-map-container">
@@ -3351,6 +3530,11 @@
           // Toggle off — show all states.
           setActiveStateButton(null);
           applyStateFilter(null);
+          // Flash the select border briefly so the user sees the filter cleared.
+          tribeSelect.classList.remove('flash');
+          // Force a reflow so re-adding the class restarts the animation.
+          void tribeSelect.offsetWidth;
+          tribeSelect.classList.add('flash');
         } else {
           setActiveStateButton(state);
           applyStateFilter(state);
