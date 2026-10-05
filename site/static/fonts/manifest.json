@@ -1,0 +1,147 @@
+{
+  "schema": "cthd.fonts-manifest/1",
+  "description": "Self-hosted web fonts (SIL Open Font License 1.1), vendored once by lane L1 on 10/05/2026 under the 10/04/2026 web typography ruling: League Spartan 600 and 500 for titles and UI, Roboto 400 and 500 for body text, and a Noto Sans subset for Indigenous orthography characters. scripts/check/fonts-coverage.mjs verifies every SHA-256 and the glyph coverage of Nation names.",
+  "faces": [
+    {
+      "file": "league-spartan-latin.woff2",
+      "family": "League Spartan",
+      "weight": "100 900",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "source": {
+        "package": "@fontsource-variable/league-spartan",
+        "version": "5.3.0",
+        "tarball": "https://registry.npmjs.org/@fontsource-variable/league-spartan/-/league-spartan-5.3.0.tgz",
+        "integrity": "sha512-dn7OVujDOZ6//Bs0TEhi7QTZvwOJ8YNdNfviT29AC219TKaimMpWtyMGTCdN7IB3ho6HxQj7VEbolHah2tER3g==",
+        "member": "package/files/league-spartan-latin-wght-normal.woff2"
+      },
+      "license": "OFL-league-spartan.txt",
+      "loaded": "preload",
+      "bytes": 24020,
+      "sha256": "7d843a9fa4dcd050da68405d9093f8ab8298f8f60a97155e85ab84c9ed3040e2"
+    },
+    {
+      "file": "league-spartan-latin-ext.woff2",
+      "family": "League Spartan",
+      "weight": "100 900",
+      "subset": "latin-ext",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+      "source": {
+        "package": "@fontsource-variable/league-spartan",
+        "version": "5.3.0",
+        "tarball": "https://registry.npmjs.org/@fontsource-variable/league-spartan/-/league-spartan-5.3.0.tgz",
+        "integrity": "sha512-dn7OVujDOZ6//Bs0TEhi7QTZvwOJ8YNdNfviT29AC219TKaimMpWtyMGTCdN7IB3ho6HxQj7VEbolHah2tER3g==",
+        "member": "package/files/league-spartan-latin-ext-wght-normal.woff2"
+      },
+      "license": "OFL-league-spartan.txt",
+      "loaded": "unicode-range",
+      "bytes": 20096,
+      "sha256": "39f5433a75963d1b499360005d58e95ad96d07ed152be6f15dda11b6d5e88f8d"
+    },
+    {
+      "file": "roboto-400-latin.woff2",
+      "family": "Roboto",
+      "weight": "400",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "source": {
+        "package": "@fontsource/roboto",
+        "version": "5.3.0",
+        "tarball": "https://registry.npmjs.org/@fontsource/roboto/-/roboto-5.3.0.tgz",
+        "integrity": "sha512-BapRJOWYP+LZ21zp+wBQjfpPYKRoxc4LspJ/RLuI+HSMBD5u/X4O+ESDrSvEqDSy0rAl7GwBJ+09mdc16cVQ1Q==",
+        "member": "package/files/roboto-latin-400-normal.woff2"
+      },
+      "license": "OFL-roboto.txt",
+      "loaded": "preload",
+      "bytes": 21884,
+      "sha256": "425c0713a8176f92273d378599c7eac57de7fafabd4bd0ed457b70eb8f80d371"
+    },
+    {
+      "file": "roboto-500-latin.woff2",
+      "family": "Roboto",
+      "weight": "500",
+      "subset": "latin",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "source": {
+        "package": "@fontsource/roboto",
+        "version": "5.3.0",
+        "tarball": "https://registry.npmjs.org/@fontsource/roboto/-/roboto-5.3.0.tgz",
+        "integrity": "sha512-BapRJOWYP+LZ21zp+wBQjfpPYKRoxc4LspJ/RLuI+HSMBD5u/X4O+ESDrSvEqDSy0rAl7GwBJ+09mdc16cVQ1Q==",
+        "member": "package/files/roboto-latin-500-normal.woff2"
+      },
+      "license": "OFL-roboto.txt",
+      "loaded": "on use",
+      "bytes": 22200,
+      "sha256": "5bcc3aa180e7f26f643cd5b2621cd7c2de193d0661d913a94afd3d4881a7a34b"
+    },
+    {
+      "file": "roboto-400-latin-ext.woff2",
+      "family": "Roboto",
+      "weight": "400",
+      "subset": "latin-ext",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+      "source": {
+        "package": "@fontsource/roboto",
+        "version": "5.3.0",
+        "tarball": "https://registry.npmjs.org/@fontsource/roboto/-/roboto-5.3.0.tgz",
+        "integrity": "sha512-BapRJOWYP+LZ21zp+wBQjfpPYKRoxc4LspJ/RLuI+HSMBD5u/X4O+ESDrSvEqDSy0rAl7GwBJ+09mdc16cVQ1Q==",
+        "member": "package/files/roboto-latin-ext-400-normal.woff2"
+      },
+      "license": "OFL-roboto.txt",
+      "loaded": "unicode-range",
+      "bytes": 15040,
+      "sha256": "5725eacca97303d8bce26f76cfcaee4393295bbf93c1eb6c3e5e4f260b2da189"
+    },
+    {
+      "file": "roboto-500-latin-ext.woff2",
+      "family": "Roboto",
+      "weight": "500",
+      "subset": "latin-ext",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF",
+      "source": {
+        "package": "@fontsource/roboto",
+        "version": "5.3.0",
+        "tarball": "https://registry.npmjs.org/@fontsource/roboto/-/roboto-5.3.0.tgz",
+        "integrity": "sha512-BapRJOWYP+LZ21zp+wBQjfpPYKRoxc4LspJ/RLuI+HSMBD5u/X4O+ESDrSvEqDSy0rAl7GwBJ+09mdc16cVQ1Q==",
+        "member": "package/files/roboto-latin-ext-500-normal.woff2"
+      },
+      "license": "OFL-roboto.txt",
+      "loaded": "unicode-range",
+      "bytes": 15160,
+      "sha256": "1e597a6e3b163200475089698be3427ab1bb01553493d5b7d53694429948d8ec"
+    },
+    {
+      "file": "noto-sans-orthography.woff2",
+      "family": "Noto Sans Orthography",
+      "weight": "400",
+      "subset": "orthography",
+      "unicodeRange": "U+0020,U+0041-005A,U+0061-007A,U+00B7,U+010D,U+0141-0142,U+015B,U+015D,U+0161,U+016B,U+019B,U+01C0-01C3,U+0250-02FF,U+0300-036F,U+03B8,U+03BB,U+1E00-1EFF,U+2C60-2C7F,U+A78B-A78C",
+      "source": {
+        "upstream": "https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSans/unhinted/ttf/NotoSans-Regular.ttf",
+        "upstreamSha256": "f3961a9cde016d41a4879aecda1474d3a36d6bf54fa0e4643de029cc2248b0e8",
+        "retrieved": "2026-10-05",
+        "subsetCommand": "pyftsubset NotoSans-Regular.ttf --unicodes=\"U+0020,U+0041-005A,U+0061-007A,U+00B7,U+010D,U+0141-0142,U+015B,U+015D,U+0161,U+016B,U+019B,U+01C0-01C3,U+0250-02FF,U+0300-036F,U+03B8,U+03BB,U+1E00-1EFF,U+2C60-2C7F,U+A78B-A78C\" --flavor=woff2 --output-file=noto-sans-orthography.woff2 --layout-features='ccmp,locl,mark,mkmk' --desubroutinize --no-hinting --name-IDs='0,1,2,3,4,5,6'",
+        "tool": "fontTools 4.66.1 with brotli",
+        "note": "Basic Latin letters are kept so a base letter and its combining mark (for example q and U+0313) shape together in one face with mark positioning."
+      },
+      "license": "OFL-noto-sans.txt",
+      "loaded": "unicode-range",
+      "bytes": 26224,
+      "sha256": "7e5fcc2bc383db61cf8a406127e33b4b92e5acd3c2f7ca61105688857eea4c18"
+    }
+  ],
+  "licenses": [
+    {
+      "file": "OFL-league-spartan.txt",
+      "sha256": "daa5b6762cb0418a6db430be3656d86eb3114fdd2eeb6647c39c9e657cde01fd"
+    },
+    {
+      "file": "OFL-roboto.txt",
+      "sha256": "84044c09058803d87a241bd28abb4ce30a433d7db9c27a04da3efad6a0ca539c"
+    },
+    {
+      "file": "OFL-noto-sans.txt",
+      "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+/*
+ * Base: reset, type roles (blueprint 9.3), links, focus (9.7), lists, tables, and utilities. Reads tokens
+ * only; no raw colors. Owner: lane L1.
+ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--ground);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: var(--fw-body);
+  line-height: var(--type-body-lh);
+  font-kerning: normal;
+  font-feature-settings: 'kern' 1;
+  overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within { scroll-behavior: smooth; }
+}
+
+/* Type roles */
+h1, h2, h3, h4,
+.page-title,
+.panel__title {
+  margin: 0;
+  color: var(--ink-heading);
+  font-family: var(--font-display);
+  font-weight: var(--fw-title);
+  text-wrap: balance;
+  text-rendering: optimizeLegibility;
+}
+h1 { font-size: var(--type-h1-size); line-height: var(--type-h1-lh); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--type-h2-size); line-height: var(--type-h2-lh); letter-spacing: var(--tracking-display); }
+h3 { font-size: var(--type-h3-size); line-height: var(--type-h3-lh); letter-spacing: var(--tracking-h3); }
+h4 { font-size: var(--type-body-size); line-height: var(--type-h3-lh); }
+
+.page-title {
+  font-size: clamp(1.875rem, 1.2rem + 3.4vw, var(--type-title-size));
+  line-height: var(--type-title-lh);
+  letter-spacing: var(--tracking-display);
+}
+
+.subtitle,
+.lede {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  font-size: var(--type-subtitle-size);
+  line-height: var(--type-subtitle-lh);
+}
+
+p { margin: 0 0 var(--space-4); max-width: var(--width-reading-measure); text-wrap: pretty; }
+p:last-child { margin-bottom: 0; }
+
+strong, b { font-weight: var(--fw-body-strong); color: var(--ink-heading); }
+
+small,
+.caption,
+.stamp {
+  font-size: var(--type-caption-size);
+  font-weight: var(--fw-body-strong);
+  line-height: var(--type-caption-lh);
+  color: var(--ink-muted);
+}
+
+.readout {
+  font-family: var(--font-display);
+  font-weight: var(--fw-title);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-heading);
+  line-height: 1.1;
+}
+time, .num { font-variant-numeric: tabular-nums; }
+
+/* Links: Red on Dark, always underlined */
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
+
+/* Focus: 2 px inner outline plus 4 px outer ring, never removed (blueprint 9.7) */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--focus-inner);
+  outline-offset: 0;
+  box-shadow: 0 0 0 4px var(--focus-outer);
+}
+main:focus-visible,
+[tabindex='-1']:focus-visible { outline: none; box-shadow: none; }
+
+/* Lists: square bullets, 7 px, in body ink */
+ul, ol { margin: 0 0 var(--space-4); padding-left: 1.4em; }
+ul { list-style: none; padding-left: 0; }
+ul > li { position: relative; padding-left: 1.25em; }
+ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0.15em;
+  top: 0.68em;
+  width: var(--bullet-size);
+  height: var(--bullet-size);
+  background: var(--ink);
+}
+ul[role='list'] > li,
+ul.plain > li,
+nav ul > li { padding-left: 0; }
+ul[role='list'] > li::before,
+ul.plain > li::before,
+nav ul > li::before { content: none; }
+.bullets > li + li { margin-top: var(--space-1); }
+
+img, svg, video, canvas { max-width: 100%; height: auto; }
+img, video { display: block; }
+svg { fill: currentColor; }
+
+hr { border: 0; border-top: 1px solid var(--rule-on-dark); margin: var(--space-5) 0; }
+
+/* Form controls inherit the type system and keep 44 px targets */
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+button { cursor: pointer; }
+input, select, textarea {
+  min-height: var(--touch-target);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--ground);
+  color: var(--ink);
+}
+::placeholder { color: var(--ink-muted); opacity: 1; }
+
+/* Tables scroll inside their own container at narrow widths (9.7) */
+.table-wrap { max-width: 100%; overflow-x: auto; }
+table, .table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+th, td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--rule-on-dark);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  color: var(--ink-heading);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  font-size: var(--type-ui-size);
+}
+caption { caption-side: top; text-align: left; padding-bottom: var(--space-2); color: var(--ink-muted); font-size: var(--type-caption-size); font-weight: var(--fw-body-strong); }
+
+/* Utilities */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[hidden] { display: none !important; }
+
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -100px;
+  z-index: var(--z-toast);
+  padding: var(--space-2) var(--space-4);
+  background: var(--ink-heading);
+  color: var(--ground);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  text-decoration: none;
+}
+.skip-link:focus { top: var(--space-2); }
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--red-on-dark);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  font-size: var(--type-caption-size);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+
+/* French ECCC blocks keep their language for hyphenation and screen readers */
+[lang='fr-CA'] { hyphens: manual; }
+
+/* Windows High Contrast and other forced-color modes keep every boundary visible */
+@media (forced-colors: active) {
+  .panel, .callout, .alert-card, .btn, .filter-chip, .band-chip, .designation-badge, .status-pill__shape { forced-color-adjust: auto; border: 1px solid CanvasText; }
+}

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Component Gallery | Cascadia Tribal Hazard Dashboard</title>
+  <!-- Development only, never deployed (blueprint 9.4). Every component in every state, for designer review
+       and screenshots at 360 and 1280 px. Serve the repository root (for example on port 8101) and open
+       /dev/gallery.html. Specimen text and readings come from dated fixtures and are labeled as such.
+       Owner: lane L1. -->
+  <link rel="stylesheet" href="../site/static/css/tokens.css">
+  <link rel="stylesheet" href="../site/static/css/fonts.css">
+  <link rel="stylesheet" href="../site/static/css/base.css">
+  <link rel="stylesheet" href="../site/static/css/layout.css">
+  <link rel="stylesheet" href="../site/static/css/components.css">
+  <link rel="stylesheet" href="../site/static/css/print.css" media="print">
+  <link rel="icon" href="../site/static/img/favicon.svg" type="image/svg+xml">
+  <style>
+    /* Gallery-only arrangement; colors come from tokens. */
+    .g-section { display: grid; gap: var(--space-4); }
+    .g-section > * { min-width: 0; }
+    .g-section > h2 { padding-top: var(--space-5); border-top: 1px solid var(--rule-on-dark); }
+    .g-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-4); }
+    .g-grid { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); }
+    .g-note { color: var(--ink-muted); font-size: var(--type-caption-size); font-weight: var(--fw-body-strong); }
+    .g-chrome { display: grid; gap: 0; border: 1px solid var(--rule-on-dark); }
+    .g-chrome > * { min-width: 0; }
+    .g-chrome .embed-bar { display: flex; position: static; }
+    .g-chrome .bottom-bar { display: grid; position: static; }
+    .g-static-sheet { position: static; transform: none; width: 100%; max-height: none; border: 1px solid var(--rule-strong); }
+    .g-static-region { position: static; inset: auto; justify-items: start; }
+    body.g-body { padding-bottom: 0; }
+  </style>
+</head>
+<body class="g-body">
+  <a class="skip-link" href="#main">Skip to Main Content</a>
+  <main id="main" tabindex="-1">
+    <p class="eyebrow">Development Gallery</p>
+    <h1 class="page-title">Component Gallery</h1>
+    <p class="lede">Every component of the class contract in every state, built from tokens.css. Specimen text and readings come from the dated fixtures named beside them; nothing here is a live observation.</p>
+
+    <section class="g-section" aria-labelledby="g-chrome-h">
+      <h2 id="g-chrome-h">Chrome</h2>
+      <div class="g-chrome">
+        <header class="site-header">
+          <a class="site-header__brand" href="#main">
+            <span class="site-header__org">ATNI Climate</span>
+            <span class="site-header__product">Cascadia Tribal Hazard Dashboard</span>
+          </a>
+          <a class="nation-chip" href="#g-picker-h"><span class="nation-chip__label">Nation:</span> <span data-nation-chip-name>All of Cascadia</span></a>
+        </header>
+        <nav class="site-nav" aria-label="Primary (Specimen)">
+          <ul class="site-nav__list">
+            <li><a href="#main">Dashboard</a></li>
+            <li><a href="#main" aria-current="page">Alerts</a></li>
+            <li><a href="#main">Forecasts</a></li>
+            <li><a href="#main">Contacts</a></li>
+            <li><a href="#main">Resources</a></li>
+            <li><a href="#main">Safety</a></li>
+            <li><a href="#main">News</a></li>
+            <li><a href="#main">Usage</a></li>
+          </ul>
+        </nav>
+        <div class="embed-bar">
+          <span class="embed-bar__brand">ATNI Climate</span>
+          <span class="embed-bar__title">Alerts</span>
+          <a class="embed-bar__open" href="#main">Open Full Page</a>
+          <a class="embed-bar__sources" href="#main">Sources and Disclaimer</a>
+        </div>
+        <nav class="bottom-bar" aria-label="Quick Actions (Specimen)">
+          <a class="bottom-bar__item" href="#main" aria-current="page">Alerts</a>
+          <a class="bottom-bar__item" href="#main">Rivers</a>
+          <a class="bottom-bar__item" href="#main">Call</a>
+          <a class="bottom-bar__item" href="#main">Near Me</a>
+        </nav>
+      </div>
+      <p class="g-note">Embed bar and bottom bar are shown in place here; on pages the embed bar appears only in embed mode and the bottom bar only below 720 px.</p>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-type-h">
+      <h2 id="g-type-h">Type Roles</h2>
+      <p class="eyebrow">Eyebrow</p>
+      <p class="page-title" role="presentation">Page Title, League Spartan 600</p>
+      <h3>Heading 3, League Spartan 600</h3>
+      <p class="subtitle">Subtitle and lede, League Spartan 500.</p>
+      <p>Body text is Roboto 400 at 16 px with a 1.6 line height and a 640 px measure. Links are Red on Dark and always underlined, as in <a href="#main">this link to the top of the gallery</a>.</p>
+      <p class="caption">Caption and stamp text, Roboto 500 at 13 px.</p>
+      <p><span class="readout">44.79 ft</span> <span class="g-note">Readout: CRNW1 observed stage, fixture nwps-gauges 2026-10-05-gauge-crnw1.json (valid 10/05/2026 05:15 UTC).</span></p>
+      <ul class="bullets">
+        <li>Square bullets, 7 px, in body ink.</li>
+        <li>Wordmark in type: <span class="wordmark">ATNI Climate</span></li>
+      </ul>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-btn-h">
+      <h2 id="g-btn-h">Buttons</h2>
+      <div class="g-row">
+        <button class="btn btn--primary" type="button">Primary Action</button>
+        <button class="btn btn--secondary" type="button">Secondary Action</button>
+        <button class="btn btn--link" type="button">Link Button</button>
+        <button class="btn btn--secondary" type="button" disabled>Disabled</button>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-status-h">
+      <h2 id="g-status-h">Status Pills</h2>
+      <div class="g-row" id="g-status"></div>
+      <p class="g-note">Built by ui/status-pill.js. Shape plus word; color on the shape only.</p>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-bands-h">
+      <h2 id="g-bands-h">Band Chips, Designations, and Postures</h2>
+      <div class="g-row">
+        <span class="band-chip band-chip--extreme">Extreme</span>
+        <span class="band-chip band-chip--severe">Severe</span>
+        <span class="band-chip band-chip--moderate">Moderate</span>
+        <span class="band-chip band-chip--minor">Minor</span>
+        <span class="band-chip band-chip--unstated">Unstated</span>
+      </div>
+      <div class="g-row">
+        <span class="designation-badge designation-badge--emergency">Emergency</span>
+        <span class="designation-badge designation-badge--warning">Warning</span>
+        <span class="designation-badge designation-badge--watch">Watch</span>
+        <span class="designation-badge designation-badge--advisory">Advisory</span>
+        <span class="designation-badge designation-badge--statement">Statement</span>
+        <span class="designation-badge designation-badge--other">Other</span>
+      </div>
+      <div class="g-row">
+        <span class="posture-label posture-label--act-now">Act Now</span>
+        <span class="posture-label posture-label--prepare">Prepare</span>
+        <span class="posture-label posture-label--monitor">Monitor</span>
+        <span class="posture-label posture-label--ended">Ended</span>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-banner-h">
+      <h2 id="g-banner-h">Alert Banners</h2>
+      <p class="g-note">Headlines are specimen wording for each banner kind; counts are not shown because no live data backs this page.</p>
+      <div class="alert-banner alert-banner--unknown" data-g-pill="degraded">
+        <p class="alert-banner__headline">Alert Status Unknown</p>
+        <p class="alert-banner__detail">Alert sources could not be reached. This is not an all-clear. Official alerts are at weather.gov and weather.gc.ca; in an emergency, call 911.</p>
+        <div class="alert-banner__meta"></div>
+      </div>
+      <div class="alert-banner alert-banner--act-now" data-band="extreme" data-g-pill="live">
+        <div class="alert-banner__meta"><span class="designation-badge designation-badge--warning">Warning</span><span class="band-chip band-chip--extreme">Extreme</span><span class="posture-label posture-label--act-now">Act Now</span></div>
+        <p class="alert-banner__headline">Act Now: Warning in Effect</p>
+        <div class="alert-banner__actions"><a href="#main">What to Do Now</a><a href="#main">Who to Call</a><button class="btn btn--primary" type="button">Primary Inside Alerts Turns Secondary</button></div>
+      </div>
+      <div class="alert-banner alert-banner--act-now" data-band="severe" data-g-pill="live">
+        <div class="alert-banner__meta"><span class="designation-badge designation-badge--warning">Warning</span><span class="band-chip band-chip--severe">Severe</span><span class="posture-label posture-label--act-now">Act Now</span></div>
+        <p class="alert-banner__headline">Red Flag Warning</p>
+        <p class="alert-banner__detail">Specimen: "Red Flag Warning issued October 4 at 12:40PM MDT until October 5 at 8:00PM MDT by NWS Billings MT" (nws-alerts-active 2026-10-05-fire-zone-red-flag-warning.json).</p>
+      </div>
+      <div class="alert-banner alert-banner--prepare" data-band="moderate" data-g-pill="cached">
+        <div class="alert-banner__meta"><span class="designation-badge designation-badge--watch">Watch</span><span class="band-chip band-chip--moderate">Moderate</span><span class="posture-label posture-label--prepare">Prepare</span></div>
+        <p class="alert-banner__headline">Prepare: Watch in Effect</p>
+      </div>
+      <div class="alert-banner alert-banner--monitor" data-band="minor" data-g-pill="stale">
+        <div class="alert-banner__meta"><span class="designation-badge designation-badge--advisory">Advisory</span><span class="band-chip band-chip--minor">Minor</span><span class="posture-label posture-label--monitor">Monitor</span></div>
+        <p class="alert-banner__headline">Small Craft Advisory</p>
+        <p class="alert-banner__detail">Specimen: "Small Craft Advisory issued October 4 at 9:31PM AKDT until October 6 at 6:00AM AKDT by NWS Juneau AK" (2026-10-05-footprint-active.json).</p>
+      </div>
+      <div class="alert-banner alert-banner--none" data-g-pill="live">
+        <p class="alert-banner__headline">No Active Alerts for This Area</p>
+        <p class="alert-banner__detail">Shown only when every required source is live and complete.</p>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-cards-h">
+      <h2 id="g-cards-h">Alert Cards</h2>
+      <ul class="alert-list">
+        <li><article class="alert-card" data-band="extreme"><div class="alert-card__labels"><span class="designation-badge designation-badge--emergency">Emergency</span><span class="band-chip band-chip--extreme">Extreme</span><span class="posture-label posture-label--act-now">Act Now</span></div><h3 class="alert-card__title">Extreme Band Card</h3><p class="alert-card__meta">Band rule with its keyline.</p></article></li>
+        <li><article class="alert-card" data-band="severe"><div class="alert-card__labels"><span class="designation-badge designation-badge--warning">Warning</span><span class="band-chip band-chip--severe">Severe</span><span class="posture-label posture-label--act-now">Act Now</span></div><h3 class="alert-card__title">Red Flag Warning</h3><p class="alert-card__meta">Gallatin National Forest; Wheatland County/Sweet Grass County (fixture 2026-10-05-fire-zone-red-flag-warning.json)</p><div><button type="button" data-g-disclosure>Full Alert Text</button><div class="alert-card__body"><p>Long text is collapsed behind a disclosure.</p></div></div></article></li>
+        <li><article class="alert-card" data-band="moderate"><div class="alert-card__labels"><span class="designation-badge designation-badge--advisory">Advisory</span><span class="band-chip band-chip--moderate">Moderate</span><span class="posture-label posture-label--prepare">Prepare</span></div><h3 class="alert-card__title">Heat Advisory</h3><p class="alert-card__meta">Sonoma Coastal Range; North Bay Interior Mountains (fixture 2026-10-05-footprint-active.json)</p></article></li>
+        <li><article class="alert-card" data-band="minor"><div class="alert-card__labels"><span class="designation-badge designation-badge--advisory">Advisory</span><span class="band-chip band-chip--minor">Minor</span><span class="posture-label posture-label--monitor">Monitor</span></div><h3 class="alert-card__title">Small Craft Advisory</h3><p class="alert-card__meta">Dixon Entrance to Cape Decision out to 15 NM (fixture 2026-10-05-footprint-active.json)</p></article></li>
+        <li><article class="alert-card" data-band="unstated"><div class="alert-card__labels"><span class="designation-badge designation-badge--statement">Statement</span><span class="band-chip band-chip--unstated">Unstated</span><span class="posture-label posture-label--monitor">Monitor</span></div><h3 class="alert-card__title">Unstated Band Card</h3></article></li>
+        <li><article class="alert-card alert-card--ended" data-band="minor"><div class="alert-card__labels"><span class="designation-badge designation-badge--advisory">Advisory</span><span class="posture-label posture-label--ended">Ended</span></div><h3 class="alert-card__title">The Flood Advisory Has Been Cancelled</h3><p class="alert-card__meta">City and Borough of Juneau (fixture 2026-10-05-cancel-collection-page-1.json)</p></article></li>
+      </ul>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-tiles-h">
+      <h2 id="g-tiles-h">Summary Tiles and Filter Chips</h2>
+      <ul class="summary-tiles">
+        <li><a class="summary-tile" href="#main"><span class="summary-tile__value">2</span><span class="summary-tile__label">Warnings (specimen count)</span></a></li>
+        <li><div class="summary-tile summary-tile--zero"><span class="summary-tile__value">0</span><span class="summary-tile__label">Watches (specimen count)</span></div></li>
+        <li><div class="summary-tile summary-tile--unknown"><span class="summary-tile__value">Unknown</span><span class="summary-tile__label">Advisories</span></div></li>
+      </ul>
+      <div class="filter-chips" role="group" aria-label="Hazard Filters (Specimen)">
+        <button class="filter-chip" type="button" aria-pressed="true">Flood <span class="filter-chip__count">2</span></button>
+        <button class="filter-chip" type="button" aria-pressed="false">Wind</button>
+        <button class="filter-chip" type="button" aria-pressed="false">Winter</button>
+        <button class="filter-chip" type="button" aria-pressed="false" disabled>Tsunami</button>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-tabs-h">
+      <h2 id="g-tabs-h">Tabs and Disclosure</h2>
+      <div>
+        <nav class="tabs" aria-label="Views (Specimen)" data-g-tabs>
+          <a class="tabs__tab" href="?view=list" data-view-link="list">List</a>
+          <a class="tabs__tab" href="?view=map" data-view-link="map">Map</a>
+          <a class="tabs__tab" href="?view=declarations" data-view-link="declarations">Declarations</a>
+        </nav>
+        <section class="view" data-view="list" aria-label="List View"><p>List view content.</p></section>
+        <section class="view" data-view="map" aria-label="Map View"><p>Map view content.</p></section>
+        <section class="view" data-view="declarations" aria-label="Declarations View"><p>Declarations view content.</p></section>
+      </div>
+      <div><button type="button" data-g-disclosure aria-expanded="true">Expanded Disclosure</button><div><p>Region content that is open.</p></div></div>
+      <details class="disclosure"><summary>Native Details Disclosure</summary><p>Details content.</p></details>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-picker-h">
+      <h2 id="g-picker-h">Nation Picker and Sheet</h2>
+      <div class="nation-picker">
+        <label class="nation-picker__label" for="g-picker-input">Choose a Nation</label>
+        <input class="nation-picker__input" id="g-picker-input" type="text" role="combobox" aria-expanded="true" aria-controls="g-picker-list" aria-autocomplete="list" aria-activedescendant="g-opt-2" value="aq">
+        <ul class="nation-picker__list" id="g-picker-list" role="listbox" aria-label="Nations">
+          <li class="nation-picker__option" id="g-opt-1" role="option" aria-selected="false">ʔaq̓am<span class="nation-picker__option-meta">British Columbia (Nation website, names-60 fixture)</span></li>
+          <li class="nation-picker__option" id="g-opt-2" role="option" aria-selected="true">ʔAkisq̓nuk First Nation<span class="nation-picker__option-meta">British Columbia</span></li>
+          <li class="nation-picker__option" id="g-opt-3" role="option" aria-selected="false">Sḵwx̱wú7mesh Úxwumixw<span class="nation-picker__option-meta">British Columbia</span></li>
+        </ul>
+      </div>
+      <div class="sheet g-static-sheet" role="dialog" aria-labelledby="g-sheet-h">
+        <div class="sheet__header"><h3 class="sheet__title" id="g-sheet-h">Call</h3><button class="btn btn--secondary" type="button">Close</button></div>
+        <p>Sheets hold the picker and the Call list on phones.</p>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-contact-h">
+      <h2 id="g-contact-h">Contact Cards</h2>
+      <div class="g-grid">
+        <article class="contact-card contact-card--emergency"><h3 class="contact-card__name">Emergency</h3><a class="contact-card__phone" href="tel:911">911</a><p class="contact-card__role">Police, fire, and medical emergencies anywhere in Cascadia.</p></article>
+        <article class="contact-card"><h3 class="contact-card__name">Role-Based Contact</h3><span class="contact-card__line-type">24/7 Line</span><p class="contact-card__role">Office name and role; a phone link appears only for a verified record.</p><p class="contact-card__verified">Source and verified date print here.</p></article>
+        <article class="contact-card contact-card--fallback"><h3 class="contact-card__name">Federal Fallback Line</h3><p class="contact-card__role">Labeled with its source and check date when no Nation-verified line exists.</p></article>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-gauge-h">
+      <h2 id="g-gauge-h">Gauge Cards</h2>
+      <div class="g-grid">
+        <article class="gauge-card" data-flood="none"><h3 class="gauge-card__name">Snoqualmie River near Carnation</h3><span class="gauge-card__reading">44.79 ft</span><span class="gauge-card__category">No Flooding</span><span class="gauge-card__stamp">Observed 10/04/2026 10:15 PM PDT (fixture 2026-10-05-gauge-crnw1.json)</span></article>
+        <article class="gauge-card" data-flood="major"><h3 class="gauge-card__name">Major Category Mark</h3><span class="gauge-card__category">Major Flooding</span></article>
+        <article class="gauge-card" data-flood="moderate"><h3 class="gauge-card__name">Moderate Category Mark</h3><span class="gauge-card__category">Moderate Flooding</span></article>
+        <article class="gauge-card" data-flood="minor"><h3 class="gauge-card__name">Minor Category Mark</h3><span class="gauge-card__category">Minor Flooding</span></article>
+        <article class="gauge-card" data-flood="action"><h3 class="gauge-card__name">Action Category Mark</h3><span class="gauge-card__category">Action Stage</span></article>
+        <article class="gauge-card gauge-card--not-current" data-flood="not-defined"><h3 class="gauge-card__name">Not Defined Mark</h3><span class="gauge-card__category">Flood Categories Not Defined</span><span class="gauge-card__stamp">Observation not current</span></article>
+      </div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-map-h">
+      <h2 id="g-map-h">Map Frame, Legend, and Sovereignty</h2>
+      <div class="map-frame">
+        <div class="map-frame__viewport"><div class="map-frame__request"><button class="btn btn--secondary" type="button">Show Map (about 500 KB)</button></div></div>
+        <p class="sovereignty-note"><strong>Representation, not jurisdiction.</strong> Boundary lines shown here come from public federal sources; they are not a Tribal Nation's own statement of its land or authority.</p>
+        <ul class="legend" aria-label="Legend (Specimen)">
+          <li class="legend__item" data-band="extreme"><span class="legend__swatch"></span>Extreme</li>
+          <li class="legend__item" data-band="severe"><span class="legend__swatch"></span>Severe</li>
+          <li class="legend__item" data-band="moderate"><span class="legend__swatch"></span>Moderate</li>
+          <li class="legend__item" data-band="minor"><span class="legend__swatch"></span>Minor</li>
+          <li class="legend__item" data-band="unstated"><span class="legend__swatch"></span>Unstated</li>
+          <li class="legend__item"><span class="legend__swatch legend__swatch--zone"></span>Zone Only</li>
+          <li class="legend__item"><span class="legend__swatch legend__swatch--boundary"></span>Tribal Land Boundary</li>
+          <li class="legend__item"><span class="legend__swatch legend__swatch--selected-nation"></span>Selected Nation</li>
+        </ul>
+      </div>
+      <p><span class="tag--sovereignty">Treaty Area</span></p>
+      <aside class="callout callout--note"><h3>Note Callout</h3><p>ATNI Red rule; never inside alert UI.</p></aside>
+      <aside class="callout callout--sovereignty"><h3>Sovereignty Callout</h3><p>Tribal Magenta rule; labels in body ink.</p></aside>
+      <aside class="callout callout--quiet"><h3>Quiet Callout</h3><p>Neutral rule for calm states.</p></aside>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-media-h">
+      <h2 id="g-media-h">Media Viewer and Video Player</h2>
+      <figure class="media-viewer">
+        <div class="media-viewer__stage"><img src="../site/static/img/atni-climate-lockup-on-dark.png" width="300" height="120" alt="ATNI Climate lockup on dark, used here as the specimen image"></div>
+        <div class="media-viewer__controls"><button class="btn btn--secondary" type="button">Previous</button><button class="btn btn--secondary" type="button">Next</button></div>
+        <figcaption class="media-viewer__caption">Captions name the product, area, and valid time.</figcaption>
+      </figure>
+      <div class="media-viewer"><div class="media-viewer__stage"><p class="media-viewer__notice">Image unavailable. The product page is linked instead.</p></div></div>
+      <div class="video-player"><button class="btn btn--secondary video-player__start" type="button">Play Animation</button><span class="video-player__size">Loads only after a tap.</span></div>
+    </section>
+
+    <section class="g-section" aria-labelledby="g-panel-h">
+      <h2 id="g-panel-h">Panels, Provenance, Table, and Toast</h2>
+      <section class="panel" aria-labelledby="g-panel-live-h">
+        <h3 class="panel__title" id="g-panel-live-h">Panel With Live Provenance</h3>
+        <div class="panel__body"><p>Panel body.</p></div>
+        <footer class="provenance" data-provenance><span data-g-pill="live"></span><span>Source: National Weather Service</span><span>Observed as of <time datetime="2026-10-05T05:15:00Z">10/04/2026 10:15 PM PDT</time></span></footer>
+      </section>
+      <section class="panel" aria-labelledby="g-panel-un-h">
+        <h3 class="panel__title" id="g-panel-un-h">Panel Unavailable</h3>
+        <footer class="provenance" data-provenance data-status="unavailable"><span data-g-pill="unavailable"></span><span class="provenance__reason">The source did not respond. Official information is at weather.gov.</span></footer>
+      </section>
+      <div class="table-wrap">
+        <table>
+          <caption>Flood categories, CRNW1 (fixture 2026-10-05-gauge-crnw1.json)</caption>
+          <thead><tr><th scope="col">Category</th><th scope="col">Stage</th></tr></thead>
+          <tbody><tr><td>Action</td><td>50.7 ft</td></tr><tr><td>Minor</td><td>54 ft</td></tr><tr><td>Moderate</td><td>56 ft</td></tr><tr><td>Major</td><td>58 ft</td></tr></tbody>
+        </table>
+      </div>
+      <div class="g-row"><button class="btn btn--secondary" type="button" data-g-toast>Show Toast</button><span class="visually-hidden">Visually hidden text is read but not shown.</span></div>
+      <div class="g-static-region"><div class="toast"><p class="toast__message">Copied to clipboard.</p><button class="toast__close" type="button" aria-label="Close Notice">×</button></div></div>
+    </section>
+  </main>
+  <script type="module">
+    import { statusPill } from '../site/static/js/ui/status-pill.js';
+    import { initTabs } from '../site/static/js/ui/tabs.js';
+    import { initDisclosure } from '../site/static/js/ui/disclosure.js';
+    import { showToast } from '../site/static/js/ui/toast.js';
+    import { announce } from '../site/static/js/ui/live-region.js';
+    const row = document.getElementById('g-status');
+    for (const s of ['live', 'cached', 'stale', 'degraded', 'unavailable']) row.append(statusPill(s));
+    row.append(statusPill('stale', 'Scheduled Copy'));
+    for (const slot of document.querySelectorAll('[data-g-pill]')) {
+      const pill = statusPill(slot.getAttribute('data-g-pill'));
+      if (slot.classList.contains('alert-banner')) {
+        const meta = slot.querySelector('.alert-banner__meta');
+        if (meta) meta.append(pill); else slot.append(pill);
+      } else slot.replaceWith(pill);
+    }
+    initTabs(document.querySelector('[data-g-tabs]'), { onChange: (id) => announce(`${id} view selected`) });
+    for (const b of document.querySelectorAll('[data-g-disclosure]')) initDisclosure(b, b.nextElementSibling);
+    document.querySelector('[data-g-toast]').addEventListener('click', () => showToast('Gallery toast shown.'));
+    document.documentElement.dataset.galleryReady = '1';
+  </script>
+</body>
+</html>

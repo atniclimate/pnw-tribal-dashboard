@@ -1,0 +1,49 @@
+/*
+ * Print: always a light ground (blueprint 9.6), chrome reduced to what a printed page needs, and link
+ * targets written out so a paper copy still names its sources. Loaded with media="print". Owner: lane L1.
+ */
+:root {
+  color-scheme: light;
+  --ground: var(--color-surface);
+  --surface-raised: var(--color-surface);
+  --surface-overlay: var(--color-surface);
+  --surface-hover: var(--color-surface-tint);
+  --ink: var(--color-grey-alt);
+  --ink-heading: var(--color-black-bg);
+  --ink-muted: var(--color-grey);
+  --rule-on-dark: var(--color-hairline);
+  --rule-strong: var(--color-muted-text);
+  --link: var(--color-red-alt);
+  --status-unavailable: var(--color-grey);
+  --band-extreme-keyline: var(--band-extreme-bg);
+  --card-shadow: none;
+}
+
+@page { margin: 14mm 12mm; }
+
+body { padding: 0; background: var(--ground); color: var(--ink); font-size: 11pt; }
+.site-nav,
+.bottom-bar,
+.embed-bar,
+.skip-link,
+.nation-chip,
+.tabs,
+.toast-region,
+.filter-chips,
+.map-frame__request,
+.video-player,
+.btn { display: none !important; }
+
+.site-header { padding: 0 0 4mm; }
+main { max-width: none; padding: 0; gap: 5mm; }
+.panel, .alert-card, .alert-banner, .callout, .contact-card, .gauge-card, .summary-tile { break-inside: avoid; border: 1px solid var(--rule-on-dark); }
+.view[hidden] { display: none !important; }
+h1, h2, h3 { break-after: avoid; }
+.page-title { font-size: 22pt; }
+
+a { color: var(--link); }
+main a[href^='http']::after { content: ' (' attr(href) ')'; font-size: 0.85em; color: var(--ink-muted); overflow-wrap: anywhere; }
+a[href^='tel:']::after { content: ''; }
+
+.site-footer { max-width: none; padding: 4mm 0 0; }
+.site-footer__links { display: none; }

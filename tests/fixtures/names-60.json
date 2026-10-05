@@ -1,0 +1,431 @@
+{
+  "schema": "cthd.names-60/1",
+  "description": "Sixty real Nation names, or Nation-published name forms, chosen for hard glyphs: BC and Salish, Wakashan, Ktunaxa, Tsilhqot’in, Secwepemc, and Tlingit orthographies, plus U.S. names with apostrophes, ampersands, parentheses, and commas. Used only by scripts/check/fonts-coverage.mjs and its unit test; never deployed or displayed. Owner: lane L1.",
+  "sources": {
+    "nation-website": "Copied from the text of the Nation’s (or, for one entry, the Okanagan Nation Alliance’s) own website, fetched 10/05/2026; the code points were read from the fetched page, not retyped.",
+    "isc-first-nations": "ISC First Nation location file (GPKG, band_name), downloaded 10/04/2026; names whose ISC form carries a ? placeholder are excluded.",
+    "bia-tribal-leaders-directory": "BIA Tribal Leaders Directory Hub GeoJSON export (tribefullname only), downloaded 10/04/2026."
+  },
+  "names": [
+    {
+      "name": "ʔaq̓am",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www2.aqam.net/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "ʔAkisq̓nuk First Nation",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://akisqnuk.org/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "yaqan nuʔkiy",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://lowerkootenay.com/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Yaq̓it ʔa·knuqⱡi’it",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://tobaccoplains.org/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "xʷməθkʷəy̓əm",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.musqueam.bc.ca/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "səlilwətaɬ",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://twnation.ca/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "kʷikʷəƛ̓əm First Nation",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.kwikwetlem.com/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Sḵwx̱wú7mesh Úxwumixw",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.squamish.net/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Hupačasath First Nation",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.hupacasath.ca/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Yuułuʔiłʔatḥ Government",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.ufn.ca/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Haíłzaqv",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.heiltsuk.ca/index.html",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Tŝilhqot’in",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://tsilhqotin.ca/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Xatśūll First Nation",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.xatsull.com/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "q̓ic̓əy̓",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://katzie.ca/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "’Wuìk̓inux̌v Nation",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.wuikinuxv.net/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Líl̓wat Nation",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://lilwat.ca/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Maxłaxaała",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://www.metlakatla.com/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Tk̓emlúps te Secwépemc",
+      "region": "bc",
+      "source": "nation-website",
+      "ref": "https://syilx.org/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "ʔéʔɬx̣ʷaʔ nəxʷsƛ̕áy̕əm̕",
+      "region": "wa",
+      "source": "nation-website",
+      "ref": "https://www.elwha.org/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "sqʷax̌səd",
+      "region": "wa",
+      "source": "nation-website",
+      "ref": "https://squaxinisland.org/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Séliš-Ql̓ispé",
+      "region": "mt",
+      "source": "nation-website",
+      "ref": "https://cskt.org/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "Sheet’ká Ḵwáan",
+      "region": "ak",
+      "source": "nation-website",
+      "ref": "https://sitkatribe.org/",
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "name": "shishálh Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 551",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Sq'éwlets",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 568",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Shxwhá:y Village",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 570",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Sqwá First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 573",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Leq'á:mel First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 579",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "K'ómoks First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 624",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Tk'emlúps te Secwépemc",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 688",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Tŝideldel First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 710",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Tl’esqox",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 718",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Ka:'yu:'k't'h'/Che:k'tles7et'h' First Nations",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 638",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Gwa'Sala-Nakwaxda'xw",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 724",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Ts'kw'aylaxw First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 594",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "T'it'q'et",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 593",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Mowachaht/Muchalaht",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 630",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Whispering Pines/Clinton",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 702",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Tsq'escen' First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 713",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Nak'azdli Whut'en",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 614",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Tl'azt'en Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 617",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Kwikwasut'inuxw Haxwa'mis",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 625",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Dzawada'enuxw First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 636",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Stz'uminus First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 641",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Gitga'at First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 675",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Cook's Ferry",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 694",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Stswecem'c Xget'tem First Nation",
+      "region": "bc",
+      "source": "isc-first-nations",
+      "ref": "band 723",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Central Council of the Tlingit & Haida Indian Tribes",
+      "region": "ak",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 15",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Chilkat Indian Village (Klukwan)",
+      "region": "ak",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 22",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Chilkoot Indian Association (Haines)",
+      "region": "ak",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 23",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Metlakatla Indian Community, Annette Island Reserve",
+      "region": "ak",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 361",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Coeur D'Alene Tribe",
+      "region": "id",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 340",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians",
+      "region": "or",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 346",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Jamestown S'Klallam Tribe",
+      "region": "wa",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 354",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Port Gamble S'Klallam Tribe",
+      "region": "wa",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 367",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Sauk-Suiattle Indian Tribe",
+      "region": "wa",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 372",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Shoshone-Bannock Tribes of the Fort Hall Reservation",
+      "region": "id",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 374",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Tolowa Dee-ni' Nation",
+      "region": "ca",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 477",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Chippewa Cree Indians of the Rocky Boy's Reservation, Montana",
+      "region": "mt",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 491",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation, Nevada)",
+      "region": "nv",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 552",
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "name": "PuliklaTribe of Yurok People (previously listed as Resighini Rancheria, California)",
+      "region": "ca",
+      "source": "bia-tribal-leaders-directory",
+      "ref": "OBJECTID 456",
+      "checkedAt": "2026-10-04"
+    }
+  ]
+}

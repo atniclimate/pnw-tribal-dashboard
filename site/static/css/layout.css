@@ -1,0 +1,262 @@
+/*
+ * Layout: page chrome (header, primary nav, footer, phone bottom bar), the main column, views, embed mode
+ * (blueprint 1.4), and single-panel Dashboard embeds (`panel=`). One column on phones; nothing scrolls
+ * sideways at 320 px or at 200 percent zoom (9.7). Owner: lane L1.
+ */
+
+/* Header: the 5 px ATNI Red rule, the ATNI Climate wordmark, the product name, the Nation chip */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-top: var(--rule-header) solid var(--atni-red);
+  background: var(--ground);
+}
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--touch-target);
+  color: var(--ink-heading);
+  text-decoration: none;
+}
+.site-header__brand:hover { color: var(--ink-heading); }
+/* The program wordmark, set in type: ATNI (white) stacked over CLIMATE (ATNI Red). min-content puts each
+   word on its own line; the first line takes white. 20 px at weight 800 is large text for contrast. */
+.site-header__org,
+.wordmark {
+  display: block;
+  width: min-content;
+  color: var(--atni-red);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 0.86;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.site-header__org::first-line,
+.wordmark::first-line { color: var(--ink-heading); }
+.site-header__product {
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--rule-strong);
+  font-family: var(--font-display);
+  font-weight: var(--fw-title);
+  font-size: var(--type-h3-size);
+  line-height: 1.15;
+  letter-spacing: var(--tracking-h3);
+  text-wrap: balance;
+}
+
+.nation-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target);
+  max-width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--rule-strong);
+  background: var(--surface-raised);
+  color: var(--ink-heading);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  font-size: var(--type-ui-size);
+  line-height: 1.2;
+  text-decoration: none;
+}
+.nation-chip:hover { background: var(--surface-hover); color: var(--ink-heading); }
+.nation-chip__label { color: var(--ink-muted); }
+
+/* Primary navigation: a horizontal strip that scrolls inside itself on phones, never the page */
+.site-nav {
+  border-bottom: 1px solid var(--rule-on-dark);
+  background: var(--ground);
+}
+.site-nav__list {
+  display: flex;
+  gap: 0;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+  max-width: var(--width-content-max);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  list-style: none;
+}
+.site-nav__list a {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  padding: 0 var(--space-3);
+  border-bottom: 4px solid transparent;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  font-size: var(--type-ui-size);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.site-nav__list a:hover { color: var(--ink-heading); background: var(--surface-raised); }
+.site-nav__list a[aria-current='page'] { color: var(--ink-heading); border-bottom-color: var(--ink-heading); }
+
+/* Main column */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: var(--width-content-max);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) var(--space-7);
+}
+main > * { min-width: 0; }
+.view { display: flex; flex-direction: column; gap: var(--space-5); }
+.panel-note { color: var(--ink-muted); }
+
+/* Two-up groups for wide screens; one column below 960 px */
+.layout-columns { display: grid; gap: var(--space-5); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 960px) {
+  .layout-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .layout-columns > .span-all { grid-column: 1 / -1; }
+}
+
+/* Footer */
+.site-footer {
+  max-width: var(--width-content-max);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) var(--space-7);
+  border-top: 1px solid var(--rule-on-dark);
+  color: var(--ink-muted);
+  font-size: var(--type-small-size);
+  font-weight: var(--fw-body-strong);
+  line-height: var(--type-caption-lh);
+}
+.site-footer p { max-width: none; margin: 0 0 var(--space-3); }
+.site-footer strong { color: var(--ink-heading); }
+.site-footer__safety { color: var(--ink-heading); }
+.site-footer__sovereignty {
+  padding-left: var(--space-3);
+  border-left: var(--rule-band) solid var(--callout-sovereignty-rule);
+}
+.site-footer__links { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); }
+.site-footer__links a { display: inline-flex; align-items: center; min-height: var(--touch-target); }
+
+/* Phone bottom bar: Alerts, Rivers, Call, Near Me under the thumb (56 px targets) */
+.bottom-bar {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: var(--z-sticky);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  border-top: 1px solid var(--rule-strong);
+  background: var(--surface-overlay);
+}
+.bottom-bar__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target-bar);
+  padding: 0 var(--space-1);
+  color: var(--ink-heading);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  font-size: var(--type-ui-size);
+  text-align: center;
+  text-decoration: none;
+}
+.bottom-bar__item:hover { background: var(--surface-hover); color: var(--ink-heading); }
+.bottom-bar__item[aria-current='page'] { background: var(--surface-hover); }
+.bottom-bar__item + .bottom-bar__item { border-left: 1px solid var(--rule-on-dark); }
+body { padding-bottom: calc(var(--touch-target-bar) + env(safe-area-inset-bottom, 0px)); }
+
+@media (min-width: 720px) {
+  .site-header { padding: var(--space-4) var(--space-5); }
+  main { padding: var(--space-6) var(--space-5) var(--space-8); gap: var(--space-6); }
+  .site-footer { padding: var(--space-6) var(--space-5) var(--space-7); }
+  .site-nav__list { padding: 0 var(--space-4); }
+  .bottom-bar { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Embed mode (blueprint 1.4): html[data-embed='1'] is set before first paint by boot/flags.js.       */
+/* Hidden: header, primary nav, bottom bar, and the footer's links and credits. Never hidden: the      */
+/* embed bar, provenance footers, status pills, the banner, the Nation selector in the page, the       */
+/* sovereignty note, and the "call 911" line.                                                           */
+/* ------------------------------------------------------------------------------------------------ */
+[data-embed-only] { display: none; }
+
+.embed-bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 var(--space-3);
+  min-height: var(--embed-bar-height);
+  padding: 0 var(--space-3);
+  border-bottom: 1px solid var(--rule-strong);
+  background: var(--surface-overlay);
+  font-family: var(--font-display);
+  font-weight: var(--fw-ui);
+  font-size: var(--type-caption-size);
+  line-height: 1.2;
+}
+.embed-bar__brand {
+  padding-right: var(--space-3);
+  border-right: 1px solid var(--rule-strong);
+  color: var(--ink-heading);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.embed-bar__title {
+  flex: 1 1 8em;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink-heading);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.embed-bar__open,
+.embed-bar__sources {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--embed-bar-height);
+  white-space: nowrap;
+}
+
+html[data-embed='1'] [data-embed-only] { display: flex; }
+html[data-embed='1'] .site-header,
+html[data-embed='1'] .site-nav,
+html[data-embed='1'] .bottom-bar,
+html[data-embed='1'] .site-footer__sources,
+html[data-embed='1'] .site-footer__links,
+html[data-embed='1'] .site-footer__credit,
+html[data-embed='1'] .site-footer__build { display: none; }
+html[data-embed='1'] body { padding-bottom: 0; }
+html[data-embed='1'] main { padding: var(--space-4) var(--space-3) var(--space-4); gap: var(--space-4); }
+html[data-embed='1'] .page-title { font-size: var(--type-h2-size); line-height: var(--type-h2-lh); }
+html[data-embed='1'] .site-footer { padding: var(--space-3) var(--space-3) var(--space-4); font-size: var(--type-caption-size); }
+html[data-embed='1'] .site-footer p { margin-bottom: var(--space-2); }
+
+/* Single-panel Dashboard embeds (panel=banner|alerts|nation|rivers|contacts|map). Unknown values change
+   nothing, and core/embed.js removes them. The noscript notice always stays. */
+html[data-panel-only] body[data-page='dashboard'] main > .page-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+html[data-panel-only='banner'] body[data-page='dashboard'] main > :not([data-embed-panel='banner']):not(noscript):not(.page-title),
+html[data-panel-only='alerts'] body[data-page='dashboard'] main > :not([data-embed-panel='alerts']):not(noscript):not(.page-title),
+html[data-panel-only='nation'] body[data-page='dashboard'] main > :not([data-embed-panel='nation']):not(noscript):not(.page-title),
+html[data-panel-only='rivers'] body[data-page='dashboard'] main > :not([data-embed-panel='rivers']):not(noscript):not(.page-title),
+html[data-panel-only='contacts'] body[data-page='dashboard'] main > :not([data-embed-panel='contacts']):not(noscript):not(.page-title),
+html[data-panel-only='map'] body[data-page='dashboard'] main > :not([data-embed-panel='map']):not(noscript):not(.page-title) { display: none; }
+
+/* The banner strip (96 px on the host page; embed.js grows the frame when the content needs more): the
+   embed bar, the banner, the 911 line, and the sovereignty statement */
+html[data-panel-only='banner'] body[data-page='dashboard'] main { padding: var(--space-2) var(--space-3) 0; }
+html[data-panel-only='banner'] body[data-page='dashboard'] [data-embed-panel='banner'] > .panel__title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+html[data-panel-only='banner'] body[data-page='dashboard'] .site-footer { padding: var(--space-1) var(--space-3); border-top: 0; }
+html[data-panel-only='banner'] body[data-page='dashboard'] .site-footer p { margin: 0; }
+html[data-panel-only='banner'] body[data-page='dashboard'] .embed-bar { position: static; }

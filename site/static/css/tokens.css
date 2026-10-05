@@ -1,0 +1,204 @@
+/*
+ * Design tokens: the ATNI Climate Design System applied to the Cascadia Tribal Hazard Dashboard
+ * (blueprint 9.1). The only file under site/static/css/ that may contain a hex color; every other
+ * stylesheet reads these custom properties. scripts/check/tokens.mjs compares the values below with
+ * tests/fixtures/design-system.canonical.json, and scripts/check/contrast.mjs computes every pair in
+ * tests/fixtures/contrast-pairs.json from this file. Owner: lane L1.
+ *
+ * Dark is the default (Design Rulings, 10/04/2026). The light layer exists for print and for a direct
+ * sunlight toggle only if the maintainer approves one (Q14); it never follows the operating system.
+ * Radius is 0 everywhere; on dark, elevation comes from luminance steps, never from shadows.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Core palette (handoff README, Design Tokens: Color) */
+  --color-atni-red: #E13D33;
+  --color-red-alt: #B02821;
+  --color-red-alt-hover: #8C1F19;
+  --color-black-bg: #010B13;
+  --color-grey: #636363;
+  --color-grey-alt: #3B3B3B;
+  --color-grey-element: #141414;
+  --color-grey-overlay: #1E242C;
+  --color-surface: #FFFFFF;
+  --color-surface-tint: #F4F7FB;
+  --color-text-on-dark: #E8ECF0;
+  --color-red-on-dark: #F26B5E;
+
+  /* Climate program palette */
+  --color-program-red-element: #C30101;
+  --color-program-grey: #98A1B4;
+  --color-tribal-magenta: #9732B4;              /* RESERVED: land, Treaty, and sovereignty marks only */
+
+  /* Semantic and component colors from the handoff (light grounds) */
+  --color-muted-text: #8A94A6;
+  --color-deemphasized-text: #C6CBD4;
+  --color-hairline: #E7ECF3;
+  --color-hairline-alt: #EEF1F6;
+  --color-status-active-text: #1C8A5E;
+  --color-status-active-tag-bg: #E6F9F1;
+  --color-status-review-text: #B4740E;
+  --color-status-review-bg: #FDF3E2;
+  --color-callout-note-bg: #FBEEED;
+  --color-callout-sovereignty-bg: #F9EDFB;
+  --color-tag-sovereignty-bg: #F6E6F8;
+
+  /* Fonts per the 10/04/2026 web typography ruling (fonts.css declares the faces) */
+  --font-display: 'League Spartan', 'Roboto', 'Noto Sans Orthography', 'League Spartan Fallback', system-ui, sans-serif;
+  --font-body: 'Roboto', 'Noto Sans Orthography', 'Roboto Fallback', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --fw-title: 600;        /* titles, headings, bold */
+  --fw-ui: 500;           /* subtitles, buttons, labels, chips, nav, eyebrows */
+  --fw-body: 400;         /* paragraphs at 16 px and above */
+  --fw-body-strong: 500;  /* small text at 14 px and below: stamps, captions, chips (no light weights on dark) */
+
+  /* Type scale: every style is a ratio of Body (web anchor 16 px = 1rem) */
+  --type-body-size: 1rem;
+  --type-title-size: 2.55rem;
+  --type-subtitle-size: 1.25rem;
+  --type-h1-size: 2.25rem;
+  --type-h2-size: 1.75rem;
+  --type-h3-size: 1.17rem;
+  --type-caption-size: 0.8125rem;
+  --type-small-size: 0.875rem;
+  --type-ui-size: 0.9375rem;
+  --type-ui-large-size: 1.1875rem;
+  --type-title-lh: 1.14;
+  --type-subtitle-lh: 1.3;
+  --type-h1-lh: 1.1;
+  --type-h2-lh: 1.15;
+  --type-h3-lh: 1.2;
+  --type-body-lh: 1.6;
+  --type-caption-lh: 1.4;
+  --tracking-display: -0.025em;
+  --tracking-h3: -0.01em;
+  --tracking-eyebrow: 0.08em;
+
+  /* Ground and surfaces: shade, not decoration */
+  --ground: #010B13;
+  --surface-raised: #141414;
+  --surface-overlay: #1E242C;
+  --surface-hover: #2A3138;
+  --ink: #E8ECF0;
+  --ink-heading: #FFFFFF;
+  --ink-muted: #98A1B4;
+  --ink-on-light: #010B13;
+  --rule-on-dark: #1E242C;                       /* the spec's #141414 rule is invisible on the dark ground */
+  --rule-strong: #636363;                        /* dividers and control outlines only, never text */
+  --atni-red: #E13D33;
+  --red-on-dark: #F26B5E;
+  --tribal-magenta: #9732B4;
+  --link: var(--red-on-dark);
+  --link-hover: #FFFFFF;
+  --scrim: rgba(1, 11, 19, 0.72);                /* behind sheets (DDM --glass-read) */
+  --radius: 0;
+  --card-shadow: none;
+
+  /* Status: shape plus word carry meaning; color sits on the shape only */
+  --status-live: #1C8A5E;
+  --status-cached: #4D8DCC;
+  --status-stale: #B4740E;
+  --status-degraded: #D97706;
+  --status-unavailable: #98A1B4;
+
+  /* Severity bands (CAST DS-003 and DS-008, provisional) with the Severe ink correction */
+  --band-extreme-bg: #7C2D12;
+  --band-extreme-ink: #FFFFFF;
+  --band-extreme-keyline: #E8ECF0;               /* #7C2D12 on #141414 is 1.97:1 */
+  --band-severe-bg: #EF4444;
+  --band-severe-ink: #010B13;                    /* white on #EF4444 is 3.76:1; dark ink is 5.27:1 */
+  --band-moderate-bg: #F97316;
+  --band-moderate-ink: #010B13;
+  --band-minor-bg: #FBBF24;
+  --band-minor-ink: #010B13;
+  --band-unstated-bg: #98A1B4;
+  --band-unstated-ink: #010B13;
+
+  /* River flood categories reuse the band ramp (NWPS purple would collide with Tribal Magenta) */
+  --flood-major: var(--band-extreme-bg);
+  --flood-moderate: var(--band-severe-bg);
+  --flood-minor: var(--band-moderate-bg);
+  --flood-action: var(--band-minor-bg);
+  --flood-none: #98A1B4;
+  --flood-not-defined: #98A1B4;
+
+  /* Callouts on dark */
+  --callout-sovereignty-bg: var(--surface-raised);
+  --callout-sovereignty-rule: var(--tribal-magenta);
+  --callout-note-bg: var(--surface-raised);
+  --callout-note-rule: var(--atni-red);
+  --callout-quiet-bg: var(--surface-raised);
+  --callout-quiet-rule: var(--rule-strong);
+
+  /* Focus and motion (DDM pattern) */
+  --focus-inner: #FFFFFF;
+  --focus-outer: #010B13;
+  --dur-micro: 120ms;
+  --dur-fast: 180ms;
+  --dur-base: 240ms;
+  --dur-slow: 320ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Shape, space, and layers */
+  --touch-target: 44px;
+  --touch-target-bar: 56px;
+  --rule-header: 5px;
+  --rule-band: 4px;
+  --rule-banner: 8px;
+  --bullet-size: 7px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --card-padding: 22px 24px;
+  --card-padding-phone: 16px;
+  --button-padding: 11px 20px;
+  --width-content-max: 1080px;
+  --width-reading-measure: 640px;
+  --embed-bar-height: 36px;
+  --z-map: 1;
+  --z-sticky: 10;
+  --z-sheet: 20;
+  --z-toast: 30;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-micro: 0ms;
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}
+
+/* Light layer: print, and a sunlight toggle if the maintainer approves one (Q14). Raw palette tokens
+   never change between themes; only the semantic layer does. */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --ground: #F4F7FB;
+  --surface-raised: #FFFFFF;
+  --surface-overlay: #FFFFFF;
+  --surface-hover: #EEF1F6;
+  --ink: #3B3B3B;
+  --ink-heading: #010B13;
+  --ink-muted: #636363;
+  --rule-on-dark: #E7ECF3;
+  --rule-strong: #8A94A6;
+  --link: var(--color-red-alt);
+  --link-hover: var(--color-red-alt-hover);
+  --card-shadow: 0 1px 3px rgba(11, 18, 32, 0.08);
+  --band-extreme-keyline: #7C2D12;
+  --status-unavailable: #636363;                 /* #98A1B4 on white is 2.59:1, below the 3:1 non-text floor */
+  --flood-none: #636363;
+  --flood-not-defined: #636363;
+  --callout-sovereignty-bg: #F9EDFB;
+  --callout-note-bg: #FBEEED;
+  --callout-quiet-bg: #EEF1F6;
+  --focus-inner: #010B13;
+  --focus-outer: #FFFFFF;
+}
