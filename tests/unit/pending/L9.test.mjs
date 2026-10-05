@@ -1,21 +1,22 @@
 // @ts-check
 /**
- * Pending acceptance for lane L9 (blueprint 12.3). Each item is skipped by its lane tag until the lane
- * delivers; the lane replaces these placeholders with real tests in its own test paths and deletes this
- * file. Owner: lane L9.
+ * Pending acceptance for lane L9 (blueprint 12.3). Wave 1 items (snapshot runner, carry-forward, due logic,
+ * assemble, deploy.yml gating, actionlint) are real tests in tests/unit/snapshot/ and tests/unit/assemble/.
+ * What remains belongs to Wave 3 or to a maintainer action; the lane deletes this file when they land.
+ * Owner: lane L9.
  */
 import { test } from 'node:test';
 
 const TAG = 'lane:L9 pending';
 const ITEMS = [
-  "dry run writes valid envelopes and a manifest with correct hashes, last",
-  "a forced task failure carries forward with the original observedAt and still deploys",
-  "with no previous copy the file is rejected and renders Unavailable",
-  "due logic skips tasks not yet due",
-  "assemble rewrites only HTML attribute paths, copies static to v/<sha12>/, and retains the previous generation",
-  "the service worker never registers inside an iframe and honors the kill switch",
-  "deploy jobs skip while CTHD_PAGES_ACTIONS is absent",
-  "actionlint passes with SHA-pinned actions",
+  'Wave 3: the service worker never registers inside an iframe and honors the kill switch',
+  'Wave 3: versioned assets cache-first, HTML and live data network-first (e2e scenario 9)',
+  'Wave 3: a page loaded before a code deploy still lazy-imports from the retained generation (e2e scenario 13)',
+  'Wave 3: offline.html content and manifest.webmanifest',
+  'Wave 3: assemble writes the service worker precache list',
+  'maintainer: a push to main runs no deploy job (needs a push approval)',
+  'maintainer: reference refresh opens a pull request on a dispatch dry run (needs the reference builders)',
+  'Gate V: Pages switched to GitHub Actions, CTHD_PAGES_ACTIONS created, first production deploy succeeds',
 ];
 
 for (const item of ITEMS) test(`L9: ${item}`, { skip: TAG }, () => {});

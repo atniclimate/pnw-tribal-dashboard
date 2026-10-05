@@ -1,0 +1,87 @@
+# Monthly reference refresh (blueprint 6.2, 6.5). Owner: lane L9.
+#
+# Rebuilds the reference data (registry, boundaries, zones, gauges, joins, hazards), runs the full
+# validation itself (pull requests opened with GITHUB_TOKEN do not trigger pull_request workflows), and
+# opens or updates the pull request reference/refresh-<date>. It never merges; the maintainer reviews and
+# merges every reference change.
+#
+# Until Gate V the schedule is inert: the job runs on a schedule only when the repository variable
+# CTHD_PAGES_ACTIONS equals 'true'. A manual dispatch runs at any time; with dry_run the pull request is
+# opened as a draft. Repository setting needed for the pull request step: Actions may create pull requests.
+name: Reference Refresh
+
+on:
+  schedule:
+    - cron: '17 9 3 * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Open the pull request as a draft
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: reference-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Rebuild Reference Data and Open a Pull Request
+    if: github.event_name == 'workflow_dispatch' || vars.CTHD_PAGES_ACTIONS == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Restore the raw download cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/inputs
+          key: reference-inputs-${{ hashFiles('data/pipeline/inputs.yaml') }}-${{ github.run_id }}
+          restore-keys: reference-inputs-${{ hashFiles('data/pipeline/inputs.yaml') }}-
+      - name: Build reference data
+        run: npm run reference:build
+      - name: Validate (the checks CI would run)
+        run: |
+          npm run lint
+          npm run typecheck
+          npm test
+          npm run validate:data
+          npm run check
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRAFT: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '--draft' || '' }}
+        run: |
+          stamp="$(date -u +%Y-%m-%d)"
+          branch="reference/refresh-${stamp}"
+          title="Reference refresh ${stamp}"
+          body="reports/reference-summary.md"
+          if [ ! -f "$body" ]; then
+            mkdir -p reports
+            echo "Monthly reference refresh. The reference summary report was not produced; review the diff in full." > "$body"
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add -A -- site/data data
+          if git diff --cached --quiet; then
+            echo "No reference changes."
+            exit 0
+          fi
+          git commit -q -m "chore(reference): monthly refresh ${stamp}"
+          git push --force origin "$branch"
+          if gh pr view "$branch" --json number > /dev/null 2>&1; then
+            gh pr edit "$branch" --title "$title" --body-file "$body"
+          else
+            # shellcheck disable=SC2086
+            gh pr create --base main --head "$branch" --title "$title" --body-file "$body" $DRAFT
+          fi
