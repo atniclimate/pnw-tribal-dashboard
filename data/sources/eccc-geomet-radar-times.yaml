@@ -1,0 +1,37 @@
+id: eccc-geomet-radar-times
+title: ECCC Radar Time Dimension (MSC GeoMet Capabilities)
+owner: Environment and Climate Change Canada, Meteorological Service of Canada
+url: https://geo.weather.gc.ca/geomet
+humanUrl: https://weather.gc.ca/radar/index_e.html
+license: Environment and Climate Change Canada Data Servers End-use Licence; content must not be altered.
+attribution: Environment and Climate Change Canada
+cadence: Radar composites every 6 minutes; the latest valid time is read from GetCapabilities.
+region: ca
+coverage: [BC]
+kind: wms
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GetCapabilities for RADAR_1KM_RRAI with Origin https://atniclimate.github.io returned HTTP 200 and Access-Control-Allow-Origin * on 10/05/2026 (the same request the eccc-geomet-radar record probes)."
+  timeoutMs: 12000
+  retries: 1
+  priority: 3
+freshness:
+  freshForMs: 900000
+  usableForMs: 3600000
+health:
+  probe: https://geo.weather.gc.ca/geomet?service=WMS&version=1.3.0&request=GetCapabilities&layer=RADAR_1KM_RRAI
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: text/xml
+  minBytes: 1000
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Companion to eccc-geomet-radar so the map can read the radar time dimension through the registry-only fetch path (params service, version, request, layer). Added by lane L8.

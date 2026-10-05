@@ -1,0 +1,190 @@
+/*
+ * Map styles (blueprint 4, 9.1). Owner: lane L8. Tokens only: every color is a var() from tokens.css, and
+ * check:tokens scans this file. Loaded by map/loader.js (loadMapStyles) in both modes, never by a page head,
+ * so a page that never shows a map never requests it. Outline-mode SVG takes its colors from the classes
+ * below, never from style attributes (the Content Security Policy forbids inline styles). Tribal Magenta
+ * appears only on land and sovereignty marks.
+ */
+
+/* ---- Frame contents ---------------------------------------------------------------------------- */
+.map-frame__viewport { position: relative; }
+.map-frame__viewport > .map-canvas,
+.map-frame__viewport > .map-canvas.maplibregl-map { position: absolute; inset: 0; background: var(--ground); }
+.map-canvas--outline { overflow: hidden; }
+.map-canvas--outline .map-outline { display: block; width: 100%; height: 100%; }
+.map-canvas__empty { margin: 0; padding: var(--space-5); color: var(--ink); }
+.map-print { display: none; }
+
+.map-status {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: var(--z-map);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  max-width: calc(100% - 2 * var(--space-2) - var(--touch-target));
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--rule-strong);
+  background: var(--surface-overlay);
+  color: var(--ink);
+  font-size: var(--type-caption-size);
+  font-weight: var(--fw-body-strong);
+}
+.map-status__loading { color: var(--ink); }
+.map-status__detail:empty { display: none; }
+
+.map-extras { display: grid; gap: var(--space-2); }
+.map-notice { margin: 0; padding: var(--space-2) var(--space-3); border-left: var(--rule-band) solid var(--rule-strong); background: var(--surface-raised); color: var(--ink); font-size: var(--type-small-size); }
+.map-attribution { margin: 0; color: var(--ink-muted); font-size: var(--type-caption-size); font-weight: var(--fw-body-strong); line-height: var(--type-caption-lh); overflow-wrap: anywhere; }
+.map-offer { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); }
+.map-offer__button { min-height: var(--touch-target); }
+.map-offer__message { color: var(--ink); font-size: var(--type-small-size); }
+
+/* The note keeps the L1 .sovereignty-note look; the disclosure holds the dataset line. */
+.sovereignty-note__text { margin: 0; }
+.sovereignty-note__more { margin-top: var(--space-1); }
+.sovereignty-note__more > summary { min-height: var(--touch-target); display: list-item; list-style-position: inside; padding-top: var(--space-2); cursor: pointer; color: var(--ink); }
+.sovereignty-note__datasets { margin: var(--space-1) 0 0; }
+
+/* ---- Controls and DOM labels ------------------------------------------------------------------- */
+.map-frame__viewport .map-canvas .maplibregl-ctrl-group { background: var(--surface-overlay); border: 1px solid var(--rule-strong); border-radius: var(--radius); box-shadow: none; }
+.map-frame__viewport .map-canvas .maplibregl-ctrl-group button { width: var(--touch-target); height: var(--touch-target); }
+.map-frame__viewport .map-canvas .maplibregl-ctrl-group button + button { border-top: 1px solid var(--rule-strong); }
+.map-frame__viewport .map-canvas .maplibregl-ctrl-icon { filter: none; }
+.map-frame__viewport .map-canvas .cthd-reset-ctrl .cthd-reset-view {
+  width: auto;
+  white-space: nowrap;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+  padding: 0 var(--space-2);
+  border: 0;
+  background: transparent;
+  color: var(--ink-heading);
+  font-family: var(--font-body);
+  font-size: var(--type-caption-size);
+  font-weight: var(--fw-ui);
+  cursor: pointer;
+}
+.cthd-reset-ctrl .cthd-reset-view:hover { background: var(--surface-hover); }
+.map-frame__viewport .map-canvas .maplibregl-ctrl-attrib,
+.map-frame__viewport .map-canvas .maplibregl-ctrl-attrib.maplibregl-compact {
+  max-width: 100%;
+  background: var(--surface-overlay);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--type-caption-size);
+  font-weight: var(--fw-body-strong);
+  line-height: var(--type-caption-lh);
+}
+.map-frame__viewport .map-canvas .maplibregl-ctrl-attrib a { color: var(--link); }
+.map-frame__viewport .map-canvas .maplibregl-ctrl-attrib-inner { white-space: normal; overflow-wrap: anywhere; }
+.cthd-sovereignty-ctrl {
+  max-width: 14rem;
+  margin: 0 0 var(--space-2) var(--space-2);
+  padding: 0 var(--space-2);
+  border-left: var(--rule-band) solid var(--callout-sovereignty-rule);
+  background: var(--surface-overlay);
+  font-size: var(--type-caption-size);
+  font-weight: var(--fw-body-strong);
+}
+.cthd-sovereignty-ctrl__link { display: inline-flex; align-items: center; min-height: var(--touch-target); color: var(--ink); text-decoration: underline; }
+.map-frame__viewport .map-canvas .maplibregl-cooperative-gesture-screen { background: var(--scrim); color: var(--ink-heading); font-family: var(--font-body); }
+.map-frame__viewport .map-canvas .maplibregl-popup-content { padding: var(--space-3) var(--space-5) var(--space-3) var(--space-3); border-radius: var(--radius); background: var(--surface-overlay); color: var(--ink); font-family: var(--font-body); font-size: var(--type-small-size); box-shadow: none; border: 1px solid var(--rule-strong); }
+.map-frame__viewport .map-canvas .maplibregl-popup-close-button { min-width: var(--touch-target); min-height: var(--touch-target); color: var(--ink-heading); font-size: 1.25rem; }
+.map-frame__viewport .map-canvas .maplibregl-popup-anchor-top .maplibregl-popup-tip,
+.map-frame__viewport .map-canvas .maplibregl-popup-anchor-top-left .maplibregl-popup-tip,
+.map-frame__viewport .map-canvas .maplibregl-popup-anchor-top-right .maplibregl-popup-tip { border-bottom-color: var(--surface-overlay); }
+.map-frame__viewport .map-canvas .maplibregl-popup-anchor-bottom .maplibregl-popup-tip,
+.map-frame__viewport .map-canvas .maplibregl-popup-anchor-bottom-left .maplibregl-popup-tip,
+.map-frame__viewport .map-canvas .maplibregl-popup-anchor-bottom-right .maplibregl-popup-tip { border-top-color: var(--surface-overlay); }
+.map-popup__title { display: block; color: var(--ink-heading); font-weight: var(--fw-ui); }
+.map-popup__line { margin: var(--space-1) 0 0; }
+.map-nation-label {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--rule-strong);
+  background: var(--surface-overlay);
+  color: var(--ink-heading);
+  font-family: var(--font-body);
+  font-size: var(--type-small-size);
+  font-weight: var(--fw-ui);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ---- Feature list -------------------------------------------------------------------------------- */
+.map-feature-list { border: 1px solid var(--rule-on-dark); background: var(--surface-raised); }
+.map-feature-list > summary { min-height: var(--touch-target); display: list-item; list-style-position: inside; padding: var(--space-3); cursor: pointer; color: var(--ink-heading); font-weight: var(--fw-ui); }
+.map-feature-list__items { margin: 0; padding: 0; list-style: none; max-height: 16rem; overflow: auto; }
+.map-feature-list__items > li { padding-left: 0; }
+.map-feature-list__items > li::before { content: none; }
+.map-feature-list__button {
+  display: block;
+  width: 100%;
+  min-height: var(--touch-target);
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  border-top: 1px solid var(--rule-on-dark);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.map-feature-list__button:hover { background: var(--surface-hover); }
+.map-feature-list__empty,
+.map-feature-list__more { margin: 0; padding: var(--space-2) var(--space-3); color: var(--ink-muted); font-size: var(--type-small-size); }
+
+/* ---- Legend swatches (on top of the L1 .legend__swatch box) ---------------------------------------- */
+.map-legend { margin: 0; }
+.legend__note { color: var(--ink-muted); }
+.map-swatch--outline { background: transparent; border: 1px solid var(--ink-muted); }
+.map-swatch--basemap-off { background: transparent; border: 1px dashed var(--ink-muted); }
+.map-swatch--hq { background: var(--ink-heading); clip-path: circle(50%); outline: 1px solid var(--ground); }
+.map-swatch--boundary-trust { background: transparent; border: 2px dashed var(--tribal-magenta); }
+.map-swatch--alert { --swatch: var(--band-unstated-bg); background: var(--swatch); opacity: 1; }
+.map-swatch--extreme { --swatch: var(--band-extreme-bg); outline: 2px solid var(--band-extreme-keyline); outline-offset: -1px; }
+.map-swatch--severe { --swatch: var(--band-severe-bg); }
+.map-swatch--moderate { --swatch: var(--band-moderate-bg); }
+.map-swatch--minor { --swatch: var(--band-minor-bg); }
+.map-swatch--unstated { --swatch: var(--band-unstated-bg); }
+.map-swatch--gauge-circle { background: var(--flood-minor); clip-path: circle(50%); outline: 1px solid var(--ground); }
+.map-swatch--gauge-square { background: var(--flood-minor); outline: 1px solid var(--ground); }
+.map-swatch--gauge-none { background: transparent; border: 2px solid var(--flood-not-defined); clip-path: circle(50%); }
+.map-swatch--radar { background: var(--status-cached); opacity: 0.6; }
+.map-swatch--none { background: transparent; border: 1px dotted var(--ink-muted); }
+
+/* ---- Outline mode (blueprint 4.8): colors by class only ---------------------------------------------- */
+.map-outline { background: var(--ground); }
+.map-outline__ground { fill: var(--ground); }
+.map-outline__state,
+.map-outline__province-edge,
+.map-outline__county { fill: none; stroke: var(--ink-muted); stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.map-outline__state { stroke-width: 1; }
+.map-outline__province-edge { stroke-width: 1.5; }
+.map-outline__county { stroke-width: 0.75; stroke-opacity: 0.5; }
+.map-outline__land-area { fill: var(--tribal-magenta); fill-opacity: 0.15; stroke: var(--tribal-magenta); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.map-outline__hq { fill: var(--ink-heading); stroke: var(--ground); stroke-width: 1.5; }
+.map-outline__alert { fill-opacity: 0.3; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.map-outline__alert-keyline { fill: none; stroke: var(--band-extreme-keyline); stroke-width: 4; vector-effect: non-scaling-stroke; }
+.map-outline__alert--extreme { fill: var(--band-extreme-bg); stroke: var(--band-extreme-bg); }
+.map-outline__alert--severe { fill: var(--band-severe-bg); stroke: var(--band-severe-bg); }
+.map-outline__alert--moderate { fill: var(--band-moderate-bg); stroke: var(--band-moderate-bg); }
+.map-outline__alert--minor { fill: var(--band-minor-bg); stroke: var(--band-minor-bg); }
+.map-outline__alert--unstated { fill: var(--band-unstated-bg); stroke: var(--band-unstated-bg); }
+.map-outline__alert--emergency { stroke-width: 3; }
+.map-outline__alert--watch { stroke-dasharray: 8 4; }
+.map-outline__alert--advisory { stroke-width: 1.5; }
+
+/* ---- Print: a WebGL canvas prints blank, so print shows the outline picture ---------------------------- */
+@media print {
+  .map-canvas--interactive,
+  .map-status { display: none; }
+  .map-print { display: block; }
+  .map-print .map-outline { width: 100%; height: auto; }
+}
+
+/* The in-map sovereignty link rides above the attribution line, which wraps to several lines on phones. */
+.map-frame__viewport .map-canvas .maplibregl-ctrl-bottom-left { bottom: 7rem; }
+@media (min-width: 720px) { .map-canvas .maplibregl-ctrl-bottom-left { bottom: 2.5rem; } }

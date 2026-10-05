@@ -1,0 +1,37 @@
+id: iem-nexrad-n0q-valid-time
+title: NEXRAD Mosaic Valid Time (Iowa Environmental Mesonet)
+owner: Iowa Environmental Mesonet, Iowa State University
+url: https://mesonet.agron.iastate.edu/data/gis/images/4326/USCOMP/n0q_0.json
+humanUrl: https://mesonet.agron.iastate.edu/
+license: Data are National Weather Service radar products (U.S. public domain) served by the Iowa Environmental Mesonet; keep the attribution.
+attribution: "Radar: NOAA NWS via Iowa Environmental Mesonet"
+cadence: Updated with each composite, about every 5 minutes.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-json
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "n0q_0.json with Origin https://atniclimate.github.io returned HTTP 200 and Access-Control-Allow-Origin * on 10/05/2026 (the same file the iem-nexrad-n0q record probes)."
+  timeoutMs: 10000
+  retries: 1
+  priority: 3
+freshness:
+  freshForMs: 600000
+  usableForMs: 3600000
+health:
+  probe: https://mesonet.agron.iastate.edu/data/gis/images/4326/USCOMP/n0q_0.json
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/json
+  minBytes: 50
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Companion to iem-nexrad-n0q so the map can read the mosaic valid time (meta.valid) through the registry-only fetch path. Added by lane L8 because the tile record's template cannot be fetched as JSON.

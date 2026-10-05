@@ -4,7 +4,7 @@ owner: CARTO, with map data from OpenStreetMap contributors
 url: https://basemaps.cartocdn.com/dark_all
 urlTemplate: https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png
 humanUrl: https://carto.com/basemaps/
-license: Terms of use pending maintainer review (decision Q10); map data under the Open Database License, copyright OpenStreetMap contributors.
+license: Free non-commercial tier (5 million tile requests a month) with an ATNI API key, CARTO Basemap Terms updated 09/29/2026; map data under the Open Database License, copyright OpenStreetMap contributors.
 attribution: © OpenStreetMap contributors © CARTO
 cadence: Static basemap tiles; the style changes rarely.
 region: both
@@ -32,4 +32,4 @@ health:
   maxBytes: null
 usedBy: [dashboard, alerts, forecasts]
 verifiedAt: 2026-10-05
-notes: Pending maintainer decision Q10 (whether CARTO terms permit this public, non-commercial use, or another provider is funded). One host, no subdomain list; the @2x tile URL is used on high-density screens. Outline mode is the fallback when tiles fail. The attribution is always visible.
+notes: "One host, no subdomain list; the @2x tile URL is used on high-density screens. Outline mode is the fallback when tiles fail. The attribution is always visible. Decided 10/05/2026 (Q10): allowed with an ATNI key locked to https://atniclimate.github.io; keyless tiles return a watermark (ETag begins wm-, 2,513 bytes) that passes the byte-size check, so the probe script must reject that ETag. Fallback if refused: OpenFreeMap Dark vector style, attribution OpenFreeMap © OpenMapTiles Data from OpenStreetMap. Until the key is installed and this record is active, the map module draws no basemap (no tile request) and its legend says so."

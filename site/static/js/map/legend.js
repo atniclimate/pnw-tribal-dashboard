@@ -2,19 +2,25 @@
 /**
  * Legend rendering (blueprint 4.4). DOM module.
  *
- * STUB (lane L0). Owner: lane L8. Signatures are the contract; bodies throw until the owner implements them.
+ * Owner: lane L8.
  */
+import { clear, h } from '../core/dom.js';
 
 /** @typedef {import('../types.js').LegendItem} LegendItem */
 
-const NOT_IMPLEMENTED = 'not implemented';
-
 /**
- * Swatches by class from map.css; text through h().
+ * Swatches by class from map.css (and the L1 `legend__swatch` set); text through h().
  * @param {HTMLElement} el
  * @param {LegendItem[]} items
  * @returns {void}
  */
 export function renderLegend(el, items) {
-  throw new Error(NOT_IMPLEMENTED);
+  clear(el);
+  el.classList.add('legend', 'map-legend');
+  if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', 'Map Legend');
+  for (const item of items) {
+    el.append(h('li', { class: 'legend__item', dataset: { legendId: item.id } },
+      h('span', { class: `legend__swatch ${item.swatchClass}`, 'aria-hidden': 'true' }),
+      h('span', { class: 'legend__label' }, item.label, item.note ? h('span', { class: 'legend__note' }, ` ${item.note}`) : null)));
+  }
 }

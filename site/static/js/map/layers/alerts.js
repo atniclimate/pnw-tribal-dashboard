@@ -2,17 +2,102 @@
 /**
  * Forecaster-drawn alert polygons, solid, with the extreme keyline. Implements MapLayer (blueprint 4.4).
  *
- * STUB (lane L0). Owner: lane L8. Signatures are the contract; bodies throw until the owner implements them.
+ * Only alerts whose own geometry is a polygon reach this layer; zone-basis alerts are drawn dashed by
+ * layers/zones.js so zone coverage never looks like a storm-based polygon. The page decides which alerts
+ * to pass (active ones on live maps); this layer draws what it is given.
+ *
+ * Owner: lane L8.
  */
+import { addOrdered, bandColor, removeAll, setLayersVisible } from '../style.js';
+import { centerOf, emptyCollection } from '../topo.js';
+import { alertPolygons, hasOwnPolygon } from '../topo.js';
 
-/** @typedef {import('../../types.js').MapLayer} MapLayer */
+export { alertPolygons, hasOwnPolygon };
 
-const NOT_IMPLEMENTED = 'not implemented';
+/** @typedef {import('../style.js').MapContext} MapContext */
+/** @typedef {import('../style.js').MapLayerX} MapLayerX */
+/** @typedef {import('../../types.js').DashboardAlert} DashboardAlert */
+/** @typedef {import('../../types.js').FeatureItem} FeatureItem */
 
 /**
  * @param {Record<string, unknown>} [opts]
- * @returns {MapLayer}
+ * @returns {MapLayerX}
  */
 export function createAlertsLayer(opts) {
-  throw new Error(NOT_IMPLEMENTED);
+  const sourceKey = 'alerts';
+  const ids = ['alerts:keyline', 'alerts:fill', 'alerts:line', 'selection:alerts'];
+  /** @type {MapContext | null} */
+  let ctx = null;
+  /** @type {DashboardAlert[]} */
+  let pending = [];
+  /** @type {FeatureItem[]} */
+  let items = [];
+  /** @type {string | null} */
+  let selected = null;
+
+  /** @param {string | null} id @param {boolean} on */
+  function mark(id, on) {
+    if (!id || !ctx?.map?.getSource(sourceKey)) return;
+    try { ctx.map.setFeatureState({ source: sourceKey, id }, { selected: on }); } catch { /* not ready */ }
+  }
+
+  function apply() {
+    const map = ctx?.map;
+    if (!map) return;
+    const fc = alertPolygons(pending);
+    items = fc.features.map((f) => {
+      const p = /** @type {any} */ (f.properties);
+      return { kind: /** @type {const} */ ('alert'), id: p.alertId, name: p.name, lngLat: centerOf(f.geometry) ?? [0, 0] };
+    }).filter((i) => i.lngLat[0] !== 0 || i.lngLat[1] !== 0);
+    const src = /** @type {import('maplibre-gl').GeoJSONSource | undefined} */ (map.getSource(sourceKey));
+    src?.setData(/** @type {any} */ (fc));
+  }
+
+  return {
+    id: 'alerts',
+    sourceIds: ['nws-alerts-active', 'eccc-geomet-weather-alerts'],
+    async add(c) {
+      ctx = /** @type {MapContext} */ (c);
+      const map = ctx.map;
+      if (!map) return;
+      map.addSource(sourceKey, { type: 'geojson', data: emptyCollection(), promoteId: 'alertId', tolerance: 0.5, buffer: 64, maxzoom: 12 });
+      const color = bandColor(ctx.token);
+      addOrdered(map, 'alerts', { id: 'keyline', type: 'line', source: sourceKey, filter: ['==', ['get', 'band'], 'extreme'], paint: { 'line-color': ctx.token('--band-extreme-keyline'), 'line-width': 4 } });
+      addOrdered(map, 'alerts', { id: 'fill', type: 'fill', source: sourceKey, paint: { 'fill-color': color, 'fill-opacity': 0.3 } });
+      addOrdered(map, 'alerts', { id: 'line', type: 'line', source: sourceKey, paint: { 'line-color': color, 'line-width': 2 } });
+      addOrdered(map, 'selection', {
+        id: 'alerts', type: 'line', source: sourceKey,
+        paint: { 'line-color': ctx.token('--ink-heading'), 'line-width': 4, 'line-opacity': ['case', ['boolean', ['feature-state', 'selected'], false], 1, 0] },
+      });
+      apply();
+    },
+    setData(data) {
+      const d = /** @type {{ alerts?: DashboardAlert[] }} */ (data ?? {});
+      if (!Array.isArray(d.alerts)) return;
+      pending = d.alerts;
+      apply();
+    },
+    setVisible(on) { setLayersVisible(ctx?.map ?? null, ids, on); },
+    highlight(id) {
+      mark(selected, false);
+      selected = id;
+      mark(selected, true);
+    },
+    legendItems() {
+      return [
+        { id: 'alert-extreme', label: 'Extreme Alert Area (Drawn by Forecasters)', swatchClass: 'map-swatch--alert map-swatch--extreme' },
+        { id: 'alert-severe', label: 'Severe', swatchClass: 'map-swatch--alert map-swatch--severe' },
+        { id: 'alert-moderate', label: 'Moderate', swatchClass: 'map-swatch--alert map-swatch--moderate' },
+        { id: 'alert-minor', label: 'Minor', swatchClass: 'map-swatch--alert map-swatch--minor' },
+        { id: 'alert-unstated', label: 'Unstated', swatchClass: 'map-swatch--alert map-swatch--unstated' },
+      ];
+    },
+    featureItems() { return items; },
+    remove() {
+      removeAll(ctx?.map ?? null, ids, [sourceKey]);
+      items = [];
+      pending = [];
+      ctx = null;
+    },
+  };
 }
