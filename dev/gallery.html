@@ -9,13 +9,13 @@
        and screenshots at 360 and 1280 px. Serve the repository root (for example on port 8101) and open
        /dev/gallery.html. Specimen text and readings come from dated fixtures and are labeled as such.
        Owner: lane L1. -->
-  <link rel="stylesheet" href="../site/static/css/tokens.css">
-  <link rel="stylesheet" href="../site/static/css/fonts.css">
-  <link rel="stylesheet" href="../site/static/css/base.css">
-  <link rel="stylesheet" href="../site/static/css/layout.css">
-  <link rel="stylesheet" href="../site/static/css/components.css">
-  <link rel="stylesheet" href="../site/static/css/print.css" media="print">
-  <link rel="icon" href="../site/static/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../static/css/tokens.css">
+  <link rel="stylesheet" href="../static/css/fonts.css">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/layout.css">
+  <link rel="stylesheet" href="../static/css/components.css">
+  <link rel="stylesheet" href="../static/css/print.css" media="print">
+  <link rel="icon" href="../static/img/favicon.svg" type="image/svg+xml">
   <style>
     /* Gallery-only arrangement; colors come from tokens. */
     .g-section { display: grid; gap: var(--space-4); }
@@ -273,7 +273,7 @@
     <section class="g-section" aria-labelledby="g-media-h">
       <h2 id="g-media-h">Media Viewer and Video Player</h2>
       <figure class="media-viewer">
-        <div class="media-viewer__stage"><img src="../site/static/img/atni-climate-lockup-on-dark.png" width="300" height="120" alt="ATNI Climate lockup on dark, used here as the specimen image"></div>
+        <div class="media-viewer__stage"><img src="../static/img/atni-climate-lockup-on-dark.png" width="300" height="120" alt="ATNI Climate lockup on dark, used here as the specimen image"></div>
         <div class="media-viewer__controls"><button class="btn btn--secondary" type="button">Previous</button><button class="btn btn--secondary" type="button">Next</button></div>
         <figcaption class="media-viewer__caption">Captions name the product, area, and valid time.</figcaption>
       </figure>
@@ -304,11 +304,11 @@
     </section>
   </main>
   <script type="module">
-    import { statusPill } from '../site/static/js/ui/status-pill.js';
-    import { initTabs } from '../site/static/js/ui/tabs.js';
-    import { initDisclosure } from '../site/static/js/ui/disclosure.js';
-    import { showToast } from '../site/static/js/ui/toast.js';
-    import { announce } from '../site/static/js/ui/live-region.js';
+    import { statusPill } from '../static/js/ui/status-pill.js';
+    import { initTabs } from '../static/js/ui/tabs.js';
+    import { initDisclosure } from '../static/js/ui/disclosure.js';
+    import { showToast } from '../static/js/ui/toast.js';
+    import { announce } from '../static/js/ui/live-region.js';
     const row = document.getElementById('g-status');
     for (const s of ['live', 'cached', 'stale', 'degraded', 'unavailable']) row.append(statusPill(s));
     row.append(statusPill('stale', 'Scheduled Copy'));
