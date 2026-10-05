@@ -1,0 +1,18 @@
+{
+ "active": {
+  "items": [],
+  "diagnostics": {
+   "itemsFailed": 0,
+   "noAdvisory": 0,
+   "exceededTransferLimit": 0
+  }
+ },
+ "allBasins": {
+  "items": [],
+  "diagnostics": {
+   "itemsFailed": 0,
+   "noAdvisory": 286,
+   "exceededTransferLimit": 0
+  }
+ }
+}

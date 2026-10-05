@@ -1,0 +1,15 @@
+{
+ "capture": "2026-10-05-zone-param-well-formed-unknown-code.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false
+ },
+ "failures": [],
+ "current": [],
+ "superseded": [],
+ "cancelled": [],
+ "expired": [],
+ "alerts": []
+}

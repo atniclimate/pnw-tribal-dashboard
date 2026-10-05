@@ -1,0 +1,296 @@
+{
+  "schema": "cthd.event-categories/1",
+  "agency": "eccc",
+  "generatedAt": "2026-10-05T07:54:54.806Z",
+  "sourceIds": [
+    "eccc-geomet-weather-alerts"
+  ],
+  "events": {
+    "air quality warning": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "arctic outflow warning": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "avertissement de blizzard": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "avertissement de chaleur": {
+      "categories": [
+        "heat"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "avertissement de pluie": {
+      "categories": [
+        "rain-landslide"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "avertissement de qualité de l'air": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "avertissement de vent": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "avertissement de vent Les Suêtes": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "avertissement de vent Wreckhouse": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "blizzard warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "blowing snow advisory": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "bulletin météorologique spécial": {
+      "categories": [
+        "other"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "dust storm warning": {
+      "categories": [
+        "smoke-air",
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "extreme cold warning": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "flash freeze warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "fog advisory": {
+      "categories": [
+        "other"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "freezing drizzle advisory": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "freezing rain warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "frost advisory": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "heat warning": {
+      "categories": [
+        "heat"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "hurricane warning": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "hurricane watch": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Les Suêtes wind warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "rainfall warning": {
+      "categories": [
+        "rain-landslide"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "severe thunderstorm warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "severe thunderstorm watch": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "snow squall warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "snowfall warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "special air quality statement": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "special weather statement": {
+      "categories": [
+        "other"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "storm surge warning": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "tornado warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "tornado watch": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "tropical storm warning": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "tropical storm watch": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "veille d'orages violents": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "weather warning": {
+      "categories": [
+        "other"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "wind warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "winter storm warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Wreckhouse wind warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    }
+  }
+}

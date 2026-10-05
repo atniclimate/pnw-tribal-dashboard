@@ -1,0 +1,52 @@
+id: bc-rfc-flood-advisories
+title: BC River Forecast Centre Flood Advisories and Warnings
+owner: Province of British Columbia, BC River Forecast Centre
+url: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0
+urlTemplate: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0/query?{query}
+humanUrl: https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/drought-flooding-dikes-dams/river-forecast-centre
+license: Licence not yet confirmed for republication (Q8); hidden as a candidate until checked.
+attribution: BC River Forecast Centre
+cadence: Updated by the centre as advisories change; the snapshot reads it every ten minutes.
+region: ca
+coverage: [BC]
+kind: arcgis-featureserver
+status: candidate
+deprecation: null
+access:
+  mode: direct+snapshot
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L3 probe 10/05/2026 08:17 UTC with Origin https://atniclimate.github.io: HTTP 200, Access-Control-Allow-Origin * (also linkaudit/part2_checks.json, 10/04/2026)."
+  timeoutMs: 15000
+  retries: 2
+  priority: 2
+  poll:
+    visibleMs: 300000
+    minMs: 300000
+  snapshot:
+    task: bc-hazards
+    files: [bc-hazards.json]
+    cadenceMin: 10
+freshness:
+  freshForMs: 900000
+  usableForMs: 7200000
+health:
+  probe: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0?f=json
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: null
+  minBytes: 500
+  maxBytes: null
+usedBy: [alerts, forecasts]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: >-
+  Query where=Advisory>1 (outSR 4326, f=geojson). The Advisory field is coded 1 No Advisory, 2 High
+  Streamflow Advisory, 3 Flood Watch, 4 Flood Warning (layer metadata 10/05/2026; 286 basins, all at No
+  Advisory at capture). Band stays unstated until the maintainer ratifies atni-cthd-bcrfc 0.1.0 (Q8);
+  posture follows the designation. exceededTransferLimit marks the panel degraded.

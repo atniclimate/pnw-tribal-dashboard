@@ -1,0 +1,34 @@
+id: nws-alert-types
+title: NWS Alert Event Types
+owner: NOAA National Weather Service
+url: https://api.weather.gov/alerts/types
+humanUrl: https://www.weather.gov/documentation/services-web-api
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Changes rarely; read by the monthly reference build.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, MARINE]
+kind: api-json
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L3 probe 10/05/2026 08:17 UTC: HTTP 200, Access-Control-Allow-Origin *, application/ld+json. Read at build time only."
+  headers:
+    Accept: application/ld+json
+  timeoutMs: 30000
+  retries: 2
+  priority: 3
+usedBy: [alerts]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: >-
+  Input to scripts/reference/80-hazards.mjs, which writes site/data/ref/nws-event-categories.json (every
+  event type mapped to hazard categories and a designation). 111 event types on 10/05/2026.

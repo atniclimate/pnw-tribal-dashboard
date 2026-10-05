@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "zone-param-20-ca-county-codes",
+  "file": "2026-10-05-zone-param-20-ca-county-codes.json",
+  "url": "https://api.weather.gov/alerts/active?zone=CAC001,CAC003,CAC005,CAC007,CAC009,CAC011,CAC013,CAC015,CAC017,CAC019,CAC021,CAC023,CAC025,CAC027,CAC029,CAC031,CAC033,CAC035,CAC037,CAC039&status=actual",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T07:55:15.301Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 58616,
+  "sha256": "bf4fb9c13509396f78a25b1150fadc3dd2d60d7a92da96daf163430feb88ba57",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "bc-embc-tsunami",
+  "label": "layer-metadata",
+  "file": "2026-10-05-layer-metadata.json",
+  "url": "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/EMBC_Tsunami_Notifications_VIEW/FeatureServer/0?f=json",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T08:13:04.265Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": "Wed, 30 Jul 2025 19:06:03 GMT",
+  "bytes": 11982,
+  "sha256": "18920ed6239bf316ffe9c8a9d3eac33435ce3b825497124313dd299ff9a0d881",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

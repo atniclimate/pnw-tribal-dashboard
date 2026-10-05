@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "bc-embc-tsunami",
+  "label": "all-zones-attributes",
+  "file": "2026-10-05-all-zones-attributes.json",
+  "url": "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/EMBC_Tsunami_Notifications_VIEW/FeatureServer/0/query?where=1%3D1&outFields=OBJECTID_1,TSUNAMI_ZONE_CLASSIFICATION,STATUS,URL&returnGeometry=false&f=json",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T08:13:23.790Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": "Wed, 30 Jul 2025 19:06:03 GMT",
+  "bytes": 2007,
+  "sha256": "ce9b0e1e86e1eea8bbbf4f3b0e8456fde22d2f8b596405d4abf21437dcde4e97",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

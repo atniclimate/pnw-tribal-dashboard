@@ -1,0 +1,60 @@
+{
+ "capture": "2026-10-05-paaq-atom.xml",
+ "atCapture": {
+  "diagnostics": {
+   "testOrExerciseExcluded": 0,
+   "itemsFailed": 0,
+   "unknownZoneKeys": 0,
+   "truncated": false,
+   "notCurrent": 1,
+   "cancelled": 0
+  },
+  "alerts": []
+ },
+ "oneHourAfterIssue": {
+  "diagnostics": {
+   "testOrExerciseExcluded": 0,
+   "itemsFailed": 0,
+   "unknownZoneKeys": 0,
+   "truncated": false,
+   "notCurrent": 0,
+   "cancelled": 0
+  },
+  "alerts": [
+   {
+    "alertId": "ntwc:urn:uuid:8b0814e0-afee-4f69-86ed-bdf9b01fcfc0",
+    "eventId": "ntwc:urn:uuid:8b0814e0-afee-4f69-86ed-bdf9b01fcfc0",
+    "messageType": "alert",
+    "references": [],
+    "event": "Tsunami Information Statement",
+    "designation": "statement",
+    "band": "unstated",
+    "posture": "monitor",
+    "confidence": "unknown",
+    "categories": [
+     "tsunami"
+    ],
+    "zones": [],
+    "jurisdictions": [
+     "WA",
+     "OR",
+     "BC",
+     "CA-N",
+     "AK-SE",
+     "MARINE"
+    ],
+    "marine": false,
+    "geometryBasis": "none",
+    "languages": [
+     "en-US"
+    ],
+    "webUrl": "https://www.tsunami.gov/events/PAAQ/2026/09/29/tm599v/1/WEAK53/WEAK53.txt",
+    "mappingApplied": {
+     "name": "atni-cthd-ntwc",
+     "version": "0.1.0"
+    },
+    "sha256": "c4f8fb43bfae2cca915a369715247c950b9502ab37efc3375ea743417f9ad646"
+   }
+  ]
+ }
+}

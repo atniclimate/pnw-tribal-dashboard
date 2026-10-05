@@ -1,0 +1,50 @@
+{
+ "capture": "2026-10-05-fire-zone-red-flag-warning.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false
+ },
+ "failures": [],
+ "current": [
+  "nws:urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2"
+ ],
+ "superseded": [],
+ "cancelled": [],
+ "expired": [],
+ "alerts": [
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Red Flag Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "fire"
+   ],
+   "zones": [
+    "fire:MTZ123",
+    "fire:MTZ124"
+   ],
+   "jurisdictions": [
+    "MT-W"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=BYZ&issuedby=BYZ&product=RFW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "eb3bbd702cc5a4382201a941a54dce32aae3937edef7a45347c934d17c017175"
+  }
+ ]
+}

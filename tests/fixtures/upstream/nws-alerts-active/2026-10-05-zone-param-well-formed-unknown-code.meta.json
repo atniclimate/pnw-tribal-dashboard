@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "zone-param-well-formed-unknown-code",
+  "file": "2026-10-05-zone-param-well-formed-unknown-code.json",
+  "url": "https://api.weather.gov/alerts/active?zone=WAZ558,WAZ999&status=actual",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T07:56:13.704Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 208,
+  "sha256": "353b4e8c8a7b6c1cf33ec7413cd5a934a44513e0af0230aea9d1325a920186c6",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

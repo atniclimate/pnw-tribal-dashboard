@@ -1,0 +1,153 @@
+{
+ "capture": "2026-10-05-canada-truncated-limit-5.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": true,
+  "numberMatched": 24
+ },
+ "failures": [],
+ "alerts": [
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1026",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1026",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "polygon",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "6dc17cc7f311172b3bd0adf9b49b48401d3486f47ff2e4b58f5a96e5182dae44"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1039",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1039",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "polygon",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1f65a78abf1096585c61ac17c124df36a2a0d4b49f5404118339ff47bdeb1c1d"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1042",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1042",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "polygon",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "02a38992c3db6671e5b0f51f80d532b18ea64029246c56be70a53c6be066fcc3"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1034",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1034",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "polygon",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "599cef859dd4437945152fa8f5c2a5f4a35ef96c9ac5a213a2c31cbcbbdb6d1a"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1029",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1029",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "polygon",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "93452038b3fd080dc347bf4c2018a2f5c5694bc56a0faf9a6f52406015db8667"
+  }
+ ]
+}

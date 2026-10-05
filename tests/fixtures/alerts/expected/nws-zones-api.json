@@ -1,0 +1,14 @@
+{
+ "fire-caz503": {
+  "type": "Polygon",
+  "sha256": "2208a32016928f38b6c5665817432b13256c9191961833d30055526945b06765"
+ },
+ "forecast-caz503": {
+  "type": "Polygon",
+  "sha256": "a0b02db9aacca32b5604c0016cb85b24190787c09f2619bd785cb3d8cc6c3ff2"
+ },
+ "fire-mtz123": {
+  "type": "Polygon",
+  "sha256": "469eea90f5bee4948236d04fef7f1fa485eb5075f9c5f41b0f09860e31d062eb"
+ }
+}

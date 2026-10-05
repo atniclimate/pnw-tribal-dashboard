@@ -1,0 +1,65 @@
+{
+  "schema": "cthd.hazards/1",
+  "categories": {
+    "flood": {
+      "label": "Flooding",
+      "safetyAnchor": "flood"
+    },
+    "coastal": {
+      "label": "Coastal Hazards",
+      "safetyAnchor": "coastal"
+    },
+    "rain-landslide": {
+      "label": "Heavy Rain and Landslides",
+      "safetyAnchor": "rain-landslide"
+    },
+    "wind": {
+      "label": "Wind and Storms",
+      "safetyAnchor": "wind"
+    },
+    "winter": {
+      "label": "Snow and Ice",
+      "safetyAnchor": "winter"
+    },
+    "cold": {
+      "label": "Extreme Cold",
+      "safetyAnchor": "cold"
+    },
+    "heat": {
+      "label": "Extreme Heat",
+      "safetyAnchor": "heat"
+    },
+    "fire": {
+      "label": "Fire Weather",
+      "safetyAnchor": "fire"
+    },
+    "smoke-air": {
+      "label": "Smoke and Air Quality",
+      "safetyAnchor": "smoke-air"
+    },
+    "marine": {
+      "label": "Marine Hazards",
+      "safetyAnchor": "marine"
+    },
+    "tsunami": {
+      "label": "Tsunami",
+      "safetyAnchor": "tsunami"
+    },
+    "avalanche": {
+      "label": "Avalanche",
+      "safetyAnchor": "avalanche"
+    },
+    "geologic": {
+      "label": "Earthquakes and Volcanoes",
+      "safetyAnchor": "geologic"
+    },
+    "evacuation": {
+      "label": "Evacuation",
+      "safetyAnchor": "evacuation"
+    },
+    "other": {
+      "label": "Other Hazards",
+      "safetyAnchor": null
+    }
+  }
+}

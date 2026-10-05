@@ -1,0 +1,6138 @@
+{
+ "capture": "2026-10-05-footprint-active.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false
+ },
+ "failures": [],
+ "current": [
+  "nws:urn:oid:2.49.0.1.840.0.4a3042abbabc389719ec25af1f955cd0041ee288.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.004.2",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.007.1",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.003.2",
+  "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.002.2",
+  "nws:urn:oid:2.49.0.1.840.0.8c26bbe0874023652c9a62bbd8769842ef5703ae.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.58aa6fce64b3cd065d794533743071cdf55fc182.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.2",
+  "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.76b5af7e208e69622fda95c7825ee69556aefbaf.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.fa48b2dc6dbe78ece0bbfc7ef438fbbec6c073a3.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.41147ff70170abcde45525a02c5848412e979e45.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.017.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.016.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.019.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.012.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.007.1",
+  "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.013.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.030.2",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.030.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.035.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.010.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.023.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.021.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.018.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.012.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.027.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.025.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.011.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.009.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.028.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.015.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.016.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.037.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.013.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.008.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.036.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.035.2",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.026.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.022.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.020.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.017.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.024.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.029.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.014.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.019.1",
+  "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.007.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.019.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.018.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.017.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.012.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.012.2",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.013.2",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.011.2",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.009.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.011.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.010.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.013.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.008.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.012.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.007.1",
+  "nws:urn:oid:2.49.0.1.840.0.7804c61d2f9f8190de30bf95cb3339a43c7d64a9.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.f4c7891cdf5b66c0df176a08e87538b6729f1281.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.929f476b21bdb929a0782c6baeec6bd264ec4445.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+  "nws:urn:oid:2.49.0.1.840.0.2950e1dbbfa308fdc4f9e9c67295a5f3ac4bc1aa.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.0c976e1cc60b0dd625f60bfd019fa67c88b1b7cf.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.019.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.018.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.017.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.5319a267f5bdc2278a977c94a75fc1087f883bcf.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.cd92db85a8f960d2704681253c65d87820a12496.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.011.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.013.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.012.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.008.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.010.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.009.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.007.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.035.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.030.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.010.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.008.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.028.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.023.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.027.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.029.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.024.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.037.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.007.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.011.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.022.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.009.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.026.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.019.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.018.1",
+  "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.017.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.017.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.014.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.012.1",
+  "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.019.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.030.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.002.2",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.005.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.009.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.006.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.037.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.008.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.010.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.035.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.003.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.007.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.028.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.036.1",
+  "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.004.1",
+  "nws:urn:oid:2.49.0.1.840.0.0ce5d510145526606e872d1711729f46b52b755c.019.1",
+  "nws:urn:oid:2.49.0.1.840.0.0ce5d510145526606e872d1711729f46b52b755c.018.2"
+ ],
+ "superseded": [],
+ "cancelled": [],
+ "expired": [],
+ "alerts": [
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4a3042abbabc389719ec25af1f955cd0041ee288.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4a3042abbabc389719ec25af1f955cd0041ee288.001.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "forecast:AKZ742",
+    "forecast:AKZ743"
+   ],
+   "jurisdictions": [
+    "AK-SE"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f7a602c19a93af97819d9a16900fd091eff30c40b9433c00976953a5f27cee10"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.7517e1a3cd82f6d60949eb0a82ce51d6c71ea53c.002.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ503",
+    "forecast:CAZ504",
+    "forecast:CAZ506",
+    "forecast:CAZ508",
+    "forecast:CAZ510",
+    "forecast:CAZ512",
+    "forecast:CAZ513",
+    "forecast:CAZ514",
+    "forecast:CAZ515",
+    "forecast:CAZ516",
+    "forecast:CAZ517",
+    "forecast:CAZ518"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MTR&issuedby=MTR&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "accc713c5391b96d64244c516dbdd9af4f74ea56445c61a74b3338cf1a407931"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.003.1",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.002.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ671",
+    "marine:PKZ672"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1a78cb7df174c84e2ab2d172aae63e3873b1e602a01cc8e18bed44b087c8d5dd"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.004.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.005.1",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.004.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ644",
+    "marine:PKZ651"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "59995ae62bdca4d97e99e579051144bf62e3e9e910f8fe41ed61be2322f21f4d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.003.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.004.1",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.003.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ652"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cb03ed4efaaba8f4b0b80259f4887af65947e2a0e16650d927ec04c1f3dbb5a6"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.004.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.004.2",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.005.2",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.004.2"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ644",
+    "marine:PKZ651"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b194d2b257f9bc44810fce9e3e6ab82e1f4c53c78da78fcd1844bd36b5bda13b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.007.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.007.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.008.1",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.007.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ643",
+    "marine:PKZ661",
+    "marine:PKZ662",
+    "marine:PKZ663",
+    "marine:PKZ664"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "01368d674b0341bbf0b107ecb78a6172e5f8ffec1f0000b5cb999bbc8ab2d054"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.006.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.001.2",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.008.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ641"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "625cf02f1c6b7dc6066584944211e078a9de6f64eeb65ab4b7ccdfd9290f24f2"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.005.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.002.2",
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.006.1",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.005.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ012",
+    "marine:PKZ642"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "0ac7e868e5c977479961574667ef4cd8cb2c925d1acc86a2e7555f8d0b6bc1e1"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.003.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.003.2",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.004.2",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.003.2"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ652"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "19c8c38fc67e48bc803b45727c5ffdc1e1d5197051416fa1c1c48828dd97a119"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.002.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.002.2",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.003.2",
+    "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.002.2"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ671",
+    "marine:PKZ672"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cc8a9f3486b72fb1c7ed3be9a1224258d7b5d43da3c9331a4613556d0b9743a7"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.8c26bbe0874023652c9a62bbd8769842ef5703ae.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.8c26bbe0874023652c9a62bbd8769842ef5703ae.001.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Beach Hazards Statement",
+   "designation": "statement",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "coastal"
+   ],
+   "zones": [
+    "forecast:CAZ043",
+    "forecast:CAZ552"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SGX&issuedby=SGX&product=CFW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ca6a1c621e526f6b926410cd5c78fbd18644365ad9bcb5b03d98df3264c1061a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.58aa6fce64b3cd065d794533743071cdf55fc182.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.58aa6fce64b3cd065d794533743071cdf55fc182.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.820f494687c260efab1422a16349a39fda82bd68.001.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PZZ131",
+    "marine:PZZ132"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SEW&issuedby=SEW&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "6046df5086dd44b8072d20525c37758c67d7b4284368544928e9a92dac059e9f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.2",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.b3997834abe588eaf544ef1784ffb6f55def9406.001.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PZZ253",
+    "marine:PZZ273"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=PQR&issuedby=PQR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1d24c6c8e7d1f6528331ca9484606f57b2a0f23f606d2bde5f8bf8cc5092e42f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "marine:PZZ253",
+    "marine:PZZ273"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=PQR&issuedby=PQR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f9dd70405d9b01a141c7dfb5a76ad5974f8c1fa3b9d9622b635054a0cee17c45"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "marine:PZZ251",
+    "marine:PZZ252",
+    "marine:PZZ271",
+    "marine:PZZ272"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=PQR&issuedby=PQR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9622b5b4a4442dc427854e6e1de4ece12c03cb8ecf67c6b6ebf4b1f28e823684"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "marine:PZZ210"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=PQR&issuedby=PQR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "bbcb0183d67cece23018986438fe42e5e291ca39430c72b47b025746065f9b27"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.005.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8ee7883031911f0bd5fb7f6b864bd1e64ff402bd.005.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ552"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SGX&issuedby=SGX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "babb8e9fea3cb71157357404dc879c970ec2f6793100d2fb1a369cc2fd308769"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.006.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8ee7883031911f0bd5fb7f6b864bd1e64ff402bd.006.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ554"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SGX&issuedby=SGX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3c17ccba559e49f79844fe1cc1344650e95ce4240dbc497f352a19648ed4ec8f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8ee7883031911f0bd5fb7f6b864bd1e64ff402bd.002.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ048"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SGX&issuedby=SGX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e8ff2355b1b977b6b66babcae9d05325c2416c366e9d12f00b941c3c507af56c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.003.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8ee7883031911f0bd5fb7f6b864bd1e64ff402bd.003.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ050"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SGX&issuedby=SGX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1deefabc78cd77c9effad38167d857bf06ee5a16be630807c17f5c5f367eacf4"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8ee7883031911f0bd5fb7f6b864bd1e64ff402bd.001.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ043"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SGX&issuedby=SGX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ec0267451919b583cda1656aa176dc1b3a0d8068e97e1f0c25a0824528253b94"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.654a9458c757881338e8a81f0b05ceee59ba49ed.004.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8ee7883031911f0bd5fb7f6b864bd1e64ff402bd.004.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ057"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=SGX&issuedby=SGX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3c376c5541fb680bf48641812bee5c57a578e42598a40d9b6ffce4dfad26ce43"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.001.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ110",
+    "forecast:CAZ111",
+    "forecast:CAZ114"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=EKA&issuedby=EKA&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "385fd4e2571ae59013bab99b21902362e0cbc4975756f136a922a1652e9af288"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.25d8c8a86543268e231a7a19d012cc256b3a2568.001.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ112",
+    "forecast:CAZ113",
+    "forecast:CAZ118",
+    "forecast:CAZ119",
+    "forecast:CAZ120"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=EKA&issuedby=EKA&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b09fa91ed6539d3a281526035a93c9cd1569345f7f6766752b3ada3b095a716c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8c6fb4fe9cd3f23c8a1cae61d1a4ce1037782641.002.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PZZ475"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=EKA&issuedby=EKA&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f7225e46b57545a900021580463986eb930ffae4c34ceca0e9ad3e8145fe1857"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8c6fb4fe9cd3f23c8a1cae61d1a4ce1037782641.001.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PZZ470"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=EKA&issuedby=EKA&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "adfaa0b916b90f884c258d9ede2fc1b9241a7501cb8a17f346e6b7e7787d76a4"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.76b5af7e208e69622fda95c7825ee69556aefbaf.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.76b5af7e208e69622fda95c7825ee69556aefbaf.001.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special Weather Statement",
+   "designation": "statement",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "observed",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "forecast:AKZ741",
+    "forecast:AKZ742",
+    "forecast:AKZ743",
+    "forecast:AKZ744",
+    "forecast:AKZ749"
+   ],
+   "jurisdictions": [
+    "AK-SE"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=NWS&issuedby=AER&product=SPS",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "524d84f297a9f203f68175f456a21e7b4e93e555d963567d9a94b3198c8a58fa"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.fa48b2dc6dbe78ece0bbfc7ef438fbbec6c073a3.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.fa48b2dc6dbe78ece0bbfc7ef438fbbec6c073a3.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.79dcf9b199846aeda71d0bff5e0fe43d1d33fcae.001.1"
+   ],
+   "event": "Beach Hazards Statement",
+   "designation": "statement",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "coastal"
+   ],
+   "zones": [
+    "forecast:CAZ087",
+    "forecast:CAZ354",
+    "forecast:CAZ362",
+    "forecast:CAZ366"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=CFW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c333fa1a4adad4039167328f5448dd137eaeb5e1e7605efd1908a92e66e29d1f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.41147ff70170abcde45525a02c5848412e979e45.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.41147ff70170abcde45525a02c5848412e979e45.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.c0724aab45b3845f8d5d6956875fb16167f3597b.001.1",
+    "nws:urn:oid:2.49.0.1.840.0.993a4cdbb0fb26e42924ed1de0ad6e19c3fc852c.002.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ300",
+    "forecast:CAZ301",
+    "forecast:CAZ302",
+    "forecast:CAZ303",
+    "forecast:CAZ304",
+    "forecast:CAZ305",
+    "forecast:CAZ306",
+    "forecast:CAZ307",
+    "forecast:CAZ308",
+    "forecast:CAZ309",
+    "forecast:CAZ310",
+    "forecast:CAZ311",
+    "forecast:CAZ312",
+    "forecast:CAZ313",
+    "forecast:CAZ314",
+    "forecast:CAZ315",
+    "forecast:CAZ316",
+    "forecast:CAZ317",
+    "forecast:CAZ318",
+    "forecast:CAZ319",
+    "forecast:CAZ320",
+    "forecast:CAZ321",
+    "forecast:CAZ322"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=HNX&issuedby=HNX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "11d83d760cd8edf1007586cc4161050cb9b081d9f8d9007e3f26f2d59d898961"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.017.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.017.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ854"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e871c16e60fe00c312618d79bda67a5ce2f61bdadf75c0c47840fb0c023aed6f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ805"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "fad05f7469ca49e379e173917918932e5eb241313c511b6a514bf5408a3b9aa9"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.016.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.016.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ853"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "51042d5e7365afb9edaf1d1e49dc5b25409ee1717970f803a6038f1e61a7cd3d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.019.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.019.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ856"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9f78fc8e9a98f13fc4edb3dc656fa17fdd0662ed74d1b6c34ced64a6430eab97"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ806"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9ef850339c8bb78dcffa0060232a2c573706f9b2a6a648d3cbe836696b9fa8e1"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.012.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.012.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ817"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "2d90d4e481adc781af997a865911b4c543732774702d3e697b0d4fe83a5f1dc8"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.007.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.007.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ807"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a0e449c2204d6ef983357ea9b0486a76b4779154dfa1295a0a261d418430bbce"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.013.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.92850e39631c8cf4ccddcfe38ad65218edd0f481.013.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ850"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "14ace37f9268cabe8d8f7cee51e166fbc8d5eb76e0480a0db892209fe2bc7065"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.030.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.030.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ766"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "4994f31234f0bd36645f893ac7e8b3b661f3e32785780b8e1e0752f038d0b429"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.030.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.030.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ766"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e143043222ca1e184036a4a11981bbde61f30246ecbc6c9bca2d65faa1bb91bb"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.035.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.035.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ764"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "4cd7c6ca234483cb83c61ff8a74995d517741fa23c1c0af6a3d9b7869b1970dc"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.010.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.010.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ758"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b319ca3b0b7d0195812bee6f77d770a71a627a88b10552ff62752ed85ec72ea0"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.023.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.023.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ781"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "118aab49d20a67a40b2078f3eefba0650fa0b22ead13b1124915af0410e2f24c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.021.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.021.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ778"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ac068055bf85d10ff4bc1057aaade9a30ba249787432c15b3959771a60a441b6"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.018.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.018.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ775"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "2c1b11cdc34a5ad66189ee76906c04e0da0f8dede8190e3d87a8585e98f2c54b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.012.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.012.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ768"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "fa2ecfc37d246db3f0abb6abf19e6f34324a219aa6476add8330b1c528213e4d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.027.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.027.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ785"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "0215d64948deec2832d8245b2a65f036813622ed8844f8029363345e22329f60"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.025.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.025.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ783"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b163f9c4b1e4124312a2f4d9691d561f7a185078bb7070c67a9da7e6e3f20038"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ751"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "09b3372785f916f68e8a0ec6786b0fb5f71cc0521d99910d332c006e2dd107d7"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.011.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.011.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ759"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "bf15b32b5d63339150ae0e0f869317295e8ebaa38802510a5d59085165add82f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ753"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b348693854e6b296d22b25b9a51e3d19b7bbd0253efabe54602c0379537e9902"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ752"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "97506a658b715d48ed85c5d7ab18bb712b13bd2942cce58706cee7a6cc7a4e80"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.009.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.009.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ757"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "702bbcd186b14e6487de2ada2c2d466046c587fe7b9a8ba97a18dbafae8e8d28"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.028.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.028.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ786"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c21a571c62def678c5e701b3aa55898833d9af2e92a45d75941317f3839fdbe5"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ750"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "d935a1afe6162a036fc4a4de7a44544e83de8b5fd07736e525dda991f92a14c4"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.015.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.015.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ771"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b1a663815ec18006082a895bb1ba105afea0cedb448ea8173019003b200efb12"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.016.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.016.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ773"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "baf7e92020ff26ba5907283278621156a3fd2e74a1dcc8ccd16f3deb2160d7b2"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.037.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.037.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ767"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e5ec96d763a793217c6eed7da153cfb1f18bd76a01a4ebf8533fed51eef06ae6"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.013.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.013.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ770"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9b81e129d7811119b7b0d9c77892a0539d5e02a31b2518034bb1b55dfb05dd7e"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Gale Warning",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ754"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "315fddacb24fd5d53f69074abdf190d61c0e071932573cfbedbe70fe128cb20f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.008.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.008.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ756"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3296f441dc8ab209b4f9bccb420455699d26356d1581c1ce16e321bcce4354fb"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.036.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.036.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ765"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cbbf854e394c57a94ea8a15f41e9408ac87a450e0e76fee53acaf2b7fccfd930"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.035.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.035.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ764"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f8fb984e2f6753c1890eaf15cfca4406329e4d7dc680e88dc1e7a12810b2b7c4"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.026.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.026.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ784"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "061b1a117768aec627def589166065b9689577edc295b42af6aa4f4d358e9803"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.022.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.022.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ780"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3a2fb925fe9b87d05e98a2a07db3f66e5f716aecd67b80354747f9257a716e30"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.020.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.020.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ777"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a84abc317a4e059ca2b9f15b52de3c0e8e5477294fd201930bee64da6a3efb24"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.017.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.017.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ774"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "77a88bd295f479f197d07413b06d0bcdcf168ecfbc95678783810799dde55588"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.024.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.024.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ782"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "900bca1bc2553cfc4942a0751f2898f37da2a79db128d447d164a60eed9a8431"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.029.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.029.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ787"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "293ddf91df12fdb25d2063ef2b16b83f7e32fc7a23faadce1a83d23d1160e563"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.014.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.014.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ772"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f35752d8b3ac9bb06f30f47661a26a360e8024d7b993f21f0e8601deabb1ea2a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.019.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.019.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ776"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cb8f42c7f76484cea68570400154f447268fd61070fd4ad34e05430f143c6b0e"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.007.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.4004305d0b979af86f4d3f2f92cd73b5a1e403e0.007.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Gale Warning",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ755"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "197dd2f8658e40e72de97b4672976c54ee51270a0a7e70f92a609902d1a630f1"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ715"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "99e64628b9350ed34621b1fbed55838e64b392f8987d059bf4bea2897d42e51b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ712"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b4971af244d594101aa2e4e487fdd37cb6f7b078e6850e57bbc49582acc1a8de"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ716"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ab2439d93fcc0b8b298668fcd015c25dd4a37fe01a1607745b14882b202d44c6"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.019.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.019.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ734"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ee89b41e5afd5285ff39396750848be8a46e7996bf49050b26c32d1ac0447e26"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.018.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.018.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ732"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "8bcf8c295a6193c2e92ead22204a66adddb71824048e4dd409da57393e2006cf"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.017.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.017.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ733"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9dedae77d1a1ad59bd83d62aa419eaf6ad067fa6f1160be089f6bcc31f049401"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.012.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.012.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ721"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e351c6cb372f5154a73506a302975e1da5b9fe7ac7de8c393745cb7000d12e8d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ711"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9e2e5eee58eec99448e1df570e943e6b5b65d01bad315fd5d7b782c31b580d60"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2c3ecd59064a3bd198adecc39239d733adf59391.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ710"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "7de6a20682d36085b9ba6ec72c09eac53cad7216252bb726a237357713518c08"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.012.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.012.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ652"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ca4b465c0dfa92837a60d0288f810ff89b04f1ab0b10e143ed7284a2eceae4cd"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ643"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "8c8dd8c0c7aca7cbca54d4474b0c08aed1732832def4efcab161a181f7171ef4"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.013.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.013.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ672"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1bad7a6f943b9af2d6538781f53f8a7e89dc3ea1087e5e953c743286ced4a099"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ641"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "4e8d9cb212ad96a745f33ceeab2d21c67ed381550ee7f4020a50da06248fcaaa"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.011.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.011.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ671"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "901a1462a27e393a4da0cf439916ad5be5def2d6c4f47699c0ef3a1be6d21ad8"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ661"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f686593231fdba752abbd435c71edcabd31d9d311af9bd495ad8bbac912d046a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.009.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.009.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ664"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c73fd956aca85e15a7df98e14b3d8426fd80a80991fafdfdef133eff74b0b84c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ642"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "6f64c88dea345b59985d48578d828734250c623a536c1238014ebd6423b60455"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.011.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.011.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ671"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ab7e67dcd06d27a0898184f446a2c39cca96f3019a48045c2557a1259a1ec343"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.010.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.010.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ651"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "17a7448fb941e37983623f755d97ab3c5912ec969fc55b0bb05ec073c2fd1a1b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.013.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.013.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ672"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "40d390392377f9a2313a19e7a22ed1eabf3325b6d2270a319826512750239f67"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.008.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.008.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ644"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "bf0b741ee9017ecf6b0ffccc25d300b6e4dcdef114733caf1585ea0dcb260b4d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.012.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.012.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ652"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b48d337eb568b62b555227f6f9bf8fbf9e7d65bc6de6abe7709aded4f1eee28a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ662"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "89faf09ff20c5e602d685bdf6af8b53c00308b7638013dec31f5044c16a4def3"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.007.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.68e1da8a0575c2064a32d9a44d9774df21e675ac.007.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ663"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a321d994157ca28458e853898d222c7ac23bb4695ae11b50ee6943075b6bfe2c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.7804c61d2f9f8190de30bf95cb3339a43c7d64a9.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.7804c61d2f9f8190de30bf95cb3339a43c7d64a9.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ012"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "eab5f17e8aa554fb6487e3a9f8fe4dd3e6f1913aceb4d726e6fb6eabfc6ad925"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.003.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PZZ370"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MFR&issuedby=MFR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f655df4d8f08a9f8fd6591d078da1d0e6d3689a0653a47fabab1a772616e0887"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.001.2",
+    "nws:urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.002.2"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PZZ350",
+    "marine:PZZ356"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MFR&issuedby=MFR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1c93be2df1683d465e369da362ca1b325aaf828765c6b33cc6338b0144ad100c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.003.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.004.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PZZ376"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MFR&issuedby=MFR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c5570054a5a7eeef32104cba2f447bf5dc8c4703650d545dea96070077fb7dc8"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.f4c7891cdf5b66c0df176a08e87538b6729f1281.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.f4c7891cdf5b66c0df176a08e87538b6729f1281.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.d1f6bcb7dc5d9a00fdd8ed346802787cadaee4ae.001.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ122",
+    "forecast:CAZ124",
+    "forecast:CAZ125",
+    "forecast:CAZ129",
+    "forecast:CAZ131",
+    "forecast:CAZ134",
+    "forecast:CAZ137",
+    "forecast:CAZ141",
+    "forecast:CAZ142",
+    "forecast:CAZ144",
+    "forecast:CAZ145",
+    "forecast:CAZ146",
+    "forecast:CAZ147",
+    "forecast:CAZ148",
+    "forecast:CAZ149",
+    "forecast:CAZ150",
+    "forecast:CAZ151",
+    "forecast:CAZ152",
+    "forecast:CAZ153",
+    "forecast:CAZ154",
+    "forecast:CAZ155",
+    "forecast:CAZ156",
+    "forecast:CAZ157",
+    "forecast:CAZ158",
+    "forecast:CAZ159",
+    "forecast:CAZ160",
+    "forecast:CAZ161",
+    "forecast:CAZ162",
+    "forecast:CAZ163",
+    "forecast:CAZ164"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=STO&issuedby=STO&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "6e23ff725710820fe3ff482fac88b3274a529e66dd1125982f093e30d2278b87"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.929f476b21bdb929a0782c6baeec6bd264ec4445.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.929f476b21bdb929a0782c6baeec6bd264ec4445.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.adae2a98718f4033f926a8ca68e6d87f6cc1d12f.001.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ522"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=VEF&issuedby=VEF&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3df50cd69c4b31357e5e60f7ce9877ecd7b22634c11e4fd4ec63cb1563993e58"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Red Flag Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "fire"
+   ],
+   "zones": [
+    "fire:MTZ123",
+    "fire:MTZ124"
+   ],
+   "jurisdictions": [
+    "MT-W"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=BYZ&issuedby=BYZ&product=RFW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "abe7d20f1c34019a73863a1b2fe018734a36769088c938b8d56e2a33ce63568f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.2950e1dbbfa308fdc4f9e9c67295a5f3ac4bc1aa.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.2950e1dbbfa308fdc4f9e9c67295a5f3ac4bc1aa.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Extreme Heat Watch",
+   "designation": "watch",
+   "band": "severe",
+   "posture": "prepare",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ566",
+    "forecast:CAZ567"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=PSR&issuedby=PSR&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "06ad2e72418d3fc0c01a15ec649390c3161d4296a865b460b914659f848d9b74"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ340",
+    "forecast:CAZ346"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "14851427a4d8c0eaf3882ddf76ebdd5255431090f38fe71d49ea0c50eca5841b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.2",
+    "nws:urn:oid:2.49.0.1.840.0.cc114be7184a7472776b632a007d978ec30ad034.002.1",
+    "nws:urn:oid:2.49.0.1.840.0.469a5488af3dceb8f4d0e41c09f4dbf04bb51c75.002.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ087",
+    "forecast:CAZ088",
+    "forecast:CAZ354",
+    "forecast:CAZ355",
+    "forecast:CAZ356",
+    "forecast:CAZ357",
+    "forecast:CAZ358",
+    "forecast:CAZ362",
+    "forecast:CAZ366",
+    "forecast:CAZ367",
+    "forecast:CAZ368",
+    "forecast:CAZ369",
+    "forecast:CAZ370",
+    "forecast:CAZ371",
+    "forecast:CAZ372",
+    "forecast:CAZ373",
+    "forecast:CAZ374",
+    "forecast:CAZ375",
+    "forecast:CAZ548"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e63286959ed91372dd725583f20ede4b05bb0a08b73dd407cf7673f752ed057c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.004.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.003.1",
+    "nws:urn:oid:2.49.0.1.840.0.cc114be7184a7472776b632a007d978ec30ad034.003.1",
+    "nws:urn:oid:2.49.0.1.840.0.469a5488af3dceb8f4d0e41c09f4dbf04bb51c75.003.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ341",
+    "forecast:CAZ342",
+    "forecast:CAZ343",
+    "forecast:CAZ344",
+    "forecast:CAZ345",
+    "forecast:CAZ347",
+    "forecast:CAZ348"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3193123ed0d23f3c1ad6e9fdeacaf11bff4a59474540c0360e4f9d87801bbd1f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.001.2",
+    "nws:urn:oid:2.49.0.1.840.0.cc114be7184a7472776b632a007d978ec30ad034.001.1",
+    "nws:urn:oid:2.49.0.1.840.0.469a5488af3dceb8f4d0e41c09f4dbf04bb51c75.001.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ038",
+    "forecast:CAZ349",
+    "forecast:CAZ350",
+    "forecast:CAZ351",
+    "forecast:CAZ352",
+    "forecast:CAZ353",
+    "forecast:CAZ550"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "77c4c11072c32f160078c8919efacf48a267ce09ee1d26f7ad0f23d74b085270"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.0c976e1cc60b0dd625f60bfd019fa67c88b1b7cf.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.0c976e1cc60b0dd625f60bfd019fa67c88b1b7cf.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ012"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f282132dab5ec25069d536df2f917f68fdd01c6edd6fddbccc71b27a8bc4ecd9"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ716"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b015029241f6064695351331e7062fc80ae44f71a0a07d38059b1ea9a47aaf8e"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.019.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.019.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ734"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "8b64a10a2d9f4f13b05c2084c9f96a52ac557956b2512887fd3ba10f31d21572"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.018.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.018.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ732"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "33296495a9fce79593df83a449a08a43648d4a28f32982be6fef568ec737f993"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.017.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.017.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ733"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "bd6ca3b5336bd1295ecb5b20fdd4f82d3a6fead768c881fce12ea7fba3f6dadb"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ712"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "aaaca15f6d1a52daa0b97bc281a1421e4a1236640858f741f1c78e8f40b1d3b2"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ715"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1301878fd7661ac9882ac1ebe141358f5005f8af15fd92d47648e12964525eec"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ711"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9fde79dee7102d98b0e6ae6f3b0780668342e2ace0f2a36ea4d4bca29658e3dd"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5f44a4bfc0685fcd3a4796708a6d70b640c95929.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ710"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "871b6dde5ce79c737d11d1467c2e832bfef8f761fc862b2954211c6cf2508c8f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5319a267f5bdc2278a977c94a75fc1087f883bcf.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5319a267f5bdc2278a977c94a75fc1087f883bcf.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ012"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c57e44f4a281b47d4a802f36583331d36da3b74047f440bb8425acea316451bb"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.cd92db85a8f960d2704681253c65d87820a12496.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.cd92db85a8f960d2704681253c65d87820a12496.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ012"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "98ecc220e55dcb82c455d1d8887105ee24df7fd0207d7e2de34d4a804e4096e5"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ643"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1cbc323909a17bf37c09a67cb8f212b818c616177a7451dbfb0eb7ea28b2096c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.011.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.011.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ671"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "5fdb1e5928569caf411ccadbeadbdc0532940b5dc511e6428a64b656b74cd7d7"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.013.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.013.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ672"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "037471d2ebe03cfd2f1565497a886347b771e56d2c572f4970d14869ed598b14"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.012.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.012.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ652"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "aa8a76357f0809829215474d319b679f433a8f4eaa0712293366129c3ef21384"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ642"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "6964c5c5d03007caf7782a138d0592148deeaefbbbbb8c9f83c9aa18f35ee00a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ661"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "8be8af598ddf84d4c48c5a42116d0dc6a8eb85ac5316e0d7ec110f5f15b3988e"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.008.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.008.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ644"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "87908d229e5ca2992ffc0a0daadcbbc7fb31974e3e99b16b474db7c4ef73ba57"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.010.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.010.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ651"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "d621c4de59d0f2d1790007494b1d33d0a6b0ff14a5b2decea018e05e788df9dd"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.009.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.009.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ664"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "96ce09fa0e0fcf6b186935f236ce72c7e42e69f470aa87a671eb0ee99aef1bd2"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ662"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "d90f2147f91316bf565aaf28413cacd1c89dd1ee62dc21a52d1148b124bbddad"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ641"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "0d3dad7388c6d4c96682205243b618c7376f5b4a225d8d79933275b491d6e9c3"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.007.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.3d0c731085cb6b62ee291da5b5e0378c0141575f.007.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ663"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AEG&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3d61c1bdd3755df477b16e270cc67a99008ce21bb862b285499baca6df890a16"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.035.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.035.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ764"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "88da731f12651a3bf0bf01033b2f851801cd8676663ce5064620730809de5ae9"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.030.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.030.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ766"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "82dc0382ddf96644b3ccdc074fe89a0a0abc88091ddb1f7080c7b0dcabf5287d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Gale Warning",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ754"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "fee0961a6f85b9a741a82ec4f99e153f07b0c7b87c6325a76889831a529a1142"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.010.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.010.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ758"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3a6bff2167782ca5c67bee8e74e0006e3cb58ece0ccac2fda4466a858eb73774"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.008.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.008.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ756"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "8bc650cabf67495da5ebcdb6cb667a4070d181480b355dbd670a3da838898126"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.028.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.028.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ786"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "0f8e759cf5acb91975d6320ec1a2f6e60c1bccc1231db5dfcba58752767b1ccc"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.023.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.023.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ781"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "38913bc4e0cfe379fe3511ea653cee61f9e9e60ce7fb5edb369431b3ffadc11b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.027.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.027.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ785"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cbbdba4974058164ed3ab866b3c323d944a120174f4a82b7629398c34d2e734b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ752"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "45e2506e95f01e8586e417e2a95ff262ff31ad2f1538ba97aef25dc3d71fdc33"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.029.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.029.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ787"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b338584d231944f2221065b78aaf5987effa6dc708c94ed71f84379638940685"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ753"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a41ef1b0212c47ecb0168c4b440b096c8304d9eb1a77d571e5e1b97638452c54"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ751"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cd9119b9adb5dc1786a3c1819024cecdf7a82d2d3f8eb8f31deedb20e6133501"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ750"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9f9f2434c085ce9c136eb774264321ba9aba99b3c0e108c5545068227551a4fd"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.024.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.024.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ782"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c7602a2efe8f796fa1af0a3e9b90cafb972041d4202d2b2a64464480447c6435"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.037.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.037.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ767"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a4bbb5ab8c05a3ec388aa6761baa51fbfcccd1a296bc199846734f8001b5a948"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.007.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.007.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Gale Warning",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ755"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "2bd01b323f63a3fc4b770f610c11c44a093bbeb538dc1f126e96304b16bebcf5"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.011.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.011.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ759"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a0a404c488fcd23ae0922c1a1116317fc5c256878ba75d236843cfb5ea562641"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.022.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.022.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ780"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e2750e04ccf860456cb882852afff3c5e72444b048a09d4c7207e542eb7d9062"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.009.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.009.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ757"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "0f6e29e3b0966006c4f316d90d8bb0b227706b578aefd6000edda50436ca16cb"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.026.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec85a314d7940968f1bac6febe682ac3080b6e00.026.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ784"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "7e2c6a43507f5fee2ad01181efc65ba930345e898a17e9ae8e88e431a9dc3078"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.019.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.019.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ734"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ced3ef8b838af46209b06251ac5cc2908b819c2bf76450ba5b16dd31dc0d32b9"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ711"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a85a7395c3cf5eceeb6625f967496e5bc61db13f1189e046049efa6f552f7e30"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.002.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ710"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e20fb26fcf92b39c808c0b803f2a838ec2ca73c9fdc5d43247d178006a1959ad"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ715"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c4da9d764cbf9aba8e8930c5570c60abd9a77d49d4525331f5069f28d30fb161"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ716"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "7df101a4469417c04392dfde36515694126046ac9b7341c7aa89971df0fabde3"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ712"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "6a8a322bc154acf51fd2379d8eafde1aa601b29a28cc71f45212fcfd30c7ab99"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.018.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.018.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ732"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "0ed11cd33c48bffe106a299b17cc1d505dee047cbdbd6c545c02e9729a5ab78a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.017.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.40801b2bd04dc514b5f82824574ec8e015eb2dd5.017.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ733"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "be2dcaf21518e8937e025de1738f277d3f393d16c0fd807347af0df8ac8afd2d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ805"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "f0cf7a82e198300a255eb6d24ff68465fdbd5a567e6585f85cdec02d8a89102e"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.017.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.017.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ854"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c60257a4e78c231e67072f3668187b843c09e4790f8d8ed766b1a1e252ed3f70"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.014.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.014.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ851"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "987944f5be6179cf11cf17565f80a9710e1c075111a76be77253376a26147b7f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.012.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.012.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ817"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e937d010c868a91c3fa9a53be606208159055fb9defa0531a9a790f14f95128a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.019.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ec4fcd597c9caf399150745c47e55bbdbf68095f.019.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ856"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFG&issuedby=WCZ&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "6a4a7a4f64c58e00fb71e48cda304338a54180e6eccdff8ea7a09e84ce16431d"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.030.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.030.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ766"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "d91d4efb7ff53746c9a760566065b0665a084938d65230b92bf14eb35d921835"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.002.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.002.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ750"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "16136a5a50485beb6cd54a5e9518d74193c399b06b20e7fc55744dfd7ad6cf91"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.005.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.005.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ753"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ddb1fc362ad32da939cd02e31a2b75b75f5ecdcf4e3944c9935bab28e6e2a310"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.009.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.009.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ757"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3770f90d887f8c9f32ce6710c1775e05b025fcc37803069f5783f536f8a1c689"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.006.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.006.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Gale Warning",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ754"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "bba3e6d60d867e564dbce50672ad5834439875d82c182e5540fc98fc6a26e64b"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.037.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.037.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ767"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "d22f0f527ff9a0ff2c9d901f247af407c93e452ee94ae1dab0ddb4fc38c29cf6"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.008.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.008.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ756"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "747dcb9e08d23316435aa49f98e85e709ed868baa4020f93cc6e0bd8d40bf76c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.010.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.010.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ758"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "37b01040a8a992ae2d736834e4f2dd9719545b3cc38643496562d1fec757d81c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.035.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.035.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ764"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "37862dfaf60c69db541def27f8e5a2e06c0eb52b58528b6893fec938d757b46f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.003.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.003.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ751"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a15a3ca4949cb452094ee26f81055925a2c992d958b94eb2f00cb381b2e96bb1"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.007.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.007.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Gale Warning",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ755"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "776a846179bed6d04ff208cddbbb49dc012ba71969d5e029ffa30eb25f3eef8f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.028.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.028.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ786"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "38d426dcfa2d60aabcca36a2ce19698eef678ddb1fdd0a73bc95b6f9b135a741"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.036.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.036.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ765"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "199eada31d0935c39d6cccd8c4dea8683f959759e42095e7808ecae77598bffc"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.004.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.ba30b796b50443cb65eae7d23ebdb30d630b1839.004.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ752"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=ALU&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1d048dfc820e4c9e0e180f882d0b581b07211700ad7e52fcb223f6f5a9d67d82"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.0ce5d510145526606e872d1711729f46b52b755c.019.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.0ce5d510145526606e872d1711729f46b52b755c.019.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ734"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "dd09ec8d9958bf8a4e1e1b1b0963ee8c7cdb21af12b70710f87b7a6682b6ae84"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.0ce5d510145526606e872d1711729f46b52b755c.018.2",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.0ce5d510145526606e872d1711729f46b52b755c.018.2",
+   "messageType": "alert",
+   "references": [],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ732"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=CWF",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "aa51a0ee9daad47fc3ed822fbd8b8ef87b4a1ff413560b728b98ee8527f1ed74"
+  }
+ ]
+}

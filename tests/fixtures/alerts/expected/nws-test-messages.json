@@ -1,0 +1,15 @@
+{
+ "capture": "2026-10-05-test-messages.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 5,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": true
+ },
+ "failures": [],
+ "current": [],
+ "superseded": [],
+ "cancelled": [],
+ "expired": [],
+ "alerts": []
+}

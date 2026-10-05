@@ -1,0 +1,12 @@
+{
+ "capture": "2026-10-05-bc-province-filter.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false,
+  "numberMatched": 0
+ },
+ "failures": [],
+ "alerts": []
+}

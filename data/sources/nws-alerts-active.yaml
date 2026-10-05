@@ -1,0 +1,62 @@
+id: nws-alerts-active
+title: NWS Active Alerts
+owner: NOAA National Weather Service
+url: https://api.weather.gov/alerts/active
+urlTemplate: https://api.weather.gov/alerts/active?{query}
+humanUrl: https://www.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Event-driven; poll no faster than every 30 seconds.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, MARINE]
+kind: api-geojson
+status: active
+deprecation: null
+access:
+  mode: direct+snapshot
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L3 probe 10/05/2026 08:17 UTC with Origin https://atniclimate.github.io: HTTP 200, Access-Control-Allow-Origin *, application/geo+json (also linkaudit/results_part1.csv)."
+  headers:
+    Accept: application/geo+json
+  timeoutMs: 12000
+  retries: 2
+  priority: 0
+  poll:
+    visibleMs: 90000
+    minMs: 30000
+  snapshot:
+    task: alerts
+    files: [alerts.json, alerts-text.json, alerts-geometry.json]
+    cadenceMin: 10
+freshness:
+  freshForMs: 900000
+  usableForMs: 7200000
+health:
+  probe: https://api.weather.gov/alerts/active?area=WA&status=actual
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/geo+json
+  minBytes: 100
+  maxBytes: null
+usedBy: [dashboard, alerts, contacts, safety]
+exports:
+  castId: nws-alerts-active
+  ddmKey: nwsAlerts
+verifiedAt: 2026-10-05
+notes: >-
+  Browsers cannot set User-Agent; the Node snapshot sends one with a contact address. Request plan
+  (blueprint 3.7.3): the snapshot asks for area=WA,OR,ID,CA,NV,MT,AK,PZ,PK&status=actual and follows
+  pagination.next to completion (cap ten pages); browser top-ups ask for area=WA,OR,ID,PZ plus zone= lists
+  of the footprint edge codes in chunks of 50, or one zone= list of a Nation's zones. Verified against the
+  live API on 10/05/2026 (07:51 to 07:56 UTC): a zone= list of 500 codes (a 3,556-character URL) returned
+  HTTP 200 with results, so 50 per request is well inside the limit; county codes (for example CAC001) are
+  accepted and match alerts spatially (20 northern California county codes returned nine heat and beach
+  alerts that name only forecast zones), so every zone= result is post-filtered by typed key; a well-formed
+  but unknown code (WAZ999) is ignored with HTTP 200, while one malformed code (XXZ001 or lowercase
+  waz558) fails the whole request with HTTP 400, so the request plan drops any code that does not match the
+  API's own pattern. message_type is never sent, so Update messages arrive; status=actual excludes Test and
+  Exercise messages, and the parser also excludes and counts any that slip through.

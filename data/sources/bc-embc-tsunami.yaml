@@ -1,0 +1,49 @@
+id: bc-embc-tsunami
+title: British Columbia Tsunami Notification Zones
+owner: Province of British Columbia, Emergency Management and Climate Readiness
+url: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/EMBC_Tsunami_Notifications_VIEW/FeatureServer/0
+urlTemplate: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/EMBC_Tsunami_Notifications_VIEW/FeatureServer/0/query?{query}
+humanUrl: https://www.emergencyinfobc.gov.bc.ca/
+license: Licence not yet confirmed for republication (Q8); hidden as a candidate until checked.
+attribution: Emergency Management and Climate Readiness, Province of British Columbia
+cadence: Event-driven; the snapshot reads it every ten minutes.
+region: ca
+coverage: [BC, MARINE]
+kind: arcgis-featureserver
+status: candidate
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L3 probe 10/05/2026 08:17 UTC with Origin https://atniclimate.github.io: HTTP 200, Access-Control-Allow-Origin * (also linkaudit/part2_checks.json, 10/04/2026)."
+  timeoutMs: 15000
+  retries: 2
+  priority: 2
+  snapshot:
+    task: bc-hazards
+    files: [bc-hazards.json]
+    cadenceMin: 10
+freshness:
+  freshForMs: 900000
+  usableForMs: 7200000
+health:
+  probe: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/EMBC_Tsunami_Notifications_VIEW/FeatureServer/0?f=json
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: null
+  minBytes: 500
+  maxBytes: null
+usedBy: [alerts]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: >-
+  Attributes only (returnGeometry=false): an unfiltered query with geometry returned 9.8 MB in the link
+  audit, while the five zone records without geometry are about 2 KB (10/05/2026). STATUS is coded 1
+  Tsunami Warning, 2 Tsunami Advisory, 3 Tsunami Watch, 4 Cancellation, 5 No Notification; every zone (A to
+  E) was at No Notification on 10/05/2026.

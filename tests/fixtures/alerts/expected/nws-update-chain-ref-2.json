@@ -1,0 +1,53 @@
+{
+ "capture": "2026-10-05-update-chain-ref-2.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false
+ },
+ "failures": [],
+ "current": [
+  "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.002.1"
+ ],
+ "superseded": [],
+ "cancelled": [],
+ "expired": [],
+ "alerts": [
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4ddba598fa49133cbf57a5a791ef3b9e312b6f31.003.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ671",
+    "marine:PKZ672"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ff1374d7024633dd491750921eb84d66c7930cb7cb7e3931ce23674d8276a45d"
+  }
+ ]
+}

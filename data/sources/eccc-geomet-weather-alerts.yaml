@@ -1,0 +1,56 @@
+id: eccc-geomet-weather-alerts
+title: ECCC Weather Alerts (MSC GeoMet)
+owner: Environment and Climate Change Canada, Meteorological Service of Canada
+url: https://api.weather.gc.ca/collections/weather-alerts/items
+urlTemplate: https://api.weather.gc.ca/collections/weather-alerts/items?{query}
+humanUrl: https://weather.gc.ca/index_e.html?alertTableFilterProv=BC
+license: Environment and Climate Change Canada Data Servers End-use Licence; alert content and intent must not be altered.
+attribution: Environment and Climate Change Canada
+cadence: Event-driven; browser top-ups no faster than every 300 seconds and only when British Columbia is in scope.
+region: ca
+coverage: [BC]
+kind: ogc-features
+status: active
+deprecation: null
+access:
+  mode: direct+snapshot
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L3 probe 10/05/2026 08:17 UTC with Origin https://atniclimate.github.io: HTTP 200, Access-Control-Allow-Origin * (also linkaudit/results_part1.csv)."
+  timeoutMs: 12000
+  retries: 2
+  priority: 0
+  poll:
+    visibleMs: 300000
+    minMs: 300000
+  snapshot:
+    task: alerts
+    files: [alerts.json, alerts-text.json, alerts-geometry.json]
+    cadenceMin: 10
+freshness:
+  freshForMs: 900000
+  usableForMs: 7200000
+health:
+  probe: https://api.weather.gc.ca/collections/weather-alerts/items?filter=properties.province=BC&limit=1&f=json
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/json
+  minBytes: 100
+  maxBytes: null
+usedBy: [dashboard, alerts, safety]
+exports:
+  castId: eccc-geomet-weather-alerts
+  ddmKey: ecccAlerts
+verifiedAt: 2026-10-05
+notes: >-
+  Request filter=properties.province=BC&limit=500, plus bbox (the Nation's, or the British Columbia
+  footprint) in browser top-ups; next links are followed up to five pages. Payload measured 10/05/2026: the
+  24 alerts then in effect across Canada were 98,528 bytes with geometry (4.1 KB per feature) and 56,296
+  bytes without; CAST's 07/17/2026 capture averaged 7.7 KB per feature. No British Columbia alert was in
+  effect at capture, so no storm-day British Columbia payload could be measured; browser top-ups therefore
+  add skipGeometry=true whenever the snapshot holds more than 38 British Columbia features (38 times 7.7 KB
+  is about 300 KB) and take polygons from alerts-geometry.json. English and French blocks are kept
+  verbatim; a missing language is never synthesized; text is never truncated in detail views.

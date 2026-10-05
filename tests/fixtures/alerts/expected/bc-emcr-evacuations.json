@@ -1,0 +1,329 @@
+{
+ "diagnostics": {
+  "itemsFailed": 0,
+  "notActive": 0,
+  "exceededTransferLimit": 0
+ },
+ "items": [
+  {
+   "id": "bc-emcr:1",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Splatsin Kukpi7 & Tkwamipla",
+   "status": "Alert",
+   "issuedBy": "Cariboo Regional District",
+   "updatedAt": "2023-10-11T09:20:00.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "1eea54c418b75ab3870efbd6f83b4175dd4a0b8064d46c847f36d34b610595c7"
+   }
+  },
+  {
+   "id": "bc-emcr:2",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Spuzzum FN",
+   "status": "Alert",
+   "issuedBy": "Spuzzum First Nation",
+   "updatedAt": "2026-09-01T16:46:57.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "119c8c2e1f90a003716494b3e2c622c8386acc12beee41aee2d12064380fb61c"
+   }
+  },
+  {
+   "id": "bc-emcr:3",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Sumas First Nation - 37005, 36901, 36909, 36919 Kilgard Road",
+   "status": "Order",
+   "issuedBy": "Sumas First Nation",
+   "updatedAt": "2025-12-14T20:44:53.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "7f0fdd130d8c447ca98f896416de130aa90338fcd7bba1c925d21b53f8c7ac39"
+   }
+  },
+  {
+   "id": "bc-emcr:4",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Faulder, Darke Lake, Meadow Valley, Greata Ranch",
+   "status": "Order",
+   "issuedBy": "Regional District of Okanagan-Similkameen",
+   "updatedAt": "2026-08-29T11:25:27.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "634ec08486989d1d2b56a9852507fe986528ed9b7ec720c50a5ca0f22c24cfb3"
+   }
+  },
+  {
+   "id": "bc-emcr:5",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Greata Ranch to Summerland Boundary on Highway 97",
+   "status": "Order",
+   "issuedBy": "Regional District of Okanagan-Similkameen",
+   "updatedAt": "2026-08-16T15:42:16.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "95a09a1e9b5465c893fb3840100e1c10ae093055157b8d1aaafa9ee7356c1162"
+   }
+  },
+  {
+   "id": "bc-emcr:6",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Battani Creek Landslide – 57, 59, 61 Brunswick Beach Rd; 1,14 Crystal Falls Rd; 1, 2 Goldenrod Ave",
+   "status": "Alert",
+   "issuedBy": "Village of Lions Bay",
+   "updatedAt": "2024-12-24T09:57:24.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "3feb4a54a27de338337392a06d56b6009114910c13f392376ed698179afcdf60"
+   }
+  },
+  {
+   "id": "bc-emcr:7",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Battani Creek Landslide – 57, 59, 61 Brunswick Beach Rd; 1,14 Crystal Falls Rd; 1, 2 Goldenrod Ave",
+   "status": "Alert",
+   "issuedBy": "Village of Lions Bay",
+   "updatedAt": "2025-01-08T08:18:14.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "987ef17ff2cddfbc530fb42337a6447b6f8852deef90d3aac7d656fc32fa1b48"
+   }
+  },
+  {
+   "id": "bc-emcr:8",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Okanagan Indian Band IR 1",
+   "status": "Order",
+   "issuedBy": "Okanagan Indian Band",
+   "updatedAt": "2026-09-18T16:53:24.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "e9fe3ce7ff7633ad573793cbb8435486cabc8041c2ca1a7518440362f959a77c"
+   }
+  },
+  {
+   "id": "bc-emcr:9",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Boothroyd IB",
+   "status": "Alert",
+   "issuedBy": "Boothroyd Indian Band",
+   "updatedAt": "2026-08-17T08:56:01.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "cc95cdfeb718c2dd8305781e7224332b7242419dea152fd636125a649c2809f6"
+   }
+  },
+  {
+   "id": "bc-emcr:10",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Kuthlalth 3",
+   "status": "Alert",
+   "issuedBy": "Shxw'ow'hamel First Nation",
+   "updatedAt": "2026-08-01T12:00:00.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "d47cc0b0682981db59eac1300175297dfa773b784bd5ab399708da643ffb6aa7"
+   }
+  },
+  {
+   "id": "bc-emcr:11",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Yale First Nation IRs #1,4,5,6,7,8",
+   "status": "Alert",
+   "issuedBy": "Yale First Nation",
+   "updatedAt": "2026-08-01T12:00:00.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "7bf0ffd272a570b4d6c32aa5868b3386db7609fd6414807e265d133b01a2714a"
+   }
+  },
+  {
+   "id": "bc-emcr:12",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-alert",
+   "title": "Pear Lake Wildfire - Ts'kw'aylaxw",
+   "status": "Alert",
+   "issuedBy": "Ts'kw'aylaxw First Nation",
+   "updatedAt": "2026-08-22T10:29:51.000Z",
+   "band": "unstated",
+   "posture": "prepare",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "b418fe30c65088b349d1931520ed31ea584608bbe4229e21a88c1f05fd1eb99c"
+   }
+  },
+  {
+   "id": "bc-emcr:13",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Whispering Pines Clinton IR 3",
+   "status": "Order",
+   "issuedBy": "Whispering Pines/Clinton",
+   "updatedAt": "2026-07-30T13:43:52.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "5e9cf55dc95c357bbc0933119211d5b343d7f2da7a2962f987d9178c1ae755ae"
+   }
+  },
+  {
+   "id": "bc-emcr:14",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Saw Creek Wildfire",
+   "status": "Order",
+   "issuedBy": "Lytton First Nation",
+   "updatedAt": "2026-08-31T13:42:04.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "929ac87ba70db6fc1436e9031669b4c5b5217fc239078b177162c50078af92a0"
+   }
+  },
+  {
+   "id": "bc-emcr:15",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Shackan Indian Band",
+   "status": "Order",
+   "issuedBy": "Shackan Indian Band",
+   "updatedAt": "2023-09-16T18:10:00.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "7df435685940a0874fe492356bb1364100303aaf125c65103f72d6d3b5039070"
+   }
+  },
+  {
+   "id": "bc-emcr:16",
+   "sourceId": "bc-emcr-evacuations",
+   "kind": "evacuation-order",
+   "title": "Shackan IR 11 Lot 40 and 44",
+   "status": "Order",
+   "issuedBy": "Shackan Indian Band",
+   "updatedAt": "2022-08-24T16:00:00.000Z",
+   "band": "unstated",
+   "posture": "act-now",
+   "mappingApplied": {
+    "name": "atni-cthd-emcr",
+    "version": "0.1.0"
+   },
+   "nationIds": [],
+   "geometry": {
+    "type": "Polygon",
+    "sha256": "5b920ad328ea238f63609a970f1b6a4e209b71c5977a97d1dd6d8a4e37303a55"
+   }
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alert-types",
+  "label": "alert-types",
+  "file": "2026-10-05-alert-types.json",
+  "url": "https://api.weather.gov/alerts/types",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/ld+json"
+  },
+  "capturedAt": "2026-10-05T07:54:54.806Z",
+  "status": 200,
+  "contentType": "application/ld+json",
+  "lastModified": null,
+  "bytes": 3486,
+  "sha256": "b04067365493a4d53f4b94e2b0fec938173a1ccc0ee98f87c9338bc90fd10fbd",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

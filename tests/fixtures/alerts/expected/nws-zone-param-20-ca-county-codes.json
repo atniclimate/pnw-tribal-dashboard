@@ -1,0 +1,414 @@
+{
+ "capture": "2026-10-05-zone-param-20-ca-county-codes.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false
+ },
+ "failures": [],
+ "current": [
+  "nws:urn:oid:2.49.0.1.840.0.a489cc2bdcb9f7cf63e0bbfbcf64e5293c2d7131.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.fa48b2dc6dbe78ece0bbfc7ef438fbbec6c073a3.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.41147ff70170abcde45525a02c5848412e979e45.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.f4c7891cdf5b66c0df176a08e87538b6729f1281.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.929f476b21bdb929a0782c6baeec6bd264ec4445.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.002.1"
+ ],
+ "superseded": [],
+ "cancelled": [],
+ "expired": [],
+ "alerts": [
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.a489cc2bdcb9f7cf63e0bbfbcf64e5293c2d7131.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.a489cc2bdcb9f7cf63e0bbfbcf64e5293c2d7131.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.2950e1dbbfa308fdc4f9e9c67295a5f3ac4bc1aa.002.1"
+   ],
+   "event": "Extreme Heat Watch",
+   "designation": "watch",
+   "band": "severe",
+   "posture": "prepare",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ566",
+    "forecast:CAZ567"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=PSR&issuedby=PSR&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "43f865de2b36ccdffc1442e37f3e4a723df403a6580eb325955d98e54c2b1b60"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.7517e1a3cd82f6d60949eb0a82ce51d6c71ea53c.002.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ503",
+    "forecast:CAZ504",
+    "forecast:CAZ506",
+    "forecast:CAZ508",
+    "forecast:CAZ510",
+    "forecast:CAZ512",
+    "forecast:CAZ513",
+    "forecast:CAZ514",
+    "forecast:CAZ515",
+    "forecast:CAZ516",
+    "forecast:CAZ517",
+    "forecast:CAZ518"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MTR&issuedby=MTR&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e6bcc3bb73ec0820f396c5a17edc1907f57dea31ff128c58b04d1f8eeb9ef9a5"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.001.1",
+   "messageType": "alert",
+   "references": [],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ110",
+    "forecast:CAZ111",
+    "forecast:CAZ114"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=EKA&issuedby=EKA&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "5b2591d11fa51dd8a1edcb3f51e3a2f0facc48801454d5477eefad4af36318d7"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.25d8c8a86543268e231a7a19d012cc256b3a2568.001.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ112",
+    "forecast:CAZ113",
+    "forecast:CAZ118",
+    "forecast:CAZ119",
+    "forecast:CAZ120"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=EKA&issuedby=EKA&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "16999308207925a8930db67edaf7cec66775150e54b07f7c12c6e9f9a13125b1"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.fa48b2dc6dbe78ece0bbfc7ef438fbbec6c073a3.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.fa48b2dc6dbe78ece0bbfc7ef438fbbec6c073a3.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.79dcf9b199846aeda71d0bff5e0fe43d1d33fcae.001.1"
+   ],
+   "event": "Beach Hazards Statement",
+   "designation": "statement",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "coastal"
+   ],
+   "zones": [
+    "forecast:CAZ087",
+    "forecast:CAZ354",
+    "forecast:CAZ362",
+    "forecast:CAZ366"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=CFW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "63bc602d49f20025a32667aa268ee9832e8be451d582e5bec5f301368161f6c7"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.41147ff70170abcde45525a02c5848412e979e45.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.41147ff70170abcde45525a02c5848412e979e45.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.c0724aab45b3845f8d5d6956875fb16167f3597b.001.1",
+    "nws:urn:oid:2.49.0.1.840.0.993a4cdbb0fb26e42924ed1de0ad6e19c3fc852c.002.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ300",
+    "forecast:CAZ301",
+    "forecast:CAZ302",
+    "forecast:CAZ303",
+    "forecast:CAZ304",
+    "forecast:CAZ305",
+    "forecast:CAZ306",
+    "forecast:CAZ307",
+    "forecast:CAZ308",
+    "forecast:CAZ309",
+    "forecast:CAZ310",
+    "forecast:CAZ311",
+    "forecast:CAZ312",
+    "forecast:CAZ313",
+    "forecast:CAZ314",
+    "forecast:CAZ315",
+    "forecast:CAZ316",
+    "forecast:CAZ317",
+    "forecast:CAZ318",
+    "forecast:CAZ319",
+    "forecast:CAZ320",
+    "forecast:CAZ321",
+    "forecast:CAZ322"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=HNX&issuedby=HNX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "7ac246548e2ccd177f549af1c8ab9b5efe38e629b4072aba26bbcbd39da0b87c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.f4c7891cdf5b66c0df176a08e87538b6729f1281.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.f4c7891cdf5b66c0df176a08e87538b6729f1281.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.d1f6bcb7dc5d9a00fdd8ed346802787cadaee4ae.001.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ122",
+    "forecast:CAZ124",
+    "forecast:CAZ125",
+    "forecast:CAZ129",
+    "forecast:CAZ131",
+    "forecast:CAZ134",
+    "forecast:CAZ137",
+    "forecast:CAZ141",
+    "forecast:CAZ142",
+    "forecast:CAZ144",
+    "forecast:CAZ145",
+    "forecast:CAZ146",
+    "forecast:CAZ147",
+    "forecast:CAZ148",
+    "forecast:CAZ149",
+    "forecast:CAZ150",
+    "forecast:CAZ151",
+    "forecast:CAZ152",
+    "forecast:CAZ153",
+    "forecast:CAZ154",
+    "forecast:CAZ155",
+    "forecast:CAZ156",
+    "forecast:CAZ157",
+    "forecast:CAZ158",
+    "forecast:CAZ159",
+    "forecast:CAZ160",
+    "forecast:CAZ161",
+    "forecast:CAZ162",
+    "forecast:CAZ163",
+    "forecast:CAZ164"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=STO&issuedby=STO&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "67ab248005682c2e2e54afcdd4485d4837270af4fcf0905c2dc71e80aef2dfb2"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.929f476b21bdb929a0782c6baeec6bd264ec4445.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.929f476b21bdb929a0782c6baeec6bd264ec4445.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.adae2a98718f4033f926a8ca68e6d87f6cc1d12f.001.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ522"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=VEF&issuedby=VEF&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "7f86a6528b673a3733cf33014c130bb4076524ec802de8b58c4e5fa73fe0ba95"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.1f7b086a6ad56d044bb16dca148157a534b80015.002.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.2",
+    "nws:urn:oid:2.49.0.1.840.0.cc114be7184a7472776b632a007d978ec30ad034.002.1",
+    "nws:urn:oid:2.49.0.1.840.0.469a5488af3dceb8f4d0e41c09f4dbf04bb51c75.002.1"
+   ],
+   "event": "Extreme Heat Warning",
+   "designation": "warning",
+   "band": "severe",
+   "posture": "act-now",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ087",
+    "forecast:CAZ088",
+    "forecast:CAZ354",
+    "forecast:CAZ355",
+    "forecast:CAZ356",
+    "forecast:CAZ357",
+    "forecast:CAZ358",
+    "forecast:CAZ362",
+    "forecast:CAZ366",
+    "forecast:CAZ367",
+    "forecast:CAZ368",
+    "forecast:CAZ369",
+    "forecast:CAZ370",
+    "forecast:CAZ371",
+    "forecast:CAZ372",
+    "forecast:CAZ373",
+    "forecast:CAZ374",
+    "forecast:CAZ375",
+    "forecast:CAZ548"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "77d3081c4d74450e7db5899e583045bac01523e0dcb05b20867da6f45b9e540c"
+  }
+ ]
+}

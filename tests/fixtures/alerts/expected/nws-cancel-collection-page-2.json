@@ -1,0 +1,387 @@
+{
+ "capture": "2026-10-05-cancel-collection-page-2.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": true
+ },
+ "failures": [],
+ "current": [],
+ "superseded": [],
+ "cancelled": [
+  "nws:urn:oid:2.49.0.1.840.0.f37bb7c84b693d01e0a1b019dd4def1d3defc865.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.c369e4bf4e301b00c18a900bec84512bc2dd0fe2.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.dff2b4a56dfd5d0ff263f86560b91df86e2b8e6c.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.943ef5b20978bff4d9658bb80af213eb8204687f.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.b9734b2b6f893770fb04c2418d73335dd97bc4e8.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.1",
+  "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.001.1",
+  "nws:urn:oid:2.49.0.1.840.0.0142b0389798c01d5bb5f28f9aa7320092c5196d.001.1"
+ ],
+ "expired": [],
+ "alerts": [
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.f37bb7c84b693d01e0a1b019dd4def1d3defc865.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.f37bb7c84b693d01e0a1b019dd4def1d3defc865.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4a05df876e0abb517701d6f5250d70645a7c84a1.001.1"
+   ],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "marine:PZZ535"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MTR&issuedby=MTR&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cc28805011d199759d03740c0e4b51e3cf1bfd03be263345de5c549cfd766d8e"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8c49d62f93996a96cb756c4569a6927363ae308c.001.1"
+   ],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "forecast:CAZ529"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MTR&issuedby=MTR&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "906254d31c4313daa92206a238e55e2eef99ee6929d5a4efb0bddc066179f14a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.002.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.8c49d62f93996a96cb756c4569a6927363ae308c.002.1"
+   ],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "forecast:CAZ509",
+    "forecast:CAZ530"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MTR&issuedby=MTR&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "0401560efe4056d3d571195b9c98f45fc2774f04e5d47828a33a0c071fe91144"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.c369e4bf4e301b00c18a900bec84512bc2dd0fe2.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.c369e4bf4e301b00c18a900bec84512bc2dd0fe2.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.0bb0a0f887e813dc33d3564e4f1ac313b5ab3808.001.1"
+   ],
+   "event": "Small Craft Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "marine",
+    "wind"
+   ],
+   "zones": [
+    "marine:PKZ012"
+   ],
+   "jurisdictions": [
+    "MARINE"
+   ],
+   "marine": true,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=MWW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "d06d5794f30eb3a985c91da74b6d1b987df74249548cf2a246a1ae8f2007e962"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.dff2b4a56dfd5d0ff263f86560b91df86e2b8e6c.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.dff2b4a56dfd5d0ff263f86560b91df86e2b8e6c.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.ebded789f333203269fb1c1b3b286d68771b0a97.001.1",
+    "nws:urn:oid:2.49.0.1.840.0.990bf31106b28285a699cb4f9d2ac6f87a21a12b.001.1",
+    "nws:urn:oid:2.49.0.1.840.0.c603839fc66a947b27828b28bcd306c16b5bd68a.001.1",
+    "nws:urn:oid:2.49.0.1.840.0.55fa7cd783fbe59353b6b9f846aa7009afe4ed1c.001.1"
+   ],
+   "event": "Flood Warning",
+   "designation": "warning",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "flood"
+   ],
+   "zones": [
+    "forecast:AKZ325"
+   ],
+   "jurisdictions": [
+    "AK-SE"
+   ],
+   "marine": false,
+   "geometryBasis": "polygon",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=FLS",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "11527e6db7ae1e494e1a34294cd104cbe2968f7eba14fde62b361506b2e48ca0"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.943ef5b20978bff4d9658bb80af213eb8204687f.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.943ef5b20978bff4d9658bb80af213eb8204687f.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.7495594eba055d7c1e45d67babdd09647d743a21.001.1"
+   ],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "forecast:AKZ326"
+   ],
+   "jurisdictions": [
+    "AK-SE"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "aad03b45ca520a8a4d116c1a67f2165a15df087c6e4371304419f1be4d1efe8c"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.b9734b2b6f893770fb04c2418d73335dd97bc4e8.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.b9734b2b6f893770fb04c2418d73335dd97bc4e8.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.4c183c9381778d831e275114d2d6f96de62eab6a.001.1"
+   ],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "forecast:AKZ326"
+   ],
+   "jurisdictions": [
+    "AK-SE"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AJK&issuedby=AJK&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e286ab4ed732daea975b8838107a0dbb0fa42c60b5d54940bef48c181fa4834a"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.6df8c047e1cbe829627cc92d595584cc92d7c79f.002.1"
+   ],
+   "event": "Extreme Heat Watch",
+   "designation": "watch",
+   "band": "severe",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ087",
+    "forecast:CAZ088",
+    "forecast:CAZ354",
+    "forecast:CAZ355",
+    "forecast:CAZ356",
+    "forecast:CAZ357",
+    "forecast:CAZ358",
+    "forecast:CAZ362",
+    "forecast:CAZ366",
+    "forecast:CAZ367",
+    "forecast:CAZ368",
+    "forecast:CAZ369",
+    "forecast:CAZ370",
+    "forecast:CAZ371",
+    "forecast:CAZ372",
+    "forecast:CAZ373",
+    "forecast:CAZ374",
+    "forecast:CAZ375",
+    "forecast:CAZ548"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "7ed1cd9c28e44b52810a91a073dda8a279b41e2f00910ff2ac99c16f056bc2b5"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.6df8c047e1cbe829627cc92d595584cc92d7c79f.001.1"
+   ],
+   "event": "Extreme Heat Watch",
+   "designation": "watch",
+   "band": "severe",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ038",
+    "forecast:CAZ349",
+    "forecast:CAZ350",
+    "forecast:CAZ351",
+    "forecast:CAZ352",
+    "forecast:CAZ353",
+    "forecast:CAZ550"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=LOX&issuedby=LOX&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "dd2db2039e3b637d07e02975d8e995fb9b12d40c03f09dff5986c50ccc77583f"
+  },
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.0142b0389798c01d5bb5f28f9aa7320092c5196d.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.0142b0389798c01d5bb5f28f9aa7320092c5196d.001.1",
+   "messageType": "cancel",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.0fad6b84fb446e26e7fd80e35cd6ee85cda474d5.001.1"
+   ],
+   "event": "Dense Fog Advisory",
+   "designation": "advisory",
+   "band": "minor",
+   "posture": "ended",
+   "confidence": "observed",
+   "categories": [
+    "other"
+   ],
+   "zones": [
+    "forecast:AKZ711",
+    "forecast:AKZ746"
+   ],
+   "jurisdictions": [
+    "AK-SE"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=AFC&issuedby=AER&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "9ddf81fdde7bb2c43cc50d3c4b733e9066c1b158722e0b8a28c217a4bb6000e2"
+  }
+ ]
+}

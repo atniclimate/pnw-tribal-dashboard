@@ -1,0 +1,816 @@
+{
+  "schema": "cthd.event-categories/1",
+  "agency": "nws",
+  "generatedAt": "2026-10-05T07:54:54.806Z",
+  "sourceIds": [
+    "nws-alert-types"
+  ],
+  "events": {
+    "911 Telephone Outage": {
+      "categories": [
+        "other"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Administrative Message": {
+      "categories": [
+        "other"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Air Quality Alert": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Air Stagnation Advisory": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Ashfall Advisory": {
+      "categories": [
+        "geologic"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Ashfall Warning": {
+      "categories": [
+        "geologic"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Avalanche Advisory": {
+      "categories": [
+        "avalanche"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Avalanche Warning": {
+      "categories": [
+        "avalanche"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Avalanche Watch": {
+      "categories": [
+        "avalanche"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Beach Hazards Statement": {
+      "categories": [
+        "coastal"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Blizzard Warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Blowing Dust Advisory": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Blowing Dust Warning": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Blue Alert": {
+      "categories": [
+        "other"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Brisk Wind Advisory": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Child Abduction Emergency": {
+      "categories": [
+        "other"
+      ],
+      "designation": "emergency",
+      "reviewed": false
+    },
+    "Civil Danger Warning": {
+      "categories": [
+        "other"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Civil Emergency Message": {
+      "categories": [
+        "other"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Coastal Flood Advisory": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Coastal Flood Statement": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Coastal Flood Warning": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Coastal Flood Watch": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Cold Weather Advisory": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Dense Fog Advisory": {
+      "categories": [
+        "other"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Dense Smoke Advisory": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Dust Advisory": {
+      "categories": [
+        "smoke-air"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Dust Storm Warning": {
+      "categories": [
+        "smoke-air",
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Earthquake Warning": {
+      "categories": [
+        "geologic"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Evacuation Immediate": {
+      "categories": [
+        "evacuation"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Extreme Cold Warning": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Extreme Cold Watch": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Extreme Fire Danger": {
+      "categories": [
+        "fire"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Extreme Heat Warning": {
+      "categories": [
+        "heat"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Extreme Heat Watch": {
+      "categories": [
+        "heat"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Extreme Wind Warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Fire Warning": {
+      "categories": [
+        "fire"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Fire Weather Watch": {
+      "categories": [
+        "fire"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Flash Flood Statement": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Flash Flood Warning": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Flash Flood Watch": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Flood Advisory": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Flood Statement": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Flood Warning": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Flood Watch": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Freeze Warning": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Freeze Watch": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Freezing Fog Advisory": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Freezing Spray Advisory": {
+      "categories": [
+        "marine",
+        "cold"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Frost Advisory": {
+      "categories": [
+        "cold"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Gale Warning": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Gale Watch": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Hazardous Materials Warning": {
+      "categories": [
+        "other"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Hazardous Seas Warning": {
+      "categories": [
+        "marine"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Hazardous Seas Watch": {
+      "categories": [
+        "marine"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Hazardous Weather Outlook": {
+      "categories": [
+        "other"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Heat Advisory": {
+      "categories": [
+        "heat"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Heavy Freezing Spray Warning": {
+      "categories": [
+        "marine",
+        "cold"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Heavy Freezing Spray Watch": {
+      "categories": [
+        "marine",
+        "cold"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "High Surf Advisory": {
+      "categories": [
+        "coastal"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "High Surf Warning": {
+      "categories": [
+        "coastal"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "High Wind Warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "High Wind Watch": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Hurricane Force Wind Warning": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Hurricane Force Wind Watch": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Hurricane Warning": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Hurricane Watch": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Hydrologic Outlook": {
+      "categories": [
+        "flood"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Ice Storm Warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Lake Effect Snow Warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Lake Wind Advisory": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Lakeshore Flood Advisory": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Lakeshore Flood Statement": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Lakeshore Flood Warning": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Lakeshore Flood Watch": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Law Enforcement Warning": {
+      "categories": [
+        "other"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Local Area Emergency": {
+      "categories": [
+        "other"
+      ],
+      "designation": "emergency",
+      "reviewed": false
+    },
+    "Low Water Advisory": {
+      "categories": [
+        "other"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Marine Weather Statement": {
+      "categories": [
+        "marine"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Nuclear Power Plant Warning": {
+      "categories": [
+        "other"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Radiological Hazard Warning": {
+      "categories": [
+        "other"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Red Flag Warning": {
+      "categories": [
+        "fire"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Rip Current Statement": {
+      "categories": [
+        "coastal"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Severe Thunderstorm Warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Severe Thunderstorm Watch": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Severe Weather Statement": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Shelter In Place Warning": {
+      "categories": [
+        "evacuation"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Short Term Forecast": {
+      "categories": [
+        "other"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Small Craft Advisory": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Snow Squall Warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Special Marine Warning": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Special Weather Statement": {
+      "categories": [
+        "other"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Storm Surge Warning": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Storm Surge Watch": {
+      "categories": [
+        "coastal",
+        "flood"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Storm Warning": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Storm Watch": {
+      "categories": [
+        "marine",
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Test": {
+      "categories": [
+        "other"
+      ],
+      "designation": "other",
+      "reviewed": false
+    },
+    "Tornado Warning": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Tornado Watch": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Tropical Cyclone Local Statement": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "statement",
+      "reviewed": false
+    },
+    "Tropical Storm Warning": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Tropical Storm Watch": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Tsunami Advisory": {
+      "categories": [
+        "tsunami"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Tsunami Warning": {
+      "categories": [
+        "tsunami"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Tsunami Watch": {
+      "categories": [
+        "tsunami"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Typhoon Warning": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Typhoon Watch": {
+      "categories": [
+        "wind",
+        "coastal"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Volcano Warning": {
+      "categories": [
+        "geologic"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Wind Advisory": {
+      "categories": [
+        "wind"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    },
+    "Winter Storm Warning": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "warning",
+      "reviewed": false
+    },
+    "Winter Storm Watch": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "watch",
+      "reviewed": false
+    },
+    "Winter Weather Advisory": {
+      "categories": [
+        "winter"
+      ],
+      "designation": "advisory",
+      "reviewed": false
+    }
+  }
+}

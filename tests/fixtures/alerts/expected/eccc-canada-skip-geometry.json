@@ -1,0 +1,685 @@
+{
+ "capture": "2026-10-05-canada-skip-geometry.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false,
+  "numberMatched": 24
+ },
+ "failures": [],
+ "alerts": [
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1026",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1026",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1e8da4148283ccff59b41dc3f779375292053f801c89b12208e620df775dfd6e"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1039",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1039",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cc74e34320ba5def2b3035e782308f086b901ac3c27a694648b3178469e60433"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1042",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1042",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "64d8de1078f63a3c2560dec43cc1f0c39c6e0e487eb328c8ba0185338bc7ac7c"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1034",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1034",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "093593b8d76474f7f8e3f1cc0c110df0ae954b61ab77355dca335af0d7ce5d6f"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1029",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1029",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "20d286f627e851d4c2f2a358c17dd4a00c3482706c56b0da5acc83786fb543a7"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1022",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1022",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1c3ec65889ed203939c5144064523674f1c353d774ba025a45e23ec56cef8ced"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1024",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1024",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "25a0e2217f0d5196084a1fe9d026a29211221adfca7dce7c01e8e89cd0428492"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1027",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1027",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "d92ebe5c8eb52f64e3bd2d0eb414fcd87abc3acbaf7a19b25555395612bf212e"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1033",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1033",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "3aa8833929baddcaa8640118814c1bcbc343511b8c278ff7ccf8d43707353a40"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1021",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1021",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "cc9166563c811f21b148e25bd887afbaac39ee0226bbe1334f6e85a05c7ed6bc"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1032",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1032",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "321d28a32a3ced578650b841227abb6571f2d6284838da23cddcd80a991e1385"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1040",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1040",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c6c4c2169bb3d07dabe83eb6e754ac1f365ecc13f681f33ca256066b4e675ef0"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1036",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1036",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "e3bebb3afda7f9627e3e5ed49f9853d35da3b003c1fabbaa8f0ffb7c3d2519cc"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1043",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1043",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ba154beb6952e021c82cbbe656154755320f11f73d9291e2f88eeb2b582f1296"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1037",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1037",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "a6a0d2b7aec36bbf6a3a74873f15a5d5ad1149fea39f0f9798b49e8dc5d0f95e"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1023",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1023",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "8a627db2dc8a19eff31da81ea68c896370b9fc6099102ee5cc5eb00c8515694e"
+  },
+  {
+   "alertId": "eccc:183432824638615149202610030504_fea1-1030",
+   "eventId": "eccc:183432824638615149202610030504_fea1-1030",
+   "messageType": "alert",
+   "references": [],
+   "event": "Special weather",
+   "designation": "statement",
+   "band": "unstated",
+   "posture": "monitor",
+   "confidence": "unknown",
+   "categories": [
+    "other"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "13280465435825bc69b7cc6a8ad347643f4bf107d10595bc18b09e705b64f533"
+  },
+  {
+   "alertId": "eccc:547207521133772084202610040507_fea1-862",
+   "eventId": "eccc:547207521133772084202610040507_fea1-862",
+   "messageType": "alert",
+   "references": [],
+   "event": "Wreckhouse wind",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "unknown",
+   "categories": [
+    "wind"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=NL#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "7f7d4f588777c9f5f4830125414433346b95177ffe55846307af36b05935d31c"
+  },
+  {
+   "alertId": "eccc:45338417369789318202610040506_fea1-805",
+   "eventId": "eccc:45338417369789318202610040506_fea1-805",
+   "messageType": "alert",
+   "references": [],
+   "event": "Les Suêtes wind",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "unknown",
+   "categories": [
+    "wind"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=NS#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "86e37ae5244d3951d274c85d1de3c8fd32d0bb9dec3f1e4067645164f8ae6b50"
+  },
+  {
+   "alertId": "eccc:1704384651073863733202610040507_fea1-868",
+   "eventId": "eccc:1704384651073863733202610040507_fea1-868",
+   "messageType": "alert",
+   "references": [],
+   "event": "Wind",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "unknown",
+   "categories": [
+    "wind"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=NL#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ffc5222cf09fa29ebf74cfdc088f9a07a54577b762f0a822dc5e940821c956c6"
+  },
+  {
+   "alertId": "eccc:409367261371191175202610040504_fea1-982",
+   "eventId": "eccc:409367261371191175202610040504_fea1-982",
+   "messageType": "alert",
+   "references": [],
+   "event": "Wind",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "unknown",
+   "categories": [
+    "wind"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "c3b23941b264c87fb832a60eb48bc15febac3b4e18d4047b50dc31964c143c6c"
+  },
+  {
+   "alertId": "eccc:409367261371191175202610040504_fea1-908",
+   "eventId": "eccc:409367261371191175202610040504_fea1-908",
+   "messageType": "alert",
+   "references": [],
+   "event": "Wind",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "unknown",
+   "categories": [
+    "wind"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=QC#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "b993ac68c4f05f69ce4eea036bac5c81b1059c60ae3ed0ebf1f09d1dc47057ba"
+  },
+  {
+   "alertId": "eccc:1700033421073863733202610040507_fea1-854",
+   "eventId": "eccc:1700033421073863733202610040507_fea1-854",
+   "messageType": "alert",
+   "references": [],
+   "event": "Rainfall",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "unknown",
+   "categories": [
+    "rain-landslide"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=NL#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "ec35cb25fc1523fed1c08563a5f7dfd6993c2597386ed734b0af48423e902ca6"
+  },
+  {
+   "alertId": "eccc:2157214001422852684202610030502_fea1-2448",
+   "eventId": "eccc:2157214001422852684202610030502_fea1-2448",
+   "messageType": "alert",
+   "references": [],
+   "event": "Blizzard",
+   "designation": "warning",
+   "band": "moderate",
+   "posture": "act-now",
+   "confidence": "unknown",
+   "categories": [
+    "winter"
+   ],
+   "zones": [],
+   "jurisdictions": [],
+   "marine": false,
+   "geometryBasis": "none",
+   "languages": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "webUrl": "https://weather.gc.ca/index_e.html?alertTableFilterProv=YT#alerttable",
+   "mappingApplied": {
+    "name": "atni-cast-eccc-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "1c7382540c3efed49f3f97b99d3fdf13a75b32737d9c84cc64b4a721f10f77c7"
+  }
+ ]
+}

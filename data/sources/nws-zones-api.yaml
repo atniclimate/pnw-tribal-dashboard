@@ -1,0 +1,49 @@
+id: nws-zones-api
+title: NWS Zone Geometry (Fallback)
+owner: NOAA National Weather Service
+url: https://api.weather.gov/zones
+urlTemplate: https://api.weather.gov/zones/{type}/{id}
+humanUrl: https://www.weather.gov/gis/PublicZones
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Zone boundaries change a few times a year; requested only for a zone missing from the local index.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, MARINE]
+kind: api-geojson
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L3 probe 10/05/2026 08:17 UTC with Origin https://atniclimate.github.io: Access-Control-Allow-Origin * on /zones/forecast/{id}."
+  headers:
+    Accept: application/geo+json
+  timeoutMs: 12000
+  retries: 1
+  priority: 3
+freshness:
+  freshForMs: 2592000000
+  usableForMs: 31536000000
+health:
+  probe: https://api.weather.gov/zones/forecast/WAZ001
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/geo+json
+  minBytes: 500
+  maxBytes: null
+usedBy: [alerts, dashboard]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: >-
+  Fallback only (blueprint 3.7.5): an alert's typed zone key that is missing from the local
+  nws-zones.topo.json is fetched from /zones/{type}/{id}, where type is forecast, county, or fire (marine
+  PZZ and PKZ zones are served under forecast, as the alerts' own affectedZones URLs show), at priority 3,
+  at most six per page view, cached in memory; the alerts panel is then degraded with "Forecast zone index
+  is out of date." Fire and public zones can share a code (California shares 106 codes, 10/05/2026), so
+  the type is always part of the request.

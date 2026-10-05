@@ -1,0 +1,49 @@
+id: ntwc-atom
+title: National Tsunami Warning Center Atom Feed
+owner: NOAA National Weather Service, National Tsunami Warning Center
+url: https://www.tsunami.gov/events/xml/PAAQAtom.xml
+humanUrl: https://www.tsunami.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Tsunami Warning Center
+cadence: Event-driven; the snapshot reads it every ten minutes.
+region: both
+coverage: [WA, OR, BC, CA-N, AK-SE, MARINE]
+kind: feed
+status: active
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L3 probe 10/05/2026 08:17 UTC with Origin https://atniclimate.github.io: HTTP 200, no Access-Control-Allow-Origin header, text/xml."
+  timeoutMs: 20000
+  retries: 2
+  priority: 0
+  snapshot:
+    task: tsunami
+    files: [tsunami.json]
+    cadenceMin: 10
+freshness:
+  freshForMs: 900000
+  usableForMs: 7200000
+health:
+  probe: https://www.tsunami.gov/events/xml/PAAQAtom.xml
+  expectStatus: 200
+  expectAcao: null
+  expectType: text/xml
+  minBytes: 200
+  maxBytes: null
+usedBy: [alerts]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: >-
+  Covers Alaska, British Columbia, and the U.S. West Coast. Parsed in the snapshot with DOCTYPE and ENTITY
+  declarations rejected and entities never expanded. Each entry's summary names its category: Warning,
+  Advisory, and Watch entries stay current while in the feed; an Information Statement is current for 24
+  hours after issuance; a cancellation is never shown (atni-cthd-ntwc 0.1.0, provisional). Pinned to the
+  top of alert lists when present.

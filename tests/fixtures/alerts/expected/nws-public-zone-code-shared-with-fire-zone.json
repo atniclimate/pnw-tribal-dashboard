@@ -1,0 +1,62 @@
+{
+ "capture": "2026-10-05-public-zone-code-shared-with-fire-zone.json",
+ "diagnostics": {
+  "testOrExerciseExcluded": 0,
+  "itemsFailed": 0,
+  "unknownZoneKeys": 0,
+  "truncated": false
+ },
+ "failures": [],
+ "current": [
+  "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1"
+ ],
+ "superseded": [],
+ "cancelled": [],
+ "expired": [],
+ "alerts": [
+  {
+   "alertId": "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+   "eventId": "nws:urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+   "messageType": "update",
+   "references": [
+    "nws:urn:oid:2.49.0.1.840.0.7517e1a3cd82f6d60949eb0a82ce51d6c71ea53c.002.1"
+   ],
+   "event": "Heat Advisory",
+   "designation": "advisory",
+   "band": "moderate",
+   "posture": "monitor",
+   "confidence": "likely",
+   "categories": [
+    "heat"
+   ],
+   "zones": [
+    "forecast:CAZ503",
+    "forecast:CAZ504",
+    "forecast:CAZ506",
+    "forecast:CAZ508",
+    "forecast:CAZ510",
+    "forecast:CAZ512",
+    "forecast:CAZ513",
+    "forecast:CAZ514",
+    "forecast:CAZ515",
+    "forecast:CAZ516",
+    "forecast:CAZ517",
+    "forecast:CAZ518"
+   ],
+   "jurisdictions": [
+    "CA-N"
+   ],
+   "marine": false,
+   "geometryBasis": "zone",
+   "languages": [
+    "en-US"
+   ],
+   "webUrl": "https://forecast.weather.gov/product.php?site=MTR&issuedby=MTR&product=NPW",
+   "mappingApplied": {
+    "name": "atni-cast-nws-cap",
+    "version": "1.0.0"
+   },
+   "sha256": "2318661214ede8f3c2ab2e99624b4828a9c066fb23a50ab6a277fce490d49571"
+  }
+ ]
+}
