@@ -1,0 +1,80 @@
+{
+  "id": "us-wa-stillaguamish-tribe-of-indians-of-washington",
+  "castId": null,
+  "name": "Stillaguamish Tribe of Indians of Washington",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Stillaguamish Tribe of Indians of Washington\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Stillaguamish"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "WA"
+  ],
+  "region": "wa",
+  "hq": {
+    "lat": 48.20947,
+    "lon": -122.1844,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "379",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      48.20947,
+      -122.1844
+    ]
+  ],
+  "bbox": [
+    -122.3192,
+    48.11964,
+    -122.0496,
+    48.2993
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0087"
+    ],
+    "censusAiannhce": [
+      "4000"
+    ],
+    "censusGeoid": "4000R",
+    "biaTldObjectId": 379,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: state Washington (whole state is in the footprint)."
+  },
+  "flags": []
+}

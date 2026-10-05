@@ -1,0 +1,3102 @@
+{
+  "schema": "cthd.crosswalk/1",
+  "generatedAt": "2026-10-04T00:00:00Z",
+  "rows": [
+    {
+      "nationId": "us-ak-angoon-community-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 9",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Angoon Community Association."
+    },
+    {
+      "nationId": "us-ak-angoon-community-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 9",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-angoon-community-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Angoon Community Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-central-council-of-the-tlingit-and-haida-indian-tribes",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 15",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Central Council of the Tlingit & Haida Indian Tribes."
+    },
+    {
+      "nationId": "us-ak-central-council-of-the-tlingit-and-haida-indian-tribes",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 15",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-central-council-of-the-tlingit-and-haida-indian-tribes",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Central Council of the Tlingit & Haida Indian Tribes",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-chilkat-indian-village-klukwan",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 22",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Chilkat Indian Village (Klukwan)."
+    },
+    {
+      "nationId": "us-ak-chilkat-indian-village-klukwan",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 22",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-chilkat-indian-village-klukwan",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Chilkat Indian Village (Klukwan)",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-chilkoot-indian-association-haines",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 23",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Chilkoot Indian Association (Haines)."
+    },
+    {
+      "nationId": "us-ak-chilkoot-indian-association-haines",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 23",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-chilkoot-indian-association-haines",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Chilkoot Indian Association (Haines)",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-craig-tribal-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 27",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Craig Tribal Association."
+    },
+    {
+      "nationId": "us-ak-craig-tribal-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 27",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-craig-tribal-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Craig Tribal Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-douglas-indian-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 29",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Douglas Indian Association."
+    },
+    {
+      "nationId": "us-ak-douglas-indian-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 29",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-douglas-indian-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Douglas Indian Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-hoonah-indian-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 37",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Hoonah Indian Association."
+    },
+    {
+      "nationId": "us-ak-hoonah-indian-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 37",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-hoonah-indian-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Hoonah Indian Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-hydaburg-cooperative-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 40",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Hydaburg Cooperative Association."
+    },
+    {
+      "nationId": "us-ak-hydaburg-cooperative-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 40",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-hydaburg-cooperative-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Hydaburg Cooperative Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-ketchikan-indian-community",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 49",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Ketchikan Indian Community."
+    },
+    {
+      "nationId": "us-ak-ketchikan-indian-community",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 49",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-ketchikan-indian-community",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Ketchikan Indian Community",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-klawock-cooperative-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 52",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Klawock Cooperative Association."
+    },
+    {
+      "nationId": "us-ak-klawock-cooperative-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 52",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-klawock-cooperative-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Klawock Cooperative Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-metlakatla-indian-community-annette-island-reserve",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 361",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Metlakatla Indian Community, Annette Island Reserve."
+    },
+    {
+      "nationId": "us-ak-metlakatla-indian-community-annette-island-reserve",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Metlakatla Indian Community, Annette Island Reserve",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-kake",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 172",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Organized Village of Kake."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-kake",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 172",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-kake",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Organized Village of Kake",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-kasaan",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 173",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Organized Village of Kasaan."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-kasaan",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 173",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-kasaan",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Organized Village of Kasaan",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-saxman",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 175",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Organized Village of Saxman."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-saxman",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 175",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-organized-village-of-saxman",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Organized Village of Saxman",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-petersburg-indian-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 180",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Petersburg Indian Association."
+    },
+    {
+      "nationId": "us-ak-petersburg-indian-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 180",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-petersburg-indian-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Petersburg Indian Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-sitka-tribe-of-alaska",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 193",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Sitka Tribe of Alaska."
+    },
+    {
+      "nationId": "us-ak-sitka-tribe-of-alaska",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 193",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-sitka-tribe-of-alaska",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Sitka Tribe of Alaska",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-skagway-village",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 194",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Skagway Village."
+    },
+    {
+      "nationId": "us-ak-skagway-village",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 194",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-skagway-village",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Skagway Village",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-wrangell-cooperative-association",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 226",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Wrangell Cooperative Association."
+    },
+    {
+      "nationId": "us-ak-wrangell-cooperative-association",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 226",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-wrangell-cooperative-association",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Wrangell Cooperative Association",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ak-yakutat-tlingit-tribe",
+      "sourceId": "bia-anv",
+      "sourceKey": "OBJECTID 227",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-anv is the originating record; key bia-anv:Yakutat Tlingit Tribe."
+    },
+    {
+      "nationId": "us-ak-yakutat-tlingit-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 227",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "Same OBJECTID and identical tribefullname in the Tribal Leaders Directory."
+    },
+    {
+      "nationId": "us-ak-yakutat-tlingit-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Yakutat Tlingit Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-alturas-indian-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0096",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Alturas\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-alturas-indian-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 385",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Alturas Indian Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-alturas-indian-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0095R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Alturas\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-alturas-indian-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Alturas Indian Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-bear-river-band-of-the-rohnerville-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 387",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Bear River Band of the Rohnerville Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-bear-river-band-of-the-rohnerville-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3220T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Rohnerville (Rancheria)\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D3) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-bear-river-band-of-the-rohnerville-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Bear River Band of the Rohnerville Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-big-lagoon-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0103",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Big Lagoon\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-big-lagoon-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 389",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Big Lagoon Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-big-lagoon-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0240R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Big Lagoon\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-big-lagoon-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Big Lagoon Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 392",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Big Valley Band of Pomo Indians of the Big Valley Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Big Valley Band of Pomo Indians of the Big Valley Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-blue-lake-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0108",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Blue Lake\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-blue-lake-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 394",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Blue Lake Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-blue-lake-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0325R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Blue Lake\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-blue-lake-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0325T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Blue Lake\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-blue-lake-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Blue Lake Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-cahto-tribe-of-the-laytonville-rancheria",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 399",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Cahto Tribe of the Laytonville Rancheria."
+    },
+    {
+      "nationId": "us-ca-cahto-tribe-of-the-laytonville-rancheria",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Cahto Tribe of the Laytonville Rancheria",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-cedarville-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0115",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Cedarville\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-cedarville-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 406",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Cedarville Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-cedarville-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0555R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Cedarville\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-cedarville-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0555T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Cedarville\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-cedarville-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Cedarville Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 407",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Cher-Ae Heights Indian Community of the Trinidad Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Cher-Ae Heights Indian Community of the Trinidad Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-coyote-valley-band-of-pomo-indians-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0122",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Coyote Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-coyote-valley-band-of-pomo-indians-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 411",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Coyote Valley Band of Pomo Indians of California."
+    },
+    {
+      "nationId": "us-ca-coyote-valley-band-of-pomo-indians-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0825R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Coyote Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-coyote-valley-band-of-pomo-indians-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Coyote Valley Band of Pomo Indians of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0125",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Elem\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 413",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-elk-valley-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0126",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Elk Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-elk-valley-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 414",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Elk Valley Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-elk-valley-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1010R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Elk Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-elk-valley-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1010T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Elk Valley\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-elk-valley-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Elk Valley Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0128",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Fort Bidwell\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 418",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Fort Bidwell Indian Community of the Fort Bidwell Reservation of California."
+    },
+    {
+      "nationId": "us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1170R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Fort Bidwell\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1170T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Fort Bidwell\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Fort Bidwell Indian Community of the Fort Bidwell Reservation of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-greenville-rancheria",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0131",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Greenville\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-greenville-rancheria",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 420",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Greenville Rancheria."
+    },
+    {
+      "nationId": "us-ca-greenville-rancheria",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1380R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Greenville\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-greenville-rancheria",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Greenville Rancheria",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-guidiville-rancheria-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0133",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Guidiville\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-guidiville-rancheria-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 422",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Guidiville Rancheria of California."
+    },
+    {
+      "nationId": "us-ca-guidiville-rancheria-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1400R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Guidiville\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-guidiville-rancheria-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1400T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Guidiville\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-guidiville-rancheria-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Guidiville Rancheria of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-habematolel-pomo-of-upper-lake-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 423",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Habematolel Pomo of Upper Lake, California."
+    },
+    {
+      "nationId": "us-ca-habematolel-pomo-of-upper-lake-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Habematolel Pomo of Upper Lake, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-hoopa-valley-tribe-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 424",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Hoopa Valley Tribe, California."
+    },
+    {
+      "nationId": "us-ca-hoopa-valley-tribe-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Hoopa Valley Tribe, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-hopland-band-of-pomo-indians-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0135",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Hopland\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-hopland-band-of-pomo-indians-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 425",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Hopland Band of Pomo Indians, California."
+    },
+    {
+      "nationId": "us-ca-hopland-band-of-pomo-indians-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1515R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Hopland\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-hopland-band-of-pomo-indians-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Hopland Band of Pomo Indians, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-karuk-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0139",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Karuk\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-karuk-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 431",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Karuk Tribe."
+    },
+    {
+      "nationId": "us-ca-karuk-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1750R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Karuk\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-karuk-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1750T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Karuk\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-karuk-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Karuk Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 440",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Manchester Band of Pomo Indians of the Manchester Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Manchester Band of Pomo Indians of the Manchester Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-middletown-rancheria-of-pomo-indians-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0151",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Middletown\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-middletown-rancheria-of-pomo-indians-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 444",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Middletown Rancheria of Pomo Indians of California."
+    },
+    {
+      "nationId": "us-ca-middletown-rancheria-of-pomo-indians-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2255R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Middletown\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-middletown-rancheria-of-pomo-indians-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Middletown Rancheria of Pomo Indians of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-paskenta-band-of-nomlaki-indians-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0157",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Paskenta\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-paskenta-band-of-nomlaki-indians-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 449",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Paskenta Band of Nomlaki Indians of California."
+    },
+    {
+      "nationId": "us-ca-paskenta-band-of-nomlaki-indians-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2685R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Paskenta\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-paskenta-band-of-nomlaki-indians-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Paskenta Band of Nomlaki Indians of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-pinoleville-pomo-nation-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0161",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Pinoleville\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-pinoleville-pomo-nation-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 453",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Pinoleville Pomo Nation, California."
+    },
+    {
+      "nationId": "us-ca-pinoleville-pomo-nation-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2820R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Pinoleville\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-pinoleville-pomo-nation-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Pinoleville Pomo Nation, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 454",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and Roaring Creek Rancherias)."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2835T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Pit River\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D3) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek, and Roaring Creek Rancherias)",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-potter-valley-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0162",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Potter Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-potter-valley-tribe-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 455",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Potter Valley Tribe, California."
+    },
+    {
+      "nationId": "us-ca-potter-valley-tribe-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Potter Valley Tribe, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-puliklatribe-of-yurok-people",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0167",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Resighini\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-puliklatribe-of-yurok-people",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 456",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:PuliklaTribe of Yurok People (previously listed as Resighini Rancheria, California)."
+    },
+    {
+      "nationId": "us-ca-puliklatribe-of-yurok-people",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3145R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Resighini\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-puliklatribe-of-yurok-people",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "PuliklaTribe of Yurok People (previously listed as Resighini Rancheria, California)",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0163",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Quartz Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 457",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Quartz Valley Indian Community of the Quartz Valley Reservation of California."
+    },
+    {
+      "nationId": "us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3020R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Quartz Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3020T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Quartz Valley\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Quartz Valley Indian Community of the Quartz Valley Reservation of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-redding-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0165",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Redding\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-redding-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 459",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Redding Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-redding-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3095R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Redding\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-redding-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Redding Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0166",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Redwood Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 460",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California."
+    },
+    {
+      "nationId": "us-ca-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3115R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Redwood Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-robinson-rancheria",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0170",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Robinson\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-robinson-rancheria",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 462",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Robinson Rancheria."
+    },
+    {
+      "nationId": "us-ca-robinson-rancheria",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3195R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Robinson\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-robinson-rancheria",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3195T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Robinson\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-robinson-rancheria",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Robinson Rancheria",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-round-valley-indian-tribes-round-valley-reservation-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0172",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Round Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-round-valley-indian-tribes-round-valley-reservation-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 463",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Round Valley Indian Tribes, Round Valley Reservation, California."
+    },
+    {
+      "nationId": "us-ca-round-valley-indian-tribes-round-valley-reservation-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3250R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Round Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-round-valley-indian-tribes-round-valley-reservation-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3250T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Round Valley\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-round-valley-indian-tribes-round-valley-reservation-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Round Valley Indian Tribes, Round Valley Reservation, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-scotts-valley-band-of-pomo-indians-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0179",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Scotts Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-scotts-valley-band-of-pomo-indians-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 468",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Scotts Valley Band of Pomo Indians of California."
+    },
+    {
+      "nationId": "us-ca-scotts-valley-band-of-pomo-indians-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Scotts Valley Band of Pomo Indians of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-sherwood-valley-rancheria-of-pomo-indians-of-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0181",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Sherwood Valley\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-sherwood-valley-rancheria-of-pomo-indians-of-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 469",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Sherwood Valley Rancheria of Pomo Indians of California."
+    },
+    {
+      "nationId": "us-ca-sherwood-valley-rancheria-of-pomo-indians-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3735R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Sherwood Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-sherwood-valley-rancheria-of-pomo-indians-of-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3735T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Sherwood Valley\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-sherwood-valley-rancheria-of-pomo-indians-of-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Sherwood Valley Rancheria of Pomo Indians of California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-susanville-indian-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0186",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Susanville\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-susanville-indian-rancheria-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 472",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Susanville Indian Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-susanville-indian-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4060R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Susanville\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-susanville-indian-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4060T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Susanville\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-susanville-indian-rancheria-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Susanville Indian Rancheria, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-tolowa-dee-ni-nation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 477",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Tolowa Dee-ni' Nation."
+    },
+    {
+      "nationId": "us-ca-tolowa-dee-ni-nation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Tolowa Dee-ni' Nation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-wiyot-tribe-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 485",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Wiyot Tribe, California."
+    },
+    {
+      "nationId": "us-ca-wiyot-tribe-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Wiyot Tribe, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-yurok-tribe-of-the-yurok-reservation-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0201",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Yurok\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-ca-yurok-tribe-of-the-yurok-reservation-california",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 488",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Yurok Tribe of the Yurok Reservation, California."
+    },
+    {
+      "nationId": "us-ca-yurok-tribe-of-the-yurok-reservation-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4760R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Yurok\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-ca-yurok-tribe-of-the-yurok-reservation-california",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Yurok Tribe of the Yurok Reservation, California",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-id-coeur-dalene-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0056",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Coeur D'Alene\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-id-coeur-dalene-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 340",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Coeur D'Alene Tribe."
+    },
+    {
+      "nationId": "us-id-coeur-dalene-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0705R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Coeur d'Alene\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-id-coeur-dalene-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Coeur D'Alene Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-id-kootenai-tribe-of-idaho",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0067",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Kootenai\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-id-kootenai-tribe-of-idaho",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 357",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Kootenai Tribe of Idaho."
+    },
+    {
+      "nationId": "us-id-kootenai-tribe-of-idaho",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1800R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Kootenai\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-id-kootenai-tribe-of-idaho",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1800T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Kootenai\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-id-kootenai-tribe-of-idaho",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Kootenai Tribe of Idaho",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-id-nez-perce-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0072",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Nez Perce\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-id-nez-perce-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 363",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Nez Perce Tribe."
+    },
+    {
+      "nationId": "us-id-nez-perce-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2445R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Nez Perce\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-id-nez-perce-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Nez Perce Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 374",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Shoshone-Bannock Tribes of the Fort Hall Reservation."
+    },
+    {
+      "nationId": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Shoshone-Bannock Tribes of the Fort Hall Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0202",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Blackfeet\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 490",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Blackfeet Tribe of the Blackfeet Indian Reservation of Montana."
+    },
+    {
+      "nationId": "us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0305R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Blackfeet\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0305T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Blackfeet\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 491",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Chippewa Cree Indians of the Rocky Boy's Reservation, Montana."
+    },
+    {
+      "nationId": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Chippewa Cree Indians of the Rocky Boy's Reservation, Montana",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 341",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Salish and Kootenai Tribes of the Flathead Reservation."
+    },
+    {
+      "nationId": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Salish and Kootenai Tribes of the Flathead Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0253",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Fort McDermitt\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 554",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada and Oregon."
+    },
+    {
+      "nationId": "us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1210R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Fort McDermitt\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada and Oregon",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 579",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada."
+    },
+    {
+      "nationId": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-burns-paiute-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0054",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Burns Paiute\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-or-burns-paiute-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 339",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Burns Paiute Tribe."
+    },
+    {
+      "nationId": "us-or-burns-paiute-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0400R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Burns Paiute\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-burns-paiute-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0400T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Burns Paiute\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-burns-paiute-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Burns Paiute Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0083",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Siletz\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 343",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of Siletz Indians of Oregon."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3795R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Siletz\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3795T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Siletz\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes of Siletz Indians of Oregon",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 346",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-grand-ronde-community-of-oregon",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0062",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Grand Ronde\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-grand-ronde-community-of-oregon",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 347",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of the Grand Ronde Community of Oregon."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-grand-ronde-community-of-oregon",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1365R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Grand Ronde\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-grand-ronde-community-of-oregon",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1365T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Grand Ronde\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-grand-ronde-community-of-oregon",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes of the Grand Ronde Community of Oregon",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 348",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of the Umatilla Indian Reservation."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes of the Umatilla Indian Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0093",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Warm Springs\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 349",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of the Warm Springs Reservation of Oregon."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4545R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Warm Springs\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4545T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Warm Springs\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes of the Warm Springs Reservation of Oregon",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-coquille-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 350",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Coquille Indian Tribe."
+    },
+    {
+      "nationId": "us-or-coquille-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0775R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Coquille\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-coquille-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0775T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Coquille\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-coquille-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Coquille Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-cow-creek-band-of-umpqua-tribe-of-indians",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0059",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Cow Creek\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-or-cow-creek-band-of-umpqua-tribe-of-indians",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 351",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Cow Creek Band of Umpqua Tribe of Indians."
+    },
+    {
+      "nationId": "us-or-cow-creek-band-of-umpqua-tribe-of-indians",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0815R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Cow Creek\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-cow-creek-band-of-umpqua-tribe-of-indians",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Cow Creek Band of Umpqua Tribe of Indians",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-klamath-tribes",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0066",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Klamath\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-or-klamath-tribes",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 356",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Klamath Tribes."
+    },
+    {
+      "nationId": "us-or-klamath-tribes",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1785R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Klamath\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-or-klamath-tribes",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Klamath Tribes",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-and-bands-of-the-yakama-nation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 342",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes and Bands of the Yakama Nation."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-and-bands-of-the-yakama-nation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4690R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Yakama Nation\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-and-bands-of-the-yakama-nation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4690T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Yakama Nation\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-and-bands-of-the-yakama-nation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes and Bands of the Yakama Nation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-chehalis-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0361",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Chehalis\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-chehalis-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 344",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of the Chehalis Reservation."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-chehalis-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0575R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Chehalis\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-chehalis-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0575T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Chehalis\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-chehalis-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes of the Chehalis Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-colville-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0057",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Colville\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-colville-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 345",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of the Colville Reservation."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-colville-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0760R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Colville\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-colville-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0760T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Colville\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-of-the-colville-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Confederated Tribes of the Colville Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-cowlitz-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0362",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Cowlitz\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-cowlitz-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 352",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Cowlitz Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-cowlitz-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0820R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Cowlitz\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-cowlitz-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0820T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Cowlitz\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-cowlitz-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Cowlitz Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-hoh-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0063",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Hoh\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-hoh-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 353",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Hoh Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-hoh-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1460R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Hoh\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-hoh-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1460T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Hoh\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-hoh-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Hoh Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-jamestown-sklallam-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0064",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Jamestown\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-jamestown-sklallam-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 354",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Jamestown S'Klallam Tribe."
+    },
+    {
+      "nationId": "us-wa-jamestown-sklallam-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1655R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Jamestown S'Klallam\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-jamestown-sklallam-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1655T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Jamestown S'Klallam\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-jamestown-sklallam-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Jamestown S'Klallam Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-kalispel-indian-community-of-the-kalispel-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0065",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Kalispel\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-kalispel-indian-community-of-the-kalispel-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 355",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Kalispel Indian Community of the Kalispel Reservation."
+    },
+    {
+      "nationId": "us-wa-kalispel-indian-community-of-the-kalispel-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1735R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Kalispel\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-kalispel-indian-community-of-the-kalispel-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1735T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Kalispel\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-kalispel-indian-community-of-the-kalispel-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Kalispel Indian Community of the Kalispel Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-lower-elwha-tribal-community",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0068",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Lower Elwha\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-lower-elwha-tribal-community",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 358",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Lower Elwha Tribal Community."
+    },
+    {
+      "nationId": "us-wa-lower-elwha-tribal-community",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2040R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Lower Elwha\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-lower-elwha-tribal-community",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2040T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Lower Elwha\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-lower-elwha-tribal-community",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Lower Elwha Tribal Community",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-lummi-tribe-of-the-lummi-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0069",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Lummi\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-lummi-tribe-of-the-lummi-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 359",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Lummi Tribe of the Lummi Reservation."
+    },
+    {
+      "nationId": "us-wa-lummi-tribe-of-the-lummi-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2070R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Lummi\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-lummi-tribe-of-the-lummi-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Lummi Tribe of the Lummi Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-makah-indian-tribe-of-the-makah-indian-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0070",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Makah\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-makah-indian-tribe-of-the-makah-indian-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 360",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Makah Indian Tribe of the Makah Indian Reservation."
+    },
+    {
+      "nationId": "us-wa-makah-indian-tribe-of-the-makah-indian-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2085R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Makah\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-makah-indian-tribe-of-the-makah-indian-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Makah Indian Tribe of the Makah Indian Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-muckleshoot-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0071",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Muckleshoot\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-muckleshoot-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 362",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Muckleshoot Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-muckleshoot-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2375R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Muckleshoot\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-muckleshoot-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2375T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Muckleshoot\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-muckleshoot-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Muckleshoot Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-nisqually-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0073",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Nisqually\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-nisqually-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 364",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Nisqually Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-nisqually-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2460R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Nisqually\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-nisqually-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Nisqually Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-nooksack-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0074",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Nooksack\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-nooksack-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 365",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Nooksack Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-nooksack-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2475R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Nooksack\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-nooksack-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2475T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Nooksack\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-nooksack-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Nooksack Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-port-gamble-sklallam-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0076",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Port Gamble\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-port-gamble-sklallam-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 367",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Port Gamble S'Klallam Tribe."
+    },
+    {
+      "nationId": "us-wa-port-gamble-sklallam-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2910R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Port Gamble\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-port-gamble-sklallam-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2910T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Port Gamble\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-port-gamble-sklallam-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Port Gamble S'Klallam Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-puyallup-tribe-of-the-puyallup-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0078",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Puyallup\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-puyallup-tribe-of-the-puyallup-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 368",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Puyallup Tribe of the Puyallup Reservation."
+    },
+    {
+      "nationId": "us-wa-puyallup-tribe-of-the-puyallup-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3000R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Puyallup\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-puyallup-tribe-of-the-puyallup-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3000T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Puyallup\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-puyallup-tribe-of-the-puyallup-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Puyallup Tribe of the Puyallup Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-quileute-tribe-of-the-quileute-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0079",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Quileute\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-quileute-tribe-of-the-quileute-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 369",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Quileute Tribe of the Quileute Reservation."
+    },
+    {
+      "nationId": "us-wa-quileute-tribe-of-the-quileute-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3030R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Quileute\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-quileute-tribe-of-the-quileute-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Quileute Tribe of the Quileute Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-quinault-indian-nation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0080",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Quinault\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-quinault-indian-nation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 370",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Quinault Indian Nation."
+    },
+    {
+      "nationId": "us-wa-quinault-indian-nation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3040R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Quinault\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-quinault-indian-nation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Quinault Indian Nation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-samish-indian-nation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 371",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Samish Indian Nation."
+    },
+    {
+      "nationId": "us-wa-samish-indian-nation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Samish Indian Nation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-sauk-suiattle-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0081",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Sauk-Suiattle\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-sauk-suiattle-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 372",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Sauk-Suiattle Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-sauk-suiattle-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3625R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Sauk-Suiattle\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-sauk-suiattle-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Sauk-Suiattle Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0082",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Shoalwater\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 373",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation."
+    },
+    {
+      "nationId": "us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3780R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Shoalwater Bay\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3780T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Shoalwater Bay\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-skokomish-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0084",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Skokomish\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-skokomish-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 375",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Skokomish Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-skokomish-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3825R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Skokomish\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-skokomish-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3825T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Skokomish\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-skokomish-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Skokomish Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-snoqualmie-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 376",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Snoqualmie Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-snoqualmie-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3860R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Snoqualmie\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-snoqualmie-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3860T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Snoqualmie\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-snoqualmie-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Snoqualmie Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-spokane-tribe-of-the-spokane-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0085",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Spokane\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-spokane-tribe-of-the-spokane-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 377",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Spokane Tribe of the Spokane Reservation."
+    },
+    {
+      "nationId": "us-wa-spokane-tribe-of-the-spokane-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3940R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Spokane\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-spokane-tribe-of-the-spokane-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3940T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Spokane\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-spokane-tribe-of-the-spokane-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Spokane Tribe of the Spokane Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0086",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Squaxin Island\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 378",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Squaxin Island Tribe of the Squaxin Island Reservation."
+    },
+    {
+      "nationId": "us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3955R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Squaxin Island\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3955T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Squaxin Island\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Squaxin Island Tribe of the Squaxin Island Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-stillaguamish-tribe-of-indians-of-washington",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0087",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Stillaguamish\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-stillaguamish-tribe-of-indians-of-washington",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 379",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Stillaguamish Tribe of Indians of Washington."
+    },
+    {
+      "nationId": "us-wa-stillaguamish-tribe-of-indians-of-washington",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4000R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Stillaguamish\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-stillaguamish-tribe-of-indians-of-washington",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4000T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Stillaguamish\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-stillaguamish-tribe-of-indians-of-washington",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Stillaguamish Tribe of Indians of Washington",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 380",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Suquamish Indian Tribe of the Port Madison Reservation."
+    },
+    {
+      "nationId": "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Suquamish Indian Tribe of the Port Madison Reservation",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-swinomish-indian-tribal-community",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0088",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Swinomish\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-swinomish-indian-tribal-community",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 381",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Swinomish Indian Tribal Community."
+    },
+    {
+      "nationId": "us-wa-swinomish-indian-tribal-community",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4075R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Swinomish\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-swinomish-indian-tribal-community",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4075T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Swinomish\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-swinomish-indian-tribal-community",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Swinomish Indian Tribal Community",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-tulalip-tribes-of-washington",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0090",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Tulalip\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-tulalip-tribes-of-washington",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 382",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Tulalip Tribes of Washington."
+    },
+    {
+      "nationId": "us-wa-tulalip-tribes-of-washington",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4290R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Tulalip\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-tulalip-tribes-of-washington",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4290T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Tulalip\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-tulalip-tribes-of-washington",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Tulalip Tribes of Washington",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-upper-skagit-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0092",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "LARNAME \"Upper Skagit\" equals a Directory short, component, or alternate name of this Tribe."
+    },
+    {
+      "nationId": "us-wa-upper-skagit-indian-tribe",
+      "sourceId": "bia-tld",
+      "sourceKey": "OBJECTID 383",
+      "matchMethod": "code",
+      "reviewed": false,
+      "notes": "bia-tld is the originating record; key bia-tld:Upper Skagit Indian Tribe."
+    },
+    {
+      "nationId": "us-wa-upper-skagit-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4455R",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Upper Skagit\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-upper-skagit-indian-tribe",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4455T",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "Census NAME \"Upper Skagit\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5) equals a Directory short, component, or alternate name."
+    },
+    {
+      "nationId": "us-wa-upper-skagit-indian-tribe",
+      "sourceId": "federal-register-tribes",
+      "sourceKey": "Upper Skagit Indian Tribe",
+      "matchMethod": "name-exact",
+      "reviewed": false,
+      "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ca-fn-632",
+  "castId": null,
+  "name": "Tlatlasikwala",
+  "nameSource": {
+    "kind": "isc-registered-name",
+    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 632",
+    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "first-nation",
+  "country": "CA",
+  "jurisdictions": [
+    "BC"
+  ],
+  "region": "bc",
+  "hq": {
+    "lat": 50.92248,
+    "lon": -127.93999,
+    "precision": "community",
+    "sourceId": "isc-first-nations",
+    "sourceRecordId": "632",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      50.92248,
+      -127.93999
+    ]
+  ],
+  "bbox": [
+    -128.0825,
+    50.83265,
+    -127.79748,
+    51.01231
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Vancouver",
+  "timeZoneSource": "tz-lookup",
+  "units": "metric",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": {
+    "bandNumber": 632,
+    "tribalCouncil": "North Island Tribal Council Society"
+  },
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": null,
+    "biaAnvObjectId": null,
+    "iscBandNumber": 632
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 6 reserve polygons joined through the ISC reserve relation."
+  },
+  "flags": []
+}

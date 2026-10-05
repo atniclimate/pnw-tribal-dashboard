@@ -1,0 +1,80 @@
+{
+  "id": "us-ca-round-valley-indian-tribes-round-valley-reservation-california",
+  "castId": null,
+  "name": "Round Valley Indian Tribes, Round Valley Reservation, California",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Round Valley Indian Tribes, Round Valley Reservation, California\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Round Valley"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "CA-N"
+  ],
+  "region": "ca-n",
+  "hq": {
+    "lat": 39.81441,
+    "lon": -123.2488,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "463",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      39.81441,
+      -123.2488
+    ]
+  ],
+  "bbox": [
+    -123.36575,
+    39.72458,
+    -123.13185,
+    39.90424
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0172"
+    ],
+    "censusAiannhce": [
+      "3250"
+    ],
+    "censusGeoid": "3250R",
+    "biaTldObjectId": 463,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: county Mendocino County (Q2 proposal, unratified)."
+  },
+  "flags": []
+}

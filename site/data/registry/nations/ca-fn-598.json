@@ -1,0 +1,79 @@
+{
+  "id": "ca-fn-598",
+  "castId": null,
+  "name": "Lower Similkameen",
+  "nameSource": {
+    "kind": "isc-registered-name",
+    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 598",
+    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "first-nation",
+  "country": "CA",
+  "jurisdictions": [
+    "BC"
+  ],
+  "region": "bc",
+  "hq": {
+    "lat": 49.05143,
+    "lon": -119.7238,
+    "precision": "community",
+    "sourceId": "isc-first-nations",
+    "sourceRecordId": "598",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      49.05143,
+      -119.7238
+    ]
+  ],
+  "bbox": [
+    -119.86087,
+    48.9616,
+    -119.58673,
+    49.14126
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Vancouver",
+  "timeZoneSource": "override",
+  "units": "metric",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": {
+    "bandNumber": 598,
+    "tribalCouncil": "Okanagan Nation Alliance"
+  },
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": null,
+    "biaAnvObjectId": null,
+    "iscBandNumber": 598
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 9 reserve polygons joined through the ISC reserve relation."
+  },
+  "flags": [
+    "tz-needs-confirmation"
+  ]
+}

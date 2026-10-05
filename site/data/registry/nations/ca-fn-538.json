@@ -1,0 +1,77 @@
+{
+  "id": "ca-fn-538",
+  "castId": null,
+  "name": "Heiltsuk",
+  "nameSource": {
+    "kind": "isc-registered-name",
+    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 538",
+    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "first-nation",
+  "country": "CA",
+  "jurisdictions": [
+    "BC"
+  ],
+  "region": "bc",
+  "hq": {
+    "lat": 52.1616,
+    "lon": -128.14443,
+    "precision": "community",
+    "sourceId": "isc-first-nations",
+    "sourceRecordId": "538",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      52.1616,
+      -128.14443
+    ]
+  ],
+  "bbox": [
+    -128.29087,
+    52.07177,
+    -127.99799,
+    52.25143
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Vancouver",
+  "timeZoneSource": "tz-lookup",
+  "units": "metric",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": {
+    "bandNumber": 538,
+    "tribalCouncil": null
+  },
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": null,
+    "biaAnvObjectId": null,
+    "iscBandNumber": 538
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 23 reserve polygons joined through the ISC reserve relation."
+  },
+  "flags": []
+}

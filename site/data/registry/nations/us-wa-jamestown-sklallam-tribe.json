@@ -1,0 +1,81 @@
+{
+  "id": "us-wa-jamestown-sklallam-tribe",
+  "castId": null,
+  "name": "Jamestown S'Klallam Tribe",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Jamestown S'Klallam Tribe\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Jamestown",
+    "Jamestown S'Klallam"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "WA"
+  ],
+  "region": "wa",
+  "hq": {
+    "lat": 48.0255,
+    "lon": -122.9963,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "354",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      48.0255,
+      -122.9963
+    ]
+  ],
+  "bbox": [
+    -123.13062,
+    47.93567,
+    -122.86198,
+    48.11533
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0064"
+    ],
+    "censusAiannhce": [
+      "1655"
+    ],
+    "censusGeoid": "1655R",
+    "biaTldObjectId": 354,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: state Washington (whole state is in the footprint)."
+  },
+  "flags": []
+}

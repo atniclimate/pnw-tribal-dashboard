@@ -1,0 +1,78 @@
+{
+  "id": "us-ak-petersburg-indian-association",
+  "castId": null,
+  "name": "Petersburg Indian Association",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Petersburg Indian Association\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Petersburg"
+  ],
+  "kind": "alaska-native-village",
+  "country": "US",
+  "jurisdictions": [
+    "AK-SE"
+  ],
+  "region": "ak-se",
+  "hq": {
+    "lat": 56.81112,
+    "lon": -132.9427,
+    "precision": "office",
+    "sourceId": "bia-anv",
+    "sourceRecordId": "180",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      56.81112,
+      -132.9427
+    ]
+  ],
+  "bbox": [
+    -133.1068,
+    56.72129,
+    -132.7786,
+    56.90095
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Sitka",
+  "timeZoneSource": "override",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": 180,
+    "biaAnvObjectId": 180,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: borough or census area Petersburg Borough (Q2 proposal, unratified)."
+  },
+  "flags": [
+    "tz-needs-confirmation"
+  ]
+}

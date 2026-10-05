@@ -1,0 +1,77 @@
+{
+  "id": "ca-fn-646",
+  "castId": null,
+  "name": "Lyackson",
+  "nameSource": {
+    "kind": "isc-registered-name",
+    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 646",
+    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "first-nation",
+  "country": "CA",
+  "jurisdictions": [
+    "BC"
+  ],
+  "region": "bc",
+  "hq": {
+    "lat": 48.87397,
+    "lon": -123.69611,
+    "precision": "community",
+    "sourceId": "isc-first-nations",
+    "sourceRecordId": "646",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      48.87397,
+      -123.69611
+    ]
+  ],
+  "bbox": [
+    -123.83269,
+    48.78414,
+    -123.55953,
+    48.9638
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Vancouver",
+  "timeZoneSource": "tz-lookup",
+  "units": "metric",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": {
+    "bandNumber": 646,
+    "tribalCouncil": null
+  },
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": null,
+    "biaAnvObjectId": null,
+    "iscBandNumber": 646
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 3 reserve polygons joined through the ISC reserve relation."
+  },
+  "flags": []
+}

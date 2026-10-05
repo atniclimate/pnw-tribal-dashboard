@@ -1,0 +1,27 @@
+id: bia-lar
+title: BIA Land Area Representations
+owner: U.S. Department of the Interior, Bureau of Indian Affairs, Division of Land Titles and Records
+url: https://biamaps.geoplatform.gov/server/rest/services/DivLTR/BIA_AIAN_National_LAR/FeatureServer/0
+humanUrl: https://biamaps.geoplatform.gov/
+license: U.S. Government work, public information
+attribution: U.S. Department of the Interior, Bureau of Indian Affairs, Land Area Representations; a representation, not a survey, and not jurisdiction.
+cadence: Updated by the BIA; read by the monthly reference build.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: arcgis-featureserver
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only by scripts/reference; never fetched from a browser, so no cross-origin check applies.
+  timeoutMs: 60000
+  retries: 2
+  priority: 3
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: Primary Tribal land polygon source (335 features on 10/04/2026). The layer has no Tribe key; LARID is matched to a Nation by exact normalized name (crosswalk-us.json) and every match is unreviewed until the maintainer signs off. Representation, not jurisdiction.

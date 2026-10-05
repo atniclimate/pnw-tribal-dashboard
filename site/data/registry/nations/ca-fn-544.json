@@ -1,0 +1,79 @@
+{
+  "id": "ca-fn-544",
+  "castId": null,
+  "name": "Prophet River First Nation",
+  "nameSource": {
+    "kind": "isc-registered-name",
+    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 544",
+    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "first-nation",
+  "country": "CA",
+  "jurisdictions": [
+    "BC"
+  ],
+  "region": "bc",
+  "hq": {
+    "lat": 58.09197,
+    "lon": -122.69818,
+    "precision": "community",
+    "sourceId": "isc-first-nations",
+    "sourceRecordId": "544",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      58.09197,
+      -122.69818
+    ]
+  ],
+  "bbox": [
+    -122.86814,
+    58.00214,
+    -122.52822,
+    58.1818
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Dawson_Creek",
+  "timeZoneSource": "tz-lookup",
+  "units": "metric",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": {
+    "bandNumber": 544,
+    "tribalCouncil": "Treaty 8 Tribal Association"
+  },
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": null,
+    "biaAnvObjectId": null,
+    "iscBandNumber": 544
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 1 reserve polygon joined through the ISC reserve relation."
+  },
+  "flags": [
+    "tz-needs-confirmation"
+  ]
+}

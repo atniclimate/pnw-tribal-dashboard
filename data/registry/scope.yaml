@@ -1,0 +1,33 @@
+# Explicit includes and excludes beyond the rule-driven footprint (blueprint 6.2; schema registry-scope).
+# Keys are the ids.lock keys: `bia-tld:<Directory tribefullname>`, `bia-anv:<name>`, or `isc:<band number>`.
+# Rules in scripts/reference/50-registry.mjs: Washington, Oregon, and Idaho Tribes by Directory state; northern
+# California by headquarters county; Southeast Alaska by headquarters borough or census area (both lists are the
+# Q2 proposal and unratified); every First Nation with a headquarters inside (or within ten kilometres of the
+# outline of) British Columbia or a reserve polygon in the NRCan British Columbia layer. Every entry below is a
+# draft decision for the maintainer; wave 2 re-checks Tribes whose land lies in the footprint but whose office does not.
+include:
+  - key: 'bia-tld:Confederated Salish and Kootenai Tribes of the Flathead Reservation'
+    reason: Western Montana, west of the Continental Divide (Lake County). Q2 proposal; the footprint is unratified.
+    sourceUrl: null
+  - key: 'bia-tld:Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada'
+    reason: Northern Nevada, named in the Data Rulings (Duck Valley). The reservation lies on the Idaho and Nevada line.
+    sourceUrl: https://shopaitribes.org/
+  - key: 'bia-tld:Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada and Oregon'
+    reason: Northern Nevada, named in the Data Rulings (Fort McDermitt). The Directory name lists Nevada and Oregon.
+    sourceUrl: null
+  - key: 'bia-tld:Blackfeet Tribe of the Blackfeet Indian Reservation of Montana'
+    reason: Included provisionally so lane L6 contact records resolve. Q2 asks whether the Blackfeet Nation is in the footprint (Glacier County lies east of the Continental Divide). Move to exclude if the maintainer rules it out.
+    sourceUrl: null
+  - key: "bia-tld:Chippewa Cree Indians of the Rocky Boy's Reservation, Montana"
+    reason: Included provisionally so lane L6 contact records resolve. Q2 asks whether the Chippewa Cree Tribe is in the footprint (Hill County lies east of the Continental Divide). Move to exclude if the maintainer rules it out.
+    sourceUrl: null
+  - key: 'bia-tld:Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria, California'
+    reason: The reservation lies in Lake County, which is on the northern California list; the Directory office point is in Santa Rosa (Sonoma County), so the headquarters rule alone would leave it out.
+    sourceUrl: null
+exclude:
+  - key: 'bia-tld:Te-Moak Tribe of Western Shoshone Indians of Nevada (Four constituent bands: Battle Mountain Band; Elko Band; South Fork Band; and Wells Band)'
+    reason: Held out pending the Q2 ruling on whether all Nations in Elko and Humboldt counties are in the footprint (headquarters in Elko County).
+    sourceUrl: null
+  - key: 'isc:502'
+    reason: Liard First Nation has its headquarters at Watson Lake in Yukon; its nine reserves in the NRCan British Columbia layer do not make it a British Columbia First Nation by the "ISC location in British Columbia" rule. Held for maintainer ruling.
+    sourceUrl: null

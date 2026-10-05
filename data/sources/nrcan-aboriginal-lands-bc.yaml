@@ -1,0 +1,27 @@
+id: nrcan-aboriginal-lands-bc
+title: NRCan Aboriginal Lands of Canada, British Columbia
+owner: Natural Resources Canada
+url: https://ftp.maps.canada.ca/pub/nrcan_rncan/vector/geobase_al_ta/shp_eng/AL_TA_BC_SHP_eng.zip
+humanUrl: https://open.canada.ca/
+license: Open Government Licence - Canada 2.0
+attribution: Contains information licensed under the Open Government Licence - Canada, Natural Resources Canada
+cadence: Updated by NRCan; read by the monthly reference build.
+region: ca
+coverage: [BC]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only by scripts/reference; never fetched from a browser, so no cross-origin check applies.
+  timeoutMs: 60000
+  retries: 2
+  priority: 3
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: British Columbia Indian reserve polygons (1,602 on 10/04/2026) joined to First Nations through the ISC reserve relation (ADMIN_LAND_ID equals ALCODE). TANTALIS and Access Only layers are never used. Representation, not jurisdiction.

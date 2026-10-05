@@ -1,0 +1,80 @@
+{
+  "id": "us-ca-robinson-rancheria",
+  "castId": null,
+  "name": "Robinson Rancheria",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Robinson Rancheria\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Robinson"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "CA-N"
+  ],
+  "region": "ca-n",
+  "hq": {
+    "lat": 39.14262,
+    "lon": -122.8821,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "462",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      39.14262,
+      -122.8821
+    ]
+  ],
+  "bbox": [
+    -122.99792,
+    39.05279,
+    -122.76628,
+    39.23245
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0170"
+    ],
+    "censusAiannhce": [
+      "3195"
+    ],
+    "censusGeoid": "3195R",
+    "biaTldObjectId": 462,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: county Lake County (Q2 proposal, unratified)."
+  },
+  "flags": []
+}

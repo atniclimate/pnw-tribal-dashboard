@@ -1,0 +1,80 @@
+{
+  "id": "us-ca-blue-lake-rancheria-california",
+  "castId": null,
+  "name": "Blue Lake Rancheria, California",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Blue Lake Rancheria, California\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Blue Lake"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "CA-N"
+  ],
+  "region": "ca-n",
+  "hq": {
+    "lat": 40.88466,
+    "lon": -123.9986,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "394",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      40.88466,
+      -123.9986
+    ]
+  ],
+  "bbox": [
+    -124.11742,
+    40.79483,
+    -123.87978,
+    40.97449
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0108"
+    ],
+    "censusAiannhce": [
+      "0325"
+    ],
+    "censusGeoid": "0325R",
+    "biaTldObjectId": 394,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: county Humboldt County (Q2 proposal, unratified)."
+  },
+  "flags": []
+}

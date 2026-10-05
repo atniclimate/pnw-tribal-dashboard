@@ -1,0 +1,27 @@
+id: census-aiannh-2025
+title: Census TIGER/Line 2025 American Indian, Alaska Native, and Native Hawaiian Areas
+owner: U.S. Census Bureau
+url: https://www2.census.gov/geo/tiger/TIGER2025/AIANNH/tl_2025_us_aiannh.zip
+humanUrl: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+license: U.S. public domain
+attribution: U.S. Census Bureau, TIGER/Line Shapefiles, 2025
+cadence: Annual vintage; read by the reference build.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only by scripts/reference; never fetched from a browser, so no cross-origin check applies.
+  timeoutMs: 60000
+  retries: 2
+  priority: 3
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: Fills gaps where BIA LAR has no polygon. Only the two legal classes are used (MTFCC G2101 reservations and G2102 off-reservation trust land); statistical areas (G2120 and higher) stay excluded while boundary_policy.census_statistical_areas is false. AIANNHCE and GEOID are matched to a Nation by exact normalized name (crosswalk-us.json). Representation, not jurisdiction.

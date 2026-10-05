@@ -1,0 +1,99 @@
+# Pinned inputs of the Nation registry build (lane L5; schema pipeline-inputs.schema.json).
+# Rewritten only by `node scripts/reference/50-registry.mjs --pin --raw <folders>` after review.
+# The bulk set was downloaded 10/04/2026 and the Federal Register notice 10/05/2026. The URL on each ISC
+# input is the dataset directory; the exact file name is the pinned `file` value.
+inputs:
+  - id: bia-tld
+    sourceId: bia-tld
+    url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+    file: bia_tld.geojson
+    vintage: '2026-10-02'
+    sha256: 7f094795d0e84ca1856a222a9e0be1d4c8c23074cb47e0403dc34a29630cc071
+    licence: U.S. Government work, public information (BIA Tribal Leaders Directory)
+    notes: Hub GeoJSON export, Last-Modified 10/02/2026. The raw file carries person fields; only the blueprint 5.2 allowlist is ever read.
+  - id: bia-anv
+    sourceId: bia-anv
+    url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/AlaskaNativeVillages/FeatureServer/0
+    file: bia_anv.geojson
+    vintage: '2026-10-04'
+    sha256: d02cc6eaa5867fc7ea94de8cfe381563a8dbde22627b3c4d1a2821086ce6b5cc
+    licence: U.S. Government work, public information (BIA)
+    notes: Alaska Native Villages layer, 228 features, downloaded 10/04/2026.
+  - id: bia-lar
+    sourceId: bia-lar
+    url: https://biamaps.geoplatform.gov/server/rest/services/DivLTR/BIA_AIAN_National_LAR/FeatureServer/0
+    file: bia_lar.geojson
+    vintage: '2026-10-04'
+    sha256: ef38f9b7b18ff479631599883ec911baa2bc7cbd3be4606d76df1a4dce5243e1
+    licence: U.S. Government work, public information (BIA)
+    notes: Land Area Representations, 335 features, downloaded 10/04/2026. Attributes only in wave 1; geometry is processed by 40-boundaries.
+  - id: federal-register-tribes
+    sourceId: federal-register-tribes
+    url: https://www.federalregister.gov/documents/full_text/xml/2026/01/30/2026-01899.xml
+    file: fr-2026-01899.xml
+    vintage: '2026-01-30'
+    sha256: 616e96f6288cc0bbcdfb947042b1402de8f8bc5e5e90bf49d6c84acdc9458dfa
+    licence: U.S. public domain (Federal Register)
+    notes: >-
+      Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102, FR Doc.
+      2026-01899, published 01/30/2026. Downloaded 10/05/2026.
+  - id: census-aiannh-2025
+    sourceId: census-aiannh-2025
+    url: https://www2.census.gov/geo/tiger/TIGER2025/AIANNH/tl_2025_us_aiannh.zip
+    file: tl_2025_us_aiannh.zip
+    vintage: '2025-09-15'
+    sha256: 214b97c1ecbc3f57a69d5c0c746e6e920dec79bb43be40cfdad529e9bb09aee4
+    licence: U.S. public domain (Census TIGER/Line)
+    notes: Attributes only in wave 1 (AIANNHCE, GEOID, NAME, MTFCC, CLASSFP). Legal classes are MTFCC G2101 (reservations) and G2102 (off-reservation trust land); statistical areas are G2120 and higher.
+  - id: census-counties-500k
+    sourceId: census-cartographic-boundaries
+    url: https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_county_500k.zip
+    file: cb_2024_us_county_500k.zip
+    vintage: '2024-01-01'
+    sha256: da4051717caec55c75e3748c3608c2a3dbde8d1ff401bbaf4f952e3c3fb63ef1
+    licence: U.S. public domain
+    notes: Scope aid only (county or borough of a headquarters point). Same file and URL that lane L4 pins.
+  - id: natural-earth-admin1
+    sourceId: natural-earth-admin1
+    url: https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip
+    file: ne_10m_admin_1_states_provinces.zip
+    vintage: '2022-05-08'
+    sha256: efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05
+    licence: Public domain (Natural Earth)
+    notes: >-
+      Scope aid only (is an ISC headquarters inside British Columbia). Version 5.1.1. Replace with the L4 emcr-bc-boundaries outline once
+      that is pinned.
+  - id: isc-locations
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/
+    file: isc_fn_csv.zip
+    vintage: '2026-04-14'
+    sha256: 34b7126339748a7c5d369ec7238e4d7948a67c0f0d840c23415b8101ac142c00
+    licence: Open Government Licence - Canada 2.0
+    notes: >-
+      First Nation locations CSV (BAND_NUMBER, BAND_NAME, LONGITUDE, LATITUDE). The ISC file marks each non-ASCII letter with a question mark (?).
+      Metadata dated 04/14/2026.
+  - id: isc-tribal-council
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/
+    file: Relation_Premiere_Nation_conseil_tribal_Relation_First_Nation_Tribal_Council_CSV.zip
+    vintage: '2026-04-14'
+    sha256: 7a1916e6a7b01a592d7bf0851062e367635046933bac70fdeaae010f5edee767
+    licence: Open Government Licence - Canada 2.0
+    notes: First Nation to Tribal Council relation CSV.
+  - id: isc-reserve
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/
+    file: Relation_Premiere_Nation_reserve_Relation_First_Nation_Reserve_CSV.zip
+    vintage: '2026-04-14'
+    sha256: b762d294236bc60d240567fe5144c71d57e8ce69024f8485f65ce4f8f22698f5
+    licence: Open Government Licence - Canada 2.0
+    notes: First Nation to Reserve relation CSV; ADMIN_LAND_ID equals the NRCan AL_TA ALCODE.
+  - id: nrcan-aboriginal-lands-bc
+    sourceId: nrcan-aboriginal-lands-bc
+    url: https://ftp.maps.canada.ca/pub/nrcan_rncan/vector/geobase_al_ta/shp_eng/AL_TA_BC_SHP_eng.zip
+    file: AL_TA_BC_SHP_eng.zip
+    vintage: '2026-09-14'
+    sha256: e373c8867ca9c60e60c768c1444777a1c67b65cbf39f37abf539bff284069a25
+    licence: Open Government Licence - Canada 2.0
+    notes: 1,602 British Columbia polygons, Last-Modified 09/14/2026. Attributes only in wave 1.

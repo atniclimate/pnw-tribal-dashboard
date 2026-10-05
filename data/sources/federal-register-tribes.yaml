@@ -1,0 +1,27 @@
+id: federal-register-tribes
+title: Federal Register Notice of Indian Entities Recognized by the Bureau of Indian Affairs
+owner: U.S. Department of the Interior, Bureau of Indian Affairs
+url: https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of
+humanUrl: https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of
+license: U.S. public domain
+attribution: Federal Register, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899
+cadence: Published by the BIA about once a year; the pinned notice is replaced in a reviewed reference pull request.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Static published notice, read from a pinned local copy at build time only.
+  timeoutMs: 60000
+  retries: 2
+  priority: 3
+usedBy: [dashboard, usage]
+verifiedAt: 2026-10-05
+notes: The U.S. full formal name source. The pinned file is the notice XML (fr-2026-01899.xml). Trailing parentheticals that give former names, cross references, or constituent lists are annotations, not part of the name.

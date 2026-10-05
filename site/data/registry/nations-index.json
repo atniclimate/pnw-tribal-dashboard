@@ -1,0 +1,5399 @@
+{
+  "schema": "cthd.nations-index/1",
+  "generatedAt": "2026-10-04T00:00:00Z",
+  "nations": [
+    {
+      "id": "ca-fn-501",
+      "name": "Taku River Tlingit",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        59.50582,
+        -133.65869
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-504",
+      "name": "Dease River",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        59.29492,
+        -129.29055
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-530",
+      "name": "Witset First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.02157,
+        -127.33091
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-531",
+      "name": "Gitanmaax",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.25524,
+        -127.67696
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-532",
+      "name": "Kispiox",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.34889,
+        -127.69826
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-533",
+      "name": "Sik-E-Dakh",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.30955,
+        -127.67994
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-534",
+      "name": "Hagwilget Village Council",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.25354,
+        -127.6003
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-535",
+      "name": "Gitsegukla",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.08751,
+        -127.8295
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-536",
+      "name": "Gitwangak",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.1024,
+        -128.05583
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-537",
+      "name": "Gitanyow",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.26535,
+        -128.06949
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-538",
+      "name": "Heiltsuk",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.1616,
+        -128.14443
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-539",
+      "name": "Nuxalk Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.3619,
+        -126.7157
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-540",
+      "name": "Kitasoo Xai'xais Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.58743,
+        -128.52013
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-541",
+      "name": "Wuikinuxv Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.68011,
+        -127.23206
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-542",
+      "name": "Saulteau First Nations",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.85222,
+        -121.653
+      ],
+      "tz": "America/Dawson_Creek",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-543",
+      "name": "Fort Nelson First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        58.77013,
+        -122.65981
+      ],
+      "tz": "America/Fort_Nelson",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-544",
+      "name": "Prophet River First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        58.09197,
+        -122.69818
+      ],
+      "tz": "America/Dawson_Creek",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-545",
+      "name": "West Moberly First Nations",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.83063,
+        -121.83092
+      ],
+      "tz": "America/Dawson_Creek",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-546",
+      "name": "Halfway River First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        56.51337,
+        -121.96497
+      ],
+      "tz": "America/Dawson_Creek",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-547",
+      "name": "Blueberry River First Nations",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        56.70404,
+        -121.11241
+      ],
+      "tz": "America/Dawson_Creek",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-548",
+      "name": "Doig River First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        56.57785,
+        -120.49559
+      ],
+      "tz": "America/Dawson_Creek",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-549",
+      "name": "Tsleil-Waututh Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.31062,
+        -122.98787
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-550",
+      "name": "Musqueam",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.22494,
+        -123.1992
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-551",
+      "name": "shishálh Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.47385,
+        -123.74937
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-552",
+      "name": "Homalco",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.95164,
+        -125.24361
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-553",
+      "name": "Klahoose First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.12602,
+        -124.92086
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-554",
+      "name": "Tla'amin Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.90059,
+        -124.61739
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-555",
+      "name": "Squamish",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.32372,
+        -123.13217
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-556",
+      "name": "N'Quatqua",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.55007,
+        -122.48457
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-557",
+      "name": "Lil'wat Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.31819,
+        -122.72133
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-558",
+      "name": "Aitchelitz",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.15042,
+        -121.9869
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-559",
+      "name": "Sts'ailes",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.29851,
+        -121.91417
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-560",
+      "name": "Kwikwetlem First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.23016,
+        -122.80596
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-561",
+      "name": "Douglas",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.75599,
+        -122.20109
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-562",
+      "name": "Skatin",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.9383,
+        -122.4104
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-563",
+      "name": "Katzie",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.20143,
+        -122.67693
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-564",
+      "name": "Kwantlen First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.17144,
+        -122.56549
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-565",
+      "name": "Matsqui First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.10618,
+        -122.34258
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-566",
+      "name": "New Westminster",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.23632,
+        -123.02397
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-567",
+      "name": "Samahquam",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.05131,
+        -122.54109
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-568",
+      "name": "Sq'éwlets",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.23594,
+        -122.00246
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-569",
+      "name": "Semiahmoo",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.01453,
+        -122.77774
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-570",
+      "name": "Shxwhá:y Village",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.16897,
+        -121.98892
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-571",
+      "name": "Skowkale",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.14171,
+        -121.94058
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-572",
+      "name": "Soowahlie",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.08102,
+        -121.96896
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-573",
+      "name": "Sqwá First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.1781,
+        -121.97226
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-574",
+      "name": "Squiala First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.15801,
+        -121.97942
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-575",
+      "name": "Tzeachten",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.11186,
+        -121.95398
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-576",
+      "name": "Yakweakwioose",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.13237,
+        -121.93693
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-577",
+      "name": "Tsawwassen First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.03788,
+        -123.0977
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-578",
+      "name": "Sumas First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.05528,
+        -122.19465
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-579",
+      "name": "Leq'á:mel First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.204,
+        -122.03434
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-580",
+      "name": "Kwaw-kwaw-Apilt",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.16685,
+        -121.97525
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-581",
+      "name": "Seabird Island",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.25512,
+        -121.7304
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-582",
+      "name": "Skawahlook First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.35685,
+        -121.60618
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-583",
+      "name": "Chawathil",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.36982,
+        -121.5526
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-584",
+      "name": "Cheam First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.18926,
+        -121.78384
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-585",
+      "name": "Popkum First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.20193,
+        -121.71946
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-586",
+      "name": "Peters First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.29387,
+        -121.65795
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-587",
+      "name": "Shxw'ow'hamel First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.34303,
+        -121.60666
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-588",
+      "name": "Union Bar First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.43739,
+        -121.43447
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-589",
+      "name": "Yale First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.56249,
+        -121.42598
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-590",
+      "name": "Bridge River",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.76954,
+        -121.9641
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-591",
+      "name": "Cayoose Creek",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.6743,
+        -121.93406
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-592",
+      "name": "Xaxli'p",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.73463,
+        -121.86442
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-593",
+      "name": "T'it'q'et",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.67735,
+        -121.94564
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-594",
+      "name": "Ts'kw'aylaxw First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.88589,
+        -121.81899
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-595",
+      "name": "Tsal'alh",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.7281,
+        -122.21763
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-596",
+      "name": "Osoyoos",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.18381,
+        -119.53314
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-597",
+      "name": "Penticton",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.49137,
+        -119.64476
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-598",
+      "name": "Lower Similkameen",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.05143,
+        -119.7238
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-599",
+      "name": "Upper Similkameen",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.35586,
+        -120.07873
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-600",
+      "name": "Splatsin",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.54251,
+        -119.1387
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-601",
+      "name": "Westbank First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.83982,
+        -119.60531
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-602",
+      "name": "?aqam",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.58349,
+        -115.75451
+      ],
+      "tz": "America/Edmonton",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-603",
+      "name": "Yaqit ?a·knuqli‘it First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.09333,
+        -115.08191
+      ],
+      "tz": "America/Edmonton",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-604",
+      "name": "?Akisq'nuk First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.4585,
+        -115.96399
+      ],
+      "tz": "America/Edmonton",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-605",
+      "name": "Shuswap Band",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.51586,
+        -116.00726
+      ],
+      "tz": "America/Edmonton",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-606",
+      "name": "yaqan nukiy",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.06674,
+        -116.51627
+      ],
+      "tz": "America/Creston",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-607",
+      "name": "Lake Babine Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.23855,
+        -125.76157
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-608",
+      "name": "Takla Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.48236,
+        -125.97534
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-609",
+      "name": "Tsay Keh Dene",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        56.89187,
+        -124.96315
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-610",
+      "name": "Kwadacha Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        57.42367,
+        -125.63028
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-611",
+      "name": "Lheidli T'enneh",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.00883,
+        -122.6143
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-612",
+      "name": "Nadleh Whuten",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.07608,
+        -124.60769
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-613",
+      "name": "Stellat'en First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.0638,
+        -124.91111
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-614",
+      "name": "Nak'azdli Whut'en",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.43846,
+        -124.25015
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-615",
+      "name": "Saik'uz First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.94339,
+        -124.11403
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-616",
+      "name": "Okanagan",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.35622,
+        -119.3181
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-617",
+      "name": "Tl'azt'en Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.65587,
+        -124.72357
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-618",
+      "name": "McLeod Lake",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.98456,
+        -123.04584
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-619",
+      "name": "Ts'il Kaz Koh",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.23666,
+        -125.77111
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-620",
+      "name": "Cheslatta Carrier Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.00247,
+        -125.7141
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-622",
+      "name": "Campbell River",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.03166,
+        -125.24792
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-623",
+      "name": "We Wai Kai Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.01861,
+        -125.29056
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-624",
+      "name": "K'ómoks First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.67877,
+        -124.9589
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-625",
+      "name": "Kwikwasut'inuxw Haxwa'mis",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.6964,
+        -126.60063
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-626",
+      "name": "Kwakiutl",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.69371,
+        -127.41086
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-627",
+      "name": "Gwawaenuk Tribe",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.92402,
+        -126.82213
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-628",
+      "name": "Kwiakah",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.42269,
+        -125.15776
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-629",
+      "name": "Mamalilikulla First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.59424,
+        -126.68233
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-630",
+      "name": "Mowachaht/Muchalaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.81098,
+        -126.07213
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-631",
+      "name": "Namgis First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.59601,
+        -126.93527
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-632",
+      "name": "Tlatlasikwala",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.92248,
+        -127.93999
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-633",
+      "name": "Quatsino",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.6141,
+        -127.57128
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-634",
+      "name": "Ehattesaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.98515,
+        -126.85899
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-635",
+      "name": "Da'naxda'xw First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.59649,
+        -126.59731
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-636",
+      "name": "Dzawada'enuxw First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.97728,
+        -126.1802
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-637",
+      "name": "Tlowitsis Tribe",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.90946,
+        -125.20885
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-638",
+      "name": "Ka:'yu:'k't'h'/Che:k'tles7et'h' First Nations",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.03057,
+        -127.37823
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-639",
+      "name": "Nuchatlaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.99026,
+        -126.94208
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-640",
+      "name": "Beecher Bay",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.33756,
+        -123.6083
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-641",
+      "name": "Stz'uminus First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.99302,
+        -123.77211
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-642",
+      "name": "Cowichan",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.77622,
+        -123.70929
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-643",
+      "name": "Ts'uubaa-asatx",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.82605,
+        -124.06975
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-644",
+      "name": "Esquimalt",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.44493,
+        -123.43042
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-645",
+      "name": "Halalt",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.874,
+        -123.69612
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-646",
+      "name": "Lyackson",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.87397,
+        -123.69611
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-647",
+      "name": "Malahat Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.61367,
+        -123.52041
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-648",
+      "name": "Snuneymuxw First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.15167,
+        -123.93028
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-649",
+      "name": "Nanoose First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.25406,
+        -124.12802
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-650",
+      "name": "Penelakut Tribe",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.97097,
+        -123.65969
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-651",
+      "name": "Qualicum First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.39698,
+        -124.61575
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-652",
+      "name": "Pauquachin",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.62715,
+        -123.45846
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-653",
+      "name": "Tsartlip",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.58127,
+        -123.46747
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-654",
+      "name": "Tsawout First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.59198,
+        -123.39068
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-655",
+      "name": "Tseycum",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.66604,
+        -123.45134
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-656",
+      "name": "Songhees Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.44143,
+        -123.42815
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-657",
+      "name": "T'Sou-ke First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.38465,
+        -123.69718
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-658",
+      "name": "Pacheedaht First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.57677,
+        -124.4077
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-659",
+      "name": "Ahousaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.27806,
+        -126.05609
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-660",
+      "name": "Tla-o-qui-aht First Nations",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.17335,
+        -125.91207
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-661",
+      "name": "Hesquiaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.36836,
+        -126.27209
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-662",
+      "name": "Ditidaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.80928,
+        -124.6697
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-663",
+      "name": "Huu-ay-aht First Nations",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.80208,
+        -125.12716
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-664",
+      "name": "Hupacasath First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.2658,
+        -124.82509
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-665",
+      "name": "Tseshaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.26723,
+        -124.84892
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-666",
+      "name": "Toquaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.99622,
+        -125.37446
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-667",
+      "name": "Uchucklesaht",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.02048,
+        -125.03811
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-668",
+      "name": "Ucluelet First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        48.93642,
+        -125.52597
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-669",
+      "name": "Old Massett Village Council",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.03441,
+        -132.17503
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-670",
+      "name": "Skidegate",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.26956,
+        -131.99038
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-671",
+      "name": "Nisga'a Village of Gingolx",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.99441,
+        -129.95733
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-672",
+      "name": "Gitxaala Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.79638,
+        -130.43308
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-673",
+      "name": "Metlakatla First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.33695,
+        -130.44423
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-674",
+      "name": "Lax Kw'alaams",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.55857,
+        -130.43314
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-675",
+      "name": "Gitga'at First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.4253,
+        -129.25186
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-676",
+      "name": "Haisla Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.97548,
+        -128.64593
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-677",
+      "name": "Nisga'a Village of New Aiyansh",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.20659,
+        -129.07933
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-678",
+      "name": "Nisga'a Village of Laxgalt'sap",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.03529,
+        -129.58372
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-679",
+      "name": "Nisga'a Village of Gitwinksihlkw",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        55.19252,
+        -129.2209
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-680",
+      "name": "Kitselas",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.60835,
+        -128.41069
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-681",
+      "name": "Kitsumkalum",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.52289,
+        -128.66733
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-682",
+      "name": "Tahltan",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        57.90184,
+        -131.17972
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-683",
+      "name": "Iskut",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        57.83787,
+        -129.98822
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-684",
+      "name": "Adams Lake",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.82869,
+        -119.70147
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-685",
+      "name": "Ashcroft",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.72039,
+        -121.32247
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-686",
+      "name": "Bonaparte First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.8408,
+        -121.38537
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-687",
+      "name": "Skeetchestn",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.83971,
+        -120.95476
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-688",
+      "name": "Tk'emlúps te Secwépemc",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.67886,
+        -120.29422
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-689",
+      "name": "Skwlax te Secwepemculecw",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.87024,
+        -119.59965
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-690",
+      "name": "Neskonlith",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.77333,
+        -119.73058
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-691",
+      "name": "Simpcw First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.3169,
+        -120.14903
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-692",
+      "name": "Oregon Jack Creek",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.61942,
+        -121.31912
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-693",
+      "name": "Coldwater",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.03107,
+        -120.85923
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-694",
+      "name": "Cook's Ferry",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.42409,
+        -121.31791
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-695",
+      "name": "Lower Nicola",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.13833,
+        -120.85768
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-696",
+      "name": "Nicomen",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.26444,
+        -121.39825
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-697",
+      "name": "Upper Nicola",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.14199,
+        -120.28243
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-698",
+      "name": "Shackan",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.29339,
+        -121.17537
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-699",
+      "name": "Nooaitch",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.15398,
+        -121.03734
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-700",
+      "name": "Boothroyd",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.96307,
+        -121.48496
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-701",
+      "name": "Boston Bar First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.87708,
+        -121.4514
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-702",
+      "name": "Whispering Pines/Clinton",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.9867,
+        -120.24079
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-703",
+      "name": "High Bar",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.11304,
+        -122.01808
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-704",
+      "name": "Kanaka Bar",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.11218,
+        -121.56204
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-705",
+      "name": "Lytton",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.23749,
+        -121.57756
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-706",
+      "name": "Siska",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.13635,
+        -121.57155
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-707",
+      "name": "Skuppah",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.18759,
+        -121.57386
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-708",
+      "name": "Spuzzum",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.66102,
+        -121.41147
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-709",
+      "name": "?Esdilagh First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.56284,
+        -122.49678
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-710",
+      "name": "Tŝideldel First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.13889,
+        -123.95247
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-711",
+      "name": "Esk'etemc",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.78866,
+        -122.23645
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-712",
+      "name": "Tl'etinqox Government",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.01698,
+        -123.17638
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-713",
+      "name": "Tsq'escen' First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.77112,
+        -120.99334
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-714",
+      "name": "Xeni Gwet'in First Nations Government",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.41537,
+        -124.09563
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-715",
+      "name": "Lhtako Dene Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.95489,
+        -122.45109
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-716",
+      "name": "Xatsull First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.28045,
+        -122.14478
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-717",
+      "name": "Yunesit'in Government",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.92683,
+        -123.13993
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-718",
+      "name": "Tl’esqox",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.92958,
+        -122.50136
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-719",
+      "name": "Williams Lake First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.11819,
+        -122.01665
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-720",
+      "name": "Nazko First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.94373,
+        -123.58355
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-721",
+      "name": "Lhoosk'uz Dene Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.08735,
+        -124.49016
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-722",
+      "name": "Ulkatcho",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        52.46729,
+        -125.30668
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-723",
+      "name": "Stswecem'c Xget'tem First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        51.58884,
+        -122.20895
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-724",
+      "name": "Gwa'Sala-Nakwaxda'xw",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        50.73417,
+        -127.49641
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-725",
+      "name": "Wet'suwet'en First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.32951,
+        -125.8825
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-726",
+      "name": "Nee-Tahi-Buhn",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.93296,
+        -125.66737
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-728",
+      "name": "Yekooche First Nation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.59788,
+        -125.0822
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-729",
+      "name": "Skin Tyee",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        53.99562,
+        -125.88193
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-730",
+      "name": "Binche Whut'en",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        54.56625,
+        -124.49416
+      ],
+      "tz": "America/Vancouver",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-angoon-community-association",
+      "name": "Angoon Community Association",
+      "preferredName": null,
+      "aliases": [
+        "Angoon"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        57.50105,
+        -134.5845
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-central-council-of-the-tlingit-and-haida-indian-tribes",
+      "name": "Central Council of the Tlingit & Haida Indian Tribes",
+      "preferredName": null,
+      "aliases": [
+        "Central Council",
+        "Tlingit & Haida"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        58.36184,
+        -134.5815
+      ],
+      "tz": "America/Juneau",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-chilkat-indian-village-klukwan",
+      "name": "Chilkat Indian Village (Klukwan)",
+      "preferredName": null,
+      "aliases": [
+        "Chilkat",
+        "Klukwan"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        59.3988,
+        -135.8901
+      ],
+      "tz": "America/Juneau",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-chilkoot-indian-association-haines",
+      "name": "Chilkoot Indian Association (Haines)",
+      "preferredName": null,
+      "aliases": [
+        "Chilkoot",
+        "Haines"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        59.23386,
+        -135.4474
+      ],
+      "tz": "America/Juneau",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-craig-tribal-association",
+      "name": "Craig Tribal Association",
+      "preferredName": null,
+      "aliases": [
+        "Craig"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        55.47776,
+        -133.1501
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-douglas-indian-association",
+      "name": "Douglas Indian Association",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        58.30263,
+        -134.4239
+      ],
+      "tz": "America/Juneau",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-hoonah-indian-association",
+      "name": "Hoonah Indian Association",
+      "preferredName": null,
+      "aliases": [
+        "Hoonah"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        58.10974,
+        -135.4446
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-hydaburg-cooperative-association",
+      "name": "Hydaburg Cooperative Association",
+      "preferredName": null,
+      "aliases": [
+        "Hydaburg"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        55.2099,
+        -132.8284
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-ketchikan-indian-community",
+      "name": "Ketchikan Indian Community",
+      "preferredName": null,
+      "aliases": [
+        "Ketchikan"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        55.35263,
+        -131.6849
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-klawock-cooperative-association",
+      "name": "Klawock Cooperative Association",
+      "preferredName": null,
+      "aliases": [
+        "Klawock"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        55.55717,
+        -133.0985
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-metlakatla-indian-community-annette-island-reserve",
+      "name": "Metlakatla Indian Community, Annette Island Reserve",
+      "preferredName": null,
+      "aliases": [
+        "Metlakatla"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        55.12617,
+        -131.5734
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-organized-village-of-kake",
+      "name": "Organized Village of Kake",
+      "preferredName": null,
+      "aliases": [
+        "Kake"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        56.96529,
+        -133.9259
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-organized-village-of-kasaan",
+      "name": "Organized Village of Kasaan",
+      "preferredName": null,
+      "aliases": [
+        "Kasaan"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        55.53828,
+        -132.4064
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-organized-village-of-saxman",
+      "name": "Organized Village of Saxman",
+      "preferredName": null,
+      "aliases": [
+        "Saxman",
+        "Saxman IRA"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        55.31881,
+        -131.5977
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-petersburg-indian-association",
+      "name": "Petersburg Indian Association",
+      "preferredName": null,
+      "aliases": [
+        "Petersburg"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        56.81112,
+        -132.9427
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-sitka-tribe-of-alaska",
+      "name": "Sitka Tribe of Alaska",
+      "preferredName": null,
+      "aliases": [
+        "Sitka"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        57.05696,
+        -135.3482
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-skagway-village",
+      "name": "Skagway Village",
+      "preferredName": null,
+      "aliases": [
+        "Skagway",
+        "Skagway Traditional Council"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        59.45834,
+        -135.3089
+      ],
+      "tz": "America/Juneau",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-wrangell-cooperative-association",
+      "name": "Wrangell Cooperative Association",
+      "preferredName": null,
+      "aliases": [
+        "Wrangell"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        56.4627,
+        -132.3754
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ak-yakutat-tlingit-tribe",
+      "name": "Yakutat Tlingit Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Yakutat"
+      ],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        59.54641,
+        -139.7251
+      ],
+      "tz": "America/Yakutat",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-alturas-indian-rancheria-california",
+      "name": "Alturas Indian Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Alturas"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.47792,
+        -120.5239
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-bear-river-band-of-the-rohnerville-rancheria-california",
+      "name": "Bear River Band of the Rohnerville Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Bear River",
+        "Rohnerville Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.62574,
+        -124.2124
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-big-lagoon-rancheria-california",
+      "name": "Big Lagoon Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Big Lagoon"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.86899,
+        -124.086
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california",
+      "name": "Big Valley Band of Pomo Indians of the Big Valley Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Big Valley Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.02211,
+        -122.8872
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-blue-lake-rancheria-california",
+      "name": "Blue Lake Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Blue Lake"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.88466,
+        -123.9986
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-cahto-tribe-of-the-laytonville-rancheria",
+      "name": "Cahto Tribe of the Laytonville Rancheria",
+      "preferredName": null,
+      "aliases": [
+        "Cahto",
+        "Laytonville Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.66902,
+        -123.4962
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-cedarville-rancheria-california",
+      "name": "Cedarville Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Cedarville"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.48393,
+        -120.5453
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
+      "name": "Cher-Ae Heights Indian Community of the Trinidad Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Cher-Ae Heights",
+        "Trinidad Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.05484,
+        -124.131
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-coyote-valley-band-of-pomo-indians-of-california",
+      "name": "Coyote Valley Band of Pomo Indians of California",
+      "preferredName": null,
+      "aliases": [
+        "Coyote Valley"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.25325,
+        -123.2111
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california",
+      "name": "Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Elem",
+        "Elem Indian Colony"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        38.45184,
+        -122.7344
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-elk-valley-rancheria-california",
+      "name": "Elk Valley Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Elk Valley"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.75856,
+        -124.1579
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california",
+      "name": "Fort Bidwell Indian Community of the Fort Bidwell Reservation of California",
+      "preferredName": null,
+      "aliases": [
+        "Fort Bidwell",
+        "Fort Bidwell Reservation"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.85823,
+        -120.1583
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-greenville-rancheria",
+      "name": "Greenville Rancheria",
+      "preferredName": null,
+      "aliases": [
+        "Greenville"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.14068,
+        -120.9504
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-guidiville-rancheria-of-california",
+      "name": "Guidiville Rancheria of California",
+      "preferredName": null,
+      "aliases": [
+        "Guidiville",
+        "Guidiville Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.1357,
+        -123.2007
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-habematolel-pomo-of-upper-lake-california",
+      "name": "Habematolel Pomo of Upper Lake, California",
+      "preferredName": null,
+      "aliases": [
+        "Habematolel",
+        "Upper Lake Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.16417,
+        -122.9106
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-hoopa-valley-tribe-california",
+      "name": "Hoopa Valley Tribe, California",
+      "preferredName": null,
+      "aliases": [
+        "Hoopa"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.05483,
+        -123.6812
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-hopland-band-of-pomo-indians-california",
+      "name": "Hopland Band of Pomo Indians, California",
+      "preferredName": null,
+      "aliases": [
+        "Hopland",
+        "Hopland Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        38.97925,
+        -123.0576
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-karuk-tribe",
+      "name": "Karuk Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Karuk"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.79111,
+        -123.3799
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california",
+      "name": "Manchester Band of Pomo Indians of the Manchester Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Manchester",
+        "Manchester Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        38.93687,
+        -123.6821
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-middletown-rancheria-of-pomo-indians-of-california",
+      "name": "Middletown Rancheria of Pomo Indians of California",
+      "preferredName": null,
+      "aliases": [
+        "Middletown",
+        "Middletown Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        38.73269,
+        -122.6246
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-paskenta-band-of-nomlaki-indians-of-california",
+      "name": "Paskenta Band of Nomlaki Indians of California",
+      "preferredName": null,
+      "aliases": [
+        "Paskenta"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.88002,
+        -122.1961
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-pinoleville-pomo-nation-california",
+      "name": "Pinoleville Pomo Nation, California",
+      "preferredName": null,
+      "aliases": [
+        "Pinoleville",
+        "Pinoleville Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.1801,
+        -123.2201
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-pit-river-tribe-california",
+      "name": "Pit River Tribe, California",
+      "preferredName": null,
+      "aliases": [
+        "Pit River"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.87685,
+        -121.6725
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-potter-valley-tribe-california",
+      "name": "Potter Valley Tribe, California",
+      "preferredName": null,
+      "aliases": [
+        "Potter Valley",
+        "Potter Valley Tribe"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.11948,
+        -123.2015
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-puliklatribe-of-yurok-people",
+      "name": "PuliklaTribe of Yurok People",
+      "preferredName": null,
+      "aliases": [
+        "Resighini",
+        "Resighini Rancheria, California"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.51397,
+        -124.0222
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california",
+      "name": "Quartz Valley Indian Community of the Quartz Valley Reservation of California",
+      "preferredName": null,
+      "aliases": [
+        "Quartz Valley"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.60142,
+        -122.976
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-redding-rancheria-california",
+      "name": "Redding Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Redding"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.5069,
+        -122.3858
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley",
+      "name": "Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California",
+      "preferredName": null,
+      "aliases": [
+        "Redwood Valley",
+        "Redwood Valley Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.28566,
+        -123.1838
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-robinson-rancheria",
+      "name": "Robinson Rancheria",
+      "preferredName": null,
+      "aliases": [
+        "Robinson"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.14262,
+        -122.8821
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-round-valley-indian-tribes-round-valley-reservation-california",
+      "name": "Round Valley Indian Tribes, Round Valley Reservation, California",
+      "preferredName": null,
+      "aliases": [
+        "Round Valley"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.81441,
+        -123.2488
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-scotts-valley-band-of-pomo-indians-of-california",
+      "name": "Scotts Valley Band of Pomo Indians of California",
+      "preferredName": null,
+      "aliases": [
+        "Scotts Valley",
+        "Scotts Valley Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.04922,
+        -122.9219
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-sherwood-valley-rancheria-of-pomo-indians-of-california",
+      "name": "Sherwood Valley Rancheria of Pomo Indians of California",
+      "preferredName": null,
+      "aliases": [
+        "Sherwood Valley",
+        "Sherwood Valley Rancheria"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        39.39495,
+        -123.3617
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-susanville-indian-rancheria-california",
+      "name": "Susanville Indian Rancheria, California",
+      "preferredName": null,
+      "aliases": [
+        "Susanville"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.42656,
+        -120.6567
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-tolowa-dee-ni-nation",
+      "name": "Tolowa Dee-ni' Nation",
+      "preferredName": null,
+      "aliases": [
+        "Smith River Rancheria",
+        "Tolowa Dee-ni'"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.95268,
+        -124.2026
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-wiyot-tribe-california",
+      "name": "Wiyot Tribe, California",
+      "preferredName": null,
+      "aliases": [
+        "Table Bluff Rancheria",
+        "Wiyot"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        40.68939,
+        -124.2533
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-ca-yurok-tribe-of-the-yurok-reservation-california",
+      "name": "Yurok Tribe of the Yurok Reservation, California",
+      "preferredName": null,
+      "aliases": [
+        "Yurok"
+      ],
+      "jurisdictions": [
+        "CA-N"
+      ],
+      "region": "ca-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.52942,
+        -124.0377
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-id-coeur-dalene-tribe",
+      "name": "Coeur D'Alene Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Coeur D'Alene"
+      ],
+      "jurisdictions": [
+        "ID"
+      ],
+      "region": "id",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.33772,
+        -116.8867
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-id-kootenai-tribe-of-idaho",
+      "name": "Kootenai Tribe of Idaho",
+      "preferredName": null,
+      "aliases": [
+        "Kootenai"
+      ],
+      "jurisdictions": [
+        "ID"
+      ],
+      "region": "id",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.70803,
+        -116.3687
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-id-nez-perce-tribe",
+      "name": "Nez Perce Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Nez Perce",
+        "Nez Perce Tribe of Idaho"
+      ],
+      "jurisdictions": [
+        "ID"
+      ],
+      "region": "id",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        46.3999,
+        -116.8049
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "name": "Shoshone-Bannock Tribes of the Fort Hall Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Shoshone-Bannock"
+      ],
+      "jurisdictions": [
+        "ID"
+      ],
+      "region": "id",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        43.02637,
+        -112.4334
+      ],
+      "tz": "America/Boise",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana",
+      "name": "Blackfeet Tribe of the Blackfeet Indian Reservation of Montana",
+      "preferredName": null,
+      "aliases": [
+        "Blackfeet"
+      ],
+      "jurisdictions": [
+        "MT-W"
+      ],
+      "region": "mt-w",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.56229,
+        -113.0139
+      ],
+      "tz": "America/Denver",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
+      "name": "Chippewa Cree Indians of the Rocky Boy's Reservation, Montana",
+      "preferredName": null,
+      "aliases": [
+        "Chippewa-Cree"
+      ],
+      "jurisdictions": [
+        "MT-W"
+      ],
+      "region": "mt-w",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.26295,
+        -109.7822
+      ],
+      "tz": "America/Denver",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
+      "name": "Confederated Salish and Kootenai Tribes of the Flathead Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Confederated Salish",
+        "Salish Kootenai (CSKT)"
+      ],
+      "jurisdictions": [
+        "MT-W"
+      ],
+      "region": "mt-w",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.59634,
+        -114.1144
+      ],
+      "tz": "America/Denver",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian",
+      "name": "Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada and Oregon",
+      "preferredName": null,
+      "aliases": [
+        "Fort McDermitt"
+      ],
+      "jurisdictions": [
+        "NV-N",
+        "OR"
+      ],
+      "region": "nv-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.97213,
+        -117.6216
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
+      "name": "Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada",
+      "preferredName": null,
+      "aliases": [
+        "Shoshone-Paiute"
+      ],
+      "jurisdictions": [
+        "NV-N",
+        "ID"
+      ],
+      "region": "nv-n",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        41.99757,
+        -116.1309
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-burns-paiute-tribe",
+      "name": "Burns Paiute Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Burns Paiute"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        43.611,
+        -119.0694
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "name": "Confederated Tribes of Siletz Indians of Oregon",
+      "preferredName": null,
+      "aliases": [
+        "Siletz",
+        "Siletz Tribe"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        44.71973,
+        -123.9166
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians",
+      "name": "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians",
+      "preferredName": null,
+      "aliases": [
+        "Confederated Coos",
+        "Coos (CTCLUSI)"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        43.38257,
+        -124.2644
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-confederated-tribes-of-the-grand-ronde-community-of-oregon",
+      "name": "Confederated Tribes of the Grand Ronde Community of Oregon",
+      "preferredName": null,
+      "aliases": [
+        "Grand Ronde",
+        "Grand Ronde Tribes"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        45.0741,
+        -123.6125
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
+      "name": "Confederated Tribes of the Umatilla Indian Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Umatilla (CTUIR)",
+        "Umatilla Tribe"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        45.66537,
+        -118.6861
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon",
+      "name": "Confederated Tribes of the Warm Springs Reservation of Oregon",
+      "preferredName": null,
+      "aliases": [
+        "Warm Springs",
+        "Warms Springs Tribe"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        44.75801,
+        -121.2734
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-coquille-indian-tribe",
+      "name": "Coquille Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Coquille"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        43.37794,
+        -124.2152
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-cow-creek-band-of-umpqua-tribe-of-indians",
+      "name": "Cow Creek Band of Umpqua Tribe of Indians",
+      "preferredName": null,
+      "aliases": [
+        "Cow Creek"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        43.23864,
+        -123.3517
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-or-klamath-tribes",
+      "name": "Klamath Tribes",
+      "preferredName": null,
+      "aliases": [
+        "Klamath"
+      ],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        42.57413,
+        -121.8745
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-confederated-tribes-and-bands-of-the-yakama-nation",
+      "name": "Confederated Tribes and Bands of the Yakama Nation",
+      "preferredName": null,
+      "aliases": [
+        "Confederated Yakama",
+        "Yakama Nation"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        46.37622,
+        -120.3386
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-confederated-tribes-of-the-chehalis-reservation",
+      "name": "Confederated Tribes of the Chehalis Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Chehalis"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        46.81501,
+        -123.1724
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-confederated-tribes-of-the-colville-reservation",
+      "name": "Confederated Tribes of the Colville Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Colville",
+        "Confederated Colville"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.1334,
+        -118.9758
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-cowlitz-indian-tribe",
+      "name": "Cowlitz Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Cowlitz"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        46.13224,
+        -122.9326
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-hoh-indian-tribe",
+      "name": "Hoh Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Hoh"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.74088,
+        -124.4133
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-jamestown-sklallam-tribe",
+      "name": "Jamestown S'Klallam Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Jamestown",
+        "Jamestown S'Klallam"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.0255,
+        -122.9963
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-kalispel-indian-community-of-the-kalispel-reservation",
+      "name": "Kalispel Indian Community of the Kalispel Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Kalispel"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.34546,
+        -117.272
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-lower-elwha-tribal-community",
+      "name": "Lower Elwha Tribal Community",
+      "preferredName": null,
+      "aliases": [
+        "Lower Elwha",
+        "Lower Elwha Klallam"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.14404,
+        -123.5487
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-lummi-tribe-of-the-lummi-reservation",
+      "name": "Lummi Tribe of the Lummi Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Lummi",
+        "Lummi Nation"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.79202,
+        -122.6262
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-makah-indian-tribe-of-the-makah-indian-reservation",
+      "name": "Makah Indian Tribe of the Makah Indian Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Makah"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.34743,
+        -124.668
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-muckleshoot-indian-tribe",
+      "name": "Muckleshoot Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Muckleshoot"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.25172,
+        -122.1152
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-nisqually-indian-tribe",
+      "name": "Nisqually Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Nisqually"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.00332,
+        -122.6699
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-nooksack-indian-tribe",
+      "name": "Nooksack Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Nooksack"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.82381,
+        -122.2159
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-port-gamble-sklallam-tribe",
+      "name": "Port Gamble S'Klallam Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Port Gamble",
+        "Port Gamble S'Klallam"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.85215,
+        -122.5693
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-puyallup-tribe-of-the-puyallup-reservation",
+      "name": "Puyallup Tribe of the Puyallup Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Puyallup"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.23632,
+        -122.4096
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-quileute-tribe-of-the-quileute-reservation",
+      "name": "Quileute Tribe of the Quileute Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Quileute"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.90965,
+        -124.6364
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-quinault-indian-nation",
+      "name": "Quinault Indian Nation",
+      "preferredName": null,
+      "aliases": [
+        "Quinault"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.3392,
+        -124.2854
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-samish-indian-nation",
+      "name": "Samish Indian Nation",
+      "preferredName": null,
+      "aliases": [
+        "Samish"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.49828,
+        -122.6132
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-sauk-suiattle-indian-tribe",
+      "name": "Sauk-Suiattle Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Sauk-Suiattle"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.32198,
+        -121.5525
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation",
+      "name": "Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Shoalwater",
+        "Shoalwater Bay"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        46.72168,
+        -124.0164
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-skokomish-indian-tribe",
+      "name": "Skokomish Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Skokomish"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.32216,
+        -123.1456
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-snoqualmie-indian-tribe",
+      "name": "Snoqualmie Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Snoqualmie"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.51391,
+        -121.8258
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-spokane-tribe-of-the-spokane-reservation",
+      "name": "Spokane Tribe of the Spokane Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Spokane"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.88664,
+        -117.9903
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation",
+      "name": "Squaxin Island Tribe of the Squaxin Island Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Squaxin",
+        "Squaxin Island"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.12182,
+        -123.0801
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-stillaguamish-tribe-of-indians-of-washington",
+      "name": "Stillaguamish Tribe of Indians of Washington",
+      "preferredName": null,
+      "aliases": [
+        "Stillaguamish"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.20947,
+        -122.1844
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation",
+      "name": "Suquamish Indian Tribe of the Port Madison Reservation",
+      "preferredName": null,
+      "aliases": [
+        "Suquamish"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        47.7287,
+        -122.5586
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-swinomish-indian-tribal-community",
+      "name": "Swinomish Indian Tribal Community",
+      "preferredName": null,
+      "aliases": [
+        "Swinomish"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.38992,
+        -122.5016
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-tulalip-tribes-of-washington",
+      "name": "Tulalip Tribes of Washington",
+      "preferredName": null,
+      "aliases": [
+        "Tulalip"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.05466,
+        -122.2585
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    },
+    {
+      "id": "us-wa-upper-skagit-indian-tribe",
+      "name": "Upper Skagit Indian Tribe",
+      "preferredName": null,
+      "aliases": [
+        "Upper Skagit"
+      ],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.53925,
+        -122.185
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": false
+    }
+  ]
+}

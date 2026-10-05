@@ -1,0 +1,27 @@
+id: bia-alaska-native-villages
+title: BIA Alaska Native Villages
+owner: U.S. Department of the Interior, Bureau of Indian Affairs
+url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/AlaskaNativeVillages/FeatureServer/0
+humanUrl: https://www.bia.gov/service/tribal-leaders-directory
+license: U.S. Government work, public information
+attribution: U.S. Department of the Interior, Bureau of Indian Affairs, Alaska Native Villages
+cadence: Updated by the BIA as listings change; read by the monthly reference build.
+region: us
+coverage: [AK-SE]
+kind: arcgis-featureserver
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only by scripts/reference; never fetched from a browser, so no cross-origin check applies.
+  timeoutMs: 60000
+  retries: 2
+  priority: 3
+usedBy: [dashboard, contacts]
+verifiedAt: 2026-10-05
+notes: Registered under this id because data/pipeline/inputs.yaml names it; the same dataset and access as the sibling record with the short id. Southeast Alaska Native village offices (228 features statewide on 10/04/2026); OBJECTID and tribefullname match the Tribal Leaders Directory rows with LARtype Alaska Native Village.

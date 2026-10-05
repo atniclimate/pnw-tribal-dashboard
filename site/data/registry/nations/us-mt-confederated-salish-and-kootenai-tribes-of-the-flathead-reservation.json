@@ -1,0 +1,77 @@
+{
+  "id": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
+  "castId": null,
+  "name": "Confederated Salish and Kootenai Tribes of the Flathead Reservation",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Confederated Salish and Kootenai Tribes of the Flathead Reservation\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Confederated Salish",
+    "Salish Kootenai (CSKT)"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "MT-W"
+  ],
+  "region": "mt-w",
+  "hq": {
+    "lat": 47.59634,
+    "lon": -114.1144,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "341",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      47.59634,
+      -114.1144
+    ]
+  ],
+  "bbox": [
+    -114.24761,
+    47.50651,
+    -113.98119,
+    47.68617
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Denver",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": 341,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: scope.yaml include: Western Montana, west of the Continental Divide (Lake County). Q2 proposal; the footprint is unratified.."
+  },
+  "flags": []
+}

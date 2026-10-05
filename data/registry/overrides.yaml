@@ -1,0 +1,44 @@
+# Reviewed corrections with a source and reason (blueprint 3.11, 6.2; schema registry-overrides).
+# Draft entries: a maintainer review (names, includes and excludes, time zone overrides) precedes `reviewed`.
+- nationId: us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada
+  field: jurisdictions
+  value: [NV-N, ID]
+  sourceUrl: https://shopaitribes.org/
+  reason: The headquarters point lies on the Idaho and Nevada line; the Directory lists Nevada and the reservation spans both states. First entry is the headquarters jurisdiction.
+  verifiedAt: '2026-10-05'
+- nationId: us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian
+  field: jurisdictions
+  value: [NV-N, OR]
+  sourceUrl: https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of
+  reason: The listed name is "Nevada and Oregon"; the reservation spans both states. First entry is the headquarters jurisdiction (McDermitt, Nevada).
+  verifiedAt: '2026-10-05'
+- nationId: us-ak-petersburg-indian-association
+  field: timeZone
+  value: America/Sitka
+  sourceUrl: https://www.ecfr.gov/current/title-49/subtitle-A/part-71
+  reason: Draft correction for maintainer ratification. Petersburg is in the Alaska standard time zone (49 CFR part 71), but tz-lookup resolves the headquarters point to America/Vancouver, one hour off. America/Sitka is the zone the Alaska records for neighboring Southeast communities already carry.
+  verifiedAt: '2026-10-05'
+- nationId: us-ak-wrangell-cooperative-association
+  field: timeZone
+  value: America/Sitka
+  sourceUrl: https://www.ecfr.gov/current/title-49/subtitle-A/part-71
+  reason: Draft correction for maintainer ratification. Wrangell is in the Alaska standard time zone (49 CFR part 71), but tz-lookup resolves the headquarters point to America/Vancouver, one hour off. America/Sitka is the zone the Alaska records for neighboring Southeast communities already carry.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-596
+  field: timeZone
+  value: America/Vancouver
+  sourceUrl: https://data.iana.org/time-zones/tzdb/zone1970.tab
+  reason: Draft correction for maintainer ratification. The Osoyoos headquarters lies in British Columbia (Pacific time, America/Vancouver in the IANA database), but tz-lookup resolves the point near the international border to America/Los_Angeles.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-598
+  field: timeZone
+  value: America/Vancouver
+  sourceUrl: https://data.iana.org/time-zones/tzdb/zone1970.tab
+  reason: Draft correction for maintainer ratification. The Lower Similkameen headquarters lies in British Columbia (Pacific time, America/Vancouver in the IANA database), but tz-lookup resolves the point near the international border to America/Los_Angeles.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-658
+  field: timeZone
+  value: America/Vancouver
+  sourceUrl: https://data.iana.org/time-zones/tzdb/zone1970.tab
+  reason: Draft correction for maintainer ratification. The Pacheedaht First Nation headquarters lies on Vancouver Island, British Columbia (Pacific time, America/Vancouver in the IANA database), but tz-lookup resolves the point near Juan de Fuca Strait to America/Los_Angeles.
+  verifiedAt: '2026-10-05'

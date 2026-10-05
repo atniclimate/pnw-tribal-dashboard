@@ -1,0 +1,80 @@
+{
+  "id": "us-or-burns-paiute-tribe",
+  "castId": null,
+  "name": "Burns Paiute Tribe",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Burns Paiute Tribe\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Burns Paiute"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "OR"
+  ],
+  "region": "or",
+  "hq": {
+    "lat": 43.611,
+    "lon": -119.0694,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "339",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      43.611,
+      -119.0694
+    ]
+  ],
+  "bbox": [
+    -119.19347,
+    43.52117,
+    -118.94533,
+    43.70083
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0054"
+    ],
+    "censusAiannhce": [
+      "0400"
+    ],
+    "censusGeoid": "0400R",
+    "biaTldObjectId": 339,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: state Oregon (whole state is in the footprint)."
+  },
+  "flags": []
+}

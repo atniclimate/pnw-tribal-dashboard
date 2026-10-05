@@ -1,0 +1,5 @@
+# Name corrections from each Nation's own published name (blueprint 5.2; schema registry-names).
+# Empty on purpose: no correction has been verified against a Nation's own site yet. Each entry needs the Nation id,
+# the corrected name, a sourceUrl on the Nation's own domain, and a verifiedAt date, and the maintainer approves it.
+# The records that need one are listed in the review packet (names containing ? or U+FFFD).
+[]

@@ -1,0 +1,80 @@
+{
+  "id": "us-wa-quinault-indian-nation",
+  "castId": null,
+  "name": "Quinault Indian Nation",
+  "nameSource": {
+    "kind": "federal-register",
+    "citation": "Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 FR 4102 (01/30/2026), FR Doc. 2026-01899; entry \"Quinault Indian Nation\"",
+    "url": "https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of",
+    "retrievedAt": "2026-10-05"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [
+    "Quinault"
+  ],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "WA"
+  ],
+  "region": "wa",
+  "hq": {
+    "lat": 47.3392,
+    "lon": -124.2854,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "370",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      47.3392,
+      -124.2854
+    ]
+  ],
+  "bbox": [
+    -124.41796,
+    47.24937,
+    -124.15284,
+    47.42903
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": null,
+  "eccc": null,
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0080"
+    ],
+    "censusAiannhce": [
+      "3040"
+    ],
+    "censusGeoid": "3040R",
+    "biaTldObjectId": 370,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: state Washington (whole state is in the footprint)."
+  },
+  "flags": []
+}

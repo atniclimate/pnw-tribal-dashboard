@@ -8,6 +8,10 @@
 /** @typedef {import('../types.js').NationRecord} NationRecord */
 /** @typedef {import('../types.js').NationIndexEntry} NationIndexEntry */
 /** @typedef {import('../types.js').NationsIndex} NationsIndex */
+/** @typedef {import('../types.js').IdRedirects} IdRedirects */
+
+import { fetchLocal } from '../core/net.js';
+import { isNationId, resolveNationId } from './ids.js';
 
 const NOT_IMPLEMENTED = 'not implemented';
 
@@ -17,7 +21,19 @@ const NOT_IMPLEMENTED = 'not implemented';
  * @returns {Promise<import('../types.js').NetResult<NationsIndex>>}
  */
 export async function loadNationsIndex(opts) {
-  throw new Error(NOT_IMPLEMENTED);
+  const result = await fetchLocal('registry/nations-index.json', opts ?? {});
+  return /** @type {import('../types.js').NetResult<NationsIndex>} */ (result);
+}
+
+/**
+ * The redirect table (data/registry/id-redirects.json), or null when it cannot be loaded; a missing table
+ * means no redirects, never a failure to load a Nation.
+ * @param {{ signal?: AbortSignal }} [opts]
+ * @returns {Promise<IdRedirects | null>}
+ */
+async function loadRedirects(opts) {
+  const result = await fetchLocal('registry/id-redirects.json', opts ?? {});
+  return result.ok ? /** @type {IdRedirects} */ (result.data) : null;
 }
 
 /**
@@ -27,7 +43,18 @@ export async function loadNationsIndex(opts) {
  * @returns {Promise<import('../types.js').NetResult<NationRecord>>}
  */
 export async function loadNation(id, opts) {
-  throw new Error(NOT_IMPLEMENTED);
+  const redirects = isNationId(id) ? await loadRedirects(opts) : null;
+  let current = id;
+  try {
+    current = resolveNationId(id, redirects).id;
+  } catch {
+    current = id; // a malformed table never blocks a Nation that exists under its own id
+  }
+  if (!isNationId(current)) {
+    return { ok: false, error: { kind: 'unregistered', message: `"${id}" is not a Nation id` }, fetchedAt: new Date().toISOString(), sourceId: 'cthd-registry' };
+  }
+  const result = await fetchLocal(`registry/nations/${current}.json`, opts ?? {});
+  return /** @type {import('../types.js').NetResult<NationRecord>} */ (result);
 }
 
 /**
