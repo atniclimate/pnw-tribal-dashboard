@@ -1,0 +1,30 @@
+id: nws-zone-shapefiles
+title: NWS Public, County, Fire Weather, and Marine Zone Shapefiles
+owner: NOAA National Weather Service
+url: https://www.weather.gov/source/gis/Shapefiles/WSOM/
+humanUrl: https://www.weather.gov/gis/AWIPSShapefiles
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Reissued when zones change (effective 04/16/2026 at the last read); the monthly reference build compares versions.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, MARINE]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only; the browser draws the committed nws-zones.topo.json and falls back to api.weather.gov zone records.
+  timeoutMs: 120000
+  retries: 2
+  priority: 3
+freshness:
+  freshForMs: 2592000000
+  usableForMs: 15552000000
+usedBy: [dashboard, alerts]
+verifiedAt: 2026-10-05
+notes: Files z_16ap26 (public), c_16ap26 (county), fz16ap26 (fire weather), mz16ap26 (coastal marine), and oz16ap26 (offshore marine), all effective 04/16/2026. Public zone ids are STATE_ZONE; county ids are the state, C, and the last three FIPS digits; fire weather and public zone numbers can coincide, so every key carries its type.

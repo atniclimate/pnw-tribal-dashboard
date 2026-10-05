@@ -1,0 +1,20 @@
+# Footprint definition: the coverage area of the dashboard (blueprint 6.2, question Q2).
+#
+# DRAFT. ratified is false until the maintainer ratifies the county and borough lists below; validate:data
+# warns while it is false. Counties are Census cartographic boundary NAME values (2024), state by state.
+ratified: false
+ratifiedOn: null
+states: [WA, OR, ID]
+provinces: [BC]
+counties:
+  # Northern California: the eleven counties proposed in Q2.
+  CA: [Del Norte, Humboldt, Trinity, Mendocino, Siskiyou, Modoc, Shasta, Lassen, Tehama, Plumas, Lake]
+  # Western Montana: counties west of the Continental Divide, plus Glacier, Pondera, and Hill for the
+  # Blackfeet Nation and the Chippewa Cree Tribe (Q2 asks whether those two Nations are in).
+  MT: [Lincoln, Flathead, Sanders, Lake, Mineral, Missoula, Ravalli, Granite, Powell, Deer Lodge, Silver Bow, Beaverhead, Glacier, Pondera, Hill]
+  # Northern Nevada: Elko (Duck Valley) and Humboldt (Fort McDermitt); Q2 asks whether all Nations in those
+  # two counties are in or only those two Nations.
+  NV: [Elko, Humboldt]
+  # Southeast Alaska: the ten boroughs and census areas proposed in Q2.
+  AK: [Yakutat, Hoonah-Angoon, Skagway, Haines, Juneau, Sitka, Petersburg, Wrangell, Ketchikan Gateway, Prince of Wales-Hyder]
+notes: Draft proposal from the 10/04/2026 architecture review, pending maintainer ratification of Q2. Blackfeet Nation and Chippewa Cree Tribe membership, and the Nevada scope, are open questions. British Columbia is the whole province, drawn from the Emergency Management and Climate Readiness response regions.

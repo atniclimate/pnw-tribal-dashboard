@@ -1,0 +1,32 @@
+id: emcr-bc-boundaries
+title: Emergency Management and Climate Readiness Response Regions
+owner: Province of British Columbia, Emergency Management and Climate Readiness
+url: https://openmaps.gov.bc.ca/geo/pub/ows
+humanUrl: https://catalogue.data.gov.bc.ca/
+license: Open Government Licence - British Columbia
+attribution: Contains information licensed under the Open Government Licence - British Columbia, Province of British Columbia
+cadence: Boundaries change rarely; read by the monthly reference build.
+region: ca
+coverage: [BC]
+kind: ogc-features
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only; the browser draws the committed bc-regions.json.
+  headers:
+    Accept: application/json
+  timeoutMs: 120000
+  retries: 2
+  priority: 3
+freshness:
+  freshForMs: 2592000000
+  usableForMs: 31536000000
+usedBy: [dashboard, alerts]
+verifiedAt: 2026-10-05
+notes: WFS layer WHSE_ADMIN_BOUNDARIES.ADM_ENVMTL_EMRG_RSPNS_RGN_SP (four regions on 10/05/2026, requested in WGS 84). The union of the regions is the British Columbia part of the footprint.

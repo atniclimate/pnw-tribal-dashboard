@@ -1,0 +1,32 @@
+id: nws-radar-stations
+title: NWS Radar Station List
+owner: NOAA National Weather Service
+url: https://api.weather.gov/radar/stations
+humanUrl: https://radar.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Station list changes rarely; read by the monthly reference build.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-geojson
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only; the browser reads the committed radar-sites.json.
+  headers:
+    Accept: application/geo+json
+  timeoutMs: 60000
+  retries: 2
+  priority: 3
+freshness:
+  freshForMs: 2592000000
+  usableForMs: 15552000000
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Request stationType=WSR-88D (159 stations on 10/05/2026). Sites within 250 kilometers of the footprint are kept (22 on 10/05/2026); each RIDGE still frame (radar.weather.gov/ridge/standard/SITE_0.gif) answered HTTP 200 on 10/05/2026. Environment and Climate Change Canada publishes no machine-readable radar site coordinates, so no Canadian sites are listed.

@@ -1,0 +1,30 @@
+id: census-cartographic-boundaries
+title: U.S. Census Bureau Cartographic Boundary Files
+owner: U.S. Census Bureau
+url: https://www2.census.gov/geo/tiger/GENZ2024/shp/
+humanUrl: https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html
+license: U.S. public domain; acknowledge the U.S. Census Bureau.
+attribution: U.S. Census Bureau, Cartographic Boundary Files
+cadence: Annual vintage; read by the monthly reference build and re-pinned only by a reviewed change.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only; the browser never requests Census files, so cross-origin access is not needed.
+  timeoutMs: 120000
+  retries: 2
+  priority: 3
+freshness:
+  freshForMs: 2592000000
+  usableForMs: 31536000000
+usedBy: [dashboard, alerts]
+verifiedAt: 2026-10-05
+notes: 2024 states and counties at 1:500,000 draw the footprint, the state and county outlines, and the footprint clip for NWS zone selection. The 1:20,000,000 states file is pinned for continuity but not read.

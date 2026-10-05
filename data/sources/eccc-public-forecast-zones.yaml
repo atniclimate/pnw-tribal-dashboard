@@ -1,0 +1,30 @@
+id: eccc-public-forecast-zones
+title: Environment and Climate Change Canada Public Standard Forecast Zones
+owner: Environment and Climate Change Canada, Meteorological Service of Canada
+url: https://dd.weather.gc.ca/today/meteocode/geodata/
+humanUrl: https://eccc-msc.github.io/open-data/msc-data/meteocode/readme_meteocode_en/
+license: ECCC Data Servers End-use Licence v2.1; attribution required; alert content and intent must not be altered.
+attribution: Environment and Climate Change Canada, Meteorological Service of Canada
+cadence: New package versions as zones change (6.15.0 dated 07/21/2026 at the last read); the monthly reference build compares versions.
+region: ca
+coverage: [BC]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: unverified
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Read at build time only; the browser draws the committed eccc-regions.topo.json.
+  timeoutMs: 120000
+  retries: 2
+  priority: 3
+freshness:
+  freshForMs: 2592000000
+  usableForMs: 15552000000
+usedBy: [dashboard, alerts]
+verifiedAt: 2026-10-05
+notes: MSC Geography Package 6.15.0, land, unprojected; layer land_PubStdZone_detail_unproj, filtered to PROVINCE_C BC (the Canadian public forecast zones, keyed by CLC). Used when a British Columbia alert carries no polygon.

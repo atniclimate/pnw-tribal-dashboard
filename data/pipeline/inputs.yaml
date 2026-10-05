@@ -1,0 +1,188 @@
+# Pinned upstream inputs (blueprint 6.2). Rewritten only by 10-fetch-inputs.mjs --update-lock.
+inputs:
+  - id: nws-public-zones
+    sourceId: nws-zone-shapefiles
+    url: https://www.weather.gov/source/gis/Shapefiles/WSOM/z_16ap26.zip
+    file: z_16ap26.zip
+    vintage: '2026-04-16'
+    sha256: 010dc5eab64b6e326c969e252bd016f56a037b0444df8303658707bca4cc7fd8
+    licence: U.S. public domain
+    notes: NWS public forecast zones, effective 04/16/2026 (z_16ap26). Zone id is STATE_ZONE.
+  - id: nws-county-zones
+    sourceId: nws-zone-shapefiles
+    url: https://www.weather.gov/source/gis/Shapefiles/County/c_16ap26.zip
+    file: c_16ap26.zip
+    vintage: '2026-04-16'
+    sha256: 503f9d697a97bdbfd8a7cfe6b3b666801f43392fa220294987a68cac0bd3f03b
+    licence: U.S. public domain
+    notes: NWS counties, effective 04/16/2026 (c_16ap26). County zone id is state, the letter C, then the last three FIPS digits.
+  - id: nws-fire-zones
+    sourceId: nws-zone-shapefiles
+    url: https://www.weather.gov/source/gis/Shapefiles/WSOM/fz16ap26.zip
+    file: fz16ap26.zip
+    vintage: '2026-04-16'
+    sha256: daeb5cf94f8cd9ee850d6d142f1d98c77e6a7234f021a6b4c7aeba5763fd7486
+    licence: U.S. public domain
+    notes: NWS fire weather zones, effective 04/16/2026 (fz16ap26).
+  - id: nws-coastal-marine-zones
+    sourceId: nws-zone-shapefiles
+    url: https://www.weather.gov/source/gis/Shapefiles/WSOM/mz16ap26.zip
+    file: mz16ap26.zip
+    vintage: '2026-04-16'
+    sha256: 97f6317f4ebef4994940b3851e9f889a71b06914eb41d77dd6edbebd46b5184d
+    licence: U.S. public domain
+    notes: NWS coastal and inland marine zones, effective 04/16/2026 (mz16ap26).
+  - id: nws-offshore-marine-zones
+    sourceId: nws-zone-shapefiles
+    url: https://www.weather.gov/source/gis/Shapefiles/WSOM/oz16ap26.zip
+    file: oz16ap26.zip
+    vintage: '2026-04-16'
+    sha256: 07d1514e9bf4b434b2d1f14f803751cd2a3a1dc8119507ec88edcb5c99b4932f
+    licence: U.S. public domain
+    notes: NWS offshore marine zones, effective 04/16/2026 (oz16ap26).
+  - id: census-counties-500k
+    sourceId: census-cartographic-boundaries
+    url: https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_county_500k.zip
+    file: cb_2024_us_county_500k.zip
+    vintage: '2024-01-01'
+    sha256: da4051717caec55c75e3748c3608c2a3dbde8d1ff401bbaf4f952e3c3fb63ef1
+    licence: U.S. public domain
+    notes: Cartographic boundary file, counties, 1:500,000, 2024.
+  - id: census-states-500k
+    sourceId: census-cartographic-boundaries
+    url: https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_state_500k.zip
+    file: cb_2024_us_state_500k.zip
+    vintage: '2024-01-01'
+    sha256: 3e81cbb6cf5f60d9b01ef3e730afa14d61ce5f784252a0b33a696135e71447bc
+    licence: U.S. public domain
+    notes: Cartographic boundary file, states, 1:500,000, 2024.
+  - id: census-states-20m
+    sourceId: census-cartographic-boundaries
+    url: https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_state_20m.zip
+    file: cb_2024_us_state_20m.zip
+    vintage: '2024-01-01'
+    sha256: 7bc773d83c01b6df69b8aada9c2b5983d97f22f4551947cc5c00b87c663223ef
+    licence: U.S. public domain
+    notes: Cartographic boundary file, states, 1:20,000,000, 2024. Downloaded 10/04/2026; not read by the L4 steps.
+  - id: eccc-public-forecast-zones
+    sourceId: eccc-public-forecast-zones
+    url: https://dd.weather.gc.ca/today/meteocode/geodata/version_6.15.0/MSC_Geography_Pkg_V6_15_0_Land_Unproj.zip
+    file: MSC_Geography_Pkg_V6_15_0_Land_Unproj.zip
+    vintage: '2026-07-21'
+    sha256: 622da0319632fcf61b6621ffd75f49a8f3da6e21754dd3e3b1ff4350221a401b
+    licence: ECCC Data Servers End-use Licence v2.1
+    notes: MSC Geography Package 6.15.0, land, unprojected. Layer land_PubStdZone_detail_unproj (public standard forecast zones).
+  - id: emcr-regions
+    sourceId: emcr-bc-boundaries
+    url: https://openmaps.gov.bc.ca/geo/pub/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=pub:WHSE_ADMIN_BOUNDARIES.ADM_ENVMTL_EMRG_RSPNS_RGN_SP&outputFormat=application/json&srsName=EPSG:4326
+    file: emcr-regions.geojson
+    vintage: '2026-10-05'
+    sha256: d8e2030f158cbcff03b01a43ae9dc69f47a9488e3142ba2c7e58cab46e08217f
+    licence: Open Government Licence - British Columbia
+    notes: BC Data Catalogue WFS layer ADM_ENVMTL_EMRG_RSPNS_RGN_SP (Emergency Management and Climate Readiness response regions), WGS 84.
+  - id: nws-radar-stations
+    sourceId: nws-radar-stations
+    url: https://api.weather.gov/radar/stations?stationType=WSR-88D
+    file: nws-radar-stations.json
+    vintage: '2026-10-05'
+    sha256: 26d091df5ad7af4bf737d020159fd17fe9741ce9080b7aea23ecc2f7bdecf496
+    licence: U.S. public domain
+    notes: >-
+      api.weather.gov radar station list, reduced to id, name, type, and coordinates before hashing (latency and status fields are volatile
+      and are dropped).
+  - id: bia-lar
+    sourceId: bia-lar
+    url: https://biamaps.geoplatform.gov/server/rest/services/DivLTR/BIA_AIAN_National_LAR/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson
+    file: bia_lar.geojson
+    vintage: '2026-10-04'
+    sha256: ef38f9b7b18ff479631599883ec911baa2bc7cbd3be4606d76df1a4dce5243e1
+    licence: U.S. public domain
+    notes: Lane L5 input. BIA Land Area Representations, GeoJSON, downloaded 10/04/2026.
+  - id: bia-lar-hub
+    sourceId: bia-lar
+    url: https://hub.arcgis.com/api/download/v1/items/e21128c26386412ca682accf7a57361a/shapefile?redirect=true&layers=0
+    file: bia_lar_hub.zip
+    vintage: '2026-10-04'
+    sha256: 27d3d1e97a0365228c182f70d81eaa6f51a7b6f5170008ac3492061d335a8e75
+    licence: U.S. public domain
+    notes: Lane L5 input. BIA Land Area Representations, shapefile bulk download, 10/04/2026.
+  - id: bia-tld
+    sourceId: bia-tribal-leaders-directory
+    url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson
+    file: bia_tld.geojson
+    vintage: '2026-10-04'
+    sha256: 7f094795d0e84ca1856a222a9e0be1d4c8c23074cb47e0403dc34a29630cc071
+    licence: U.S. public domain
+    notes: Lane L5 input. BIA Tribal Leaders Directory, GeoJSON, 10/04/2026. Read through an allowlist of office fields only; no personal names.
+  - id: bia-anv
+    sourceId: bia-alaska-native-villages
+    url: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/AlaskaNativeVillages/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson
+    file: bia_anv.geojson
+    vintage: '2026-10-04'
+    sha256: d02cc6eaa5867fc7ea94de8cfe381563a8dbde22627b3c4d1a2821086ce6b5cc
+    licence: U.S. public domain
+    notes: Lane L5 input. BIA Alaska Native Villages points, GeoJSON, 10/04/2026.
+  - id: census-aiannh-2025
+    sourceId: census-aiannh-2025
+    url: https://www2.census.gov/geo/tiger/TIGER2025/AIANNH/tl_2025_us_aiannh.zip
+    file: tl_2025_us_aiannh.zip
+    vintage: '2025-01-01'
+    sha256: 214b97c1ecbc3f57a69d5c0c746e6e920dec79bb43be40cfdad529e9bb09aee4
+    licence: U.S. public domain
+    notes: Lane L5 input. TIGER/Line 2025 American Indian, Alaska Native, and Native Hawaiian areas, downloaded 10/04/2026.
+  - id: census-aiannh-2024
+    sourceId: census-aiannh-2025
+    url: https://www2.census.gov/geo/tiger/TIGER2024/AIANNH/tl_2024_us_aiannh.zip
+    file: tl_2024_us_aiannh.zip
+    vintage: '2024-01-01'
+    sha256: 75e7bc8ccc1799f4813492f180d641ae2f8e3c98c7c2c137dbd0aa0845ee70cb
+    licence: U.S. public domain
+    notes: Lane L5 input. TIGER/Line 2024 AIANNH, downloaded 10/04/2026 for vintage comparison.
+  - id: isc-first-nation-gpkg
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/Premiere_Nation_First_Nation_GPKG.zip
+    file: isc_fn_gpkg.zip
+    vintage: '2026-10-04'
+    sha256: aafdbc373774ebe26fd671c458ab93168e8a7628308f20d4a0b957907427a722
+    licence: Open Government Licence - Canada 2.0
+    notes: Lane L5 input. ISC First Nation locations, GeoPackage zip, downloaded 10/04/2026.
+  - id: isc-first-nation-gpkg-extracted
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/Premiere_Nation_First_Nation_GPKG.zip
+    file: Premiere_Nation_First_Nation_GPKG.gpkg
+    vintage: '2026-10-04'
+    sha256: 5b0031aa88be5358ab4b7de7eb713fcc70b4e03c42a6e5155d9b84e57a0460c5
+    licence: Open Government Licence - Canada 2.0
+    notes: Lane L5 input. The GeoPackage extracted from the zip above on 10/04/2026; this entry has no separate download.
+  - id: isc-first-nation-csv
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/Premiere_Nation_First_Nation_CSV.zip
+    file: isc_fn_csv.zip
+    vintage: '2026-10-04'
+    sha256: 34b7126339748a7c5d369ec7238e4d7948a67c0f0d840c23415b8101ac142c00
+    licence: Open Government Licence - Canada 2.0
+    notes: Lane L5 input. ISC First Nation locations, CSV zip, downloaded 10/04/2026.
+  - id: isc-first-nation-reserve-relation
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/Relation_Premiere_Nation_reserve_Relation_First_Nation_Reserve_CSV.zip
+    file: Relation_Premiere_Nation_reserve_Relation_First_Nation_Reserve_CSV.zip
+    vintage: '2026-10-04'
+    sha256: b762d294236bc60d240567fe5144c71d57e8ce69024f8485f65ce4f8f22698f5
+    licence: Open Government Licence - Canada 2.0
+    notes: Lane L5 input. ISC First Nation to reserve relation, CSV zip, downloaded 10/04/2026.
+  - id: isc-first-nation-tribal-council-relation
+    sourceId: isc-first-nations
+    url: https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/Relation_Premiere_Nation_conseil_tribal_Relation_First_Nation_Tribal_Council_CSV.zip
+    file: Relation_Premiere_Nation_conseil_tribal_Relation_First_Nation_Tribal_Council_CSV.zip
+    vintage: '2026-10-04'
+    sha256: 7a1916e6a7b01a592d7bf0851062e367635046933bac70fdeaae010f5edee767
+    licence: Open Government Licence - Canada 2.0
+    notes: Lane L5 input. ISC First Nation to Tribal Council relation, CSV zip, downloaded 10/04/2026.
+  - id: nrcan-al-ta-bc
+    sourceId: nrcan-aboriginal-lands-bc
+    url: https://ftp.maps.canada.ca/pub/nrcan_rncan/vector/geobase_al_ta/shp_eng/AL_TA_BC_SHP_eng.zip
+    file: AL_TA_BC_SHP_eng.zip
+    vintage: '2026-10-04'
+    sha256: e373c8867ca9c60e60c768c1444777a1c67b65cbf39f37abf539bff284069a25
+    licence: Open Government Licence - Canada 2.0
+    notes: Lane L5 input. NRCan Aboriginal Lands (AL_TA) for British Columbia, shapefile zip, downloaded 10/04/2026.
