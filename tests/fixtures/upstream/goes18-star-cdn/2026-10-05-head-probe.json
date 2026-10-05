@@ -1,0 +1,134 @@
+{
+ "method": "HEAD",
+ "capturedAt": "2026-10-05T09:51:46.403Z",
+ "results": [
+  {
+   "productId": "goes18-pnw-geocolor-300",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/300x300.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:43 GMT",
+   "contentLength": 79784,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-geocolor-600",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/600x600.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:35:40 GMT",
+   "contentLength": 235134,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-geocolor-mp4",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/GOES18-PNW-GEOCOLOR-600x600.mp4",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:31:36 GMT",
+   "contentLength": 908444,
+   "contentType": "video/mp4"
+  },
+  {
+   "productId": "goes18-pnw-airmass-300",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/AirMass/300x300.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:32 GMT",
+   "contentLength": 66714,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-airmass-600",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/AirMass/600x600.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:32 GMT",
+   "contentLength": 188180,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-airmass-mp4",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/AirMass/GOES18-PNW-AirMass-600x600.mp4",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:36:21 GMT",
+   "contentLength": 520203,
+   "contentType": "video/mp4"
+  },
+  {
+   "productId": "goes18-pnw-band-08-300",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/08/300x300.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:09 GMT",
+   "contentLength": 62875,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-08-600",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/08/600x600.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:09 GMT",
+   "contentLength": 171886,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-08-mp4",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/08/GOES18-PNW-08-600x600.mp4",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:36:28 GMT",
+   "contentLength": 384682,
+   "contentType": "video/mp4"
+  },
+  {
+   "productId": "goes18-pnw-band-09-300",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/09/300x300.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:09 GMT",
+   "contentLength": 71505,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-09-600",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/09/600x600.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:09 GMT",
+   "contentLength": 209313,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-10-300",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/10/300x300.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:07 GMT",
+   "contentLength": 88374,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-10-600",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/10/600x600.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:08 GMT",
+   "contentLength": 260367,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-13-300",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/13/300x300.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:09 GMT",
+   "contentLength": 60099,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-13-600",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/13/600x600.jpg",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:10 GMT",
+   "contentLength": 172755,
+   "contentType": "image/jpeg"
+  },
+  {
+   "productId": "goes18-pnw-band-13-mp4",
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/13/GOES18-PNW-13-600x600.mp4",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:39:34 GMT",
+   "contentLength": 802834,
+   "contentType": "video/mp4"
+  }
+ ]
+}

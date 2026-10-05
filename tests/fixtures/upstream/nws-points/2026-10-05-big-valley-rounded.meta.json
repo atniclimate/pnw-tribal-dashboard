@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-points",
+  "label": "big-valley-rounded",
+  "file": "2026-10-05-big-valley-rounded.json",
+  "url": "https://api.weather.gov/points/39.022,-122.887",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T09:46:47.611Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 3934,
+  "sha256": "a52d3f9d4c8996731c50a1f7edb1ba6d77a94c18d09de5134c635068c9043c7f",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

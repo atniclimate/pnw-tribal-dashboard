@@ -2,7 +2,7 @@ id: nws-afd
 title: NWS Area Forecast Discussion
 owner: NOAA National Weather Service
 url: https://api.weather.gov/products/types/AFD
-urlTemplate: https://api.weather.gov/products/types/AFD/locations/{wfo}
+urlTemplate: https://api.weather.gov/products/types/AFD/locations/{wfo}/latest
 humanUrl: https://www.weather.gov/
 license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
 attribution: National Weather Service
@@ -19,17 +19,17 @@ access:
     acao: "*"
     origin: https://atniclimate.github.io
     checkedAt: 2026-10-05
-    evidence: "GET /products/types/AFD/locations/SEW with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/ld+json on 10/05/2026."
+    evidence: "GET /products/types/AFD/locations/SEW/latest with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/ld+json on 10/05/2026."
   headers:
     Accept: application/ld+json
   timeoutMs: 12000
   retries: 2
   priority: 2
 freshness:
-  freshForMs: 10800000
-  usableForMs: 43200000
+  freshForMs: 43200000
+  usableForMs: 129600000
 health:
-  probe: https://api.weather.gov/products/types/AFD/locations/SEW
+  probe: https://api.weather.gov/products/types/AFD/locations/SEW/latest
   expectStatus: 200
   expectAcao: "*"
   expectType: application/ld+json
@@ -37,4 +37,4 @@ health:
   maxBytes: null
 usedBy: [forecasts]
 verifiedAt: 2026-10-05
-notes: The list response is followed by one product fetch at /products/{id}. The discussion is shown collapsed, as plain text, with its issuance time and office. The forecast office code comes from nws-points.
+notes: Freshness widened 10/05/2026 because offices issue discussions a few times a day, with gaps of up to about twelve hours. One request to the /latest endpoint returns the newest discussion with its full text (corrected 10/05/2026 from a list request followed by a product request; /latest answers with Access-Control-Allow-Origin *). The discussion is shown collapsed, as plain text, with its issuance time and office. The forecast office code comes from nws-points.

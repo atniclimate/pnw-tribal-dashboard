@@ -1,0 +1,40 @@
+id: nws-observations
+title: NWS Latest Station Observation
+owner: NOAA National Weather Service
+url: https://api.weather.gov/stations
+urlTemplate: https://api.weather.gov/stations/{station}/observations/latest
+humanUrl: https://www.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Stations report about hourly; the latest observation is read on demand.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-geojson
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /stations/KBLI/observations/latest with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/geo+json on 10/05/2026."
+  headers:
+    Accept: application/geo+json
+  timeoutMs: 12000
+  retries: 2
+  priority: 2
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://api.weather.gov/stations/KBLI/observations/latest
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/geo+json
+  minBytes: 500
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: The only source of Current Conditions on the forecasts page. A first forecast period is never shown as current. The station comes from nws-stations (nearest first); the page tries up to three stations and shows the first with a recent temperature, naming the station and its observation time. Some stations have no recent report.

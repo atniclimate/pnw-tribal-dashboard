@@ -26,8 +26,8 @@ access:
   retries: 2
   priority: 1
 freshness:
-  freshForMs: 3600000
-  usableForMs: 21600000
+  freshForMs: 43200000
+  usableForMs: 172800000
 health:
   probe: https://api.weather.gov/gridpoints/SEW/124,67/forecast
   expectStatus: 200
@@ -37,4 +37,4 @@ health:
   maxBytes: null
 usedBy: [dashboard, forecasts]
 verifiedAt: 2026-10-05
-notes: All 14 periods are shown and labeled 7-Day Forecast. The forecast URL comes from the nws-points response. Current Conditions come only from a station observation, never from the first forecast period.
+notes: Freshness corrected 10/05/2026 because the as-of time is the office issuance time (updateTime), which was 12 hours before the capture, so an hour or six would mark every forecast stale. All 14 periods are shown and labeled 7-Day Forecast. The forecast URL comes from the nws-points response. Current Conditions come only from a station observation, never from the first forecast period.

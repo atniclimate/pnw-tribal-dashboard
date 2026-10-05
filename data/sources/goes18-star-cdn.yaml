@@ -35,4 +35,4 @@ health:
   maxBytes: null
 usedBy: [forecasts]
 verifiedAt: 2026-10-05
-notes: Use the lowercase /pnw/ folder; the uppercase /PNW/ path returns 404. Products GEOCOLOR, AirMass, and bands 08, 09, 10, and 13. Animations exist only for GEOCOLOR, AirMass, 08, and 13 (GIF 5.6 to 11.8 MB, MP4 about 1.1 MB); bands 09 and 10 are stills only. Stills load by default and the 600 px still and MP4 load on tap.
+notes: Use the lowercase /pnw/ folder; the uppercase /PNW/ path returns 404. Products GEOCOLOR, AirMass, and bands 08, 09, 10, and 13. Animations exist only for GEOCOLOR, AirMass, 08, and 13 (GIF 5.7 to 9.6 MB, MP4 0.4 to 0.9 MB on 10/05/2026; the MP4 host is registered as goes18-star-cdn-video); bands 09 and 10 are stills only. Stills load by default and the 600 px still and MP4 load on tap.

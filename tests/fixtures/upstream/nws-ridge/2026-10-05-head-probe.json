@@ -1,0 +1,374 @@
+{
+ "method": "HEAD",
+ "capturedAt": "2026-10-05T09:51:46.403Z",
+ "results": [
+  {
+   "productId": "ridge-katx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KATX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:23 GMT",
+   "contentLength": 33900,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-katx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KATX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:31 GMT",
+   "contentLength": 176488,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kbbx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KBBX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:23 GMT",
+   "contentLength": 49651,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kbbx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KBBX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:11 GMT",
+   "contentLength": 445514,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kbhx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KBHX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:23 GMT",
+   "contentLength": 23299,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kbhx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KBHX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:06 GMT",
+   "contentLength": 198981,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kblx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KBLX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:43:26 GMT",
+   "contentLength": 25338,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kblx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KBLX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:21 GMT",
+   "contentLength": 71483,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kcbx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KCBX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:24 GMT",
+   "contentLength": 27006,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kcbx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KCBX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:30 GMT",
+   "contentLength": 182868,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kdax-still",
+   "url": "https://radar.weather.gov/ridge/standard/KDAX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:24 GMT",
+   "contentLength": 48391,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kdax-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KDAX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:03 GMT",
+   "contentLength": 438761,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kggw-still",
+   "url": "https://radar.weather.gov/ridge/standard/KGGW_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:24 GMT",
+   "contentLength": 19818,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kggw-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KGGW_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:23 GMT",
+   "contentLength": 86564,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-klgx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KLGX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:43:27 GMT",
+   "contentLength": 34768,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-klgx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KLGX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:08 GMT",
+   "contentLength": 164820,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-klrx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KLRX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 18500,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-klrx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KLRX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:33 GMT",
+   "contentLength": 100959,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmax-still",
+   "url": "https://radar.weather.gov/ridge/standard/KMAX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 31522,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmax-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KMAX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:24 GMT",
+   "contentLength": 280492,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmsx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KMSX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 24305,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmsx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KMSX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:28 GMT",
+   "contentLength": 87116,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmtx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KMTX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 31058,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmtx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KMTX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:09 GMT",
+   "contentLength": 209011,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmux-still",
+   "url": "https://radar.weather.gov/ridge/standard/KMUX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 32115,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kmux-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KMUX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:06 GMT",
+   "contentLength": 273047,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kotx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KOTX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 26069,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kotx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KOTX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:23 GMT",
+   "contentLength": 189042,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kpdt-still",
+   "url": "https://radar.weather.gov/ridge/standard/KPDT_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 27410,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kpdt-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KPDT_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:45:24 GMT",
+   "contentLength": 171098,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-krgx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KRGX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 34938,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-krgx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KRGX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:03 GMT",
+   "contentLength": 306035,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kriw-still",
+   "url": "https://radar.weather.gov/ridge/standard/KRIW_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 24314,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-kriw-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KRIW_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:11 GMT",
+   "contentLength": 87335,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-krtx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KRTX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 32769,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-krtx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KRTX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:10 GMT",
+   "contentLength": 192548,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-ksfx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KSFX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:25 GMT",
+   "contentLength": 32706,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-ksfx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KSFX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:15 GMT",
+   "contentLength": 205458,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-ktfx-still",
+   "url": "https://radar.weather.gov/ridge/standard/KTFX_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:26 GMT",
+   "contentLength": 23784,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-ktfx-loop",
+   "url": "https://radar.weather.gov/ridge/standard/KTFX_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:14 GMT",
+   "contentLength": 106110,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-pacg-still",
+   "url": "https://radar.weather.gov/ridge/standard/PACG_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:26 GMT",
+   "contentLength": 43556,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-pacg-loop",
+   "url": "https://radar.weather.gov/ridge/standard/PACG_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:26 GMT",
+   "contentLength": 418762,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-paih-still",
+   "url": "https://radar.weather.gov/ridge/standard/PAIH_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:26 GMT",
+   "contentLength": 68602,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-paih-loop",
+   "url": "https://radar.weather.gov/ridge/standard/PAIH_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:31 GMT",
+   "contentLength": 635444,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-pacnorthwest-still",
+   "url": "https://radar.weather.gov/ridge/standard/PACNORTHWEST_0.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:49:23 GMT",
+   "contentLength": 40334,
+   "contentType": "image/gif"
+  },
+  {
+   "productId": "ridge-pacnorthwest-loop",
+   "url": "https://radar.weather.gov/ridge/standard/PACNORTHWEST_loop.gif",
+   "status": 200,
+   "lastModified": "Mon, 05 Oct 2026 09:50:06 GMT",
+   "contentLength": 356755,
+   "contentType": "image/gif"
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "method": "HEAD",
+ "capturedAt": "2026-10-05T09:51:46.403Z",
+ "results": [
+  {
+   "productId": null,
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/09/GOES18-PNW-09-600x600.mp4",
+   "status": 404,
+   "lastModified": null,
+   "contentLength": null,
+   "contentType": "text/html"
+  },
+  {
+   "productId": null,
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/09/GOES18-PNW-09-600x600.gif",
+   "status": 404,
+   "lastModified": null,
+   "contentLength": null,
+   "contentType": "text/html"
+  },
+  {
+   "productId": null,
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/10/GOES18-PNW-10-600x600.mp4",
+   "status": 404,
+   "lastModified": null,
+   "contentLength": null,
+   "contentType": "text/html"
+  },
+  {
+   "productId": null,
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/10/GOES18-PNW-10-600x600.gif",
+   "status": 404,
+   "lastModified": null,
+   "contentLength": null,
+   "contentType": "text/html"
+  },
+  {
+   "productId": null,
+   "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/PNW/GEOCOLOR/300x300.jpg",
+   "status": 404,
+   "lastModified": null,
+   "contentLength": null,
+   "contentType": "text/html"
+  }
+ ]
+}

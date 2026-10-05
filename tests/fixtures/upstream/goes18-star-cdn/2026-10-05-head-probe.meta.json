@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "goes18-star-cdn",
+  "label": "head-probe",
+  "file": "2026-10-05-head-probe.json",
+  "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/300x300.jpg",
+  "method": "HEAD",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)"
+  },
+  "capturedAt": "2026-10-05T09:51:46.403Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 4383,
+  "sha256": "3e7ed339e5b6e91b17b856c3196190f853dcfb32984bb50d2c02e26903451a35",
+  "covers": [
+    "imagery-stamps",
+    "goes-stills-and-animations"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Last-Modified and size for every goes18-star-cdn catalog product. Every entry was read with an HTTP HEAD request on 2026-10-05T09:51:46.403Z."
+}

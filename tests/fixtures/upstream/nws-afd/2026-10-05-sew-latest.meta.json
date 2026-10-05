@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-afd",
+  "label": "sew-latest",
+  "file": "2026-10-05-sew-latest.json",
+  "url": "https://api.weather.gov/products/types/AFD/locations/SEW/latest",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/ld+json"
+  },
+  "capturedAt": "2026-10-05T09:43:04.951Z",
+  "status": 200,
+  "contentType": "application/ld+json",
+  "lastModified": null,
+  "bytes": 4719,
+  "sha256": "fcaa1064ded162ca4ffa9592717a4d0793cb27aa74f3d6d884d7f782d9af36f9",
+  "covers": [
+    "afd-latest"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

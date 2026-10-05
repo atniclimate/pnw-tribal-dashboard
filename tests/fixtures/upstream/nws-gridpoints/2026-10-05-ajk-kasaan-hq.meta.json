@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-gridpoints",
+  "label": "ajk-kasaan-hq",
+  "file": "2026-10-05-ajk-kasaan-hq.json",
+  "url": "https://api.weather.gov/gridpoints/AJK/263,74",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T09:42:34.943Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": "Mon, 05 Oct 2026 04:09:53 GMT",
+  "bytes": 157254,
+  "sha256": "2f1ae44e014e9d8830921552753fae5627b4feaab334f6243f8ffefe03f6f923",
+  "covers": [
+    "gridpoint-qpf",
+    "southeast-alaska"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

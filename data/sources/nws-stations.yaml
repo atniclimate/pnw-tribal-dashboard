@@ -1,0 +1,40 @@
+id: nws-stations
+title: NWS Observation Stations for a Grid Cell
+owner: NOAA National Weather Service
+url: https://api.weather.gov/gridpoints
+urlTemplate: https://api.weather.gov/gridpoints/{wfo}/{x},{y}/stations?limit=5
+humanUrl: https://www.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Station lists change rarely; held in browser memory for one hour.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-geojson
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /gridpoints/SEW/127,126/stations?limit=5 with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/geo+json, 9,923 bytes on 10/05/2026."
+  headers:
+    Accept: application/geo+json
+  timeoutMs: 12000
+  retries: 2
+  priority: 2
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://api.weather.gov/gridpoints/SEW/127,126/stations?limit=5
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/geo+json
+  minBytes: 500
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Lists the five stations nearest a Nation headquarters grid cell, as published by NWS, so that a current observation can be requested. Registered by lane L12 as a companion to nws-observations, because one registry record carries one URL template.

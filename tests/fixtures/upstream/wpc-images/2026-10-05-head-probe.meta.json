@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "wpc-images",
+  "label": "head-probe",
+  "file": "2026-10-05-head-probe.json",
+  "url": "https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif",
+  "method": "HEAD",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)"
+  },
+  "capturedAt": "2026-10-05T09:51:46.403Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 2401,
+  "sha256": "75d81af2d94a9ecf9447d147e3d3e6c870fce65e86d95a7e7143cc62382948b3",
+  "covers": [
+    "imagery-stamps",
+    "wpc-labels"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Last-Modified and size for every wpc-images catalog product. Every entry was read with an HTTP HEAD request on 2026-10-05T09:51:46.403Z."
+}

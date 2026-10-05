@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-observations",
+  "label": "kbli-latest",
+  "file": "2026-10-05-kbli-latest.json",
+  "url": "https://api.weather.gov/stations/KBLI/observations/latest",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T09:43:33.626Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": "Mon, 05 Oct 2026 09:19:58 GMT",
+  "bytes": 4303,
+  "sha256": "dc25ef372a273214a4863488e23e639ccb5e749c9cd052aefb0a8dea18e78092",
+  "covers": [
+    "observation-latest"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

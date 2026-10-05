@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://cdn.star.nesdis.noaa.gov https://cw3e.ucsd.edu https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://radar.weather.gov https://tropic.ssec.wisc.edu https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self'; connect-src 'self' https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://services6.arcgis.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://cdn.star.nesdis.noaa.gov https://cw3e.ucsd.edu https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://radar.weather.gov https://tropic.ssec.wisc.edu https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self' https://cdn.star.nesdis.noaa.gov; connect-src 'self' https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://services6.arcgis.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="noindex">
@@ -36,6 +36,9 @@
   <link rel="modulepreload" href="../static/js/core/storage.js">
   <link rel="modulepreload" href="../static/js/core/status.js">
   <link rel="modulepreload" href="../static/js/ui/tabs.js">
+  <link rel="modulepreload" href="../static/js/core/url-state.js">
+  <link rel="modulepreload" href="../static/js/forecast/nation-context.js">
+  <link rel="modulepreload" href="../static/js/core/units.js">
   <!-- modulepreload:end -->
   <script type="module" src="../static/js/pages/forecasts.js"></script>
   <link rel="manifest" href="../manifest.webmanifest">
@@ -75,6 +78,10 @@
     <noscript><p class="panel-note">Live data on this page needs JavaScript. Official alerts are always at
       <a href="https://www.weather.gov/">weather.gov</a> and
       <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">weather.gc.ca</a>. In an emergency, call 911.</p></noscript>
+    <div class="nation-picker" data-nation-select hidden>
+      <label class="nation-picker__label" for="nation-select">Nation</label>
+      <select id="nation-select" class="nation-picker__input"><option value="">Choose a Nation</option></select>
+    </div>
     <nav class="tabs" aria-label="Views" data-tabs>
       <a class="tabs__tab" href="./?view=local" data-view-link="local">Local</a>
       <a class="tabs__tab" href="./?view=precip" data-view-link="precip">Precipitation</a>
@@ -84,7 +91,7 @@
       <a class="tabs__tab" href="./?view=rivers" data-view-link="rivers">Rivers</a>
     </nav>
     <section class="view" data-view="local" aria-label="Local Forecast">
-      <section class="panel" data-panel="forecast-local" data-sources="nws-forecast eccc-citypage-realtime" aria-labelledby="forecast-local-h">
+      <section class="panel" data-panel="forecast-local" data-sources="nws-points nws-stations nws-observations nws-forecast eccc-citypage-realtime" aria-labelledby="forecast-local-h">
         <h2 class="panel__title" id="forecast-local-h">7-Day Forecast</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
@@ -104,6 +111,11 @@
       </section>
     </section>
     <section class="view" data-view="ar" aria-label="Atmospheric Rivers">
+      <section class="callout callout--note" aria-labelledby="ar-explainer-h">
+        <h2 id="ar-explainer-h">About Atmospheric Rivers</h2>
+        <p>An atmospheric river is a long, narrow band of water vapor carried through the lower atmosphere. When one reaches the Pacific coast it can bring heavy rain and mountain snow, and it is a leading cause of flooding in the region.</p>
+        <p>Integrated Vapor Transport, or IVT, measures how much water vapor moves through the air column, by strength and direction. The Atmospheric River Scale rates a landfalling event from category one to category five by combining its IVT strength with how long that strength lasts ("A Scale to Characterize the Strength and Impacts of Atmospheric Rivers," <i>Bulletin of the American Meteorological Society</i>, 2019). These products are research forecasts, not warnings. Official warnings come from the <a href="https://www.weather.gov/">National Weather Service</a> and <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">Environment and Climate Change Canada</a>. See also the <a href="https://cw3e.ucsd.edu/arscale/">CW3E Atmospheric River Scale page</a>.</p>
+      </section>
       <section class="panel" data-panel="ar-cw3e" data-sources="cw3e-images" aria-labelledby="ar-cw3e-h">
         <h2 class="panel__title" id="ar-cw3e-h">Atmospheric River Forecasts</h2>
         <div class="panel__body" data-panel-body></div>
@@ -118,6 +130,7 @@
         <h2 class="panel__title" id="satellite-goes-h">GOES-West Satellite</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
+      <p class="panel-note" data-airmass-note hidden>Air Mass combines infrared channels to show the character of air masses. NOAA publishes a quick guide with the color key: <a href="https://goes.noaa.gov/documents/QuickGuide_GOESR_AirMassRGB_final.pdf">Air Mass RGB Quick Guide</a>.</p>
     </section>
     <section class="view" data-view="radar" aria-label="Radar">
       <section class="panel" data-panel="radar-map" data-sources="iem-nexrad-n0q eccc-geomet-radar carto-dark-matter" aria-labelledby="radar-map-h" data-map-panel>

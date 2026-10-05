@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "goes18-star-cdn",
+  "label": "head-probe-stills-only-bands",
+  "file": "2026-10-05-head-probe-stills-only-bands.json",
+  "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/09/GOES18-PNW-09-600x600.mp4",
+  "method": "HEAD",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)"
+  },
+  "capturedAt": "2026-10-05T09:51:46.403Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 1209,
+  "sha256": "b9d1ad1d6139608f22dd64aa6e94af90edf390b78a6795dd3ef57851f88cb41b",
+  "covers": [
+    "stills-only-bands",
+    "uppercase-path-404"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Bands 09 and 10 have no animation files, and the uppercase sector path returns 404. Every entry was read with an HTTP HEAD request on 2026-10-05T09:51:46.403Z."
+}

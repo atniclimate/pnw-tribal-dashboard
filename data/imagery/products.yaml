@@ -1,0 +1,777 @@
+# Imagery products (blueprint 5.9). Generated from live HEAD sizes on 10/05/2026; sizes are typical, the imagery-stamps task records current ones.
+- id: goes18-pnw-geocolor-300
+  sourceId: goes18-star-cdn
+  title: "GOES-18 GeoColor, Pacific Northwest"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/300x300.jpg
+  kind: still
+  typicalBytes: 79442
+  loadPolicy: auto
+  larger: goes18-pnw-geocolor-600
+  animation: goes18-pnw-geocolor-mp4
+  stamp: last-modified
+- id: goes18-pnw-geocolor-600
+  sourceId: goes18-star-cdn
+  title: "GOES-18 GeoColor, Pacific Northwest, larger image"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/600x600.jpg
+  kind: still
+  typicalBytes: 235134
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-geocolor-mp4
+  sourceId: goes18-star-cdn
+  title: "GOES-18 GeoColor, Pacific Northwest, animation"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/GOES18-PNW-GEOCOLOR-600x600.mp4
+  kind: video
+  typicalBytes: 908444
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-airmass-300
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Air Mass, Pacific Northwest"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/AirMass/300x300.jpg
+  kind: still
+  typicalBytes: 66586
+  loadPolicy: auto
+  larger: goes18-pnw-airmass-600
+  animation: goes18-pnw-airmass-mp4
+  stamp: last-modified
+- id: goes18-pnw-airmass-600
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Air Mass, Pacific Northwest, larger image"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/AirMass/600x600.jpg
+  kind: still
+  typicalBytes: 188534
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-airmass-mp4
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Air Mass, Pacific Northwest, animation"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/AirMass/GOES18-PNW-AirMass-600x600.mp4
+  kind: video
+  typicalBytes: 520203
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-band-08-300
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Water Vapor (Band 08), Pacific Northwest"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/08/300x300.jpg
+  kind: still
+  typicalBytes: 62848
+  loadPolicy: auto
+  larger: goes18-pnw-band-08-600
+  animation: goes18-pnw-band-08-mp4
+  stamp: last-modified
+- id: goes18-pnw-band-08-600
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Water Vapor (Band 08), Pacific Northwest, larger image"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/08/600x600.jpg
+  kind: still
+  typicalBytes: 171823
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-band-08-mp4
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Water Vapor (Band 08), Pacific Northwest, animation"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/08/GOES18-PNW-08-600x600.mp4
+  kind: video
+  typicalBytes: 384682
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-band-09-300
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Mid-Level Water Vapor (Band 09), Pacific Northwest"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/09/300x300.jpg
+  kind: still
+  typicalBytes: 71582
+  loadPolicy: auto
+  larger: goes18-pnw-band-09-600
+  stamp: last-modified
+- id: goes18-pnw-band-09-600
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Mid-Level Water Vapor (Band 09), Pacific Northwest, larger image"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/09/600x600.jpg
+  kind: still
+  typicalBytes: 209190
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-band-10-300
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Lower-Level Water Vapor (Band 10), Pacific Northwest"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/10/300x300.jpg
+  kind: still
+  typicalBytes: 88376
+  loadPolicy: auto
+  larger: goes18-pnw-band-10-600
+  stamp: last-modified
+- id: goes18-pnw-band-10-600
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Lower-Level Water Vapor (Band 10), Pacific Northwest, larger image"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/10/600x600.jpg
+  kind: still
+  typicalBytes: 260860
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-band-13-300
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Clean Infrared (Band 13), Pacific Northwest"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/13/300x300.jpg
+  kind: still
+  typicalBytes: 60172
+  loadPolicy: auto
+  larger: goes18-pnw-band-13-600
+  animation: goes18-pnw-band-13-mp4
+  stamp: last-modified
+- id: goes18-pnw-band-13-600
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Clean Infrared (Band 13), Pacific Northwest, larger image"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/13/600x600.jpg
+  kind: still
+  typicalBytes: 172504
+  loadPolicy: tap
+  stamp: last-modified
+- id: goes18-pnw-band-13-mp4
+  sourceId: goes18-star-cdn
+  title: "GOES-18 Clean Infrared (Band 13), Pacific Northwest, animation"
+  url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/13/GOES18-PNW-13-600x600.mp4
+  kind: video
+  typicalBytes: 802834
+  loadPolicy: tap
+  stamp: last-modified
+- id: wpc-qpf-day-1
+  sourceId: wpc-images
+  title: "WPC Quantitative Precipitation Forecast, Day 1"
+  url: https://www.wpc.ncep.noaa.gov/qpf/fill_94qwbg.gif
+  kind: still
+  typicalBytes: 51408
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-qpf-day-2
+  sourceId: wpc-images
+  title: "WPC Quantitative Precipitation Forecast, Day 2"
+  url: https://www.wpc.ncep.noaa.gov/qpf/fill_98qwbg.gif
+  kind: still
+  typicalBytes: 45318
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-qpf-day-3
+  sourceId: wpc-images
+  title: "WPC Quantitative Precipitation Forecast, Day 3"
+  url: https://www.wpc.ncep.noaa.gov/qpf/fill_99qwbg.gif
+  kind: still
+  typicalBytes: 41224
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-qpf-days-1-3
+  sourceId: wpc-images
+  title: "WPC Quantitative Precipitation Forecast, Days 1 to 3"
+  url: https://www.wpc.ncep.noaa.gov/qpf/d13_fill.gif
+  kind: still
+  typicalBytes: 54412
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-qpf-days-4-5
+  sourceId: wpc-images
+  title: "WPC Quantitative Precipitation Forecast, Days 4 and 5"
+  url: https://www.wpc.ncep.noaa.gov/qpf/95ep48iwbg_fill.gif
+  kind: still
+  typicalBytes: 46310
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-qpf-days-6-7
+  sourceId: wpc-images
+  title: "WPC Quantitative Precipitation Forecast, Days 6 and 7"
+  url: https://www.wpc.ncep.noaa.gov/qpf/97ep48iwbg_fill.gif
+  kind: still
+  typicalBytes: 55747
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-qpf-7-day-total
+  sourceId: wpc-images
+  title: "WPC Quantitative Precipitation Forecast, 7-Day Total"
+  url: https://www.wpc.ncep.noaa.gov/qpf/p168i.gif
+  kind: still
+  typicalBytes: 63955
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-ero-day-1
+  sourceId: wpc-images
+  title: "WPC Excessive Rainfall Outlook, Day 1"
+  url: https://www.wpc.ncep.noaa.gov/qpf/94ewbg.gif
+  kind: still
+  typicalBytes: 34925
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-ero-day-2
+  sourceId: wpc-images
+  title: "WPC Excessive Rainfall Outlook, Day 2"
+  url: https://www.wpc.ncep.noaa.gov/qpf/98ewbg.gif
+  kind: still
+  typicalBytes: 34785
+  loadPolicy: auto
+  stamp: last-modified
+- id: wpc-ero-day-3
+  sourceId: wpc-images
+  title: "WPC Excessive Rainfall Outlook, Day 3"
+  url: https://www.wpc.ncep.noaa.gov/qpf/99ewbg.gif
+  kind: still
+  typicalBytes: 34970
+  loadPolicy: auto
+  stamp: last-modified
+- id: ridge-katx-still
+  sourceId: nws-ridge
+  title: "RIDGE KATX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KATX_0.gif
+  kind: still
+  typicalBytes: 34020
+  loadPolicy: auto
+  animation: ridge-katx-loop
+  stamp: last-modified
+- id: ridge-katx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KATX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KATX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KATX_0.gif
+  kind: loop-gif
+  typicalBytes: 212351
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kbbx-still
+  sourceId: nws-ridge
+  title: "RIDGE KBBX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KBBX_0.gif
+  kind: still
+  typicalBytes: 49121
+  loadPolicy: auto
+  animation: ridge-kbbx-loop
+  stamp: last-modified
+- id: ridge-kbbx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KBBX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KBBX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KBBX_0.gif
+  kind: loop-gif
+  typicalBytes: 445383
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kbhx-still
+  sourceId: nws-ridge
+  title: "RIDGE KBHX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KBHX_0.gif
+  kind: still
+  typicalBytes: 23236
+  loadPolicy: auto
+  animation: ridge-kbhx-loop
+  stamp: last-modified
+- id: ridge-kbhx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KBHX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KBHX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KBHX_0.gif
+  kind: loop-gif
+  typicalBytes: 199264
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kblx-still
+  sourceId: nws-ridge
+  title: "RIDGE KBLX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KBLX_0.gif
+  kind: still
+  typicalBytes: 25338
+  loadPolicy: auto
+  animation: ridge-kblx-loop
+  stamp: last-modified
+- id: ridge-kblx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KBLX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KBLX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KBLX_0.gif
+  kind: loop-gif
+  typicalBytes: 93086
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kcbx-still
+  sourceId: nws-ridge
+  title: "RIDGE KCBX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KCBX_0.gif
+  kind: still
+  typicalBytes: 26774
+  loadPolicy: auto
+  animation: ridge-kcbx-loop
+  stamp: last-modified
+- id: ridge-kcbx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KCBX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KCBX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KCBX_0.gif
+  kind: loop-gif
+  typicalBytes: 178193
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kdax-still
+  sourceId: nws-ridge
+  title: "RIDGE KDAX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KDAX_0.gif
+  kind: still
+  typicalBytes: 49507
+  loadPolicy: auto
+  animation: ridge-kdax-loop
+  stamp: last-modified
+- id: ridge-kdax-loop
+  sourceId: nws-ridge
+  title: "RIDGE KDAX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KDAX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KDAX_0.gif
+  kind: loop-gif
+  typicalBytes: 440484
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kggw-still
+  sourceId: nws-ridge
+  title: "RIDGE KGGW radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KGGW_0.gif
+  kind: still
+  typicalBytes: 19806
+  loadPolicy: auto
+  animation: ridge-kggw-loop
+  stamp: last-modified
+- id: ridge-kggw-loop
+  sourceId: nws-ridge
+  title: "RIDGE KGGW radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KGGW_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KGGW_0.gif
+  kind: loop-gif
+  typicalBytes: 134598
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-klgx-still
+  sourceId: nws-ridge
+  title: "RIDGE KLGX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KLGX_0.gif
+  kind: still
+  typicalBytes: 34768
+  loadPolicy: auto
+  animation: ridge-klgx-loop
+  stamp: last-modified
+- id: ridge-klgx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KLGX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KLGX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KLGX_0.gif
+  kind: loop-gif
+  typicalBytes: 157402
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-klrx-still
+  sourceId: nws-ridge
+  title: "RIDGE KLRX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KLRX_0.gif
+  kind: still
+  typicalBytes: 18667
+  loadPolicy: auto
+  animation: ridge-klrx-loop
+  stamp: last-modified
+- id: ridge-klrx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KLRX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KLRX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KLRX_0.gif
+  kind: loop-gif
+  typicalBytes: 116976
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kmax-still
+  sourceId: nws-ridge
+  title: "RIDGE KMAX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KMAX_0.gif
+  kind: still
+  typicalBytes: 31833
+  loadPolicy: auto
+  animation: ridge-kmax-loop
+  stamp: last-modified
+- id: ridge-kmax-loop
+  sourceId: nws-ridge
+  title: "RIDGE KMAX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KMAX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KMAX_0.gif
+  kind: loop-gif
+  typicalBytes: 278494
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kmsx-still
+  sourceId: nws-ridge
+  title: "RIDGE KMSX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KMSX_0.gif
+  kind: still
+  typicalBytes: 24298
+  loadPolicy: auto
+  animation: ridge-kmsx-loop
+  stamp: last-modified
+- id: ridge-kmsx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KMSX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KMSX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KMSX_0.gif
+  kind: loop-gif
+  typicalBytes: 107161
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kmtx-still
+  sourceId: nws-ridge
+  title: "RIDGE KMTX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KMTX_0.gif
+  kind: still
+  typicalBytes: 31149
+  loadPolicy: auto
+  animation: ridge-kmtx-loop
+  stamp: last-modified
+- id: ridge-kmtx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KMTX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KMTX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KMTX_0.gif
+  kind: loop-gif
+  typicalBytes: 168319
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kmux-still
+  sourceId: nws-ridge
+  title: "RIDGE KMUX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KMUX_0.gif
+  kind: still
+  typicalBytes: 31904
+  loadPolicy: auto
+  animation: ridge-kmux-loop
+  stamp: last-modified
+- id: ridge-kmux-loop
+  sourceId: nws-ridge
+  title: "RIDGE KMUX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KMUX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KMUX_0.gif
+  kind: loop-gif
+  typicalBytes: 283631
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kotx-still
+  sourceId: nws-ridge
+  title: "RIDGE KOTX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KOTX_0.gif
+  kind: still
+  typicalBytes: 26938
+  loadPolicy: auto
+  animation: ridge-kotx-loop
+  stamp: last-modified
+- id: ridge-kotx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KOTX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KOTX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KOTX_0.gif
+  kind: loop-gif
+  typicalBytes: 188267
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kpdt-still
+  sourceId: nws-ridge
+  title: "RIDGE KPDT radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KPDT_0.gif
+  kind: still
+  typicalBytes: 27392
+  loadPolicy: auto
+  animation: ridge-kpdt-loop
+  stamp: last-modified
+- id: ridge-kpdt-loop
+  sourceId: nws-ridge
+  title: "RIDGE KPDT radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KPDT_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KPDT_0.gif
+  kind: loop-gif
+  typicalBytes: 170319
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-krgx-still
+  sourceId: nws-ridge
+  title: "RIDGE KRGX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KRGX_0.gif
+  kind: still
+  typicalBytes: 34908
+  loadPolicy: auto
+  animation: ridge-krgx-loop
+  stamp: last-modified
+- id: ridge-krgx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KRGX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KRGX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KRGX_0.gif
+  kind: loop-gif
+  typicalBytes: 302964
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-kriw-still
+  sourceId: nws-ridge
+  title: "RIDGE KRIW radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KRIW_0.gif
+  kind: still
+  typicalBytes: 24309
+  loadPolicy: auto
+  animation: ridge-kriw-loop
+  stamp: last-modified
+- id: ridge-kriw-loop
+  sourceId: nws-ridge
+  title: "RIDGE KRIW radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KRIW_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KRIW_0.gif
+  kind: loop-gif
+  typicalBytes: 107475
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-krtx-still
+  sourceId: nws-ridge
+  title: "RIDGE KRTX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KRTX_0.gif
+  kind: still
+  typicalBytes: 32720
+  loadPolicy: auto
+  animation: ridge-krtx-loop
+  stamp: last-modified
+- id: ridge-krtx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KRTX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KRTX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KRTX_0.gif
+  kind: loop-gif
+  typicalBytes: 236667
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-ksfx-still
+  sourceId: nws-ridge
+  title: "RIDGE KSFX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KSFX_0.gif
+  kind: still
+  typicalBytes: 32652
+  loadPolicy: auto
+  animation: ridge-ksfx-loop
+  stamp: last-modified
+- id: ridge-ksfx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KSFX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KSFX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KSFX_0.gif
+  kind: loop-gif
+  typicalBytes: 175491
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-ktfx-still
+  sourceId: nws-ridge
+  title: "RIDGE KTFX radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/KTFX_0.gif
+  kind: still
+  typicalBytes: 23761
+  loadPolicy: auto
+  animation: ridge-ktfx-loop
+  stamp: last-modified
+- id: ridge-ktfx-loop
+  sourceId: nws-ridge
+  title: "RIDGE KTFX radar, loop"
+  url: https://radar.weather.gov/ridge/standard/KTFX_loop.gif
+  still: https://radar.weather.gov/ridge/standard/KTFX_0.gif
+  kind: loop-gif
+  typicalBytes: 125520
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-pacg-still
+  sourceId: nws-ridge
+  title: "RIDGE PACG radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/PACG_0.gif
+  kind: still
+  typicalBytes: 43791
+  loadPolicy: auto
+  animation: ridge-pacg-loop
+  stamp: last-modified
+- id: ridge-pacg-loop
+  sourceId: nws-ridge
+  title: "RIDGE PACG radar, loop"
+  url: https://radar.weather.gov/ridge/standard/PACG_loop.gif
+  still: https://radar.weather.gov/ridge/standard/PACG_0.gif
+  kind: loop-gif
+  typicalBytes: 420123
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-paih-still
+  sourceId: nws-ridge
+  title: "RIDGE PAIH radar, still frame"
+  url: https://radar.weather.gov/ridge/standard/PAIH_0.gif
+  kind: still
+  typicalBytes: 62590
+  loadPolicy: auto
+  animation: ridge-paih-loop
+  stamp: last-modified
+- id: ridge-paih-loop
+  sourceId: nws-ridge
+  title: "RIDGE PAIH radar, loop"
+  url: https://radar.weather.gov/ridge/standard/PAIH_loop.gif
+  still: https://radar.weather.gov/ridge/standard/PAIH_0.gif
+  kind: loop-gif
+  typicalBytes: 642238
+  loadPolicy: tap
+  stamp: last-modified
+- id: ridge-pacnorthwest-still
+  sourceId: nws-ridge
+  title: "RIDGE Pacific Northwest regional mosaic, still frame"
+  url: https://radar.weather.gov/ridge/standard/PACNORTHWEST_0.gif
+  kind: still
+  typicalBytes: 40228
+  loadPolicy: tap
+  animation: ridge-pacnorthwest-loop
+  stamp: last-modified
+- id: ridge-pacnorthwest-loop
+  sourceId: nws-ridge
+  title: "RIDGE Pacific Northwest regional mosaic, loop"
+  url: https://radar.weather.gov/ridge/standard/PACNORTHWEST_loop.gif
+  still: https://radar.weather.gov/ridge/standard/PACNORTHWEST_0.gif
+  kind: loop-gif
+  typicalBytes: 355576
+  loadPolicy: tap
+  stamp: last-modified
+- id: ssec-mtpw2-epac
+  sourceId: ssec-mtpw2
+  title: "MIMIC-TPW2 Total Precipitable Water, Eastern Pacific, animation"
+  url: https://tropic.ssec.wisc.edu/real-time/mtpw2/webAnims/tpw_nrl_colors/epac/mimictpw_epac_latest.gif
+  kind: loop-gif
+  typicalBytes: 8161181
+  loadPolicy: tap
+  stamp: last-modified
+- id: cw3e-ivt-map-gfs-25-uswc
+  sourceId: cw3e-images
+  title: "CW3E Integrated Vapor Transport, GFS 25, USWC"
+  url: https://cw3e.ucsd.edu/images/ivt_map/v1/GFS_25/USWC/
+  kind: still
+  typicalBytes: 150000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-ivt-map-gfs-25-nepac
+  sourceId: cw3e-images
+  title: "CW3E Integrated Vapor Transport, GFS 25, NEPac"
+  url: https://cw3e.ucsd.edu/images/ivt_map/v1/GFS_25/NEPac/
+  kind: still
+  typicalBytes: 150000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-ivt-map-gfs-25-intwest
+  sourceId: cw3e-images
+  title: "CW3E Integrated Vapor Transport, GFS 25, IntWest"
+  url: https://cw3e.ucsd.edu/images/ivt_map/v1/GFS_25/IntWest/
+  kind: still
+  typicalBytes: 150000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-ivt-map-ecmwf-hres-uswc
+  sourceId: cw3e-images
+  title: "CW3E Integrated Vapor Transport, ECMWF HRes, USWC"
+  url: https://cw3e.ucsd.edu/images/ivt_map/v1/ECMWF_HRes/USWC/
+  kind: still
+  typicalBytes: 150000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-ivt-map-ecmwf-hres-nepac
+  sourceId: cw3e-images
+  title: "CW3E Integrated Vapor Transport, ECMWF HRes, NEPac"
+  url: https://cw3e.ucsd.edu/images/ivt_map/v1/ECMWF_HRes/NEPac/
+  kind: still
+  typicalBytes: 150000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-ivt-map-ecmwf-hres-intwest
+  sourceId: cw3e-images
+  title: "CW3E Integrated Vapor Transport, ECMWF HRes, IntWest"
+  url: https://cw3e.ucsd.edu/images/ivt_map/v1/ECMWF_HRes/IntWest/
+  kind: still
+  typicalBytes: 150000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-iwv-map-gfs-25-uswc
+  sourceId: cw3e-images
+  title: "CW3E Integrated Water Vapor, GFS 25, USWC"
+  url: https://cw3e.ucsd.edu/images/iwv_map/v1/GFS_25/USWC/
+  kind: still
+  typicalBytes: 250000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-iwv-map-gfs-25-nepac
+  sourceId: cw3e-images
+  title: "CW3E Integrated Water Vapor, GFS 25, NEPac"
+  url: https://cw3e.ucsd.edu/images/iwv_map/v1/GFS_25/NEPac/
+  kind: still
+  typicalBytes: 250000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-iwv-map-gfs-25-intwest
+  sourceId: cw3e-images
+  title: "CW3E Integrated Water Vapor, GFS 25, IntWest"
+  url: https://cw3e.ucsd.edu/images/iwv_map/v1/GFS_25/IntWest/
+  kind: still
+  typicalBytes: 250000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-iwv-map-ecmwf-hres-uswc
+  sourceId: cw3e-images
+  title: "CW3E Integrated Water Vapor, ECMWF HRes, USWC"
+  url: https://cw3e.ucsd.edu/images/iwv_map/v1/ECMWF_HRes/USWC/
+  kind: still
+  typicalBytes: 250000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-iwv-map-ecmwf-hres-nepac
+  sourceId: cw3e-images
+  title: "CW3E Integrated Water Vapor, ECMWF HRes, NEPac"
+  url: https://cw3e.ucsd.edu/images/iwv_map/v1/ECMWF_HRes/NEPac/
+  kind: still
+  typicalBytes: 250000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-iwv-map-ecmwf-hres-intwest
+  sourceId: cw3e-images
+  title: "CW3E Integrated Water Vapor, ECMWF HRes, IntWest"
+  url: https://cw3e.ucsd.edu/images/iwv_map/v1/ECMWF_HRes/IntWest/
+  kind: still
+  typicalBytes: 250000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-ivt-map-gfs-25-npac
+  sourceId: cw3e-images
+  title: "CW3E Integrated Vapor Transport, GFS 25, NPac"
+  url: https://cw3e.ucsd.edu/images/ivt_map/v1/GFS_25/NPac/
+  kind: still
+  typicalBytes: 250000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-landfalltool-ivt250-probability-gefs-50-coast
+  sourceId: cw3e-images
+  title: "CW3E Landfall Tool IVT 250 Probability, coast"
+  url: https://cw3e.ucsd.edu/images/landfalltool_ivt250_probability/v1/GEFS_50/coast/
+  kind: still
+  typicalBytes: 130000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-landfalltool-ivt250-probability-gefs-50-foothills
+  sourceId: cw3e-images
+  title: "CW3E Landfall Tool IVT 250 Probability, foothills"
+  url: https://cw3e.ucsd.edu/images/landfalltool_ivt250_probability/v1/GEFS_50/foothills/
+  kind: still
+  typicalBytes: 130000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-landfalltool-ivt250-probability-gefs-50-inland
+  sourceId: cw3e-images
+  title: "CW3E Landfall Tool IVT 250 Probability, inland"
+  url: https://cw3e.ucsd.edu/images/landfalltool_ivt250_probability/v1/GEFS_50/inland/
+  kind: still
+  typicalBytes: 130000
+  loadPolicy: tap
+  stamp: cycle
+- id: cw3e-arscale-map-mean-gefs-50-coast
+  sourceId: cw3e-images
+  title: "CW3E Atmospheric River Scale, ensemble mean, coast"
+  url: https://cw3e.ucsd.edu/images/arscale_map_mean/v1/GEFS_50/coast/
+  kind: still
+  typicalBytes: 500000
+  loadPolicy: tap
+  stamp: cycle

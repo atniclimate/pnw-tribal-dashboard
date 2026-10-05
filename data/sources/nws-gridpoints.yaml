@@ -26,8 +26,8 @@ access:
   retries: 2
   priority: 1
 freshness:
-  freshForMs: 3600000
-  usableForMs: 21600000
+  freshForMs: 43200000
+  usableForMs: 172800000
 health:
   probe: https://api.weather.gov/gridpoints/SEW/124,67
   expectStatus: 200
@@ -37,4 +37,4 @@ health:
   maxBytes: null
 usedBy: [dashboard, forecasts]
 verifiedAt: 2026-10-05
-notes: Source of the quantitative precipitation forecast bars (quantitativePrecipitation series) through the forecastGridData URL returned by nws-points. No numeric precipitation bars are drawn for British Columbia from this source.
+notes: Freshness corrected 10/05/2026 because the as-of time is the office issuance time (updateTime), which was 12 hours before the capture, so an hour or six would mark every forecast stale. Source of the quantitative precipitation forecast bars (quantitativePrecipitation series) through the forecastGridData URL returned by nws-points. No numeric precipitation bars are drawn for British Columbia from this source.

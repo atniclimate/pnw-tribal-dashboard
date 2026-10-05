@@ -3,7 +3,7 @@ title: MIMIC-TPW2 Total Precipitable Water Animations
 owner: Space Science and Engineering Center (SSEC), University of Wisconsin-Madison, Cooperative Institute for Meteorological Satellite Studies
 url: https://tropic.ssec.wisc.edu/real-time/mtpw2/
 urlTemplate: https://tropic.ssec.wisc.edu/real-time/mtpw2/webAnims/tpw_nrl_colors/{region}/mimictpw_{region}_latest.gif
-humanUrl: https://tropic.ssec.wisc.edu/real-time/mtpw2/home.php
+humanUrl: https://tropic.ssec.wisc.edu/real-time/mtpw2/
 license: Terms pending maintainer decision (Q11); credit CIMSS, University of Wisconsin-Madison.
 attribution: CIMSS, University of Wisconsin-Madison
 cadence: Latest animation regenerated about hourly.
@@ -35,4 +35,4 @@ health:
   maxBytes: null
 usedBy: [forecasts]
 verifiedAt: 2026-10-05
-notes: Pending maintainer decision Q11. Replaces the frozen v1 path (mimic-tpw/epac/anim/latest72hrs.gif, last modified 02/18/2019). The Eastern Pacific file is about 8.2 MB, so it loads only on tap behind a size-labeled button. The namer and alaska regions follow the same path pattern in the blueprint but were not probed here.
+notes: Pending maintainer decision Q11. Replaces the frozen v1 path (mimic-tpw/epac/anim/latest72hrs.gif, last modified 02/18/2019). The Eastern Pacific file is about 8.2 MB, so it loads only on tap behind a size-labeled button. The namer (about 10.3 MB) and alaska (about 9.0 MB) files answered HTTP 200 at the same path pattern on 10/05/2026; the earlier home.php link returns 404, so the human link is the real-time/mtpw2/ index.

@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-ridge",
+  "label": "head-probe",
+  "file": "2026-10-05-head-probe.json",
+  "url": "https://radar.weather.gov/ridge/standard/KATX_0.gif",
+  "method": "HEAD",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)"
+  },
+  "capturedAt": "2026-10-05T09:51:46.403Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 11081,
+  "sha256": "4fc7b19f07aa3c1447343ad8d499b9ccb3e382e1b7923282e14639ec2d432c66",
+  "covers": [
+    "imagery-stamps",
+    "ridge-sites"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Last-Modified and size for every nws-ridge catalog product. Every entry was read with an HTTP HEAD request on 2026-10-05T09:51:46.403Z."
+}

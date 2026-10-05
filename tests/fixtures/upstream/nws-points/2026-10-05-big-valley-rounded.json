@@ -1,0 +1,112 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "s": "https://schema.org/",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "unit": "http://codes.wmo.int/common/unit/",
+            "@vocab": "https://api.weather.gov/ontology#",
+            "geometry": {
+                "@id": "s:GeoCoordinates",
+                "@type": "geo:wktLiteral"
+            },
+            "city": "s:addressLocality",
+            "state": "s:addressRegion",
+            "distance": {
+                "@id": "s:Distance",
+                "@type": "s:QuantitativeValue"
+            },
+            "bearing": {
+                "@type": "s:QuantitativeValue"
+            },
+            "value": {
+                "@id": "s:value"
+            },
+            "unitCode": {
+                "@id": "s:unitCode",
+                "@type": "@id"
+            },
+            "forecastOffice": {
+                "@type": "@id"
+            },
+            "forecastGridData": {
+                "@type": "@id"
+            },
+            "publicZone": {
+                "@type": "@id"
+            },
+            "county": {
+                "@type": "@id"
+            }
+        }
+    ],
+    "id": "https://api.weather.gov/points/39.022,-122.887",
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -122.887,
+            39.022
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/points/39.022,-122.887",
+        "@type": "wx:Point",
+        "cwa": "EKA",
+        "type": "land",
+        "forecastOffice": "https://api.weather.gov/offices/EKA",
+        "gridId": "EKA",
+        "gridX": 89,
+        "gridY": 20,
+        "forecast": "https://api.weather.gov/gridpoints/EKA/89,20/forecast",
+        "forecastHourly": "https://api.weather.gov/gridpoints/EKA/89,20/forecast/hourly",
+        "forecastGridData": "https://api.weather.gov/gridpoints/EKA/89,20",
+        "observationStations": "https://api.weather.gov/gridpoints/EKA/89,20/stations",
+        "relativeLocation": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.9226333,
+                    39.0383327
+                ]
+            },
+            "properties": {
+                "city": "Lakeport",
+                "state": "CA",
+                "distance": {
+                    "unitCode": "wmoUnit:m",
+                    "value": 2135.328455739
+                },
+                "bearing": {
+                    "unitCode": "wmoUnit:degree_(angle)",
+                    "value": 120
+                }
+            }
+        },
+        "forecastZone": "https://api.weather.gov/zones/forecast/CAZ118",
+        "county": "https://api.weather.gov/zones/county/CAC033",
+        "fireWeatherZone": "https://api.weather.gov/zones/fire/CAZ421",
+        "timeZone": "America/Los_Angeles",
+        "radarStation": "KDAX",
+        "astronomicalData": {
+            "sunrise": "2026-10-05T07:11:38-07:00",
+            "sunset": "2026-10-05T18:48:03-07:00",
+            "transit": "2026-10-05T12:59:51-07:00",
+            "civilTwilightBegin": "2026-10-05T06:45:04-07:00",
+            "civilTwilightEnd": "2026-10-05T19:14:37-07:00",
+            "nauticalTwilightBegin": "2026-10-05T06:14:10-07:00",
+            "nauticalTwilightEnd": "2026-10-05T19:45:32-07:00",
+            "astronomicalTwilightBegin": "2026-10-05T05:43:06-07:00",
+            "astronomicalTwilightEnd": "2026-10-05T20:16:35-07:00"
+        },
+        "nwr": {
+            "transmitter": "WNG720",
+            "sameCode": "006033",
+            "areaBroadcast": "https://api.weather.gov/radio/WNG720/broadcast",
+            "pointBroadcast": "https://api.weather.gov/points/39.022,-122.887/radio"
+        }
+    }
+}

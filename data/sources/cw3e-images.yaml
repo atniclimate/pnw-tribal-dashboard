@@ -24,8 +24,8 @@ access:
   retries: 1
   priority: 3
 freshness:
-  freshForMs: 21600000
-  usableForMs: 86400000
+  freshForMs: 50400000
+  usableForMs: 129600000
 usedBy: [forecasts]
 verifiedAt: 2026-10-05
-notes: Pending maintainer decision Q11 (hotlinking with credit, or contact CW3E first); link-out is the fallback. CW3E retired every current or latest image URL, so the newest complete cycle is found by the ar-products snapshot task, with a browser fallback that steps back six hours. Products include ivt_map and iwv_map (USWC, NEPac, NPac, IntWest), landfalltool, and arscale_map. Each image is 150 to 320 KB and loads on tap. Every image shows its model run time.
+notes: Freshness corrected 10/05/2026 because the as-of time is the model run, and a run is published two to seven hours after its time, so the newest run is normally up to about thirteen hours old. Pending maintainer decision Q11 (hotlinking with credit, or contact CW3E first); link-out is the fallback. CW3E retired every current or latest image URL, so the newest complete cycle is found by the ar-products snapshot task, with a browser fallback that steps back six hours. Products include ivt_map and iwv_map (USWC, NEPac, NPac, IntWest), landfalltool, and arscale_map. Each image is 150 to 320 KB and loads on tap. Every image shows its model run time.
