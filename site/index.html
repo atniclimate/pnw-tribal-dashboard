@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self'; connect-src 'self' https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://www.fema.gov; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="noindex">
@@ -23,7 +23,21 @@
   <link rel="modulepreload" href="./static/js/ui/chrome.js">
   <link rel="modulepreload" href="./static/js/core/embed.js">
   <link rel="modulepreload" href="./static/js/ui/panel.js">
+  <link rel="modulepreload" href="./static/js/core/dom.js">
+  <link rel="modulepreload" href="./static/js/core/poller.js">
+  <link rel="modulepreload" href="./static/js/core/provenance.js">
+  <link rel="modulepreload" href="./static/js/core/time.js">
+  <link rel="modulepreload" href="./static/js/core/sources.js">
+  <link rel="modulepreload" href="./static/js/config/app.js">
+  <link rel="modulepreload" href="./static/js/core/net.js">
+  <link rel="modulepreload" href="./static/js/config/pages.js">
+  <link rel="modulepreload" href="./static/js/core/priority.js">
+  <link rel="modulepreload" href="./static/js/core/lastgood.js">
+  <link rel="modulepreload" href="./static/js/core/storage.js">
+  <link rel="modulepreload" href="./static/js/core/status.js">
   <link rel="modulepreload" href="./static/js/alerts/service.js">
+  <link rel="modulepreload" href="./static/js/alerts/model.js">
+  <link rel="modulepreload" href="./static/js/alerts/lifecycle.js">
   <link rel="modulepreload" href="./static/js/ui/alert-banner.js">
   <!-- modulepreload:end -->
   <script type="module" src="./static/js/pages/dashboard.js"></script>
