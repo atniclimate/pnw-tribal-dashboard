@@ -32,27 +32,59 @@
     [
       41.75856,
       -124.1579
+    ],
+    [
+      41.7621,
+      -124.1487
     ]
   ],
   "bbox": [
-    -124.27832,
-    41.66873,
-    -124.03748,
-    41.84839
+    -124.16147,
+    41.73404,
+    -124.1446,
+    41.76916
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-elk-valley-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0126",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      41.7586,
+      -124.1579
+    ],
+    "forecastZones": [
+      "forecast:CAZ101"
+    ],
+    "countyZones": [
+      "county:CAC015"
+    ],
+    "fireZones": [
+      "fire:CAZ401"
+    ],
+    "marineZones": [
+      "marine:PZZ450",
+      "marine:PZZ356"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
   "gauges": [],

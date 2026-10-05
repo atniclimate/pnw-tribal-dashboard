@@ -30,30 +30,207 @@
     [
       52.94373,
       -123.58355
+    ],
+    [
+      52.95424,
+      -123.58355
+    ],
+    [
+      53.21753,
+      -123.50511
+    ],
+    [
+      53.25738,
+      -123.55251
+    ],
+    [
+      53.18486,
+      -123.52247
+    ],
+    [
+      53.19197,
+      -123.52537
+    ],
+    [
+      53.30222,
+      -123.16469
+    ],
+    [
+      53.01391,
+      -123.77885
+    ],
+    [
+      52.9893,
+      -123.84341
     ]
   ],
   "bbox": [
-    -123.73262,
-    52.8539,
-    -123.43448,
-    53.03356
+    -123.84947,
+    52.90097,
+    -122.88027,
+    53.75634
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-720.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "00040",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08294",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08295",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08296",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08297",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08298",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08299",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08300",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08301",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08302",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08303",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08304",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08305",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08306",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08307",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08308",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08309",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08310",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08311",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08312",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09972",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09979",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-64",
+    "citypageName": "Quesnel",
+    "distanceKm": 72.7,
+    "forecastZones": [
+      "086200",
+      "087410",
+      "087420"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08KF001",
+    "wsc:08KG001"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

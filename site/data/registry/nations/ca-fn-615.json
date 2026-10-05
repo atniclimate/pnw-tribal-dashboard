@@ -30,30 +30,132 @@
     [
       53.94339,
       -124.11403
+    ],
+    [
+      53.94255,
+      -124.13318
+    ],
+    [
+      53.92419,
+      -124.18238
+    ],
+    [
+      53.87525,
+      -124.19869
+    ],
+    [
+      53.90399,
+      -124.08992
+    ],
+    [
+      53.8789,
+      -124.2238
+    ],
+    [
+      53.92105,
+      -124.2237
+    ],
+    [
+      54.02104,
+      -124.07622
+    ],
+    [
+      53.93381,
+      -124.25674
     ]
   ],
   "bbox": [
-    -124.26665,
-    53.85356,
-    -123.96141,
-    54.03322
+    -124.28406,
+    53.54334,
+    -123.96279,
+    54.02728
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-615.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07528",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07529",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07530",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07531",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07532",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07533",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07534",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07535",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07536",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07537",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-44",
+    "citypageName": "Vanderhoof",
+    "distanceKm": 11.3,
+    "forecastZones": [
+      "087410"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08JC001"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

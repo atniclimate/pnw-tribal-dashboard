@@ -32,27 +32,56 @@
     [
       40.42656,
       -120.6567
+    ],
+    [
+      40.4436,
+      -120.64735
     ]
   ],
   "bbox": [
-    -120.77471,
-    40.33673,
-    -120.53869,
-    40.51639
+    -120.66141,
+    40.13743,
+    -120.12933,
+    40.45294
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-susanville-indian-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0186",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "REV"
+    ],
+    "point": [
+      40.4266,
+      -120.6567
+    ],
+    "forecastZones": [
+      "forecast:CAZ071"
+    ],
+    "countyZones": [
+      "county:CAC035"
+    ],
+    "fireZones": [
+      "fire:CAZ271"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KRGX",
+    "ridgeLoop": "KRGX",
     "eccc": null
   },
   "gauges": [],

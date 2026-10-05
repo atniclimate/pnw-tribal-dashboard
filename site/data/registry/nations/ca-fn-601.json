@@ -30,30 +30,95 @@
     [
       49.83982,
       -119.60531
+    ],
+    [
+      49.84828,
+      -119.32526
+    ],
+    [
+      49.83937,
+      -119.60056
+    ],
+    [
+      49.82723,
+      -119.25799
+    ],
+    [
+      49.88746,
+      -119.53593
+    ],
+    [
+      49.84514,
+      -119.46761
     ]
   ],
   "bbox": [
-    -119.7446,
-    49.74999,
-    -119.46602,
-    49.92965
+    -119.62553,
+    49.81997,
+    -119.23543,
+    49.895
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-601.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07419",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07420",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07421",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09382",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09383",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-48",
+    "citypageName": "Kelowna",
+    "distanceKm": 10,
+    "forecastZones": [
+      "083500"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NM083",
+    "wsc:08NM116",
+    "wsc:08NM165",
+    "wsc:08NM172",
+    "wsc:08NN015",
+    "wsc:08NM173"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

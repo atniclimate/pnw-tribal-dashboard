@@ -30,24 +30,167 @@
     [
       53.08735,
       -124.49016
+    ],
+    [
+      53.0915,
+      -124.49219
+    ],
+    [
+      53.11912,
+      -124.385
+    ],
+    [
+      53.07997,
+      -124.31445
+    ],
+    [
+      53.07998,
+      -124.34147
+    ],
+    [
+      53.31008,
+      -124.71927
+    ],
+    [
+      53.14833,
+      -124.34505
+    ],
+    [
+      53.06912,
+      -124.30545
+    ],
+    [
+      53.08805,
+      -124.66276
     ]
   ],
   "bbox": [
-    -124.63973,
-    52.99752,
-    -124.34059,
-    53.17718
+    -125.08026,
+    52.98316,
+    -124.29506,
+    53.31365
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-721.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08313",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08314",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08315",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08316",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08317",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08318",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08319",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08320",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08321",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08322",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08323",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08324",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08325",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08326",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08327",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08328",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08329",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-42",
+    "citypageName": "Puntzi Mountain",
+    "distanceKm": 53.3,
+    "forecastZones": [
+      "087100",
+      "087410"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,

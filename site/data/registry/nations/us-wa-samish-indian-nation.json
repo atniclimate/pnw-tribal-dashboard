@@ -48,14 +48,37 @@
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.4983,
+      -122.6132
+    ],
+    "forecastZones": [
+      "forecast:WAZ311"
+    ],
+    "countyZones": [
+      "county:WAC057"
+    ],
+    "fireZones": [
+      "fire:WAZ653"
+    ],
+    "marineZones": [
+      "marine:PZZ133"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SMRW1",
+    "nwps:MVEW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

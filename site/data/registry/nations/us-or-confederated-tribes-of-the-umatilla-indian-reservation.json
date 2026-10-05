@@ -33,37 +33,80 @@
     [
       45.66537,
       -118.6861
+    ],
+    [
+      45.58618,
+      -118.56977
     ]
   ],
   "bbox": [
-    -118.81464,
-    45.57554,
-    -118.55756,
-    45.7552
+    -119.24489,
+    45.34542,
+    -118.30533,
+    45.93029
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-confederated-tribes-of-the-umatilla-indian-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0091",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "PDT"
+    ],
+    "point": [
+      45.6654,
+      -118.6861
+    ],
+    "forecastZones": [
+      "forecast:ORZ507",
+      "forecast:ORZ502",
+      "forecast:ORZ503"
+    ],
+    "countyZones": [
+      "county:ORC059"
+    ],
+    "fireZones": [
+      "fire:ORZ692",
+      "fire:ORZ691"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KPDT",
+    "ridgeLoop": "KPDT",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:PDTO3",
+    "nwps:MCKO3",
+    "nwps:MYKO3",
+    "nwps:GIBO3",
+    "nwps:PDUO3",
+    "nwps:MCGO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0091"
+    ],
+    "censusAiannhce": [
+      "4405"
+    ],
+    "censusGeoid": "4405R",
     "biaTldObjectId": 348,
     "biaAnvObjectId": null,
     "iscBandNumber": null

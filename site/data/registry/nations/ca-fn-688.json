@@ -30,30 +30,108 @@
     [
       50.67886,
       -120.29422
+    ],
+    [
+      50.70593,
+      -120.22268
+    ],
+    [
+      51.01846,
+      -120.24863
+    ],
+    [
+      51.05404,
+      -121.15314
+    ],
+    [
+      50.84721,
+      -120.0996
+    ],
+    [
+      50.48266,
+      -120.26003
+    ],
+    [
+      50.47195,
+      -120.26185
     ]
   ],
   "bbox": [
-    -120.43598,
-    50.58903,
-    -120.15246,
-    50.76869
+    -121.16057,
+    50.47005,
+    -120.05428,
+    51.05604
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-688.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07172",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07173",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07174",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07175",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07176",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07177",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-45",
+    "citypageName": "Kamloops",
+    "distanceKm": 3.9,
+    "forecastZones": [
+      "083200",
+      "085100",
+      "086300",
+      "083121-083300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LB064",
+    "wsc:08LF023",
+    "wsc:08LB024",
+    "wsc:08LB072",
+    "wsc:08LB020",
+    "wsc:08LF027"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

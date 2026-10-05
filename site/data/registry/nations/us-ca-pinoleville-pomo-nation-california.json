@@ -33,27 +33,56 @@
     [
       39.1801,
       -123.2201
+    ],
+    [
+      39.18026,
+      -123.21617
     ]
   ],
   "bbox": [
-    -123.33599,
-    39.09027,
-    -123.10421,
-    39.26993
+    -123.22503,
+    39.17691,
+    -123.21004,
+    39.18298
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-pinoleville-pomo-nation-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0161",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.1801,
+      -123.2201
+    ],
+    "forecastZones": [
+      "forecast:CAZ113"
+    ],
+    "countyZones": [
+      "county:CAC045"
+    ],
+    "fireZones": [
+      "fire:CAZ416"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

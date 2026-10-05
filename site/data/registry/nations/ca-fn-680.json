@@ -30,30 +30,135 @@
     [
       54.60835,
       -128.41069
+    ],
+    [
+      54.61108,
+      -128.4174
+    ],
+    [
+      54.56226,
+      -128.48134
+    ],
+    [
+      54.675,
+      -128.34613
+    ],
+    [
+      54.54341,
+      -128.48469
+    ],
+    [
+      54.66471,
+      -128.35885
+    ],
+    [
+      54.82974,
+      -128.31404
+    ],
+    [
+      54.75078,
+      -128.26129
+    ],
+    [
+      54.49273,
+      -128.58459
     ]
   ],
   "bbox": [
-    -128.5658,
-    54.51852,
-    -128.25558,
-    54.69818
+    -129.97133,
+    54.15488,
+    -128.25649,
+    54.83233
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-680.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07637",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07638",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07639",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07640",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07641",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07642",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07643",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07644",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07645",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07649",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-80",
+    "citypageName": "Terrace",
+    "distanceKm": 15.7,
+    "forecastZones": [
+      "089200",
+      "089100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08EF001",
+    "wsc:08EF005",
+    "wsc:08EG019"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

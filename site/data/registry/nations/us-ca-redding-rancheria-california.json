@@ -32,27 +32,56 @@
     [
       40.5069,
       -122.3858
+    ],
+    [
+      40.50671,
+      -122.38416
     ]
   ],
   "bbox": [
-    -122.50395,
-    40.41707,
-    -122.26765,
-    40.59673
+    -122.38929,
+    40.50466,
+    -122.37915,
+    40.50777
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-redding-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0165",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "STO"
+    ],
+    "point": [
+      40.5069,
+      -122.3858
+    ],
+    "forecastZones": [
+      "forecast:CAZ124"
+    ],
+    "countyZones": [
+      "county:CAC089"
+    ],
+    "fireZones": [
+      "fire:CAZ124"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

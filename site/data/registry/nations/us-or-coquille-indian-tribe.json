@@ -32,35 +32,74 @@
     [
       43.37794,
       -124.2152
+    ],
+    [
+      42.99862,
+      -124.03593
     ]
   ],
   "bbox": [
-    -124.33879,
-    43.28811,
-    -124.09161,
-    43.46777
+    -124.37781,
+    42.92654,
+    -123.88057,
+    43.39545
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-coquille-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0058",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR"
+    ],
+    "point": [
+      43.3779,
+      -124.2152
+    ],
+    "forecastZones": [
+      "forecast:ORZ021"
+    ],
+    "countyZones": [
+      "county:ORC011"
+    ],
+    "fireZones": [
+      "fire:ORZ615",
+      "fire:ORZ616"
+    ],
+    "marineZones": [
+      "marine:PZZ350"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:MYNO3",
+    "nwps:MYPO3",
+    "nwps:POWO3",
+    "nwps:COQO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
+    "biaLarIds": [
+      "LAR0058"
+    ],
     "censusAiannhce": [
       "0775"
     ],

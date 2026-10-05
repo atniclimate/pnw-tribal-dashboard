@@ -30,30 +30,52 @@
     [
       49.25406,
       -124.12802
+    ],
+    [
+      49.25006,
+      -124.12162
     ]
   ],
   "bbox": [
-    -124.26565,
-    49.16423,
-    -123.99039,
-    49.34389
+    -124.13206,
+    49.24867,
+    -124.1127,
+    49.25479
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-649.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06821",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-20",
+    "citypageName": "Nanaimo",
+    "distanceKm": 16.5,
+    "forecastZones": [
+      "081300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HB002",
+    "wsc:08HB032",
+    "wsc:08HB092"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

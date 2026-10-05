@@ -30,30 +30,72 @@
     [
       50.6743,
       -121.93406
+    ],
+    [
+      50.6511,
+      -121.91295
+    ],
+    [
+      50.64976,
+      -121.93883
+    ],
+    [
+      50.675,
+      -121.93802
     ]
   ],
   "bbox": [
-    -122.07581,
-    50.58447,
-    -121.79231,
-    50.76413
+    -121.94739,
+    50.64355,
+    -121.89382,
+    50.68152
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-591.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08117",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08118",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08119",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-28",
+    "citypageName": "Lillooet",
+    "distanceKm": 1.8,
+    "forecastZones": [
+      "083110-083122"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08ME002",
+    "wsc:08ME003",
+    "wsc:08MF040"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

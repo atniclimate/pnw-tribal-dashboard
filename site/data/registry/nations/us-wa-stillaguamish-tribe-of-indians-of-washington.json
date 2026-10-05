@@ -32,30 +32,66 @@
     [
       48.20947,
       -122.1844
+    ],
+    [
+      48.21328,
+      -122.18562
     ]
   ],
   "bbox": [
-    -122.3192,
-    48.11964,
-    -122.0496,
-    48.2993
+    -122.18842,
+    48.20827,
+    -122.18288,
+    48.21584
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-stillaguamish-tribe-of-indians-of-washington.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0087",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.2095,
+      -122.1844
+    ],
+    "forecastZones": [
+      "forecast:WAZ311"
+    ],
+    "countyZones": [
+      "county:WAC061"
+    ],
+    "fireZones": [
+      "fire:WAZ656"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:ARLW1",
+    "nwps:ARGW1",
+    "nwps:SSFW1",
+    "nwps:SIVW1",
+    "nwps:SPHW1",
+    "nwps:STWW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

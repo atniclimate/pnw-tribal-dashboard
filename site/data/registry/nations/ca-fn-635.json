@@ -30,30 +30,113 @@
     [
       50.59649,
       -126.59731
+    ],
+    [
+      51.11408,
+      -125.60048
+    ],
+    [
+      50.66481,
+      -125.72743
+    ],
+    [
+      51.01759,
+      -125.61587
+    ],
+    [
+      50.59477,
+      -126.59414
+    ],
+    [
+      50.67692,
+      -125.75625
+    ],
+    [
+      50.68562,
+      -125.76067
+    ],
+    [
+      50.89952,
+      -125.64128
     ]
   ],
   "bbox": [
-    -126.73883,
-    50.50666,
-    -126.45579,
-    50.68632
+    -126.60015,
+    50.59196,
+    -125.5982,
+    51.12526
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-635.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07091",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07092",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07093",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07094",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07095",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07096",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07097",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-89",
+    "citypageName": "Port Hardy",
+    "distanceKm": 65.8,
+    "forecastZones": [
+      "082100",
+      "082200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08GE002",
+    "wsc:08GE003",
+    "wsc:08HF004"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

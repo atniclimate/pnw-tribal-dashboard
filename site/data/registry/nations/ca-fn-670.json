@@ -30,30 +30,139 @@
     [
       53.26956,
       -131.99038
+    ],
+    [
+      53.27139,
+      -131.99708
+    ],
+    [
+      53.21507,
+      -132.037
+    ],
+    [
+      52.96319,
+      -131.61604
+    ],
+    [
+      53.15079,
+      -132.12977
+    ],
+    [
+      52.76374,
+      -131.61742
+    ],
+    [
+      53.37267,
+      -131.93356
+    ],
+    [
+      53.04275,
+      -131.69116
+    ],
+    [
+      53.23746,
+      -132.26984
     ]
   ],
   "bbox": [
-    -132.14059,
-    53.17973,
-    -131.84017,
-    53.35939
+    -132.33011,
+    52.76041,
+    -131.60517,
+    53.37709
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-670.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07690",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07691",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07692",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07693",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07694",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07695",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07696",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07697",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07698",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07699",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07700",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-88",
+    "citypageName": "Sandspit",
+    "distanceKm": 12.2,
+    "forecastZones": [
+      "081100"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08OA004",
+    "wsc:08OB002"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -30,30 +30,114 @@
     [
       49.15167,
       -123.93028
+    ],
+    [
+      49.12919,
+      -123.88405
+    ],
+    [
+      49.12274,
+      -123.87111
+    ],
+    [
+      49.15739,
+      -123.97951
+    ],
+    [
+      49.11792,
+      -123.88632
+    ],
+    [
+      49.15442,
+      -123.92815
+    ],
+    [
+      49.13063,
+      -123.71783
+    ],
+    [
+      49.13223,
+      -123.71376
     ]
   ],
   "bbox": [
-    -124.06762,
-    49.06184,
-    -123.79294,
-    49.2415
+    -123.9868,
+    49.11421,
+    -123.71324,
+    49.15946
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-648.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06815",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06816",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06817",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06818",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06819",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06820",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10267",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-20",
+    "citypageName": "Nanaimo",
+    "distanceKm": 2.2,
+    "forecastZones": [
+      "081300",
+      "082800"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HB032",
+    "wsc:08HB034",
+    "wsc:08HB092",
+    "wsc:08HB041"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

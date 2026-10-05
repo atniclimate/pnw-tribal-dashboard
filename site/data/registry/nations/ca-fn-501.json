@@ -30,30 +30,133 @@
     [
       59.50582,
       -133.65869
+    ],
+    [
+      59.49197,
+      -133.64888
+    ],
+    [
+      59.79514,
+      -132.2868
+    ],
+    [
+      59.23279,
+      -133.2266
+    ],
+    [
+      59.66739,
+      -132.13667
+    ],
+    [
+      59.50622,
+      -132.10943
+    ],
+    [
+      59.72969,
+      -133.55384
+    ],
+    [
+      59.61807,
+      -133.67481
+    ],
+    [
+      59.1182,
+      -132.99932
     ]
   ],
   "bbox": [
-    -133.83571,
-    59.41599,
-    -133.48167,
-    59.59565
+    -133.70459,
+    59.11477,
+    -132.10092,
+    59.80435
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-501.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "00181",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08418",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08419",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08420",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08421",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08422",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08423",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08424",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08441",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08442",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-67",
+    "citypageName": "Atlin",
+    "distanceKm": 7.5,
+    "forecastZones": [
+      "089600"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:09AA001",
+    "wsc:09AA006"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

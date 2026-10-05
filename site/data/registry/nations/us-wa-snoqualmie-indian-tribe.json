@@ -32,30 +32,76 @@
     [
       47.51391,
       -121.8258
+    ],
+    [
+      47.51938,
+      -121.84169
+    ],
+    [
+      47.52225,
+      -121.84338
     ]
   ],
   "bbox": [
-    -121.9588,
-    47.42408,
-    -121.6928,
-    47.60374
+    -121.84528,
+    47.51585,
+    -121.82862,
+    47.5469
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-snoqualmie-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "census-aiannh-2025",
+        "featureId": "3860R",
+        "kind": "reservation",
+        "vintage": "2025-09-15"
+      },
+      {
+        "sourceId": "census-aiannh-2025",
+        "featureId": "3860T",
+        "kind": "off-reservation-trust-land",
+        "vintage": "2025-09-15"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.5139,
+      -121.8258
+    ],
+    "forecastZones": [
+      "forecast:WAZ307"
+    ],
+    "countyZones": [
+      "county:WAC033"
+    ],
+    "fireZones": [
+      "fire:WAZ657"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SQUW1",
+    "nwps:TANW1",
+    "nwps:MORW1",
+    "nwps:SNQW1",
+    "nwps:ISSW1",
+    "nwps:LNDW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

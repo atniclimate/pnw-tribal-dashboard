@@ -30,30 +30,105 @@
     [
       50.35622,
       -119.3181
+    ],
+    [
+      50.29295,
+      -119.4266
+    ],
+    [
+      50.01265,
+      -119.39957
+    ],
+    [
+      50.38715,
+      -119.23524
+    ],
+    [
+      50.24688,
+      -119.34407
+    ],
+    [
+      50.33843,
+      -119.25779
+    ],
+    [
+      50.40002,
+      -119.25433
     ]
   ],
   "bbox": [
-    -119.4589,
-    50.26639,
-    -119.1773,
-    50.44605
+    -119.46025,
+    49.99777,
+    -119.22869,
+    50.48529
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-616.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "00122",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07390",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07391",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07392",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07393",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07394",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-27",
+    "citypageName": "Vernon",
+    "distanceKm": 11.2,
+    "forecastZones": [
+      "083500"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NM250",
+    "wsc:08NM160",
+    "wsc:08NM143",
+    "wsc:08NM123",
+    "wsc:08NM065",
+    "wsc:08NM146"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

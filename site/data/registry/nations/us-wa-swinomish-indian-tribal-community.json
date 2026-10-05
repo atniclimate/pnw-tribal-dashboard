@@ -32,30 +32,65 @@
     [
       48.38992,
       -122.5016
+    ],
+    [
+      48.41835,
+      -122.5265
     ]
   ],
   "bbox": [
-    -122.63688,
-    48.30009,
-    -122.36632,
-    48.47975
+    -122.57612,
+    48.37122,
+    -122.49886,
+    48.46303
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-swinomish-indian-tribal-community.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0088",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.3899,
+      -122.5016
+    ],
+    "forecastZones": [
+      "forecast:WAZ311"
+    ],
+    "countyZones": [
+      "county:WAC057"
+    ],
+    "fireZones": [
+      "fire:WAZ653"
+    ],
+    "marineZones": [
+      "marine:PZZ133"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:MVEW1",
+    "nwps:SMRW1",
+    "nwps:STWW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

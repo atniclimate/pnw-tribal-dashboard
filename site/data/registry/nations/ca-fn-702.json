@@ -30,30 +30,75 @@
     [
       50.9867,
       -120.24079
+    ],
+    [
+      50.97847,
+      -120.25641
+    ],
+    [
+      51.09727,
+      -121.59868
+    ],
+    [
+      50.96657,
+      -121.88238
     ]
   ],
   "bbox": [
-    -120.38349,
-    50.89687,
-    -120.09809,
-    51.07653
+    -121.88537,
+    50.96613,
+    -120.23336,
+    51.10107
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-702.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07294",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08364",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08374",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-45",
+    "citypageName": "Kamloops",
+    "distanceKm": 35,
+    "forecastZones": [
+      "085100",
+      "086300",
+      "083110-083122"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LB064",
+    "wsc:08LB024",
+    "wsc:08LB072",
+    "wsc:08LB020"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

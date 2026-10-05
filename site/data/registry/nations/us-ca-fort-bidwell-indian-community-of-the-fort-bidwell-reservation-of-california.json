@@ -33,27 +33,59 @@
     [
       41.85823,
       -120.1583
+    ],
+    [
+      41.85961,
+      -120.18442
     ]
   ],
   "bbox": [
-    -120.27891,
-    41.7684,
-    -120.03769,
-    41.94806
+    -120.21539,
+    41.83874,
+    -120.15259,
+    41.8855
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0128",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "REV",
+      "MFR"
+    ],
+    "point": [
+      41.8582,
+      -120.1583
+    ],
+    "forecastZones": [
+      "forecast:CAZ070",
+      "forecast:CAZ085"
+    ],
+    "countyZones": [
+      "county:CAC049"
+    ],
+    "fireZones": [
+      "fire:CAZ270",
+      "fire:CAZ285"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
   "gauges": [],

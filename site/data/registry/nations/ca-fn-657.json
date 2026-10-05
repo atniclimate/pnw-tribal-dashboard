@@ -30,27 +30,55 @@
     [
       48.38465,
       -123.69718
+    ],
+    [
+      48.36294,
+      -123.74726
+    ],
+    [
+      48.38565,
+      -123.69638
     ]
   ],
   "bbox": [
-    -123.83244,
-    48.29482,
-    -123.56192,
-    48.47448
+    -123.75443,
+    48.35897,
+    -123.68736,
+    48.39023
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-657.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06842",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06843",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-29",
+    "citypageName": "Malahat",
+    "distanceKm": 20.6,
+    "forecastZones": [
+      "081400"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
   "gauges": [],

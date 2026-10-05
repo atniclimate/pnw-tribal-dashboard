@@ -33,27 +33,58 @@
     [
       47.85215,
       -122.5693
+    ],
+    [
+      47.85642,
+      -122.56528
     ]
   ],
   "bbox": [
-    -122.70317,
-    47.76232,
-    -122.43543,
-    47.94198
+    -122.57727,
+    47.82409,
+    -122.54118,
+    47.86777
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-port-gamble-sklallam-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0076",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.8522,
+      -122.5693
+    ],
+    "forecastZones": [
+      "forecast:WAZ322"
+    ],
+    "countyZones": [
+      "county:WAC035"
+    ],
+    "fireZones": [
+      "fire:WAZ654"
+    ],
+    "marineZones": [
+      "marine:PZZ135"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
   "gauges": [],

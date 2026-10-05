@@ -32,27 +32,58 @@
     [
       40.88466,
       -123.9986
+    ],
+    [
+      40.88546,
+      -123.99868
     ]
   ],
   "bbox": [
-    -124.11742,
-    40.79483,
-    -123.87978,
-    40.97449
+    -124.00511,
+    40.88048,
+    -123.99501,
+    40.8894
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-blue-lake-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0108",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      40.8847,
+      -123.9986
+    ],
+    "forecastZones": [
+      "forecast:CAZ103"
+    ],
+    "countyZones": [
+      "county:CAC023"
+    ],
+    "fireZones": [
+      "fire:CAZ404"
+    ],
+    "marineZones": [
+      "marine:PZZ415"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],

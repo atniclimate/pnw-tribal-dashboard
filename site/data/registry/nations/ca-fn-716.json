@@ -30,30 +30,61 @@
     [
       52.28045,
       -122.14478
+    ],
+    [
+      52.25813,
+      -122.0842
+    ],
+    [
+      52.32312,
+      -122.26247
     ]
   ],
   "bbox": [
-    -122.29161,
-    52.19062,
-    -121.99795,
-    52.37028
+    -122.28336,
+    52.24278,
+    -122.04121,
+    52.33742
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-716.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08275",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08276",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-76",
+    "citypageName": "Williams Lake",
+    "distanceKm": 15.6,
+    "forecastZones": [
+      "086200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MC045",
+    "wsc:08MC040"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

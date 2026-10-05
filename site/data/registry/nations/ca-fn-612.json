@@ -30,30 +30,111 @@
     [
       54.07608,
       -124.60769
+    ],
+    [
+      54.07104,
+      -124.60423
+    ],
+    [
+      54.05406,
+      -124.76662
+    ],
+    [
+      54.14596,
+      -124.43629
+    ],
+    [
+      54.07979,
+      -124.55871
+    ],
+    [
+      54.09605,
+      -124.63173
+    ],
+    [
+      54.18382,
+      -124.69646
+    ],
+    [
+      54.18491,
+      -124.68976
     ]
   ],
   "bbox": [
-    -124.7608,
-    53.98625,
-    -124.45458,
-    54.16591
+    -124.78253,
+    54.04928,
+    -124.43013,
+    54.18571
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-612.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07469",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07470",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07471",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07472",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07473",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07474",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07475",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-44",
+    "citypageName": "Vanderhoof",
+    "distanceKm": 40.2,
+    "forecastZones": [
+      "087410"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08JB003",
+    "wsc:08JB002"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

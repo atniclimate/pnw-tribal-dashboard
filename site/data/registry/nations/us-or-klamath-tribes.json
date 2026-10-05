@@ -32,30 +32,64 @@
     [
       42.57413,
       -121.8745
+    ],
+    [
+      42.53882,
+      -121.88311
     ]
   ],
   "bbox": [
-    -121.99649,
-    42.4843,
-    -121.75251,
-    42.66396
+    -121.90661,
+    42.19933,
+    -121.2637,
+    42.93027
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-klamath-tribes.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0066",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR"
+    ],
+    "point": [
+      42.5741,
+      -121.8745
+    ],
+    "forecastZones": [
+      "forecast:ORZ029",
+      "forecast:ORZ030"
+    ],
+    "countyZones": [
+      "county:ORC035"
+    ],
+    "fireZones": [
+      "fire:ORZ624"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:WMSO3",
+    "nwps:CHSO3",
+    "nwps:WKAO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

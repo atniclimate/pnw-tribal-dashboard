@@ -30,30 +30,126 @@
     [
       49.35586,
       -120.07873
+    ],
+    [
+      49.30896,
+      -120.04041
+    ],
+    [
+      49.43571,
+      -120.31324
+    ],
+    [
+      49.32064,
+      -120.13441
+    ],
+    [
+      49.43892,
+      -120.29609
+    ],
+    [
+      49.40333,
+      -120.22852
+    ],
+    [
+      49.4258,
+      -120.26664
+    ],
+    [
+      49.5907,
+      -120.56545
+    ],
+    [
+      49.46333,
+      -120.50106
     ]
   ],
   "bbox": [
-    -120.21664,
-    49.26603,
-    -119.94082,
-    49.44569
+    -120.56697,
+    49.30231,
+    -120.02842,
+    49.59169
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-599.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07409",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07410",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07411",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07412",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07413",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07414",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07415",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09966",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-41",
+    "citypageName": "Princeton",
+    "distanceKm": 32.9,
+    "forecastZones": [
+      "083420",
+      "083121-083300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NL007",
+    "wsc:08NL050",
+    "wsc:08NL024",
+    "wsc:08NL038",
+    "wsc:08NL004",
+    "wsc:08NL045"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

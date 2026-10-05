@@ -30,30 +30,111 @@
     [
       53.99562,
       -125.88193
+    ],
+    [
+      53.79547,
+      -125.92324
+    ],
+    [
+      53.94804,
+      -125.65094
+    ],
+    [
+      53.99825,
+      -125.87947
+    ],
+    [
+      53.98621,
+      -126.4888
+    ],
+    [
+      53.93463,
+      -125.66699
+    ],
+    [
+      53.93639,
+      -125.67262
+    ],
+    [
+      53.93109,
+      -125.68434
     ]
   ],
   "bbox": [
-    -126.03474,
-    53.90579,
-    -125.72912,
-    54.08545
+    -126.49353,
+    53.79013,
+    -125.64479,
+    54.00181
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-729.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07463",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07464",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07465",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07466",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07467",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08375",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10212",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-43",
+    "citypageName": "Burns Lake",
+    "distanceKm": 27.2,
+    "forecastZones": [
+      "087100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08JA023",
+    "wsc:08JA018"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

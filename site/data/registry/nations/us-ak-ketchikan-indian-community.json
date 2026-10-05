@@ -48,11 +48,31 @@
   "timeZone": "America/Sitka",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "AJK"
+    ],
+    "point": [
+      55.3526,
+      -131.6849
+    ],
+    "forecastZones": [
+      "forecast:AKZ330"
+    ],
+    "countyZones": [
+      "county:AKC130"
+    ],
+    "fireZones": [
+      "fire:AKZ330"
+    ],
+    "marineZones": [
+      "marine:PKZ036"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
   "gauges": [],

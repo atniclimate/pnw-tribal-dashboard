@@ -32,30 +32,66 @@
     [
       43.23864,
       -123.3517
+    ],
+    [
+      43.05082,
+      -122.94823
     ]
   ],
   "bbox": [
-    -123.47501,
-    43.14881,
-    -123.22839,
-    43.32847
+    -123.4665,
+    42.27795,
+    -122.90289,
+    43.23932
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-cow-creek-band-of-umpqua-tribe-of-indians.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0059",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR"
+    ],
+    "point": [
+      43.2386,
+      -123.3517
+    ],
+    "forecastZones": [
+      "forecast:ORZ023"
+    ],
+    "countyZones": [
+      "county:ORC019"
+    ],
+    "fireZones": [
+      "fire:ORZ616"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:RSBO3",
+    "nwps:WINO3",
+    "nwps:WNRO3",
+    "nwps:DEEO3",
+    "nwps:SUMO3",
+    "nwps:WSNO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

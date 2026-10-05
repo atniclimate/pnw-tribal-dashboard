@@ -30,30 +30,104 @@
     [
       48.59198,
       -123.39068
+    ],
+    [
+      48.58813,
+      -123.38935
+    ],
+    [
+      48.78263,
+      -123.09173
+    ],
+    [
+      48.75679,
+      -123.42746
+    ],
+    [
+      48.48549,
+      -123.54587
+    ],
+    [
+      48.63364,
+      -123.28705
+    ],
+    [
+      48.74517,
+      -123.2284
     ]
   ],
   "bbox": [
-    -123.5265,
-    48.50215,
-    -123.25486,
-    48.68181
+    -123.54816,
+    48.48405,
+    -123.07914,
+    48.78931
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-654.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06832",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06833",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06835",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06836",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06837",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06838",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-59",
+    "citypageName": "Victoria (Hartland)",
+    "distanceKm": 5.7,
+    "forecastZones": [
+      "081600",
+      "082800"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HA003",
+    "wsc:08HA011",
+    "wsc:08HA016",
+    "wsc:08HA001"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

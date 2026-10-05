@@ -33,30 +33,66 @@
     [
       48.1334,
       -118.9758
+    ],
+    [
+      48.23388,
+      -118.81217
     ]
   ],
   "bbox": [
-    -119.1104,
-    48.04357,
-    -118.8412,
-    48.22323
+    -119.73965,
+    47.82947,
+    -118.14076,
+    48.48215
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-confederated-tribes-of-the-colville-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0057",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "OTX"
+    ],
+    "point": [
+      48.1334,
+      -118.9758
+    ],
+    "forecastZones": [
+      "forecast:WAZ043",
+      "forecast:WAZ038",
+      "forecast:WAZ035"
+    ],
+    "countyZones": [
+      "county:WAC047",
+      "county:WAC019"
+    ],
+    "fireZones": [
+      "fire:WAZ702",
+      "fire:WAZ703"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:KLLW1",
+    "nwps:GCDW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

@@ -30,27 +30,55 @@
     [
       50.42269,
       -125.15776
+    ],
+    [
+      50.55266,
+      -125.35855
+    ],
+    [
+      50.42308,
+      -125.15936
     ]
   ],
   "bbox": [
-    -125.29876,
-    50.33286,
-    -125.01676,
-    50.51252
+    -125.36359,
+    50.41809,
+    -125.1554,
+    50.55917
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-628.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07028",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07029",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-19",
+    "citypageName": "Campbell River",
+    "distanceKm": 45.2,
+    "forecastZones": [
+      "082300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
   "gauges": [],

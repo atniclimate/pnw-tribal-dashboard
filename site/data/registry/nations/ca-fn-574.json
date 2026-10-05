@@ -30,30 +30,105 @@
     [
       49.15801,
       -121.97942
+    ],
+    [
+      49.19479,
+      -122.0254
+    ],
+    [
+      49.15652,
+      -121.97233
+    ],
+    [
+      49.14372,
+      -121.89112
+    ],
+    [
+      49.1614,
+      -122.0018
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.14355,
+      -122.27497
     ]
   ],
   "bbox": [
-    -122.11678,
-    49.06818,
-    -121.84206,
-    49.24784
+    -122.27887,
+    49.13282,
+    -121.88553,
+    49.21061
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-574.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08056",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08057",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08113",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08114",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-24",
+    "citypageName": "Chilliwack",
+    "distanceKm": 3.2,
+    "forecastZones": [
+      "082711-082712-082720-082730"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH024",
+    "wsc:08MH001",
+    "wsc:08MF038",
+    "wsc:08MF073",
+    "wsc:08MG014",
+    "wsc:08MF075"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

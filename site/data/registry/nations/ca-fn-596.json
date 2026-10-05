@@ -30,30 +30,65 @@
     [
       49.18381,
       -119.53314
+    ],
+    [
+      49.15014,
+      -119.48963
+    ],
+    [
+      49.0755,
+      -119.44042
     ]
   ],
   "bbox": [
-    -119.67057,
-    49.09398,
-    -119.39571,
-    49.27364
+    -119.55957,
+    49.02804,
+    -119.42209,
+    49.24083
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-596.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07395",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07396",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "override",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-69",
+    "citypageName": "Osoyoos",
+    "distanceKm": 17.9,
+    "forecastZones": [
+      "083500"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NM200",
+    "wsc:08NM085",
+    "wsc:08NM247",
+    "wsc:08NM243",
+    "wsc:08NM171",
+    "wsc:08NM002"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

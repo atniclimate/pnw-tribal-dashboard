@@ -30,27 +30,85 @@
     [
       49.36836,
       -126.27209
+    ],
+    [
+      49.39175,
+      -126.47284
+    ],
+    [
+      49.47298,
+      -126.44764
+    ],
+    [
+      49.44364,
+      -126.48166
+    ],
+    [
+      49.40922,
+      -126.56432
+    ],
+    [
+      49.36709,
+      -126.27239
     ]
   ],
   "bbox": [
-    -126.41004,
-    49.27853,
-    -126.13414,
-    49.45819
+    -126.57116,
+    49.36501,
+    -126.27027,
+    49.47606
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-661.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06883",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06884",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06885",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06886",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06887",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-15",
+    "citypageName": "Estevan Point",
+    "distanceKm": 18.7,
+    "forecastZones": [
+      "081400"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
   "gauges": [],

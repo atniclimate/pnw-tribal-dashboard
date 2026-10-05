@@ -30,30 +30,123 @@
     [
       51.41537,
       -124.09563
+    ],
+    [
+      51.42108,
+      -124.10165
+    ],
+    [
+      51.46836,
+      -123.94008
+    ],
+    [
+      51.48361,
+      -123.84055
+    ],
+    [
+      51.43248,
+      -124.05151
+    ],
+    [
+      51.41743,
+      -124.07185
+    ],
+    [
+      51.41269,
+      -124.11478
+    ],
+    [
+      51.44126,
+      -124.04806
+    ],
+    [
+      51.52622,
+      -124.15671
     ]
   ],
   "bbox": [
-    -124.23967,
-    51.32554,
-    -123.95159,
-    51.5052
+    -124.15794,
+    51.40887,
+    -123.83404,
+    51.5271
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-714.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08262",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08263",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08264",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08265",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08266",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08267",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08268",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08269",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-60",
+    "citypageName": "Tatlayoko Lake",
+    "distanceKm": 41,
+    "forecastZones": [
+      "086100"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MA002",
+    "wsc:08MA006",
+    "wsc:08MA003",
+    "wsc:08GD008"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

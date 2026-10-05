@@ -32,30 +32,70 @@
     [
       48.05466,
       -122.2585
+    ],
+    [
+      48.08438,
+      -122.24692
     ]
   ],
   "bbox": [
-    -122.39289,
-    47.96483,
-    -122.12411,
-    48.14449
+    -122.36291,
+    48.03028,
+    -122.18372,
+    48.12343
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-tulalip-tribes-of-washington.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0090",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.0547,
+      -122.2585
+    ],
+    "forecastZones": [
+      "forecast:WAZ312"
+    ],
+    "countyZones": [
+      "county:WAC061"
+    ],
+    "fireZones": [
+      "fire:WAZ653",
+      "fire:WAZ656"
+    ],
+    "marineZones": [
+      "marine:PZZ135",
+      "marine:PZZ133"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:EBYW1",
+    "nwps:ARLW1",
+    "nwps:PILW1",
+    "nwps:SNAW1",
+    "nwps:SSFW1",
+    "nwps:ARGW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

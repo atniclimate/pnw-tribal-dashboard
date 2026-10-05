@@ -32,27 +32,56 @@
     [
       39.25325,
       -123.2111
+    ],
+    [
+      39.25393,
+      -123.20763
     ]
   ],
   "bbox": [
-    -123.32711,
-    39.16342,
-    -123.09509,
-    39.34308
+    -123.21593,
+    39.25094,
+    -123.20379,
+    39.25652
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-coyote-valley-band-of-pomo-indians-of-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0122",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.2533,
+      -123.2111
+    ],
+    "forecastZones": [
+      "forecast:CAZ113"
+    ],
+    "countyZones": [
+      "county:CAC045"
+    ],
+    "fireZones": [
+      "fire:CAZ416"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

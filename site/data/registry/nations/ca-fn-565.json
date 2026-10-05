@@ -30,30 +30,106 @@
     [
       49.10618,
       -122.34258
+    ],
+    [
+      49.11958,
+      -122.34491
+    ],
+    [
+      49.10791,
+      -122.34966
+    ],
+    [
+      49.00497,
+      -122.47616
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.07643,
+      -122.2831
+    ],
+    [
+      49.14355,
+      -122.27497
     ]
   ],
   "bbox": [
-    -122.4798,
-    49.01635,
-    -122.20536,
-    49.19601
+    -122.47884,
+    49.00226,
+    -121.95968,
+    49.14498
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-565.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08035",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08036",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08037",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08038",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-81",
+    "citypageName": "Abbotsford",
+    "distanceKm": 5.4,
+    "forecastZones": [
+      "082711-082712-082720-082730",
+      "082512-082513-082600-082711-082713-082714"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH156",
+    "wsc:08MH024",
+    "wsc:08MH001",
+    "wsc:08MH153",
+    "wsc:08MF038",
+    "wsc:08MH029"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

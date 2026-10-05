@@ -32,27 +32,56 @@
     [
       41.47792,
       -120.5239
+    ],
+    [
+      41.47804,
+      -120.52447
     ]
   ],
   "bbox": [
-    -120.6438,
-    41.38809,
-    -120.404,
-    41.56775
+    -120.52556,
+    41.47601,
+    -120.52338,
+    41.48005
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-alturas-indian-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0096",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR"
+    ],
+    "point": [
+      41.4779,
+      -120.5239
+    ],
+    "forecastZones": [
+      "forecast:CAZ085"
+    ],
+    "countyZones": [
+      "county:CAC049"
+    ],
+    "fireZones": [
+      "fire:CAZ285"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
   "gauges": [],

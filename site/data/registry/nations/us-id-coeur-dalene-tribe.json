@@ -32,30 +32,67 @@
     [
       47.33772,
       -116.8867
+    ],
+    [
+      47.2932,
+      -116.83371
     ]
   ],
   "bbox": [
-    -117.01926,
-    47.24789,
-    -116.75414,
-    47.42755
+    -117.04036,
+    47.04336,
+    -116.45093,
+    47.52347
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-id-coeur-dalene-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0056",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "OTX"
+    ],
+    "point": [
+      47.3377,
+      -116.8867
+    ],
+    "forecastZones": [
+      "forecast:IDZ003",
+      "forecast:IDZ002",
+      "forecast:IDZ004"
+    ],
+    "countyZones": [
+      "county:IDC009",
+      "county:IDC055"
+    ],
+    "fireZones": [
+      "fire:IDZ101"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SJRI1",
+    "nwps:HCTW1",
+    "nwps:HARI1",
+    "nwps:SJMI1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

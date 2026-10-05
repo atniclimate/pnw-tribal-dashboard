@@ -48,11 +48,32 @@
   "timeZone": "America/Yakutat",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "AJK"
+    ],
+    "point": [
+      59.5464,
+      -139.7251
+    ],
+    "forecastZones": [
+      "forecast:AKZ317"
+    ],
+    "countyZones": [
+      "county:AKC282"
+    ],
+    "fireZones": [
+      "fire:AKZ317"
+    ],
+    "marineZones": [
+      "marine:PKZ053",
+      "marine:PKZ651"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PAIH",
+    "ridgeLoop": "PAIH",
     "eccc": null
   },
   "gauges": [],

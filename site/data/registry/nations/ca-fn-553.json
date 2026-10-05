@@ -30,30 +30,136 @@
     [
       50.12602,
       -124.92086
+    ],
+    [
+      50.51967,
+      -124.32307
+    ],
+    [
+      50.12715,
+      -124.93644
+    ],
+    [
+      50.44118,
+      -124.66763
+    ],
+    [
+      50.37911,
+      -124.93494
+    ],
+    [
+      50.24491,
+      -124.58646
+    ],
+    [
+      50.14517,
+      -124.9207
+    ],
+    [
+      50.24819,
+      -125.10924
+    ],
+    [
+      50.28237,
+      -124.78231
     ]
   ],
   "bbox": [
-    -125.06098,
-    50.03619,
-    -124.78074,
-    50.21585
+    -125.11134,
+    50.11626,
+    -124.30195,
+    50.52959
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-553.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07917",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07918",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07919",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07920",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07921",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07922",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07923",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07924",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07925",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07926",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-19",
+    "citypageName": "Campbell River",
+    "distanceKm": 25.6,
+    "forecastZones": [
+      "082300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08GC005",
+    "wsc:08GC006",
+    "wsc:08GC007",
+    "wsc:08GC008",
+    "wsc:08HD024"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

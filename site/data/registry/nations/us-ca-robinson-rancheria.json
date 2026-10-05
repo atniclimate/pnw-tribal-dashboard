@@ -32,27 +32,57 @@
     [
       39.14262,
       -122.8821
+    ],
+    [
+      39.14046,
+      -122.91133
     ]
   ],
   "bbox": [
-    -122.99792,
-    39.05279,
-    -122.76628,
-    39.23245
+    -122.95279,
+    39.05133,
+    -122.87475,
+    39.24215
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-robinson-rancheria.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0170",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.1426,
+      -122.8821
+    ],
+    "forecastZones": [
+      "forecast:CAZ118"
+    ],
+    "countyZones": [
+      "county:CAC033"
+    ],
+    "fireZones": [
+      "fire:CAZ421",
+      "fire:CAZ418"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

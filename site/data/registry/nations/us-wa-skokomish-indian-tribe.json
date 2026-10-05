@@ -32,30 +32,68 @@
     [
       47.32216,
       -123.1456
+    ],
+    [
+      47.3337,
+      -123.16028
     ]
   ],
   "bbox": [
-    -123.27812,
-    47.23233,
-    -123.01308,
-    47.41199
+    -123.18658,
+    47.30604,
+    -123.11438,
+    47.37391
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-skokomish-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0084",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.3222,
+      -123.1456
+    ],
+    "forecastZones": [
+      "forecast:WAZ321"
+    ],
+    "countyZones": [
+      "county:WAC045"
+    ],
+    "fireZones": [
+      "fire:WAZ654"
+    ],
+    "marineZones": [
+      "marine:PZZ135"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SRPW1",
+    "nwps:SRCW1",
+    "nwps:NSPW1",
+    "nwps:SSUW1",
+    "nwps:CSHW1",
+    "nwps:SKOW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

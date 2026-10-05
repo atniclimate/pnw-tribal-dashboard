@@ -30,30 +30,95 @@
     [
       51.3169,
       -120.14903
+    ],
+    [
+      51.25462,
+      -120.16009
+    ],
+    [
+      51.47165,
+      -120.13882
+    ],
+    [
+      51.13417,
+      -120.12567
+    ],
+    [
+      51.19244,
+      -120.11977
+    ],
+    [
+      51.42219,
+      -120.19853
     ]
   ],
   "bbox": [
-    -120.29276,
-    51.22707,
-    -120.0053,
-    51.40673
+    -120.20026,
+    51.13332,
+    -120.11895,
+    51.47896
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-691.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07186",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07187",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07188",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07189",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07190",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-12",
+    "citypageName": "Clearwater",
+    "distanceKm": 37.9,
+    "forecastZones": [
+      "085100"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LB072",
+    "wsc:08LB078",
+    "wsc:08LB020",
+    "wsc:08LB024",
+    "wsc:08LB064",
+    "wsc:08LB069"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

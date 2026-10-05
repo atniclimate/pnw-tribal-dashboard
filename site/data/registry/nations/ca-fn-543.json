@@ -30,30 +30,80 @@
     [
       58.77013,
       -122.65981
+    ],
+    [
+      58.78319,
+      -122.49027
+    ],
+    [
+      59.03963,
+      -122.45727
+    ],
+    [
+      58.35576,
+      -120.90696
+    ],
+    [
+      58.28537,
+      -121.72606
     ]
   ],
   "bbox": [
-    -122.83307,
-    58.6803,
-    -122.48655,
-    58.85996
+    -125.76507,
+    58.28336,
+    -120.90471,
+    59.89891
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-543.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06951",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06952",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06953",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06954",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Fort_Nelson",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-83",
+    "citypageName": "Fort Nelson",
+    "distanceKm": 5,
+    "forecastZones": [
+      "088100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:10CD001"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

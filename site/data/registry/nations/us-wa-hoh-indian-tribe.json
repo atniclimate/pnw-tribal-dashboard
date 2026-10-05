@@ -32,30 +32,68 @@
     [
       47.74088,
       -124.4133
+    ],
+    [
+      47.7413,
+      -124.41884
     ]
   ],
   "bbox": [
-    -124.54688,
-    47.65105,
-    -124.27972,
-    47.83071
+    -124.43309,
+    47.73291,
+    -124.40909,
+    47.74887
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-hoh-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0063",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.7409,
+      -124.4133
+    ],
+    "forecastZones": [
+      "forecast:WAZ330"
+    ],
+    "countyZones": [
+      "county:WAC031"
+    ],
+    "fireZones": [
+      "fire:WAZ649"
+    ],
+    "marineZones": [
+      "marine:PZZ153"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:HORW1",
+    "nwps:BOGW1",
+    "nwps:QUEW1",
+    "nwps:CALW1",
+    "nwps:BGFW1",
+    "nwps:SDQW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

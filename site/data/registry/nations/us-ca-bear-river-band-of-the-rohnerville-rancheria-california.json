@@ -33,27 +33,59 @@
     [
       40.62574,
       -124.2124
+    ],
+    [
+      40.62903,
+      -124.21074
     ]
   ],
   "bbox": [
-    -124.33076,
-    40.53591,
-    -124.09404,
-    40.71557
+    -124.21612,
+    40.57834,
+    -124.12126,
+    40.63168
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-bear-river-band-of-the-rohnerville-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0171",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      40.6257,
+      -124.2124
+    ],
+    "forecastZones": [
+      "forecast:CAZ103"
+    ],
+    "countyZones": [
+      "county:CAC023"
+    ],
+    "fireZones": [
+      "fire:CAZ404"
+    ],
+    "marineZones": [
+      "marine:PZZ415",
+      "marine:PZZ450"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],
@@ -61,7 +93,9 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
+    "biaLarIds": [
+      "LAR0171"
+    ],
     "censusAiannhce": [
       "3220"
     ],

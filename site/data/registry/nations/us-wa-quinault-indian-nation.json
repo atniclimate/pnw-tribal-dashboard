@@ -32,30 +32,70 @@
     [
       47.3392,
       -124.2854
+    ],
+    [
+      47.41025,
+      -124.13783
     ]
   ],
   "bbox": [
-    -124.41796,
-    47.24937,
-    -124.15284,
-    47.42903
+    -124.36093,
+    46.98737,
+    -123.76671,
+    47.56266
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-quinault-indian-nation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0080",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.3392,
+      -124.2854
+    ],
+    "forecastZones": [
+      "forecast:WAZ331",
+      "forecast:WAZ329"
+    ],
+    "countyZones": [
+      "county:WAC027"
+    ],
+    "fireZones": [
+      "fire:WAZ649",
+      "fire:WAZ650",
+      "fire:WAZ652"
+    ],
+    "marineZones": [
+      "marine:PZZ153",
+      "marine:PZZ156"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:QUEW1",
+    "nwps:QLTW1",
+    "nwps:QTHW1",
+    "nwps:HMRW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

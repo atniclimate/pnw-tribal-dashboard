@@ -24,4 +24,4 @@ access:
   priority: 3
 usedBy: [dashboard, forecasts]
 verifiedAt: 2026-10-05
-notes: Fills gaps where BIA LAR has no polygon. Only the two legal classes are used (MTFCC G2101 reservations and G2102 off-reservation trust land); statistical areas (G2120 and higher) stay excluded while boundary_policy.census_statistical_areas is false. AIANNHCE and GEOID are matched to a Nation by exact normalized name (crosswalk-us.json). Representation, not jurisdiction.
+notes: Fills gaps where BIA LAR has no polygon. Only the two legal classes are used (MTFCC G2101 reservations and G2102 off-reservation trust land); statistical areas (G2130 to G2160) stay excluded while boundary_policy.census_statistical_areas is false, and G2120 (Hawaiian home lands) and G2170 (joint-use areas) are outside the footprint. AIANNHCE and GEOID are matched to a Nation by exact normalized name, or proposed as a place-phrase candidate (matchMethod name-reviewed, unreviewed until the maintainer confirms it) in crosswalk-us.json; shared areas such as Celilo are never assigned. Representation, not jurisdiction.

@@ -30,30 +30,133 @@
     [
       50.8408,
       -121.38537
+    ],
+    [
+      50.81505,
+      -121.57213
+    ],
+    [
+      50.88386,
+      -121.51406
+    ],
+    [
+      50.84297,
+      -121.36503
+    ],
+    [
+      50.79408,
+      -121.4055
+    ],
+    [
+      50.7885,
+      -121.08201
+    ],
+    [
+      51.05404,
+      -121.15314
+    ],
+    [
+      51.0658,
+      -121.33407
+    ],
+    [
+      51.05664,
+      -121.14593
     ]
   ],
   "bbox": [
-    -121.52763,
-    50.75097,
-    -121.24311,
-    50.93063
+    -121.60549,
+    50.78678,
+    -121.07453,
+    51.06865
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-686.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07163",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07164",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07165",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07166",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07167",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07168",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07170",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07171",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07172",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-55",
+    "citypageName": "Cache Creek",
+    "distanceKm": 5.7,
+    "forecastZones": [
+      "083200",
+      "083110-083122",
+      "086300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LF002",
+    "wsc:08LF100",
+    "wsc:08LF099",
+    "wsc:08LF007",
+    "wsc:08LF027",
+    "wsc:08LF033"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -30,30 +30,125 @@
     [
       49.1781,
       -121.97226
+    ],
+    [
+      49.19479,
+      -122.0254
+    ],
+    [
+      49.18662,
+      -121.96471
+    ],
+    [
+      49.1758,
+      -121.97641
+    ],
+    [
+      49.17861,
+      -121.83311
+    ],
+    [
+      49.14372,
+      -121.89112
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.18367,
+      -121.93122
+    ],
+    [
+      49.14355,
+      -122.27497
     ]
   ],
   "bbox": [
-    -122.10968,
-    49.08827,
-    -121.83484,
-    49.26793
+    -122.27887,
+    49.13282,
+    -121.82716,
+    49.21061
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-573.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08052",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08053",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08054",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08055",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08113",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08114",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-24",
+    "citypageName": "Chilliwack",
+    "distanceKm": 2.5,
+    "forecastZones": [
+      "082711-082712-082720-082730"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH024",
+    "wsc:08MF073",
+    "wsc:08MH001",
+    "wsc:08MF035",
+    "wsc:08MF075",
+    "wsc:08MG014"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

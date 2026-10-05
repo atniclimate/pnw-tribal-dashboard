@@ -32,30 +32,68 @@
     [
       48.82381,
       -122.2159
+    ],
+    [
+      48.85813,
+      -122.33343
     ]
   ],
   "bbox": [
-    -122.35234,
-    48.73398,
-    -122.07946,
-    48.91364
+    -122.40735,
+    48.77248,
+    -122.16752,
+    49.00049
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-nooksack-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0074",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.8238,
+      -122.2159
+    ],
+    "forecastZones": [
+      "forecast:WAZ305",
+      "forecast:WAZ310"
+    ],
+    "countyZones": [
+      "county:WAC073"
+    ],
+    "fireZones": [
+      "fire:WAZ658",
+      "fire:WAZ656"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:NRKW1",
+    "nwps:NREX1",
+    "nwps:MFNW1",
+    "nwps:NSSW1",
+    "nwps:NOEX1",
+    "nwps:NKSW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

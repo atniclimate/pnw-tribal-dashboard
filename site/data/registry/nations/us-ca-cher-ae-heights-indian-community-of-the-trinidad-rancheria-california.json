@@ -33,27 +33,58 @@
     [
       41.05484,
       -124.131
+    ],
+    [
+      41.05441,
+      -124.13056
     ]
   ],
   "bbox": [
-    -124.25013,
-    40.96501,
-    -124.01187,
-    41.14467
+    -124.13326,
+    40.97915,
+    -124.08824,
+    41.05704
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0192",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      41.0548,
+      -124.131
+    ],
+    "forecastZones": [
+      "forecast:CAZ103"
+    ],
+    "countyZones": [
+      "county:CAC023"
+    ],
+    "fireZones": [
+      "fire:CAZ404"
+    ],
+    "marineZones": [
+      "marine:PZZ450"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],
@@ -61,9 +92,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0192"
+    ],
+    "censusAiannhce": [
+      "4275"
+    ],
+    "censusGeoid": "4275R",
     "biaTldObjectId": 407,
     "biaAnvObjectId": null,
     "iscBandNumber": null

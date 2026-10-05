@@ -32,27 +32,56 @@
     [
       41.05483,
       -123.6812
+    ],
+    [
+      41.0993,
+      -123.67264
     ]
   ],
   "bbox": [
-    -123.80033,
-    40.965,
-    -123.56207,
-    41.14466
+    -123.81312,
+    40.99164,
+    -123.53499,
+    41.20787
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-hoopa-valley-tribe-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0134",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      41.0548,
+      -123.6812
+    ],
+    "forecastZones": [
+      "forecast:CAZ105"
+    ],
+    "countyZones": [
+      "county:CAC023"
+    ],
+    "fireZones": [
+      "fire:CAZ406"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],
@@ -60,9 +89,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0134"
+    ],
+    "censusAiannhce": [
+      "1490"
+    ],
+    "censusGeoid": "1490R",
     "biaTldObjectId": 424,
     "biaAnvObjectId": null,
     "iscBandNumber": null

@@ -30,30 +30,62 @@
     [
       48.61367,
       -123.52041
+    ],
+    [
+      48.62,
+      -123.53115
+    ],
+    [
+      48.48549,
+      -123.54587
     ]
   ],
   "bbox": [
-    -123.65628,
-    48.52384,
-    -123.38454,
-    48.7035
+    -123.54816,
+    48.48405,
+    -123.51832,
+    48.63652
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-647.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06814",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06838",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-59",
+    "citypageName": "Victoria (Hartland)",
+    "distanceKm": 6.6,
+    "forecastZones": [
+      "081600"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HA003",
+    "wsc:08HA011",
+    "wsc:08HA016"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

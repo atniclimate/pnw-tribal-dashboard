@@ -33,37 +33,74 @@
     [
       41.95268,
       -124.2026
+    ],
+    [
+      41.95111,
+      -124.20763
     ]
   ],
   "bbox": [
-    -124.32339,
-    41.86285,
-    -124.08181,
-    42.04251
+    -124.21728,
+    41.94657,
+    -124.19526,
+    41.95893
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-tolowa-dee-ni-nation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0183",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      41.9527,
+      -124.2026
+    ],
+    "forecastZones": [
+      "forecast:CAZ101"
+    ],
+    "countyZones": [
+      "county:CAC015"
+    ],
+    "fireZones": [
+      "fire:CAZ401"
+    ],
+    "marineZones": [
+      "marine:PZZ356"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:CHTO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0183"
+    ],
+    "censusAiannhce": [
+      "3855"
+    ],
+    "censusGeoid": "3855R",
     "biaTldObjectId": 477,
     "biaAnvObjectId": null,
     "iscBandNumber": null

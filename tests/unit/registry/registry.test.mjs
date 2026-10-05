@@ -218,7 +218,7 @@ test('L5: zero names with ? or U+FFFD among reviewed records, and every flagged 
 });
 
 test('L5: no person keys anywhere in the registry files', { skip: SKIP }, () => {
-  for (const rel of ['data/registry/draft-registry.json', 'data/registry/crosswalk-us.json', 'data/registry/crosswalk-bc.json', 'data/registry/ids.lock.json', 'site/data/registry/nations-index.json']) {
+  for (const rel of ['data/registry/boundaries-build.json', 'data/registry/joins-build.json', 'data/registry/eccc-citypage-sites.json', 'data/registry/draft-registry.json', 'data/registry/crosswalk-us.json', 'data/registry/crosswalk-bc.json', 'data/registry/ids.lock.json', 'site/data/registry/nations-index.json']) {
     assert.deepEqual(personKeyHits(readJson(rel)), [], rel);
   }
   for (const r of records) assert.deepEqual(personKeyHits(r), [], r.id);
@@ -289,7 +289,10 @@ test('L5: headquarters points are inside plausible ranges for the footprint', { 
   for (const r of records) {
     assert.ok(r.hq.lat > 38 && r.hq.lat < 61, `${r.id} lat ${r.hq.lat}`);
     assert.ok(r.hq.lon < -108 && r.hq.lon > -141, `${r.id} lon ${r.hq.lon}`);
-    assert.ok(r.bbox[0] < r.hq.lon && r.bbox[2] > r.hq.lon && r.bbox[1] < r.hq.lat && r.bbox[3] > r.hq.lat);
+    // A point-only Nation's bbox is the headquarters plus ten kilometres; a Nation with polygons has the bbox of its land areas,
+    // which can exclude an office that lies off the land (Elem, Guidiville, and Jamestown S'Klallam are examples; tested in boundaries.test.mjs).
+    if (r.boundary.status === 'point-only') assert.ok(r.bbox[0] < r.hq.lon && r.bbox[2] > r.hq.lon && r.bbox[1] < r.hq.lat && r.bbox[3] > r.hq.lat);
+    else assert.ok(r.bbox[0] > -141 && r.bbox[2] < -108 && r.bbox[1] > 38 && r.bbox[3] < 61, r.id);
     assert.deepEqual(r.samples[0], [r.hq.lat, r.hq.lon]);
   }
 });
@@ -332,7 +335,10 @@ test('L5: the headquarters layer meets its 40,960-byte budget and carries only t
 
 test('L5: loaders are implemented and read the committed registry paths', () => {
   const src = readFileSync(path.join(ROOT, 'site/static/js/data/nations.js'), 'utf8');
-  assert.match(src, /registry\/nations-index\.json/);
-  assert.match(src, /registry\/nations\/\$\{current\}\.json/);
+  // fetchLocal accepts only data/registry/... (core/net.js LOCAL_PATH); a bare registry/ path always fails.
+  assert.match(src, /fetchLocal\('data\/registry\/nations-index\.json'/);
+  assert.match(src, /fetchLocal\('data\/registry\/id-redirects\.json'/);
+  assert.match(src, /fetchLocal\(`data\/registry\/nations\/\$\{current\}\.json`/);
+  assert.doesNotMatch(src, /fetchLocal\(['`]registry\//);
   assert.match(src, /resolveNationId/);
 });

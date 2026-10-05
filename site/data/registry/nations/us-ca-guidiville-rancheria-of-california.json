@@ -33,27 +33,56 @@
     [
       39.1357,
       -123.2007
+    ],
+    [
+      39.16447,
+      -123.16991
     ]
   ],
   "bbox": [
-    -123.31651,
-    39.04587,
-    -123.08489,
-    39.22553
+    -123.17266,
+    39.13855,
+    -123.14788,
+    39.17016
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-guidiville-rancheria-of-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0133",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.1357,
+      -123.2007
+    ],
+    "forecastZones": [
+      "forecast:CAZ113"
+    ],
+    "countyZones": [
+      "county:CAC045"
+    ],
+    "fireZones": [
+      "fire:CAZ416"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

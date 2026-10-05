@@ -33,27 +33,59 @@
     [
       46.72168,
       -124.0164
+    ],
+    [
+      46.72819,
+      -124.02075
     ]
   ],
   "bbox": [
-    -124.14744,
-    46.63185,
-    -123.88536,
-    46.81151
+    -124.03537,
+    46.71961,
+    -124.01407,
+    46.73241
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0082",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "PQR"
+    ],
+    "point": [
+      46.7217,
+      -124.0164
+    ],
+    "forecastZones": [
+      "forecast:WAZ201"
+    ],
+    "countyZones": [
+      "county:WAC049"
+    ],
+    "fireZones": [
+      "fire:WAZ630"
+    ],
+    "marineZones": [
+      "marine:PZZ251",
+      "marine:PZZ156"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
   "gauges": [],

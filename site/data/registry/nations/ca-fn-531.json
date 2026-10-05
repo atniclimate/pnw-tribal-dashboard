@@ -30,30 +30,93 @@
     [
       55.25524,
       -127.67696
+    ],
+    [
+      55.28597,
+      -127.65073
+    ],
+    [
+      55.7098,
+      -127.58342
+    ],
+    [
+      55.28288,
+      -127.61508
+    ],
+    [
+      55.29308,
+      -127.67715
+    ],
+    [
+      55.25885,
+      -127.61396
     ]
   ],
   "bbox": [
-    -127.83458,
-    55.16541,
-    -127.51934,
-    55.34507
+    -127.70616,
+    55.2469,
+    -127.54676,
+    55.72246
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-531.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06755",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06756",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06757",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06758",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06759",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-82",
+    "citypageName": "Smithers",
+    "distanceKm": 61.9,
+    "forecastZones": [
+      "087100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08EB003",
+    "wsc:08EE025",
+    "wsc:08EB005",
+    "wsc:08EB004"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

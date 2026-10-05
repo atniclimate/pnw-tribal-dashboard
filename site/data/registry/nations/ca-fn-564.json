@@ -30,30 +30,126 @@
     [
       49.17144,
       -122.56549
+    ],
+    [
+      49.17398,
+      -122.56128
+    ],
+    [
+      49.17855,
+      -122.52893
+    ],
+    [
+      49.18236,
+      -122.39609
+    ],
+    [
+      49.17741,
+      -122.41698
+    ],
+    [
+      49.18923,
+      -122.42145
+    ],
+    [
+      49.17544,
+      -122.46108
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.14355,
+      -122.27497
     ]
   ],
   "bbox": [
-    -122.70289,
-    49.08161,
-    -122.42809,
-    49.26127
+    -122.57976,
+    49.13282,
+    -121.95968,
+    49.19108
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-564.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08029",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08030",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08031",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08032",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08033",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08034",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-100",
+    "citypageName": "Langley",
+    "distanceKm": 10.5,
+    "forecastZones": [
+      "082512-082513-082600-082711-082713-082714",
+      "082711-082712-082720-082730"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH044",
+    "wsc:08MH024",
+    "wsc:08MH076",
+    "wsc:08MH098",
+    "wsc:08MH001",
+    "wsc:08MH090"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

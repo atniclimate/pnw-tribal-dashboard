@@ -30,30 +30,51 @@
     [
       58.09197,
       -122.69818
+    ],
+    [
+      58.09634,
+      -122.69779
     ]
   ],
   "bbox": [
-    -122.86814,
-    58.00214,
-    -122.52822,
-    58.1818
+    -122.71561,
+    58.06554,
+    -122.68007,
+    58.1152
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-544.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06950",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Dawson_Creek",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-83",
+    "citypageName": "Fort Nelson",
+    "distanceKm": 79.8,
+    "forecastZones": [
+      "088100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:10CD005",
+    "wsc:10CD004"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

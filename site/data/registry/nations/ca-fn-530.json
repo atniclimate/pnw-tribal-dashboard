@@ -30,30 +30,114 @@
     [
       55.02157,
       -127.33091
+    ],
+    [
+      55.00713,
+      -127.3159
+    ],
+    [
+      55.03531,
+      -127.38127
+    ],
+    [
+      55.02964,
+      -127.31894
+    ],
+    [
+      54.74705,
+      -127.01391
+    ],
+    [
+      55.03862,
+      -127.34596
+    ],
+    [
+      55.02777,
+      -127.339
+    ],
+    [
+      54.96162,
+      -127.27045
     ]
   ],
   "bbox": [
-    -127.48761,
-    54.93174,
-    -127.17421,
-    55.1114
+    -127.39388,
+    54.74347,
+    -127.00138,
+    55.04256
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-530.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06748",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06749",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06750",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06751",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06752",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06753",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06754",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-82",
+    "citypageName": "Smithers",
+    "distanceKm": 28.8,
+    "forecastZones": [
+      "087100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08EE005",
+    "wsc:08EE008",
+    "wsc:08EE012",
+    "wsc:08EE004",
+    "wsc:08EF006"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

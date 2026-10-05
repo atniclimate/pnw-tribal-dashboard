@@ -33,37 +33,97 @@
     [
       43.38257,
       -124.2644
+    ],
+    [
+      44.25994,
+      -123.5154
+    ],
+    [
+      43.98042,
+      -124.08641
     ]
   ],
   "bbox": [
-    -124.388,
-    43.29274,
-    -124.1408,
-    43.4724
+    -124.44744,
+    42.81054,
+    -123.47193,
+    44.28153
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians.json",
+    "parts": [
+      {
+        "sourceId": "census-aiannh-2025",
+        "featureId": "0770R",
+        "kind": "reservation",
+        "vintage": "2025-09-15"
+      },
+      {
+        "sourceId": "census-aiannh-2025",
+        "featureId": "0770T",
+        "kind": "off-reservation-trust-land",
+        "vintage": "2025-09-15"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR",
+      "PQR"
+    ],
+    "point": [
+      43.3826,
+      -124.2644
+    ],
+    "forecastZones": [
+      "forecast:ORZ021",
+      "forecast:ORZ023",
+      "forecast:ORZ107",
+      "forecast:ORZ103"
+    ],
+    "countyZones": [
+      "county:ORC011",
+      "county:ORC019",
+      "county:ORC039"
+    ],
+    "fireZones": [
+      "fire:ORZ615",
+      "fire:ORZ683",
+      "fire:ORZ616",
+      "fire:ORZ681"
+    ],
+    "marineZones": [
+      "marine:PZZ350",
+      "marine:PZZ253"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:LOBO3",
+    "nwps:MNRO3",
+    "nwps:MPLO3",
+    "nwps:FRNO3",
+    "nwps:NOTO3",
+    "nwps:BIFO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,
   "codes": {
     "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "censusAiannhce": [
+      "0770"
+    ],
+    "censusGeoid": "0770R",
     "biaTldObjectId": 346,
     "biaAnvObjectId": null,
     "iscBandNumber": null

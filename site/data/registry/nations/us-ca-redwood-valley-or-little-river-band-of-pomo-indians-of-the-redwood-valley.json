@@ -33,27 +33,57 @@
     [
       39.28566,
       -123.1838
+    ],
+    [
+      39.28952,
+      -123.18044
     ]
   ],
   "bbox": [
-    -123.29986,
-    39.19583,
-    -123.06774,
-    39.37549
+    -123.2198,
+    39.28164,
+    -123.16583,
+    39.29224
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0166",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.2857,
+      -123.1838
+    ],
+    "forecastZones": [
+      "forecast:CAZ113",
+      "forecast:CAZ110"
+    ],
+    "countyZones": [
+      "county:CAC045"
+    ],
+    "fireZones": [
+      "fire:CAZ416"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

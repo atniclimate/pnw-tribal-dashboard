@@ -33,30 +33,64 @@
     [
       47.12182,
       -123.0801
+    ],
+    [
+      47.20345,
+      -122.91534
     ]
   ],
   "bbox": [
-    -123.21212,
-    47.03199,
-    -122.94808,
-    47.21165
+    -123.08921,
+    47.12043,
+    -122.88635,
+    47.22589
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0086",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.1218,
+      -123.0801
+    ],
+    "forecastZones": [
+      "forecast:WAZ317"
+    ],
+    "countyZones": [
+      "county:WAC045"
+    ],
+    "fireZones": [
+      "fire:WAZ654"
+    ],
+    "marineZones": [
+      "marine:PZZ135"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SRPW1",
+    "nwps:SRCW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

@@ -30,30 +30,126 @@
     [
       49.26723,
       -124.84892
+    ],
+    [
+      49.27153,
+      -124.86965
+    ],
+    [
+      48.97101,
+      -125.29361
+    ],
+    [
+      49.21469,
+      -124.80996
+    ],
+    [
+      48.87204,
+      -125.29742
+    ],
+    [
+      48.96862,
+      -125.0516
+    ],
+    [
+      48.91213,
+      -125.28934
+    ],
+    [
+      48.92902,
+      -125.24135
+    ],
+    [
+      48.97594,
+      -125.01608
     ]
   ],
   "bbox": [
-    -124.98659,
-    49.1774,
-    -124.71125,
-    49.35706
+    -125.30126,
+    48.87064,
+    -124.80443,
+    49.28295
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-665.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06923",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06924",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06925",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06926",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06927",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06928",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06929",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06930",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-46",
+    "citypageName": "Port Alberni",
+    "distanceKm": 4.7,
+    "forecastZones": [
+      "081500",
+      "081400"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HB017",
+    "wsc:08HB008",
+    "wsc:08HB048",
+    "wsc:08HB014",
+    "wsc:08HB023",
+    "wsc:08HB022"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -30,30 +30,96 @@
     [
       50.03166,
       -125.24792
+    ],
+    [
+      50.03832,
+      -125.25314
+    ],
+    [
+      50.00382,
+      -125.29234
+    ],
+    [
+      50.45543,
+      -125.52452
+    ],
+    [
+      50.57582,
+      -125.57331
+    ],
+    [
+      50.50618,
+      -125.54849
     ]
   ],
   "bbox": [
-    -125.38776,
-    49.94183,
-    -125.10808,
-    50.12149
+    -125.57806,
+    50.00027,
+    -125.24374,
+    50.57834
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-622.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06961",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06962",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06963",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06964",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10182",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-19",
+    "citypageName": "Campbell River",
+    "distanceKm": 1.4,
+    "forecastZones": [
+      "081300",
+      "082300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HD024",
+    "wsc:08HD022",
+    "wsc:08HD035",
+    "wsc:08HD005",
+    "wsc:08HD027",
+    "wsc:08HD023"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

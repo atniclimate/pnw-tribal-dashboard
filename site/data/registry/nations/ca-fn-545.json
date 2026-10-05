@@ -30,24 +30,42 @@
     [
       55.83063,
       -121.83092
+    ],
+    [
+      55.80917,
+      -121.89324
     ]
   ],
   "bbox": [
-    -121.99086,
-    55.7408,
-    -121.67098,
-    55.92046
+    -121.94468,
+    55.78177,
+    -121.79948,
+    55.83252
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-545.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06955",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Dawson_Creek",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-23",
+    "citypageName": "Chetwynd",
+    "distanceKm": 20.5,
+    "forecastZones": [
+      "087300"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,

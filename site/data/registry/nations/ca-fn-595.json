@@ -30,30 +30,122 @@
     [
       50.7281,
       -122.21763
+    ],
+    [
+      50.72956,
+      -122.18266
+    ],
+    [
+      50.74254,
+      -122.20129
+    ],
+    [
+      50.71745,
+      -122.29598
+    ],
+    [
+      50.69448,
+      -122.09559
+    ],
+    [
+      50.70452,
+      -122.28047
+    ],
+    [
+      50.70218,
+      -122.29744
+    ],
+    [
+      50.7088,
+      -122.29595
+    ],
+    [
+      50.67937,
+      -122.11684
     ]
   ],
   "bbox": [
-    -122.35954,
-    50.63827,
-    -122.07572,
-    50.81793
+    -122.30949,
+    50.67789,
+    -122.08254,
+    50.75015
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-595.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08151",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08152",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08153",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08154",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08155",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08156",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09266",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09991",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-28",
+    "citypageName": "Lillooet",
+    "distanceKm": 20.7,
+    "forecastZones": [
+      "083110-083122"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08ME003",
+    "wsc:08ME002",
+    "wsc:08MF040"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

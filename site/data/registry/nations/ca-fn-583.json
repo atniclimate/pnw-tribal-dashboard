@@ -30,30 +30,115 @@
     [
       49.36982,
       -121.5526
+    ],
+    [
+      49.37498,
+      -121.54761
+    ],
+    [
+      49.3958,
+      -121.45303
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.14355,
+      -122.27497
+    ],
+    [
+      49.37545,
+      -121.44837
+    ],
+    [
+      49.38213,
+      -121.44806
+    ],
+    [
+      49.39751,
+      -121.44251
     ]
   ],
   "bbox": [
-    -121.69055,
-    49.27999,
-    -121.41465,
-    49.45965
+    -122.27887,
+    49.13282,
+    -121.44089,
+    49.40053
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-583.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08076",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08077",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08078",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08079",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08080",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-36",
+    "citypageName": "Hope",
+    "distanceKm": 8.9,
+    "forecastZones": [
+      "082711-082712-082720-082730"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MF005",
+    "wsc:08MF076",
+    "wsc:08MH024",
+    "wsc:08MH001",
+    "wsc:08MF068",
+    "wsc:08MF038"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

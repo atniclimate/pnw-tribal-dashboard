@@ -30,27 +30,75 @@
     [
       48.44143,
       -123.42815
+    ],
+    [
+      48.43739,
+      -123.24867
+    ],
+    [
+      48.44653,
+      -123.42182
+    ],
+    [
+      48.42728,
+      -123.24505
+    ],
+    [
+      48.43914,
+      -123.3814
     ]
   ],
   "bbox": [
-    -123.56356,
-    48.3516,
-    -123.29274,
-    48.53126
+    -123.4368,
+    48.42434,
+    -123.22498,
+    48.4509
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-656.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06839",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06840",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06841",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09082",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-40",
+    "citypageName": "Esquimalt",
+    "distanceKm": 1.8,
+    "forecastZones": [
+      "081600"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
   "gauges": [],

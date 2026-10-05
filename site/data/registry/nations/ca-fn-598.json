@@ -30,30 +30,132 @@
     [
       49.05143,
       -119.7238
+    ],
+    [
+      49.13893,
+      -119.84519
+    ],
+    [
+      49.22056,
+      -120.00632
+    ],
+    [
+      49.0338,
+      -119.71974
+    ],
+    [
+      49.13168,
+      -119.7447
+    ],
+    [
+      49.14419,
+      -119.77197
+    ],
+    [
+      49.31704,
+      -119.82021
+    ],
+    [
+      49.21972,
+      -119.91133
+    ],
+    [
+      49.18388,
+      -119.7319
     ]
   ],
   "bbox": [
-    -119.86087,
-    48.9616,
-    -119.58673,
-    49.14126
+    -120.08873,
+    49.0001,
+    -119.69955,
+    49.32386
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-598.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07399",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07400",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07401",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07402",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07403",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07404",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07405",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07406",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07408",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "override",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-69",
+    "citypageName": "Osoyoos",
+    "distanceKm": 19.4,
+    "forecastZones": [
+      "083500",
+      "083420"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NL004",
+    "wsc:08NL045",
+    "wsc:08NL076",
+    "wsc:08NM085",
+    "wsc:08NM037",
+    "wsc:08NL050"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

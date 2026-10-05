@@ -33,27 +33,60 @@
     [
       40.68939,
       -124.2533
+    ],
+    [
+      40.69091,
+      -124.25258
     ]
   ],
   "bbox": [
-    -124.37177,
-    40.59956,
-    -124.13483,
-    40.77922
+    -124.25482,
+    40.68687,
+    -124.25005,
+    40.69575
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-wiyot-tribe-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0188",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      40.6894,
+      -124.2533
+    ],
+    "forecastZones": [
+      "forecast:CAZ103"
+    ],
+    "countyZones": [
+      "county:CAC023"
+    ],
+    "fireZones": [
+      "fire:CAZ404"
+    ],
+    "marineZones": [
+      "marine:PZZ415",
+      "marine:PZZ450",
+      "marine:PZZ410"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],
@@ -61,9 +94,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0188"
+    ],
+    "censusAiannhce": [
+      "4095"
+    ],
+    "censusGeoid": "4095R",
     "biaTldObjectId": 485,
     "biaAnvObjectId": null,
     "iscBandNumber": null

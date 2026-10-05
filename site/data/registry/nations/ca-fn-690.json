@@ -30,30 +30,75 @@
     [
       50.77333,
       -119.73058
+    ],
+    [
+      50.77917,
+      -119.7523
+    ],
+    [
+      50.75593,
+      -119.73124
+    ],
+    [
+      50.70723,
+      -119.31746
     ]
   ],
   "bbox": [
-    -119.87263,
-    50.6835,
-    -119.58853,
-    50.86316
+    -119.78459,
+    50.69893,
+    -119.29955,
+    50.81847
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-690.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07183",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07184",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07185",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-51",
+    "citypageName": "Salmon Arm",
+    "distanceKm": 33.4,
+    "forecastZones": [
+      "083600"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LE031",
+    "wsc:08LE021",
+    "wsc:08LE112",
+    "wsc:08LE108",
+    "wsc:08LD001",
+    "wsc:08LD003"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -30,30 +30,95 @@
     [
       50.87024,
       -119.59965
+    ],
+    [
+      50.88786,
+      -119.60746
+    ],
+    [
+      50.91385,
+      -119.47813
+    ],
+    [
+      50.78153,
+      -119.32915
+    ],
+    [
+      50.86071,
+      -119.58858
+    ],
+    [
+      50.81857,
+      -119.54501
     ]
   ],
   "bbox": [
-    -119.742,
-    50.78041,
-    -119.4573,
-    50.96007
+    -119.67094,
+    50.77154,
+    -119.30599,
+    50.93462
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-689.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07178",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07179",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07180",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07181",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07182",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-51",
+    "citypageName": "Salmon Arm",
+    "distanceKm": 29.9,
+    "forecastZones": [
+      "083600"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LE077",
+    "wsc:08LD001",
+    "wsc:08LE111",
+    "wsc:08LE112",
+    "wsc:08LD003",
+    "wsc:08LE021"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

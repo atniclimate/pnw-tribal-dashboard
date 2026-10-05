@@ -32,30 +32,68 @@
     [
       46.81501,
       -123.1724
+    ],
+    [
+      46.82631,
+      -123.23305
     ]
   ],
   "bbox": [
-    -123.30366,
-    46.72518,
-    -123.04114,
-    46.90484
+    -123.25827,
+    46.79719,
+    -123.13928,
+    46.83687
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-confederated-tribes-of-the-chehalis-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0361",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      46.815,
+      -123.1724
+    ],
+    "forecastZones": [
+      "forecast:WAZ319",
+      "forecast:WAZ318"
+    ],
+    "countyZones": [
+      "county:WAC027",
+      "county:WAC067"
+    ],
+    "fireZones": [
+      "fire:WAZ655"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:CGMW1",
+    "nwps:CRPW1",
+    "nwps:CENW1",
+    "nwps:CTAW1",
+    "nwps:BCDW1",
+    "nwps:DOTW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

@@ -47,13 +47,27 @@
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-74",
+    "citypageName": "Vancouver",
+    "distanceKm": 7,
+    "forecastZones": [
+      "082512-082513-082600-082711-082713-082714"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH032",
+    "wsc:08GA030",
+    "wsc:08MH053",
+    "wsc:08GA061",
+    "wsc:08MH126",
+    "wsc:08GA031"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

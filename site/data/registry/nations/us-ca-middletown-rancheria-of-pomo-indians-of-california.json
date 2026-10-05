@@ -33,27 +33,56 @@
     [
       38.73269,
       -122.6246
+    ],
+    [
+      38.72949,
+      -122.62558
     ]
   ],
   "bbox": [
-    -122.73976,
-    38.64286,
-    -122.50944,
-    38.82252
+    -122.63055,
+    38.72422,
+    -122.62106,
+    38.73413
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-middletown-rancheria-of-pomo-indians-of-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0151",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      38.7327,
+      -122.6246
+    ],
+    "forecastZones": [
+      "forecast:CAZ119"
+    ],
+    "countyZones": [
+      "county:CAC033"
+    ],
+    "fireZones": [
+      "fire:CAZ420"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KDAX",
+    "ridgeLoop": "KDAX",
     "eccc": null
   },
   "gauges": [],

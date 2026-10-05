@@ -30,24 +30,60 @@
     [
       57.42367,
       -125.63028
+    ],
+    [
+      57.4276,
+      -125.63081
+    ],
+    [
+      57.73743,
+      -125.74885
+    ],
+    [
+      57.37257,
+      -125.58487
     ]
   ],
   "bbox": [
-    -125.79712,
-    57.33384,
-    -125.46344,
-    57.5135
+    -125.75008,
+    57.37188,
+    -125.58363,
+    57.73809
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-610.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07576",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07577",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07578",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-53",
+    "citypageName": "Tetsa River (Provincial Park)",
+    "distanceKm": 149.3,
+    "forecastZones": []
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,

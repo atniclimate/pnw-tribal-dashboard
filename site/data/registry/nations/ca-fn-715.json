@@ -30,30 +30,81 @@
     [
       52.95489,
       -122.45109
+    ],
+    [
+      52.948,
+      -122.46388
+    ],
+    [
+      52.93169,
+      -122.48833
+    ],
+    [
+      52.97131,
+      -122.42953
+    ],
+    [
+      52.94799,
+      -122.50798
     ]
   ],
   "bbox": [
-    -122.6002,
-    52.86506,
-    -122.30198,
-    53.04472
+    -122.5118,
+    52.92465,
+    -122.42608,
+    52.97305
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-715.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08270",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08272",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08273",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08274",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-64",
+    "citypageName": "Quesnel",
+    "distanceKm": 4.3,
+    "forecastZones": [
+      "086200"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08KE016",
+    "wsc:08KH006"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

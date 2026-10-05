@@ -32,30 +32,61 @@
     [
       48.34546,
       -117.272
+    ],
+    [
+      48.35747,
+      -117.27479
     ]
   ],
   "bbox": [
-    -117.40716,
-    48.25563,
-    -117.13684,
-    48.43529
+    -117.30457,
+    48.30951,
+    -117.25004,
+    48.44396
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-kalispel-indian-community-of-the-kalispel-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0065",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "OTX"
+    ],
+    "point": [
+      48.3455,
+      -117.272
+    ],
+    "forecastZones": [
+      "forecast:WAZ037"
+    ],
+    "countyZones": [
+      "county:WAC051"
+    ],
+    "fireZones": [
+      "fire:WAZ701"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:POCW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

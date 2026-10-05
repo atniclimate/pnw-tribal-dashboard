@@ -32,30 +32,68 @@
     [
       47.25172,
       -122.1152
+    ],
+    [
+      47.24739,
+      -122.11415
     ]
   ],
   "bbox": [
-    -122.24754,
-    47.16189,
-    -121.98286,
-    47.34155
+    -122.21328,
+    47.22825,
+    -122.10165,
+    47.30105
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-muckleshoot-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0071",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.2517,
+      -122.1152
+    ],
+    "forecastZones": [
+      "forecast:WAZ308",
+      "forecast:WAZ316"
+    ],
+    "countyZones": [
+      "county:WAC033",
+      "county:WAC053"
+    ],
+    "fireZones": [
+      "fire:WAZ657"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:BKDW1",
+    "nwps:WRAW1",
+    "nwps:BSKW1",
+    "nwps:AUBW1",
+    "nwps:SPEW1",
+    "nwps:MMDW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

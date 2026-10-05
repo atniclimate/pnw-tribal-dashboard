@@ -30,30 +30,128 @@
     [
       56.57785,
       -120.49559
+    ],
+    [
+      56.55885,
+      -120.48229
+    ],
+    [
+      56.4985,
+      -120.04899
+    ],
+    [
+      56.47166,
+      -120.25863
+    ],
+    [
+      56.50428,
+      -120.15999
+    ],
+    [
+      56.73435,
+      -120.81669
+    ],
+    [
+      56.21058,
+      -120.86712
+    ],
+    [
+      56.25006,
+      -120.87155
+    ],
+    [
+      56.49316,
+      -120.12863
     ]
   ],
   "bbox": [
-    -120.65868,
-    56.48802,
-    -120.3325,
-    56.66768
+    -120.87365,
+    55.73622,
+    -120.00133,
+    56.74052
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-548.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06958",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06959",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10213",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10239",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10263",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10264",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10265",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10266",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10278",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Dawson_Creek",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-78",
+    "citypageName": "Fort St. John",
+    "distanceKm": 42.2,
+    "forecastZones": [
+      "087300"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:07FA004",
+    "wsc:07FC001",
+    "wsc:07FD002"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -30,30 +30,112 @@
     [
       50.67735,
       -121.94564
+    ],
+    [
+      50.7281,
+      -121.95188
+    ],
+    [
+      50.68107,
+      -121.95073
+    ],
+    [
+      50.66039,
+      -121.90566
+    ],
+    [
+      50.5839,
+      -121.85381
+    ],
+    [
+      50.61074,
+      -121.85967
+    ],
+    [
+      50.60442,
+      -121.85744
+    ],
+    [
+      50.66785,
+      -121.98854
     ]
   ],
   "bbox": [
-    -122.0874,
-    50.58752,
-    -121.80388,
-    50.76718
+    -121.98952,
+    50.57969,
+    -121.84666,
+    50.743
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-593.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "00017",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08138",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08139",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08140",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08141",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08142",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08143",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-28",
+    "citypageName": "Lillooet",
+    "distanceKm": 1.8,
+    "forecastZones": [
+      "083110-083122"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MF040",
+    "wsc:08ME003",
+    "wsc:08ME002"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

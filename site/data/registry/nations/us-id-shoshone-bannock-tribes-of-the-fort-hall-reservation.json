@@ -32,37 +32,83 @@
     [
       43.02637,
       -112.4334
+    ],
+    [
+      43.05011,
+      -112.17482
     ]
   ],
   "bbox": [
-    -112.55628,
-    42.93654,
-    -112.31052,
-    43.1162
+    -112.75186,
+    42.56105,
+    -111.94573,
+    43.26678
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0061",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Boise",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "PIH"
+    ],
+    "point": [
+      43.0264,
+      -112.4334
+    ],
+    "forecastZones": [
+      "forecast:IDZ054",
+      "forecast:IDZ058",
+      "forecast:IDZ062"
+    ],
+    "countyZones": [
+      "county:IDC011",
+      "county:IDC077",
+      "county:IDC005",
+      "county:IDC029"
+    ],
+    "fireZones": [
+      "fire:IDZ410",
+      "fire:IDZ413"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KSFX",
+    "ridgeLoop": "KSFX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SPSI1",
+    "nwps:BLFI1",
+    "nwps:PTYI1",
+    "nwps:BFTI1",
+    "nwps:PIHI1",
+    "nwps:SNAI1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0061"
+    ],
+    "censusAiannhce": [
+      "1185"
+    ],
+    "censusGeoid": "1185R",
     "biaTldObjectId": 374,
     "biaAnvObjectId": null,
     "iscBandNumber": null

@@ -32,27 +32,56 @@
     [
       39.88002,
       -122.1961
+    ],
+    [
+      39.86789,
+      -122.22175
     ]
   ],
   "bbox": [
-    -122.31316,
-    39.79019,
-    -122.07904,
-    39.96985
+    -122.24422,
+    39.85632,
+    -122.19039,
+    39.88173
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-paskenta-band-of-nomlaki-indians-of-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0157",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "STO"
+    ],
+    "point": [
+      39.88,
+      -122.1961
+    ],
+    "forecastZones": [
+      "forecast:CAZ142"
+    ],
+    "countyZones": [
+      "county:CAC103"
+    ],
+    "fireZones": [
+      "fire:CAZ142"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

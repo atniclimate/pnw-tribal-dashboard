@@ -32,27 +32,56 @@
     [
       39.02211,
       -122.8872
+    ],
+    [
+      39.01843,
+      -122.8875
     ]
   ],
   "bbox": [
-    -123.00283,
-    38.93228,
-    -122.77157,
-    39.11194
+    -122.8943,
+    39.01122,
+    -122.88494,
+    39.02752
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0106",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.0221,
+      -122.8872
+    ],
+    "forecastZones": [
+      "forecast:CAZ118"
+    ],
+    "countyZones": [
+      "county:CAC033"
+    ],
+    "fireZones": [
+      "fire:CAZ421"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KDAX",
+    "ridgeLoop": "KDAX",
     "eccc": null
   },
   "gauges": [],
@@ -60,9 +89,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0106"
+    ],
+    "censusAiannhce": [
+      "0275"
+    ],
+    "censusGeoid": "0275R",
     "biaTldObjectId": 392,
     "biaAnvObjectId": null,
     "iscBandNumber": null

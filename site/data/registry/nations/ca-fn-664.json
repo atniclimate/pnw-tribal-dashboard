@@ -30,30 +30,96 @@
     [
       49.2658,
       -124.82509
+    ],
+    [
+      49.29398,
+      -124.89527
+    ],
+    [
+      49.18661,
+      -124.8296
+    ],
+    [
+      49.26513,
+      -124.82546
+    ],
+    [
+      48.92653,
+      -125.251
+    ],
+    [
+      49.08093,
+      -124.84556
     ]
   ],
   "bbox": [
-    -124.96275,
-    49.17597,
-    -124.68743,
-    49.35563
+    -125.2553,
+    48.92486,
+    -124.82266,
+    49.29761
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-664.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06918",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06919",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06920",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06921",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06922",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-46",
+    "citypageName": "Port Alberni",
+    "distanceKm": 3.4,
+    "forecastZones": [
+      "081500",
+      "081400"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HB008",
+    "wsc:08HB017",
+    "wsc:08HB023",
+    "wsc:08HB048",
+    "wsc:08HB014",
+    "wsc:08HB022"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

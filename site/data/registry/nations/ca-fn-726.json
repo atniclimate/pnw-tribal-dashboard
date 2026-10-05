@@ -30,30 +30,90 @@
     [
       53.93296,
       -125.66737
+    ],
+    [
+      54.00881,
+      -125.95755
+    ],
+    [
+      53.98561,
+      -126.25603
+    ],
+    [
+      53.99069,
+      -125.85434
+    ],
+    [
+      53.93463,
+      -125.66699
+    ],
+    [
+      53.92964,
+      -125.67262
     ]
   ],
   "bbox": [
-    -125.81995,
-    53.84313,
-    -125.51479,
-    54.02279
+    -126.26241,
+    53.92873,
+    -125.664,
+    54.01664
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-726.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07453",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07454",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07462",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07463",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07468",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-43",
+    "citypageName": "Burns Lake",
+    "distanceKm": 33.6,
+    "forecastZones": [
+      "087100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08JA018"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

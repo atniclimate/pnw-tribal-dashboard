@@ -16462,9 +16462,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0053"
+        ],
+        "censusAiannhce": [
+          "0110"
+        ],
+        "censusGeoid": "0110R",
         "biaTldObjectId": 361,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -17233,7 +17237,9 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
+        "biaLarIds": [
+          "LAR0171"
+        ],
         "censusAiannhce": [
           "3220"
         ],
@@ -17391,9 +17397,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0106"
+        ],
+        "censusAiannhce": [
+          "0275"
+        ],
+        "censusGeoid": "0275R",
         "biaTldObjectId": 392,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -17548,9 +17558,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0142"
+        ],
+        "censusAiannhce": [
+          "1925"
+        ],
+        "censusGeoid": "1925R",
         "biaTldObjectId": 399,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -17705,9 +17719,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0192"
+        ],
+        "censusAiannhce": [
+          "4275"
+        ],
+        "censusGeoid": "4275R",
         "biaTldObjectId": 407,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -17865,8 +17883,10 @@
         "biaLarIds": [
           "LAR0125"
         ],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "censusAiannhce": [
+          "4030"
+        ],
+        "censusGeoid": "4030R",
         "biaTldObjectId": 413,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -18263,9 +18283,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0196"
+        ],
+        "censusAiannhce": [
+          "4430"
+        ],
+        "censusGeoid": "4430R",
         "biaTldObjectId": 423,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -18339,9 +18363,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0134"
+        ],
+        "censusAiannhce": [
+          "1490"
+        ],
+        "censusGeoid": "1490R",
         "biaTldObjectId": 424,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -18577,9 +18605,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0148"
+        ],
+        "censusAiannhce": [
+          "2100"
+        ],
+        "censusGeoid": "2100R",
         "biaTldObjectId": 440,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -18895,7 +18927,14 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
+        "biaLarIds": [
+          "LAR0102",
+          "LAR0143",
+          "LAR0145",
+          "LAR0152",
+          "LAR0169",
+          "LAR0199"
+        ],
         "censusAiannhce": [
           "2835"
         ],
@@ -19775,9 +19814,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0183"
+        ],
+        "censusAiannhce": [
+          "3855"
+        ],
+        "censusGeoid": "3855R",
         "biaTldObjectId": 477,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -19852,9 +19895,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0188"
+        ],
+        "censusAiannhce": [
+          "4095"
+        ],
+        "censusGeoid": "4095R",
         "biaTldObjectId": 485,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -20249,9 +20296,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0061"
+        ],
+        "censusAiannhce": [
+          "1185"
+        ],
+        "censusGeoid": "1185R",
         "biaTldObjectId": 374,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -20405,9 +20456,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0207"
+        ],
+        "censusAiannhce": [
+          "3205"
+        ],
+        "censusGeoid": "3205R",
         "biaTldObjectId": 491,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -20482,9 +20537,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0060"
+        ],
+        "censusAiannhce": [
+          "1110"
+        ],
+        "censusGeoid": "1110R",
         "biaTldObjectId": 341,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -20642,9 +20701,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0248"
+        ],
+        "censusAiannhce": [
+          "0965"
+        ],
+        "censusGeoid": "0965R",
         "biaTldObjectId": 579,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -20883,8 +20946,10 @@
       "isc": null,
       "codes": {
         "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "censusAiannhce": [
+          "0770"
+        ],
+        "censusGeoid": "0770R",
         "biaTldObjectId": 346,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -21040,9 +21105,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0091"
+        ],
+        "censusAiannhce": [
+          "4405"
+        ],
+        "censusGeoid": "4405R",
         "biaTldObjectId": 348,
         "biaAnvObjectId": null,
         "iscBandNumber": null
@@ -21197,7 +21266,9 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
+        "biaLarIds": [
+          "LAR0058"
+        ],
         "censusAiannhce": [
           "0775"
         ],
@@ -21436,7 +21507,9 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
+        "biaLarIds": [
+          "LAR0094"
+        ],
         "censusAiannhce": [
           "4690"
         ],
@@ -23435,9 +23508,13 @@
       "website": null,
       "isc": null,
       "codes": {
-        "biaLarIds": [],
-        "censusAiannhce": [],
-        "censusGeoid": null,
+        "biaLarIds": [
+          "LAR0077"
+        ],
+        "censusAiannhce": [
+          "2925"
+        ],
+        "censusGeoid": "2925R",
         "biaTldObjectId": 380,
         "biaAnvObjectId": null,
         "iscBandNumber": null

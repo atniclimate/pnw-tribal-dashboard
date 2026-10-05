@@ -32,27 +32,63 @@
     [
       41.52942,
       -124.0377
+    ],
+    [
+      41.40831,
+      -123.93104
     ]
   ],
   "bbox": [
-    -124.1577,
-    41.43959,
-    -123.9177,
-    41.61925
+    -124.09318,
+    41.1766,
+    -123.66443,
+    41.57819
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-yurok-tribe-of-the-yurok-reservation-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0201",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      41.5294,
+      -124.0377
+    ],
+    "forecastZones": [
+      "forecast:CAZ101",
+      "forecast:CAZ105",
+      "forecast:CAZ102"
+    ],
+    "countyZones": [
+      "county:CAC015",
+      "county:CAC023"
+    ],
+    "fireZones": [
+      "fire:CAZ401",
+      "fire:CAZ405",
+      "fire:CAZ406"
+    ],
+    "marineZones": [
+      "marine:PZZ450"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],

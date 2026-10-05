@@ -30,30 +30,52 @@
     [
       55.30955,
       -127.67994
+    ],
+    [
+      55.31047,
+      -127.68998
     ]
   ],
   "bbox": [
-    -127.83778,
-    55.21972,
-    -127.5221,
-    55.39938
+    -127.72544,
+    55.29355,
+    -127.66758,
+    55.32428
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-533.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06760",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-82",
+    "citypageName": "Smithers",
+    "distanceKm": 67.3,
+    "forecastZones": [
+      "087100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08EB003",
+    "wsc:08EE025",
+    "wsc:08EB004"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

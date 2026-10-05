@@ -33,30 +33,63 @@
     [
       48.14404,
       -123.5487
+    ],
+    [
+      48.14393,
+      -123.55011
     ]
   ],
   "bbox": [
-    -123.68333,
-    48.05421,
-    -123.41407,
-    48.23387
+    -123.56329,
+    48.13161,
+    -123.54149,
+    48.15076
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-lower-elwha-tribal-community.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0068",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.144,
+      -123.5487
+    ],
+    "forecastZones": [
+      "forecast:WAZ325"
+    ],
+    "countyZones": [
+      "county:WAC009"
+    ],
+    "fireZones": [
+      "fire:WAZ653"
+    ],
+    "marineZones": [
+      "marine:PZZ131"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:ELWW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

@@ -32,27 +32,58 @@
     [
       41.79111,
       -123.3799
+    ],
+    [
+      41.70282,
+      -122.62155
     ]
   ],
   "bbox": [
-    -123.50038,
-    41.70128,
-    -123.25942,
-    41.88094
+    -123.54999,
+    41.25226,
+    -122.61224,
+    41.84627
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-karuk-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0139",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR"
+    ],
+    "point": [
+      41.7911,
+      -123.3799
+    ],
+    "forecastZones": [
+      "forecast:CAZ080",
+      "forecast:CAZ081"
+    ],
+    "countyZones": [
+      "county:CAC093"
+    ],
+    "fireZones": [
+      "fire:CAZ280",
+      "fire:CAZ281"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
   "gauges": [],

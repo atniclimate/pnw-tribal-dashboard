@@ -30,30 +30,71 @@
     [
       50.59424,
       -126.68233
+    ],
+    [
+      50.62181,
+      -126.57111
+    ],
+    [
+      50.59414,
+      -126.68452
+    ],
+    [
+      50.73707,
+      -126.48462
     ]
   ],
   "bbox": [
-    -126.82384,
-    50.50441,
-    -126.54082,
-    50.68407
+    -126.69163,
+    50.59083,
+    -126.48401,
+    50.73747
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-629.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07030",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07031",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07032",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-89",
+    "citypageName": "Port Hardy",
+    "distanceKm": 60,
+    "forecastZones": [
+      "081200",
+      "082100"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HF004"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

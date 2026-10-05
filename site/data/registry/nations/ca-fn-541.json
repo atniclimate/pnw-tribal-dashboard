@@ -30,30 +30,71 @@
     [
       51.68011,
       -127.23206
+    ],
+    [
+      51.68144,
+      -127.20273
+    ],
+    [
+      51.72539,
+      -127.34981
+    ],
+    [
+      51.50462,
+      -127.68338
     ]
   ],
   "bbox": [
-    -127.37694,
-    51.59028,
-    -127.08718,
-    51.76994
+    -127.68574,
+    51.50356,
+    -127.17695,
+    51.72864
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-541.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07900",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07901",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07902",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-94",
+    "citypageName": "Bella Bella",
+    "distanceKm": 82,
+    "forecastZones": [
+      "082100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08FA002",
+    "wsc:08FA007"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

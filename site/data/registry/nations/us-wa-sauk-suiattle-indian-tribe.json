@@ -32,30 +32,64 @@
     [
       48.32198,
       -121.5525
+    ],
+    [
+      48.29932,
+      -121.42052
     ]
   ],
   "bbox": [
-    -121.6876,
-    48.23215,
-    -121.4174,
-    48.41181
+    -122.35658,
+    47.85656,
+    -121.27306,
+    48.60836
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-sauk-suiattle-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0081",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.322,
+      -121.5525
+    ],
+    "forecastZones": [
+      "forecast:WAZ305",
+      "forecast:WAZ311"
+    ],
+    "countyZones": [
+      "county:WAC057"
+    ],
+    "fireZones": [
+      "fire:WAZ656"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SAKW1",
+    "nwps:WCHW1",
+    "nwps:SRKW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

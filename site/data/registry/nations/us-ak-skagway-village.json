@@ -49,11 +49,31 @@
   "timeZone": "America/Juneau",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "AJK"
+    ],
+    "point": [
+      59.4583,
+      -135.3089
+    ],
+    "forecastZones": [
+      "forecast:AKZ318"
+    ],
+    "countyZones": [
+      "county:AKC230"
+    ],
+    "fireZones": [
+      "fire:AKZ318"
+    ],
+    "marineZones": [
+      "marine:PKZ012"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
   "gauges": [],

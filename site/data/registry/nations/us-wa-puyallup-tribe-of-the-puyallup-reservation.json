@@ -32,30 +32,70 @@
     [
       47.23632,
       -122.4096
+    ],
+    [
+      47.24017,
+      -122.36891
     ]
   ],
   "bbox": [
-    -122.5419,
-    47.14649,
-    -122.2773,
-    47.32615
+    -122.44454,
+    47.18686,
+    -122.30217,
+    47.32017
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-puyallup-tribe-of-the-puyallup-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0078",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.2363,
+      -122.4096
+    ],
+    "forecastZones": [
+      "forecast:WAZ316"
+    ],
+    "countyZones": [
+      "county:WAC053",
+      "county:WAC033"
+    ],
+    "fireZones": [
+      "fire:WAZ654",
+      "fire:WAZ657"
+    ],
+    "marineZones": [
+      "marine:PZZ135"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:PUYW1",
+    "nwps:WRAW1",
+    "nwps:AUBW1",
+    "nwps:BSKW1",
+    "nwps:SPEW1",
+    "nwps:BKDW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

@@ -30,30 +30,120 @@
     [
       50.59601,
       -126.93527
+    ],
+    [
+      50.59524,
+      -126.94928
+    ],
+    [
+      50.56347,
+      -126.97954
+    ],
+    [
+      50.5936,
+      -126.92663
+    ],
+    [
+      50.58878,
+      -126.79788
+    ],
+    [
+      50.52797,
+      -127.00971
+    ],
+    [
+      50.5885,
+      -126.84578
+    ],
+    [
+      50.54584,
+      -127.00565
+    ],
+    [
+      50.58264,
+      -126.92746
     ]
   ],
   "bbox": [
-    -127.07678,
-    50.50618,
-    -126.79376,
-    50.68584
+    -127.01503,
+    50.52573,
+    -126.79315,
+    50.60285
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-631.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07050",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07051",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07052",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07053",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07054",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07055",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07056",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07057",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-89",
+    "citypageName": "Port Hardy",
+    "distanceKm": 42.8,
+    "forecastZones": [
+      "081200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HF004"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

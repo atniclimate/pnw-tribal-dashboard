@@ -32,30 +32,69 @@
     [
       46.13224,
       -122.9326
+    ],
+    [
+      45.85184,
+      -122.70928
     ]
   ],
   "bbox": [
-    -123.06223,
-    46.04241,
-    -122.80297,
-    46.22207
+    -122.71331,
+    45.84643,
+    -122.70098,
+    45.85751
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-cowlitz-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0362",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "PQR"
+    ],
+    "point": [
+      46.1322,
+      -122.9326
+    ],
+    "forecastZones": [
+      "forecast:WAZ204",
+      "forecast:WAZ205"
+    ],
+    "countyZones": [
+      "county:WAC015",
+      "county:WAC011"
+    ],
+    "fireZones": [
+      "fire:WAZ631",
+      "fire:WAZ633"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KRTX",
+    "ridgeLoop": "KRTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:KELW1",
+    "nwps:LOPW1",
+    "nwps:LRWW1",
+    "nwps:SHNO3",
+    "nwps:MERW1",
+    "nwps:CASW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

@@ -47,13 +47,23 @@
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-46",
+    "citypageName": "Port Alberni",
+    "distanceKm": 29.9,
+    "forecastZones": [
+      "081500"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HB048",
+    "wsc:08HB014"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

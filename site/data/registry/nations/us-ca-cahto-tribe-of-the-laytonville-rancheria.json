@@ -33,27 +33,56 @@
     [
       39.66902,
       -123.4962
+    ],
+    [
+      39.66911,
+      -123.50125
     ]
   ],
   "bbox": [
-    -123.6129,
-    39.57919,
-    -123.3795,
-    39.75885
+    -123.50923,
+    39.6657,
+    -123.49511,
+    39.67316
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-cahto-tribe-of-the-laytonville-rancheria.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0142",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.669,
+      -123.4962
+    ],
+    "forecastZones": [
+      "forecast:CAZ110"
+    ],
+    "countyZones": [
+      "county:CAC045"
+    ],
+    "fireZones": [
+      "fire:CAZ414"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],
@@ -61,9 +90,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0142"
+    ],
+    "censusAiannhce": [
+      "1925"
+    ],
+    "censusGeoid": "1925R",
     "biaTldObjectId": 399,
     "biaAnvObjectId": null,
     "iscBandNumber": null

@@ -33,27 +33,60 @@
     [
       41.97213,
       -117.6216
+    ],
+    [
+      41.96726,
+      -117.61274
     ]
   ],
   "bbox": [
-    -117.74243,
-    41.8823,
-    -117.50077,
-    42.06196
+    -118.33162,
+    41.46253,
+    -117.49672,
+    42.10447
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0253",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "LKN",
+      "BOI"
+    ],
+    "point": [
+      41.9721,
+      -117.6216
+    ],
+    "forecastZones": [
+      "forecast:NVZ030",
+      "forecast:ORZ063"
+    ],
+    "countyZones": [
+      "county:NVC013",
+      "county:ORC045"
+    ],
+    "fireZones": [
+      "fire:NVZ437",
+      "fire:ORZ672"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLRX",
+    "ridgeLoop": "KLRX",
     "eccc": null
   },
   "gauges": [],

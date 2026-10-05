@@ -33,27 +33,61 @@
     [
       41.99757,
       -116.1309
+    ],
+    [
+      41.99776,
+      -116.18405
     ]
   ],
   "bbox": [
-    -116.25178,
-    41.90774,
-    -116.01002,
-    42.0874
+    -116.39326,
+    41.78705,
+    -115.9422,
+    42.15795
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0248",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "BOI",
+      "LKN"
+    ],
+    "point": [
+      41.9976,
+      -116.1309
+    ],
+    "forecastZones": [
+      "forecast:IDZ015",
+      "forecast:NVZ031"
+    ],
+    "countyZones": [
+      "county:IDC073",
+      "county:NVC007"
+    ],
+    "fireZones": [
+      "fire:NVZ469",
+      "fire:IDZ423",
+      "fire:NVZ438"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLRX",
+    "ridgeLoop": "KLRX",
     "eccc": null
   },
   "gauges": [],
@@ -61,9 +95,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0248"
+    ],
+    "censusAiannhce": [
+      "0965"
+    ],
+    "censusGeoid": "0965R",
     "biaTldObjectId": 579,
     "biaAnvObjectId": null,
     "iscBandNumber": null

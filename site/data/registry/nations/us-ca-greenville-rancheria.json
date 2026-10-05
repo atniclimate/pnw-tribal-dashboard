@@ -32,27 +32,56 @@
     [
       40.14068,
       -120.9504
+    ],
+    [
+      40.15187,
+      -120.89551
     ]
   ],
   "bbox": [
-    -121.06791,
-    40.05085,
-    -120.83289,
-    40.23051
+    -120.90447,
+    40.13493,
+    -120.88706,
+    40.15602
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-greenville-rancheria.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0131",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "STO"
+    ],
+    "point": [
+      40.1407,
+      -120.9504
+    ],
+    "forecastZones": [
+      "forecast:CAZ130"
+    ],
+    "countyZones": [
+      "county:CAC063"
+    ],
+    "fireZones": [
+      "fire:CAZ130"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

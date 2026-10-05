@@ -32,30 +32,66 @@
     [
       48.53925,
       -122.185
+    ],
+    [
+      48.56175,
+      -122.34243
     ]
   ],
   "bbox": [
-    -122.32067,
-    48.44942,
-    -122.04933,
-    48.62908
+    -122.34826,
+    48.53813,
+    -122.1818,
+    48.5676
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-upper-skagit-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0092",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.5393,
+      -122.185
+    ],
+    "forecastZones": [
+      "forecast:WAZ311"
+    ],
+    "countyZones": [
+      "county:WAC057"
+    ],
+    "fireZones": [
+      "fire:WAZ656"
+    ],
+    "marineZones": [
+      "marine:PZZ133"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SMRW1",
+    "nwps:MVEW1",
+    "nwps:NSSW1",
+    "nwps:HUTW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

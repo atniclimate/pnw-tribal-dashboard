@@ -30,30 +30,96 @@
     [
       49.34303,
       -121.60666
+    ],
+    [
+      49.33833,
+      -121.61107
+    ],
+    [
+      49.5583,
+      -121.39447
+    ],
+    [
+      49.33647,
+      -121.62561
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.14355,
+      -122.27497
     ]
   ],
   "bbox": [
-    -121.74454,
-    49.2532,
-    -121.46878,
-    49.43286
+    -122.27887,
+    49.13282,
+    -121.38769,
+    49.56493
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-587.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08087",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08088",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08089",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-36",
+    "citypageName": "Hope",
+    "distanceKm": 13.4,
+    "forecastZones": [
+      "082711-082712-082720-082730",
+      "083110-083122"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MF072",
+    "wsc:08MH024",
+    "wsc:08MF076",
+    "wsc:08MH001",
+    "wsc:08MF038",
+    "wsc:08MF074"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

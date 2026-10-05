@@ -30,27 +30,45 @@
     [
       48.44493,
       -123.43042
+    ],
+    [
+      48.44544,
+      -123.43167
     ]
   ],
   "bbox": [
-    -123.56584,
-    48.3551,
-    -123.295,
-    48.53476
+    -123.43598,
+    48.44171,
+    -123.4267,
+    48.44647
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-644.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06808",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-40",
+    "citypageName": "Esquimalt",
+    "distanceKm": 2.2,
+    "forecastZones": [
+      "081600"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
   "gauges": [],

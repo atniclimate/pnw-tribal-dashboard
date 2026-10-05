@@ -30,30 +30,75 @@
     [
       49.05528,
       -122.19465
+    ],
+    [
+      49.04985,
+      -122.18744
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.14355,
+      -122.27497
     ]
   ],
   "bbox": [
-    -122.33173,
-    48.96545,
-    -122.05757,
-    49.14511
+    -122.27887,
+    49.04036,
+    -121.95968,
+    49.14498
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-578.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08061",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-81",
+    "citypageName": "Abbotsford",
+    "distanceKm": 9.1,
+    "forecastZones": [
+      "082711-082712-082720-082730"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH024",
+    "wsc:08MH001",
+    "wsc:08MH029",
+    "wsc:08MF038",
+    "wsc:08MF073",
+    "wsc:08MF075"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

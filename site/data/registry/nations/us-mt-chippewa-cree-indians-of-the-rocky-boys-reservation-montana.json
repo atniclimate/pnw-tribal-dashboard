@@ -32,27 +32,57 @@
     [
       48.26295,
       -109.7822
+    ],
+    [
+      48.25533,
+      -109.78808
     ]
   ],
   "bbox": [
-    -109.91714,
-    48.17312,
-    -109.64726,
-    48.35278
+    -110.08461,
+    48.1471,
+    -109.61746,
+    48.43815
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0207",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Denver",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "TFX"
+    ],
+    "point": [
+      48.2629,
+      -109.7822
+    ],
+    "forecastZones": [
+      "forecast:MTZ311",
+      "forecast:MTZ305"
+    ],
+    "countyZones": [
+      "county:MTC041"
+    ],
+    "fireZones": [
+      "fire:MTZ113"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KTFX",
+    "ridgeLoop": "KTFX",
     "eccc": null
   },
   "gauges": [],
@@ -60,9 +90,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0207"
+    ],
+    "censusAiannhce": [
+      "3205"
+    ],
+    "censusGeoid": "3205R",
     "biaTldObjectId": 491,
     "biaAnvObjectId": null,
     "iscBandNumber": null

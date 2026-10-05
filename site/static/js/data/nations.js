@@ -21,7 +21,7 @@ const NOT_IMPLEMENTED = 'not implemented';
  * @returns {Promise<import('../types.js').NetResult<NationsIndex>>}
  */
 export async function loadNationsIndex(opts) {
-  const result = await fetchLocal('registry/nations-index.json', opts ?? {});
+  const result = await fetchLocal('data/registry/nations-index.json', opts ?? {});
   return /** @type {import('../types.js').NetResult<NationsIndex>} */ (result);
 }
 
@@ -32,7 +32,7 @@ export async function loadNationsIndex(opts) {
  * @returns {Promise<IdRedirects | null>}
  */
 async function loadRedirects(opts) {
-  const result = await fetchLocal('registry/id-redirects.json', opts ?? {});
+  const result = await fetchLocal('data/registry/id-redirects.json', opts ?? {});
   return result.ok ? /** @type {IdRedirects} */ (result.data) : null;
 }
 
@@ -53,7 +53,7 @@ export async function loadNation(id, opts) {
   if (!isNationId(current)) {
     return { ok: false, error: { kind: 'unregistered', message: `"${id}" is not a Nation id` }, fetchedAt: new Date().toISOString(), sourceId: 'cthd-registry' };
   }
-  const result = await fetchLocal(`registry/nations/${current}.json`, opts ?? {});
+  const result = await fetchLocal(`data/registry/nations/${current}.json`, opts ?? {});
   return /** @type {import('../types.js').NetResult<NationRecord>} */ (result);
 }
 

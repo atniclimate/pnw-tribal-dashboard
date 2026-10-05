@@ -33,27 +33,63 @@
     [
       47.59634,
       -114.1144
+    ],
+    [
+      47.50017,
+      -114.28026
     ]
   ],
   "bbox": [
-    -114.24761,
-    47.50651,
-    -113.98119,
-    47.68617
+    -115.77647,
+    45.90642,
+    -113.666,
+    48.45275
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0060",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Denver",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MSO"
+    ],
+    "point": [
+      47.5963,
+      -114.1144
+    ],
+    "forecastZones": [
+      "forecast:MTZ003",
+      "forecast:MTZ043",
+      "forecast:MTZ004",
+      "forecast:MTZ001",
+      "forecast:MTZ002"
+    ],
+    "countyZones": [
+      "county:MTC047",
+      "county:MTC089",
+      "county:MTC063",
+      "county:MTC029"
+    ],
+    "fireZones": [
+      "fire:MTZ107"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMSX",
+    "ridgeLoop": "KMSX",
     "eccc": null
   },
   "gauges": [],
@@ -61,9 +97,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0060"
+    ],
+    "censusAiannhce": [
+      "1110"
+    ],
+    "censusGeoid": "1110R",
     "biaTldObjectId": 341,
     "biaAnvObjectId": null,
     "iscBandNumber": null

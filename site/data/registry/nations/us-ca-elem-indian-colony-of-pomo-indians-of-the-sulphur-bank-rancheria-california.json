@@ -33,27 +33,56 @@
     [
       38.45184,
       -122.7344
+    ],
+    [
+      39.00833,
+      -122.67149
     ]
   ],
   "bbox": [
-    -122.84911,
-    38.36201,
-    -122.61969,
-    38.54167
+    -122.67405,
+    39.00584,
+    -122.6669,
+    39.01143
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0125",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      38.4518,
+      -122.7344
+    ],
+    "forecastZones": [
+      "forecast:CAZ120"
+    ],
+    "countyZones": [
+      "county:CAC033"
+    ],
+    "fireZones": [
+      "fire:CAZ419"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KDAX",
+    "ridgeLoop": "KDAX",
     "eccc": null
   },
   "gauges": [],
@@ -64,8 +93,10 @@
     "biaLarIds": [
       "LAR0125"
     ],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "censusAiannhce": [
+      "4030"
+    ],
+    "censusGeoid": "4030R",
     "biaTldObjectId": 413,
     "biaAnvObjectId": null,
     "iscBandNumber": null

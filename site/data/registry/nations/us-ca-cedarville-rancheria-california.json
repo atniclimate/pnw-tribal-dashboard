@@ -32,27 +32,59 @@
     [
       41.48393,
       -120.5453
+    ],
+    [
+      41.526,
+      -120.18339
     ]
   ],
   "bbox": [
-    -120.66521,
-    41.3941,
-    -120.42539,
-    41.57376
+    -120.18624,
+    41.52517,
+    -120.17994,
+    41.52952
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-cedarville-rancheria-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0115",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR",
+      "REV"
+    ],
+    "point": [
+      41.4839,
+      -120.5453
+    ],
+    "forecastZones": [
+      "forecast:CAZ085",
+      "forecast:CAZ070"
+    ],
+    "countyZones": [
+      "county:CAC049"
+    ],
+    "fireZones": [
+      "fire:CAZ285",
+      "fire:CAZ270"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
   "gauges": [],

@@ -30,30 +30,93 @@
     [
       54.00883,
       -122.6143
+    ],
+    [
+      54.01759,
+      -122.62661
+    ],
+    [
+      53.96684,
+      -122.94753
+    ],
+    [
+      53.88994,
+      -122.97357
+    ],
+    [
+      53.90609,
+      -122.73298
+    ],
+    [
+      53.9189,
+      -122.74595
     ]
   ],
   "bbox": [
-    -122.76716,
-    53.919,
-    -122.46144,
-    54.09866
+    -122.97755,
+    53.8844,
+    -122.60758,
+    54.02749
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-611.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07476",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07477",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07478",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07479",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10273",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-79",
+    "citypageName": "Prince George",
+    "distanceKm": 15.4,
+    "forecastZones": [
+      "087420"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08KE018",
+    "wsc:08KB001",
+    "wsc:08KC001",
+    "wsc:08JC002"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

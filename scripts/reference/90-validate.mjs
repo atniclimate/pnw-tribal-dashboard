@@ -1,7 +1,7 @@
 // @ts-check
 /**
  * Reference builder 90: registry validation gates, review packet, and crosswalk notes (blueprint 6.2, 6.6, and
- * 12.3, lane L5, wave 1 part). Other lanes extend this file with their own gates in wave 2.
+ * 12.3, lane L5, waves 1 and 2). Other lanes extend this file with their own gates.
  *
  *   node scripts/reference/90-validate.mjs                         run the gates over the committed registry files
  *   node scripts/reference/90-validate.mjs --reproducibility --raw <folder> ...   rebuild in memory, compare bytes
@@ -12,7 +12,11 @@
  * guard; Nation count gates against the 6.2 ranges (warning while `footprint.yaml` has `ratified: false`);
  * source count reconciliation; names with `?` or U+FFFD (never `reviewed`); id stability (lock, records, and
  * redirects agree, and an id of a previous registry never vanishes); at least 95 percent of NRCan polygons
- * joined to a First Nation; every record `draft` until the maintainer approves the packet; wave 2 joins pending.
+ * joined to a First Nation; every record `draft` until the maintainer approves the packet. Wave 2 gates (boundaryGates):
+ * boundary detail files schema-valid with source, id, and vintage on every feature, overview at most 600 KB and detail
+ * files at most 15 MB, interior samples inside land areas, parts equal to the detail features, at least 95 percent of the
+ * British Columbia reserve polygons drawn, a typed NWS zone list or ECCC linkage on every record with keys that exist in
+ * the L4 zone files, radar and gauge ids that exist, and byte-identical reruns of 40-boundaries and 70-joins.
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -20,8 +24,9 @@ import { pathToFileURL } from 'node:url';
 import tzlookup from '@photostructure/tz-lookup';
 import { ROOT } from '../check/lib/pages.mjs';
 import { loadAjv, parseDataFile, personKeyHits } from '../check/lib/data-files.mjs';
-import { BC_TOLERANCE_KM, CA_COUNTIES, AK_SE_BOROUGHS, CENSUS_GUARD_KM, REGISTRY_DIR, buildDraft, loadConfig, resolveInputs, stable, tzConsistent } from './50-registry.mjs';
-import { PENDING_JOINS, compact, project } from './70-joins.mjs';
+import { BC_TOLERANCE_KM, CA_COUNTIES, AK_SE_BOROUGHS, CANDIDATE_KM, CENSUS_GUARD_KM, REGISTRY_DIR, SHARED_AREAS, buildDraft, loadConfig, pointInGeometry, resolveInputs, stable, tzConsistent } from './50-registry.mjs';
+import { LIMITS, buildBoundaries } from './40-boundaries.mjs';
+import { PENDING_JOINS, compact, computeJoins, cwaByForecastZone, gaugeCandidates, project, readGaugeOverrides, zonesFromTopo } from './70-joins.mjs';
 
 /** Expected Nation counts (blueprint 6.2; adjustable by a reviewed pull request). */
 export const COUNT_GATES = Object.freeze({
@@ -61,7 +66,7 @@ export function countRegistry(records) {
 /**
  * Pure gate over parsed registry data (tests seed violations in memory).
  * @param {{ records: Record<string, any>[], lock: { entries: { id: string, key: string }[] }, redirects: { redirects: Record<string, any> }, previousIds?: string[] | null,
- *   bc?: { nrcanPolygons: number, nrcanJoined: number } | null, ratified: boolean, files?: string[] }} c
+ *   bc?: { nrcanPolygons: number, nrcanJoined: number } | null, ratified: boolean, files?: string[], wave2?: boolean }} c
  * @returns {Findings}
  */
 export function registryGates(c) {
@@ -105,7 +110,93 @@ export function registryGates(c) {
     const line = `BC reserve polygons joined to a First Nation: ${c.bc.nrcanJoined} of ${c.bc.nrcanPolygons} (${pct.toFixed(1)} percent; gate 95)`;
     if (pct < 95) f.problems.push(line); else f.notes.push(line);
   }
-  f.warnings.push(`wave 2 joins pending (fields stay null or empty): ${PENDING_JOINS.join(', ')}`);
+  if (!c.wave2) f.warnings.push(`wave 2 joins pending (fields stay null or empty): ${PENDING_JOINS.join(', ')}`);
+  return f;
+}
+
+/**
+ * Wave 2 gates over parsed boundary and join outputs (pure; tests seed violations in memory).
+ * @param {{ records: Record<string, any>[], detail: Map<string, { json: any, bytes: number }>, overview: any, overviewBytes: number,
+ *   nwsKeys: Set<string>, ecccIds: Set<string>, radarIds: Set<string>, gaugeIds: Set<string>, bcPolygons: number, limits?: { overviewRawBytes: number, detailTotalBytes: number },
+ *   sharedKeys?: Set<string> }} c `sharedKeys`: `<sourceId>:<featureId>` of every shared land area
+ * @returns {Findings}
+ */
+export function boundaryGates(c) {
+  /** @type {Findings} */
+  const f = { problems: [], warnings: [], notes: [] };
+  const limits = c.limits ?? LIMITS;
+  const byId = new Map(c.records.map((r) => [r.id, r]));
+  let features = 0;
+  let detailBytes = 0;
+  /** @type {Set<string>} */
+  const bcCodes = new Set();
+  for (const [id, d] of c.detail) {
+    detailBytes += d.bytes;
+    const rec = byId.get(id);
+    if (!rec) { f.problems.push(`boundaries/${id}.json has no Nation record`); continue; }
+    if (rec.boundary?.status !== 'polygon') f.problems.push(`${id}: a detail file exists but the record is ${rec.boundary?.status}`);
+    for (const ft of d.json.features) {
+      features += 1;
+      const p = ft.properties;
+      for (const k of ['nationId', 'name', 'source', 'sourceFeatureId', 'vintage', 'kind', 'sourceName']) if (!p?.[k]) f.problems.push(`${id}: a boundary feature has no ${k}`);
+      if (p.nationId !== id) f.problems.push(`${id}: a boundary feature carries nationId ${p.nationId}`);
+      if (p.name !== rec.name) f.problems.push(`${id}: boundary feature name "${p.name}" is not the registry formal name`);
+      if (p.source === 'nrcan-aboriginal-lands-bc') bcCodes.add(p.sourceFeatureId);
+    }
+    const parts = d.json.features.map((/** @type {any} */ ft) => ({ sourceId: ft.properties.source, featureId: ft.properties.sourceFeatureId, kind: ft.properties.kind, vintage: ft.properties.vintage }));
+    if (JSON.stringify(parts) !== JSON.stringify(rec.boundary?.parts)) f.problems.push(`${id}: boundary.parts does not equal the features of its detail file`);
+    if (rec.boundary?.detailRef !== `geo/boundaries/${id}.json`) f.problems.push(`${id}: boundary.detailRef is ${rec.boundary?.detailRef}`);
+    // Interior samples fall inside a land area (the first sample is the headquarters and is not required to).
+    for (const [lat, lon] of rec.samples.slice(1)) if (!d.json.features.some((/** @type {any} */ ft) => pointInGeometry(lon, lat, ft.geometry))) f.problems.push(`${id}: interior sample ${lat}, ${lon} is outside every land area`);
+    const xs = d.json.features.flatMap((/** @type {any} */ ft) => (ft.geometry.type === 'Polygon' ? [ft.geometry.coordinates] : ft.geometry.coordinates).flatMap((/** @type {number[][][]} */ pl) => pl.flatMap((ring) => ring)));
+    const w = Math.min(...xs.map((/** @type {number[]} */ p) => /** @type {number} */ (p[0])));
+    const e = Math.max(...xs.map((/** @type {number[]} */ p) => /** @type {number} */ (p[0])));
+    const s = Math.min(...xs.map((/** @type {number[]} */ p) => /** @type {number} */ (p[1])));
+    const n = Math.max(...xs.map((/** @type {number[]} */ p) => /** @type {number} */ (p[1])));
+    if (Math.abs(w - rec.bbox[0]) > 2e-5 || Math.abs(e - rec.bbox[2]) > 2e-5 || Math.abs(s - rec.bbox[1]) > 2e-5 || Math.abs(n - rec.bbox[3]) > 2e-5) f.problems.push(`${id}: bbox does not span the land areas`);
+    // A shared land area (review R2) is never drawn for one Nation.
+    for (const p of rec.boundary?.parts ?? []) if (c.sharedKeys?.has(`${p.sourceId}:${p.featureId}`)) f.problems.push(`${id}: part ${p.sourceId} ${p.featureId} is a shared land area and must not be drawn for one Nation`);
+  }
+  for (const r of c.records) {
+    if (r.boundary?.status === 'polygon' && !c.detail.has(r.id)) f.problems.push(`${r.id}: boundary.status is polygon but no detail file exists`);
+    if (r.boundary?.status !== 'polygon' && (r.samples.length !== 1 || r.boundary.parts.length)) f.problems.push(`${r.id}: a point-only Nation must have the headquarters as its only sample and no parts`);
+    // Joins: a typed NWS zone list or ECCC linkage on every record, and every key must exist in the L4 files.
+    if (r.country === 'US') {
+      if (!r.nws) f.problems.push(`${r.id}: no NWS zone join`);
+      else {
+        if (r.nws.wfo.length < 1) f.problems.push(`${r.id}: nws.wfo is empty`);
+        if (r.nws.forecastZones.length < 1) f.problems.push(`${r.id}: no NWS forecast zone`);
+        for (const k of [...r.nws.forecastZones, ...r.nws.countyZones, ...r.nws.fireZones, ...r.nws.marineZones]) if (!c.nwsKeys.has(k)) f.problems.push(`${r.id}: zone key ${k} is not in nws-zones.topo.json`);
+      }
+      if (r.eccc) f.problems.push(`${r.id}: a U.S. Nation carries an ECCC join`);
+    } else {
+      if (!r.eccc) f.problems.push(`${r.id}: no ECCC city page linkage`);
+      else {
+        for (const z of r.eccc.forecastZones) if (!c.ecccIds.has(z)) f.problems.push(`${r.id}: ECCC zone ${z} is not in eccc-regions.topo.json`);
+        if (!r.eccc.forecastZones.length) f.warnings.push(`${r.id}: no ECCC public forecast zone within five kilometres of the headquarters (city page ${r.eccc.citypageId} only)`);
+      }
+      if (r.nws) f.problems.push(`${r.id}: a British Columbia Nation carries an NWS join`);
+    }
+    if (r.radar.nexrad && !c.radarIds.has(r.radar.nexrad)) f.problems.push(`${r.id}: radar site ${r.radar.nexrad} is not in radar-sites.json`);
+    for (const g of r.gauges) if (!c.gaugeIds.has(g)) f.problems.push(`${r.id}: gauge ${g} is not in gauges.json or wsc-stations.json`);
+  }
+  if (c.overviewBytes > limits.overviewRawBytes) f.problems.push(`boundaries-overview.topo.json is ${c.overviewBytes} bytes, over ${limits.overviewRawBytes}`);
+  else f.notes.push(`boundaries-overview.topo.json is ${c.overviewBytes} bytes (limit ${limits.overviewRawBytes})`);
+  if (detailBytes > limits.detailTotalBytes) f.problems.push(`boundary detail files total ${detailBytes} bytes, over ${limits.detailTotalBytes}`);
+  else f.notes.push(`${c.detail.size} boundary detail files total ${detailBytes} bytes (limit ${limits.detailTotalBytes})`);
+  const geoms = c.overview?.objects?.boundaries?.geometries ?? [];
+  if (!geoms.length) f.problems.push('boundaries-overview.topo.json has no boundaries object');
+  if (geoms.length !== features) f.problems.push(`boundaries-overview.topo.json holds ${geoms.length} features and the detail files hold ${features}`);
+  for (const g of geoms) for (const k of ['nationId', 'source', 'sourceFeatureId', 'vintage', 'kind', 'sourceName']) if (!g.properties?.[k]) { f.problems.push(`an overview feature has no ${k}`); break; }
+  // Every overview feature has a geometry (review R1): simplification or quantization must never drop a reserve.
+  for (const g of geoms) if (!g.type) f.problems.push(`overview feature ${g.properties?.nationId ?? '?'} ${g.properties?.sourceFeatureId ?? '?'} has null geometry`);
+  if (c.bcPolygons > 0) {
+    const pct = (100 * bcCodes.size) / c.bcPolygons;
+    const line = `BC reserve polygons drawn in the boundary files: ${bcCodes.size} of ${c.bcPolygons} (${pct.toFixed(1)} percent; gate 95)`;
+    if (pct < 95) f.problems.push(line); else f.notes.push(line);
+  }
+  const pointOnly = c.records.filter((r) => r.boundary?.status !== 'polygon');
+  f.notes.push(`${c.records.length - pointOnly.length} of ${c.records.length} Nations have polygons; ${pointOnly.length} are point-only`);
   return f;
 }
 
@@ -142,18 +233,50 @@ export async function validate(argv = process.argv.slice(2)) {
   const previousIds = previous && existsSync(previous) ? readdirSync(previous).filter((n) => n.endsWith('.json')).map((n) => n.replace(/\.json$/, '')) : null;
   const draft = exists('data/registry/draft-registry.json') ? readJson('data/registry/draft-registry.json') : null;
   const footprint = /** @type {any} */ (exists('data/pipeline/footprint.yaml') ? await parseDataFile('data/pipeline/footprint.yaml') : null);
+  const boundaries = exists('data/registry/boundaries-build.json') ? readJson('data/registry/boundaries-build.json') : null;
+  const joins = exists('data/registry/joins-build.json') ? readJson('data/registry/joins-build.json') : null;
   const g = registryGates({
     records, lock: exists('data/registry/ids.lock.json') ? readJson('data/registry/ids.lock.json') : { entries: [] },
     redirects: exists('data/registry/id-redirects.json') ? readJson('data/registry/id-redirects.json') : { redirects: {} }, previousIds,
-    bc: draft?.bc ?? null, ratified: footprint?.ratified === true,
+    bc: draft?.bc ?? null, ratified: footprint?.ratified === true, wave2: Boolean(boundaries && joins),
   });
   f.problems.push(...g.problems); f.warnings.push(...g.warnings); f.notes.push(...g.notes);
+  if (boundaries && joins) {
+    const geoDir = path.join(ROOT, 'site', 'data', 'geo', 'boundaries');
+    /** @type {Map<string, { json: any, bytes: number }>} */
+    const detail = new Map();
+    const detailSchema = ajv.getSchema('https://atniclimate.github.io/pnw-tribal-dashboard/schemas/boundary-detail.schema.json');
+    for (const name of existsSync(geoDir) ? readdirSync(geoDir).filter((n) => n.endsWith('.json')).sort() : []) {
+      const text = readFileSync(path.join(geoDir, name), 'utf8');
+      const json = JSON.parse(text);
+      checked += 1;
+      if (detailSchema && !detailSchema(json)) for (const e of (detailSchema.errors ?? []).slice(0, 3)) f.problems.push(`site/data/geo/boundaries/${name}: ${e.instancePath || '/'} ${e.message}`);
+      detail.set(name.replace(/\.json$/, ''), { json, bytes: Buffer.byteLength(text) });
+    }
+    const overviewPath = path.join(ROOT, 'site', 'data', 'geo', 'boundaries-overview.topo.json');
+    const overviewText = existsSync(overviewPath) ? readFileSync(overviewPath, 'utf8') : '{}';
+    const nwsKeys = new Set(zonesFromTopo(readJson('site/data/geo/nws-zones.topo.json'), 'zones').map((z) => z.id));
+    const ecccIds = new Set(zonesFromTopo(readJson('site/data/geo/eccc-regions.topo.json'), 'regions').map((z) => z.id));
+    const bg = boundaryGates({
+      records, detail, overview: JSON.parse(overviewText), overviewBytes: Buffer.byteLength(overviewText), nwsKeys, ecccIds,
+      radarIds: new Set(readJson('site/data/ref/radar-sites.json').sites.map((/** @type {any} */ s) => s.id)),
+      gaugeIds: new Set([...readJson('site/data/ref/gauges.json').gauges, ...readJson('site/data/ref/wsc-stations.json').stations].map((/** @type {any} */ s) => s.id)),
+      bcPolygons: draft?.bc?.nrcanPolygons ?? 1602,
+      sharedKeys: new Set([
+        ...Object.keys(SHARED_AREAS.lar).map((k) => `bia-lar:${k}`),
+        ...(boundaries.report?.shared?.larIds ?? []).map((/** @type {string} */ k) => `bia-lar:${k}`),
+        ...(boundaries.report?.shared?.censusGeoids ?? []).map((/** @type {string} */ k) => `census-aiannh-2025:${k}`),
+      ]),
+    });
+    f.problems.push(...bg.problems); f.warnings.push(...bg.warnings); f.notes.push(...bg.notes);
+  }
   if (draft) {
     const same = JSON.stringify(draft.records.map((/** @type {any} */ r) => r.id)) === JSON.stringify(records.map((r) => r.id));
-    if (!same) f.problems.push('site/data/registry/nations does not match data/registry/draft-registry.json; run 70-joins');
+    if (!same) f.problems.push('site/data/registry does not match data/registry/draft-registry.json; run 70-joins');
     else {
-      const out = project(draft, readJson('data/registry/id-redirects.json'));
+      const out = project(draft, readJson('data/registry/id-redirects.json'), { boundaries, joins });
       for (const r of out.records) if (stable(r) !== readFileSync(path.join(ROOT, 'site/data/registry/nations', `${r.id}.json`), 'utf8')) { f.problems.push(`site/data/registry/nations/${r.id}.json differs from the projection of the draft`); break; }
+      if (exists('site/data/registry/nations-index.json') && stable(out.index) !== readFileSync(path.join(ROOT, 'site/data/registry/nations-index.json'), 'utf8')) f.problems.push('site/data/registry/nations-index.json differs from the projection of the draft; run 70-joins');
       if (exists('site/data/geo/hq-points.json')) {
         const hqText = readFileSync(path.join(ROOT, 'site/data/geo/hq-points.json'), 'utf8');
         if (hqText !== compact(out.hqPoints)) f.problems.push('site/data/geo/hq-points.json differs from the projection of the draft; run 70-joins');
@@ -179,6 +302,29 @@ async function reproducibility(argv, f) {
   const committed = readJson('data/registry/draft-registry.json').records;
   if (JSON.stringify(committed) !== JSON.stringify(out.records)) f.problems.push('a second run changes the draft records');
   else f.notes.push('second run is byte-identical (ids.lock.json, crosswalks, draft records)');
+  // Boundaries and joins: rebuild in memory from the committed draft and compare bytes.
+  if (!existsSync(path.join(REGISTRY_DIR, 'boundaries-build.json'))) return;
+  const footprint = exists('site/data/geo/footprint.json') ? readJson('site/data/geo/footprint.json') : null;
+  const b = await buildBoundaries({ rawDirs: [...rawDirs, path.join(ROOT, '.cache', 'inputs')], records: committed, crossUs: readJson('data/registry/crosswalk-us.json'), crossBc: readJson('data/registry/crosswalk-bc.json'), footprint });
+  const geoDir = path.join(ROOT, 'site', 'data', 'geo');
+  let same = readFileSync(path.join(geoDir, 'boundaries-overview.topo.json'), 'utf8') === b.overviewText;
+  for (const [id, text] of b.files) if (!existsSync(path.join(geoDir, 'boundaries', `${id}.json`)) || readFileSync(path.join(geoDir, 'boundaries', `${id}.json`), 'utf8') !== text) same = false;
+  if (readdirSync(path.join(geoDir, 'boundaries')).filter((n) => n.endsWith('.json')).length !== b.files.size) same = false;
+  if (stable({ schema: 'cthd.boundaries-build/1', report: b.report, nations: b.nations }) !== readFileSync(path.join(REGISTRY_DIR, 'boundaries-build.json'), 'utf8')) same = false;
+  if (!same) f.problems.push('a second run changes the boundary files (overview, detail, or boundaries-build.json)');
+  else f.notes.push('second run of 40-boundaries is byte-identical (overview, detail files, boundaries-build.json)');
+  const zip = [...rawDirs, path.join(ROOT, '.cache', 'inputs')].map((d) => path.join(d, 'z_16ap26.zip')).find((p) => existsSync(p));
+  if (!zip || !existsSync(path.join(REGISTRY_DIR, 'joins-build.json'))) { f.warnings.push('joins reproducibility skipped: z_16ap26.zip or joins-build.json is absent'); return; }
+  const j = computeJoins({
+    records: committed, boundaries: { nations: b.nations },
+    detail: (id) => { const t = b.files.get(id); return t ? JSON.parse(t) : null; },
+    nwsZones: zonesFromTopo(readJson('site/data/geo/nws-zones.topo.json'), 'zones'), ecccZones: zonesFromTopo(readJson('site/data/geo/eccc-regions.topo.json'), 'regions'),
+    cwa: await cwaByForecastZone(readFileSync(zip)), citypages: readJson('data/registry/eccc-citypage-sites.json').sites, radar: readJson('site/data/ref/radar-sites.json').sites,
+    gauges: gaugeCandidates(readJson('site/data/ref/gauges.json'), readJson('site/data/ref/wsc-stations.json')),
+    gaugeOverrides: await readGaugeOverrides(),
+  });
+  if (stable({ schema: 'cthd.joins-build/1', report: j.report, nations: j.nations }) !== readFileSync(path.join(REGISTRY_DIR, 'joins-build.json'), 'utf8')) f.problems.push('a second run changes joins-build.json (the gauge or zone reference files changed since the last 70-joins run)');
+  else f.notes.push('second run of 70-joins is byte-identical (joins-build.json)');
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -200,8 +346,9 @@ const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 /**
  * @param {string} dir
  * @param {ReturnType<typeof buildDraft>} out
+ * @param {{ boundaries: any, joins: any } | null} [extra] the boundary and join builds (wave 2)
  */
-export function writePacket(dir, out) {
+export function writePacket(dir, out, extra = null) {
   mkdirSync(dir, { recursive: true });
   const { records, report } = out;
   const counts = countRegistry(records);
@@ -227,15 +374,27 @@ export function writePacket(dir, out) {
   const caByCounty = new Map();
   for (const x of report.us.caOutside) { const k = x.county || 'no county found'; if (!caByCounty.has(k)) caByCounty.set(k, []); caByCounty.get(k).push(x.name); }
 
-  const packet = `# Nation Registry Review Packet, Wave 1 (Draft)
+  const bld = extra?.boundaries ?? null;
+  const jn = extra?.joins ?? null;
+  const polyIds = new Set(Object.keys(bld?.nations ?? {}));
+  const pointOnly = records.filter((r) => !polyIds.has(r.id));
+  const cand = report.us.areaCandidates ?? [];
+  const candRej = (report.us.areaCandidatesRejected ?? []).filter((/** @type {any} */ x) => x.why && !/more than one/.test(x.why) && x.tier === 1);
+  const candAmb = (report.us.areaCandidatesRejected ?? []).filter((/** @type {any} */ x) => /more than one/.test(x.why));
+  const larAndTrust = [...new Set(out.crossUs.filter((r) => r.sourceId === 'census-aiannh-2025' && r.sourceKey.endsWith('T') && out.crossUs.some((x) => x.nationId === r.nationId && x.sourceId === 'bia-lar')).map((r) => `${records.find((x) => x.id === r.nationId)?.name ?? r.nationId} ${r.sourceKey}`))];
+  const sizes = bld?.report;
+  const bcNoPoly = pointOnly.filter((r) => r.country === 'CA');
+  const akNoPoly = pointOnly.filter((r) => r.country === 'US' && r.region === 'ak-se');
+  const otherNoPoly = pointOnly.filter((r) => r.country === 'US' && r.region !== 'ak-se');
+  const packet = `# Nation Registry Review Packet, Wave 2 (Draft)
 
 Prepared 10/05/2026 for the maintainer by lane L5. Every record is \`review.status: draft\`. Nothing in this packet is decided: each item below is a request for a ruling, and no record becomes \`reviewed\` until the maintainer approves it. Source files are pinned in \`data/registry/inputs.yaml\` with SHA-256 values; this packet is regenerated by \`node scripts/reference/90-validate.mjs --packet <folder> --raw <folders>\`.
 
 ## The Brief
 
-The draft registry holds ${counts.total} Nations: ${counts.us} U.S. Tribes (${counts.usOutsideAlaska} outside Alaska and ${counts.southeastAlaska} in Southeast Alaska) and ${counts.britishColumbia} British Columbia First Nations. U.S. names come from the Federal Register notice of 01/30/2026 (91 FR 4102) and are cross-checked to the BIA Tribal Leaders Directory; British Columbia names are the ISC registered names. Headquarters points come from the Directory (U.S.) and the ISC location file (British Columbia), each with its source record id and retrieval date. The footprint edges are the Q2 proposal and remain unratified. Boundaries, NWS zones, ECCC city pages, radar, and gauges are wave 2 joins and are empty in every record.
+The draft registry holds ${counts.total} Nations: ${counts.us} U.S. Tribes (${counts.usOutsideAlaska} outside Alaska and ${counts.southeastAlaska} in Southeast Alaska) and ${counts.britishColumbia} British Columbia First Nations. U.S. names come from the Federal Register notice of 01/30/2026 (91 FR 4102) and are cross-checked to the BIA Tribal Leaders Directory; British Columbia names are the ISC registered names. Headquarters points come from the Directory (U.S.) and the ISC location file (British Columbia), each with its source record id and retrieval date. The footprint edges are the Q2 proposal and remain unratified.${sizes ? ` Wave 2 adds land-area polygons for ${polyIds.size} Nations (${sizes.bySource['bia-lar']} BIA land area representations, ${sizes.bySource['census-aiannh-2025']} Census legal areas, and ${sizes.bySource['nrcan-aboriginal-lands-bc']} NRCan reserve polygons), and the joins to NWS zones, ECCC city pages and zones, radar, and gauges. ${spell(pointOnly.length)} Nations stay point-only (see Boundaries). Every polygon, match, and join is a draft; the polygons are representations, not jurisdiction.` : ' Boundaries, NWS zones, ECCC city pages, radar, and gauges are wave 2 joins and are empty in every record.'}
 
-Two findings need the maintainer first. The U.S. count outside Alaska (${counts.usOutsideAlaska}) is below the blueprint gate of 120 to 170 because the proposed northern California county list reaches only ${us.filter((r) => r.region === 'ca-n').length} Tribes; see Decision One. ${cap(spell(qnames.length))} British Columbia names carry the ISC \`?\` placeholder and need each Nation's own published spelling; see Names Containing a Question Mark.
+${cand.length ? `The land-area recall gap that the crosswalk review raised (twenty-one Tribes with no LAR or Census identifier) is closed by place-phrase candidates: ${cand.length} candidate matches are recorded as \`name-reviewed\` with \`reviewed: false\` for the maintainer to confirm (see Land Area Candidates). ` : ''}Two findings need the maintainer first. The U.S. count outside Alaska (${counts.usOutsideAlaska}) is below the blueprint gate of 120 to 170 because the proposed northern California county list reaches only ${us.filter((r) => r.region === 'ca-n').length} Tribes; see Decision One. ${cap(spell(qnames.length))} British Columbia names carry the ISC \`?\` placeholder and need each Nation's own published spelling; see Names Containing a Question Mark.
 
 ## Decisions Requested
 
@@ -249,7 +408,15 @@ ${table(['No.', 'Decision', 'Where the evidence is', 'Default if no ruling'], [
   ['7', 'Federal Register spelling questions (for example "PuliklaTribe")', 'Names and Their Sources', 'Name kept exactly as the notice prints it'],
   ['8', 'Time zones flagged for confirmation, including Duck Valley and Fort McDermitt (Q15) and the five draft corrections that replace a border-point lookup', 'Time Zones', 'Draft overrides stay in place and flagged; tz-lookup value kept for the rest'],
   ['9', 'Name display order (Q4) and any preferred-name overrides', 'Names and Their Sources', 'Full formal name first; no preferred names set'],
-  ['10', 'Identifier slugs cut at eighty characters (for example Fort McDermitt) and L6 contact ids that differ', 'Id Notes', 'Ids stay as minted; L6 re-keys two contact rows'],
+  ['10', 'Identifier slugs cut at eighty characters (for example Fort McDermitt) and L6 contact ids that differ', 'Id Notes', 'Ids stay as minted; L6 contact rows already match the lock'],
+  ...(sizes ? [
+    ['11', `Confirm or reject the ${cand.length} place-phrase land-area candidates (name-reviewed, unconfirmed)`, 'Land Area Candidates', 'Drawn as drafts with the crosswalk row marked unreviewed'],
+    ['12', 'Columbia River land areas held for several Tribes (Celilo and The Dalles Unit): which Nations, if any, they belong to', 'Shared Land Areas', 'Assigned to no Nation and not drawn'],
+    ['13', `${cap(spell(bcNoPoly.length))} British Columbia Nations have no reserve polygon (treaty settlement lands are not reserves): supply a treaty-lands source, or leave them point-only`, 'Boundaries', 'Point-only'],
+    ['14', 'Off-reservation trust land of Nations that also have a LAR (for example Colville 0760T): draw it, or keep the contract rule that Census is used only where LAR has no polygon', 'Boundaries', 'Not drawn (LAR first)'],
+    ['15', 'Alaska Native village areas (Census statistical areas) for Southeast Alaska: allow them, or keep the nineteen village Nations point-only', 'Boundaries', 'Point-only (statistical areas stay out)'],
+    ['16', 'Join policies: zone overlap share (two percent), marine reach (ten kilometres), radar range (460 kilometres), nearby gauge radius (25 kilometres)', 'Joins', 'Policies as written; each is a constant in 70-joins.mjs'],
+  ] : []),
 ])}
 
 ## Counts and Gates
@@ -268,8 +435,8 @@ ${table(['Source (file, date)', 'Rows read', 'Registry use'], [
   ['Federal Register notice (91 FR 4102, 01/30/2026)', `${sc.federalRegisterEntries} list entries (${sc.federalRegisterContiguous} contiguous 48 states, ${sc.federalRegisterAlaska} Alaska); the notice summary states 575 entities`, 'Formal U.S. names'],
   ['BIA Tribal Leaders Directory (10/04/2026)', `${sc.tldRows} rows (${sc.tldTribes} Tribes and ${sc.tldRows - sc.tldTribes} affiliates)`, `${us.length} U.S. Nations; affiliates never become Nations`],
   ['BIA Alaska Native Villages', `${sc.anvRows} rows`, 'Cross-check of Southeast Alaska village rows (same OBJECTID and name)'],
-  ['BIA LAR', `${sc.larFeatures} features`, 'Identifier crosswalk now; polygons in wave 2'],
-  ['Census TIGER 2025 AIANNH', `${sc.censusAiannhRows} rows`, 'Identifier crosswalk now (legal classes G2101 reservations and G2102 off-reservation trust land); polygons in wave 2'],
+  ['BIA LAR', `${sc.larFeatures} features`, `Identifier crosswalk, and polygons of the matched areas (${sizes ? sizes.bySource['bia-lar'] : 0} features)`],
+  ['Census TIGER 2025 AIANNH', `${sc.censusAiannhRows} rows`, `Identifier crosswalk (legal classes G2101 reservations and G2102 off-reservation trust land); polygons only for Nations with no LAR (${sizes ? sizes.bySource['census-aiannh-2025'] : 0} features)`],
   ['ISC First Nation locations', `${sc.iscLocationRows} rows (all of Canada)`, `${bc.length} British Columbia Nations`],
   ['ISC reserve relation', `${sc.iscReserveRows} rows`, `${report.bc.nrcanJoined} British Columbia polygons joined`],
   ['ISC tribal council relation', `${sc.iscCouncilRows} rows`, 'isc.tribalCouncil'],
@@ -286,7 +453,7 @@ ${table(['Id', 'Formal name (Federal Register)', 'Kind', 'Jurisdictions', 'Basis
 
 ## Included British Columbia First Nations
 
-Rule: headquarters inside, or within ${BC_TOLERANCE_KM} kilometres of, the Natural Earth British Columbia outline, or at least one reserve polygon in the NRCan British Columbia layer reached through the ISC reserve relation. ${report.bc.both} Nations satisfy both tests, ${report.bc.hqInBcOnly.length} only the headquarters-inside test, ${report.bc.nearOutline.length} have a headquarters outside the outline but within the tolerance (${report.bc.nearOutline.filter((/** @type {any} */ x) => x.reserves > 0).length} of them also have a reserve polygon and so pass the reserve test; ${report.bc.nearOutline.filter((/** @type {any} */ x) => !x.reserves).length} depend on the tolerance alone), and ${report.bc.reserveOnly.length} have a headquarters outside the tolerance and pass only the reserve test.
+Rule: headquarters inside, or within ${BC_TOLERANCE_KM} kilometres of, the Natural Earth British Columbia outline, or at least one reserve polygon in the NRCan British Columbia layer reached through the ISC reserve relation. ${report.bc.both} Nations satisfy both tests, ${report.bc.hqInBcOnly.length} only the headquarters-inside test, ${report.bc.nearOutline.length} have a headquarters outside the outline but within the tolerance (${report.bc.nearOutline.filter((/** @type {any} */ x) => x.reserves > 0).length} of them also have a reserve polygon and so pass the reserve test; ${spell(report.bc.nearOutline.filter((/** @type {any} */ x) => !x.reserves).length)} ${report.bc.nearOutline.filter((/** @type {any} */ x) => !x.reserves).length === 1 ? 'depends' : 'depend'} on the tolerance alone), and ${report.bc.reserveOnly.length} have a headquarters outside the tolerance and pass only the reserve test.
 
 ${table(['Id', 'ISC registered name', 'Time zone', 'Flags'], bc.map((r) => [r.id, r.name, r.timeZone, r.flags.join(', ')]))}
 
@@ -340,7 +507,7 @@ ${cap(spell(qnames.length))} record${qnames.length === 1 ? '' : 's'} carry the I
 
 Every zone comes from \`@photostructure/tz-lookup\` at the headquarters point, except the ${tzOverride.length} draft overrides below (\`overrides.yaml\`, field \`timeZone\`, each with a source and reason, none ratified). Counts: ${Object.entries(tzCount).sort().map(([k, v]) => `${k} ${v}`).join(', ')}.
 
-A validator gate in \`90-validate.mjs\` fails any record whose zone is not consistent with its first jurisdiction (\`TZ_BY_JURISDICTION\` in \`50-registry.mjs\`: for example Southeast Alaska must be an Alaska zone, and British Columbia must be a Canadian zone). The gate found ${spell(tzOverride.length)} border-point lookups that were wrong by jurisdiction (the two Southeast Alaska records were an hour off); they are corrected by draft overrides and stay flagged until the maintainer ratifies them:
+A validator gate in \`90-validate.mjs\` fails any record whose zone is not consistent with its first jurisdiction (\`TZ_BY_JURISDICTION\` in \`50-registry.mjs\`: for example Southeast Alaska must be an Alaska zone, and British Columbia must be a Canadian zone). The builder's lookup check found ${spell(tzOverride.length)} border-point lookups that were wrong by jurisdiction (the two Southeast Alaska records were an hour off); they are corrected by draft overrides and stay flagged until the maintainer ratifies them:
 
 ${table(['Id', 'Lookup zone', 'Draft override zone'], tzOverride.map((r) => [r.id, tzLookupWrong[r.id] ?? '', r.timeZone]))}
 
@@ -358,7 +525,56 @@ ${table(['Check', 'Count', 'Detail'], [
   ['NRCan polygons not joined to a First Nation', String(report.bc.nrcanUnjoined.length), report.bc.nrcanUnjoined.map((/** @type {any} */ x) => `${x.alcode} ${x.name}`).join('; ') || 'none'],
 ])}
 
-The method is in \`L5-crosswalk.md\`. No match is marked reviewed; wave 2 resolves the unmatched rows with the polygons in hand.
+The method is in \`L5-crosswalk.md\`. No match is marked reviewed. The unmatched rows above are the counts after the place-phrase candidates of wave 2; the Tribes still unmatched have no land-area record of that name in the pinned files (Snoqualmie has a Census reservation and no LAR; Potter Valley, Scotts Valley, and Elem have a LAR and, for the first two, no Census area; the Coos, Lower Umpqua, and Siuslaw confederation has Census areas and no LAR).
+
+## Land Area Candidates
+
+Reservation names are rarely the Directory short names, so Tribes such as Yakama, Umatilla, Hoopa Valley, and Flathead had no exact LAR or Census match. For each Tribe with no land-area identifier, the place words of its Federal Register listing (including "previously listed as" and "includes" text) were compared with every unclaimed land-area name. A candidate is kept only when the whole place phrase appears in the listing (tier one) or the area name begins with a listing word (tier two), the area lies within ${CANDIDATE_KM.tier1} kilometres (tier one) or ${CANDIDATE_KM.tier2} kilometres (tier two) of the headquarters or is named in the listing's own "includes" list, and exactly one Nation claims it. Each is recorded as \`name-reviewed\` with \`reviewed: false\`, never as \`name-exact\`, and none is final until the maintainer confirms it.
+
+${cand.length ? table(['Nation', 'Source', 'Area key', 'Area name', 'Tier', 'Kilometres from headquarters', 'Basis'], cand.map((/** @type {any} */ x) => [x.nationId, x.source, x.key, x.name, String(x.tier), String(x.km), x.viaIncludes ? 'listed in the entry includes clause' : 'place phrase and distance'])) : 'No candidates.'}
+
+Rejected as too far (tier one, over the limit): ${candRej.length ? candRej.map((/** @type {any} */ x) => `${x.name} ${x.key} for ${x.nationId} (${x.km} km)`).join('; ') : 'none'}. Tier two candidates over fifteen kilometres are not listed (${(report.us.areaCandidatesRejected ?? []).filter((/** @type {any} */ x) => x.tier === 2).length} first-word coincidences such as the several areas that begin with "Fort" or "Big"). Claimed by more than one Nation: ${candAmb.length ? candAmb.map((/** @type {any} */ x) => `${x.name} ${x.key}`).join('; ') : 'none'}.
+
+## Shared Land Areas
+
+${table(['Source', 'Key', 'Name'], (report.us.sharedAreas ?? []).map((/** @type {any} */ x) => [x.source, x.key, x.name]))}
+
+These Columbia River areas are described in the crosswalk review as held for more than one Tribe. No source in the build names which Nations they serve, so the build never assigns them by name and draws them for no Nation. The maintainer rules which Nations, if any, they belong to (Decision 12).
+
+${sizes ? `## Boundaries
+
+Policy (blueprint 4.2 and 6.2): BIA LAR first; Census legal classes (G2101 reservations and G2102 off-reservation trust land) only for a Nation with no LAR polygon; NRCan reserves for British Columbia through the ISC reserve relation by code. ${polyIds.size} of ${records.length} Nations have polygons. The overview file is ${sizes.overviewBytes.toLocaleString('en-US')} bytes against 614,400, and the ${sizes.detailFiles} detail files total ${sizes.detailBytes.toLocaleString('en-US')} bytes against 15,728,640. Features: ${Object.entries(sizes.bySource).map(([k, v]) => `${k} ${v}`).join(', ')}. Every feature carries source, id, and vintage (${Object.entries(sizes.vintages).map(([k, v]) => `${k} ${v}`).join(', ')}). Samples are interior points of the land areas computed on the final detail geometry and verified inside it.
+
+${spell(pointOnly.length)} Nations stay point-only:
+
+${table(['Group', 'Count', 'Reason', 'Nations'], [
+  ['Southeast Alaska villages', String(akNoPoly.length), 'Alaska Native village areas are Census statistical areas, which stay out while boundary_policy.census_statistical_areas is false (Decision 15)', akNoPoly.map((r) => r.name).join('; ')],
+  ['Other U.S.', String(otherNoPoly.length), 'No land-area record of that name in the pinned LAR or Census files', otherNoPoly.map((r) => r.name).join('; ')],
+  ['British Columbia', String(bcNoPoly.length), 'No reserve polygon in NRCan reached through the ISC reserve relation; most are treaty Nations whose treaty settlement lands are not reserves (Decision 13)', bcNoPoly.map((r) => `${r.id} ${r.name}`).join('; ')],
+])}
+
+Off-reservation trust land (Census G2102) of Nations that also have a LAR is not drawn, because the contract uses Census only where LAR has no polygon (Decision 14): ${larAndTrust.length ? larAndTrust.join('; ') : 'none'}.
+
+British Columbia reserve polygons: ${report.bc.nrcanJoined} of ${report.bc.nrcanPolygons} joined to a First Nation (${((100 * report.bc.nrcanJoined) / Math.max(1, report.bc.nrcanPolygons)).toFixed(1)} percent; gate 95). The unjoined polygons are listed in Crosswalk Exceptions. A reserve held by several bands is drawn once for each band, so ${sizes.bySource['nrcan-aboriginal-lands-bc']} features draw ${report.bc.nrcanJoined} polygons.
+
+### Land Areas Inside the Footprint Held by No Nation
+
+Legal LAR and Census areas whose interior point lies in the footprint and that no Nation holds in the crosswalk. Most are Nevada Tribes outside the Duck Valley and Fort McDermitt rule (Decision 3). Tribes whose land lies in the footprint while the office does not are found here.
+
+${table(['Source', 'Key', 'Name', 'Footprint region'], sizes.unassignedInFootprint.map((/** @type {any} */ x) => [x.source, x.key, x.name, x.region]))}
+
+## Joins
+
+${jn ? `Every join is a documented policy in the header of \`70-joins.mjs\`; no value is invented, and a join that finds nothing stays empty.
+
+${table(['Join', 'Rule', 'Result'], [
+  ['NWS zones (U.S. Nations)', 'A zone is listed when it contains the headquarters, an interior sample, or the inner point of any land-area part, or covers at least two percent of the land area; a headquarters or a part in no zone takes the nearest zone within five kilometres. Marine zones within ten kilometres. Zone edges are simplified to about 1.2 kilometres, so a Nation beside a county line may list the neighboring county.', `${jn.report.nws.withWfo} of ${jn.report.nws.nations} Nations have a forecast office and zones`],
+  ['ECCC (British Columbia)', 'Nearest of the 98 British Columbia city pages (a dated capture of the ECCC city page list), with the distance; public forecast zones by the same overlap rule.', `${jn.report.eccc.withCityPage} of ${jn.report.eccc.nations} have a city page; ${jn.report.eccc.withForecastZones} have a forecast zone (the others lie 47 to 59 kilometres from the nearest zone polygon in the pinned ECCC file)`],
+  ['Radar', 'Nearest U.S. NWS site within 460 kilometres (the long range of WSR-88D base reflectivity), else none. ECCC radar sites have no machine-readable list, so that field stays empty.', `${jn.report.radar.withRadar} of ${records.length} Nations have a site; ${jn.report.radar.withoutRadar.length} British Columbia Nations are beyond range`],
+  ['Gauges', 'NWPS gauges and Water Survey of Canada stations within 25 kilometres of the headquarters or an interior sample, ranked with the Nation\'s own country first, then NWS forecast points, then nearest; at most six; then the reviewed Nation entries of gauges-overrides.yaml (none today). "Nearby gauges", never "gauges affecting".', `${jn.report.gauges.withGauges} of ${records.length} Nations have at least one; ${jn.report.gauges.withoutGauges} have none within range`],
+])}
+` : 'The join build is not present.'}
+` : ''}
 
 ## Id Notes
 
@@ -366,17 +582,15 @@ The method is in \`L5-crosswalk.md\`. No match is marked reviewed; wave 2 resolv
 
 ■ The eighty-character slug limit cuts long names at a word boundary (for example \`us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian\`). Ids are permanent; the maintainer may prefer a shorter slug before the lock is committed, which is cheap now and costly later.
 
-■ Lane L6 contact rows name two ids that differ from the lock: Pit River (\`us-ca-pit-river-tribe-california\` here) and the Yurok component (\`us-ca-puliklatribe-of-yurok-people\` here). L6 minted from the Directory name with its annotation; L6 should re-key those rows.
+■ The two Lane L6 contact rows that once named other ids (Pit River, \`us-ca-pit-river-tribe-california\`, and the Yurok component, \`us-ca-puliklatribe-of-yurok-people\`) now carry the lock ids; \`validate:data\` no longer reports them.
 
-## Wave 2 Work Remaining
+## Remaining Work
 
-■ Boundary polygons from BIA LAR, Census AIANNH (legal classes), and NRCan (BC reserves), with sources, ids, and vintages on every feature, the overview file, and interior \`samples\`.
+■ Maintainer rulings on the decisions above; no record becomes \`reviewed\` before the packet is approved.
 
-■ NWS typed zone keys, ECCC city page and forecast zones, radar stations, and nearby gauges (needs L4 and L7 outputs).
+■ Replace the Natural Earth outline scope aid with the L4 \`emcr-bc-boundaries\` outline for the British Columbia membership test.
 
-■ A check of Tribes whose land lies in the footprint while the office does not.
-
-■ Replace the Natural Earth outline scope aid with the L4 \`emcr-bc-boundaries\` outline once it is pinned.
+■ A pinned refresh path for the ECCC city page list (\`data/registry/eccc-citypage-sites.json\` is a dated capture); a reducer in the L4 fetch step would let the monthly build refresh it.
 `;
   writeFileSync(path.join(dir, 'L5-review-packet.md'), packet);
 
@@ -386,13 +600,13 @@ The method is in \`L5-crosswalk.md\`. No match is marked reviewed; wave 2 resolv
     for (const r of rows) m[`${r.sourceId} / ${r.matchMethod}`] = (m[`${r.sourceId} / ${r.matchMethod}`] ?? 0) + 1;
     return Object.entries(m).sort().map(([k, v]) => [k, String(v)]);
   };
-  const cross = `# Nation Registry Crosswalk Notes, Wave 1 (Draft)
+  const cross = `# Nation Registry Crosswalk Notes, Wave 2 (Draft)
 
-Prepared 10/05/2026 by lane L5. This file explains exactly how the BIA, Census, ISC, and NRCan identifiers and names were matched to registry Nations. The rows themselves are \`data/registry/crosswalk-us.json\` and \`data/registry/crosswalk-bc.json\`. Every row has \`reviewed: false\`; no match is a reviewed match until the maintainer approves the packet. Match methods use the schema's words: \`code\` (an identifier equal in both sources), \`name-exact\` (a normalized name equal in both sources), \`name-reviewed\` and \`manual\` (a person decided; none yet).
+Prepared 10/05/2026 by lane L5. This file explains exactly how the BIA, Census, ISC, and NRCan identifiers and names were matched to registry Nations. The rows themselves are \`data/registry/crosswalk-us.json\` and \`data/registry/crosswalk-bc.json\`. Every row has \`reviewed: false\`; no match is a reviewed match until the maintainer approves the packet. Match methods use the schema's words: \`code\` (an identifier equal in both sources), \`name-exact\` (a normalized name equal in both sources), \`name-reviewed\` (a place-phrase candidate that the build accepted under the rules below, awaiting the maintainer's confirmation; \`reviewed\` stays false) and \`manual\` (a person decided; none yet).
 
 ## The Brief
 
-The registry is built from two directions. U.S. Nations start from the BIA Tribal Leaders Directory (and the Alaska Native Villages layer), take their formal name from the Federal Register notice, and pick up land identifiers from BIA LAR and Census AIANNH by name. British Columbia First Nations start from the ISC location file, take their band number as the id, and reach their reserve polygons by code through the ISC reserve relation to NRCan. Where a join is by name, it is by exact normalized name only, and a name claimed by two Nations is skipped as ambiguous rather than guessed.
+The registry is built from two directions. U.S. Nations start from the BIA Tribal Leaders Directory (and the Alaska Native Villages layer), take their formal name from the Federal Register notice, and pick up land identifiers from BIA LAR and Census AIANNH by name. British Columbia First Nations start from the ISC location file, take their band number as the id, and reach their reserve polygons by code through the ISC reserve relation to NRCan. Where a join is by name, it is by exact normalized name first, then by the place phrase of the Federal Register listing as a reviewable candidate (see Place-Phrase Candidates); a name claimed by two Nations is skipped as ambiguous rather than guessed.
 
 ## Name Normalization
 
@@ -412,7 +626,9 @@ ${table(['Source and method', 'Rows'], [...byMethod(out.crossUs), ...byMethod(ou
 
 ■ **BIA LAR (\`bia-lar\`).** The LAR layer carries LARID, LARNAME, CLASSIFICATION, and acres, and no Tribe key, so the join is by name. A Nation's keys are its normalized \`tribalcomponentname\`, \`tribeshortname\`, and \`tribealternatename\`; a LAR matches when its normalized LARNAME equals a key. If two Nations in the draft share a key, the LAR is ambiguous and neither gets it (listed in the packet). A hit sets \`codes.biaLarIds\` and one \`name-exact\` row per LARID. Directory rows whose LARtype is Land Area Representation but that have no hit are listed in the packet.
 
-■ **Census AIANNH (\`census-aiannh-2025\`).** Only legal classes are considered, and there are two of them in the pinned 2025 file: MTFCC G2101 (federally recognized reservations, GEOID suffix \`R\`, ${censusClassCounts.G2101} rows) and MTFCC G2102 (off-reservation trust land, GEOID suffix \`T\`, ${censusClassCounts.G2102} rows; examples are Colville 0760T, Spokane 3940T, Umatilla 4405T, and Rohnerville 3220T). The statistical classes (G2120 and higher: Alaska Native village areas, Oklahoma tribal statistical areas, and similar) stay out while \`boundary_policy.census_statistical_areas\` is false. The same keys are compared to the normalized Census NAME, and a reservation and its trust land share a NAME and a four-digit code (AIANNHCE). A hit sets \`codes.censusAiannhce\` (every matched code, four digits) and \`codes.censusGeoid\` (the single \`R\` GEOID when exactly one exists; with no \`R\`, the single \`T\` GEOID; else null), with one \`name-exact\` row per GEOID (reservation or trust land named in the row notes). A name match is refused when the area's internal point is more than ${CENSUS_GUARD_KM} kilometres from the Nation's headquarters, and the refusal is listed in the packet. Southeast Alaska villages skip this step because Alaska Native village areas are statistical.
+■ **Census AIANNH (\`census-aiannh-2025\`).** Only legal classes are considered, and there are two of them in the pinned 2025 file: MTFCC G2101 (federally recognized reservations, GEOID suffix \`R\`, ${censusClassCounts.G2101} rows) and MTFCC G2102 (off-reservation trust land, GEOID suffix \`T\`, ${censusClassCounts.G2102} rows; examples are Colville 0760T, Spokane 3940T, Umatilla 4405T, and Rohnerville 3220T). The statistical classes (G2130 to G2160: Alaska Native village statistical areas, Oklahoma tribal statistical areas, and similar) stay out while \`boundary_policy.census_statistical_areas\` is false. The same keys are compared to the normalized Census NAME, and a reservation and its trust land share a NAME and a four-digit code (AIANNHCE). A hit sets \`codes.censusAiannhce\` (every matched code, four digits) and \`codes.censusGeoid\` (the single \`R\` GEOID when exactly one exists; with no \`R\`, the single \`T\` GEOID; else null), with one \`name-exact\` row per GEOID (reservation or trust land named in the row notes). A name match is refused when the area's internal point is more than ${CENSUS_GUARD_KM} kilometres from the Nation's headquarters, and the refusal is listed in the packet. G2120 (Hawaiian home lands) and G2170 (joint-use areas) are outside the footprint. Southeast Alaska villages skip this step because Alaska Native village areas are statistical.
+
+■ **Place-Phrase Candidates (review M1).** A Tribe with no exact LAR or Census match is compared by place words: the Federal Register listing (formal name, "previously listed as" text, and any "includes" list) and the Directory names are reduced to lower case without accents, apostrophes, or generic words (Indian, Reservation, Rancheria, Colony, Tribe, Band, Community, the state names, and similar), and each unclaimed land-area name is reduced the same way. Tier one: every place word of the area name appears, in order, in the listing (Hoopa Valley, Yakama, Umatilla, Port Madison, Table Bluff for the Wiyot listing, Smith River for the Tolowa Dee-ni' listing). Tier two: the area name has two or more place words and only its first appears in the listing (Manchester for Manchester-Point Arena). A candidate is accepted only when the area lies within ${CANDIDATE_KM.tier1} kilometres (tier one) or ${CANDIDATE_KM.tier2} kilometres (tier two) of the headquarters, measured to the polygon for LAR and to the internal point for Census, or the area is named in the entry's own "includes" list (the six Pit River rancherias), and only when exactly one Nation claims the area. Accepted matches are \`name-reviewed\` with \`reviewed: false\`; a headquarters distance corroborates a candidate and never decides it. The Columbia River land areas that the review identified as held for several Tribes (LAR0055 Celilo, LAR0089 The Dalles Unit, and Census 0560T Celilo) are never assigned by name.
 
 ## British Columbia Matches
 
@@ -424,9 +640,9 @@ ${table(['Source and method', 'Rows'], [...byMethod(out.crossUs), ...byMethod(ou
 
 ■ **ISC tribal council relation.** BAND_NUMBER to TRIBAL_COUNCIL_NAME; several councils are joined with a semicolon. The council name is a non-person field.
 
-## What Is Not Matched Yet
+## From Identifiers to Polygons
 
-Boundary polygons are wave 2. The identifiers above are ready for \`40-boundaries.mjs\`, which uses BIA LAR first, Census only where LAR has no polygon, and NRCan for British Columbia reserves. The packet lists every U.S. Tribe that did not reach a LAR or Census identifier by exact name; those need a person or a polygon check, not a fuzzy match.
+\`40-boundaries.mjs\` reads these crosswalk rows and draws, for each Nation, BIA LAR polygons first; Census legal areas only for a Nation with no LAR identifier; and NRCan reserves for British Columbia by ALCODE. A shared British Columbia reserve is drawn once for each band that holds it. No match is changed by the drawing step, and a feature whose crosswalk row is not a \`code\` or \`name-exact\` match carries the draft status of its row. The packet lists every U.S. Tribe that still has no LAR or Census identifier; those have no land-area record of that name in the pinned files and stay point-only.
 `;
   writeFileSync(path.join(dir, 'L5-crosswalk.md'), cross);
 }
@@ -437,7 +653,8 @@ export async function main(argv = process.argv.slice(2)) {
     const rawDirs = argv.flatMap((a, i) => (a === '--raw' ? [argv[i + 1] ?? ''] : []));
     if (!rawDirs.length) throw new Error('--packet needs --raw <folder>');
     const out = buildDraft(resolveInputs(rawDirs), loadConfig('1970-01-01'));
-    writePacket(packet, out);
+    writePacket(packet, out, exists('data/registry/boundaries-build.json') && exists('data/registry/joins-build.json')
+      ? { boundaries: readJson('data/registry/boundaries-build.json'), joins: readJson('data/registry/joins-build.json') } : null);
     console.log(`90-validate: wrote L5-review-packet.md and L5-crosswalk.md to ${packet}`);
   }
   const f = await validate(argv);

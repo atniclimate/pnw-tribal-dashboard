@@ -33,30 +33,64 @@
     [
       48.0255,
       -122.9963
+    ],
+    [
+      48.02625,
+      -122.99889
     ]
   ],
   "bbox": [
-    -123.13062,
-    47.93567,
-    -122.86198,
-    48.11533
+    -123.1513,
+    48.02437,
+    -122.997,
+    48.0708
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-jamestown-sklallam-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0064",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.0255,
+      -122.9963
+    ],
+    "forecastZones": [
+      "forecast:WAZ325"
+    ],
+    "countyZones": [
+      "county:WAC009"
+    ],
+    "fireZones": [
+      "fire:WAZ653"
+    ],
+    "marineZones": [
+      "marine:PZZ132"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:DRSW1",
+    "nwps:DRMW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

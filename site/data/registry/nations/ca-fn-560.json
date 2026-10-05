@@ -30,30 +30,65 @@
     [
       49.23016,
       -122.80596
+    ],
+    [
+      49.24735,
+      -122.79169
+    ],
+    [
+      49.23033,
+      -122.80516
     ]
   ],
   "bbox": [
-    -122.94352,
-    49.14033,
-    -122.6684,
-    49.31999
+    -122.80696,
+    49.22926,
+    -122.78644,
+    49.25213
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-560.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08009",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08010",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-35",
+    "citypageName": "Pitt Meadows",
+    "distanceKm": 8.5,
+    "forecastZones": [
+      "082512-082513-082600-082711-082713-082714"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH126",
+    "wsc:08MH002",
+    "wsc:08MH035",
+    "wsc:08MH149",
+    "wsc:08MH168",
+    "wsc:08MH166"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -32,30 +32,64 @@
     [
       47.88664,
       -117.9903
+    ],
+    [
+      47.91832,
+      -118.04214
     ]
   ],
   "bbox": [
-    -118.12426,
-    47.79681,
-    -117.85634,
-    47.97647
+    -118.3806,
+    47.79105,
+    -117.72543,
+    48.0136
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-spokane-tribe-of-the-spokane-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0085",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "OTX"
+    ],
+    "point": [
+      47.8866,
+      -117.9903
+    ],
+    "forecastZones": [
+      "forecast:WAZ037",
+      "forecast:WAZ036"
+    ],
+    "countyZones": [
+      "county:WAC065",
+      "county:WAC043"
+    ],
+    "fireZones": [
+      "fire:WAZ701"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:CHKW1",
+    "nwps:LLKW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

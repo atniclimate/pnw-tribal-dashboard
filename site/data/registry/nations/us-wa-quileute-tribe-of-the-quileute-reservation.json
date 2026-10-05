@@ -32,30 +32,67 @@
     [
       47.90965,
       -124.6364
+    ],
+    [
+      47.90402,
+      -124.62226
     ]
   ],
   "bbox": [
-    -124.77042,
-    47.81982,
-    -124.50238,
-    47.99948
+    -124.65176,
+    47.8868,
+    -124.60544,
+    47.91915
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-quileute-tribe-of-the-quileute-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0079",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.9097,
+      -124.6364
+    ],
+    "forecastZones": [
+      "forecast:WAZ330"
+    ],
+    "countyZones": [
+      "county:WAC009"
+    ],
+    "fireZones": [
+      "fire:WAZ649"
+    ],
+    "marineZones": [
+      "marine:PZZ153",
+      "marine:PZZ150"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:BOGW1",
+    "nwps:CALW1",
+    "nwps:SDQW1",
+    "nwps:BGFW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

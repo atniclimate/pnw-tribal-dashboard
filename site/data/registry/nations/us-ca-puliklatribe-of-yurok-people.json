@@ -33,27 +33,58 @@
     [
       41.51397,
       -124.0222
+    ],
+    [
+      41.51478,
+      -124.01593
     ]
   ],
   "bbox": [
-    -124.14217,
-    41.42414,
-    -123.90223,
-    41.6038
+    -124.02766,
+    41.50855,
+    -124.00337,
+    41.51733
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-puliklatribe-of-yurok-people.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0167",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      41.514,
+      -124.0222
+    ],
+    "forecastZones": [
+      "forecast:CAZ101"
+    ],
+    "countyZones": [
+      "county:CAC015"
+    ],
+    "fireZones": [
+      "fire:CAZ401"
+    ],
+    "marineZones": [
+      "marine:PZZ450"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBHX",
+    "ridgeLoop": "KBHX",
     "eccc": null
   },
   "gauges": [],

@@ -100,7 +100,7 @@ export function tzConsistent(jurisdictions, tz) {
   return Boolean(allowed && allowed.includes(tz));
 }
 
-/** Census legal land classes: G2101 reservations (type R) and G2102 off-reservation trust land (type T). Statistical areas are G2120 and higher. */
+/** Census legal land classes: G2101 reservations (type R) and G2102 off-reservation trust land (type T). Statistical areas are G2130 to G2160; G2120 (Hawaiian home lands) and G2170 (joint-use areas) are outside the footprint. */
 export const CENSUS_LEGAL_MTFCC = Object.freeze(['G2101', 'G2102']);
 
 /** A Census area whose internal point lies farther than this from a Nation's headquarters is not matched by name alone. */
@@ -200,6 +200,110 @@ export const normName = (s) => String(s ?? '').normalize('NFKD').replace(/\p{M}/
 /** @param {number} x */
 export const r5 = (x) => Math.round(x * 1e5) / 1e5;
 
+/**
+ * Words that carry no place identity in a land-area or Tribe name. They are removed before the place phrases of a
+ * Federal Register listing and a land-area name are compared (review M1).
+ */
+const GENERIC_WORDS = new Set(['indian', 'indians', 'reservation', 'rancheria', 'rancherias', 'colony', 'reserve', 'community', 'tribe', 'tribes', 'tribal',
+  'band', 'bands', 'nation', 'of', 'the', 'and', 'in', 'village', 'california', 'oregon', 'washington', 'idaho', 'montana', 'nevada', 'alaska', 'confederated',
+  'pomo', 'unit', 'ranch', 'or', 'for', 'a']);
+
+/**
+ * Place tokens of a name: lower case, accents and apostrophes removed, generic words dropped.
+ * @param {unknown} s
+ * @returns {string[]}
+ */
+export function placeTokens(s) {
+  return String(s ?? '').normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/['’‘`]/g, '').replace(/&/g, ' and ')
+    .split(/[^a-z0-9]+/).filter((t) => t && !GENERIC_WORDS.has(t));
+}
+
+/** @param {string[]} hay @param {string[]} needle */
+function containsRun(hay, needle) {
+  if (!needle.length) return false;
+  for (let i = 0; i + needle.length <= hay.length; i += 1) if (needle.every((t, k) => hay[i + k] === t)) return true;
+  return false;
+}
+
+/**
+ * How a land-area name relates to the place words of a Tribe's listing.
+ * Tier 1: every place word of the area appears, in order, as one run in the listing. Tier 2: the area name has two
+ * or more place words and only its first appears in the listing. Anything else is no candidate (0).
+ * @param {string[]} listingTokens @param {unknown} areaName
+ * @returns {0 | 1 | 2}
+ */
+export function areaCandidateTier(listingTokens, areaName) {
+  const core = placeTokens(areaName);
+  if (!core.length) return 0;
+  if (containsRun(listingTokens, core)) return 1;
+  if (core.length >= 2 && listingTokens.includes(/** @type {string} */ (core[0]))) return 2;
+  return 0;
+}
+
+/**
+ * Land areas held for more than one Tribe. A name match never assigns them to one Nation (review N3): the Celilo and
+ * The Dalles Unit land-area records of BIA LAR and the Celilo trust land of the Census file. The build cannot say
+ * which Nations they serve, so they stay unassigned until the maintainer rules.
+ */
+export const SHARED_AREAS = Object.freeze({
+  lar: Object.freeze({ LAR0055: 'Celilo', LAR0089: 'The Dalles Unit' }),
+  censusNames: Object.freeze(['celilo']),
+});
+
+/**
+ * The shared LAR set used at every stage (review R2): the named list united with every feature that the pinned LAR file
+ * itself classifies as other than "1" (CLASSIFICATION "3" marks the areas held for several Tribes; LAR0055 and LAR0089
+ * were the only two of 335 at the 2026 pin). A refresh that adds a new shared area is caught by the classification, and
+ * an alias added to a Directory name can no longer assign one by exact name.
+ * @param {Record<string, any>[]} lar features' properties (LARID, LARNAME, CLASSIFICATION)
+ * @returns {Map<string, string>} LARID to its name
+ */
+export function sharedLarAreas(lar) {
+  /** @type {Map<string, string>} */
+  const out = new Map(Object.entries(SHARED_AREAS.lar));
+  for (const l of lar) {
+    const c = l.CLASSIFICATION;
+    if (c !== undefined && c !== null && String(c) !== '1' && !out.has(String(l.LARID))) out.set(String(l.LARID), String(l.LARNAME));
+  }
+  return out;
+}
+
+/** Whether a Census legal area is one of the shared areas, by its normalized name. @param {unknown} name */
+export const isSharedCensusName = (name) => SHARED_AREAS.censusNames.includes(normName(name));
+
+/**
+ * Exact-name LAR stage (pure): LAR ids whose normalized LARNAME equals one of a Tribe's Directory names, when exactly one
+ * Tribe holds that name and the area is not shared.
+ * @param {string[]} keys normalized Directory names of one Tribe
+ * @param {Map<string, { LARID: unknown }>} larBy normalized LARNAME to feature
+ * @param {Map<string, Set<string>>} keyOwners normalized name to the Tribes that hold it
+ * @param {Map<string, string>} sharedLar from sharedLarAreas
+ * @returns {string[]}
+ */
+export function exactLarIds(keys, larBy, keyOwners, sharedLar) {
+  const hit = keys.filter((k) => larBy.has(k) && keyOwners.get(k)?.size === 1 && !sharedLar.has(String(larBy.get(k)?.LARID)));
+  return [...new Set(hit.map((k) => String(larBy.get(k)?.LARID)))].sort();
+}
+
+/**
+ * Exact-name Census stage (pure): legal areas whose normalized NAME equals one of a Tribe's Directory names, shared areas
+ * excluded, one row per GEOID.
+ * @template {{ geoid: string, name: string }} T
+ * @param {string[]} keys @param {Map<string, T[]>} censusBy
+ * @returns {T[]}
+ */
+export function exactCensusRows(keys, censusBy) {
+  const rows = keys.flatMap((k) => censusBy.get(k) ?? []);
+  return rows.filter((a, i) => !isSharedCensusName(a.name) && rows.findIndex((b) => b.geoid === a.geoid) === i);
+}
+
+/**
+ * Largest distance, in kilometres, from a headquarters to a land area for a tier one and tier two candidate. Tier one is
+ * wide because a Census internal point of a scattered area (Coos, Lower Umpqua, and Siuslaw is 112 km from the office) or
+ * an office in another county (Elem, 62 km) is far from the headquarters; the full place phrase must still appear in the listing.
+ */
+export const CANDIDATE_KM = Object.freeze({ tier1: 120, tier2: 15 });
+
 /** @param {number[]} pt @param {number[][]} ring */
 function inRing(pt, ring) {
   let c = false;
@@ -264,7 +368,7 @@ const sha256Buf = (b) => createHash('sha256').update(b).digest('hex');
 /**
  * Pinned inputs as listed in data/registry/inputs.yaml, resolved against one or more raw folders.
  * @param {string[]} rawDirs
- * @param {{ verify?: boolean }} [opts]
+ * @param {{ verify?: boolean, only?: string[] }} [opts] `only` limits the call to those input ids (the boundary builder needs three)
  */
 export function resolveInputs(rawDirs, opts = {}) {
   /** @type {{ inputs: any[] }} */
@@ -272,6 +376,7 @@ export function resolveInputs(rawDirs, opts = {}) {
   /** @type {Record<string, { pin: any, path: string }>} */
   const byId = {};
   for (const pin of pins.inputs) {
+    if (opts.only && !opts.only.includes(pin.id)) continue;
     const found = rawDirs.map((d) => path.join(d, pin.file)).find((p) => existsSync(p));
     if (!found) throw new Error(`pinned input ${pin.id} (${pin.file}) not found in ${rawDirs.join(', ')}`);
     if (opts.verify !== false) {
@@ -354,7 +459,7 @@ export function buildDraft(inputs, cfg) {
   const anvByObjectId = new Map(anv.map((r) => [r.OBJECTID, r]));
   /** @type {Rec[]} */
   const lar = JSON.parse(bytes(inputs, 'bia-lar').toString('utf8')).features.map((/** @type {any} */ f) => ({
-    LARID: f.properties.LARID, LARNAME: f.properties.LARNAME, CLASSIFICATION: f.properties.CLASSIFICATION }));
+    LARID: f.properties.LARID, LARNAME: f.properties.LARNAME, CLASSIFICATION: f.properties.CLASSIFICATION, geometry: f.geometry }));
   const census = shapefileAttributes(bytes(inputs, 'census-aiannh-2025'), 'aiannh\\.shp$')
     .map((r) => ({ ce: r.AIANNHCE ?? '', geoid: r.GEOID ?? '', name: r.NAME ?? '', lsad: r.LSAD ?? '', mtfcc: r.MTFCC ?? '', classfp: r.CLASSFP ?? '', comptyp: r.COMPTYP ?? '',
       lat: Number(r.INTPTLAT), lon: Number(r.INTPTLON) }));
@@ -491,6 +596,10 @@ export function buildDraft(inputs, cfg) {
     // LAR and Census candidates by exact normalized name against the tribal short, component, and alternate names.
     const keys = [row.tribalcomponentname, row.tribeshortname, row.tribealternatename].map(normName).filter(Boolean);
     c.keys = [...new Set(keys)];
+    // The listing text the land-area candidate step reads: the Federal Register entry (annotations included, for former
+    // names and "includes" lists) and the Directory names. `includesText` is the part after "includes", if any.
+    c.listing = [fr ? fr.raw : tldName, row.tribalcomponentname, row.tribeshortname, row.tribealternatename].filter(Boolean).join(' ; ');
+    c.includesText = /\(\s*includes\s+([^)]*)\)/i.exec(fr ? fr.raw : '')?.[1] ?? '';
     decisions.push({ c, rec });
     records.push(rec);
     for (const k of c.keys) { if (!larKeyOwners.has(k)) larKeyOwners.set(k, new Set()); larKeyOwners.get(k).add(id); }
@@ -505,10 +614,17 @@ export function buildDraft(inputs, cfg) {
   report.us.censusUnmatched = [];
   report.us.censusRejected = [];
   report.us.larAmbiguous = [];
+  // Shared areas are never assigned by name at any stage (review R2); a name that reaches one is reported instead.
+  const sharedLar = sharedLarAreas(lar);
+  report.us.sharedAreasDerived = [...sharedLar.entries()].filter(([k]) => !(k in SHARED_AREAS.lar)).map(([key, name]) => ({ source: 'bia-lar', key, name, basis: 'CLASSIFICATION other than 1 in the pinned LAR file' }));
+  report.us.sharedNameMatchesBlocked = [];
   for (const { c, rec } of decisions) {
-    const hit = c.keys.filter((/** @type {string} */ k) => larBy.has(k) && larKeyOwners.get(k).size === 1);
-    const amb = c.keys.filter((/** @type {string} */ k) => larBy.has(k) && larKeyOwners.get(k).size > 1);
-    const larIds = [...new Set(hit.map((/** @type {string} */ k) => larBy.get(k).LARID))].sort();
+    for (const k of c.keys) {
+      if (larBy.has(k) && sharedLar.has(larBy.get(k).LARID)) report.us.sharedNameMatchesBlocked.push({ id: rec.id, source: 'bia-lar', key: larBy.get(k).LARID, name: larBy.get(k).LARNAME });
+      for (const a of censusBy.get(k) ?? []) if (isSharedCensusName(a.name)) report.us.sharedNameMatchesBlocked.push({ id: rec.id, source: 'census-aiannh-2025', key: a.geoid, name: a.name });
+    }
+    const amb = c.keys.filter((/** @type {string} */ k) => larBy.has(k) && larKeyOwners.get(k).size > 1 && !sharedLar.has(larBy.get(k).LARID));
+    const larIds = exactLarIds(c.keys, larBy, larKeyOwners, sharedLar);
     if (amb.length && !larIds.length) report.us.larAmbiguous.push({ id: rec.id, name: rec.name, keys: amb });
     if (!c.isAnv) {
       if (larIds.length) {
@@ -517,8 +633,8 @@ export function buildDraft(inputs, cfg) {
           notes: `LARNAME "${larBy.get(normName(lar.find((l) => l.LARID === lid)?.LARNAME)).LARNAME}" equals a Directory short, component, or alternate name of this Tribe.` });
       } else if (c.row.LARtype === 'Land Area Representation') report.us.larUnmatched.push({ id: rec.id, name: rec.name });
     }
-    const cHits = [...new Set(c.keys.flatMap((/** @type {string} */ k) => (censusBy.get(k) ?? []).map((/** @type {any} */ a) => a.geoid)))];
-    const cRows = c.keys.flatMap((/** @type {string} */ k) => censusBy.get(k) ?? []).filter((/** @type {any} */ a, /** @type {number} */ i, /** @type {any[]} */ arr) => arr.findIndex((b) => b.geoid === a.geoid) === i);
+    const cHits = [...new Set(c.keys.flatMap((/** @type {string} */ k) => (censusBy.get(k) ?? []).filter((/** @type {any} */ a) => !isSharedCensusName(a.name)).map((/** @type {any} */ a) => a.geoid)))];
+    const cRows = exactCensusRows(c.keys, censusBy);
     const owned0 = cRows.filter((/** @type {any} */ a) => larKeyOwners.get(normName(a.name))?.size === 1);
     // Guard (review M9): a same-named area far from the headquarters is not this Nation's land; listed in the packet, never matched.
     const owned = owned0.filter((/** @type {any} */ a) => !Number.isFinite(a.lat) || haversineKm(c.lat, c.lon, a.lat, a.lon) <= CENSUS_GUARD_KM);
@@ -533,6 +649,86 @@ export function buildDraft(inputs, cfg) {
         notes: `Census NAME "${a.name}" (MTFCC ${a.mtfcc}, ${a.mtfcc === 'G2102' ? 'legal off-reservation trust land' : 'legal reservation'}, COMPTYP ${a.comptyp}, CLASSFP ${a.classfp}) equals a Directory short, component, or alternate name.` });
     } else if (!c.isAnv && cHits.length === 0 && c.row.LARtype === 'Land Area Representation') report.us.censusUnmatched.push({ id: rec.id, name: rec.name });
   }
+
+  // ---- Land-area candidates by place phrase (review M1) ----
+  // Reservation names are rarely the Directory short names, so a Tribe such as Yakama or Umatilla has no exact LAR or Census
+  // match. The place words of the Federal Register listing (including its "previously listed as" and "includes" text) are compared
+  // with each unclaimed land-area name. A candidate is accepted only when it is corroborated (within CANDIDATE_KM of the
+  // headquarters, or named in the listing's own "includes" list) and claimed by exactly one Nation. Every accepted match is
+  // `name-reviewed` with `reviewed: false`: a person confirms it in the packet. The shared Columbia River areas are never assigned.
+  report.us.areaCandidates = [];
+  report.us.areaCandidatesRejected = [];
+  report.us.sharedAreas = [];
+  const claimedLar = new Set(records.flatMap((r) => r.codes.biaLarIds));
+  const claimedCe = new Set(records.flatMap((r) => r.codes.censusAiannhce));
+  /** @type {{ nationId: string, kind: 'lar' | 'census', key: string, name: string, tier: number, km: number, accepted: boolean, viaIncludes: boolean }[]} */
+  const cands = [];
+  for (const { c, rec } of decisions) {
+    if (c.isAnv) continue;
+    const listing = placeTokens(c.listing);
+    const includes = placeTokens(c.includesText);
+    if (!rec.codes.biaLarIds.length) {
+      for (const l of lar) {
+        if (claimedLar.has(l.LARID)) continue;
+        if (sharedLar.has(String(l.LARID))) continue;
+        const tier = areaCandidateTier(listing, l.LARNAME);
+        if (!tier) continue;
+        const viaIncludes = containsRun(includes, placeTokens(l.LARNAME));
+        const km = pointInGeometry(c.lon, c.lat, l.geometry) ? 0 : distanceToOutlineKm(c.lon, c.lat, l.geometry);
+        cands.push({ nationId: rec.id, kind: 'lar', key: l.LARID, name: l.LARNAME, tier, km: Math.round(km * 10) / 10, viaIncludes, accepted: viaIncludes || km <= (tier === 1 ? CANDIDATE_KM.tier1 : CANDIDATE_KM.tier2) });
+      }
+    }
+    if (!rec.codes.censusAiannhce.length) {
+      for (const a of census.filter((x) => CENSUS_LEGAL_MTFCC.includes(x.mtfcc))) {
+        if (claimedCe.has(a.ce)) continue;
+        if (isSharedCensusName(a.name)) continue;
+        const tier = areaCandidateTier(listing, a.name);
+        if (!tier) continue;
+        const viaIncludes = containsRun(includes, placeTokens(a.name));
+        const km = Number.isFinite(a.lat) ? haversineKm(c.lat, c.lon, a.lat, a.lon) : Infinity;
+        cands.push({ nationId: rec.id, kind: 'census', key: a.geoid, name: a.name, tier, km: Math.round(km * 10) / 10, viaIncludes, accepted: viaIncludes || km <= (tier === 1 ? CANDIDATE_KM.tier1 : CANDIDATE_KM.tier2) });
+      }
+    }
+  }
+  for (const s of lar.filter((l) => sharedLar.has(String(l.LARID)))) report.us.sharedAreas.push({ source: 'bia-lar', key: s.LARID, name: s.LARNAME });
+  for (const s of census.filter((x) => CENSUS_LEGAL_MTFCC.includes(x.mtfcc) && isSharedCensusName(x.name))) report.us.sharedAreas.push({ source: 'census-aiannh-2025', key: s.geoid, name: s.name });
+  // Census areas that share a code (reservation and trust land) are one claim.
+  /** @param {typeof cands[number]} x */
+  const claimKey = (x) => (x.kind === 'census' ? `census:${x.key.slice(0, 4)}` : `lar:${x.key}`);
+  /** @type {Map<string, Set<string>>} */
+  const claimants = new Map();
+  for (const x of cands.filter((y) => y.accepted)) { const k = claimKey(x); if (!claimants.has(k)) claimants.set(k, new Set()); /** @type {Set<string>} */ (claimants.get(k)).add(x.nationId); }
+  /** @type {Map<string, any[]>} */
+  const newCensus = new Map();
+  for (const x of cands) {
+    const owners = claimants.get(claimKey(x));
+    if (!x.accepted) { report.us.areaCandidatesRejected.push({ ...x, why: `${x.km} km from the headquarters (limit ${x.tier === 1 ? CANDIDATE_KM.tier1 : CANDIDATE_KM.tier2} for tier ${x.tier})` }); continue; }
+    if (!owners || owners.size !== 1) { report.us.areaCandidatesRejected.push({ ...x, why: 'claimed by more than one Nation' }); continue; }
+    const rec = /** @type {Rec} */ (records.find((r) => r.id === x.nationId));
+    const basis = x.viaIncludes ? 'named in the "includes" list of the Federal Register entry' : `${x.km} km from the headquarters`;
+    const how = `Place words of the area name ${x.tier === 1 ? 'appear in' : 'begin with a word of'} the Tribe's Federal Register listing (tier ${x.tier}); ${basis}.`;
+    if (x.kind === 'lar') {
+      rec.codes.biaLarIds = [...new Set([...rec.codes.biaLarIds, x.key])].sort();
+      crossUs.push({ nationId: rec.id, sourceId: 'bia-lar', sourceKey: x.key, matchMethod: 'name-reviewed', reviewed: false, notes: `LARNAME "${x.name}": ${how} Candidate for the maintainer to confirm.` });
+    } else {
+      const a = /** @type {any} */ (census.find((z) => z.geoid === x.key));
+      if (!newCensus.has(rec.id)) newCensus.set(rec.id, []);
+      /** @type {any[]} */ (newCensus.get(rec.id)).push(a);
+      crossUs.push({ nationId: rec.id, sourceId: 'census-aiannh-2025', sourceKey: x.key, matchMethod: 'name-reviewed', reviewed: false,
+        notes: `Census NAME "${x.name}" (MTFCC ${a.mtfcc}, ${a.mtfcc === 'G2102' ? 'legal off-reservation trust land' : 'legal reservation'}, COMPTYP ${a.comptyp}, CLASSFP ${a.classfp}): ${how} Candidate for the maintainer to confirm.` });
+    }
+    report.us.areaCandidates.push({ nationId: rec.id, source: x.kind === 'lar' ? 'bia-lar' : 'census-aiannh-2025', key: x.key, name: x.name, tier: x.tier, km: x.km, viaIncludes: x.viaIncludes });
+  }
+  for (const [id, rows] of newCensus) {
+    const rec = /** @type {Rec} */ (records.find((r) => r.id === id));
+    rec.codes.censusAiannhce = [...new Set(rows.map((a) => a.ce))].sort();
+    const rGeo = rows.filter((a) => a.geoid.endsWith('R'));
+    const tGeo = rows.filter((a) => a.geoid.endsWith('T'));
+    rec.codes.censusGeoid = rGeo.length === 1 ? rGeo[0].geoid : !rGeo.length && tGeo.length === 1 ? tGeo[0].geoid : null;
+  }
+  const hasCensusRows = (/** @type {string} */ id) => records.find((r) => r.id === id)?.codes.censusAiannhce.length;
+  report.us.larUnmatched = report.us.larUnmatched.filter((/** @type {any} */ x) => !records.find((r) => r.id === x.id)?.codes.biaLarIds.length);
+  report.us.censusUnmatched = report.us.censusUnmatched.filter((/** @type {any} */ x) => !hasCensusRows(x.id));
 
   // ---- British Columbia ----
   const iscRows = csvRows(zipMember(bytes(inputs, 'isc-locations'), /\.csv$/i));

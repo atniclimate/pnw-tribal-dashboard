@@ -33,35 +33,76 @@
     [
       46.37622,
       -120.3386
+    ],
+    [
+      46.25656,
+      -120.82276
     ]
   ],
   "bbox": [
-    -120.46881,
-    46.28639,
-    -120.20839,
-    46.46605
+    -121.51286,
+    45.88573,
+    -119.99967,
+    46.55351
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-confederated-tribes-and-bands-of-the-yakama-nation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0094",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "PDT"
+    ],
+    "point": [
+      46.3762,
+      -120.3386
+    ],
+    "forecastZones": [
+      "forecast:WAZ027",
+      "forecast:WAZ521",
+      "forecast:WAZ523",
+      "forecast:WAZ522"
+    ],
+    "countyZones": [
+      "county:WAC077",
+      "county:WAC039"
+    ],
+    "fireZones": [
+      "fire:WAZ691",
+      "fire:WAZ694"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KPDT",
+    "ridgeLoop": "KPDT",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:TOPW1",
+    "nwps:PARW1",
+    "nwps:AHUW1",
+    "nwps:TPWW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
+    "biaLarIds": [
+      "LAR0094"
+    ],
     "censusAiannhce": [
       "4690"
     ],

@@ -30,30 +30,102 @@
     [
       56.89187,
       -124.96315
+    ],
+    [
+      56.90276,
+      -124.97395
+    ],
+    [
+      56.36885,
+      -125.41469
+    ],
+    [
+      56.78372,
+      -124.78181
+    ],
+    [
+      55.44142,
+      -123.21355
+    ],
+    [
+      55.12921,
+      -122.97924
+    ],
+    [
+      56.79113,
+      -124.88543
     ]
   ],
   "bbox": [
-    -125.12761,
-    56.80204,
-    -124.79869,
-    56.9817
+    -125.45182,
+    55.12691,
+    -122.97392,
+    56.92253
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-609.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07573",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07574",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07575",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08368",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08534",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10167",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-53",
+    "citypageName": "Tetsa River (Provincial Park)",
+    "distanceKm": 197.5,
+    "forecastZones": [
+      "087200"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:07EE007",
+    "wsc:07EA004",
+    "wsc:07EE010"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

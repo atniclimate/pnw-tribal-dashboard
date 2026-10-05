@@ -30,30 +30,91 @@
     [
       50.05131,
       -122.54109
+    ],
+    [
+      50.00595,
+      -122.52122
+    ],
+    [
+      50.05166,
+      -122.53894
+    ],
+    [
+      50.12237,
+      -122.52879
+    ],
+    [
+      49.98647,
+      -122.45145
+    ],
+    [
+      49.99042,
+      -122.4574
     ]
   ],
   "bbox": [
-    -122.68099,
-    49.96148,
-    -122.40119,
-    50.14114
+    -122.54204,
+    49.98453,
+    -122.4478,
+    50.12411
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-567.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08039",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08040",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08041",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08042",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08043",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-86",
+    "citypageName": "Whistler",
+    "distanceKm": 30.8,
+    "forecastZones": [
+      "082400"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MG027",
+    "wsc:08MG020"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

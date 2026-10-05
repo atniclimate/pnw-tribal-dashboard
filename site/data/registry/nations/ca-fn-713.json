@@ -30,30 +30,100 @@
     [
       51.77112,
       -120.99334
+    ],
+    [
+      51.77876,
+      -120.97903
+    ],
+    [
+      51.90069,
+      -120.62054
+    ],
+    [
+      51.74258,
+      -121.12925
+    ],
+    [
+      51.88671,
+      -120.63214
+    ],
+    [
+      51.77182,
+      -121.21383
+    ],
+    [
+      51.79562,
+      -121.47408
     ]
   ],
   "bbox": [
-    -121.13851,
-    51.68129,
-    -120.84817,
-    51.86095
+    -121.47688,
+    51.73931,
+    -120.61468,
+    51.90793
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-713.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08244",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08245",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08246",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08247",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08248",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08249",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-7",
+    "citypageName": "100 Mile House",
+    "distanceKm": 25.1,
+    "forecastZones": [
+      "086300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LA027"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

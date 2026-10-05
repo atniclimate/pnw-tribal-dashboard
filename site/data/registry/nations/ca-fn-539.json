@@ -30,30 +30,111 @@
     [
       52.3619,
       -126.7157
+    ],
+    [
+      52.38087,
+      -126.72608
+    ],
+    [
+      52.01887,
+      -126.67534
+    ],
+    [
+      52.81248,
+      -126.96878
+    ],
+    [
+      52.89993,
+      -127.08692
+    ],
+    [
+      52.09882,
+      -127.35192
+    ],
+    [
+      52.605,
+      -127.17175
+    ],
+    [
+      52.34383,
+      -126.98814
     ]
   ],
   "bbox": [
-    -126.8628,
-    52.27207,
-    -126.5686,
-    52.45173
+    -127.36211,
+    52.01416,
+    -126.659,
+    52.90396
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-539.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07879",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07880",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07881",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07882",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07883",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07884",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07885",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-18",
+    "citypageName": "Bella Coola",
+    "distanceKm": 3.1,
+    "forecastZones": [
+      "082200",
+      "082100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08FB004"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

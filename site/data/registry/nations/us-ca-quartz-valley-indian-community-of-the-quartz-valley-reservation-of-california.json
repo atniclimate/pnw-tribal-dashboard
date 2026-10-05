@@ -32,27 +32,56 @@
     [
       41.60142,
       -122.976
+    ],
+    [
+      41.61157,
+      -122.97051
     ]
   ],
   "bbox": [
-    -123.09613,
-    41.51159,
-    -122.85587,
-    41.69125
+    -122.98441,
+    41.58884,
+    -122.96489,
+    41.62123
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0163",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "MFR"
+    ],
+    "point": [
+      41.6014,
+      -122.976
+    ],
+    "forecastZones": [
+      "forecast:CAZ080"
+    ],
+    "countyZones": [
+      "county:CAC093"
+    ],
+    "fireZones": [
+      "fire:CAZ280"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMAX",
+    "ridgeLoop": "KMAX",
     "eccc": null
   },
   "gauges": [],

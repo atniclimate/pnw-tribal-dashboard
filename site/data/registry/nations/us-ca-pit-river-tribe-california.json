@@ -32,27 +32,114 @@
     [
       40.87685,
       -121.6725
+    ],
+    [
+      41.53699,
+      -120.45386
+    ],
+    [
+      40.89339,
+      -121.95352
+    ],
+    [
+      40.8348,
+      -121.91581
+    ],
+    [
+      41.21377,
+      -121.09367
+    ],
+    [
+      41.02655,
+      -121.91895
+    ],
+    [
+      41.20442,
+      -120.4793
     ]
   ],
   "bbox": [
-    -121.79131,
-    40.78702,
-    -121.55369,
-    40.96668
+    -121.95588,
+    40.74676,
+    -120.38918,
+    41.90085
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-pit-river-tribe-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0102",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      },
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0143",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      },
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0145",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      },
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0152",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      },
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0169",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      },
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0199",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "STO",
+      "MFR"
+    ],
+    "point": [
+      40.8769,
+      -121.6725
+    ],
+    "forecastZones": [
+      "forecast:CAZ127",
+      "forecast:CAZ085",
+      "forecast:CAZ123",
+      "forecast:CAZ125"
+    ],
+    "countyZones": [
+      "county:CAC089",
+      "county:CAC049"
+    ],
+    "fireZones": [
+      "fire:CAZ127",
+      "fire:CAZ285",
+      "fire:CAZ123",
+      "fire:CAZ125"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],
@@ -60,7 +147,14 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
+    "biaLarIds": [
+      "LAR0102",
+      "LAR0143",
+      "LAR0145",
+      "LAR0152",
+      "LAR0169",
+      "LAR0199"
+    ],
     "censusAiannhce": [
       "2835"
     ],

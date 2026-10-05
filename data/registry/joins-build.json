@@ -1,0 +1,7670 @@
+{
+  "schema": "cthd.joins-build/1",
+  "report": {
+    "policy": {
+      "zoneLandShare": 0.02,
+      "marineKm": 10,
+      "snapKm": 5,
+      "radarMaxKm": 460,
+      "gaugeKm": 25,
+      "maxGauges": 6,
+      "gridMinStepKm": 0.2,
+      "gridMaxStepKm": 3
+    },
+    "nws": {
+      "nations": 102,
+      "withWfo": 102,
+      "noForecastZone": [],
+      "noWfo": []
+    },
+    "eccc": {
+      "nations": 201,
+      "withCityPage": 201,
+      "withForecastZones": 199
+    },
+    "radar": {
+      "withRadar": 255,
+      "withoutRadar": [
+        "ca-fn-530",
+        "ca-fn-531",
+        "ca-fn-532",
+        "ca-fn-533",
+        "ca-fn-534",
+        "ca-fn-535",
+        "ca-fn-536",
+        "ca-fn-537",
+        "ca-fn-538",
+        "ca-fn-539",
+        "ca-fn-540",
+        "ca-fn-541",
+        "ca-fn-542",
+        "ca-fn-543",
+        "ca-fn-544",
+        "ca-fn-545",
+        "ca-fn-546",
+        "ca-fn-547",
+        "ca-fn-548",
+        "ca-fn-607",
+        "ca-fn-608",
+        "ca-fn-609",
+        "ca-fn-610",
+        "ca-fn-611",
+        "ca-fn-612",
+        "ca-fn-613",
+        "ca-fn-614",
+        "ca-fn-615",
+        "ca-fn-617",
+        "ca-fn-618",
+        "ca-fn-619",
+        "ca-fn-620",
+        "ca-fn-632",
+        "ca-fn-672",
+        "ca-fn-675",
+        "ca-fn-676",
+        "ca-fn-680",
+        "ca-fn-681",
+        "ca-fn-709",
+        "ca-fn-715",
+        "ca-fn-720",
+        "ca-fn-721",
+        "ca-fn-722",
+        "ca-fn-725",
+        "ca-fn-726",
+        "ca-fn-728",
+        "ca-fn-729",
+        "ca-fn-730"
+      ]
+    },
+    "gauges": {
+      "withGauges": 211,
+      "withoutGauges": 92
+    }
+  },
+  "nations": {
+    "ca-fn-501": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-67",
+        "citypageName": "Atlin",
+        "distanceKm": 7.5,
+        "forecastZones": [
+          "089600"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:09AA001",
+        "wsc:09AA006"
+      ]
+    },
+    "ca-fn-504": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-9",
+        "citypageName": "Good Hope Lake",
+        "distanceKm": 0.5,
+        "forecastZones": []
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-530": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 28.8,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EE005",
+        "wsc:08EE008",
+        "wsc:08EE012",
+        "wsc:08EE004",
+        "wsc:08EF006"
+      ]
+    },
+    "ca-fn-531": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 61.9,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EB003",
+        "wsc:08EE025",
+        "wsc:08EB005",
+        "wsc:08EB004"
+      ]
+    },
+    "ca-fn-532": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 71.6,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EB003",
+        "wsc:08EB004",
+        "wsc:08EE025",
+        "wsc:08EB005"
+      ]
+    },
+    "ca-fn-533": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 67.3,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EB003",
+        "wsc:08EE025",
+        "wsc:08EB004"
+      ]
+    },
+    "ca-fn-534": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 59.4,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EE025",
+        "wsc:08EB003",
+        "wsc:08EB004"
+      ]
+    },
+    "ca-fn-535": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 54.3,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EB007",
+        "wsc:08EB003",
+        "wsc:08EE025"
+      ]
+    },
+    "ca-fn-536": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 67,
+        "forecastZones": [
+          "089200"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EB007",
+        "wsc:08EF001"
+      ]
+    },
+    "ca-fn-537": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 78.7,
+        "forecastZones": [
+          "087100",
+          "089200"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EB007"
+      ]
+    },
+    "ca-fn-538": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-94",
+        "citypageName": "Bella Bella",
+        "distanceKm": 0.4,
+        "forecastZones": [
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-539": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-18",
+        "citypageName": "Bella Coola",
+        "distanceKm": 3.1,
+        "forecastZones": [
+          "082200",
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08FB004"
+      ]
+    },
+    "ca-fn-540": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-94",
+        "citypageName": "Bella Bella",
+        "distanceKm": 54.1,
+        "forecastZones": [
+          "082100",
+          "089100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-541": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-94",
+        "citypageName": "Bella Bella",
+        "distanceKm": 82,
+        "forecastZones": [
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08FA002",
+        "wsc:08FA007"
+      ]
+    },
+    "ca-fn-542": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-23",
+        "citypageName": "Chetwynd",
+        "distanceKm": 18.2,
+        "forecastZones": [
+          "087300"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-543": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-83",
+        "citypageName": "Fort Nelson",
+        "distanceKm": 5,
+        "forecastZones": [
+          "088100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:10CD001"
+      ]
+    },
+    "ca-fn-544": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-83",
+        "citypageName": "Fort Nelson",
+        "distanceKm": 79.8,
+        "forecastZones": [
+          "088100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:10CD005",
+        "wsc:10CD004"
+      ]
+    },
+    "ca-fn-545": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-23",
+        "citypageName": "Chetwynd",
+        "distanceKm": 20.5,
+        "forecastZones": [
+          "087300"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-546": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-78",
+        "citypageName": "Fort St. John",
+        "distanceKm": 75.2,
+        "forecastZones": [
+          "087300"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:07FA003",
+        "wsc:07FA006",
+        "wsc:07FA005"
+      ]
+    },
+    "ca-fn-547": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-78",
+        "citypageName": "Fort St. John",
+        "distanceKm": 53.2,
+        "forecastZones": [
+          "087300"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:07FC003",
+        "wsc:07FA004",
+        "wsc:07FC001"
+      ]
+    },
+    "ca-fn-548": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-78",
+        "citypageName": "Fort St. John",
+        "distanceKm": 42.2,
+        "forecastZones": [
+          "087300"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:07FA004",
+        "wsc:07FC001",
+        "wsc:07FD002"
+      ]
+    },
+    "ca-fn-549": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-74",
+        "citypageName": "Vancouver",
+        "distanceKm": 12.4,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GA030",
+        "wsc:08GA079",
+        "wsc:08MH141",
+        "wsc:08GA061",
+        "wsc:08GA077",
+        "wsc:08GA031"
+      ]
+    },
+    "ca-fn-550": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-74",
+        "citypageName": "Vancouver",
+        "distanceKm": 6,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH053",
+        "wsc:08MH028",
+        "wsc:08MH032",
+        "wsc:08GA031",
+        "wsc:08GA061",
+        "wsc:08GA030"
+      ]
+    },
+    "ca-fn-551": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-3",
+        "citypageName": "Sechelt",
+        "distanceKm": 0.9,
+        "forecastZones": [
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GA047",
+        "wsc:08GB014",
+        "wsc:08GB013",
+        "wsc:08GA071"
+      ]
+    },
+    "ca-fn-552": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-19",
+        "citypageName": "Campbell River",
+        "distanceKm": 7.6,
+        "forecastZones": [
+          "081300",
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HD023",
+        "wsc:08GD004",
+        "wsc:08HD011",
+        "wsc:08HD027",
+        "wsc:08HD022",
+        "wsc:08HD005"
+      ]
+    },
+    "ca-fn-553": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-19",
+        "citypageName": "Campbell River",
+        "distanceKm": 25.6,
+        "forecastZones": [
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GC005",
+        "wsc:08GC006",
+        "wsc:08GC007",
+        "wsc:08GC008",
+        "wsc:08HD024"
+      ]
+    },
+    "ca-fn-554": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-58",
+        "citypageName": "Powell River",
+        "distanceKm": 5.9,
+        "forecastZones": [
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GC008",
+        "wsc:08GB014"
+      ]
+    },
+    "ca-fn-555": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-99",
+        "citypageName": "West Vancouver",
+        "distanceKm": 2.1,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714",
+          "082511-082514-082520",
+          "082400",
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GA076",
+        "wsc:08GA022",
+        "wsc:08GA031",
+        "wsc:08GA043",
+        "wsc:08GA061",
+        "wsc:08GA030"
+      ]
+    },
+    "ca-fn-556": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-16",
+        "citypageName": "Pemberton",
+        "distanceKm": 34,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-557": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-16",
+        "citypageName": "Pemberton",
+        "distanceKm": 5.6,
+        "forecastZones": [
+          "082400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MG025",
+        "wsc:08MG005",
+        "wsc:08MG028",
+        "wsc:08MG020"
+      ]
+    },
+    "ca-fn-558": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 4,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF038",
+        "wsc:08MF073",
+        "wsc:08MG014",
+        "wsc:08MF075"
+      ]
+    },
+    "ca-fn-559": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-70",
+        "citypageName": "Agassiz",
+        "distanceKm": 12.9,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MG022",
+        "wsc:08MG001",
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF075",
+        "wsc:08MG014"
+      ]
+    },
+    "ca-fn-560": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-35",
+        "citypageName": "Pitt Meadows",
+        "distanceKm": 8.5,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH126",
+        "wsc:08MH002",
+        "wsc:08MH035",
+        "wsc:08MH149",
+        "wsc:08MH168",
+        "wsc:08MH166"
+      ]
+    },
+    "ca-fn-561": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-70",
+        "citypageName": "Agassiz",
+        "distanceKm": 66.3,
+        "forecastZones": [
+          "082400",
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH147"
+      ]
+    },
+    "ca-fn-562": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-86",
+        "citypageName": "Whistler",
+        "distanceKm": 44.2,
+        "forecastZones": [
+          "082400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MG027"
+      ]
+    },
+    "ca-fn-563": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-35",
+        "citypageName": "Pitt Meadows",
+        "distanceKm": 2.3,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH005",
+        "wsc:08MH035",
+        "wsc:08MH006",
+        "wsc:08MH090",
+        "wsc:08MH168",
+        "wsc:08MH076"
+      ]
+    },
+    "ca-fn-564": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-100",
+        "citypageName": "Langley",
+        "distanceKm": 10.5,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714",
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH044",
+        "wsc:08MH024",
+        "wsc:08MH076",
+        "wsc:08MH098",
+        "wsc:08MH001",
+        "wsc:08MH090"
+      ]
+    },
+    "ca-fn-565": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-81",
+        "citypageName": "Abbotsford",
+        "distanceKm": 5.4,
+        "forecastZones": [
+          "082711-082712-082720-082730",
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH156",
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MH153",
+        "wsc:08MF038",
+        "wsc:08MH029"
+      ]
+    },
+    "ca-fn-566": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-74",
+        "citypageName": "Vancouver",
+        "distanceKm": 7,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH032",
+        "wsc:08GA030",
+        "wsc:08MH053",
+        "wsc:08GA061",
+        "wsc:08MH126",
+        "wsc:08GA031"
+      ]
+    },
+    "ca-fn-567": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-86",
+        "citypageName": "Whistler",
+        "distanceKm": 30.8,
+        "forecastZones": [
+          "082400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MG027",
+        "wsc:08MG020"
+      ]
+    },
+    "ca-fn-568": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 8.6,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MG014",
+        "wsc:08MF073",
+        "wsc:08MF075",
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MG022"
+      ]
+    },
+    "ca-fn-569": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-62",
+        "citypageName": "White Rock",
+        "distanceKm": 2.4,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH155",
+        "wsc:08MH090",
+        "wsc:08MH156",
+        "wsc:08MH098",
+        "wsc:08MH126",
+        "wsc:08MH053"
+      ]
+    },
+    "ca-fn-570": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 3.6,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF073",
+        "wsc:08MF038",
+        "wsc:08MG014",
+        "wsc:08MF075"
+      ]
+    },
+    "ca-fn-571": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 3.1,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF038",
+        "wsc:08MF073",
+        "wsc:08MF075",
+        "wsc:08MG014"
+      ]
+    },
+    "ca-fn-572": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 10.1,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH001",
+        "wsc:08MH024",
+        "wsc:08MF038",
+        "wsc:08MF073",
+        "wsc:08MF075",
+        "wsc:08MF035"
+      ]
+    },
+    "ca-fn-573": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 2.5,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MF073",
+        "wsc:08MH001",
+        "wsc:08MF035",
+        "wsc:08MF075",
+        "wsc:08MG014"
+      ]
+    },
+    "ca-fn-574": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 3.2,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF038",
+        "wsc:08MF073",
+        "wsc:08MG014",
+        "wsc:08MF075"
+      ]
+    },
+    "ca-fn-575": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 6.5,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH001",
+        "wsc:08MH024",
+        "wsc:08MF038",
+        "wsc:08MF073",
+        "wsc:08MF075",
+        "wsc:08MF035"
+      ]
+    },
+    "ca-fn-576": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 4.2,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF038",
+        "wsc:08MF073",
+        "wsc:08MF075",
+        "wsc:08MF035"
+      ]
+    },
+    "ca-fn-577": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-96",
+        "citypageName": "Richmond",
+        "distanceKm": 13.3,
+        "forecastZones": [
+          "082512-082513-082600-082711-082713-082714"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH053",
+        "wsc:08MH028",
+        "wsc:08MH032"
+      ]
+    },
+    "ca-fn-578": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-81",
+        "citypageName": "Abbotsford",
+        "distanceKm": 9.1,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MH029",
+        "wsc:08MF038",
+        "wsc:08MF073",
+        "wsc:08MF075"
+      ]
+    },
+    "ca-fn-579": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 7.8,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF038",
+        "wsc:08MH001",
+        "wsc:08MG014",
+        "wsc:08MF073",
+        "wsc:08MF075",
+        "wsc:08MG001"
+      ]
+    },
+    "ca-fn-580": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-24",
+        "citypageName": "Chilliwack",
+        "distanceKm": 2.6,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF073",
+        "wsc:08MG014",
+        "wsc:08MF038",
+        "wsc:08MF075"
+      ]
+    },
+    "ca-fn-581": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-70",
+        "citypageName": "Agassiz",
+        "distanceKm": 4,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF074",
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MG012",
+        "wsc:08MF035",
+        "wsc:08MF038"
+      ]
+    },
+    "ca-fn-582": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-36",
+        "citypageName": "Hope",
+        "distanceKm": 13,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF076",
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF072",
+        "wsc:08MF038",
+        "wsc:08MF073"
+      ]
+    },
+    "ca-fn-583": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-36",
+        "citypageName": "Hope",
+        "distanceKm": 8.9,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF005",
+        "wsc:08MF076",
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF068",
+        "wsc:08MF038"
+      ]
+    },
+    "ca-fn-584": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-70",
+        "citypageName": "Agassiz",
+        "distanceKm": 4.6,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF035",
+        "wsc:08MH024",
+        "wsc:08MH001",
+        "wsc:08MF074",
+        "wsc:08MF038",
+        "wsc:08MF073"
+      ]
+    },
+    "ca-fn-585": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-70",
+        "citypageName": "Agassiz",
+        "distanceKm": 4.8,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MH024",
+        "wsc:08MF035",
+        "wsc:08MH001",
+        "wsc:08MF074",
+        "wsc:08MF038",
+        "wsc:08MF073"
+      ]
+    },
+    "ca-fn-586": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-70",
+        "citypageName": "Agassiz",
+        "distanceKm": 10.8,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF072",
+        "wsc:08MF074",
+        "wsc:08MG012",
+        "wsc:08MF076",
+        "wsc:08MF035",
+        "wsc:08MF005"
+      ]
+    },
+    "ca-fn-587": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-36",
+        "citypageName": "Hope",
+        "distanceKm": 13.4,
+        "forecastZones": [
+          "082711-082712-082720-082730",
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF072",
+        "wsc:08MH024",
+        "wsc:08MF076",
+        "wsc:08MH001",
+        "wsc:08MF038",
+        "wsc:08MF074"
+      ]
+    },
+    "ca-fn-588": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-36",
+        "citypageName": "Hope",
+        "distanceKm": 6.4,
+        "forecastZones": [
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF068",
+        "wsc:08MF005",
+        "wsc:08MF076",
+        "wsc:08MF072",
+        "wsc:08MF062",
+        "wsc:08MF074"
+      ]
+    },
+    "ca-fn-589": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-36",
+        "citypageName": "Hope",
+        "distanceKm": 20.3,
+        "forecastZones": [
+          "083110-083122",
+          "082711-082712-082720-082730"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF076",
+        "wsc:08MF072",
+        "wsc:08MF005",
+        "wsc:08MF074",
+        "wsc:08MF068",
+        "wsc:08MG012"
+      ]
+    },
+    "ca-fn-590": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-28",
+        "citypageName": "Lillooet",
+        "distanceKm": 9.2,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08ME003",
+        "wsc:08ME002",
+        "wsc:08MF040"
+      ]
+    },
+    "ca-fn-591": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-28",
+        "citypageName": "Lillooet",
+        "distanceKm": 1.8,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08ME002",
+        "wsc:08ME003",
+        "wsc:08MF040"
+      ]
+    },
+    "ca-fn-592": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-28",
+        "citypageName": "Lillooet",
+        "distanceKm": 6.8,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF040",
+        "wsc:08ME003",
+        "wsc:08ME002"
+      ]
+    },
+    "ca-fn-593": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-28",
+        "citypageName": "Lillooet",
+        "distanceKm": 1.8,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF040",
+        "wsc:08ME003",
+        "wsc:08ME002"
+      ]
+    },
+    "ca-fn-594": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-28",
+        "citypageName": "Lillooet",
+        "distanceKm": 23.1,
+        "forecastZones": [
+          "083110-083122",
+          "086100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF040",
+        "wsc:08ME002",
+        "wsc:08ME003",
+        "wsc:08LF002",
+        "wsc:08MD013"
+      ]
+    },
+    "ca-fn-595": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-28",
+        "citypageName": "Lillooet",
+        "distanceKm": 20.7,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08ME003",
+        "wsc:08ME002",
+        "wsc:08MF040"
+      ]
+    },
+    "ca-fn-596": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-69",
+        "citypageName": "Osoyoos",
+        "distanceKm": 17.9,
+        "forecastZones": [
+          "083500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NM200",
+        "wsc:08NM085",
+        "wsc:08NM247",
+        "wsc:08NM243",
+        "wsc:08NM171",
+        "wsc:08NM002"
+      ]
+    },
+    "ca-fn-597": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-84",
+        "citypageName": "Penticton",
+        "distanceKm": 4.8,
+        "forecastZones": [
+          "083500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NM050",
+        "wsc:08NM084",
+        "wsc:08NM037",
+        "wsc:08NM158",
+        "wsc:08NM002",
+        "wsc:08NM242"
+      ]
+    },
+    "ca-fn-598": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-69",
+        "citypageName": "Osoyoos",
+        "distanceKm": 19.4,
+        "forecastZones": [
+          "083500",
+          "083420"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NL004",
+        "wsc:08NL045",
+        "wsc:08NL076",
+        "wsc:08NM085",
+        "wsc:08NM037",
+        "wsc:08NL050"
+      ]
+    },
+    "ca-fn-599": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-41",
+        "citypageName": "Princeton",
+        "distanceKm": 32.9,
+        "forecastZones": [
+          "083420",
+          "083121-083300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NL007",
+        "wsc:08NL050",
+        "wsc:08NL024",
+        "wsc:08NL038",
+        "wsc:08NL004",
+        "wsc:08NL045"
+      ]
+    },
+    "ca-fn-600": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-51",
+        "citypageName": "Salmon Arm",
+        "distanceKm": 19.8,
+        "forecastZones": [
+          "083500",
+          "083600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LC002",
+        "wsc:08LE020",
+        "wsc:08LE108",
+        "wsc:08LE024",
+        "wsc:08LE021",
+        "wsc:08NM249"
+      ]
+    },
+    "ca-fn-601": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-48",
+        "citypageName": "Kelowna",
+        "distanceKm": 10,
+        "forecastZones": [
+          "083500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NM083",
+        "wsc:08NM116",
+        "wsc:08NM165",
+        "wsc:08NM172",
+        "wsc:08NN015",
+        "wsc:08NM173"
+      ]
+    },
+    "ca-fn-602": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-77",
+        "citypageName": "Cranbrook",
+        "distanceKm": 7.1,
+        "forecastZones": [
+          "084500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NG065",
+        "wsc:08NG002",
+        "wsc:08NG076"
+      ]
+    },
+    "ca-fn-603": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-77",
+        "citypageName": "Cranbrook",
+        "distanceKm": 68.3,
+        "forecastZones": [
+          "084500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KMSX",
+        "ridgeLoop": "KMSX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NG065",
+        "wsc:08NG076",
+        "wsc:08NK030",
+        "wsc:08NK031"
+      ]
+    },
+    "ca-fn-604": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-72",
+        "citypageName": "Invermere",
+        "distanceKm": 7.1,
+        "forecastZones": [
+          "084500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NG065",
+        "wsc:08NG076"
+      ]
+    },
+    "ca-fn-605": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-72",
+        "citypageName": "Invermere",
+        "distanceKm": 2.9,
+        "forecastZones": [
+          "084500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NG065",
+        "wsc:08NG076"
+      ]
+    },
+    "ca-fn-606": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-26",
+        "citypageName": "Creston",
+        "distanceKm": 3.7,
+        "forecastZones": [
+          "084400",
+          "084500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NH115",
+        "wsc:08NH084",
+        "wsc:08NG065",
+        "wsc:08NH067",
+        "wsc:08NG076",
+        "nwps:PORI1"
+      ]
+    },
+    "ca-fn-607": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 1,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EC001",
+        "wsc:08EC013"
+      ]
+    },
+    "ca-fn-608": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-82",
+        "citypageName": "Smithers",
+        "distanceKm": 108.9,
+        "forecastZones": [
+          "087100",
+          "087200"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JD006",
+        "wsc:07EC002"
+      ]
+    },
+    "ca-fn-609": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-53",
+        "citypageName": "Tetsa River (Provincial Park)",
+        "distanceKm": 197.5,
+        "forecastZones": [
+          "087200"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:07EE007",
+        "wsc:07EA004",
+        "wsc:07EE010"
+      ]
+    },
+    "ca-fn-610": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-53",
+        "citypageName": "Tetsa River (Provincial Park)",
+        "distanceKm": 149.3,
+        "forecastZones": []
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-611": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-79",
+        "citypageName": "Prince George",
+        "distanceKm": 15.4,
+        "forecastZones": [
+          "087420"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08KE018",
+        "wsc:08KB001",
+        "wsc:08KC001",
+        "wsc:08JC002"
+      ]
+    },
+    "ca-fn-612": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-44",
+        "citypageName": "Vanderhoof",
+        "distanceKm": 40.2,
+        "forecastZones": [
+          "087410"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JB003",
+        "wsc:08JB002"
+      ]
+    },
+    "ca-fn-613": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 58.3,
+        "forecastZones": [
+          "087410",
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JB002",
+        "wsc:08JA018",
+        "wsc:08JB003"
+      ]
+    },
+    "ca-fn-614": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-44",
+        "citypageName": "Vanderhoof",
+        "distanceKm": 49.3,
+        "forecastZones": [
+          "087410"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JE001",
+        "wsc:08JE004"
+      ]
+    },
+    "ca-fn-615": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-44",
+        "citypageName": "Vanderhoof",
+        "distanceKm": 11.3,
+        "forecastZones": [
+          "087410"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JC001"
+      ]
+    },
+    "ca-fn-616": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-27",
+        "citypageName": "Vernon",
+        "distanceKm": 11.2,
+        "forecastZones": [
+          "083500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08NM250",
+        "wsc:08NM160",
+        "wsc:08NM143",
+        "wsc:08NM123",
+        "wsc:08NM065",
+        "wsc:08NM146"
+      ]
+    },
+    "ca-fn-617": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 82.1,
+        "forecastZones": [
+          "087410",
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JE001",
+        "wsc:08JE004"
+      ]
+    },
+    "ca-fn-618": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-90",
+        "citypageName": "Mackenzie",
+        "distanceKm": 39.7,
+        "forecastZones": [
+          "087200",
+          "087420",
+          "087500"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:07EE010",
+        "wsc:07EE009",
+        "wsc:07EE007"
+      ]
+    },
+    "ca-fn-619": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 1,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-620": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 25.5,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JA017",
+        "wsc:08JA018"
+      ]
+    },
+    "ca-fn-622": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-19",
+        "citypageName": "Campbell River",
+        "distanceKm": 1.4,
+        "forecastZones": [
+          "081300",
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HD024",
+        "wsc:08HD022",
+        "wsc:08HD035",
+        "wsc:08HD005",
+        "wsc:08HD027",
+        "wsc:08HD023"
+      ]
+    },
+    "ca-fn-623": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-19",
+        "citypageName": "Campbell River",
+        "distanceKm": 3.6,
+        "forecastZones": [
+          "081300",
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HD005",
+        "wsc:08HD035",
+        "wsc:08HD022",
+        "wsc:08HD024",
+        "wsc:08HD027",
+        "wsc:08HD023"
+      ]
+    },
+    "ca-fn-624": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-61",
+        "citypageName": "Comox",
+        "distanceKm": 2.3,
+        "forecastZones": [
+          "081300",
+          "081200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB087",
+        "wsc:08HB083",
+        "wsc:08HB011",
+        "wsc:08HB006",
+        "wsc:08HB025",
+        "wsc:08HB084"
+      ]
+    },
+    "ca-fn-625": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 64.1,
+        "forecastZones": [
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GF007",
+        "wsc:08GF009"
+      ]
+    },
+    "ca-fn-626": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 7.6,
+        "forecastZones": [
+          "081200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HE001"
+      ]
+    },
+    "ca-fn-627": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 53.4,
+        "forecastZones": [
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GF007"
+      ]
+    },
+    "ca-fn-628": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-19",
+        "citypageName": "Campbell River",
+        "distanceKm": 45.2,
+        "forecastZones": [
+          "082300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-629": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 60,
+        "forecastZones": [
+          "081200",
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HF004"
+      ]
+    },
+    "ca-fn-630": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-15",
+        "citypageName": "Estevan Point",
+        "distanceKm": 58.2,
+        "forecastZones": [
+          "081500",
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HC001",
+        "wsc:08HC006",
+        "wsc:08HE006",
+        "wsc:08HD018"
+      ]
+    },
+    "ca-fn-631": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 42.8,
+        "forecastZones": [
+          "081200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HF004"
+      ]
+    },
+    "ca-fn-632": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 37.7,
+        "forecastZones": [
+          "081200"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HF006",
+        "wsc:08HF012"
+      ]
+    },
+    "ca-fn-633": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 12.5,
+        "forecastZones": [
+          "081200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HF013",
+        "wsc:08HE009",
+        "wsc:08HE001",
+        "wsc:08HF006",
+        "wsc:08HF012"
+      ]
+    },
+    "ca-fn-634": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-15",
+        "citypageName": "Estevan Point",
+        "distanceKm": 71.3,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HE006",
+        "wsc:08HE008"
+      ]
+    },
+    "ca-fn-635": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 65.8,
+        "forecastZones": [
+          "082100",
+          "082200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GE002",
+        "wsc:08GE003",
+        "wsc:08HF004"
+      ]
+    },
+    "ca-fn-636": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 97.6,
+        "forecastZones": [
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GF009",
+        "wsc:08GF007"
+      ]
+    },
+    "ca-fn-637": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-19",
+        "citypageName": "Campbell River",
+        "distanceKm": 12.5,
+        "forecastZones": [
+          "081300",
+          "082100",
+          "081200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HD023",
+        "wsc:08HD011",
+        "wsc:08HD027",
+        "wsc:08HF004",
+        "wsc:08HD022",
+        "wsc:08HD005"
+      ]
+    },
+    "ca-fn-638": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 77.2,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-639": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-15",
+        "citypageName": "Estevan Point",
+        "distanceKm": 74.1,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HE006",
+        "wsc:08HE008"
+      ]
+    },
+    "ca-fn-640": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-40",
+        "citypageName": "Esquimalt",
+        "distanceKm": 17.9,
+        "forecastZones": [
+          "081400",
+          "081600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-641": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-20",
+        "citypageName": "Nanaimo",
+        "distanceKm": 23.2,
+        "forecastZones": [
+          "081300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA001",
+        "wsc:08HB034",
+        "wsc:08HA016",
+        "wsc:08HA011",
+        "wsc:08HB032",
+        "wsc:08HA003"
+      ]
+    },
+    "ca-fn-642": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-97",
+        "citypageName": "Duncan",
+        "distanceKm": 0.8,
+        "forecastZones": [
+          "081300",
+          "081500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA011",
+        "wsc:08HA016",
+        "wsc:08HA003",
+        "wsc:08HA002",
+        "wsc:08HA009",
+        "wsc:08HA001"
+      ]
+    },
+    "ca-fn-643": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-97",
+        "citypageName": "Duncan",
+        "distanceKm": 27.6,
+        "forecastZones": [
+          "081500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA009",
+        "wsc:08HA002",
+        "wsc:08HA070",
+        "wsc:08HA072",
+        "wsc:08HB041"
+      ]
+    },
+    "ca-fn-644": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-40",
+        "citypageName": "Esquimalt",
+        "distanceKm": 2.2,
+        "forecastZones": [
+          "081600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-645": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-97",
+        "citypageName": "Duncan",
+        "distanceKm": 10.5,
+        "forecastZones": [
+          "081300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA001",
+        "wsc:08HA016",
+        "wsc:08HA011",
+        "wsc:08HA003",
+        "wsc:08HB034"
+      ]
+    },
+    "ca-fn-646": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-97",
+        "citypageName": "Duncan",
+        "distanceKm": 10.5,
+        "forecastZones": [
+          "081300",
+          "082800"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA001",
+        "wsc:08HA016",
+        "wsc:08HA011",
+        "wsc:08HB034",
+        "wsc:08HA003",
+        "wsc:08HB032"
+      ]
+    },
+    "ca-fn-647": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-59",
+        "citypageName": "Victoria (Hartland)",
+        "distanceKm": 6.6,
+        "forecastZones": [
+          "081600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA003",
+        "wsc:08HA011",
+        "wsc:08HA016"
+      ]
+    },
+    "ca-fn-648": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-20",
+        "citypageName": "Nanaimo",
+        "distanceKm": 2.2,
+        "forecastZones": [
+          "081300",
+          "082800"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB032",
+        "wsc:08HB034",
+        "wsc:08HB092",
+        "wsc:08HB041"
+      ]
+    },
+    "ca-fn-649": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-20",
+        "citypageName": "Nanaimo",
+        "distanceKm": 16.5,
+        "forecastZones": [
+          "081300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB002",
+        "wsc:08HB032",
+        "wsc:08HB092"
+      ]
+    },
+    "ca-fn-650": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-97",
+        "citypageName": "Duncan",
+        "distanceKm": 21.4,
+        "forecastZones": [
+          "082800",
+          "081300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA001",
+        "wsc:08HA016",
+        "wsc:08HA011",
+        "wsc:08HA003",
+        "wsc:08HB034"
+      ]
+    },
+    "ca-fn-651": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-98",
+        "citypageName": "Qualicum Beach",
+        "distanceKm": 13.8,
+        "forecastZones": [
+          "081300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB022",
+        "wsc:08HB029",
+        "wsc:08HB017",
+        "wsc:08HB008"
+      ]
+    },
+    "ca-fn-652": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-59",
+        "citypageName": "Victoria (Hartland)",
+        "distanceKm": 6.4,
+        "forecastZones": [
+          "081600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA003",
+        "wsc:08HA011",
+        "wsc:08HA016",
+        "wsc:08HA001"
+      ]
+    },
+    "ca-fn-653": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-59",
+        "citypageName": "Victoria (Hartland)",
+        "distanceKm": 1.4,
+        "forecastZones": [
+          "081600",
+          "082800"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA003"
+      ]
+    },
+    "ca-fn-654": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-59",
+        "citypageName": "Victoria (Hartland)",
+        "distanceKm": 5.7,
+        "forecastZones": [
+          "081600",
+          "082800"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA003",
+        "wsc:08HA011",
+        "wsc:08HA016",
+        "wsc:08HA001"
+      ]
+    },
+    "ca-fn-655": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-59",
+        "citypageName": "Victoria (Hartland)",
+        "distanceKm": 10.7,
+        "forecastZones": [
+          "081600",
+          "082800"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA003",
+        "wsc:08HA011",
+        "wsc:08HA016"
+      ]
+    },
+    "ca-fn-656": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-40",
+        "citypageName": "Esquimalt",
+        "distanceKm": 1.8,
+        "forecastZones": [
+          "081600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-657": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-29",
+        "citypageName": "Malahat",
+        "distanceKm": 20.6,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-658": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-97",
+        "citypageName": "Duncan",
+        "distanceKm": 56.7,
+        "forecastZones": [
+          "081400",
+          "081500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HA010",
+        "wsc:08HA069",
+        "wsc:08HA068",
+        "wsc:08HA070"
+      ]
+    },
+    "ca-fn-659": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-17",
+        "citypageName": "Tofino",
+        "distanceKm": 17.8,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB086"
+      ]
+    },
+    "ca-fn-660": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-17",
+        "citypageName": "Tofino",
+        "distanceKm": 2.6,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB086"
+      ]
+    },
+    "ca-fn-661": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-15",
+        "citypageName": "Estevan Point",
+        "distanceKm": 18.7,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-662": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-46",
+        "citypageName": "Port Alberni",
+        "distanceKm": 48.8,
+        "forecastZones": [
+          "081500",
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB014",
+        "wsc:08HA072",
+        "wsc:08HB048"
+      ]
+    },
+    "ca-fn-663": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-5",
+        "citypageName": "Ucluelet",
+        "distanceKm": 33.9,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB014",
+        "wsc:08HB048"
+      ]
+    },
+    "ca-fn-664": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-46",
+        "citypageName": "Port Alberni",
+        "distanceKm": 3.4,
+        "forecastZones": [
+          "081500",
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB008",
+        "wsc:08HB017",
+        "wsc:08HB023",
+        "wsc:08HB048",
+        "wsc:08HB014",
+        "wsc:08HB022"
+      ]
+    },
+    "ca-fn-665": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-46",
+        "citypageName": "Port Alberni",
+        "distanceKm": 4.7,
+        "forecastZones": [
+          "081500",
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB017",
+        "wsc:08HB008",
+        "wsc:08HB048",
+        "wsc:08HB014",
+        "wsc:08HB023",
+        "wsc:08HB022"
+      ]
+    },
+    "ca-fn-666": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-5",
+        "citypageName": "Ucluelet",
+        "distanceKm": 13.6,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-667": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-46",
+        "citypageName": "Port Alberni",
+        "distanceKm": 29.9,
+        "forecastZones": [
+          "081500"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08HB048",
+        "wsc:08HB014"
+      ]
+    },
+    "ca-fn-668": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-5",
+        "citypageName": "Ucluelet",
+        "distanceKm": 1.1,
+        "forecastZones": [
+          "081400"
+        ]
+      },
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-669": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-56",
+        "citypageName": "Masset",
+        "distanceKm": 2.3,
+        "forecastZones": [
+          "081100"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08OA002"
+      ]
+    },
+    "ca-fn-670": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-88",
+        "citypageName": "Sandspit",
+        "distanceKm": 12.2,
+        "forecastZones": [
+          "081100"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08OA004",
+        "wsc:08OB002"
+      ]
+    },
+    "ca-fn-671": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-57",
+        "citypageName": "Prince Rupert",
+        "distanceKm": 78.5,
+        "forecastZones": [
+          "089100"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-672": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-57",
+        "citypageName": "Prince Rupert",
+        "distanceKm": 58.7,
+        "forecastZones": [
+          "089100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-673": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-57",
+        "citypageName": "Prince Rupert",
+        "distanceKm": 8.3,
+        "forecastZones": [
+          "089100",
+          "089200"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-674": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-57",
+        "citypageName": "Prince Rupert",
+        "distanceKm": 27.5,
+        "forecastZones": [
+          "089100",
+          "089200"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-675": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-30",
+        "citypageName": "Kitimat",
+        "distanceKm": 79.9,
+        "forecastZones": [
+          "089100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-676": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-30",
+        "citypageName": "Kitimat",
+        "distanceKm": 8.3,
+        "forecastZones": [
+          "089200",
+          "089100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08FF006",
+        "wsc:08FF002",
+        "wsc:08FF001",
+        "wsc:08FF003"
+      ]
+    },
+    "ca-fn-677": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-80",
+        "citypageName": "Terrace",
+        "distanceKm": 82.3,
+        "forecastZones": [
+          "089200"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08DB001",
+        "wsc:08DB013"
+      ]
+    },
+    "ca-fn-678": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-80",
+        "citypageName": "Terrace",
+        "distanceKm": 85.2,
+        "forecastZones": [
+          "089200"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08DB013"
+      ]
+    },
+    "ca-fn-679": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-80",
+        "citypageName": "Terrace",
+        "distanceKm": 84.7,
+        "forecastZones": [
+          "089200"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08DB013",
+        "wsc:08DB001"
+      ]
+    },
+    "ca-fn-680": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-80",
+        "citypageName": "Terrace",
+        "distanceKm": 15.7,
+        "forecastZones": [
+          "089200",
+          "089100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EF001",
+        "wsc:08EF005",
+        "wsc:08EG019"
+      ]
+    },
+    "ca-fn-681": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-80",
+        "citypageName": "Terrace",
+        "distanceKm": 4.4,
+        "forecastZones": [
+          "089200",
+          "089100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EG019",
+        "wsc:08EF001",
+        "wsc:08EF005"
+      ]
+    },
+    "ca-fn-682": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-14",
+        "citypageName": "Dease Lake",
+        "distanceKm": 91.5,
+        "forecastZones": [
+          "089300"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08CE005",
+        "wsc:08CE001",
+        "wsc:08CD001"
+      ]
+    },
+    "ca-fn-683": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-14",
+        "citypageName": "Dease Lake",
+        "distanceKm": 67,
+        "forecastZones": [
+          "089300"
+        ]
+      },
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08CE001",
+        "wsc:08CE005"
+      ]
+    },
+    "ca-fn-684": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-51",
+        "citypageName": "Salmon Arm",
+        "distanceKm": 33.6,
+        "forecastZones": [
+          "083600",
+          "085100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LD001",
+        "wsc:08LD003",
+        "wsc:08LE021",
+        "wsc:08LE112",
+        "wsc:08LE031",
+        "wsc:08LE108"
+      ]
+    },
+    "ca-fn-685": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-55",
+        "citypageName": "Cache Creek",
+        "distanceKm": 10,
+        "forecastZones": [
+          "083200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LF002",
+        "wsc:08LF099",
+        "wsc:08LF100"
+      ]
+    },
+    "ca-fn-686": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-55",
+        "citypageName": "Cache Creek",
+        "distanceKm": 5.7,
+        "forecastZones": [
+          "083200",
+          "083110-083122",
+          "086300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LF002",
+        "wsc:08LF100",
+        "wsc:08LF099",
+        "wsc:08LF007",
+        "wsc:08LF027",
+        "wsc:08LF033"
+      ]
+    },
+    "ca-fn-687": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-55",
+        "citypageName": "Cache Creek",
+        "distanceKm": 25.9,
+        "forecastZones": [
+          "083200",
+          "086300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LF007",
+        "wsc:08LF027",
+        "wsc:08LF094",
+        "wsc:08LF033",
+        "wsc:08LF100",
+        "wsc:08LF099"
+      ]
+    },
+    "ca-fn-688": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-45",
+        "citypageName": "Kamloops",
+        "distanceKm": 3.9,
+        "forecastZones": [
+          "083200",
+          "085100",
+          "086300",
+          "083121-083300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LB064",
+        "wsc:08LF023",
+        "wsc:08LB024",
+        "wsc:08LB072",
+        "wsc:08LB020",
+        "wsc:08LF027"
+      ]
+    },
+    "ca-fn-689": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-51",
+        "citypageName": "Salmon Arm",
+        "distanceKm": 29.9,
+        "forecastZones": [
+          "083600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LE077",
+        "wsc:08LD001",
+        "wsc:08LE111",
+        "wsc:08LE112",
+        "wsc:08LD003",
+        "wsc:08LE021"
+      ]
+    },
+    "ca-fn-690": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-51",
+        "citypageName": "Salmon Arm",
+        "distanceKm": 33.4,
+        "forecastZones": [
+          "083600"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LE031",
+        "wsc:08LE021",
+        "wsc:08LE112",
+        "wsc:08LE108",
+        "wsc:08LD001",
+        "wsc:08LD003"
+      ]
+    },
+    "ca-fn-691": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-12",
+        "citypageName": "Clearwater",
+        "distanceKm": 37.9,
+        "forecastZones": [
+          "085100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LB072",
+        "wsc:08LB078",
+        "wsc:08LB020",
+        "wsc:08LB024",
+        "wsc:08LB064",
+        "wsc:08LB069"
+      ]
+    },
+    "ca-fn-692": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-55",
+        "citypageName": "Cache Creek",
+        "distanceKm": 21.2,
+        "forecastZones": [
+          "083200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LF002",
+        "wsc:08LF099",
+        "wsc:08LF100"
+      ]
+    },
+    "ca-fn-693": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-49",
+        "citypageName": "Merritt",
+        "distanceKm": 10.1,
+        "forecastZones": [
+          "083121-083300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LG010",
+        "wsc:08LG048",
+        "wsc:08LG065",
+        "wsc:08LG046",
+        "wsc:08LG017"
+      ]
+    },
+    "ca-fn-694": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 28.5,
+        "forecastZones": [
+          "083200",
+          "083121-083300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LF051",
+        "wsc:08LF002",
+        "wsc:08LF099",
+        "wsc:08LG070"
+      ]
+    },
+    "ca-fn-695": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-49",
+        "citypageName": "Merritt",
+        "distanceKm": 5.8,
+        "forecastZones": [
+          "083121-083300",
+          "086300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LG065",
+        "wsc:08LG010",
+        "wsc:08LG009",
+        "wsc:08LG017",
+        "wsc:08LG046",
+        "wsc:08LG041"
+      ]
+    },
+    "ca-fn-696": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 13.5,
+        "forecastZones": [
+          "083110-083122",
+          "083200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LF051",
+        "wsc:08LG070"
+      ]
+    },
+    "ca-fn-697": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-49",
+        "citypageName": "Merritt",
+        "distanceKm": 36.4,
+        "forecastZones": [
+          "083121-083300",
+          "086300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LG028",
+        "wsc:08LG046",
+        "wsc:08LG017",
+        "wsc:08LG065",
+        "wsc:08LG016",
+        "wsc:08LG010"
+      ]
+    },
+    "ca-fn-698": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 29.6,
+        "forecastZones": [
+          "083200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LG070",
+        "wsc:08LF051",
+        "wsc:08LG041"
+      ]
+    },
+    "ca-fn-699": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-49",
+        "citypageName": "Merritt",
+        "distanceKm": 18.3,
+        "forecastZones": [
+          "083121-083300",
+          "083200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LG070",
+        "wsc:08LG010",
+        "wsc:08LG041",
+        "wsc:08LG065"
+      ]
+    },
+    "ca-fn-700": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 30.4,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-701": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 40.3,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-702": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-45",
+        "citypageName": "Kamloops",
+        "distanceKm": 35,
+        "forecastZones": [
+          "085100",
+          "086300",
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LB064",
+        "wsc:08LB024",
+        "wsc:08LB072",
+        "wsc:08LB020"
+      ]
+    },
+    "ca-fn-703": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-91",
+        "citypageName": "Clinton",
+        "distanceKm": 30,
+        "forecastZones": [
+          "086100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MD013"
+      ]
+    },
+    "ca-fn-704": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 13.2,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-705": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 0.9,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF040",
+        "wsc:08LF051",
+        "wsc:08ME002",
+        "wsc:08ME003"
+      ]
+    },
+    "ca-fn-706": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 10.4,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-707": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-33",
+        "citypageName": "Lytton",
+        "distanceKm": 4.7,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LF051"
+      ]
+    },
+    "ca-fn-708": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-36",
+        "citypageName": "Hope",
+        "distanceKm": 31.3,
+        "forecastZones": [
+          "083110-083122"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MF062"
+      ]
+    },
+    "ca-fn-709": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-64",
+        "citypageName": "Quesnel",
+        "distanceKm": 46.4,
+        "forecastZones": [
+          "086200"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MC018",
+        "wsc:08MC045"
+      ]
+    },
+    "ca-fn-710": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-60",
+        "citypageName": "Tatlayoko Lake",
+        "distanceKm": 56.9,
+        "forecastZones": [
+          "086100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-711": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-76",
+        "citypageName": "Williams Lake",
+        "distanceKm": 39.6,
+        "forecastZones": [
+          "086200",
+          "086100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MC040"
+      ]
+    },
+    "ca-fn-712": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-76",
+        "citypageName": "Williams Lake",
+        "distanceKm": 72.1,
+        "forecastZones": [
+          "086100",
+          "086200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MB012",
+        "wsc:08MA001"
+      ]
+    },
+    "ca-fn-713": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-7",
+        "citypageName": "100 Mile House",
+        "distanceKm": 25.1,
+        "forecastZones": [
+          "086300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08LA027"
+      ]
+    },
+    "ca-fn-714": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-60",
+        "citypageName": "Tatlayoko Lake",
+        "distanceKm": 41,
+        "forecastZones": [
+          "086100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MA002",
+        "wsc:08MA006",
+        "wsc:08MA003",
+        "wsc:08GD008"
+      ]
+    },
+    "ca-fn-715": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-64",
+        "citypageName": "Quesnel",
+        "distanceKm": 4.3,
+        "forecastZones": [
+          "086200"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08KE016",
+        "wsc:08KH006"
+      ]
+    },
+    "ca-fn-716": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-76",
+        "citypageName": "Williams Lake",
+        "distanceKm": 15.6,
+        "forecastZones": [
+          "086200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MC045",
+        "wsc:08MC040"
+      ]
+    },
+    "ca-fn-717": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-76",
+        "citypageName": "Williams Lake",
+        "distanceKm": 72.4,
+        "forecastZones": [
+          "086100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MB012"
+      ]
+    },
+    "ca-fn-718": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-76",
+        "citypageName": "Williams Lake",
+        "distanceKm": 34,
+        "forecastZones": [
+          "086200",
+          "086100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-719": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-76",
+        "citypageName": "Williams Lake",
+        "distanceKm": 8.8,
+        "forecastZones": [
+          "086200"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08MC040"
+      ]
+    },
+    "ca-fn-720": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-64",
+        "citypageName": "Quesnel",
+        "distanceKm": 72.7,
+        "forecastZones": [
+          "086200",
+          "087410",
+          "087420"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08KF001",
+        "wsc:08KG001"
+      ]
+    },
+    "ca-fn-721": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-42",
+        "citypageName": "Puntzi Mountain",
+        "distanceKm": 53.3,
+        "forecastZones": [
+          "087100",
+          "087410"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-722": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-42",
+        "citypageName": "Puntzi Mountain",
+        "distanceKm": 34.9,
+        "forecastZones": [
+          "086100",
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08FC003"
+      ]
+    },
+    "ca-fn-723": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-76",
+        "citypageName": "Williams Lake",
+        "distanceKm": 61.5,
+        "forecastZones": [
+          "086100",
+          "086300"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "ca-fn-724": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-89",
+        "citypageName": "Port Hardy",
+        "distanceKm": 1.8,
+        "forecastZones": [
+          "081200",
+          "082100"
+        ]
+      },
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08GF007",
+        "wsc:08HE001"
+      ]
+    },
+    "ca-fn-725": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 13.6,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JB008",
+        "wsc:08JB007"
+      ]
+    },
+    "ca-fn-726": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 33.6,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JA018"
+      ]
+    },
+    "ca-fn-728": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 60,
+        "forecastZones": [
+          "087410",
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08EC004"
+      ]
+    },
+    "ca-fn-729": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-43",
+        "citypageName": "Burns Lake",
+        "distanceKm": 27.2,
+        "forecastZones": [
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JA023",
+        "wsc:08JA018"
+      ]
+    },
+    "ca-fn-730": {
+      "nws": null,
+      "eccc": {
+        "citypageId": "bc-44",
+        "citypageName": "Vanderhoof",
+        "distanceKm": 68.7,
+        "forecastZones": [
+          "087410",
+          "087100"
+        ]
+      },
+      "radar": {
+        "nexrad": null,
+        "ridgeLoop": null,
+        "eccc": null
+      },
+      "gauges": [
+        "wsc:08JE004",
+        "wsc:08JE001"
+      ]
+    },
+    "us-ak-angoon-community-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          57.5011,
+          -134.5845
+        ],
+        "forecastZones": [
+          "forecast:AKZ324"
+        ],
+        "countyZones": [
+          "county:AKC105"
+        ],
+        "fireZones": [
+          "fire:AKZ324"
+        ],
+        "marineZones": [
+          "marine:PKZ032"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-central-council-of-the-tlingit-and-haida-indian-tribes": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          58.3618,
+          -134.5815
+        ],
+        "forecastZones": [
+          "forecast:AKZ325"
+        ],
+        "countyZones": [
+          "county:AKC110"
+        ],
+        "fireZones": [
+          "fire:AKZ325"
+        ],
+        "marineZones": [
+          "marine:PKZ031"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-chilkat-indian-village-klukwan": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          59.3988,
+          -135.8901
+        ],
+        "forecastZones": [
+          "forecast:AKZ319"
+        ],
+        "countyZones": [
+          "county:AKC100"
+        ],
+        "fireZones": [
+          "fire:AKZ319"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-chilkoot-indian-association-haines": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          59.2339,
+          -135.4474
+        ],
+        "forecastZones": [
+          "forecast:AKZ319"
+        ],
+        "countyZones": [
+          "county:AKC100"
+        ],
+        "fireZones": [
+          "fire:AKZ319"
+        ],
+        "marineZones": [
+          "marine:PKZ012"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-craig-tribal-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          55.4778,
+          -133.1501
+        ],
+        "forecastZones": [
+          "forecast:AKZ328"
+        ],
+        "countyZones": [
+          "county:AKC198"
+        ],
+        "fireZones": [
+          "fire:AKZ328"
+        ],
+        "marineZones": [
+          "marine:PKZ641"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-douglas-indian-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          58.3026,
+          -134.4239
+        ],
+        "forecastZones": [
+          "forecast:AKZ325"
+        ],
+        "countyZones": [
+          "county:AKC110"
+        ],
+        "fireZones": [
+          "fire:AKZ325"
+        ],
+        "marineZones": [
+          "marine:PKZ031"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-hoonah-indian-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          58.1097,
+          -135.4446
+        ],
+        "forecastZones": [
+          "forecast:AKZ321"
+        ],
+        "countyZones": [
+          "county:AKC105"
+        ],
+        "fireZones": [
+          "fire:AKZ321"
+        ],
+        "marineZones": [
+          "marine:PKZ021"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-hydaburg-cooperative-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          55.2099,
+          -132.8284
+        ],
+        "forecastZones": [
+          "forecast:AKZ328"
+        ],
+        "countyZones": [
+          "county:AKC198"
+        ],
+        "fireZones": [
+          "fire:AKZ328"
+        ],
+        "marineZones": [
+          "marine:PKZ641"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-ketchikan-indian-community": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          55.3526,
+          -131.6849
+        ],
+        "forecastZones": [
+          "forecast:AKZ330"
+        ],
+        "countyZones": [
+          "county:AKC130"
+        ],
+        "fireZones": [
+          "fire:AKZ330"
+        ],
+        "marineZones": [
+          "marine:PKZ036"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-klawock-cooperative-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          55.5572,
+          -133.0985
+        ],
+        "forecastZones": [
+          "forecast:AKZ328"
+        ],
+        "countyZones": [
+          "county:AKC198"
+        ],
+        "fireZones": [
+          "fire:AKZ328"
+        ],
+        "marineZones": [
+          "marine:PKZ641"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-metlakatla-indian-community-annette-island-reserve": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          55.1262,
+          -131.5734
+        ],
+        "forecastZones": [
+          "forecast:AKZ332"
+        ],
+        "countyZones": [
+          "county:AKC198"
+        ],
+        "fireZones": [
+          "fire:AKZ332"
+        ],
+        "marineZones": [
+          "marine:PKZ036"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-organized-village-of-kake": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          56.9653,
+          -133.9259
+        ],
+        "forecastZones": [
+          "forecast:AKZ327"
+        ],
+        "countyZones": [
+          "county:AKC198"
+        ],
+        "fireZones": [
+          "fire:AKZ327"
+        ],
+        "marineZones": [
+          "marine:PKZ034"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-organized-village-of-kasaan": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          55.5383,
+          -132.4064
+        ],
+        "forecastZones": [
+          "forecast:AKZ328"
+        ],
+        "countyZones": [
+          "county:AKC198"
+        ],
+        "fireZones": [
+          "fire:AKZ328"
+        ],
+        "marineZones": [
+          "marine:PKZ036"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-organized-village-of-saxman": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          55.3188,
+          -131.5977
+        ],
+        "forecastZones": [
+          "forecast:AKZ330"
+        ],
+        "countyZones": [
+          "county:AKC130"
+        ],
+        "fireZones": [
+          "fire:AKZ330"
+        ],
+        "marineZones": [
+          "marine:PKZ036"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-petersburg-indian-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          56.8111,
+          -132.9427
+        ],
+        "forecastZones": [
+          "forecast:AKZ326"
+        ],
+        "countyZones": [
+          "county:AKC195"
+        ],
+        "fireZones": [
+          "fire:AKZ326"
+        ],
+        "marineZones": [
+          "marine:PKZ034"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-sitka-tribe-of-alaska": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          57.057,
+          -135.3482
+        ],
+        "forecastZones": [
+          "forecast:AKZ323"
+        ],
+        "countyZones": [
+          "county:AKC220"
+        ],
+        "fireZones": [
+          "fire:AKZ323"
+        ],
+        "marineZones": [
+          "marine:PKZ642"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-skagway-village": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          59.4583,
+          -135.3089
+        ],
+        "forecastZones": [
+          "forecast:AKZ318"
+        ],
+        "countyZones": [
+          "county:AKC230"
+        ],
+        "fireZones": [
+          "fire:AKZ318"
+        ],
+        "marineZones": [
+          "marine:PKZ012"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-wrangell-cooperative-association": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          56.4627,
+          -132.3754
+        ],
+        "forecastZones": [
+          "forecast:AKZ329"
+        ],
+        "countyZones": [
+          "county:AKC275"
+        ],
+        "fireZones": [
+          "fire:AKZ329"
+        ],
+        "marineZones": [
+          "marine:PKZ036",
+          "marine:PKZ035"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PACG",
+        "ridgeLoop": "PACG",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ak-yakutat-tlingit-tribe": {
+      "nws": {
+        "wfo": [
+          "AJK"
+        ],
+        "point": [
+          59.5464,
+          -139.7251
+        ],
+        "forecastZones": [
+          "forecast:AKZ317"
+        ],
+        "countyZones": [
+          "county:AKC282"
+        ],
+        "fireZones": [
+          "fire:AKZ317"
+        ],
+        "marineZones": [
+          "marine:PKZ053",
+          "marine:PKZ651"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "PAIH",
+        "ridgeLoop": "PAIH",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-alturas-indian-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "MFR"
+        ],
+        "point": [
+          41.4779,
+          -120.5239
+        ],
+        "forecastZones": [
+          "forecast:CAZ085"
+        ],
+        "countyZones": [
+          "county:CAC049"
+        ],
+        "fireZones": [
+          "fire:CAZ285"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-bear-river-band-of-the-rohnerville-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          40.6257,
+          -124.2124
+        ],
+        "forecastZones": [
+          "forecast:CAZ103"
+        ],
+        "countyZones": [
+          "county:CAC023"
+        ],
+        "fireZones": [
+          "fire:CAZ404"
+        ],
+        "marineZones": [
+          "marine:PZZ415",
+          "marine:PZZ450"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-big-lagoon-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          40.869,
+          -124.086
+        ],
+        "forecastZones": [
+          "forecast:CAZ103"
+        ],
+        "countyZones": [
+          "county:CAC023"
+        ],
+        "fireZones": [
+          "fire:CAZ404"
+        ],
+        "marineZones": [
+          "marine:PZZ450",
+          "marine:PZZ415"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.0221,
+          -122.8872
+        ],
+        "forecastZones": [
+          "forecast:CAZ118"
+        ],
+        "countyZones": [
+          "county:CAC033"
+        ],
+        "fireZones": [
+          "fire:CAZ421"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KDAX",
+        "ridgeLoop": "KDAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-blue-lake-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          40.8847,
+          -123.9986
+        ],
+        "forecastZones": [
+          "forecast:CAZ103"
+        ],
+        "countyZones": [
+          "county:CAC023"
+        ],
+        "fireZones": [
+          "fire:CAZ404"
+        ],
+        "marineZones": [
+          "marine:PZZ415"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-cahto-tribe-of-the-laytonville-rancheria": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.669,
+          -123.4962
+        ],
+        "forecastZones": [
+          "forecast:CAZ110"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ414"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-cedarville-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "MFR",
+          "REV"
+        ],
+        "point": [
+          41.4839,
+          -120.5453
+        ],
+        "forecastZones": [
+          "forecast:CAZ085",
+          "forecast:CAZ070"
+        ],
+        "countyZones": [
+          "county:CAC049"
+        ],
+        "fireZones": [
+          "fire:CAZ285",
+          "fire:CAZ270"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          41.0548,
+          -124.131
+        ],
+        "forecastZones": [
+          "forecast:CAZ103"
+        ],
+        "countyZones": [
+          "county:CAC023"
+        ],
+        "fireZones": [
+          "fire:CAZ404"
+        ],
+        "marineZones": [
+          "marine:PZZ450"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-coyote-valley-band-of-pomo-indians-of-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.2533,
+          -123.2111
+        ],
+        "forecastZones": [
+          "forecast:CAZ113"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ416"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          38.4518,
+          -122.7344
+        ],
+        "forecastZones": [
+          "forecast:CAZ120"
+        ],
+        "countyZones": [
+          "county:CAC033"
+        ],
+        "fireZones": [
+          "fire:CAZ419"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KDAX",
+        "ridgeLoop": "KDAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-elk-valley-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          41.7586,
+          -124.1579
+        ],
+        "forecastZones": [
+          "forecast:CAZ101"
+        ],
+        "countyZones": [
+          "county:CAC015"
+        ],
+        "fireZones": [
+          "fire:CAZ401"
+        ],
+        "marineZones": [
+          "marine:PZZ450",
+          "marine:PZZ356"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-fort-bidwell-indian-community-of-the-fort-bidwell-reservation-of-california": {
+      "nws": {
+        "wfo": [
+          "REV",
+          "MFR"
+        ],
+        "point": [
+          41.8582,
+          -120.1583
+        ],
+        "forecastZones": [
+          "forecast:CAZ070",
+          "forecast:CAZ085"
+        ],
+        "countyZones": [
+          "county:CAC049"
+        ],
+        "fireZones": [
+          "fire:CAZ270",
+          "fire:CAZ285"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-greenville-rancheria": {
+      "nws": {
+        "wfo": [
+          "STO"
+        ],
+        "point": [
+          40.1407,
+          -120.9504
+        ],
+        "forecastZones": [
+          "forecast:CAZ130"
+        ],
+        "countyZones": [
+          "county:CAC063"
+        ],
+        "fireZones": [
+          "fire:CAZ130"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-guidiville-rancheria-of-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.1357,
+          -123.2007
+        ],
+        "forecastZones": [
+          "forecast:CAZ113"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ416"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-habematolel-pomo-of-upper-lake-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.1642,
+          -122.9106
+        ],
+        "forecastZones": [
+          "forecast:CAZ118",
+          "forecast:CAZ114"
+        ],
+        "countyZones": [
+          "county:CAC033"
+        ],
+        "fireZones": [
+          "fire:CAZ421",
+          "fire:CAZ418"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-hoopa-valley-tribe-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          41.0548,
+          -123.6812
+        ],
+        "forecastZones": [
+          "forecast:CAZ105"
+        ],
+        "countyZones": [
+          "county:CAC023"
+        ],
+        "fireZones": [
+          "fire:CAZ406"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-hopland-band-of-pomo-indians-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          38.9793,
+          -123.0576
+        ],
+        "forecastZones": [
+          "forecast:CAZ113",
+          "forecast:CAZ118"
+        ],
+        "countyZones": [
+          "county:CAC045",
+          "county:CAC033"
+        ],
+        "fireZones": [
+          "fire:CAZ416",
+          "fire:CAZ421"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KDAX",
+        "ridgeLoop": "KDAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-karuk-tribe": {
+      "nws": {
+        "wfo": [
+          "MFR"
+        ],
+        "point": [
+          41.7911,
+          -123.3799
+        ],
+        "forecastZones": [
+          "forecast:CAZ080",
+          "forecast:CAZ081"
+        ],
+        "countyZones": [
+          "county:CAC093"
+        ],
+        "fireZones": [
+          "fire:CAZ280",
+          "fire:CAZ281"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          38.9369,
+          -123.6821
+        ],
+        "forecastZones": [
+          "forecast:CAZ109"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ413"
+        ],
+        "marineZones": [
+          "marine:PZZ540",
+          "marine:PZZ455"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KDAX",
+        "ridgeLoop": "KDAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-middletown-rancheria-of-pomo-indians-of-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          38.7327,
+          -122.6246
+        ],
+        "forecastZones": [
+          "forecast:CAZ119"
+        ],
+        "countyZones": [
+          "county:CAC033"
+        ],
+        "fireZones": [
+          "fire:CAZ420"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KDAX",
+        "ridgeLoop": "KDAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-paskenta-band-of-nomlaki-indians-of-california": {
+      "nws": {
+        "wfo": [
+          "STO"
+        ],
+        "point": [
+          39.88,
+          -122.1961
+        ],
+        "forecastZones": [
+          "forecast:CAZ142"
+        ],
+        "countyZones": [
+          "county:CAC103"
+        ],
+        "fireZones": [
+          "fire:CAZ142"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-pinoleville-pomo-nation-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.1801,
+          -123.2201
+        ],
+        "forecastZones": [
+          "forecast:CAZ113"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ416"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-pit-river-tribe-california": {
+      "nws": {
+        "wfo": [
+          "STO",
+          "MFR"
+        ],
+        "point": [
+          40.8769,
+          -121.6725
+        ],
+        "forecastZones": [
+          "forecast:CAZ127",
+          "forecast:CAZ085",
+          "forecast:CAZ123",
+          "forecast:CAZ125"
+        ],
+        "countyZones": [
+          "county:CAC089",
+          "county:CAC049"
+        ],
+        "fireZones": [
+          "fire:CAZ127",
+          "fire:CAZ285",
+          "fire:CAZ123",
+          "fire:CAZ125"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-potter-valley-tribe-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.1195,
+          -123.2015
+        ],
+        "forecastZones": [
+          "forecast:CAZ113",
+          "forecast:CAZ110"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ416"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-puliklatribe-of-yurok-people": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          41.514,
+          -124.0222
+        ],
+        "forecastZones": [
+          "forecast:CAZ101"
+        ],
+        "countyZones": [
+          "county:CAC015"
+        ],
+        "fireZones": [
+          "fire:CAZ401"
+        ],
+        "marineZones": [
+          "marine:PZZ450"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california": {
+      "nws": {
+        "wfo": [
+          "MFR"
+        ],
+        "point": [
+          41.6014,
+          -122.976
+        ],
+        "forecastZones": [
+          "forecast:CAZ080"
+        ],
+        "countyZones": [
+          "county:CAC093"
+        ],
+        "fireZones": [
+          "fire:CAZ280"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-redding-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "STO"
+        ],
+        "point": [
+          40.5069,
+          -122.3858
+        ],
+        "forecastZones": [
+          "forecast:CAZ124"
+        ],
+        "countyZones": [
+          "county:CAC089"
+        ],
+        "fireZones": [
+          "fire:CAZ124"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.2857,
+          -123.1838
+        ],
+        "forecastZones": [
+          "forecast:CAZ113",
+          "forecast:CAZ110"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ416"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-robinson-rancheria": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.1426,
+          -122.8821
+        ],
+        "forecastZones": [
+          "forecast:CAZ118"
+        ],
+        "countyZones": [
+          "county:CAC033"
+        ],
+        "fireZones": [
+          "fire:CAZ421",
+          "fire:CAZ418"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-round-valley-indian-tribes-round-valley-reservation-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.8144,
+          -123.2488
+        ],
+        "forecastZones": [
+          "forecast:CAZ111",
+          "forecast:CAZ110",
+          "forecast:CAZ108"
+        ],
+        "countyZones": [
+          "county:CAC045",
+          "county:CAC105"
+        ],
+        "fireZones": [
+          "fire:CAZ415",
+          "fire:CAZ414",
+          "fire:CAZ412"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-scotts-valley-band-of-pomo-indians-of-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.0492,
+          -122.9219
+        ],
+        "forecastZones": [
+          "forecast:CAZ118"
+        ],
+        "countyZones": [
+          "county:CAC033"
+        ],
+        "fireZones": [
+          "fire:CAZ421"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBBX",
+        "ridgeLoop": "KBBX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-sherwood-valley-rancheria-of-pomo-indians-of-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          39.395,
+          -123.3617
+        ],
+        "forecastZones": [
+          "forecast:CAZ110"
+        ],
+        "countyZones": [
+          "county:CAC045"
+        ],
+        "fireZones": [
+          "fire:CAZ414"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-susanville-indian-rancheria-california": {
+      "nws": {
+        "wfo": [
+          "REV"
+        ],
+        "point": [
+          40.4266,
+          -120.6567
+        ],
+        "forecastZones": [
+          "forecast:CAZ071"
+        ],
+        "countyZones": [
+          "county:CAC035"
+        ],
+        "fireZones": [
+          "fire:CAZ271"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KRGX",
+        "ridgeLoop": "KRGX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-tolowa-dee-ni-nation": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          41.9527,
+          -124.2026
+        ],
+        "forecastZones": [
+          "forecast:CAZ101"
+        ],
+        "countyZones": [
+          "county:CAC015"
+        ],
+        "fireZones": [
+          "fire:CAZ401"
+        ],
+        "marineZones": [
+          "marine:PZZ356"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:CHTO3"
+      ]
+    },
+    "us-ca-wiyot-tribe-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          40.6894,
+          -124.2533
+        ],
+        "forecastZones": [
+          "forecast:CAZ103"
+        ],
+        "countyZones": [
+          "county:CAC023"
+        ],
+        "fireZones": [
+          "fire:CAZ404"
+        ],
+        "marineZones": [
+          "marine:PZZ415",
+          "marine:PZZ450",
+          "marine:PZZ410"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-ca-yurok-tribe-of-the-yurok-reservation-california": {
+      "nws": {
+        "wfo": [
+          "EKA"
+        ],
+        "point": [
+          41.5294,
+          -124.0377
+        ],
+        "forecastZones": [
+          "forecast:CAZ101",
+          "forecast:CAZ105",
+          "forecast:CAZ102"
+        ],
+        "countyZones": [
+          "county:CAC015",
+          "county:CAC023"
+        ],
+        "fireZones": [
+          "fire:CAZ401",
+          "fire:CAZ405",
+          "fire:CAZ406"
+        ],
+        "marineZones": [
+          "marine:PZZ450"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KBHX",
+        "ridgeLoop": "KBHX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-id-coeur-dalene-tribe": {
+      "nws": {
+        "wfo": [
+          "OTX"
+        ],
+        "point": [
+          47.3377,
+          -116.8867
+        ],
+        "forecastZones": [
+          "forecast:IDZ003",
+          "forecast:IDZ002",
+          "forecast:IDZ004"
+        ],
+        "countyZones": [
+          "county:IDC009",
+          "county:IDC055"
+        ],
+        "fireZones": [
+          "fire:IDZ101"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SJRI1",
+        "nwps:HCTW1",
+        "nwps:HARI1",
+        "nwps:SJMI1"
+      ]
+    },
+    "us-id-kootenai-tribe-of-idaho": {
+      "nws": {
+        "wfo": [
+          "OTX"
+        ],
+        "point": [
+          48.708,
+          -116.3687
+        ],
+        "forecastZones": [
+          "forecast:IDZ001"
+        ],
+        "countyZones": [
+          "county:IDC021"
+        ],
+        "fireZones": [
+          "fire:IDZ101"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:BFEI1",
+        "nwps:PORI1",
+        "nwps:KRMI1"
+      ]
+    },
+    "us-id-nez-perce-tribe": {
+      "nws": {
+        "wfo": [
+          "OTX",
+          "MSO"
+        ],
+        "point": [
+          46.3999,
+          -116.8049
+        ],
+        "forecastZones": [
+          "forecast:IDZ026",
+          "forecast:IDZ027",
+          "forecast:IDZ007"
+        ],
+        "countyZones": [
+          "county:IDC069",
+          "county:IDC061",
+          "county:IDC049",
+          "county:IDC035"
+        ],
+        "fireZones": [
+          "fire:IDZ102"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SPDI1",
+        "nwps:PRII1",
+        "nwps:PEKI1",
+        "nwps:ACAW1",
+        "nwps:WAHI1",
+        "nwps:ORFI1"
+      ]
+    },
+    "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation": {
+      "nws": {
+        "wfo": [
+          "PIH"
+        ],
+        "point": [
+          43.0264,
+          -112.4334
+        ],
+        "forecastZones": [
+          "forecast:IDZ054",
+          "forecast:IDZ058",
+          "forecast:IDZ062"
+        ],
+        "countyZones": [
+          "county:IDC011",
+          "county:IDC077",
+          "county:IDC005",
+          "county:IDC029"
+        ],
+        "fireZones": [
+          "fire:IDZ410",
+          "fire:IDZ413"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KSFX",
+        "ridgeLoop": "KSFX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SPSI1",
+        "nwps:BLFI1",
+        "nwps:PTYI1",
+        "nwps:BFTI1",
+        "nwps:PIHI1",
+        "nwps:SNAI1"
+      ]
+    },
+    "us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana": {
+      "nws": {
+        "wfo": [
+          "TFX"
+        ],
+        "point": [
+          48.5623,
+          -113.0139
+        ],
+        "forecastZones": [
+          "forecast:MTZ302",
+          "forecast:MTZ303",
+          "forecast:MTZ301"
+        ],
+        "countyZones": [
+          "county:MTC035",
+          "county:MTC073"
+        ],
+        "fireZones": [
+          "fire:MTZ112"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KTFX",
+        "ridgeLoop": "KTFX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana": {
+      "nws": {
+        "wfo": [
+          "TFX"
+        ],
+        "point": [
+          48.2629,
+          -109.7822
+        ],
+        "forecastZones": [
+          "forecast:MTZ311",
+          "forecast:MTZ305"
+        ],
+        "countyZones": [
+          "county:MTC041"
+        ],
+        "fireZones": [
+          "fire:MTZ113"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KTFX",
+        "ridgeLoop": "KTFX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation": {
+      "nws": {
+        "wfo": [
+          "MSO"
+        ],
+        "point": [
+          47.5963,
+          -114.1144
+        ],
+        "forecastZones": [
+          "forecast:MTZ003",
+          "forecast:MTZ043",
+          "forecast:MTZ004",
+          "forecast:MTZ001",
+          "forecast:MTZ002"
+        ],
+        "countyZones": [
+          "county:MTC047",
+          "county:MTC089",
+          "county:MTC063",
+          "county:MTC029"
+        ],
+        "fireZones": [
+          "fire:MTZ107"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMSX",
+        "ridgeLoop": "KMSX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian": {
+      "nws": {
+        "wfo": [
+          "LKN",
+          "BOI"
+        ],
+        "point": [
+          41.9721,
+          -117.6216
+        ],
+        "forecastZones": [
+          "forecast:NVZ030",
+          "forecast:ORZ063"
+        ],
+        "countyZones": [
+          "county:NVC013",
+          "county:ORC045"
+        ],
+        "fireZones": [
+          "fire:NVZ437",
+          "fire:ORZ672"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLRX",
+        "ridgeLoop": "KLRX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada": {
+      "nws": {
+        "wfo": [
+          "BOI",
+          "LKN"
+        ],
+        "point": [
+          41.9976,
+          -116.1309
+        ],
+        "forecastZones": [
+          "forecast:IDZ015",
+          "forecast:NVZ031"
+        ],
+        "countyZones": [
+          "county:IDC073",
+          "county:NVC007"
+        ],
+        "fireZones": [
+          "fire:NVZ469",
+          "fire:IDZ423",
+          "fire:NVZ438"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLRX",
+        "ridgeLoop": "KLRX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-or-burns-paiute-tribe": {
+      "nws": {
+        "wfo": [
+          "BOI"
+        ],
+        "point": [
+          43.611,
+          -119.0694
+        ],
+        "forecastZones": [
+          "forecast:ORZ061"
+        ],
+        "countyZones": [
+          "county:ORC025"
+        ],
+        "fireZones": [
+          "fire:ORZ698",
+          "fire:ORZ670",
+          "fire:ORZ674"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KCBX",
+        "ridgeLoop": "KCBX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:BUSO3"
+      ]
+    },
+    "us-or-confederated-tribes-of-siletz-indians-of-oregon": {
+      "nws": {
+        "wfo": [
+          "PQR"
+        ],
+        "point": [
+          44.7197,
+          -123.9166
+        ],
+        "forecastZones": [
+          "forecast:ORZ103",
+          "forecast:ORZ105"
+        ],
+        "countyZones": [
+          "county:ORC041"
+        ],
+        "fireZones": [
+          "fire:ORZ681",
+          "fire:ORZ683"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KRTX",
+        "ridgeLoop": "KRTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SILO3",
+        "nwps:YRCO3"
+      ]
+    },
+    "us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians": {
+      "nws": {
+        "wfo": [
+          "MFR",
+          "PQR"
+        ],
+        "point": [
+          43.3826,
+          -124.2644
+        ],
+        "forecastZones": [
+          "forecast:ORZ021",
+          "forecast:ORZ023",
+          "forecast:ORZ107",
+          "forecast:ORZ103"
+        ],
+        "countyZones": [
+          "county:ORC011",
+          "county:ORC019",
+          "county:ORC039"
+        ],
+        "fireZones": [
+          "fire:ORZ615",
+          "fire:ORZ683",
+          "fire:ORZ616",
+          "fire:ORZ681"
+        ],
+        "marineZones": [
+          "marine:PZZ350",
+          "marine:PZZ253"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:LOBO3",
+        "nwps:MNRO3",
+        "nwps:MPLO3",
+        "nwps:FRNO3",
+        "nwps:NOTO3",
+        "nwps:BIFO3"
+      ]
+    },
+    "us-or-confederated-tribes-of-the-grand-ronde-community-of-oregon": {
+      "nws": {
+        "wfo": [
+          "PQR"
+        ],
+        "point": [
+          45.0741,
+          -123.6125
+        ],
+        "forecastZones": [
+          "forecast:ORZ105",
+          "forecast:ORZ106",
+          "forecast:ORZ104"
+        ],
+        "countyZones": [
+          "county:ORC053",
+          "county:ORC071"
+        ],
+        "fireZones": [
+          "fire:ORZ683",
+          "fire:ORZ682"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KRTX",
+        "ridgeLoop": "KRTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:WLAO3",
+        "nwps:BEAO3",
+        "nwps:TUCO3",
+        "nwps:WAWO3",
+        "nwps:SRRO3"
+      ]
+    },
+    "us-or-confederated-tribes-of-the-umatilla-indian-reservation": {
+      "nws": {
+        "wfo": [
+          "PDT"
+        ],
+        "point": [
+          45.6654,
+          -118.6861
+        ],
+        "forecastZones": [
+          "forecast:ORZ507",
+          "forecast:ORZ502",
+          "forecast:ORZ503"
+        ],
+        "countyZones": [
+          "county:ORC059"
+        ],
+        "fireZones": [
+          "fire:ORZ692",
+          "fire:ORZ691"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KPDT",
+        "ridgeLoop": "KPDT",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:PDTO3",
+        "nwps:MCKO3",
+        "nwps:MYKO3",
+        "nwps:GIBO3",
+        "nwps:PDUO3",
+        "nwps:MCGO3"
+      ]
+    },
+    "us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon": {
+      "nws": {
+        "wfo": [
+          "PDT"
+        ],
+        "point": [
+          44.758,
+          -121.2734
+        ],
+        "forecastZones": [
+          "forecast:ORZ511",
+          "forecast:ORZ509",
+          "forecast:ORZ510"
+        ],
+        "countyZones": [
+          "county:ORC031",
+          "county:ORC065",
+          "county:ORC005"
+        ],
+        "fireZones": [
+          "fire:ORZ703",
+          "fire:ORZ691"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KRTX",
+        "ridgeLoop": "KRTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:PERO3",
+        "nwps:KAHO3"
+      ]
+    },
+    "us-or-coquille-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "MFR"
+        ],
+        "point": [
+          43.3779,
+          -124.2152
+        ],
+        "forecastZones": [
+          "forecast:ORZ021"
+        ],
+        "countyZones": [
+          "county:ORC011"
+        ],
+        "fireZones": [
+          "fire:ORZ615",
+          "fire:ORZ616"
+        ],
+        "marineZones": [
+          "marine:PZZ350"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:MYNO3",
+        "nwps:MYPO3",
+        "nwps:POWO3",
+        "nwps:COQO3"
+      ]
+    },
+    "us-or-cow-creek-band-of-umpqua-tribe-of-indians": {
+      "nws": {
+        "wfo": [
+          "MFR"
+        ],
+        "point": [
+          43.2386,
+          -123.3517
+        ],
+        "forecastZones": [
+          "forecast:ORZ023"
+        ],
+        "countyZones": [
+          "county:ORC019"
+        ],
+        "fireZones": [
+          "fire:ORZ616"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:RSBO3",
+        "nwps:WINO3",
+        "nwps:WNRO3",
+        "nwps:DEEO3",
+        "nwps:SUMO3",
+        "nwps:WSNO3"
+      ]
+    },
+    "us-or-klamath-tribes": {
+      "nws": {
+        "wfo": [
+          "MFR"
+        ],
+        "point": [
+          42.5741,
+          -121.8745
+        ],
+        "forecastZones": [
+          "forecast:ORZ029",
+          "forecast:ORZ030"
+        ],
+        "countyZones": [
+          "county:ORC035"
+        ],
+        "fireZones": [
+          "fire:ORZ624"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KMAX",
+        "ridgeLoop": "KMAX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:WMSO3",
+        "nwps:CHSO3",
+        "nwps:WKAO3"
+      ]
+    },
+    "us-wa-confederated-tribes-and-bands-of-the-yakama-nation": {
+      "nws": {
+        "wfo": [
+          "PDT"
+        ],
+        "point": [
+          46.3762,
+          -120.3386
+        ],
+        "forecastZones": [
+          "forecast:WAZ027",
+          "forecast:WAZ521",
+          "forecast:WAZ523",
+          "forecast:WAZ522"
+        ],
+        "countyZones": [
+          "county:WAC077",
+          "county:WAC039"
+        ],
+        "fireZones": [
+          "fire:WAZ691",
+          "fire:WAZ694"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KPDT",
+        "ridgeLoop": "KPDT",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:TOPW1",
+        "nwps:PARW1",
+        "nwps:AHUW1",
+        "nwps:TPWW1"
+      ]
+    },
+    "us-wa-confederated-tribes-of-the-chehalis-reservation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          46.815,
+          -123.1724
+        ],
+        "forecastZones": [
+          "forecast:WAZ319",
+          "forecast:WAZ318"
+        ],
+        "countyZones": [
+          "county:WAC027",
+          "county:WAC067"
+        ],
+        "fireZones": [
+          "fire:WAZ655"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:CGMW1",
+        "nwps:CRPW1",
+        "nwps:CENW1",
+        "nwps:CTAW1",
+        "nwps:BCDW1",
+        "nwps:DOTW1"
+      ]
+    },
+    "us-wa-confederated-tribes-of-the-colville-reservation": {
+      "nws": {
+        "wfo": [
+          "OTX"
+        ],
+        "point": [
+          48.1334,
+          -118.9758
+        ],
+        "forecastZones": [
+          "forecast:WAZ043",
+          "forecast:WAZ038",
+          "forecast:WAZ035"
+        ],
+        "countyZones": [
+          "county:WAC047",
+          "county:WAC019"
+        ],
+        "fireZones": [
+          "fire:WAZ702",
+          "fire:WAZ703"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:KLLW1",
+        "nwps:GCDW1"
+      ]
+    },
+    "us-wa-cowlitz-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "PQR"
+        ],
+        "point": [
+          46.1322,
+          -122.9326
+        ],
+        "forecastZones": [
+          "forecast:WAZ204",
+          "forecast:WAZ205"
+        ],
+        "countyZones": [
+          "county:WAC015",
+          "county:WAC011"
+        ],
+        "fireZones": [
+          "fire:WAZ631",
+          "fire:WAZ633"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KRTX",
+        "ridgeLoop": "KRTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:KELW1",
+        "nwps:LOPW1",
+        "nwps:LRWW1",
+        "nwps:SHNO3",
+        "nwps:MERW1",
+        "nwps:CASW1"
+      ]
+    },
+    "us-wa-hoh-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.7409,
+          -124.4133
+        ],
+        "forecastZones": [
+          "forecast:WAZ330"
+        ],
+        "countyZones": [
+          "county:WAC031"
+        ],
+        "fireZones": [
+          "fire:WAZ649"
+        ],
+        "marineZones": [
+          "marine:PZZ153"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:HORW1",
+        "nwps:BOGW1",
+        "nwps:QUEW1",
+        "nwps:CALW1",
+        "nwps:BGFW1",
+        "nwps:SDQW1"
+      ]
+    },
+    "us-wa-jamestown-sklallam-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.0255,
+          -122.9963
+        ],
+        "forecastZones": [
+          "forecast:WAZ325"
+        ],
+        "countyZones": [
+          "county:WAC009"
+        ],
+        "fireZones": [
+          "fire:WAZ653"
+        ],
+        "marineZones": [
+          "marine:PZZ132"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:DRSW1",
+        "nwps:DRMW1"
+      ]
+    },
+    "us-wa-kalispel-indian-community-of-the-kalispel-reservation": {
+      "nws": {
+        "wfo": [
+          "OTX"
+        ],
+        "point": [
+          48.3455,
+          -117.272
+        ],
+        "forecastZones": [
+          "forecast:WAZ037"
+        ],
+        "countyZones": [
+          "county:WAC051"
+        ],
+        "fireZones": [
+          "fire:WAZ701"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:POCW1"
+      ]
+    },
+    "us-wa-lower-elwha-tribal-community": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.144,
+          -123.5487
+        ],
+        "forecastZones": [
+          "forecast:WAZ325"
+        ],
+        "countyZones": [
+          "county:WAC009"
+        ],
+        "fireZones": [
+          "fire:WAZ653"
+        ],
+        "marineZones": [
+          "marine:PZZ131"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:ELWW1"
+      ]
+    },
+    "us-wa-lummi-tribe-of-the-lummi-reservation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.792,
+          -122.6262
+        ],
+        "forecastZones": [
+          "forecast:WAZ310"
+        ],
+        "countyZones": [
+          "county:WAC073"
+        ],
+        "fireZones": [
+          "fire:WAZ653"
+        ],
+        "marineZones": [
+          "marine:PZZ133"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:NKSW1",
+        "nwps:NREX1",
+        "nwps:NRKW1",
+        "nwps:NKLW1",
+        "nwps:NREW1"
+      ]
+    },
+    "us-wa-makah-indian-tribe-of-the-makah-indian-reservation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.3474,
+          -124.668
+        ],
+        "forecastZones": [
+          "forecast:WAZ330"
+        ],
+        "countyZones": [
+          "county:WAC009"
+        ],
+        "fireZones": [
+          "fire:WAZ649",
+          "fire:WAZ650"
+        ],
+        "marineZones": [
+          "marine:PZZ150",
+          "marine:PZZ130"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-wa-muckleshoot-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.2517,
+          -122.1152
+        ],
+        "forecastZones": [
+          "forecast:WAZ308",
+          "forecast:WAZ316"
+        ],
+        "countyZones": [
+          "county:WAC033",
+          "county:WAC053"
+        ],
+        "fireZones": [
+          "fire:WAZ657"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:BKDW1",
+        "nwps:WRAW1",
+        "nwps:BSKW1",
+        "nwps:AUBW1",
+        "nwps:SPEW1",
+        "nwps:MMDW1"
+      ]
+    },
+    "us-wa-nisqually-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.0033,
+          -122.6699
+        ],
+        "forecastZones": [
+          "forecast:WAZ317",
+          "forecast:WAZ316"
+        ],
+        "countyZones": [
+          "county:WAC067",
+          "county:WAC053"
+        ],
+        "fireZones": [
+          "fire:WAZ655",
+          "fire:WAZ657"
+        ],
+        "marineZones": [
+          "marine:PZZ135"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:MKNW1",
+        "nwps:DSRW1",
+        "nwps:SKMW1",
+        "nwps:SKRW1"
+      ]
+    },
+    "us-wa-nooksack-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.8238,
+          -122.2159
+        ],
+        "forecastZones": [
+          "forecast:WAZ305",
+          "forecast:WAZ310"
+        ],
+        "countyZones": [
+          "county:WAC073"
+        ],
+        "fireZones": [
+          "fire:WAZ658",
+          "fire:WAZ656"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:NRKW1",
+        "nwps:NREX1",
+        "nwps:MFNW1",
+        "nwps:NSSW1",
+        "nwps:NOEX1",
+        "nwps:NKSW1"
+      ]
+    },
+    "us-wa-port-gamble-sklallam-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.8522,
+          -122.5693
+        ],
+        "forecastZones": [
+          "forecast:WAZ322"
+        ],
+        "countyZones": [
+          "county:WAC035"
+        ],
+        "fireZones": [
+          "fire:WAZ654"
+        ],
+        "marineZones": [
+          "marine:PZZ135"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-wa-puyallup-tribe-of-the-puyallup-reservation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.2363,
+          -122.4096
+        ],
+        "forecastZones": [
+          "forecast:WAZ316"
+        ],
+        "countyZones": [
+          "county:WAC053",
+          "county:WAC033"
+        ],
+        "fireZones": [
+          "fire:WAZ654",
+          "fire:WAZ657"
+        ],
+        "marineZones": [
+          "marine:PZZ135"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:PUYW1",
+        "nwps:WRAW1",
+        "nwps:AUBW1",
+        "nwps:BSKW1",
+        "nwps:SPEW1",
+        "nwps:BKDW1"
+      ]
+    },
+    "us-wa-quileute-tribe-of-the-quileute-reservation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.9097,
+          -124.6364
+        ],
+        "forecastZones": [
+          "forecast:WAZ330"
+        ],
+        "countyZones": [
+          "county:WAC009"
+        ],
+        "fireZones": [
+          "fire:WAZ649"
+        ],
+        "marineZones": [
+          "marine:PZZ153",
+          "marine:PZZ150"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:BOGW1",
+        "nwps:CALW1",
+        "nwps:SDQW1",
+        "nwps:BGFW1"
+      ]
+    },
+    "us-wa-quinault-indian-nation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.3392,
+          -124.2854
+        ],
+        "forecastZones": [
+          "forecast:WAZ331",
+          "forecast:WAZ329"
+        ],
+        "countyZones": [
+          "county:WAC027"
+        ],
+        "fireZones": [
+          "fire:WAZ649",
+          "fire:WAZ650",
+          "fire:WAZ652"
+        ],
+        "marineZones": [
+          "marine:PZZ153",
+          "marine:PZZ156"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:QUEW1",
+        "nwps:QLTW1",
+        "nwps:QTHW1",
+        "nwps:HMRW1"
+      ]
+    },
+    "us-wa-samish-indian-nation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.4983,
+          -122.6132
+        ],
+        "forecastZones": [
+          "forecast:WAZ311"
+        ],
+        "countyZones": [
+          "county:WAC057"
+        ],
+        "fireZones": [
+          "fire:WAZ653"
+        ],
+        "marineZones": [
+          "marine:PZZ133"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SMRW1",
+        "nwps:MVEW1"
+      ]
+    },
+    "us-wa-sauk-suiattle-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.322,
+          -121.5525
+        ],
+        "forecastZones": [
+          "forecast:WAZ305",
+          "forecast:WAZ311"
+        ],
+        "countyZones": [
+          "county:WAC057"
+        ],
+        "fireZones": [
+          "fire:WAZ656"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SAKW1",
+        "nwps:WCHW1",
+        "nwps:SRKW1"
+      ]
+    },
+    "us-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation": {
+      "nws": {
+        "wfo": [
+          "PQR"
+        ],
+        "point": [
+          46.7217,
+          -124.0164
+        ],
+        "forecastZones": [
+          "forecast:WAZ201"
+        ],
+        "countyZones": [
+          "county:WAC049"
+        ],
+        "fireZones": [
+          "fire:WAZ630"
+        ],
+        "marineZones": [
+          "marine:PZZ251",
+          "marine:PZZ156"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": []
+    },
+    "us-wa-skokomish-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.3222,
+          -123.1456
+        ],
+        "forecastZones": [
+          "forecast:WAZ321"
+        ],
+        "countyZones": [
+          "county:WAC045"
+        ],
+        "fireZones": [
+          "fire:WAZ654"
+        ],
+        "marineZones": [
+          "marine:PZZ135"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SRPW1",
+        "nwps:SRCW1",
+        "nwps:NSPW1",
+        "nwps:SSUW1",
+        "nwps:CSHW1",
+        "nwps:SKOW1"
+      ]
+    },
+    "us-wa-snoqualmie-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.5139,
+          -121.8258
+        ],
+        "forecastZones": [
+          "forecast:WAZ307"
+        ],
+        "countyZones": [
+          "county:WAC033"
+        ],
+        "fireZones": [
+          "fire:WAZ657"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SQUW1",
+        "nwps:TANW1",
+        "nwps:MORW1",
+        "nwps:SNQW1",
+        "nwps:ISSW1",
+        "nwps:LNDW1"
+      ]
+    },
+    "us-wa-spokane-tribe-of-the-spokane-reservation": {
+      "nws": {
+        "wfo": [
+          "OTX"
+        ],
+        "point": [
+          47.8866,
+          -117.9903
+        ],
+        "forecastZones": [
+          "forecast:WAZ037",
+          "forecast:WAZ036"
+        ],
+        "countyZones": [
+          "county:WAC065",
+          "county:WAC043"
+        ],
+        "fireZones": [
+          "fire:WAZ701"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KOTX",
+        "ridgeLoop": "KOTX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:CHKW1",
+        "nwps:LLKW1"
+      ]
+    },
+    "us-wa-squaxin-island-tribe-of-the-squaxin-island-reservation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.1218,
+          -123.0801
+        ],
+        "forecastZones": [
+          "forecast:WAZ317"
+        ],
+        "countyZones": [
+          "county:WAC045"
+        ],
+        "fireZones": [
+          "fire:WAZ654"
+        ],
+        "marineZones": [
+          "marine:PZZ135"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KLGX",
+        "ridgeLoop": "KLGX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SRPW1",
+        "nwps:SRCW1"
+      ]
+    },
+    "us-wa-stillaguamish-tribe-of-indians-of-washington": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.2095,
+          -122.1844
+        ],
+        "forecastZones": [
+          "forecast:WAZ311"
+        ],
+        "countyZones": [
+          "county:WAC061"
+        ],
+        "fireZones": [
+          "fire:WAZ656"
+        ],
+        "marineZones": []
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:ARLW1",
+        "nwps:ARGW1",
+        "nwps:SSFW1",
+        "nwps:SIVW1",
+        "nwps:SPHW1",
+        "nwps:STWW1"
+      ]
+    },
+    "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          47.7287,
+          -122.5586
+        ],
+        "forecastZones": [
+          "forecast:WAZ323"
+        ],
+        "countyZones": [
+          "county:WAC035"
+        ],
+        "fireZones": [
+          "fire:WAZ654"
+        ],
+        "marineZones": [
+          "marine:PZZ135"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:BMTW1",
+        "nwps:EBSW1"
+      ]
+    },
+    "us-wa-swinomish-indian-tribal-community": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.3899,
+          -122.5016
+        ],
+        "forecastZones": [
+          "forecast:WAZ311"
+        ],
+        "countyZones": [
+          "county:WAC057"
+        ],
+        "fireZones": [
+          "fire:WAZ653"
+        ],
+        "marineZones": [
+          "marine:PZZ133"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:MVEW1",
+        "nwps:SMRW1",
+        "nwps:STWW1"
+      ]
+    },
+    "us-wa-tulalip-tribes-of-washington": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.0547,
+          -122.2585
+        ],
+        "forecastZones": [
+          "forecast:WAZ312"
+        ],
+        "countyZones": [
+          "county:WAC061"
+        ],
+        "fireZones": [
+          "fire:WAZ653",
+          "fire:WAZ656"
+        ],
+        "marineZones": [
+          "marine:PZZ135",
+          "marine:PZZ133"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:EBYW1",
+        "nwps:ARLW1",
+        "nwps:PILW1",
+        "nwps:SNAW1",
+        "nwps:SSFW1",
+        "nwps:ARGW1"
+      ]
+    },
+    "us-wa-upper-skagit-indian-tribe": {
+      "nws": {
+        "wfo": [
+          "SEW"
+        ],
+        "point": [
+          48.5393,
+          -122.185
+        ],
+        "forecastZones": [
+          "forecast:WAZ311"
+        ],
+        "countyZones": [
+          "county:WAC057"
+        ],
+        "fireZones": [
+          "fire:WAZ656"
+        ],
+        "marineZones": [
+          "marine:PZZ133"
+        ]
+      },
+      "eccc": null,
+      "radar": {
+        "nexrad": "KATX",
+        "ridgeLoop": "KATX",
+        "eccc": null
+      },
+      "gauges": [
+        "nwps:SMRW1",
+        "nwps:MVEW1",
+        "nwps:NSSW1",
+        "nwps:HUTW1"
+      ]
+    }
+  }
+}

@@ -30,30 +30,95 @@
     [
       49.14171,
       -121.94058
+    ],
+    [
+      49.14372,
+      -121.89112
+    ],
+    [
+      49.13743,
+      -121.94172
+    ],
+    [
+      49.13584,
+      -121.96447
+    ],
+    [
+      49.13659,
+      -121.95124
+    ],
+    [
+      49.14355,
+      -122.27497
     ]
   ],
   "bbox": [
-    -122.0779,
-    49.05188,
-    -121.80326,
-    49.23154
+    -122.27887,
+    49.1322,
+    -121.88553,
+    49.14737
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-571.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08049",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08050",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08113",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09657",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10235",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-24",
+    "citypageName": "Chilliwack",
+    "distanceKm": 3.1,
+    "forecastZones": [
+      "082711-082712-082720-082730"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH024",
+    "wsc:08MH001",
+    "wsc:08MF038",
+    "wsc:08MF073",
+    "wsc:08MF075",
+    "wsc:08MG014"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

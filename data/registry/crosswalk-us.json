@@ -244,11 +244,27 @@
     },
     {
       "nationId": "us-ak-metlakatla-indian-community-annette-island-reserve",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0053",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Annette Island\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ak-metlakatla-indian-community-annette-island-reserve",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 361",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Metlakatla Indian Community, Annette Island Reserve."
+    },
+    {
+      "nationId": "us-ak-metlakatla-indian-community-annette-island-reserve",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0110R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Annette Island\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 6.7 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ak-metlakatla-indian-community-annette-island-reserve",
@@ -484,6 +500,14 @@
     },
     {
       "nationId": "us-ca-bear-river-band-of-the-rohnerville-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0171",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Rohnerville\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-bear-river-band-of-the-rohnerville-rancheria-california",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 387",
       "matchMethod": "code",
@@ -540,11 +564,27 @@
     },
     {
       "nationId": "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0106",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Big Valley\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 392",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Big Valley Band of Pomo Indians of the Big Valley Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0275R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Big Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0.2 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-big-valley-band-of-pomo-indians-of-the-big-valley-rancheria-california",
@@ -596,11 +636,27 @@
     },
     {
       "nationId": "us-ca-cahto-tribe-of-the-laytonville-rancheria",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0142",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Laytonville\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-cahto-tribe-of-the-laytonville-rancheria",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 399",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Cahto Tribe of the Laytonville Rancheria."
+    },
+    {
+      "nationId": "us-ca-cahto-tribe-of-the-laytonville-rancheria",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1925R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Laytonville\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0.4 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-cahto-tribe-of-the-laytonville-rancheria",
@@ -652,11 +708,35 @@
     },
     {
       "nationId": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0192",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Trinidad\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 407",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Cher-Ae Heights Indian Community of the Trinidad Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4275R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Trinidad\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0.1 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4275T",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Trinidad\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 9 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-california",
@@ -713,6 +793,14 @@
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4030R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Sulphur Bank\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 62.2 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria-california",
@@ -876,11 +964,27 @@
     },
     {
       "nationId": "us-ca-habematolel-pomo-of-upper-lake-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0196",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Upper Lake\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0.6 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-habematolel-pomo-of-upper-lake-california",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 423",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Habematolel Pomo of Upper Lake, California."
+    },
+    {
+      "nationId": "us-ca-habematolel-pomo-of-upper-lake-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4430R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Upper Lake\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 2.5 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-habematolel-pomo-of-upper-lake-california",
@@ -892,11 +996,27 @@
     },
     {
       "nationId": "us-ca-hoopa-valley-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0134",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Hoopa Valley\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-hoopa-valley-tribe-california",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 424",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Hoopa Valley Tribe, California."
+    },
+    {
+      "nationId": "us-ca-hoopa-valley-tribe-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1490R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Hoopa Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 4.3 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-hoopa-valley-tribe-california",
@@ -980,11 +1100,27 @@
     },
     {
       "nationId": "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0148",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Manchester Point Arena\": Place words of the area name begin with a word of the Tribe's Federal Register listing (tier 2); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 440",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Manchester Band of Pomo Indians of the Manchester Rancheria, California."
+    },
+    {
+      "nationId": "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2100R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Manchester-Point Arena\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name begin with a word of the Tribe's Federal Register listing (tier 2); 0.1 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-california",
@@ -1089,6 +1225,54 @@
       "matchMethod": "name-exact",
       "reviewed": false,
       "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0102",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Big Bend\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); named in the \"includes\" list of the Federal Register entry. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0143",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Likely\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); named in the \"includes\" list of the Federal Register entry. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0145",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Lookout\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); named in the \"includes\" list of the Federal Register entry. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0152",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Montgomery Creek\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); named in the \"includes\" list of the Federal Register entry. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0169",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Roaring Creek\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); named in the \"includes\" list of the Federal Register entry. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-pit-river-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0199",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"XL Ranch\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); named in the \"includes\" list of the Federal Register entry. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-pit-river-tribe-california",
@@ -1460,11 +1644,35 @@
     },
     {
       "nationId": "us-ca-tolowa-dee-ni-nation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0183",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Smith River\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-tolowa-dee-ni-nation",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 477",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Tolowa Dee-ni' Nation."
+    },
+    {
+      "nationId": "us-ca-tolowa-dee-ni-nation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3855R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Smith River\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0.4 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-tolowa-dee-ni-nation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3855T",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Smith River\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0.5 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-tolowa-dee-ni-nation",
@@ -1476,11 +1684,27 @@
     },
     {
       "nationId": "us-ca-wiyot-tribe-california",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0188",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Table Bluff\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-ca-wiyot-tribe-california",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 485",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Wiyot Tribe, California."
+    },
+    {
+      "nationId": "us-ca-wiyot-tribe-california",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4095R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Table Bluff\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0.2 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-ca-wiyot-tribe-california",
@@ -1628,11 +1852,35 @@
     },
     {
       "nationId": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0061",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Fort Hall\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 374",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Shoshone-Bannock Tribes of the Fort Hall Reservation."
+    },
+    {
+      "nationId": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1185R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Fort Hall\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 8.5 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1185T",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Fort Hall\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 40.5 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
@@ -1684,11 +1932,35 @@
     },
     {
       "nationId": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0207",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Rocky Boys\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 491",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Chippewa Cree Indians of the Rocky Boy's Reservation, Montana."
+    },
+    {
+      "nationId": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3205R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Rocky Boy's\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 5.9 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "3205T",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Rocky Boy's\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 11.1 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana",
@@ -1700,11 +1972,27 @@
     },
     {
       "nationId": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0060",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Flathead\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 341",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Confederated Salish and Kootenai Tribes of the Flathead Reservation."
+    },
+    {
+      "nationId": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "1110R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Flathead\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 16.9 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-mt-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation",
@@ -1748,11 +2036,35 @@
     },
     {
       "nationId": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0248",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Duck Valley\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 579",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada."
+    },
+    {
+      "nationId": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0965R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Duck Valley\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 4.4 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0965T",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Duck Valley\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 27.7 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada",
@@ -1852,6 +2164,22 @@
     },
     {
       "nationId": "us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0770R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Coos, Lower Umpqua, and Siuslaw\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 112.6 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "0770T",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Coos, Lower Umpqua, and Siuslaw\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 68.1 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians",
       "sourceId": "federal-register-tribes",
       "sourceKey": "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians",
       "matchMethod": "name-exact",
@@ -1900,11 +2228,35 @@
     },
     {
       "nationId": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0091",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Umatilla\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 348",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Confederated Tribes of the Umatilla Indian Reservation."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4405R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Umatilla\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D8): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 11.8 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "4405T",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Umatilla\" (MTFCC G2102, legal off-reservation trust land, COMPTYP T, CLASSFP D5): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 78 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-or-confederated-tribes-of-the-umatilla-indian-reservation",
@@ -1953,6 +2305,14 @@
       "matchMethod": "name-exact",
       "reviewed": false,
       "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-or-coquille-indian-tribe",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0058",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Coquille of Oregon\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 1.5 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-or-coquille-indian-tribe",
@@ -2049,6 +2409,14 @@
       "matchMethod": "name-exact",
       "reviewed": false,
       "notes": "tribefullname equals the Federal Register entry after entity decoding and whitespace folding."
+    },
+    {
+      "nationId": "us-wa-confederated-tribes-and-bands-of-the-yakama-nation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0094",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Yakama\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-wa-confederated-tribes-and-bands-of-the-yakama-nation",
@@ -2964,11 +3332,27 @@
     },
     {
       "nationId": "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation",
+      "sourceId": "bia-lar",
+      "sourceKey": "LAR0077",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "LARNAME \"Port Madison\": Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 0 km from the headquarters. Candidate for the maintainer to confirm."
+    },
+    {
+      "nationId": "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation",
       "sourceId": "bia-tld",
       "sourceKey": "OBJECTID 380",
       "matchMethod": "code",
       "reviewed": false,
       "notes": "bia-tld is the originating record; key bia-tld:Suquamish Indian Tribe of the Port Madison Reservation."
+    },
+    {
+      "nationId": "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation",
+      "sourceId": "census-aiannh-2025",
+      "sourceKey": "2925R",
+      "matchMethod": "name-reviewed",
+      "reviewed": false,
+      "notes": "Census NAME \"Port Madison\" (MTFCC G2101, legal reservation, COMPTYP R, CLASSFP D2): Place words of the area name appear in the Tribe's Federal Register listing (tier 1); 1.1 km from the headquarters. Candidate for the maintainer to confirm."
     },
     {
       "nationId": "us-wa-suquamish-indian-tribe-of-the-port-madison-reservation",

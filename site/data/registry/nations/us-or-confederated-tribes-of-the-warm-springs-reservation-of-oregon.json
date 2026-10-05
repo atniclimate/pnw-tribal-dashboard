@@ -33,30 +33,67 @@
     [
       44.75801,
       -121.2734
+    ],
+    [
+      44.86694,
+      -121.4566
     ]
   ],
   "bbox": [
-    -121.39991,
-    44.66818,
-    -121.14689,
-    44.84784
+    -121.80127,
+    44.56794,
+    -121.04792,
+    45.15478
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0093",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "PDT"
+    ],
+    "point": [
+      44.758,
+      -121.2734
+    ],
+    "forecastZones": [
+      "forecast:ORZ511",
+      "forecast:ORZ509",
+      "forecast:ORZ510"
+    ],
+    "countyZones": [
+      "county:ORC031",
+      "county:ORC065",
+      "county:ORC005"
+    ],
+    "fireZones": [
+      "fire:ORZ703",
+      "fire:ORZ691"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KRTX",
+    "ridgeLoop": "KRTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:PERO3",
+    "nwps:KAHO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

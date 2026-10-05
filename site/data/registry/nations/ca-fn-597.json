@@ -30,30 +30,75 @@
     [
       49.49137,
       -119.64476
+    ],
+    [
+      49.47524,
+      -119.68881
+    ],
+    [
+      49.56958,
+      -119.76372
+    ],
+    [
+      49.48048,
+      -119.55762
     ]
   ],
   "bbox": [
-    -119.78305,
-    49.40154,
-    -119.50647,
-    49.5812
+    -119.77634,
+    49.36017,
+    -119.55421,
+    49.59797
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-597.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07397",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07398",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07407",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-84",
+    "citypageName": "Penticton",
+    "distanceKm": 4.8,
+    "forecastZones": [
+      "083500"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NM050",
+    "wsc:08NM084",
+    "wsc:08NM037",
+    "wsc:08NM158",
+    "wsc:08NM002",
+    "wsc:08NM242"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

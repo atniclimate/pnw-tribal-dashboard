@@ -30,30 +30,74 @@
     [
       50.03107,
       -120.85923
+    ],
+    [
+      50.0302,
+      -120.8782
+    ],
+    [
+      49.98285,
+      -120.95505
+    ],
+    [
+      50.01002,
+      -120.76644
     ]
   ],
   "bbox": [
-    -120.99907,
-    49.94124,
-    -120.71939,
-    50.1209
+    -120.99531,
+    49.97485,
+    -120.76142,
+    50.05558
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-693.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07197",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07198",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07199",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-49",
+    "citypageName": "Merritt",
+    "distanceKm": 10.1,
+    "forecastZones": [
+      "083121-083300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LG010",
+    "wsc:08LG048",
+    "wsc:08LG065",
+    "wsc:08LG046",
+    "wsc:08LG017"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

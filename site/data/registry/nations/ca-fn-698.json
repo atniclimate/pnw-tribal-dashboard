@@ -30,30 +30,72 @@
     [
       50.29339,
       -121.17537
+    ],
+    [
+      50.29668,
+      -121.22163
+    ],
+    [
+      50.34768,
+      -121.18022
+    ],
+    [
+      50.31606,
+      -121.15261
     ]
   ],
   "bbox": [
-    -121.31598,
-    50.20356,
-    -121.03476,
-    50.38322
+    -121.24467,
+    50.26408,
+    -121.11555,
+    50.36178
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-698.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07256",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07257",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07258",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-33",
+    "citypageName": "Lytton",
+    "distanceKm": 29.6,
+    "forecastZones": [
+      "083200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LG070",
+    "wsc:08LF051",
+    "wsc:08LG041"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

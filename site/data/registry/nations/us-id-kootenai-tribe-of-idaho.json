@@ -32,30 +32,63 @@
     [
       48.70803,
       -116.3687
+    ],
+    [
+      48.80846,
+      -116.3929
     ]
   ],
   "bbox": [
-    -116.50483,
-    48.6182,
-    -116.23257,
-    48.79786
+    -116.47333,
+    48.53378,
+    -116.09834,
+    48.94512
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-id-kootenai-tribe-of-idaho.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0067",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "OTX"
+    ],
+    "point": [
+      48.708,
+      -116.3687
+    ],
+    "forecastZones": [
+      "forecast:IDZ001"
+    ],
+    "countyZones": [
+      "county:IDC021"
+    ],
+    "fireZones": [
+      "fire:IDZ101"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:BFEI1",
+    "nwps:PORI1",
+    "nwps:KRMI1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

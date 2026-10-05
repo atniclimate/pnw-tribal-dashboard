@@ -26,7 +26,7 @@ inputs:
     vintage: '2026-10-04'
     sha256: ef38f9b7b18ff479631599883ec911baa2bc7cbd3be4606d76df1a4dce5243e1
     licence: U.S. Government work, public information (BIA)
-    notes: Land Area Representations, 335 features, downloaded 10/04/2026. Attributes only in wave 1; geometry is processed by 40-boundaries.
+    notes: Land Area Representations, 335 features, downloaded 10/04/2026. Attributes in wave 1; the polygons of matched areas are processed by 40-boundaries in wave 2.
   - id: federal-register-tribes
     sourceId: federal-register-tribes
     url: https://www.federalregister.gov/documents/full_text/xml/2026/01/30/2026-01899.xml
@@ -44,7 +44,7 @@ inputs:
     vintage: '2025-09-15'
     sha256: 214b97c1ecbc3f57a69d5c0c746e6e920dec79bb43be40cfdad529e9bb09aee4
     licence: U.S. public domain (Census TIGER/Line)
-    notes: Attributes only in wave 1 (AIANNHCE, GEOID, NAME, MTFCC, CLASSFP). Legal classes are MTFCC G2101 (reservations) and G2102 (off-reservation trust land); statistical areas are G2120 and higher.
+    notes: Attributes in wave 1 (AIANNHCE, GEOID, NAME, MTFCC, CLASSFP); polygons of the matched legal areas in wave 2. Legal classes are MTFCC G2101 (reservations) and G2102 (off-reservation trust land); G2130 to G2160 are statistical areas; G2120 (Hawaiian home lands) and G2170 (joint-use areas) are outside the footprint.
   - id: census-counties-500k
     sourceId: census-cartographic-boundaries
     url: https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_county_500k.zip
@@ -96,4 +96,4 @@ inputs:
     vintage: '2026-09-14'
     sha256: e373c8867ca9c60e60c768c1444777a1c67b65cbf39f37abf539bff284069a25
     licence: Open Government Licence - Canada 2.0
-    notes: 1,602 British Columbia polygons, Last-Modified 09/14/2026. Attributes only in wave 1.
+    notes: 1,602 British Columbia polygons, Last-Modified 09/14/2026. Attributes in wave 1; the joined polygons are processed by 40-boundaries in wave 2.

@@ -32,27 +32,58 @@
     [
       55.12617,
       -131.5734
+    ],
+    [
+      55.12639,
+      -131.49578
     ]
   ],
   "bbox": [
-    -131.73051,
-    55.03634,
-    -131.41629,
-    55.216
+    -131.66697,
+    54.98566,
+    -131.29391,
+    55.29398
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ak-metlakatla-indian-community-annette-island-reserve.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0053",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Sitka",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "AJK"
+    ],
+    "point": [
+      55.1262,
+      -131.5734
+    ],
+    "forecastZones": [
+      "forecast:AKZ332"
+    ],
+    "countyZones": [
+      "county:AKC198"
+    ],
+    "fireZones": [
+      "fire:AKZ332"
+    ],
+    "marineZones": [
+      "marine:PKZ036"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
   "gauges": [],
@@ -60,9 +91,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0053"
+    ],
+    "censusAiannhce": [
+      "0110"
+    ],
+    "censusGeoid": "0110R",
     "biaTldObjectId": 361,
     "biaAnvObjectId": null,
     "iscBandNumber": null

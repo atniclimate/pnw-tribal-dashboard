@@ -30,30 +30,53 @@
     [
       49.39698,
       -124.61575
+    ],
+    [
+      49.39714,
+      -124.61575
     ]
   ],
   "bbox": [
-    -124.75378,
-    49.30715,
-    -124.47772,
-    49.48681
+    -124.62043,
+    49.39411,
+    -124.60341,
+    49.40273
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-651.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06826",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-98",
+    "citypageName": "Qualicum Beach",
+    "distanceKm": 13.8,
+    "forecastZones": [
+      "081300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HB022",
+    "wsc:08HB029",
+    "wsc:08HB017",
+    "wsc:08HB008"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -32,27 +32,59 @@
     [
       48.56229,
       -113.0139
+    ],
+    [
+      48.65315,
+      -112.87282
     ]
   ],
   "bbox": [
-    -113.14964,
-    48.47246,
-    -112.87816,
-    48.65212
+    -113.60976,
+    48.15878,
+    -112.22512,
+    48.99878
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0202",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Denver",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "TFX"
+    ],
+    "point": [
+      48.5623,
+      -113.0139
+    ],
+    "forecastZones": [
+      "forecast:MTZ302",
+      "forecast:MTZ303",
+      "forecast:MTZ301"
+    ],
+    "countyZones": [
+      "county:MTC035",
+      "county:MTC073"
+    ],
+    "fireZones": [
+      "fire:MTZ112"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KTFX",
+    "ridgeLoop": "KTFX",
     "eccc": null
   },
   "gauges": [],

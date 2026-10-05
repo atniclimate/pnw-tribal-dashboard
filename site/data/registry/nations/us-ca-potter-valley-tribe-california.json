@@ -33,27 +33,57 @@
     [
       39.11948,
       -123.2015
+    ],
+    [
+      39.37436,
+      -123.16196
     ]
   ],
   "bbox": [
-    -123.31729,
-    39.02965,
-    -123.08571,
-    39.20931
+    -123.20654,
+    39.28504,
+    -123.11316,
+    39.37621
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-potter-valley-tribe-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0162",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.1195,
+      -123.2015
+    ],
+    "forecastZones": [
+      "forecast:CAZ113",
+      "forecast:CAZ110"
+    ],
+    "countyZones": [
+      "county:CAC045"
+    ],
+    "fireZones": [
+      "fire:CAZ416"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],

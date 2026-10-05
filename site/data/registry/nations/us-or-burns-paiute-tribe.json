@@ -32,30 +32,63 @@
     [
       43.611,
       -119.0694
+    ],
+    [
+      43.54808,
+      -118.77733
     ]
   ],
   "bbox": [
-    -119.19347,
-    43.52117,
-    -118.94533,
-    43.70083
+    -119.19916,
+    43.49716,
+    -118.55939,
+    43.61376
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-burns-paiute-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0054",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "BOI"
+    ],
+    "point": [
+      43.611,
+      -119.0694
+    ],
+    "forecastZones": [
+      "forecast:ORZ061"
+    ],
+    "countyZones": [
+      "county:ORC025"
+    ],
+    "fireZones": [
+      "fire:ORZ698",
+      "fire:ORZ670",
+      "fire:ORZ674"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KCBX",
+    "ridgeLoop": "KCBX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:BUSO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

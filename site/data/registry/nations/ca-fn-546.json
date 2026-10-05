@@ -30,30 +30,62 @@
     [
       56.51337,
       -121.96497
+    ],
+    [
+      56.45612,
+      -121.81069
+    ],
+    [
+      56.37248,
+      -121.92216
     ]
   ],
   "bbox": [
-    -122.12778,
-    56.42354,
-    -121.80216,
-    56.6032
+    -121.98069,
+    56.36544,
+    -121.78304,
+    56.5232
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-546.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06956",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10257",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Dawson_Creek",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-78",
+    "citypageName": "Fort St. John",
+    "distanceKm": 75.2,
+    "forecastZones": [
+      "087300"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:07FA003",
+    "wsc:07FA006",
+    "wsc:07FA005"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

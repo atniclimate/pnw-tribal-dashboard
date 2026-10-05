@@ -32,37 +32,75 @@
     [
       47.7287,
       -122.5586
+    ],
+    [
+      47.72516,
+      -122.58443
     ]
   ],
   "bbox": [
-    -122.69215,
-    47.63887,
-    -122.42505,
-    47.81853
+    -122.60678,
+    47.6904,
+    -122.47688,
+    47.77297
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-suquamish-indian-tribe-of-the-port-madison-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0077",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.7287,
+      -122.5586
+    ],
+    "forecastZones": [
+      "forecast:WAZ323"
+    ],
+    "countyZones": [
+      "county:WAC035"
+    ],
+    "fireZones": [
+      "fire:WAZ654"
+    ],
+    "marineZones": [
+      "marine:PZZ135"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:BMTW1",
+    "nwps:EBSW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0077"
+    ],
+    "censusAiannhce": [
+      "2925"
+    ],
+    "censusGeoid": "2925R",
     "biaTldObjectId": 380,
     "biaAnvObjectId": null,
     "iscBandNumber": null

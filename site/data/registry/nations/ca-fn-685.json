@@ -30,30 +30,82 @@
     [
       50.72039,
       -121.32247
+    ],
+    [
+      50.72651,
+      -121.29837
+    ],
+    [
+      50.68018,
+      -121.31072
+    ],
+    [
+      50.78505,
+      -121.4055
+    ],
+    [
+      50.71568,
+      -121.3102
     ]
   ],
   "bbox": [
-    -121.46436,
-    50.63056,
-    -121.18058,
-    50.81022
+    -121.42117,
+    50.66967,
+    -121.28201,
+    50.78958
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-685.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07159",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07160",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07161",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07162",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-55",
+    "citypageName": "Cache Creek",
+    "distanceKm": 10,
+    "forecastZones": [
+      "083200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LF002",
+    "wsc:08LF099",
+    "wsc:08LF100"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -30,30 +30,86 @@
     [
       49.67877,
       -124.9589
+    ],
+    [
+      50.38678,
+      -125.93906
+    ],
+    [
+      49.69397,
+      -125.00824
+    ],
+    [
+      49.68049,
+      -124.95733
+    ],
+    [
+      49.66125,
+      -124.92089
     ]
   ],
   "bbox": [
-    -125.09773,
-    49.58894,
-    -124.82007,
-    49.7686
+    -125.94652,
+    49.66013,
+    -124.91736,
+    50.39064
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-624.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06970",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06971",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06972",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06973",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-61",
+    "citypageName": "Comox",
+    "distanceKm": 2.3,
+    "forecastZones": [
+      "081300",
+      "081200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HB087",
+    "wsc:08HB083",
+    "wsc:08HB011",
+    "wsc:08HB006",
+    "wsc:08HB025",
+    "wsc:08HB084"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

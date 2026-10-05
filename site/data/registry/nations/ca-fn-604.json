@@ -30,30 +30,61 @@
     [
       50.4585,
       -115.96399
+    ],
+    [
+      50.36974,
+      -115.88478
+    ],
+    [
+      49.5815,
+      -115.77331
     ]
   ],
   "bbox": [
-    -116.10509,
-    50.36867,
-    -115.82289,
-    50.54833
+    -115.98435,
+    49.57693,
+    -115.75418,
+    50.46154
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-604.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07427",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07437",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Edmonton",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-72",
+    "citypageName": "Invermere",
+    "distanceKm": 7.1,
+    "forecastZones": [
+      "084500"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KOTX",
+    "ridgeLoop": "KOTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NG065",
+    "wsc:08NG076"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

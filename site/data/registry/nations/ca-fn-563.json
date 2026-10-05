@@ -30,30 +30,95 @@
     [
       49.20143,
       -122.67693
+    ],
+    [
+      49.36038,
+      -122.61682
+    ],
+    [
+      49.18836,
+      -122.69523
+    ],
+    [
+      49.20293,
+      -122.67374
+    ],
+    [
+      49.19413,
+      -122.65355
+    ],
+    [
+      49.2165,
+      -122.65827
     ]
   ],
   "bbox": [
-    -122.81441,
-    49.1116,
-    -122.53945,
-    49.29126
+    -122.70059,
+    49.18485,
+    -122.59725,
+    49.36829
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-563.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08024",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08025",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08026",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08027",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08028",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-35",
+    "citypageName": "Pitt Meadows",
+    "distanceKm": 2.3,
+    "forecastZones": [
+      "082512-082513-082600-082711-082713-082714"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH005",
+    "wsc:08MH035",
+    "wsc:08MH006",
+    "wsc:08MH090",
+    "wsc:08MH168",
+    "wsc:08MH076"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

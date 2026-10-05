@@ -33,30 +33,64 @@
     [
       44.71973,
       -123.9166
+    ],
+    [
+      44.75768,
+      -123.73685
     ]
   ],
   "bbox": [
-    -124.04302,
-    44.6299,
-    -123.79018,
-    44.80956
+    -124.07961,
+    44.47283,
+    -123.64872,
+    44.79826
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-confederated-tribes-of-siletz-indians-of-oregon.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0083",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "PQR"
+    ],
+    "point": [
+      44.7197,
+      -123.9166
+    ],
+    "forecastZones": [
+      "forecast:ORZ103",
+      "forecast:ORZ105"
+    ],
+    "countyZones": [
+      "county:ORC041"
+    ],
+    "fireZones": [
+      "fire:ORZ681",
+      "fire:ORZ683"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KRTX",
+    "ridgeLoop": "KRTX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:SILO3",
+    "nwps:YRCO3"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

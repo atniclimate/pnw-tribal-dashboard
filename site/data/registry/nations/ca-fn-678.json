@@ -47,13 +47,22 @@
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-80",
+    "citypageName": "Terrace",
+    "distanceKm": 85.2,
+    "forecastZones": [
+      "089200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08DB013"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

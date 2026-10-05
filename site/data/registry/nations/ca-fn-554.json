@@ -47,13 +47,23 @@
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-58",
+    "citypageName": "Powell River",
+    "distanceKm": 5.9,
+    "forecastZones": [
+      "082300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08GC008",
+    "wsc:08GB014"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

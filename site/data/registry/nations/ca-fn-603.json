@@ -30,30 +30,63 @@
     [
       49.09333,
       -115.08191
+    ],
+    [
+      49.04063,
+      -115.09639
+    ],
+    [
+      49.5815,
+      -115.77331
     ]
   ],
   "bbox": [
-    -115.21909,
-    49.0035,
-    -114.94473,
-    49.18316
+    -115.78114,
+    48.99962,
+    -115.04983,
+    49.58921
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-603.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07426",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07437",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Edmonton",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-77",
+    "citypageName": "Cranbrook",
+    "distanceKm": 68.3,
+    "forecastZones": [
+      "084500"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KMSX",
+    "ridgeLoop": "KMSX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08NG065",
+    "wsc:08NG076",
+    "wsc:08NK030",
+    "wsc:08NK031"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -32,30 +32,69 @@
     [
       47.00332,
       -122.6699
+    ],
+    [
+      47.01967,
+      -122.65696
     ]
   ],
   "bbox": [
-    -122.80163,
-    46.91349,
-    -122.53817,
-    47.09315
+    -122.69624,
+    46.99599,
+    -122.62357,
+    47.04435
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-nisqually-indian-tribe.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0073",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      47.0033,
+      -122.6699
+    ],
+    "forecastZones": [
+      "forecast:WAZ317",
+      "forecast:WAZ316"
+    ],
+    "countyZones": [
+      "county:WAC067",
+      "county:WAC053"
+    ],
+    "fireZones": [
+      "fire:WAZ655",
+      "fire:WAZ657"
+    ],
+    "marineZones": [
+      "marine:PZZ135"
+    ]
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KLGX",
+    "ridgeLoop": "KLGX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "nwps:MKNW1",
+    "nwps:DSRW1",
+    "nwps:SKMW1",
+    "nwps:SKRW1"
+  ],
   "contactIds": [],
   "website": null,
   "isc": null,

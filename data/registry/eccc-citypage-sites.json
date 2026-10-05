@@ -1,0 +1,697 @@
+{
+ "schema": "cthd.eccc-citypage-sites/1",
+ "sourceId": "eccc-citypage-realtime",
+ "url": "https://api.weather.gc.ca/collections/citypageweather-realtime/items?f=json&limit=1000",
+ "capturedAt": "2026-10-05",
+ "licence": "Environment and Climate Change Canada Data Servers End-use Licence",
+ "reduction": "The full response (844 city pages, 29,100,163 bytes, SHA-256 of the response body below) reduced to the British Columbia items: id, English name, English region, and point coordinates. No forecast text is kept.",
+ "responseSha256": "6d34c6f34a236e0719f9be8652372732baaf01a13069b0932b9d1f650603a4eb",
+ "sites": [
+  {
+   "id": "bc-1",
+   "name": "Gibsons",
+   "region": "Sunshine Coast - Gibsons to Earls Cove",
+   "lat": 49.4,
+   "lon": -123.51
+  },
+  {
+   "id": "bc-3",
+   "name": "Sechelt",
+   "region": "Sunshine Coast - Gibsons to Earls Cove",
+   "lat": 49.47,
+   "lon": -123.76
+  },
+  {
+   "id": "bc-5",
+   "name": "Ucluelet",
+   "region": "West Vancouver Island",
+   "lat": 48.94,
+   "lon": -125.54
+  },
+  {
+   "id": "bc-6",
+   "name": "Cassiar",
+   "region": "Cassiar Mountains",
+   "lat": 59.19,
+   "lon": -129.23
+  },
+  {
+   "id": "bc-7",
+   "name": "100 Mile House",
+   "region": "100 Mile",
+   "lat": 51.64,
+   "lon": -121.29
+  },
+  {
+   "id": "bc-8",
+   "name": "Dome Creek",
+   "region": "McGregor",
+   "lat": 53.75,
+   "lon": -121.03
+  },
+  {
+   "id": "bc-9",
+   "name": "Good Hope Lake",
+   "region": "Cassiar Mountains",
+   "lat": 59.29,
+   "lon": -129.29
+  },
+  {
+   "id": "bc-10",
+   "name": "Rock Creek",
+   "region": "Boundary",
+   "lat": 49.06,
+   "lon": -119
+  },
+  {
+   "id": "bc-11",
+   "name": "Kootenay (National Park)",
+   "region": "Yoho Park - Kootenay Park",
+   "lat": 51.39,
+   "lon": -116.49
+  },
+  {
+   "id": "bc-12",
+   "name": "Clearwater",
+   "region": "North Thompson",
+   "lat": 51.65,
+   "lon": -120.03
+  },
+  {
+   "id": "bc-13",
+   "name": "Valemount",
+   "region": "Yellowhead",
+   "lat": 53.3,
+   "lon": -120.17
+  },
+  {
+   "id": "bc-14",
+   "name": "Dease Lake",
+   "region": "Dease Lake",
+   "lat": 58.44,
+   "lon": -130
+  },
+  {
+   "id": "bc-15",
+   "name": "Estevan Point",
+   "region": "West Vancouver Island",
+   "lat": 49.38,
+   "lon": -126.53
+  },
+  {
+   "id": "bc-16",
+   "name": "Pemberton",
+   "region": "Whistler",
+   "lat": 50.32,
+   "lon": -122.8
+  },
+  {
+   "id": "bc-17",
+   "name": "Tofino",
+   "region": "West Vancouver Island",
+   "lat": 49.15,
+   "lon": -125.91
+  },
+  {
+   "id": "bc-18",
+   "name": "Bella Coola",
+   "region": "Central Coast - inland sections",
+   "lat": 52.37,
+   "lon": -126.76
+  },
+  {
+   "id": "bc-19",
+   "name": "Campbell River",
+   "region": "East Vancouver Island - Courtenay to Campbell River",
+   "lat": 50.02,
+   "lon": -125.24
+  },
+  {
+   "id": "bc-20",
+   "name": "Nanaimo",
+   "region": "East Vancouver Island - Duncan to Nanaimo",
+   "lat": 49.17,
+   "lon": -123.94
+  },
+  {
+   "id": "bc-21",
+   "name": "Castlegar",
+   "region": "West Kootenay",
+   "lat": 49.43,
+   "lon": -117.53
+  },
+  {
+   "id": "bc-22",
+   "name": "Blue River",
+   "region": "North Columbia",
+   "lat": 52.11,
+   "lon": -119.31
+  },
+  {
+   "id": "bc-23",
+   "name": "Chetwynd",
+   "region": "B.C. South Peace River",
+   "lat": 55.69,
+   "lon": -121.62
+  },
+  {
+   "id": "bc-24",
+   "name": "Chilliwack",
+   "region": "Fraser Valley - central including Chilliwack",
+   "lat": 49.17,
+   "lon": -121.94
+  },
+  {
+   "id": "bc-25",
+   "name": "Dawson Creek",
+   "region": "B.C. South Peace River",
+   "lat": 55.76,
+   "lon": -120.23
+  },
+  {
+   "id": "bc-26",
+   "name": "Creston",
+   "region": "Kootenay Lake",
+   "lat": 49.1,
+   "lon": -116.51
+  },
+  {
+   "id": "bc-27",
+   "name": "Vernon",
+   "region": "North Okanagan - including Vernon",
+   "lat": 50.26,
+   "lon": -119.27
+  },
+  {
+   "id": "bc-28",
+   "name": "Lillooet",
+   "region": "Fraser Canyon - north including Lillooet",
+   "lat": 50.69,
+   "lon": -121.93
+  },
+  {
+   "id": "bc-29",
+   "name": "Malahat",
+   "region": "Greater Victoria",
+   "lat": 48.55,
+   "lon": -123.57
+  },
+  {
+   "id": "bc-30",
+   "name": "Kitimat",
+   "region": "North Coast - inland including Kitimat",
+   "lat": 54.05,
+   "lon": -128.65
+  },
+  {
+   "id": "bc-31",
+   "name": "Hope Slide",
+   "region": "Manning - Skagit Valley",
+   "lat": 49.32,
+   "lon": -121.28
+  },
+  {
+   "id": "bc-32",
+   "name": "Gonzales Point",
+   "region": "Greater Victoria",
+   "lat": 48.41,
+   "lon": -123.29
+  },
+  {
+   "id": "bc-33",
+   "name": "Lytton",
+   "region": "Fraser Canyon - south including Lytton",
+   "lat": 50.23,
+   "lon": -121.58
+  },
+  {
+   "id": "bc-34",
+   "name": "Golden",
+   "region": "East Columbia",
+   "lat": 51.29,
+   "lon": -116.96
+  },
+  {
+   "id": "bc-35",
+   "name": "Pitt Meadows",
+   "region": "Metro Vancouver - northeast including Coquitlam and Maple Ridge",
+   "lat": 49.22,
+   "lon": -122.69
+  },
+  {
+   "id": "bc-36",
+   "name": "Hope",
+   "region": "Fraser Valley - east including Hope",
+   "lat": 49.38,
+   "lon": -121.43
+  },
+  {
+   "id": "bc-37",
+   "name": "Nelson",
+   "region": "West Kootenay",
+   "lat": 49.5,
+   "lon": -117.28
+  },
+  {
+   "id": "bc-38",
+   "name": "Nakusp",
+   "region": "Arrow Lakes - Slocan Lake",
+   "lat": 50.24,
+   "lon": -117.8
+  },
+  {
+   "id": "bc-39",
+   "name": "Grand Forks",
+   "region": "Boundary",
+   "lat": 49.04,
+   "lon": -118.44
+  },
+  {
+   "id": "bc-40",
+   "name": "Esquimalt",
+   "region": "Greater Victoria",
+   "lat": 48.43,
+   "lon": -123.41
+  },
+  {
+   "id": "bc-41",
+   "name": "Princeton",
+   "region": "Similkameen",
+   "lat": 49.45,
+   "lon": -120.51
+  },
+  {
+   "id": "bc-42",
+   "name": "Puntzi Mountain",
+   "region": "Chilcotin",
+   "lat": 52.71,
+   "lon": -124.98
+  },
+  {
+   "id": "bc-43",
+   "name": "Burns Lake",
+   "region": "Lakes District",
+   "lat": 54.23,
+   "lon": -125.76
+  },
+  {
+   "id": "bc-44",
+   "name": "Vanderhoof",
+   "region": "Stuart - Nechako",
+   "lat": 54.02,
+   "lon": -124
+  },
+  {
+   "id": "bc-45",
+   "name": "Kamloops",
+   "region": "South Thompson",
+   "lat": 50.68,
+   "lon": -120.35
+  },
+  {
+   "id": "bc-46",
+   "name": "Port Alberni",
+   "region": "Inland Vancouver Island",
+   "lat": 49.24,
+   "lon": -124.8
+  },
+  {
+   "id": "bc-47",
+   "name": "McBride",
+   "region": "Yellowhead",
+   "lat": 53.3,
+   "lon": -120.17
+  },
+  {
+   "id": "bc-48",
+   "name": "Kelowna",
+   "region": "Central Okanagan - including Kelowna",
+   "lat": 49.88,
+   "lon": -119.48
+  },
+  {
+   "id": "bc-49",
+   "name": "Merritt",
+   "region": "Nicola",
+   "lat": 50.11,
+   "lon": -120.79
+  },
+  {
+   "id": "bc-50",
+   "name": "Squamish",
+   "region": "Howe Sound",
+   "lat": 49.7,
+   "lon": -123.15
+  },
+  {
+   "id": "bc-51",
+   "name": "Salmon Arm",
+   "region": "Shuswap",
+   "lat": 50.7,
+   "lon": -119.27
+  },
+  {
+   "id": "bc-52",
+   "name": "Sparwood",
+   "region": "Elk Valley",
+   "lat": 49.73,
+   "lon": -114.89
+  },
+  {
+   "id": "bc-53",
+   "name": "Tetsa River (Provincial Park)",
+   "region": "Muncho Lake Park - Stone Mountain Park",
+   "lat": 58.66,
+   "lon": -124.64
+  },
+  {
+   "id": "bc-54",
+   "name": "Summerland",
+   "region": "South Okanagan - including Penticton",
+   "lat": 49.61,
+   "lon": -119.67
+  },
+  {
+   "id": "bc-55",
+   "name": "Cache Creek",
+   "region": "South Thompson",
+   "lat": 50.81,
+   "lon": -121.32
+  },
+  {
+   "id": "bc-56",
+   "name": "Masset",
+   "region": "Haida Gwaii",
+   "lat": 54.02,
+   "lon": -132.15
+  },
+  {
+   "id": "bc-57",
+   "name": "Prince Rupert",
+   "region": "North Coast - coastal sections",
+   "lat": 54.32,
+   "lon": -130.32
+  },
+  {
+   "id": "bc-58",
+   "name": "Powell River",
+   "region": "Sunshine Coast - Saltery Bay to Powell River",
+   "lat": 49.87,
+   "lon": -124.55
+  },
+  {
+   "id": "bc-59",
+   "name": "Victoria (Hartland)",
+   "region": "Greater Victoria",
+   "lat": 48.57,
+   "lon": -123.46
+  },
+  {
+   "id": "bc-60",
+   "name": "Tatlayoko Lake",
+   "region": "Chilcotin",
+   "lat": 51.72,
+   "lon": -124.43
+  },
+  {
+   "id": "bc-61",
+   "name": "Comox",
+   "region": "East Vancouver Island - Courtenay to Campbell River",
+   "lat": 49.67,
+   "lon": -124.93
+  },
+  {
+   "id": "bc-62",
+   "name": "White Rock",
+   "region": "Metro Vancouver - southeast including Surrey and Langley",
+   "lat": 49.03,
+   "lon": -122.8
+  },
+  {
+   "id": "bc-63",
+   "name": "Muncho Lake",
+   "region": "Muncho Lake Park - Stone Mountain Park",
+   "lat": 58.93,
+   "lon": -125.77
+  },
+  {
+   "id": "bc-64",
+   "name": "Quesnel",
+   "region": "Cariboo - north including Quesnel",
+   "lat": 52.98,
+   "lon": -122.5
+  },
+  {
+   "id": "bc-65",
+   "name": "Revelstoke",
+   "region": "West Columbia",
+   "lat": 51,
+   "lon": -118.2
+  },
+  {
+   "id": "bc-66",
+   "name": "Victoria (University of)",
+   "region": "Greater Victoria",
+   "lat": 48.47,
+   "lon": -123.3
+  },
+  {
+   "id": "bc-67",
+   "name": "Atlin",
+   "region": "Atlin",
+   "lat": 59.57,
+   "lon": -133.7
+  },
+  {
+   "id": "bc-68",
+   "name": "Yoho (National Park)",
+   "region": "Yoho Park - Kootenay Park",
+   "lat": 51.39,
+   "lon": -116.49
+  },
+  {
+   "id": "bc-69",
+   "name": "Osoyoos",
+   "region": "South Okanagan - including Penticton",
+   "lat": 49.03,
+   "lon": -119.46
+  },
+  {
+   "id": "bc-70",
+   "name": "Agassiz",
+   "region": "Fraser Valley - central including Chilliwack",
+   "lat": 49.23,
+   "lon": -121.77
+  },
+  {
+   "id": "bc-71",
+   "name": "Trail",
+   "region": "West Kootenay",
+   "lat": 49.1,
+   "lon": -117.7
+  },
+  {
+   "id": "bc-72",
+   "name": "Invermere",
+   "region": "East Kootenay - north including Invermere",
+   "lat": 50.5,
+   "lon": -116.04
+  },
+  {
+   "id": "bc-73",
+   "name": "Stewart",
+   "region": "North Coast - inland including Stewart",
+   "lat": 55.94,
+   "lon": -129.98
+  },
+  {
+   "id": "bc-74",
+   "name": "Vancouver",
+   "region": "Metro Vancouver - central including the City of Vancouver Burnaby and New Westminster",
+   "lat": 49.24,
+   "lon": -123.12
+  },
+  {
+   "id": "bc-75",
+   "name": "Victoria Harbour",
+   "region": "Greater Victoria",
+   "lat": 48.42,
+   "lon": -123.39
+  },
+  {
+   "id": "bc-76",
+   "name": "Williams Lake",
+   "region": "Cariboo - south including Williams Lake",
+   "lat": 52.14,
+   "lon": -122.14
+  },
+  {
+   "id": "bc-77",
+   "name": "Cranbrook",
+   "region": "East Kootenay - south including Cranbrook",
+   "lat": 49.52,
+   "lon": -115.76
+  },
+  {
+   "id": "bc-78",
+   "name": "Fort St. John",
+   "region": "B.C. North Peace River",
+   "lat": 56.25,
+   "lon": -120.84
+  },
+  {
+   "id": "bc-79",
+   "name": "Prince George",
+   "region": "Prince George",
+   "lat": 53.91,
+   "lon": -122.78
+  },
+  {
+   "id": "bc-80",
+   "name": "Terrace",
+   "region": "North Coast - inland including Terrace",
+   "lat": 54.52,
+   "lon": -128.6
+  },
+  {
+   "id": "bc-81",
+   "name": "Abbotsford",
+   "region": "Fraser Valley - west including Abbotsford",
+   "lat": 49.06,
+   "lon": -122.32
+  },
+  {
+   "id": "bc-82",
+   "name": "Smithers",
+   "region": "Bulkley Valley",
+   "lat": 54.78,
+   "lon": -127.17
+  },
+  {
+   "id": "bc-83",
+   "name": "Fort Nelson",
+   "region": "Fort Nelson",
+   "lat": 58.81,
+   "lon": -122.7
+  },
+  {
+   "id": "bc-84",
+   "name": "Penticton",
+   "region": "South Okanagan - including Penticton",
+   "lat": 49.48,
+   "lon": -119.58
+  },
+  {
+   "id": "bc-85",
+   "name": "Victoria",
+   "region": "Greater Victoria",
+   "lat": 48.43,
+   "lon": -123.36
+  },
+  {
+   "id": "bc-86",
+   "name": "Whistler",
+   "region": "Whistler",
+   "lat": 50.12,
+   "lon": -122.96
+  },
+  {
+   "id": "bc-87",
+   "name": "Liard River",
+   "region": "Watson Lake",
+   "lat": 59.42,
+   "lon": -126.08
+  },
+  {
+   "id": "bc-88",
+   "name": "Sandspit",
+   "region": "Haida Gwaii",
+   "lat": 53.25,
+   "lon": -131.81
+  },
+  {
+   "id": "bc-89",
+   "name": "Port Hardy",
+   "region": "North Vancouver Island",
+   "lat": 50.72,
+   "lon": -127.51
+  },
+  {
+   "id": "bc-90",
+   "name": "Mackenzie",
+   "region": "Williston",
+   "lat": 55.34,
+   "lon": -123.1
+  },
+  {
+   "id": "bc-91",
+   "name": "Clinton",
+   "region": "100 Mile",
+   "lat": 51.09,
+   "lon": -121.59
+  },
+  {
+   "id": "bc-92",
+   "name": "Courtenay",
+   "region": "East Vancouver Island - Courtenay to Campbell River",
+   "lat": 49.69,
+   "lon": -125
+  },
+  {
+   "id": "bc-93",
+   "name": "Gulf Islands (Southern)",
+   "region": "Southern Gulf Islands",
+   "lat": 48.78,
+   "lon": -123.05
+  },
+  {
+   "id": "bc-94",
+   "name": "Bella Bella",
+   "region": "Central Coast - coastal sections",
+   "lat": 52.16,
+   "lon": -128.14
+  },
+  {
+   "id": "bc-95",
+   "name": "Cummins Lakes Park",
+   "region": "Kinbasket",
+   "lat": 52.1,
+   "lon": -118.05
+  },
+  {
+   "id": "bc-96",
+   "name": "Richmond",
+   "region": "Metro Vancouver - southwest including Richmond and Delta",
+   "lat": 49.15,
+   "lon": -123.16
+  },
+  {
+   "id": "bc-97",
+   "name": "Duncan",
+   "region": "East Vancouver Island - Duncan to Nanaimo",
+   "lat": 48.78,
+   "lon": -123.7
+  },
+  {
+   "id": "bc-98",
+   "name": "Qualicum Beach",
+   "region": "East Vancouver Island - Nanoose Bay to Fanny Bay",
+   "lat": 49.35,
+   "lon": -124.44
+  },
+  {
+   "id": "bc-99",
+   "name": "West Vancouver",
+   "region": "Metro Vancouver - North Shore including West Vancouver and North Vancouver",
+   "lat": 49.33,
+   "lon": -123.16
+  },
+  {
+   "id": "bc-100",
+   "name": "Langley",
+   "region": "Metro Vancouver - southeast including Surrey and Langley",
+   "lat": 49.1,
+   "lon": -122.66
+  }
+ ]
+}

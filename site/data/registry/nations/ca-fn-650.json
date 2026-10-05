@@ -30,30 +30,85 @@
     [
       48.97097,
       -123.65969
+    ],
+    [
+      48.96237,
+      -123.64541
+    ],
+    [
+      48.92648,
+      -123.62842
+    ],
+    [
+      49.00645,
+      -123.58472
+    ],
+    [
+      48.88365,
+      -123.67613
     ]
   ],
   "bbox": [
-    -123.79654,
-    48.88114,
-    -123.52284,
-    49.0608
+    -123.67917,
+    48.88175,
+    -123.58308,
+    49.01177
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-650.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06822",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06823",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06824",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06825",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-97",
+    "citypageName": "Duncan",
+    "distanceKm": 21.4,
+    "forecastZones": [
+      "082800",
+      "081300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HA001",
+    "wsc:08HA016",
+    "wsc:08HA011",
+    "wsc:08HA003",
+    "wsc:08HB034"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

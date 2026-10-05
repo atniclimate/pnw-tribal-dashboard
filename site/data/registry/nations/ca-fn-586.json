@@ -30,30 +30,75 @@
     [
       49.29387,
       -121.65795
+    ],
+    [
+      49.30413,
+      -121.65393
+    ],
+    [
+      49.31233,
+      -121.65839
+    ],
+    [
+      49.29714,
+      -121.64948
     ]
   ],
   "bbox": [
-    -121.79569,
-    49.20404,
-    -121.52021,
-    49.3837
+    -121.66354,
+    49.29316,
+    -121.64179,
+    49.31495
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-586.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08084",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08085",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08086",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-70",
+    "citypageName": "Agassiz",
+    "distanceKm": 10.8,
+    "forecastZones": [
+      "082711-082712-082720-082730"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MF072",
+    "wsc:08MF074",
+    "wsc:08MG012",
+    "wsc:08MF076",
+    "wsc:08MF035",
+    "wsc:08MF005"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

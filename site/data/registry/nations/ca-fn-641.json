@@ -30,30 +30,95 @@
     [
       48.99302,
       -123.77211
+    ],
+    [
+      49.00716,
+      -123.7812
+    ],
+    [
+      49.01632,
+      -123.85087
+    ],
+    [
+      48.90181,
+      -123.69433
+    ],
+    [
+      49.04598,
+      -123.87655
+    ],
+    [
+      48.89257,
+      -123.68644
     ]
   ],
   "bbox": [
-    -123.90902,
-    48.90319,
-    -123.6352,
-    49.08285
+    -123.87827,
+    48.8903,
+    -123.68548,
+    49.04888
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-641.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06795",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06796",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06797",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "06798",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10251",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-20",
+    "citypageName": "Nanaimo",
+    "distanceKm": 23.2,
+    "forecastZones": [
+      "081300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HA001",
+    "wsc:08HB034",
+    "wsc:08HA016",
+    "wsc:08HA011",
+    "wsc:08HB032",
+    "wsc:08HA003"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

@@ -30,30 +30,83 @@
     [
       54.52289,
       -128.66733
+    ],
+    [
+      54.52916,
+      -128.67462
+    ],
+    [
+      54.58661,
+      -128.66758
+    ],
+    [
+      54.48342,
+      -128.73868
+    ],
+    [
+      54.15572,
+      -129.96992
     ]
   ],
   "bbox": [
-    -128.82211,
-    54.43306,
-    -128.51255,
-    54.61272
+    -129.97133,
+    54.15488,
+    -128.65232,
+    54.59088
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-681.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07646",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07647",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07648",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07649",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-80",
+    "citypageName": "Terrace",
+    "distanceKm": 4.4,
+    "forecastZones": [
+      "089200",
+      "089100"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08EG019",
+    "wsc:08EF001",
+    "wsc:08EF005"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

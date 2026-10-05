@@ -30,30 +30,71 @@
     [
       57.83787,
       -129.98822
+    ],
+    [
+      57.83856,
+      -129.98695
+    ],
+    [
+      57.89389,
+      -131.17707
+    ],
+    [
+      57.83479,
+      -129.99972
     ]
   ],
   "bbox": [
-    -130.15697,
-    57.74804,
-    -129.81947,
-    57.9277
+    -131.18518,
+    57.83162,
+    -129.97523,
+    57.89828
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-683.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07661",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07662",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08363",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-14",
+    "citypageName": "Dease Lake",
+    "distanceKm": 67,
+    "forecastZones": [
+      "089300"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08CE001",
+    "wsc:08CE005"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

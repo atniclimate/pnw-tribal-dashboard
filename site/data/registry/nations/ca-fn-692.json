@@ -30,30 +30,102 @@
     [
       50.61942,
       -121.31912
+    ],
+    [
+      50.60031,
+      -121.31948
+    ],
+    [
+      50.6633,
+      -121.25916
+    ],
+    [
+      50.61529,
+      -121.31698
+    ],
+    [
+      50.63077,
+      -121.27361
+    ],
+    [
+      50.6432,
+      -121.44608
+    ],
+    [
+      50.60881,
+      -121.37732
     ]
   ],
   "bbox": [
-    -121.4607,
-    50.52959,
-    -121.17754,
-    50.70925
+    -121.45065,
+    50.58984,
+    -121.25174,
+    50.67119
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-692.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07191",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07192",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07193",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07194",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07195",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07196",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-55",
+    "citypageName": "Cache Creek",
+    "distanceKm": 21.2,
+    "forecastZones": [
+      "083200"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08LF002",
+    "wsc:08LF099",
+    "wsc:08LF100"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

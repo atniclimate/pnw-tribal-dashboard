@@ -30,30 +30,101 @@
     [
       50.92248,
       -127.93999
+    ],
+    [
+      50.92096,
+      -127.88995
+    ],
+    [
+      50.8747,
+      -128.05454
+    ],
+    [
+      50.89512,
+      -127.69048
+    ],
+    [
+      50.83222,
+      -127.62521
+    ],
+    [
+      50.76902,
+      -128.41743
+    ],
+    [
+      50.67213,
+      -128.34326
     ]
   ],
   "bbox": [
-    -128.0825,
-    50.83265,
-    -127.79748,
-    51.01231
+    -128.42019,
+    50.67137,
+    -127.62394,
+    50.94524
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-632.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07058",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07059",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07060",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07061",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07062",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07063",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-89",
+    "citypageName": "Port Hardy",
+    "distanceKm": 37.7,
+    "forecastZones": [
+      "081200"
+    ]
+  },
   "radar": {
     "nexrad": null,
     "ridgeLoop": null,
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08HF006",
+    "wsc:08HF012"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

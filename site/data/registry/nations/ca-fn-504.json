@@ -30,27 +30,73 @@
     [
       59.29492,
       -129.29055
+    ],
+    [
+      59.28668,
+      -129.28754
+    ],
+    [
+      59.60428,
+      -129.23869
+    ],
+    [
+      59.41985,
+      -129.17875
+    ],
+    [
+      59.67023,
+      -129.16453
     ]
   ],
   "bbox": [
-    -129.46648,
-    59.20509,
-    -129.11462,
-    59.38475
+    -129.30688,
+    59.27794,
+    -129.16339,
+    59.67085
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-504.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09112",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09113",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09123",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "09124",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-9",
+    "citypageName": "Good Hope Lake",
+    "distanceKm": 0.5,
+    "forecastZones": []
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
     "eccc": null
   },
   "gauges": [],

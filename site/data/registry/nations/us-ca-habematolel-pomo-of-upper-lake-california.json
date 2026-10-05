@@ -33,27 +33,58 @@
     [
       39.16417,
       -122.9106
+    ],
+    [
+      39.18595,
+      -122.91901
     ]
   ],
   "bbox": [
-    -123.02646,
-    39.07434,
-    -122.79474,
-    39.254
+    -122.95733,
+    39.1585,
+    -122.90295,
+    39.24656
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-ca-habematolel-pomo-of-upper-lake-california.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0196",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
   },
   "timeZone": "America/Los_Angeles",
   "timeZoneSource": "tz-lookup",
   "units": "us",
-  "nws": null,
+  "nws": {
+    "wfo": [
+      "EKA"
+    ],
+    "point": [
+      39.1642,
+      -122.9106
+    ],
+    "forecastZones": [
+      "forecast:CAZ118",
+      "forecast:CAZ114"
+    ],
+    "countyZones": [
+      "county:CAC033"
+    ],
+    "fireZones": [
+      "fire:CAZ421",
+      "fire:CAZ418"
+    ],
+    "marineZones": []
+  },
   "eccc": null,
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KBBX",
+    "ridgeLoop": "KBBX",
     "eccc": null
   },
   "gauges": [],
@@ -61,9 +92,13 @@
   "website": null,
   "isc": null,
   "codes": {
-    "biaLarIds": [],
-    "censusAiannhce": [],
-    "censusGeoid": null,
+    "biaLarIds": [
+      "LAR0196"
+    ],
+    "censusAiannhce": [
+      "4430"
+    ],
+    "censusGeoid": "4430R",
     "biaTldObjectId": 423,
     "biaAnvObjectId": null,
     "iscBandNumber": null

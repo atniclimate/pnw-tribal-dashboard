@@ -30,30 +30,75 @@
     [
       49.31062,
       -122.98787
+    ],
+    [
+      49.30937,
+      -122.97434
+    ],
+    [
+      49.47539,
+      -122.88498
+    ],
+    [
+      49.47354,
+      -122.88268
     ]
   ],
   "bbox": [
-    -123.12566,
-    49.22079,
-    -122.85008,
-    49.40045
+    -122.99133,
+    49.30325,
+    -122.88265,
+    49.47636
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-549.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07903",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07904",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07905",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-74",
+    "citypageName": "Vancouver",
+    "distanceKm": 12.4,
+    "forecastZones": [
+      "082512-082513-082600-082711-082713-082714"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08GA030",
+    "wsc:08GA079",
+    "wsc:08MH141",
+    "wsc:08GA061",
+    "wsc:08GA077",
+    "wsc:08GA031"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {

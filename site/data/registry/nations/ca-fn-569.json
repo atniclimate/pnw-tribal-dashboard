@@ -30,30 +30,55 @@
     [
       49.01453,
       -122.77774
+    ],
+    [
+      49.01277,
+      -122.76672
     ]
   ],
   "bbox": [
-    -122.91471,
-    48.9247,
-    -122.64077,
-    49.10436
+    -122.78996,
+    49.0055,
+    -122.75725,
+    49.0165
   ],
   "boundary": {
-    "status": "point-only",
-    "detailRef": null,
-    "parts": []
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-569.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "08047",
+        "kind": "indian-reserve",
+        "vintage": "2026-09-14"
+      }
+    ]
   },
   "timeZone": "America/Vancouver",
   "timeZoneSource": "tz-lookup",
   "units": "metric",
   "nws": null,
-  "eccc": null,
+  "eccc": {
+    "citypageId": "bc-62",
+    "citypageName": "White Rock",
+    "distanceKm": 2.4,
+    "forecastZones": [
+      "082512-082513-082600-082711-082713-082714"
+    ]
+  },
   "radar": {
-    "nexrad": null,
-    "ridgeLoop": null,
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
     "eccc": null
   },
-  "gauges": [],
+  "gauges": [
+    "wsc:08MH155",
+    "wsc:08MH090",
+    "wsc:08MH156",
+    "wsc:08MH098",
+    "wsc:08MH126",
+    "wsc:08MH053"
+  ],
   "contactIds": [],
   "website": null,
   "isc": {
