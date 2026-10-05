@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "openfema-declarations",
+  "label": "footprint-states-730d-page-1",
+  "file": "2026-10-05-footprint-states-730d-page-1.json",
+  "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=%28state+eq+%27WA%27+or+state+eq+%27OR%27+or+state+eq+%27ID%27+or+state+eq+%27CA%27+or+state+eq+%27NV%27+or+state+eq+%27MT%27+or+state+eq+%27AK%27%29+and+declarationDate+ge+%272024-10-05T00%3A00%3A00.000Z%27&%24select=femaDeclarationString%2CdisasterNumber%2Cstate%2CdeclarationType%2CdeclarationDate%2CincidentType%2CdeclarationTitle%2CihProgramDeclared%2CiaProgramDeclared%2CpaProgramDeclared%2ChmProgramDeclared%2CincidentBeginDate%2CincidentEndDate%2CdisasterCloseoutDate%2CtribalRequest%2CfipsStateCode%2CfipsCountyCode%2CdesignatedArea%2ClastRefresh&%24orderby=declarationDate+desc%2CdisasterNumber+desc%2CdesignatedArea+asc&%24top=1000&%24skip=0",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T09:45:35.582Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": null,
+  "bytes": 142464,
+  "sha256": "f1ef2155fc30c76e7a7c1fdbdf14b10911904f97ddcba78f915b7ef2b18da6e1",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

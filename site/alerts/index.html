@@ -22,23 +22,19 @@
   <link rel="modulepreload" href="../static/js/pages/alerts.js">
   <link rel="modulepreload" href="../static/js/ui/chrome.js">
   <link rel="modulepreload" href="../static/js/core/embed.js">
-  <link rel="modulepreload" href="../static/js/ui/panel.js">
   <link rel="modulepreload" href="../static/js/core/dom.js">
-  <link rel="modulepreload" href="../static/js/core/poller.js">
-  <link rel="modulepreload" href="../static/js/core/provenance.js">
-  <link rel="modulepreload" href="../static/js/core/time.js">
-  <link rel="modulepreload" href="../static/js/core/sources.js">
-  <link rel="modulepreload" href="../static/js/config/app.js">
   <link rel="modulepreload" href="../static/js/core/net.js">
+  <link rel="modulepreload" href="../static/js/config/app.js">
   <link rel="modulepreload" href="../static/js/config/pages.js">
   <link rel="modulepreload" href="../static/js/core/priority.js">
+  <link rel="modulepreload" href="../static/js/core/sources.js">
   <link rel="modulepreload" href="../static/js/core/lastgood.js">
   <link rel="modulepreload" href="../static/js/core/storage.js">
   <link rel="modulepreload" href="../static/js/core/status.js">
-  <link rel="modulepreload" href="../static/js/alerts/service.js">
-  <link rel="modulepreload" href="../static/js/alerts/model.js">
-  <link rel="modulepreload" href="../static/js/alerts/lifecycle.js">
-  <link rel="modulepreload" href="../static/js/ui/alert-list.js">
+  <link rel="modulepreload" href="../static/js/core/time.js">
+  <link rel="modulepreload" href="../static/js/ui/panel.js">
+  <link rel="modulepreload" href="../static/js/core/poller.js">
+  <link rel="modulepreload" href="../static/js/core/provenance.js">
   <!-- modulepreload:end -->
   <script type="module" src="../static/js/pages/alerts.js"></script>
   <link rel="manifest" href="../manifest.webmanifest">
@@ -83,6 +79,7 @@
       <a class="tabs__tab" href="./?view=map" data-view-link="map">Map</a>
       <a class="tabs__tab" href="./?view=declarations" data-view-link="declarations">Declarations</a>
     </nav>
+    <div class="filters" data-alert-filters aria-label="Alert Filters"></div>
     <section class="view" data-view="list" aria-label="Alert List">
       <section class="panel" data-panel="alerts-summary" data-sources="nws-alerts-active eccc-geomet-weather-alerts ntwc-atom" aria-labelledby="alerts-summary-h">
         <h2 class="panel__title" id="alerts-summary-h">Summary</h2>
@@ -92,11 +89,11 @@
         <h2 class="panel__title" id="alerts-list-h">Active Alerts</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
-      <section class="panel" data-panel="bc-evacuations" data-sources="bc-emcr-evacuations" aria-labelledby="bc-evacuations-h">
+      <section class="panel" data-panel="bc-evacuations" data-sources="bc-emcr-evacuations" aria-labelledby="bc-evacuations-h" hidden>
         <h2 class="panel__title" id="bc-evacuations-h">British Columbia Evacuation Orders and Alerts</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
-      <section class="panel" data-panel="bc-rfc" data-sources="bc-rfc-flood-advisories" aria-labelledby="bc-rfc-h">
+      <section class="panel" data-panel="bc-rfc" data-sources="bc-rfc-flood-advisories" aria-labelledby="bc-rfc-h" hidden>
         <h2 class="panel__title" id="bc-rfc-h">British Columbia River Forecast Centre Advisories</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
@@ -108,6 +105,8 @@
       </section>
     </section>
     <section class="view" data-view="declarations" aria-label="Declarations">
+      <div class="filters" data-declaration-filters aria-label="Declaration Filters"></div>
+      <p class="panel-note">Know of a declaration that is not listed? <a href="https://github.com/atniclimate/pnw-tribal-dashboard/issues/new?title=Declaration%20submission&amp;labels=declaration" target="_blank" rel="noopener">Submit a Declaration</a> with a link to the issuing government's own page, or write to <a href="mailto:climate@atnitribes.org">climate@atnitribes.org</a>.</p>
       <section class="panel" data-panel="declarations-fema" data-sources="openfema-declarations" aria-labelledby="declarations-fema-h">
         <h2 class="panel__title" id="declarations-fema-h">Federal Declarations</h2>
         <div class="panel__body" data-panel-body></div>
