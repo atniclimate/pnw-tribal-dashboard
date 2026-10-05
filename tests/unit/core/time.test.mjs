@@ -65,14 +65,35 @@ describe('zoneAbbreviation', () => {
 });
 
 describe('zonedDayKey across both DST transitions in seven zones', () => {
-  // [zone, observes DST]. Fall back 11/01/2026 (25-hour day); spring forward 03/14/2027 (23-hour day).
-  // America/Vancouver is listed as not observing: tzdata 2026b (this Node build) has British Columbia on
-  // permanent daylight time from 11/01/2026, so its clocks neither fall back nor spring forward in this window.
-  // The module reads the zone database and hard-codes nothing, so the expectation follows the data.
-  const ZONES = /** @type {const} */ ([
-    ['America/Los_Angeles', true], ['America/Boise', true], ['America/Denver', true], ['America/Vancouver', false],
-    ['America/Edmonton', true], ['America/Juneau', true], ['America/Creston', false],
-  ]);
+  // Fall back 11/01/2026 (25-hour day where observed); spring forward 03/14/2027 (23-hour day where observed).
+  // British Columbia (03/09/2026) and Alberta (2026) moved to permanent time, and tzdata releases record those
+  // changes at different versions, so whether a zone transitions depends on the runtime's zone database. The
+  // module reads that database and hard-codes nothing, so the expected day length is derived from the same
+  // database: 24 hours minus the change in UTC offset across the day.
+  const ZONES = ['America/Los_Angeles', 'America/Boise', 'America/Denver', 'America/Vancouver', 'America/Edmonton',
+    'America/Juneau', 'America/Creston'];
+
+  /**
+   * UTC offset in minutes of `zone` at instant `ms`, read from the runtime zone database.
+   * @param {string} zone
+   * @param {number} ms
+   */
+  function offsetMinutes(zone, ms) {
+    const name = new Intl.DateTimeFormat('en-US', { timeZone: zone, timeZoneName: 'longOffset' })
+      .formatToParts(new Date(ms)).find((p) => p.type === 'timeZoneName')?.value ?? 'GMT';
+    const m = /GMT([+-])(\d{2}):(\d{2})/.exec(name);
+    return m ? (m[1] === '-' ? -1 : 1) * (Number(m[2]) * 60 + Number(m[3])) : 0;
+  }
+
+  /**
+   * Expected length in hours of the local day `day`: noon UTC the day before versus noon UTC the day after.
+   * @param {string} zone
+   * @param {string} day YYYY-MM-DD
+   */
+  function expectedHours(zone, day) {
+    const mid = Date.parse(`${day}T12:00:00Z`);
+    return 24 - (offsetMinutes(zone, mid + 24 * HOUR) - offsetMinutes(zone, mid - 24 * HOUR)) / 60;
+  }
 
   /**
    * Walk 72 real hours starting 30 hours before local midnight of the transition day and count hours per day.
@@ -97,14 +118,19 @@ describe('zonedDayKey across both DST transitions in seven zones', () => {
     return counts;
   }
 
-  for (const [zone, dst] of ZONES) {
-    test(`${zone}: fall-back day 11/01/2026 has ${dst ? 25 : 24} hours`, () => {
-      assert.equal(hoursPerDay(zone, '2026-11-01').get('2026-11-01'), dst ? 25 : 24);
+  for (const zone of ZONES) {
+    test(`${zone}: fall-back day 11/01/2026 has the length the zone database gives`, () => {
+      assert.equal(hoursPerDay(zone, '2026-11-01').get('2026-11-01'), expectedHours(zone, '2026-11-01'));
     });
-    test(`${zone}: spring-forward day 03/14/2027 has ${dst ? 23 : 24} hours`, () => {
-      assert.equal(hoursPerDay(zone, '2027-03-14').get('2027-03-14'), dst ? 23 : 24);
+    test(`${zone}: spring-forward day 03/14/2027 has the length the zone database gives`, () => {
+      assert.equal(hoursPerDay(zone, '2027-03-14').get('2027-03-14'), expectedHours(zone, '2027-03-14'));
     });
   }
+
+  test('Los Angeles still observes both transitions (guards the derivation itself)', () => {
+    assert.equal(expectedHours('America/Los_Angeles', '2026-11-01'), 25);
+    assert.equal(expectedHours('America/Los_Angeles', '2027-03-14'), 23);
+  });
 
   test('the same instant is a different day in different zones, and never the process zone (New York)', () => {
     const t = new Date('2026-11-01T06:30:00Z'); // 11:30 PM 10/31 PDT; 2:30 AM 11/01 EDT

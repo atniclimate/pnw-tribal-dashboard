@@ -73,7 +73,7 @@ jobs:
       - name: Assemble the site
         env:
           SW_FLAG: ${{ vars.CTHD_SW_DISABLED == 'true' && '--sw-disabled' || '' }}
-        run: node scripts/assemble-site.mjs --out _site --sha "$GITHUB_SHA" --previous "${SITE_URL}build-info.json" $SW_FLAG
+        run: node scripts/assemble-site.mjs --out _site --sha "$GITHUB_SHA" --previous "${SITE_URL}build-info.json" ${SW_FLAG:+"$SW_FLAG"}
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         if: ${{ !inputs.dry_run }}
         with:
