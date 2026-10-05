@@ -25,7 +25,7 @@ describe('check:tokens', () => {
 
   test('the linter catches raw colors, radius, dark shadows, and reserved colors out of place', async () => {
     const t = (await readTokens()).dark;
-    const ctx = { isTokens: false, magenta: derivedTokens(t, ['--tribal-magenta', '--color-tribal-magenta']), red: derivedTokens(t, ['--atni-red', '--color-atni-red']) };
+    const ctx = { isTokens: false, magenta: derivedTokens(t, ['--tribal-magenta', '--color-tribal-magenta']), red: derivedTokens(t, ['--atni-red', '--color-atni-red']), buttonRed: derivedTokens(t, ['--color-red-alt', '--color-red-alt-hover']) };
     const lint = (/** @type {string} */ css) => lintStylesheet('probe.css', css, ctx);
     assert.equal(lint('.a { color: #FFF; }').length, 1);
     assert.equal(lint('.a { background: rgba(0, 0, 0, 0.5); }').length, 1);
@@ -38,6 +38,8 @@ describe('check:tokens', () => {
     assert.equal(lint('.alert-card__title { color: var(--atni-red); }').length, 1);
     assert.equal(lint('.btn--primary.alert-banner__cta { background: var(--atni-red); }').length, 1);
     assert.equal(lint('.btn--primary { background: var(--atni-red); }').length, 0);
+    assert.equal(lint('.btn--primary { background: var(--color-red-alt); border-color: var(--atni-red); }').length, 0);
+    assert.equal(lint('.alert-card .btn--primary:hover { background: var(--color-red-alt-hover); }').length, 1);
     assert.equal(lint('.status-pill { color: var(--callout-note-rule); }').length, 1);
   });
 });

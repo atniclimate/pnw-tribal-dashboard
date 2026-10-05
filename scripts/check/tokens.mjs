@@ -8,7 +8,8 @@
  *   - Tribal Magenta, or a token derived from it, is used outside the sovereignty, Treaty, land, and
  *     boundary selectors (blueprint 9.5 rule 5);
  *   - ATNI Red, or a token derived from it, is used outside its whitelist, or anywhere in alert UI
- *     (blueprint 9.5 rule 2).
+ *     (blueprint 9.5 rule 2);
+ *   - Red Alt or Red Alt Hover (the primary button's fill) is used in alert UI.
  *
  * The module also exports the small, dependency-free CSS helpers that contrast.mjs and fonts-coverage.mjs
  * share: a custom-property reader with var() resolution per theme and WCAG 2.2 contrast. Owner: lane L1.
@@ -197,7 +198,7 @@ export function derivedTokens(tokens, roots) {
  * Lints one stylesheet against the rules above. Exported for unit tests.
  * @param {string} name file name, for messages
  * @param {string} source CSS text
- * @param {{ isTokens: boolean, magenta: Set<string>, red: Set<string> }} ctx
+ * @param {{ isTokens: boolean, magenta: Set<string>, red: Set<string>, buttonRed?: Set<string> }} ctx
  * @returns {string[]} problems
  */
 export function lintStylesheet(name, source, ctx) {
@@ -223,6 +224,7 @@ export function lintStylesheet(name, source, ctx) {
         if (ALERT_UI.test(b.selector)) problems.push(`${where}: ATNI Red inside alert UI (${prop})`);
         else if (!RED_SELECTORS.test(b.selector)) problems.push(`${where}: ATNI Red outside its whitelist (${prop})`);
       }
+      if (ctx.buttonRed && uses(value, ctx.buttonRed) && ALERT_UI.test(b.selector)) problems.push(`${where}: primary button Red Alt inside alert UI (${prop})`);
     }
   }
   return problems;
@@ -251,10 +253,11 @@ export async function checkTokens() {
   }
   const magenta = derivedTokens(themes.dark, ['--tribal-magenta', '--color-tribal-magenta']);
   const red = derivedTokens(themes.dark, ['--atni-red', '--color-atni-red']);
+  const buttonRed = derivedTokens(themes.dark, ['--color-red-alt', '--color-red-alt-hover']);
   const files = (await readdir(CSS_DIR)).filter((f) => f.endsWith('.css')).sort();
   for (const f of files) {
     const source = await readFile(path.join(CSS_DIR, f), 'utf8');
-    problems.push(...lintStylesheet(f, source, { isTokens: f === 'tokens.css', magenta, red }));
+    problems.push(...lintStylesheet(f, source, { isTokens: f === 'tokens.css', magenta, red, buttonRed }));
   }
   return problems;
 }

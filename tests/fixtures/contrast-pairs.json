@@ -18,9 +18,13 @@
     { "fg": "--red-on-dark", "bg": "--ground", "kind": "text", "use": "eyebrows" },
     { "fg": "--atni-red", "bg": "--surface-raised", "kind": "large", "use": "ATNI Red display accents at large sizes only" },
     { "fg": "--atni-red", "bg": "--surface-raised", "kind": "text", "expect": "below", "use": "small ATNI Red text is forbidden; small red text uses Red on Dark" },
-    { "fg": "--atni-red", "bg": "--ground", "kind": "nontext", "use": "the 5 px header rule and the wordmark" },
-    { "fg": "--color-surface", "bg": "--atni-red", "kind": "large", "use": "primary button label, League Spartan 600 at 19 px or larger" },
-    { "fg": "--color-surface", "bg": "--atni-red", "kind": "text", "expect": "below", "use": "small white text on ATNI Red is forbidden" },
+    { "fg": "--atni-red", "bg": "--ground", "kind": "nontext", "use": "the 5 px header rule, the wordmark, and the primary button keyline" },
+    { "fg": "--atni-red", "bg": "--surface-raised", "kind": "nontext", "use": "primary button keyline in panels and cards" },
+    { "fg": "--atni-red", "bg": "--surface-overlay", "kind": "nontext", "use": "primary button keyline in sheets and dialogs" },
+    { "fg": "--color-surface", "bg": "--color-red-alt", "kind": "text", "use": "primary button label, white on Red Alt at any size" },
+    { "fg": "--color-surface", "bg": "--color-red-alt-hover", "kind": "text", "use": "primary button label on hover" },
+    { "fg": "--color-red-alt", "bg": "--ground", "kind": "nontext", "expect": "below", "use": "a Red Alt fill alone does not reach 3:1 on the ground; the primary button carries the ATNI Red keyline" },
+    { "fg": "--color-surface", "bg": "--atni-red", "kind": "text", "expect": "below", "use": "white text on an ATNI Red fill is forbidden below 24 px; the primary button fill is Red Alt" },
     { "fg": "--ground", "bg": "--ink", "kind": "text", "use": "solid designation badge (Emergency, Warning) and secondary button" },
 
     { "fg": "--band-extreme-ink", "bg": "--band-extreme-bg", "kind": "text", "use": "Extreme band chip" },
@@ -71,6 +75,8 @@
     { "fg": "--status-degraded", "bg": "--surface-raised", "kind": "nontext", "theme": "light", "use": "Degraded shape in print" },
     { "fg": "--status-unavailable", "bg": "--surface-raised", "kind": "nontext", "theme": "light", "use": "Unavailable shape in print" },
     { "fg": "--band-extreme-keyline", "bg": "--surface-raised", "kind": "nontext", "theme": "light", "use": "Extreme keyline in print" },
+    { "fg": "--atni-red", "bg": "--surface-raised", "kind": "nontext", "theme": "light", "use": "primary button keyline on white in the light layer" },
+    { "fg": "--atni-red", "bg": "--ground", "kind": "nontext", "theme": "light", "use": "primary button keyline on the tint in the light layer" },
     { "fg": "--focus-inner", "bg": "--surface-raised", "kind": "nontext", "theme": "light", "use": "light layer focus ring" }
   ]
 }

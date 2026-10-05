@@ -204,9 +204,12 @@
 .alert-list { display: grid; gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
 .alert-list > li { padding-left: 0; }
 .alert-list > li::before { content: none; }
-/* Primary buttons carry ATNI Red, which never appears in alert UI: inside alerts they take the secondary look */
+/* Primary buttons carry the brand reds, which never appear in alert UI: inside alerts they take the secondary
+   look at rest and on hover */
 .alert-card .btn--primary,
 .alert-banner .btn--primary { background: var(--surface-overlay); color: var(--ink-heading); border-color: var(--rule-strong); font-size: var(--type-ui-size); }
+.alert-card .btn--primary:hover,
+.alert-banner .btn--primary:hover { background: var(--surface-hover); color: var(--ink-heading); }
 
 /* ---- Summary tiles ---------------------------------------------------------------------------- */
 .summary-tiles { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); margin: 0; padding: 0; list-style: none; }
@@ -511,11 +514,12 @@ html[data-embed='1'] .toast-region { bottom: var(--space-3); }
   text-decoration: none;
   transition: background-color var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
 }
-/* Primary: ATNI Red with white League Spartan 600 at 24 px. White on ATNI Red is 4.27:1, which passes only
-   as large text; 600 is not "bold" under the 700 threshold axe and most audits apply, so the label is set
-   at the 24 px large-text size rather than the 19 px bold size. Use sparingly. */
-.btn--primary { background: var(--atni-red); color: var(--color-surface); font-weight: var(--fw-title); font-size: 1.5rem; line-height: 1.1; padding: 9px 20px; }
-.btn--primary:hover { background: var(--color-red-alt); color: var(--color-surface); }
+/* Primary: white League Spartan 500 at 19 px on Red Alt with a 1 px ATNI Red keyline (primary button
+   decision, 10/05/2026). White on ATNI Red is 4.27:1 and fails AA below the 24 px large-text size; white on
+   Red Alt is 6.62:1 and passes at any size. Red Alt alone is 2.99:1 against the ground, so the ATNI Red
+   keyline (4.64:1) draws the button's edge and keeps the brand red on the control. Use sparingly. */
+.btn--primary { background: var(--color-red-alt); border-color: var(--atni-red); color: var(--color-surface); font-size: var(--type-ui-large-size); }
+.btn--primary:hover { background: var(--color-red-alt-hover); color: var(--color-surface); }
 .btn--secondary { background: var(--surface-overlay); border-color: var(--rule-strong); color: var(--ink-heading); }
 .btn--secondary:hover { background: var(--surface-hover); color: var(--ink-heading); }
 .btn--link { padding: 0; min-height: var(--touch-target); background: transparent; color: var(--link); text-decoration: underline; }
