@@ -22,20 +22,16 @@
   <link rel="modulepreload" href="../static/js/pages/resources.js">
   <link rel="modulepreload" href="../static/js/ui/chrome.js">
   <link rel="modulepreload" href="../static/js/core/embed.js">
-  <link rel="modulepreload" href="../static/js/ui/panel.js">
-  <link rel="modulepreload" href="../static/js/core/dom.js">
-  <link rel="modulepreload" href="../static/js/core/poller.js">
-  <link rel="modulepreload" href="../static/js/core/provenance.js">
-  <link rel="modulepreload" href="../static/js/core/time.js">
-  <link rel="modulepreload" href="../static/js/core/sources.js">
-  <link rel="modulepreload" href="../static/js/config/app.js">
   <link rel="modulepreload" href="../static/js/core/net.js">
+  <link rel="modulepreload" href="../static/js/config/app.js">
   <link rel="modulepreload" href="../static/js/config/pages.js">
   <link rel="modulepreload" href="../static/js/core/priority.js">
+  <link rel="modulepreload" href="../static/js/core/sources.js">
   <link rel="modulepreload" href="../static/js/core/lastgood.js">
   <link rel="modulepreload" href="../static/js/core/storage.js">
   <link rel="modulepreload" href="../static/js/core/status.js">
-  <link rel="modulepreload" href="../static/js/data/resources.js">
+  <link rel="modulepreload" href="../static/js/core/time.js">
+  <link rel="modulepreload" href="../static/js/core/url-state.js">
   <!-- modulepreload:end -->
   <script type="module" src="../static/js/pages/resources.js"></script>
   <link rel="manifest" href="../manifest.webmanifest">
@@ -72,11 +68,13 @@
   <!-- chrome:end -->
   <main id="main" tabindex="-1">
     <h1 class="page-title" id="page-title">Resources</h1>
-    <noscript><p class="panel-note">Live data on this page needs JavaScript. Official alerts are always at
+    <p class="callout callout--note">In an emergency, call <a href="tel:911">911</a>.</p>
+    <p class="lede">Official links for alerts, shelter, roads, rivers, recovery, and preparedness. Every item shows its publisher and the date it was verified. Event-specific notices live in the <a href="../archive/">Event Archive</a>.</p>
+    <noscript><p class="panel-note">The resource list needs JavaScript. Official alerts are always at
       <a href="https://www.weather.gov/">weather.gov</a> and
       <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">weather.gc.ca</a>. In an emergency, call 911.</p></noscript>
       <section class="panel" data-panel="resources" data-sources="cthd-resources" aria-labelledby="resources-h">
-        <h2 class="panel__title" id="resources-h">Resources</h2>
+        <h2 class="panel__title" id="resources-h">Resource Hub</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
   </main>

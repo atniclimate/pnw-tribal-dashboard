@@ -1,21 +1,41 @@
 // @ts-check
 /**
- * Entry module for the contacts page. Loaded by <script type="module">; its static imports are listed in the page's modulepreload block (check:preload). The page lane wires main() and calls it at the bottom of this module.
- *
- * STUB (lane L0). Owner: lane L13. Signatures are the contract; bodies throw until the owner implements them.
+ * Entry module for the contacts page (blueprint 7.4). Loaded by <script type="module">; its static imports
+ * are listed in the page's modulepreload block (check:preload). The views (ui/contacts-views.js) are a dynamic
+ * import started at once, so they download while the source registry loads and the static graph stays small.
  */
-import { initChrome } from '../ui/chrome.js';
+import { initChrome, pageSourceIds } from '../ui/chrome.js';
 import { initEmbed } from '../core/embed.js';
-import { mountPanel } from '../ui/panel.js';
-import { loadContacts } from '../data/contacts.js';
+import { initTabs } from '../ui/tabs.js';
+import { fetchLocal } from '../core/net.js';
+import { findSource, loadSources } from '../core/sources.js';
+import { setIdRedirects, writeState } from '../core/url-state.js';
 
-const NOT_IMPLEMENTED = 'not implemented';
-
-/**
- * Page start-up. Not yet called: the page lane adds the call when it implements the page.
- * @returns {Promise<void>}
- */
+/** Page start-up. */
 export async function main() {
-  void [initChrome, initEmbed, mountPanel, loadContacts];
-  throw new Error(NOT_IMPLEMENTED);
+  initEmbed({ page: 'contacts' });
+  const viewsLoading = import('../ui/contacts-views.js');
+  /** @type {Record<string, string>} */
+  const names = {};
+  try {
+    await loadSources();
+    for (const id of pageSourceIds(document)) { const r = findSource(id); if (r) names[id] = r.attribution || r.owner; }
+  } catch { /* the footer then lists nothing by name and each panel says what failed */ }
+  initChrome({ page: 'contacts', sources: names });
+  const views = await viewsLoading;
+  views.markOutwardLinks(document.querySelector('main') ?? document);
+
+  try {
+    const redirects = await fetchLocal('data/registry/id-redirects.json');
+    if (redirects.ok) setIdRedirects(/** @type {any} */ (redirects.data));
+  } catch { /* an absent redirect table means no redirects */ }
+
+  const tabs = document.querySelector('[data-tabs]');
+  if (tabs instanceof HTMLElement) initTabs(tabs, { onChange: (id) => writeState({ view: id }, { push: true }) });
+  const dir = document.querySelector('[data-panel="contacts-directory"]');
+  const near = document.querySelector('[data-panel="contacts-near-me"]');
+  if (dir instanceof HTMLElement) views.mountDirectory(dir);
+  if (near instanceof HTMLElement) views.mountNearMe(near);
 }
+
+if (globalThis.document) void main();

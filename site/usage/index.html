@@ -36,6 +36,8 @@
   <link rel="modulepreload" href="../static/js/core/storage.js">
   <link rel="modulepreload" href="../static/js/core/status.js">
   <link rel="modulepreload" href="../static/js/ui/tabs.js">
+  <link rel="modulepreload" href="../static/js/core/url-state.js">
+  <link rel="modulepreload" href="../static/js/ui/status-pill.js">
   <!-- modulepreload:end -->
   <script type="module" src="../static/js/pages/usage.js"></script>
   <link rel="manifest" href="../manifest.webmanifest">
@@ -82,11 +84,49 @@
     <section class="view" data-view="usage" aria-label="Usage">
       <section aria-labelledby="safety-notice-h">
         <h2 id="safety-notice-h">Important Safety Notice</h2>
-        <p>This dashboard does not replace official warnings or 911. In an emergency, call 911.</p>
+        <p class="callout callout--note">This dashboard does not replace official warnings or 911. In an emergency, call 911.</p>
+      </section>
+      <section aria-labelledby="purpose-h">
+        <h2 id="purpose-h">Purpose</h2>
+        <p>The Cascadia Tribal Hazard Dashboard gathers public weather, flood, and hazard information for Tribal Nations and First Nations across Washington, Oregon, Idaho, British Columbia, northern California, western Montana, northern Nevada, and Southeast Alaska. It is an ATNI Climate product. Every panel names its source and the time its data was issued, observed, or retrieved, and a panel with no data says so rather than showing filler.</p>
+      </section>
+      <section aria-labelledby="responsibility-h">
+        <h2 id="responsibility-h">User Responsibility</h2>
+        <p>Official warnings, evacuation orders, and instructions from emergency managers always control. Alerts can be delayed, incomplete, or unavailable here, and an empty list is never an all-clear. Check the issuing agency for the latest information, and follow the directions of the Nation's emergency management office.</p>
+      </section>
+      <section aria-labelledby="predecessor-h">
+        <h2 id="predecessor-h">Predecessor</h2>
+        <p>This dashboard succeeds IndigenousACCESS.org, which was built during the December 2025 atmospheric river events. The events of that month are kept in the <a href="../archive/">Event Archive</a>.</p>
+      </section>
+      <section id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact and Corrections</h2>
+        <p>Write to <a href="mailto:climate@atnitribes.org">climate@atnitribes.org</a> to report a wrong or missing contact, resource, boundary, or name, or to ask for any listing to be corrected or removed. A Nation may make this request for its own listings. Please include the Nation's name, the page, and the line in question. Each contact card also has a Report a Correction link that fills in the contact's identifier.</p>
+      </section>
+      <section aria-labelledby="license-h">
+        <h2 id="license-h">License and Review</h2>
+        <p>Copyright ATNI Climate, Affiliated Tribes of Northwest Indians. All rights reserved. Unmodified iframe embedding of the published pages is permitted; see <a href="../embed/">Embedding</a>. Each source keeps its own terms, listed on the Sources view.</p>
+        <p class="caption">Last reviewed 10/05/2026. Status: draft, pending maintainer review.</p>
       </section>
       <section id="sovereignty" aria-labelledby="sovereignty-h">
         <h2 id="sovereignty-h">Sovereignty</h2>
         <p class="sovereignty-note"><strong>Representation, not jurisdiction.</strong> Boundary lines shown here come from public federal sources; they are not a Tribal Nation's own statement of its land or authority.</p>
+        <h3>What the Boundaries Are</h3>
+        <ul>
+          <li>United States land areas come from the Bureau of Indian Affairs Land Area Representations. Where that layer has no polygon, the Census Bureau's legal classes for reservations and off-reservation trust land fill the gap. Statistical areas are not used.</li>
+          <li>British Columbia reserves come from Natural Resources Canada Aboriginal Lands, joined to First Nations through the Indigenous Services Canada reserve relation. The provincial TANTALIS and Access Only layers are never used.</li>
+          <li>No Treaty area or traditional territory boundary is shown.</li>
+          <li>Headquarters points come from the Bureau of Indian Affairs Tribal Leaders Directory, the Alaska Native Village list, and the Indigenous Services Canada First Nation locations. They mark an office or community, not a boundary.</li>
+        </ul>
+        <h3>Sources and Vintages</h3>
+        <ul data-boundary-sources><li>See the <a href="./?view=sources">Sources view</a> for each boundary source, its owner, and the date it was last checked.</li></ul>
+        <h3>Names and Contacts</h3>
+        <ul>
+          <li>Nations appear under their full formal names. Where a name's spelling needs the Nation's own confirmation, the listing is flagged in the data.</li>
+          <li>Contacts are offices, 24/7 lines, and government main lines, each with a source and a verified date. Named individuals appear only when the Nation publishes them on its own official site. Where no Nation-verified line exists, a line from the Bureau of Indian Affairs Tribal Leaders Directory or Indigenous Services Canada is shown and labeled with its source.</li>
+          <li>Every value shown comes from a cited source, and nothing is invented to fill a gap.</li>
+        </ul>
+        <h3>Corrections and Removal</h3>
+        <p>A Nation may ask for a correction or removal of its name, point, boundary, or contacts at any time by writing to <a href="mailto:climate@atnitribes.org">climate@atnitribes.org</a>. Requests are reviewed by ATNI Climate staff.</p>
       </section>
     </section>
     <section class="view" data-view="sources" aria-label="Sources">
@@ -96,6 +136,10 @@
       </section>
     </section>
     <section class="view" data-view="status" aria-label="Status">
+      <section aria-labelledby="legend-h">
+        <h2 id="legend-h">Status Legend</h2>
+        <div data-status-legend></div>
+      </section>
       <section class="panel" data-panel="usage-status" data-sources="cthd-health" aria-labelledby="usage-status-h">
         <h2 class="panel__title" id="usage-status-h">System Status</h2>
         <div class="panel__body" data-panel-body></div>
@@ -104,11 +148,27 @@
     <section class="view" data-view="privacy" aria-label="Privacy">
       <section aria-labelledby="privacy-h">
         <h2 id="privacy-h">Privacy</h2>
+        <ul>
+          <li>The dashboard sets no cookies, runs no analytics, loads no third-party fonts, and uses no proxy.</li>
+          <li>Location is used only when Near Me is tapped. It is rounded to three decimal places before any request, sent only to api.weather.gov, and never stored.</li>
+          <li>This device keeps small convenience settings in local storage: the recent Nations, units, low-data mode, the kit checklist, and a short copy of the last good data. They never leave the device.</li>
+          <li>A service worker may keep pages and the contact list on the device so they open offline.</li>
+        </ul>
+        <h3>Hosts a Browser Contacts</h3>
+        <ul data-host-list><li>See the <a href="./?view=sources">Sources view</a>.</li></ul>
       </section>
     </section>
     <section class="view" data-view="accessibility" aria-label="Accessibility">
       <section aria-labelledby="accessibility-h">
         <h2 id="accessibility-h">Accessibility</h2>
+        <p>The dashboard aims to meet the Web Content Accessibility Guidelines 2.2 at level AA. Controls work from the keyboard, focus is visible, status is conveyed by a shape and a word as well as color, alert counts are announced politely, and motion stops when the device asks for reduced motion.</p>
+        <h3>Known Limitations</h3>
+        <ul>
+          <li>The interactive map is hard to use without a pointer; each map has a list of its features and an outline mode as alternatives.</li>
+          <li>Alert text is shown as the issuing agency wrote it, and may use terms that are hard to read.</li>
+          <li>A Nation's name may include letters that some devices cannot draw well.</li>
+        </ul>
+        <p>To report a barrier, write to <a href="mailto:climate@atnitribes.org">climate@atnitribes.org</a>.</p>
       </section>
     </section>
   </main>

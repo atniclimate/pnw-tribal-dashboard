@@ -22,6 +22,20 @@
   <link rel="modulepreload" href="../static/js/pages/safety.js">
   <link rel="modulepreload" href="../static/js/ui/chrome.js">
   <link rel="modulepreload" href="../static/js/core/embed.js">
+  <link rel="modulepreload" href="../static/js/ui/panel.js">
+  <link rel="modulepreload" href="../static/js/core/dom.js">
+  <link rel="modulepreload" href="../static/js/core/poller.js">
+  <link rel="modulepreload" href="../static/js/core/provenance.js">
+  <link rel="modulepreload" href="../static/js/core/time.js">
+  <link rel="modulepreload" href="../static/js/core/sources.js">
+  <link rel="modulepreload" href="../static/js/config/app.js">
+  <link rel="modulepreload" href="../static/js/core/net.js">
+  <link rel="modulepreload" href="../static/js/config/pages.js">
+  <link rel="modulepreload" href="../static/js/core/priority.js">
+  <link rel="modulepreload" href="../static/js/core/lastgood.js">
+  <link rel="modulepreload" href="../static/js/core/storage.js">
+  <link rel="modulepreload" href="../static/js/core/status.js">
+  <link rel="modulepreload" href="../static/js/core/url-state.js">
   <!-- modulepreload:end -->
   <script type="module" src="../static/js/pages/safety.js"></script>
   <link rel="manifest" href="../manifest.webmanifest">
@@ -59,41 +73,370 @@
   <main id="main" tabindex="-1">
     <h1 class="page-title" id="page-title">Safety</h1>
     <p class="callout callout--note">In an emergency, call <a href="tel:911">911</a>.</p>
+    <p class="callout callout--quiet" data-review-status="draft"><strong>Review Status:</strong> Draft. Sources were checked on 10/05/2026. Accuracy review and a named reviewer's approval are pending before launch. This page does not replace official warnings, evacuation orders, or 911.</p>
+    <nav aria-label="Safety Topics">
+      <ul class="plain">
+        <li><a href="#flood">Flood and Debris Flows</a></li>
+        <li><a href="#atmospheric-rivers">Atmospheric Rivers and Landslides</a></li>
+        <li><a href="#wind">Wind and Power Outages</a></li>
+        <li><a href="#winter">Winter Storms and Extreme Cold</a></li>
+        <li><a href="#heat">Extreme Heat</a></li>
+        <li><a href="#smoke">Wildfire Smoke and Air Quality</a></li>
+        <li><a href="#wildfire">Wildfire Evacuation</a></li>
+        <li><a href="#tsunami">Tsunami and Coastal Hazards</a></li>
+        <li><a href="#earthquake">Earthquake</a></li>
+        <li><a href="#kit">Emergency Kit and Drinking Water After Disasters</a></li>
+      </ul>
+    </nav>
+    <noscript><p class="panel-note">Phone numbers and active alert highlights on this page need JavaScript. The guidance below works without it. Official alerts are always at <a href="https://www.weather.gov/">weather.gov</a> and <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">weather.gc.ca</a>.</p></noscript>
       <section class="panel" data-panel="safety-active" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="safety-active-h">
         <h2 class="panel__title" id="safety-active-h">Active Now</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
-    <section class="safety-section" id="flood" aria-labelledby="flood-h">
+
+    <section class="safety-section" id="flood" aria-labelledby="flood-h" data-hazards="flood">
       <h2 id="flood-h">Flood and Debris Flows</h2>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <h3>Before</h3>
+      <ul>
+        <li>Learn whether the home, workplace, and the roads between them can flood, and where the nearest high ground is.</li>
+        <li>Sign up for local alerts (see Resources) and keep a charged phone and battery radio ready.</li>
+        <li>Keep an emergency kit and any medications where they can be grabbed quickly.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Move to higher ground as soon as a flood warning or evacuation order is issued. Evacuate immediately if authorities say to.</li>
+        <li>Never walk, swim, or drive into floodwater. The National Weather Service reports that six inches of fast-moving water can knock over an adult, twelve inches can carry away most cars, and two feet can carry away sport utility vehicles and trucks.</li>
+        <li>Do not drive around barriers that block a flooded road. The road may have collapsed under the water.</li>
+        <li>After wildfire and during heavy rain, debris flows can arrive without much warning. Warning signs include unusual sounds such as trees cracking or boulders knocking together, and a faint rumbling that grows louder. Move uphill, away from the channel, at once.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Return only when authorities say it is safe. Floodwater can hide damaged roads and can carry sewage and chemicals.</li>
+        <li>Stay out of floodwater, and do not use electrical equipment that has been wet.</li>
+        <li>Throw away food that touched floodwater. Have a private well tested before drinking from it.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders and people with disabilities: arrange a ride or a helper before roads close, and tell the Nation's emergency management office.</li>
+        <li>Children: keep them away from floodwater, culverts, and swollen creeks.</li>
+        <li>Pets and livestock: plan where animals will go, and move them early.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/floods">Ready.gov, Floods</a>; <a href="https://www.weather.gov/safety/flood-turn-around-dont-drown">National Weather Service, Turn Around, Don't Drown</a>; <a href="https://www.ready.gov/landslides-debris-flow">Ready.gov, Landslides and Debris Flow</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="atmospheric-rivers" aria-labelledby="atmospheric-rivers-h">
+
+    <section class="safety-section" id="atmospheric-rivers" aria-labelledby="atmospheric-rivers-h" data-hazards="rain-landslide">
       <h2 id="atmospheric-rivers-h">Atmospheric Rivers and Landslides</h2>
+      <span id="rain-landslide"></span>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <p>An atmospheric river is a long band of moisture that can bring days of heavy rain. Rain on saturated slopes and burned ground raises the risk of both flooding and landslides. The <a href="../forecasts/?view=ar">Forecasts page</a> shows atmospheric river products when they are available.</p>
+      <h3>Before</h3>
+      <ul>
+        <li>Find out whether the home sits below a steep slope or in the path of a drainage.</li>
+        <li>Keep a plan to leave on short notice, and keep the kit packed.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Watch for flood warnings and evacuation orders, and leave when told to.</li>
+        <li>Fast-moving landslides give sounds: trees cracking, boulders knocking together, a faint rumbling that grows louder.</li>
+        <li>Slow-moving landslides show new cracks in the ground or on foundations, doors and windows that stick for the first time, and changed drainage patterns on slopes.</li>
+        <li>If caught in the path of a landslide, move uphill as quickly as possible.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Stay away from the slide area. More slides can follow.</li>
+        <li>Check for injured and trapped people near the slide without entering the slide area, and tell rescuers where they are.</li>
+        <li>Report broken utility lines and damaged roads to the proper authorities.</li>
+        <li>Have trained professionals check the building foundation and surrounding land before using the building again.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders, people with disabilities, and families with young children: leave early, because slide-damaged roads can close quickly.</li>
+        <li>Pets and livestock: move them away from slopes and creeks before the rain peaks.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/landslides-debris-flow">Ready.gov, Landslides and Debris Flow</a>; <a href="https://www.weather.gov/safety/flood">National Weather Service, Flood Safety</a>; <a href="https://www2.gov.bc.ca/gov/content/safety/emergency-management/preparedbc/know-your-hazards">PreparedBC, Know Your Hazards</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="wind" aria-labelledby="wind-h">
+
+    <section class="safety-section" id="wind" aria-labelledby="wind-h" data-hazards="wind">
       <h2 id="wind-h">Wind and Power Outages</h2>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <h3>Before</h3>
+      <ul>
+        <li>Charge phones and backup batteries, and keep flashlights, extra batteries, and a battery-powered or hand-crank radio.</li>
+        <li>Install working carbon monoxide detectors on every level of the home.</li>
+        <li>Plan for anyone who relies on powered medical equipment, including where to go if power stays out.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Stay indoors and away from windows during high wind. Use flashlights rather than candles.</li>
+        <li>When thunder roars, go indoors. There is no safe place outside when thunderstorms are in the area.</li>
+        <li>Under a Tornado Warning, go to a basement, a safe room, or an interior room away from windows.</li>
+        <li>Use generators and fuel only outdoors, at least twenty feet from windows, doors, and attached garages. Never run a generator, grill, or camp stove inside a home, garage, or tent.</li>
+        <li>Connect appliances to a generator with heavy-duty outdoor extension cords. Never plug a generator into a wall outlet or the home's wiring unless a qualified electrician has installed a transfer switch; power fed back through home wiring can electrocute utility crews and neighbors.</li>
+        <li>Carbon monoxide has no color or smell. Headache, dizziness, weakness, nausea, and confusion are warning signs. Get to fresh air and call 911.</li>
+        <li>Keep refrigerator and freezer doors closed. A refrigerator keeps food cold for about four hours, and a full freezer for about forty-eight hours. Throw away food that has been at forty degrees Fahrenheit or higher for two hours or more.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Stay away from downed power lines and anything touching them. Report them to the utility and to 911.</li>
+        <li>Check on neighbors, especially Elders.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>People who depend on electric medical equipment, oxygen, or refrigerated medicine: make a backup plan before an outage.</li>
+        <li>Elders and people with disabilities: arrange a daily check-in during long outages.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/power-outages">Ready.gov, Power Outages</a>; <a href="https://doh.wa.gov/emergencies/be-prepared-be-safe/severe-weather-and-natural-disasters/power-outages/generator-use-during-power-outage">Washington State Department of Health, Generator Use During a Power Outage</a>; <a href="https://www.weather.gov/safety/wind">National Weather Service, Wind Safety</a>; <a href="https://www.weather.gov/safety/lightning-safety">National Weather Service, Lightning Safety</a>; <a href="https://www.weather.gov/safety/tornado-during">National Weather Service, Tornado Safety</a>; <a href="https://www.cdc.gov/carbon-monoxide/">Centers for Disease Control and Prevention, Carbon Monoxide</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="winter" aria-labelledby="winter-h">
+
+    <section class="safety-section" id="winter" aria-labelledby="winter-h" data-hazards="winter cold avalanche">
       <h2 id="winter-h">Winter Storms and Extreme Cold</h2>
+      <span id="cold"></span><span id="avalanche"></span>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <h3>Before</h3>
+      <ul>
+        <li>Keep warm clothing in layers, blankets, and a safe heat source. Install carbon monoxide detectors on every level of the home.</li>
+        <li>Keep a winter kit in the vehicle, and tell someone the route before traveling.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Stay indoors when possible, and limit time outside in cold and wind. Avoid overexertion when shoveling snow.</li>
+        <li>Do not heat a home with an oven or stovetop. Keep generators and grills outdoors, at least twenty feet from windows, doors, and garages.</li>
+        <li>Connect appliances to a generator with heavy-duty outdoor extension cords. Never plug a generator into a wall outlet or the home's wiring unless a qualified electrician has installed a transfer switch.</li>
+        <li>Frostbite signs: numbness, and white, grayish-yellow, firm, or waxy skin. Go to a warm room, soak in warm water, and use body heat. Do not massage the skin or use a heating pad.</li>
+        <li>Hypothermia signs: shivering, exhaustion, confusion, fumbling hands, memory loss, slurred speech, or drowsiness. Go to a warm room, warm the center of the body first, keep the person dry and wrapped in blankets, and get medical help. Call 911 if the person is confused or cannot stay awake.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Check on neighbors, especially Elders, and on pipes, roofs, and heating equipment.</li>
+        <li>Watch for ice-laden trees and power lines, and stay away from them.</li>
+      </ul>
+      <h3>Avalanches</h3>
+      <ul>
+        <li>An Avalanche Warning means large avalanches are very likely or certain in many areas and conditions are unusually dangerous. Stay out of and away from avalanche terrain, including the run-out zones below steep slopes.</li>
+        <li>Before travel in the mountains, check the avalanche forecast from the Northwest Avalanche Center (Washington and northern Oregon) or Avalanche Canada (British Columbia).</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders, infants, and people with chronic illness lose body heat faster and need warmth checked often.</li>
+        <li>Pets and livestock: provide shelter, unfrozen water, and extra feed.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/winter-weather">Ready.gov, Winter Weather</a>; <a href="https://www.weather.gov/safety/winter">National Weather Service, Winter Weather Safety</a>; <a href="https://doh.wa.gov/emergencies/be-prepared-be-safe/severe-weather-and-natural-disasters/power-outages/generator-use-during-power-outage">Washington State Department of Health, Generator Use During a Power Outage</a>; <a href="https://avalanche.org/avalanche-encyclopedia/human/avalanche-warning/">Avalanche.org, Avalanche Warning</a>; <a href="https://nwac.us/">Northwest Avalanche Center</a>; <a href="https://avalanche.ca/">Avalanche Canada</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="heat" aria-labelledby="heat-h">
+
+    <section class="safety-section" id="heat" aria-labelledby="heat-h" data-hazards="heat">
       <h2 id="heat-h">Extreme Heat</h2>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <h3>Before</h3>
+      <ul>
+        <li>Know where a cool place is: an air-conditioned building or a cooling center.</li>
+        <li>Check that air conditioning works before the heat arrives. With no air conditioning at home, plan how to reach a cooling center or another air-conditioned place.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Stay in a cool place, drink water often, and avoid hard work during the hottest hours.</li>
+        <li>A fan alone does not prevent heat illness in extreme heat. Fans move air and give a false sense of comfort, but they do not lower body temperature. If the home stays hot, go to an air-conditioned place or a cooling center.</li>
+        <li>Never leave children or pets in a parked vehicle, even for a short time.</li>
+        <li>Heat exhaustion signs: heavy sweating, paleness, muscle cramps, tiredness, weakness, a fast or weak pulse, dizziness, headache, fainting, nausea, or vomiting. Move to a cooler place, loosen or remove extra clothing, and sip water. Seek medical care if symptoms get worse or last longer than one hour.</li>
+        <li>Heat stroke signs: a body temperature above one hundred three degrees Fahrenheit, hot and red skin, a rapid strong pulse, dizziness, confusion, or unconsciousness. Call 911 or get the person to a hospital immediately. While waiting, move the person into a cool, shaded area, remove outer clothing, and place a cold, wet cloth or ice pack on the head, neck, armpits, and groin.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Keep drinking fluids and resting. Check on neighbors and Elders.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders, infants, children, people with chronic illness, and people who work outdoors face higher risk.</li>
+        <li>Check on Elders and people who live alone at least twice a day during extreme heat.</li>
+        <li>Pets and livestock need shade and fresh water.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/heat">Ready.gov, Extreme Heat</a>; <a href="https://www.weather.gov/safety/heat">National Weather Service, Heat Safety</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="smoke" aria-labelledby="smoke-h">
+
+    <section class="safety-section" id="smoke" aria-labelledby="smoke-h" data-hazards="smoke-air">
       <h2 id="smoke-h">Wildfire Smoke and Air Quality</h2>
+      <span id="smoke-air"></span>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <p>In the United States, <a href="https://www.airnow.gov/">AirNow</a> reports the Air Quality Index. In Canada, Environment and Climate Change Canada reports the <a href="https://weather.gc.ca/airquality/pages/index_e.html">Air Quality Health Index</a>.</p>
+      <h3>Before</h3>
+      <ul>
+        <li>Choose a room that can be closed off, and keep a portable air cleaner with a high-efficiency filter if possible.</li>
+        <li>Keep N95 respirators on hand. Cloth and paper masks do not filter the fine particles in smoke.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Check the local air quality report each day. Limit time outdoors and hard exercise when air quality is poor.</li>
+        <li>Stay indoors with windows and doors closed, and run a portable air cleaner or a high-efficiency filter in the air conditioning system.</li>
+        <li>Avoid adding indoor pollution, such as smoking, frying, burning candles, or vacuuming.</li>
+        <li>If outside is unavoidable, wear a properly fitted N95 respirator.</li>
+        <li>Seek medical help for trouble breathing, chest pain, or a severe cough. Call 911 if symptoms are severe.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>When the air clears, open windows to ventilate the home.</li>
+        <li>Wear gloves and an N95 respirator when cleaning up ash.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Children, Elders, pregnant people, and people with asthma, heart disease, or lung disease are most affected by smoke.</li>
+        <li>Pets and livestock should be kept indoors or in covered shelter when air quality is poor.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.airnow.gov/">AirNow</a>; <a href="https://www.epa.gov/wildfire-smoke-course">United States Environmental Protection Agency, Wildfire Smoke</a>; <a href="https://www.ready.gov/wildfires">Ready.gov, Wildfires</a>; <a href="https://www.bccdc.ca/health-info/prevention-public-health/wildfire-smoke">BC Centre for Disease Control, Wildfire Smoke</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="wildfire" aria-labelledby="wildfire-h">
+
+    <section class="safety-section" id="wildfire" aria-labelledby="wildfire-h" data-hazards="fire evacuation">
       <h2 id="wildfire-h">Wildfire Evacuation</h2>
+      <span id="fire"></span><span id="evacuation"></span>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <h3>Before</h3>
+      <ul>
+        <li>Learn the evacuation routes and the alert terms used by the county, Tribal government, or province. Terms differ by place.</li>
+        <li>In British Columbia, an Evacuation Alert means be ready to leave on short notice, and an Evacuation Order means leave immediately.</li>
+        <li>Pack a go-bag with medications, documents, phone chargers, water, and supplies for pets.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Evacuate immediately when authorities order it. Do not wait to see flames.</li>
+        <li>Follow the routes officials give. Roads may change as the fire moves.</li>
+        <li>If trapped, call 911 and give an exact location.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Do not return home until authorities say it is safe. Avoid hot ash, charred trees, smoldering debris, and live embers.</li>
+        <li>Wear a long-sleeved shirt, long pants, work gloves, sturdy thick-soled shoes, and an N95 respirator during clean-up.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders and people with disabilities: tell the Nation's emergency management office early, and arrange transportation before an alert.</li>
+        <li>Pets and livestock: have carriers, trailers, identification, and a place to go. Leave early with animals.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/wildfires">Ready.gov, Wildfires</a>; <a href="https://www.weather.gov/safety/wildfire">National Weather Service, Wildfire Safety</a>; <a href="https://www.emergencyinfobc.gov.bc.ca/">EmergencyInfoBC</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="tsunami" aria-labelledby="tsunami-h">
+
+    <section class="safety-section" id="tsunami" aria-labelledby="tsunami-h" data-hazards="tsunami coastal marine">
       <h2 id="tsunami-h">Tsunami and Coastal Hazards</h2>
+      <span id="coastal"></span><span id="marine"></span>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <h3>Before</h3>
+      <ul>
+        <li>Find out whether home, work, and school are in a tsunami hazard zone, using state maps from the <a href="https://www.oregongeology.org/tsunami/">Oregon Department of Geology and Mineral Industries</a> and the <a href="https://www.dnr.wa.gov/washington-geological-survey">Washington Geological Survey</a>, or British Columbia notification zones.</li>
+        <li>Plan a route on foot to high ground, because roads may jam or break.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Natural warning signs are an earthquake, a loud roar from the ocean, or unusual ocean behavior such as a sudden rise or wall of water or sudden draining of water.</li>
+        <li>Move immediately to a safe place as high and as far inland as possible. Do not wait for an official warning or evacuation order.</li>
+        <li>A tsunami is a series of waves. Stay away from the coast until officials say it is safe.</li>
+        <li>A Tsunami Warning means a tsunami that can flood the coast widely is imminent, expected, or occurring: move to high ground or inland now. A Tsunami Advisory means strong currents and dangerous waves are expected for people in or very near the water: stay out of the water and away from beaches and waterways. A Tsunami Watch means a tsunami may arrive later: stay tuned and be ready to act. Message definitions are at <a href="https://www.tsunami.gov/?page=message_definitions">tsunami.gov</a>.</li>
+      </ul>
+      <h3>Sneaker Waves, High Surf, and Rip Currents</h3>
+      <ul>
+        <li>Keep watching the ocean, and never turn away from it. Sneaker waves can run at least one hundred fifty feet up a dry beach after ten to twenty minutes of small waves.</li>
+        <li>Stay off and well clear of large logs near the surf line, and avoid rocks and jetties. A wave can roll a water-soaked log weighing hundreds of pounds.</li>
+        <li>Swim only at beaches with lifeguards. Rip currents often form on calm, sunny days.</li>
+        <li>A Coastal Flood Advisory or Warning calls for the flood guidance above: stay out of floodwater and move to higher ground when water threatens the home.</li>
+        <li>Small Craft Advisories, Gale Warnings, and Hazardous Seas Warnings are marine forecasts for people on the water, not tsunami alerts. Check the marine forecast before going out.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Listen to local alerts and authorities for areas to avoid and for shelter locations.</li>
+        <li>Stay away from damaged buildings, roads, and bridges.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders and people with disabilities: agree on a buddy who will help move to high ground, and practice the route.</li>
+        <li>Pets: plan to carry them. Livestock near the coast may not be able to be moved in time.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/tsunamis">Ready.gov, Tsunamis</a>; <a href="https://www.tsunami.gov/?page=message_definitions">NOAA Tsunami Warning Centers, Message Definitions</a>; <a href="https://www.weather.gov/safety/tsunami">National Weather Service, Tsunami Safety</a>; <a href="https://www.weather.gov/safety/sneaker-waves">National Weather Service, Sneaker Waves</a>; <a href="https://www.weather.gov/safety/ripcurrent">National Weather Service, Rip Currents</a>; <a href="https://www.oregongeology.org/tsunami/">Oregon Department of Geology and Mineral Industries</a>; <a href="https://www.dnr.wa.gov/washington-geological-survey">Washington Geological Survey</a>; <a href="https://www.emergencyinfobc.gov.bc.ca/">EmergencyInfoBC</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="earthquake" aria-labelledby="earthquake-h">
+
+    <section class="safety-section" id="earthquake" aria-labelledby="earthquake-h" data-hazards="geologic">
       <h2 id="earthquake-h">Earthquake</h2>
+      <span id="geologic"></span>
+      <p class="callout callout--note" data-active-now hidden></p>
+      <p>The Cascadia Subduction Zone can produce a very large earthquake followed by a tsunami along the coast. Oregon's 2 Weeks Ready program recommends enough supplies for everyone in the household to survive for at least two weeks after a disaster, longer than the three days often listed nationally. Check the state or provincial emergency management guidance for the area.</p>
+      <h3>Before</h3>
+      <ul>
+        <li>Secure heavy furniture, water heaters, and anything that could fall.</li>
+        <li>Build the kit and practice Drop, Cover, and Hold On.</li>
+      </ul>
+      <h3>During</h3>
+      <ul>
+        <li>Drop onto hands and knees. Cover the head and neck with one arm and hand; if a sturdy table or desk is nearby, crawl underneath it for shelter. Hold on until the shaking stops, and if under shelter, hold on with one hand and be ready to move with it.</li>
+        <li>Indoors, stay inside and avoid doorways. In bed, turn face down and cover the head and neck with a pillow.</li>
+        <li>Outdoors, stay outside and move to an open area away from buildings, trees, streetlights, and power lines. In a car, pull over and set the parking brake.</li>
+        <li>On the coast, when the shaking stops, move at once to high ground or inland. See the tsunami section.</li>
+      </ul>
+      <h3>After</h3>
+      <ul>
+        <li>Expect aftershocks, and be ready to Drop, Cover, and Hold On again.</li>
+        <li>Check for damage to the building and for leaking gas and water lines and downed power lines.</li>
+        <li>If trapped, send a text or bang on a pipe or wall, cover the mouth with a shirt, and use a whistle instead of shouting.</li>
+      </ul>
+      <h3>Volcanoes, Lahars, and Ashfall</h3>
+      <ul>
+        <li>Mount Rainier, Mount Baker, and other Cascade volcanoes can send lahars, fast-moving flows of mud and debris, down river valleys. On the floor of a valley that leads from a volcano, move to high ground at once when a lahar is reported or heard.</li>
+        <li>Follow evacuation orders from local authorities, and evacuate early. Avoid areas downwind of the volcano and river valleys downstream of it.</li>
+        <li>During ashfall, take shelter indoors if there are enough supplies, close and seal windows and doors, and cover vents. Outside, wear a well-fitting N95 respirator. Avoid driving in heavy ashfall.</li>
+        <li>Stay indoors until authorities say it is safe to go outside, and wear protective clothing and a mask when cleaning up ash.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders and people with disabilities: keep a flashlight, whistle, and shoes by the bed, and arrange for a neighbor to check in.</li>
+        <li>People who use a wheelchair or walker: lock the wheels, or with a walker get as low as possible; bend over, cover the head and neck with the arms, a book, or a pillow, and hold on until the shaking stops (Lock, Cover, and Hold On).</li>
+        <li>Pets: keep carriers and leashes where they can be reached.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/earthquakes">Ready.gov, Earthquakes</a>; <a href="https://www.oregon.gov/oem/hazardsprep/Pages/2-Weeks-Ready.aspx">Oregon Department of Emergency Management, 2 Weeks Ready</a>; <a href="https://www.ready.gov/volcanoes">Ready.gov, Volcanoes</a>; <a href="https://www.usgs.gov/programs/VHP/lahars-move-rapidly-down-valleys-rivers-concrete">United States Geological Survey, Lahars</a>; <a href="https://mil.wa.gov/emergency-management-division">Washington Emergency Management Division</a>; <a href="https://www2.gov.bc.ca/gov/content/safety/emergency-management/preparedbc">PreparedBC</a>. Sources checked 10/05/2026.</p>
     </section>
-    <section class="safety-section" id="kit" aria-labelledby="kit-h">
+
+    <section class="safety-section" id="kit" aria-labelledby="kit-h" data-hazards="">
       <h2 id="kit-h">Emergency Kit and Drinking Water After Disasters</h2>
+      <h3>Kit Checklist</h3>
+      <p>Checks are saved on this device only, and are never sent anywhere.</p>
+      <ul class="plain" data-kit-list>
+        <li><label><input type="checkbox" data-kit="water"> Water, one gallon (about four litres) per person per day for drinking and sanitation; aim for two weeks</label></li>
+        <li><label><input type="checkbox" data-kit="food"> Non-perishable food</label></li>
+        <li><label><input type="checkbox" data-kit="radio"> Battery-powered or hand-crank radio with NOAA Weather Radio</label></li>
+        <li><label><input type="checkbox" data-kit="light"> Flashlight and extra batteries</label></li>
+        <li><label><input type="checkbox" data-kit="firstaid"> First aid kit</label></li>
+        <li><label><input type="checkbox" data-kit="whistle"> Whistle to signal for help</label></li>
+        <li><label><input type="checkbox" data-kit="masks"> N95 respirators (dust masks do not protect against smoke or ash)</label></li>
+        <li><label><input type="checkbox" data-kit="sanitation"> Moist towelettes, garbage bags, and plastic ties</label></li>
+        <li><label><input type="checkbox" data-kit="tools"> Wrench or pliers to turn off utilities, and a manual can opener</label></li>
+        <li><label><input type="checkbox" data-kit="maps"> Local maps</label></li>
+        <li><label><input type="checkbox" data-kit="phone"> Cell phone with chargers and a backup battery</label></li>
+        <li><label><input type="checkbox" data-kit="medicine"> Medications and medical supplies for each person</label></li>
+        <li><label><input type="checkbox" data-kit="documents"> Copies of important documents and some cash</label></li>
+        <li><label><input type="checkbox" data-kit="pets"> Food, water, and supplies for pets, and items for infants and Elders</label></li>
+      </ul>
+      <p><button type="button" class="btn btn--secondary" data-action="print-kit">Print Checklist</button></p>
+      <h3>Drinking Water</h3>
+      <ul>
+        <li>Store at least one gallon (about four litres) of water per person per day, enough for two weeks if possible.</li>
+        <li>When a boil-water notice is in effect, bring water to a rolling boil for one full minute, then let it cool. Use it for drinking, brushing teeth, and preparing food.</li>
+        <li>If boiling is not possible, use regular unscented household liquid bleach that contains 5.25 to 6.0 percent sodium hypochlorite, with no added cleaners. Add one-eighth teaspoon of bleach per gallon of water, stir, and let it stand for thirty minutes. The water should have a slight bleach smell; if it does not, repeat the dose and let it stand another fifteen minutes.</li>
+        <li>After a flood, do not drink from a private well until it has been tested.</li>
+      </ul>
+      <h3>Who Needs Extra Help</h3>
+      <ul>
+        <li>Elders and people with disabilities: add medications, glasses, hearing aid batteries, and mobility aids, and keep a list of needs.</li>
+        <li>Infants and children: add formula, diapers, and comfort items.</li>
+        <li>Pets and livestock: store water and feed for each animal.</li>
+      </ul>
+      <p data-call>Call 911 in an emergency.</p>
+      <p class="caption">Sources: <a href="https://www.ready.gov/kit">Ready.gov, Build a Kit</a>; <a href="https://www.ready.gov/water">Ready.gov, Water</a>; <a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies.html">American Red Cross, How to Prepare for Emergencies</a>. Sources checked 10/05/2026.</p>
     </section>
-      <section class="panel" data-panel="safety-call" data-sources="cthd-contacts" aria-labelledby="safety-call-h">
+
+      <section class="panel" data-panel="safety-call" data-sources="cthd-contacts cthd-resources" aria-labelledby="safety-call-h">
         <h2 class="panel__title" id="safety-call-h">Who to Call</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
