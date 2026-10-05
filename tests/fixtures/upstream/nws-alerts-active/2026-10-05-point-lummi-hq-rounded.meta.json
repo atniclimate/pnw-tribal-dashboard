@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "point-lummi-hq-rounded",
+  "file": "2026-10-05-point-lummi-hq-rounded.json",
+  "url": "https://api.weather.gov/alerts/active?point=48.792,-122.626",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T09:45:55.527Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 232,
+  "sha256": "377d66b32b5774574c716a38e5cffecfac4630991047591c0fc562d7cf406cd6",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

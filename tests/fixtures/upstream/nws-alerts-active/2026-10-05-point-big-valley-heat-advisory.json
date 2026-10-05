@@ -1,0 +1,110 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.f00d5b7445e352f51d85194b8d1c1f294754b306.002.1",
+                "areaDesc": "Southwestern Interior Mendocino; Southeastern Interior Mendocino; Western Lake; Southwestern Lake; Eastern Lake",
+                "geocode": {
+                    "SAME": [
+                        "006045",
+                        "006033"
+                    ],
+                    "UGC": [
+                        "CAZ112",
+                        "CAZ113",
+                        "CAZ118",
+                        "CAZ119",
+                        "CAZ120"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/CAZ112",
+                    "https://api.weather.gov/zones/forecast/CAZ113",
+                    "https://api.weather.gov/zones/forecast/CAZ118",
+                    "https://api.weather.gov/zones/forecast/CAZ119",
+                    "https://api.weather.gov/zones/forecast/CAZ120"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.25d8c8a86543268e231a7a19d012cc256b3a2568.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.25d8c8a86543268e231a7a19d012cc256b3a2568.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T13:15:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T21:04:00-07:00",
+                "effective": "2026-10-04T21:04:00-07:00",
+                "onset": "2026-10-04T21:04:00-07:00",
+                "expires": "2026-10-05T16:00:00-07:00",
+                "ends": "2026-10-07T22:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Moderate",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Heat Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Eureka CA",
+                "headline": "Heat Advisory issued October 4 at 9:04PM PDT until October 7 at 10:00PM PDT by NWS Eureka CA",
+                "description": "* WHAT...High temperatures up to 105 with overnight temperatures in\nthe 60s. Moderate to localized High HeatRisk.\n\n* WHERE...Southern Mendocino Interior, and Southern Lake.\n\n* WHEN...Until 10 PM PDT Wednesday.\n\n* IMPACTS...Moderate to localized high HeatRisk will increase the\npotential for heat illnesses.",
+                "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+                "response": "Execute",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWEKA"
+                    ],
+                    "WMOidentifier": [
+                        "WWUS76 KEKA 050404"
+                    ],
+                    "NWSheadline": [
+                        "HEAT ADVISORY NOW IN EFFECT UNTIL 10 PM PDT WEDNESDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.EXT.KEKA.HT.Y.0006.000000T0000Z-261008T0500Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-07T22:00:00-07:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.0167356ae1b600d1ef5a4eed0f4005b75f887827.001.1,2026-10-04T10:47:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.85741a8655211dce91f65e19397fd341dc3d2872.001.1,2026-10-04T03:02:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d4d60336361d3bc0588fe0a6a910329c6f01086b.001.1,2026-10-03T13:43:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ff5f21396fb5e6fc768685af478449cae4a2b3ed.001.1,2026-10-03T08:16:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.0d076c04558a41275b9f89bdd21ddaf9cc9a3283.001.1,2026-10-02T11:47:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "HTY"
+                    ]
+                }
+            }
+        }
+    ],
+    "title": "Current watches, warnings, and advisories for 39.022 N, 122.887 W",
+    "updated": "2026-10-05T09:43:15+00:00"
+}
