@@ -1,0 +1,93 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+        "areaDesc": "Gallatin National Forest; Wheatland County/Sweet Grass County",
+        "geocode": {
+            "SAME": [
+                "030009",
+                "030031",
+                "030057",
+                "030059",
+                "030067",
+                "030095",
+                "030097",
+                "030107"
+            ],
+            "UGC": [
+                "MTZ123",
+                "MTZ124"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/fire/MTZ123",
+            "https://api.weather.gov/zones/fire/MTZ124"
+        ],
+        "references": [],
+        "sent": "2026-10-04T12:40:00-06:00",
+        "effective": "2026-10-04T12:40:00-06:00",
+        "onset": "2026-10-05T10:00:00-06:00",
+        "expires": "2026-10-05T12:45:00-06:00",
+        "ends": "2026-10-05T20:00:00-06:00",
+        "status": "Actual",
+        "messageType": "Alert",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "event": "Red Flag Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Billings MT",
+        "headline": "Red Flag Warning issued October 4 at 12:40PM MDT until October 5 at 8:00PM MDT by NWS Billings MT",
+        "description": "The National Weather Service in Billings has issued a Red Flag\nWarning...which is in effect from 10 AM to 8 PM MDT Monday. The\nFire Weather Watch is no longer in effect.\n\n* IMPACTS: Low humidities, unseasonably warm temperatures, and\ngusty winds will create erratic fire behavior for new or existing\nfires.\n\n* AFFECTED AREA:\nIn South Central MT Fire Zones...123...124.\n\n* COUNTIES AFFECTED:\nIn Central MT...Wheatland.\nIn South Central MT...Park...Sweet Grass.\nIn Southwest MT...Gallatin.\n\n* WIND: West 15 to 25 mph with gusts up to 35 mph.\n\n* HUMIDITY: As low as 12 percent.\n\n* TEMPERATURES: up to 87 degrees.\n\n* ADDITIONAL DETAILS: The worst conditions are expected across\nthe lower to mid elevations in fine fuels.",
+        "instruction": "A Red Flag Warning means that critical fire weather conditions are\neither occurring now, or will shortly. A combination of strong\nwinds, low relative humidity, and warm temperatures can contribute\nto extreme fire behavior.",
+        "response": "Prepare",
+        "note": null,
+        "parameters": {
+            "AWIPSidentifier": [
+                "RFWBYZ"
+            ],
+            "WMOidentifier": [
+                "WWUS85 KBYZ 041840"
+            ],
+            "NWSheadline": [
+                "RED FLAG WARNING IN EFFECT FROM 10 AM TO 8 PM MDT MONDAY"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "VTEC": [
+                "/O.NEW.KBYZ.FW.W.0013.261005T1600Z-261006T0200Z/"
+            ],
+            "eventEndingTime": [
+                "2026-10-05T20:00:00-06:00"
+            ]
+        },
+        "scope": "Public",
+        "code": "IPAWSv1.0",
+        "language": "en-US",
+        "web": "http://www.weather.gov",
+        "eventCode": {
+            "SAME": [
+                "NWS"
+            ],
+            "NationalWeatherService": [
+                "FWW"
+            ]
+        }
+    }
+}

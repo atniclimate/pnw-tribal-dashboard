@@ -1,0 +1,101 @@
+{
+  "id": "us-wa-lummi-tribe-of-the-lummi-reservation",
+  "castId": null,
+  "name": "Lummi Tribe of the Lummi Reservation",
+  "nameSource": {
+    "kind": "bia-tld",
+    "citation": "BIA Tribal Leaders Directory, tribefullname, OBJECTID 359",
+    "url": "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "WA"
+  ],
+  "region": "wa",
+  "hq": {
+    "lat": 48.79202,
+    "lon": -122.6262,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "359",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      48.79202,
+      -122.6262
+    ]
+  ],
+  "bbox": [
+    -122.71112,
+    48.69379,
+    -122.58882,
+    48.81949
+  ],
+  "boundary": {
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-wa-lummi-tribe-of-the-lummi-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0069",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": {
+    "wfo": [
+      "SEW"
+    ],
+    "point": [
+      48.79202,
+      -122.6262
+    ],
+    "forecastZones": [
+      "forecast:WAZ310"
+    ],
+    "countyZones": [
+      "county:WAC073"
+    ],
+    "fireZones": [
+      "fire:WAZ653"
+    ],
+    "marineZones": []
+  },
+  "eccc": null,
+  "radar": {
+    "nexrad": "KATX",
+    "ridgeLoop": "KATX",
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0069"
+    ],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": 359,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Registry test fixture built by scripts/dev/registry-fixture.mjs; not for display."
+  },
+  "flags": []
+}

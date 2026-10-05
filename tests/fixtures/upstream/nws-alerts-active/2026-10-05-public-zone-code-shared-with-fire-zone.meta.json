@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "public-zone-code-shared-with-fire-zone",
+  "file": "2026-10-05-public-zone-code-shared-with-fire-zone.json",
+  "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:45.897Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 7137,
+  "sha256": "2f70f96515f55ab165157d4dd68a62c12275f2f281a17511ff9bdeea01dcc3d0",
+  "covers": [
+    "fire-public-zone-code-collision"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Heat Advisory naming forecast:CAZ503; CAZ503 is also a fire-weather zone code with a different area."
+}

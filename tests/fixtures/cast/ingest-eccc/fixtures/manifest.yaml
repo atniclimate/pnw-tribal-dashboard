@@ -1,0 +1,34 @@
+version: 1
+fixtures:
+  - path: live/weather-alerts-items-limit10.json
+    kind: live
+    source_url: https://api.weather.gc.ca/collections/weather-alerts/items?f=json&limit=10
+    fetched_at: 2026-07-17T20:46:52Z
+    bytes: 76756
+    sha256: b09dac9c9094a5186ed9aac56dc00c87cc47af9f6f48338500d460ab192aa384
+    note: >
+      Deliberate limit=10 page of 504 matched alerts (numberMatched > features):
+      now doubles as the live truncated-collection rejection branch
+      (eccc-truncated-collection). Language, geometry, and coverage assertions
+      still read its faithfully normalized items.
+  - path: live/T_WWCN13_C_CWVR_202607170903_2092774527.cap
+    kind: live
+    source_url: https://dd.weather.gc.ca/20260717/WXO-DD/alerts/cap/20260717/CWVR/09/T_WWCN13_C_CWVR_202607170903_2092774527.cap
+    fetched_at: 2026-07-17T18:04:57.123Z
+    bytes: 25677
+    sha256: 3e2247813d5c6a5a11906de897a9599a3eda1ed3a2cf0807ddb666b928a1f26d
+  - path: synthetic/impact-precedence.json
+    kind: synthetic
+    covers: impact-over-colour-over-severity, no-title-inference, missing-language
+  - path: synthetic/ended-statement.json
+    kind: synthetic
+    covers: ended-statement
+  - path: synthetic/malformed-feature.json
+    kind: synthetic
+    covers: per-feature-failure-isolation
+  - path: synthetic/parity-geomet.json
+    kind: synthetic
+    covers: geomet-cap-conformance-parity
+  - path: synthetic/parity.cap
+    kind: synthetic
+    covers: geomet-cap-conformance-parity

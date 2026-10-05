@@ -1,0 +1,133 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ebc8a992966a453c26dec8a2e503e6c196f99a47.001.1",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -93.14,
+                    30.38
+                ],
+                [
+                    -93.03,
+                    30.31
+                ],
+                [
+                    -93.08,
+                    30.25
+                ],
+                [
+                    -93.21,
+                    30.19
+                ],
+                [
+                    -93.29,
+                    30.3
+                ],
+                [
+                    -93.14,
+                    30.38
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ebc8a992966a453c26dec8a2e503e6c196f99a47.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.ebc8a992966a453c26dec8a2e503e6c196f99a47.001.1",
+        "areaDesc": "Calcasieu, LA",
+        "geocode": {
+            "SAME": [
+                "022019"
+            ],
+            "UGC": [
+                "LAC019"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/county/LAC019"
+        ],
+        "references": [
+            {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.68d4016ff85029b1d21ce6630bb0208931dc1592.001.1",
+                "identifier": "urn:oid:2.49.0.1.840.0.68d4016ff85029b1d21ce6630bb0208931dc1592.001.1",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "sent": "2026-07-16T11:05:00-05:00"
+            },
+            {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.3752dff805703714b4e03889cc4183a849a365f4.001.1",
+                "identifier": "urn:oid:2.49.0.1.840.0.3752dff805703714b4e03889cc4183a849a365f4.001.1",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "sent": "2026-07-16T20:11:00-05:00"
+            }
+        ],
+        "sent": "2026-07-17T11:02:00-05:00",
+        "effective": "2026-07-17T11:02:00-05:00",
+        "onset": "2026-07-17T11:02:00-05:00",
+        "expires": "2026-07-18T11:15:00-05:00",
+        "ends": "2026-07-22T01:00:00-05:00",
+        "status": "Actual",
+        "messageType": "Update",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "event": "Flood Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Lake Charles LA",
+        "headline": "Flood Warning issued July 17 at 11:02AM CDT until July 22 at 1:00AM CDT by NWS Lake Charles LA",
+        "description": "...The Flood Warning is extended for the following rivers in\nLouisiana...\n\nCalcasieu River near White Oak Park\n\nAdditional information is available at www.weather.gov.\n\n* WHAT...Minor flooding is forecast.\n\n* WHERE...Calcasieu River near White Oak Park.\n\n* WHEN...Until early Wednesday morning.\n\n* IMPACTS...At 2.0 feet, Minor flooding of Goos Ferry Road will\noccur.\n\n* ADDITIONAL DETAILS...\n- At 10:40 AM CDT Friday the stage was 1.8 feet.\n- Forecast...The river will oscillate around flood stage with a\nmaximum value of 2.3 feet this evening.\n- Flood stage is 2.0 feet.\n- http://www.weather.gov/safety/flood",
+        "instruction": null,
+        "response": "Avoid",
+        "note": null,
+        "parameters": {
+            "AWIPSidentifier": [
+                "FLSLCH"
+            ],
+            "WMOidentifier": [
+                "WGUS84 KLCH 171602"
+            ],
+            "NWSheadline": [
+                "FLOOD WARNING NOW IN EFFECT UNTIL EARLY WEDNESDAY MORNING"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "EAS-ORG": [
+                "WXR"
+            ],
+            "VTEC": [
+                "/O.EXT.KLCH.FL.W.0034.000000T0000Z-260722T0600Z/"
+            ],
+            "eventEndingTime": [
+                "2026-07-22T01:00:00-05:00"
+            ],
+            "expiredReferences": [
+                "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.98496baeeb37fe31476246acbe52f1a843a09528.001.1,2026-07-15T21:14:00-05:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.5831eb11d93dc8724992247011fb3302c5d92127.002.1,2026-07-15T08:16:00-05:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.65f66964c775644f5a9f506caabe33cb49529f03.001.1,2026-07-14T17:32:00-05:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.5917583f8d8d91f556da4ab588e37fabff319a9d.002.1,2026-07-14T10:09:00-05:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4bf0c2436f41d8c6d521843ce177aa32630c1a1f.001.1,2026-07-14T09:58:00-05:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.28ea69f66472ab7d4417e8ebc7a744a5e181651c.002.1,2026-07-14T06:38:00-05:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e7943b55fd1caca401e1bcbfd30cb7f954ffe2d9.003.1,2026-07-13T21:48:00-05:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.fb675313ec828c280942f78a9973593eaab76e2c.003.1,2026-07-13T10:04:00-05:00"
+            ]
+        },
+        "scope": "Public",
+        "code": "IPAWSv1.0",
+        "language": "en-US",
+        "web": "http://www.weather.gov",
+        "eventCode": {
+            "SAME": [
+                "FLS"
+            ],
+            "NationalWeatherService": [
+                "FLW"
+            ]
+        }
+    }
+}

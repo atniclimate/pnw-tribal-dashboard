@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/live-declarations-fema.schema.json",
+  "title": "Live Envelope: declarations-fema.json",
+  "description": "site/data/live/declarations-fema.json: OpenFEMA rows grouped per disaster (blueprint 5.7).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "sourceIds",
+    "generatedAt",
+    "observedAt",
+    "asOf",
+    "asOfBasis",
+    "completeness",
+    "carriedForward",
+    "failure",
+    "perSource",
+    "diagnostics",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.live.declarations-fema/1"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/kebabId"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "minItems": 1
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "observedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "asOf": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "asOfBasis": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/asOfBasis"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completeness": {
+      "enum": [
+        "complete",
+        "partial",
+        "rejected"
+      ]
+    },
+    "carriedForward": {
+      "type": "boolean"
+    },
+    "failure": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message",
+            "at"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string"
+            },
+            "at": {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "perSource": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok",
+          "count",
+          "asOf"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "asOf": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "disasterNumber",
+          "type",
+          "state",
+          "region",
+          "tribalRequest",
+          "title",
+          "incidentType",
+          "declaredOn",
+          "incidentBegin",
+          "incidentEnd",
+          "closedOn",
+          "designatedAreas",
+          "programs",
+          "nationIds",
+          "unmatchedTribalArea",
+          "inFootprint",
+          "sourceUrl"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^fema:(DR|EM|FM)-[0-9]+-[A-Z]{2}$"
+          },
+          "disasterNumber": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "type": {
+            "enum": [
+              "DR",
+              "EM",
+              "FM"
+            ]
+          },
+          "state": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "region": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/regionCode"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tribalRequest": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "incidentType": {
+            "type": "string"
+          },
+          "declaredOn": {
+            "$ref": "common.schema.json#/$defs/isoDateTime"
+          },
+          "incidentBegin": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "incidentEnd": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "closedOn": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "designatedAreas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "programs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ih",
+              "ia",
+              "pa",
+              "hm"
+            ],
+            "properties": {
+              "ih": {
+                "type": "boolean"
+              },
+              "ia": {
+                "type": "boolean"
+              },
+              "pa": {
+                "type": "boolean"
+              },
+              "hm": {
+                "type": "boolean"
+              }
+            }
+          },
+          "nationIds": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/nationId"
+            }
+          },
+          "unmatchedTribalArea": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "inFootprint": {
+            "type": "boolean"
+          },
+          "sourceUrl": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          }
+        }
+      }
+    }
+  }
+}

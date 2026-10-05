@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-zones-api",
+  "label": "fire-caz503",
+  "file": "2026-10-05-fire-caz503.json",
+  "url": "https://api.weather.gov/zones/fire/CAZ503",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:46.112Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": "Thu, 16 Apr 2026 16:25:56 GMT",
+  "bytes": 9382,
+  "sha256": "909d6dc389d2f9e939c9f1f9b4e39aa3cb420524419de4306970878b543befef",
+  "covers": [
+    "fire-public-zone-code-collision"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Zone CAZ503 as a fire zone."
+}

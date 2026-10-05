@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "topup-wa-or-id-pz",
+  "file": "2026-10-05-topup-wa-or-id-pz.json",
+  "url": "https://api.weather.gov/alerts/active?area=WA,OR,ID,PZ&status=actual",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:23:46.769Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 45533,
+  "sha256": "6f4576da19b71cb11b77a44739badf874038dc657e8b0855e457140552d68aca",
+  "covers": [
+    "footprint-collection",
+    "marine-alert"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Browser top-up request 1 from section 3.7.3."
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-points",
+  "label": "kasaan-hq",
+  "file": "2026-10-05-kasaan-hq.json",
+  "url": "https://api.weather.gov/points/55.53828,-132.4064",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:53.400Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 3880,
+  "sha256": "1010a55979c22e43c8c6536550c053ebc75ad8c5127d61907bc36e0f022a88ad",
+  "covers": [
+    "points-metadata"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "NWS /points for a registry fixture headquarters coordinate (BIA Tribal Leaders Directory or Alaska Native Villages)."
+}

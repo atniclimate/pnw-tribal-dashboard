@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/gauges-overrides.schema.json",
+  "title": "Gauge Overrides",
+  "description": "data/registry/gauges-overrides.yaml (blueprint 5.5).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "gaugeId",
+      "action",
+      "note",
+      "sourceUrl"
+    ],
+    "properties": {
+      "gaugeId": {
+        "type": "string",
+        "pattern": "^(nwps|wsc):[A-Z0-9]+$"
+      },
+      "action": {
+        "enum": [
+          "add",
+          "remove",
+          "replace"
+        ]
+      },
+      "replaces": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^(nwps|wsc):[A-Z0-9]+$"
+      },
+      "nationIds": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/nationId"
+        }
+      },
+      "note": {
+        "type": "string",
+        "minLength": 1
+      },
+      "sourceUrl": {
+        "$ref": "common.schema.json#/$defs/httpsUrl"
+      }
+    }
+  }
+}

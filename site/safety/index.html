@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark light">
+  <meta name="robots" content="noindex">
+  <title>Safety | Cascadia Tribal Hazard Dashboard</title>
+  <meta name="description" content="What to do before, during, and after floods, storms, heat, smoke, wildfire, tsunami, and earthquakes.">
+  <script src="../static/js/boot/flags.js"></script>
+  <link rel="preload" href="../static/fonts/league-spartan-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/tokens.css">
+  <link rel="stylesheet" href="../static/css/fonts.css">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/layout.css">
+  <link rel="stylesheet" href="../static/css/components.css">
+  <link rel="stylesheet" href="../static/css/print.css" media="print">
+  <!-- modulepreload:start -->
+  <link rel="modulepreload" href="../static/js/pages/safety.js">
+  <link rel="modulepreload" href="../static/js/ui/chrome.js">
+  <link rel="modulepreload" href="../static/js/core/embed.js">
+  <!-- modulepreload:end -->
+  <script type="module" src="../static/js/pages/safety.js"></script>
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../static/img/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="safety">
+  <a class="skip-link" href="#main">Skip to Main Content</a>
+  <!-- chrome:start -->
+  <header class="site-header">
+    <a class="site-header__brand" href="../">
+      <span class="site-header__org">ATNI Climate</span>
+      <span class="site-header__product">Cascadia Tribal Hazard Dashboard</span>
+    </a>
+    <a class="nation-chip" href="../#choose-nation" data-action="open-nation-picker"><span class="nation-chip__label">Nation:</span> <span data-nation-chip-name>All of Cascadia</span></a>
+  </header>
+  <nav class="site-nav" aria-label="Primary">
+    <ul class="site-nav__list">
+        <li><a href="../">Dashboard</a></li>
+        <li><a href="../alerts/">Alerts</a></li>
+        <li><a href="../forecasts/">Forecasts</a></li>
+        <li><a href="../contacts/">Contacts</a></li>
+        <li><a href="../resources/">Resources</a></li>
+        <li><a href="../safety/" aria-current="page">Safety</a></li>
+        <li><a href="../news/">News</a></li>
+        <li><a href="../usage/">Usage</a></li>
+    </ul>
+  </nav>
+  <div class="embed-bar" data-embed-only>
+    <span class="embed-bar__brand">ATNI Climate</span>
+    <span class="embed-bar__title" data-embed-title></span>
+    <a class="embed-bar__open" href="./" target="_blank" rel="noopener" data-embed-open>Open Full Page</a>
+    <a class="embed-bar__sources" href="../usage/?view=sources" target="_blank" rel="noopener">Sources and Disclaimer</a>
+  </div>
+  <!-- chrome:end -->
+  <main id="main" tabindex="-1">
+    <h1 class="page-title" id="page-title">Safety</h1>
+    <p class="callout callout--note">In an emergency, call <a href="tel:911">911</a>.</p>
+      <section class="panel" data-panel="safety-active" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="safety-active-h">
+        <h2 class="panel__title" id="safety-active-h">Active Now</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+    <section class="safety-section" id="flood" aria-labelledby="flood-h">
+      <h2 id="flood-h">Flood and Debris Flows</h2>
+    </section>
+    <section class="safety-section" id="atmospheric-rivers" aria-labelledby="atmospheric-rivers-h">
+      <h2 id="atmospheric-rivers-h">Atmospheric Rivers and Landslides</h2>
+    </section>
+    <section class="safety-section" id="wind" aria-labelledby="wind-h">
+      <h2 id="wind-h">Wind and Power Outages</h2>
+    </section>
+    <section class="safety-section" id="winter" aria-labelledby="winter-h">
+      <h2 id="winter-h">Winter Storms and Extreme Cold</h2>
+    </section>
+    <section class="safety-section" id="heat" aria-labelledby="heat-h">
+      <h2 id="heat-h">Extreme Heat</h2>
+    </section>
+    <section class="safety-section" id="smoke" aria-labelledby="smoke-h">
+      <h2 id="smoke-h">Wildfire Smoke and Air Quality</h2>
+    </section>
+    <section class="safety-section" id="wildfire" aria-labelledby="wildfire-h">
+      <h2 id="wildfire-h">Wildfire Evacuation</h2>
+    </section>
+    <section class="safety-section" id="tsunami" aria-labelledby="tsunami-h">
+      <h2 id="tsunami-h">Tsunami and Coastal Hazards</h2>
+    </section>
+    <section class="safety-section" id="earthquake" aria-labelledby="earthquake-h">
+      <h2 id="earthquake-h">Earthquake</h2>
+    </section>
+    <section class="safety-section" id="kit" aria-labelledby="kit-h">
+      <h2 id="kit-h">Emergency Kit and Drinking Water After Disasters</h2>
+    </section>
+      <section class="panel" data-panel="safety-call" data-sources="cthd-contacts" aria-labelledby="safety-call-h">
+        <h2 class="panel__title" id="safety-call-h">Who to Call</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+  </main>
+  <!-- chrome:start -->
+  <footer class="site-footer">
+    <p class="site-footer__safety">This dashboard does not replace official warnings or 911. In an emergency, call 911.</p>
+    <p class="site-footer__sovereignty"><strong>Representation, not jurisdiction.</strong> Boundary lines shown here come from public federal sources; they are not a Tribal Nation's own statement of its land or authority.</p>
+    <p class="site-footer__sources">Sources used on this page: <span data-footer-sources><a href="../usage/?view=sources">see the Sources list</a></span>.</p>
+    <p class="site-footer__links"><a href="../usage/">Usage and Disclaimer</a> <a href="../usage/?view=privacy">Privacy</a> <a href="../usage/?view=accessibility">Accessibility</a> <a href="../archive/">Event Archive</a> <a href="../embed/">Embedding</a></p>
+    <p class="site-footer__credit">An ATNI Climate product. Successor to IndigenousACCESS.org. Contact <a href="mailto:climate@atnitribes.org">climate@atnitribes.org</a>.</p>
+    <p class="site-footer__build" data-build-info hidden></p>
+  </footer>
+  <nav class="bottom-bar" aria-label="Quick Actions">
+    <a class="bottom-bar__item" href="../alerts/">Alerts</a>
+    <a class="bottom-bar__item" href="../forecasts/?view=rivers">Rivers</a>
+    <a class="bottom-bar__item" href="../contacts/" data-action="open-call-sheet">Call</a>
+    <a class="bottom-bar__item" href="../contacts/?view=near-me">Near Me</a>
+  </nav>
+  <!-- chrome:end -->
+</body>
+</html>

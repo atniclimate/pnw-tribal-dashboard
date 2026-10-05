@@ -1,0 +1,90 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5780a808b2b22aab2c83c93f68cceb63cee07c68.001.1",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5780a808b2b22aab2c83c93f68cceb63cee07c68.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.5780a808b2b22aab2c83c93f68cceb63cee07c68.001.1",
+        "areaDesc": "Lower Columbia Basin of Oregon",
+        "geocode": {
+            "SAME": [
+                "041021",
+                "041031",
+                "041049",
+                "041055",
+                "041059",
+                "041065",
+                "041069"
+            ],
+            "UGC": [
+                "ORZ691"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/fire/ORZ691"
+        ],
+        "references": [],
+        "sent": "2026-07-17T10:23:00-07:00",
+        "effective": "2026-07-17T10:23:00-07:00",
+        "onset": "2026-07-17T14:00:00-07:00",
+        "expires": "2026-07-17T23:00:00-07:00",
+        "ends": "2026-07-18T22:00:00-07:00",
+        "status": "Actual",
+        "messageType": "Alert",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "event": "Red Flag Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Pendleton OR",
+        "headline": "Red Flag Warning issued July 17 at 10:23AM PDT until July 18 at 10:00PM PDT by NWS Pendleton OR",
+        "description": "...BREEZY WINDS AND LOW RELATIVE HUMIDITY THROUGH SATURDAY EVENING...\n\n.Breezy diurnally driven westerly winds coupled with low relative\nhumidity is expected to continue through the Lower Columbia Basin\nof Oregon each afternoon and evening through Saturday. Relative\nhumidity will be above critical thresholds overnight.\n\nThe National Weather Service in Pendleton has issued a Red Flag\nWarning for wind and low relative humidity, which is in effect\nfrom 2 PM this afternoon to 10 PM PDT Saturday.\n\n* AFFECTED AREA...Fire Weather Zone 691 Lower Columbia Basin of\nOregon.\n\n* TIMING...From 2 PM this afternoon to 10 PM PDT Saturday.\n\n* WINDS...West 15 to 20 mph with gusts up to 30 mph.\n\n* RELATIVE HUMIDITY...As low as 15 percent.\n\n* IMPACTS...Any fire that develops will catch and spread\nquickly. Outdoor burning is not recommended.",
+        "instruction": "A Red Flag Warning means that critical fire weather conditions\nare either occurring now, or will shortly. A combination of\nstrong winds, low relative humidity, and warm temperatures can\ncontribute to extreme fire behavior.",
+        "response": "Prepare",
+        "note": null,
+        "parameters": {
+            "AWIPSidentifier": [
+                "RFWPDT"
+            ],
+            "WMOidentifier": [
+                "WWUS86 KPDT 171723"
+            ],
+            "NWSheadline": [
+                "RED FLAG WARNING IN EFFECT FROM 2 PM THIS AFTERNOON TO 10 PM PDT SATURDAY FOR WIND AND LOW RELATIVE HUMIDITY FOR FIRE WEATHER ZONE OR691"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "VTEC": [
+                "/O.NEW.KPDT.FW.W.0010.260717T2100Z-260719T0500Z/"
+            ],
+            "eventEndingTime": [
+                "2026-07-18T22:00:00-07:00"
+            ]
+        },
+        "scope": "Public",
+        "code": "IPAWSv1.0",
+        "language": "en-US",
+        "web": "http://www.weather.gov",
+        "eventCode": {
+            "SAME": [
+                "NWS"
+            ],
+            "NationalWeatherService": [
+                "FWW"
+            ]
+        }
+    }
+}

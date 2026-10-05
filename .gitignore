@@ -14,3 +14,17 @@ desktop.ini
 # Local scratch
 .repo-audit/
 node_modules/
+
+# Cascadia Tribal Hazard Dashboard build outputs (blueprint 1.1)
+site/data/curated/
+site/data/live/*
+!site/data/live/.gitkeep
+_site/
+.cache/
+reports/
+exports/
+test-results/
+playwright-report/
+
+# Planning and lane documents stay local (public repo is lean: README.md and DATA.md only)
+docs/

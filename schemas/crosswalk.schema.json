@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/crosswalk.schema.json",
+  "title": "Registry Crosswalk",
+  "description": "data/registry/crosswalk-us.json and crosswalk-bc.json (blueprint 6.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "rows"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.crosswalk/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "nationId",
+          "sourceId",
+          "sourceKey",
+          "matchMethod",
+          "reviewed"
+        ],
+        "properties": {
+          "nationId": {
+            "$ref": "common.schema.json#/$defs/nationId"
+          },
+          "sourceId": {
+            "$ref": "common.schema.json#/$defs/sourceId"
+          },
+          "sourceKey": {
+            "type": "string",
+            "minLength": 1
+          },
+          "matchMethod": {
+            "enum": [
+              "code",
+              "name-exact",
+              "name-reviewed",
+              "manual"
+            ]
+          },
+          "reviewed": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

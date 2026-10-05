@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/declarations-curated.schema.json",
+  "title": "Curated Declarations",
+  "description": "data/declarations/curated.yaml (blueprint 5.7). Status is computed at render, never stored.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "issuer",
+      "kind",
+      "title",
+      "issuedOn",
+      "effectiveUntil",
+      "source",
+      "verifiedAt",
+      "reviewBy",
+      "eventId",
+      "femaDisasterNumber"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^decl-[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "issuer": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "name",
+          "nationId"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "tribal",
+              "first-nation",
+              "state",
+              "provincial",
+              "county",
+              "regional-district"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nationId": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/nationId"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "kind": {
+        "enum": [
+          "disaster-declaration",
+          "emergency-declaration",
+          "emergency-proclamation",
+          "state-of-local-emergency"
+        ]
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "issuedOn": {
+        "$ref": "common.schema.json#/$defs/isoDate"
+      },
+      "effectiveUntil": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "source": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "url",
+          "title",
+          "publisher"
+        ],
+        "properties": {
+          "url": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "verifiedAt": {
+        "$ref": "common.schema.json#/$defs/isoDate"
+      },
+      "reviewBy": {
+        "$ref": "common.schema.json#/$defs/isoDate"
+      },
+      "eventId": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "femaDisasterNumber": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      }
+    }
+  }
+}

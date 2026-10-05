@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/boundary-detail.schema.json",
+  "title": "Boundary Detail File",
+  "description": "site/data/geo/boundaries/<id>.json (blueprint 4.2). Feature name is the registry full formal name; the source label stays in sourceName.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "features"
+  ],
+  "properties": {
+    "type": {
+      "const": "FeatureCollection"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "properties",
+          "geometry"
+        ],
+        "properties": {
+          "type": {
+            "const": "Feature"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "nationId",
+              "name",
+              "source",
+              "sourceFeatureId",
+              "vintage",
+              "kind",
+              "sourceName"
+            ],
+            "properties": {
+              "nationId": {
+                "$ref": "common.schema.json#/$defs/nationId"
+              },
+              "name": {
+                "$ref": "common.schema.json#/$defs/displayName"
+              },
+              "source": {
+                "$ref": "common.schema.json#/$defs/sourceId"
+              },
+              "sourceFeatureId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "vintage": {
+                "$ref": "common.schema.json#/$defs/isoDate"
+              },
+              "kind": {
+                "enum": [
+                  "land-area-representation",
+                  "reservation",
+                  "off-reservation-trust-land",
+                  "indian-reserve",
+                  "census-aiannh-legal"
+                ]
+              },
+              "sourceName": {
+                "type": "string"
+              }
+            }
+          },
+          "geometry": {
+            "$ref": "common.schema.json#/$defs/geometry"
+          }
+        }
+      },
+      "minItems": 1
+    }
+  }
+}

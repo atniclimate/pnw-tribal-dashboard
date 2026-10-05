@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/curated-contacts.schema.json",
+  "title": "Compiled Contacts",
+  "description": "site/data/curated/contacts.json, compiled by scripts/compile (blueprint 6.3).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.curated.contacts/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "contact.schema.json"
+      }
+    }
+  }
+}

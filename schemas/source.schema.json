@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/source.schema.json",
+  "title": "Source Record",
+  "description": "data/sources/<id>.yaml: a strict superset of CAST SourceRecord (blueprint 5.4).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "owner",
+    "url",
+    "humanUrl",
+    "license",
+    "attribution",
+    "cadence",
+    "region",
+    "coverage",
+    "kind",
+    "status",
+    "deprecation",
+    "access",
+    "usedBy",
+    "verifiedAt"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/sourceId"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "$ref": "common.schema.json#/$defs/httpUrl"
+    },
+    "urlTemplate": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "humanUrl": {
+      "$ref": "common.schema.json#/$defs/httpsUrl"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "attribution": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cadence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "region": {
+      "enum": [
+        "us",
+        "ca",
+        "both"
+      ]
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/jurisdiction"
+      },
+      "uniqueItems": true
+    },
+    "kind": {
+      "enum": [
+        "api-json",
+        "api-geojson",
+        "ogc-features",
+        "arcgis-featureserver",
+        "wms",
+        "xyz-tiles",
+        "image",
+        "video",
+        "feed",
+        "page",
+        "file"
+      ]
+    },
+    "status": {
+      "enum": [
+        "active",
+        "candidate",
+        "active-pending-terms",
+        "deprecated",
+        "retired"
+      ]
+    },
+    "deprecation": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "date",
+            "replacement"
+          ],
+          "properties": {
+            "date": {
+              "$ref": "common.schema.json#/$defs/isoDate"
+            },
+            "replacement": {
+              "anyOf": [
+                {
+                  "$ref": "common.schema.json#/$defs/sourceId"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "cors"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "direct",
+            "snapshot",
+            "direct+snapshot",
+            "image",
+            "video",
+            "tiles",
+            "link",
+            "build"
+          ]
+        },
+        "cors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "acao",
+            "origin",
+            "checkedAt",
+            "evidence"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "verified-wildcard",
+                "verified-reflect",
+                "absent",
+                "unverified"
+              ]
+            },
+            "acao": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "origin": {
+              "$ref": "common.schema.json#/$defs/httpsUrl"
+            },
+            "checkedAt": {
+              "$ref": "common.schema.json#/$defs/isoDate"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "headers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 120000
+        },
+        "retries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "priority": {
+          "enum": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "poll": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "visibleMs",
+            "minMs"
+          ],
+          "properties": {
+            "visibleMs": {
+              "type": "integer",
+              "minimum": 30000
+            },
+            "minMs": {
+              "type": "integer",
+              "minimum": 30000
+            }
+          }
+        },
+        "snapshot": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "task",
+            "files",
+            "cadenceMin"
+          ],
+          "properties": {
+            "task": {
+              "$ref": "common.schema.json#/$defs/kebabId"
+            },
+            "files": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+\\.json$"
+              },
+              "minItems": 1
+            },
+            "cadenceMin": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "freshForMs",
+        "usableForMs"
+      ],
+      "properties": {
+        "freshForMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "usableForMs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "health": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "probe",
+        "expectStatus",
+        "expectAcao",
+        "expectType",
+        "minBytes",
+        "maxBytes"
+      ],
+      "properties": {
+        "probe": {
+          "$ref": "common.schema.json#/$defs/httpUrl"
+        },
+        "expectStatus": {
+          "type": "integer"
+        },
+        "expectAcao": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "expectType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "minBytes": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "maxBytes": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "usedBy": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/pageId"
+      },
+      "uniqueItems": true
+    },
+    "exports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "castId": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/sourceId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "ddmKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "verifiedAt": {
+      "$ref": "common.schema.json#/$defs/isoDate"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

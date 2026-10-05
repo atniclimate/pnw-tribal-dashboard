@@ -1,0 +1,37 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "source": "hand-authored CAP-shaped replay data",
+    "validationPending": [
+      "ECCC parameter names and value vocabulary",
+      "bilingual info-block pairing",
+      "Canadian location geocode shape"
+    ]
+  },
+  "identifier": "synthetic-eccc-rainfall",
+  "sender": "synthetic@example.invalid",
+  "sent": "2026-07-17T17:00:00Z",
+  "messageType": "Alert",
+  "info": [
+    {
+      "language": "en-CA",
+      "event": "Rainfall warning",
+      "severity": "Moderate",
+      "urgency": "Expected",
+      "certainty": "Likely",
+      "headline": "Synthetic rainfall warning",
+      "description": "Synthetic English replay content only.",
+      "parameter": { "MSC_Impact": "High", "Colour": "Orange" }
+    },
+    {
+      "language": "fr-CA",
+      "event": "Avertissement de pluie",
+      "severity": "Moderate",
+      "urgency": "Expected",
+      "certainty": "Likely",
+      "headline": "Avertissement de pluie synthétique",
+      "description": "Contenu français synthétique pour relecture seulement.",
+      "parameter": { "MSC_Impact": "High", "Colour": "Orange" }
+    }
+  ]
+}

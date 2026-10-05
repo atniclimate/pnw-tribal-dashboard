@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-citypage-realtime",
+  "label": "bc-cranbrook",
+  "file": "2026-10-05-bc-cranbrook.json",
+  "url": "https://api.weather.gc.ca/collections/citypageweather-realtime/items?f=json&limit=200&bbox=-116.5,49.2,-115.2,49.9",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:50.615Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 30802,
+  "sha256": "679097031b58513958095343ad6178f023adff62b907d1a4649284c264f373ff",
+  "covers": [
+    "city-page-forecast",
+    "bc-site"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "City page forecast for Cranbrook (bc-77), the site nearest the headquarters of the ?aqam fixture Nation, found with a bounding box around Cranbrook."
+}

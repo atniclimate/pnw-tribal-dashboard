@@ -1,0 +1,43 @@
+{
+  "_fixture": {
+    "synthetic": true,
+    "source": "hand-authored CAP-shaped replay data",
+    "validationPending": [
+      "NWS CAP references serialization",
+      "UGC geocode shape",
+      "messageType update and cancel chain"
+    ]
+  },
+  "messages": [
+    {
+      "identifier": "synthetic-nws-original",
+      "sender": "synthetic@example.invalid",
+      "sent": "2026-07-17T10:00:00Z",
+      "messageType": "Alert",
+      "info": {
+        "language": "en-US",
+        "event": "Flood Warning",
+        "severity": "Severe",
+        "urgency": "Expected",
+        "certainty": "Likely",
+        "headline": "Synthetic flood warning",
+        "description": "Synthetic replay content only.",
+        "geocode": { "UGC": ["WAZ001"] }
+      }
+    },
+    {
+      "identifier": "synthetic-nws-update",
+      "sender": "synthetic@example.invalid",
+      "sent": "2026-07-17T11:00:00Z",
+      "messageType": "Update",
+      "references": ["synthetic@example.invalid,synthetic-nws-original,2026-07-17T10:00:00Z"]
+    },
+    {
+      "identifier": "synthetic-nws-cancel",
+      "sender": "synthetic@example.invalid",
+      "sent": "2026-07-17T12:00:00Z",
+      "messageType": "Cancel",
+      "references": ["synthetic@example.invalid,synthetic-nws-update,2026-07-17T11:00:00Z"]
+    }
+  ]
+}

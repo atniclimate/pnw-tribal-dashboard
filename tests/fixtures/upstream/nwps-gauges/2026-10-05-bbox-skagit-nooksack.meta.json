@@ -1,0 +1,28 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nwps-gauges",
+  "label": "bbox-skagit-nooksack",
+  "file": "2026-10-05-bbox-skagit-nooksack.json",
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges?bbox.xmin=-122.6&bbox.ymin=48.3&bbox.xmax=-121.9&bbox.ymax=48.9&srid=EPSG_4326",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:18.736Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 8167,
+  "sha256": "1ab85e44a01837c18af52c6fa4cf4b6f1a94b9b6ca951682fb8a0c4a958b68a5",
+  "covers": [
+    "bbox-list",
+    "not-defined-category",
+    "out-of-service",
+    "sentinel-values",
+    "flow-primary"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Gauges in a box over the Nooksack and Skagit basins."
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/nations-index.schema.json",
+  "title": "Nations Index",
+  "description": "site/data/registry/nations-index.json (blueprint 5.2 index projection).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "nations"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.nations-index/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "nations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "preferredName",
+          "aliases",
+          "jurisdictions",
+          "region",
+          "kind",
+          "hq",
+          "tz",
+          "hasBoundary"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/nationId"
+          },
+          "name": {
+            "$ref": "common.schema.json#/$defs/displayName"
+          },
+          "preferredName": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/displayName"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "jurisdictions": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/jurisdiction"
+            },
+            "minItems": 1
+          },
+          "region": {
+            "$ref": "common.schema.json#/$defs/regionCode"
+          },
+          "kind": {
+            "enum": [
+              "us-federally-recognized-tribe",
+              "first-nation",
+              "alaska-native-village"
+            ]
+          },
+          "hq": {
+            "$ref": "common.schema.json#/$defs/latLon"
+          },
+          "tz": {
+            "type": "string"
+          },
+          "hasBoundary": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/build-info.schema.json",
+  "title": "Build Info",
+  "description": "_site/build-info.json (blueprint 5.12).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sha",
+    "sha12",
+    "builtAt",
+    "swDisabled"
+  ],
+  "properties": {
+    "sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha12": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$"
+    },
+    "builtAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "swDisabled": {
+      "type": "boolean"
+    }
+  }
+}

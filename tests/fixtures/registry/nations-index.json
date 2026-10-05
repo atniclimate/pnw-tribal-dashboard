@@ -1,0 +1,91 @@
+{
+  "schema": "cthd.nations-index/1",
+  "generatedAt": "2026-10-04T00:00:00Z",
+  "nations": [
+    {
+      "id": "us-wa-lummi-tribe-of-the-lummi-reservation",
+      "name": "Lummi Tribe of the Lummi Reservation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "WA"
+      ],
+      "region": "wa",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        48.79202,
+        -122.6262
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": true
+    },
+    {
+      "id": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "name": "Confederated Tribes of Siletz Indians of Oregon",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "OR"
+      ],
+      "region": "or",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        44.71973,
+        -123.9166
+      ],
+      "tz": "America/Los_Angeles",
+      "hasBoundary": true
+    },
+    {
+      "id": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "name": "Shoshone-Bannock Tribes of the Fort Hall Reservation",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "ID"
+      ],
+      "region": "id",
+      "kind": "us-federally-recognized-tribe",
+      "hq": [
+        43.02637,
+        -112.4334
+      ],
+      "tz": "America/Boise",
+      "hasBoundary": true
+    },
+    {
+      "id": "us-ak-organized-village-of-kasaan",
+      "name": "Organized Village of Kasaan",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "AK-SE"
+      ],
+      "region": "ak-se",
+      "kind": "alaska-native-village",
+      "hq": [
+        55.53828,
+        -132.4064
+      ],
+      "tz": "America/Sitka",
+      "hasBoundary": false
+    },
+    {
+      "id": "ca-fn-602",
+      "name": "?aqam",
+      "preferredName": null,
+      "aliases": [],
+      "jurisdictions": [
+        "BC"
+      ],
+      "region": "bc",
+      "kind": "first-nation",
+      "hq": [
+        49.58349,
+        -115.75451
+      ],
+      "tz": "America/Edmonton",
+      "hasBoundary": true
+    }
+  ]
+}

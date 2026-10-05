@@ -1,0 +1,122 @@
+{
+  "id": "ca-fn-602",
+  "castId": null,
+  "name": "?aqam",
+  "nameSource": {
+    "kind": "isc-registered-name",
+    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 602",
+    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "first-nation",
+  "country": "CA",
+  "jurisdictions": [
+    "BC"
+  ],
+  "region": "bc",
+  "hq": {
+    "lat": 49.58349,
+    "lon": -115.75451,
+    "precision": "community",
+    "sourceId": "isc-first-nations",
+    "sourceRecordId": "602",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      49.58349,
+      -115.75451
+    ]
+  ],
+  "bbox": [
+    -115.81166,
+    49.48778,
+    -115.55966,
+    49.67659
+  ],
+  "boundary": {
+    "status": "polygon",
+    "detailRef": "geo/boundaries/ca-fn-602.json",
+    "parts": [
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07423",
+        "kind": "indian-reserve",
+        "vintage": "2026-04-08"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07425",
+        "kind": "indian-reserve",
+        "vintage": "2026-04-08"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07424",
+        "kind": "indian-reserve",
+        "vintage": "2026-04-08"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07437",
+        "kind": "indian-reserve",
+        "vintage": "2026-04-08"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "07422",
+        "kind": "indian-reserve",
+        "vintage": "2026-04-08"
+      },
+      {
+        "sourceId": "nrcan-aboriginal-lands-bc",
+        "featureId": "10028",
+        "kind": "indian-reserve",
+        "vintage": "2026-04-08"
+      }
+    ]
+  },
+  "timeZone": "America/Edmonton",
+  "timeZoneSource": "tz-lookup",
+  "units": "metric",
+  "nws": null,
+  "eccc": {
+    "citypageId": "bc-77",
+    "citypageName": "Cranbrook",
+    "distanceKm": 7.1,
+    "forecastZones": []
+  },
+  "radar": {
+    "nexrad": null,
+    "ridgeLoop": null,
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": {
+    "bandNumber": 602,
+    "tribalCouncil": "Ktunaxa Nation Council Society"
+  },
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": null,
+    "biaAnvObjectId": null,
+    "iscBandNumber": 602
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Registry test fixture built by scripts/dev/registry-fixture.mjs; not for display. The ISC name carries the ? placeholder."
+  },
+  "flags": [
+    "name-orthography-needs-nation-source",
+    "tz-needs-confirmation"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "type": "FeatureCollection",
+  "timeStamp": "2026-07-17T21:00:00Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-impact-low",
+      "geometry": { "type": "Polygon", "coordinates": [[[-123, 49], [-122, 49], [-122, 50], [-123, 49]]] },
+      "properties": {
+        "id": "synthetic-impact-low",
+        "alert_type": "warning",
+        "alert_name_en": "Catastrophic Red Emergency Warning",
+        "alert_text_en": "Synthetic low-impact alert with a deliberately scary title.",
+        "alert_name_fr": "Avertissement d'urgence rouge catastrophique",
+        "alert_text_fr": "Alerte synthétique à faible impact avec un titre volontairement inquiétant.",
+        "publication_datetime": "2026-07-17T20:00:00Z",
+        "validity_datetime": "2026-07-17T20:00:00Z",
+        "expiration_datetime": "2026-07-18T02:00:00Z",
+        "impact_en": "Low",
+        "risk_colour_en": "red",
+        "severity": "Extreme",
+        "confidence_en": "Likely",
+        "province": "BC",
+        "status_en": "in effect"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "synthetic-colour-orange",
+      "geometry": { "type": "Polygon", "coordinates": [[[-121, 49], [-120, 49], [-120, 50], [-121, 49]]] },
+      "properties": {
+        "id": "synthetic-colour-orange",
+        "alert_type": "watch",
+        "alert_name_en": "Synthetic orange watch",
+        "alert_text_en": "Synthetic colour fallback alert.",
+        "publication_datetime": "2026-07-17T20:01:00Z",
+        "validity_datetime": "2026-07-17T20:01:00Z",
+        "expiration_datetime": "2026-07-18T02:01:00Z",
+        "risk_colour_en": "orange",
+        "severity": "Minor",
+        "confidence_en": "Possible",
+        "province": "BC",
+        "status_en": "in effect"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "synthetic-severity-moderate",
+      "geometry": { "type": "Polygon", "coordinates": [[[-119, 49], [-118, 49], [-118, 50], [-119, 49]]] },
+      "properties": {
+        "id": "synthetic-severity-moderate",
+        "alert_type": "statement",
+        "alert_name_fr": "Bulletin synthétique",
+        "alert_text_fr": "Alerte synthétique avec seulement la gravité CAP.",
+        "publication_datetime": "2026-07-17T20:02:00Z",
+        "validity_datetime": "2026-07-17T20:02:00Z",
+        "expiration_datetime": "2026-07-18T02:02:00Z",
+        "severity": "Moderate",
+        "province": "BC",
+        "status_fr": "en vigueur"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "openfema-declarations",
+  "label": "tribal-requests-footprint-states",
+  "file": "2026-10-05-tribal-requests-footprint-states.json",
+  "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=tribalRequest+eq+true+and+declarationDate+ge+%272024-01-01T00%3A00%3A00.000Z%27+and+%28state+eq+%27WA%27+or+state+eq+%27OR%27+or+state+eq+%27ID%27+or+state+eq+%27CA%27+or+state+eq+%27AK%27+or+state+eq+%27MT%27+or+state+eq+%27NV%27%29&%24orderby=declarationDate+desc",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:56.076Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": null,
+  "bytes": 15442,
+  "sha256": "0e52d78786ebf13a72263479d756dad193077e2559709fe8bb75241dea327b07",
+  "covers": [
+    "tribal-request"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Declaration rows with tribalRequest true in footprint states since 01/01/2024."
+}

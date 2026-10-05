@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "fire-zone-red-flag-warning",
+  "file": "2026-10-05-fire-zone-red-flag-warning.json",
+  "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.75c78f793d94b56b66d572d099303ad68cd2c79e.001.2",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:23:46.957Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 3944,
+  "sha256": "0b84e968138267ca95d5167c3cc749cb63246225333f01aa89dd3ed81e5a0fc4",
+  "covers": [
+    "fire-zone-alert"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Single alert whose affectedZones are fire-weather zones (fire:MTZ123, fire:MTZ124). Its codes have no public-zone twin; the code-collision case is the CAZ503 pair (see README.md)."
+}

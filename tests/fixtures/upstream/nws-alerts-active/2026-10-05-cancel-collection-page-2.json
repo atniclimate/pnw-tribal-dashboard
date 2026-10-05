@@ -1,0 +1,981 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f37bb7c84b693d01e0a1b019dd4def1d3defc865.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f37bb7c84b693d01e0a1b019dd4def1d3defc865.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.f37bb7c84b693d01e0a1b019dd4def1d3defc865.001.1",
+                "areaDesc": "Monterey Bay",
+                "geocode": {
+                    "SAME": [
+                        "057535"
+                    ],
+                    "UGC": [
+                        "PZZ535"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ535"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4a05df876e0abb517701d6f5250d70645a7c84a1.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.4a05df876e0abb517701d6f5250d70645a7c84a1.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-03T02:18:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-03T07:34:00-07:00",
+                "effective": "2026-10-03T07:34:00-07:00",
+                "onset": "2026-10-03T07:34:00-07:00",
+                "expires": "2026-10-03T07:50:06-07:00",
+                "ends": "2026-10-03T09:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS San Francisco CA",
+                "headline": "The Dense Fog Advisory has been cancelled.",
+                "description": "The Dense Fog Advisory has been cancelled and is no longer in effect.",
+                "instruction": null,
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWMTR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KMTR 031434"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IS CANCELLED"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.KMTR.MF.Y.0005.000000T0000Z-261003T1600Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-03T09:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "MFY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.001.1",
+                "areaDesc": "Northern Monterey Bay",
+                "geocode": {
+                    "SAME": [
+                        "006087"
+                    ],
+                    "UGC": [
+                        "CAZ529"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/CAZ529"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8c49d62f93996a96cb756c4569a6927363ae308c.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.8c49d62f93996a96cb756c4569a6927363ae308c.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-03T02:02:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-03T07:32:00-07:00",
+                "effective": "2026-10-03T07:32:00-07:00",
+                "onset": "2026-10-03T07:32:00-07:00",
+                "expires": "2026-10-03T07:47:28-07:00",
+                "ends": "2026-10-03T09:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS San Francisco CA",
+                "headline": "The Dense Fog Advisory has been cancelled.",
+                "description": "The Dense Fog Advisory has been cancelled and is no longer in effect.",
+                "instruction": "Hydration is a critical piece to surviving the heat. Drink water, and\nif possible, take water to those who are vulnerable.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to the early\nmorning or evening. Take action when you experience symptoms of heat\nexhaustion and/or heat stroke.\n\nBeat the heat and check the backseat! Do not leave young children or\npets in unattended vehicles. Car interiors will reach lethal\ntemperatures in a matter of minutes.",
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWMTR"
+                    ],
+                    "WMOidentifier": [
+                        "WWUS76 KMTR 031432"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IS CANCELLED... ...HEAT ADVISORY REMAINS IN EFFECT FROM 11 AM THIS MORNING TO 10 PM PDT SUNDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.KMTR.FG.Y.0008.000000T0000Z-261003T1600Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-03T09:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "FGY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.002.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.002.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.002.1",
+                "areaDesc": "San Francisco Peninsula Coast; Southern Monterey Bay and Big Sur Coast",
+                "geocode": {
+                    "SAME": [
+                        "006081",
+                        "006087",
+                        "006053"
+                    ],
+                    "UGC": [
+                        "CAZ509",
+                        "CAZ530"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/CAZ509",
+                    "https://api.weather.gov/zones/forecast/CAZ530"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8c49d62f93996a96cb756c4569a6927363ae308c.002.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.8c49d62f93996a96cb756c4569a6927363ae308c.002.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-03T02:02:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-03T07:32:00-07:00",
+                "effective": "2026-10-03T07:32:00-07:00",
+                "onset": "2026-10-03T07:32:00-07:00",
+                "expires": "2026-10-03T07:47:28-07:00",
+                "ends": "2026-10-03T09:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS San Francisco CA",
+                "headline": "The Dense Fog Advisory has been cancelled.",
+                "description": "The Dense Fog Advisory has been cancelled and is no longer in effect.",
+                "instruction": null,
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWMTR"
+                    ],
+                    "WMOidentifier": [
+                        "WWUS76 KMTR 031432"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IS CANCELLED"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.KMTR.FG.Y.0008.000000T0000Z-261003T1600Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-03T09:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "FGY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c369e4bf4e301b00c18a900bec84512bc2dd0fe2.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c369e4bf4e301b00c18a900bec84512bc2dd0fe2.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.c369e4bf4e301b00c18a900bec84512bc2dd0fe2.001.1",
+                "areaDesc": "Northern Lynn Canal",
+                "geocode": {
+                    "SAME": [
+                        "058012"
+                    ],
+                    "UGC": [
+                        "PKZ012"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PKZ012"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0bb0a0f887e813dc33d3564e4f1ac313b5ab3808.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.0bb0a0f887e813dc33d3564e4f1ac313b5ab3808.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-02T04:25:00-08:00"
+                    }
+                ],
+                "sent": "2026-10-02T12:22:00-08:00",
+                "effective": "2026-10-02T12:22:00-08:00",
+                "onset": "2026-10-02T12:22:00-08:00",
+                "expires": "2026-10-02T12:37:33-08:00",
+                "ends": "2026-10-02T13:00:00-08:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Juneau AK",
+                "headline": "The Small Craft Advisory has been cancelled.",
+                "description": "The Small Craft Advisory has been cancelled and is no longer in effect.",
+                "instruction": null,
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWAJK"
+                    ],
+                    "WMOidentifier": [
+                        "WHAK77 PAJK 022022"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY IS CANCELLED"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.PAJK.SC.Y.0315.000000T0000Z-261002T2100Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-02T13:00:00-08:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dff2b4a56dfd5d0ff263f86560b91df86e2b8e6c.001.1",
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -134.62,
+                            58.36
+                        ],
+                        [
+                            -134.6,
+                            58.41
+                        ],
+                        [
+                            -134.6,
+                            58.45
+                        ],
+                        [
+                            -134.56,
+                            58.47
+                        ],
+                        [
+                            -134.52,
+                            58.46
+                        ],
+                        [
+                            -134.47,
+                            58.44
+                        ],
+                        [
+                            -134.47,
+                            58.43
+                        ],
+                        [
+                            -134.54,
+                            58.4
+                        ],
+                        [
+                            -134.59,
+                            58.36
+                        ],
+                        [
+                            -134.6,
+                            58.35
+                        ],
+                        [
+                            -134.62,
+                            58.36
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.dff2b4a56dfd5d0ff263f86560b91df86e2b8e6c.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.dff2b4a56dfd5d0ff263f86560b91df86e2b8e6c.001.1",
+                "areaDesc": "City and Borough of Juneau",
+                "geocode": {
+                    "SAME": [
+                        "002110"
+                    ],
+                    "UGC": [
+                        "AKZ325"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/AKZ325"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ebded789f333203269fb1c1b3b286d68771b0a97.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.ebded789f333203269fb1c1b3b286d68771b0a97.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-02T03:02:00-08:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.990bf31106b28285a699cb4f9d2ac6f87a21a12b.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.990bf31106b28285a699cb4f9d2ac6f87a21a12b.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-02T05:33:00-08:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c603839fc66a947b27828b28bcd306c16b5bd68a.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.c603839fc66a947b27828b28bcd306c16b5bd68a.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-02T06:48:00-08:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.55fa7cd783fbe59353b6b9f846aa7009afe4ed1c.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.55fa7cd783fbe59353b6b9f846aa7009afe4ed1c.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-02T06:50:00-08:00"
+                    }
+                ],
+                "sent": "2026-10-02T09:50:00-08:00",
+                "effective": "2026-10-02T09:50:00-08:00",
+                "onset": "2026-10-02T09:50:00-08:00",
+                "expires": "2026-10-02T10:05:15-08:00",
+                "ends": "2026-10-03T07:45:00-08:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Flood Warning",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Juneau AK",
+                "headline": "The Flood Warning has been cancelled.",
+                "description": "The Flood Warning has been cancelled and is no longer in effect.",
+                "instruction": null,
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "FLSAJK"
+                    ],
+                    "WMOidentifier": [
+                        "WGAK87 PAJK 021750"
+                    ],
+                    "NWSheadline": [
+                        "FLOOD WARNING FOR A GLACIER-DAMMED LAKE OUTBURST IS CANCELLED"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "EAS-ORG": [
+                        "WXR"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.PAJK.FA.W.0002.000000T0000Z-261003T1545Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-03T07:45:00-08:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.30ea8c670e9ca826f3892307ee6b63024b229eb7.001.1,2026-10-01T21:30:00-08:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.0566ccba8719072b1259d1651a67127d199dc9dd.001.1,2026-10-01T14:34:00-08:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4fc21432a71319e5c98432a116193019ae10afc9.001.1,2026-10-01T10:27:00-08:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.eb266ffdd6825a067f1f485b1c9fc973aed0cf3d.001.1,2026-10-01T07:56:00-08:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "FLS"
+                    ],
+                    "NationalWeatherService": [
+                        "FAW"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.943ef5b20978bff4d9658bb80af213eb8204687f.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.943ef5b20978bff4d9658bb80af213eb8204687f.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.943ef5b20978bff4d9658bb80af213eb8204687f.001.1",
+                "areaDesc": "Petersburg Borough",
+                "geocode": {
+                    "SAME": [
+                        "002195"
+                    ],
+                    "UGC": [
+                        "AKZ326"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/AKZ326"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7495594eba055d7c1e45d67babdd09647d743a21.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.7495594eba055d7c1e45d67babdd09647d743a21.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-02T07:32:00-08:00"
+                    }
+                ],
+                "sent": "2026-10-02T08:58:00-08:00",
+                "effective": "2026-10-02T08:58:00-08:00",
+                "onset": "2026-10-02T08:58:00-08:00",
+                "expires": "2026-10-02T09:13:38-08:00",
+                "ends": "2026-10-02T10:00:00-08:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Juneau AK",
+                "headline": "The Dense Fog Advisory has been cancelled.",
+                "description": "The Dense Fog Advisory has been cancelled and is no longer in effect.",
+                "instruction": null,
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWAJK"
+                    ],
+                    "WMOidentifier": [
+                        "WWAK77 PAJK 021658"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IS CANCELLED"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.PAJK.FG.Y.0036.000000T0000Z-261002T1800Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-02T10:00:00-08:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.042e8c3fdd62ff164ca15aafb038764260af4f6f.001.1,2026-10-01T23:06:00-08:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "FGY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9734b2b6f893770fb04c2418d73335dd97bc4e8.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b9734b2b6f893770fb04c2418d73335dd97bc4e8.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.b9734b2b6f893770fb04c2418d73335dd97bc4e8.001.1",
+                "areaDesc": "Petersburg Borough",
+                "geocode": {
+                    "SAME": [
+                        "002195"
+                    ],
+                    "UGC": [
+                        "AKZ326"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/AKZ326"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4c183c9381778d831e275114d2d6f96de62eab6a.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.4c183c9381778d831e275114d2d6f96de62eab6a.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-01T23:02:00-08:00"
+                    }
+                ],
+                "sent": "2026-10-01T23:05:00-08:00",
+                "effective": "2026-10-01T23:05:00-08:00",
+                "onset": "2026-10-07T22:00:00-08:00",
+                "expires": "2026-10-01T23:20:22-08:00",
+                "ends": "2026-10-08T10:00:00-08:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Juneau AK",
+                "headline": "The Dense Fog Advisory has been cancelled.",
+                "description": "The Dense Fog Advisory has been cancelled and is no longer in effect.",
+                "instruction": null,
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWAJK"
+                    ],
+                    "WMOidentifier": [
+                        "WWAK77 PAJK 020705"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IS CANCELLED"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.PAJK.FG.Y.0035.261008T0600Z-261008T1800Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-08T10:00:00-08:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "FGY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.002.1",
+                "areaDesc": "Catalina and Santa Barbara Islands; Santa Clarita Valley; Ventura County Beaches; Ventura County Inland Coast; Lake Casitas; Ojai Valley; Central Ventura County Valleys; Malibu Coast; Los Angeles County Beaches; Palos Verdes Hills; Los Angeles County Inland Coast including Downtown Los Angeles; Western Santa Monica Mountains Recreational Area; Eastern Santa Monica Mountains Recreational Area; Calabasas and Agoura Hills; Western San Fernando Valley; Eastern San Fernando Valley; Southeastern Ventura County Valleys; Santa Susana Mountains; Los Angeles County San Gabriel Valley",
+                "geocode": {
+                    "SAME": [
+                        "006037",
+                        "006111"
+                    ],
+                    "UGC": [
+                        "CAZ087",
+                        "CAZ088",
+                        "CAZ354",
+                        "CAZ355",
+                        "CAZ356",
+                        "CAZ357",
+                        "CAZ358",
+                        "CAZ362",
+                        "CAZ366",
+                        "CAZ367",
+                        "CAZ368",
+                        "CAZ369",
+                        "CAZ370",
+                        "CAZ371",
+                        "CAZ372",
+                        "CAZ373",
+                        "CAZ374",
+                        "CAZ375",
+                        "CAZ548"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/CAZ087",
+                    "https://api.weather.gov/zones/forecast/CAZ088",
+                    "https://api.weather.gov/zones/forecast/CAZ354",
+                    "https://api.weather.gov/zones/forecast/CAZ355",
+                    "https://api.weather.gov/zones/forecast/CAZ356",
+                    "https://api.weather.gov/zones/forecast/CAZ357",
+                    "https://api.weather.gov/zones/forecast/CAZ358",
+                    "https://api.weather.gov/zones/forecast/CAZ362",
+                    "https://api.weather.gov/zones/forecast/CAZ366",
+                    "https://api.weather.gov/zones/forecast/CAZ367",
+                    "https://api.weather.gov/zones/forecast/CAZ368",
+                    "https://api.weather.gov/zones/forecast/CAZ369",
+                    "https://api.weather.gov/zones/forecast/CAZ370",
+                    "https://api.weather.gov/zones/forecast/CAZ371",
+                    "https://api.weather.gov/zones/forecast/CAZ372",
+                    "https://api.weather.gov/zones/forecast/CAZ373",
+                    "https://api.weather.gov/zones/forecast/CAZ374",
+                    "https://api.weather.gov/zones/forecast/CAZ375",
+                    "https://api.weather.gov/zones/forecast/CAZ548"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6df8c047e1cbe829627cc92d595584cc92d7c79f.002.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.6df8c047e1cbe829627cc92d595584cc92d7c79f.002.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-09-30T09:46:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-01T12:17:00-07:00",
+                "effective": "2026-10-01T12:17:00-07:00",
+                "onset": "2026-10-02T10:00:00-07:00",
+                "expires": "2026-10-01T12:32:28-07:00",
+                "ends": "2026-10-08T20:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Severe",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Extreme Heat Watch",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Los Angeles/Oxnard CA",
+                "headline": "The Extreme Heat Watch has been replaced. Please see the latest information from NWS Los Angeles/Oxnard CA on this developing situation.",
+                "description": "The Extreme Heat Watch has been replaced. Please see the latest information from NWS Los Angeles/Oxnard CA on this developing situation.",
+                "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+                "response": "Monitor",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWLOX"
+                    ],
+                    "WMOidentifier": [
+                        "WWUS76 KLOX 011917"
+                    ],
+                    "NWSheadline": [
+                        "EXTREME HEAT WARNING IN EFFECT FROM 10 AM FRIDAY TO 8 PM PDT THURSDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.UPG.KLOX.XH.A.0006.261002T1700Z-261009T0300Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-08T20:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "XHA"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.a83e130c2d84400d0abc57e184bd5fa32180bde1.001.1",
+                "areaDesc": "Cuyama Valley; Santa Barbara County Southwestern Coast; Santa Barbara County Southeastern Coast; Santa Ynez Mountains Western Range; Santa Ynez Mountains Eastern Range; Santa Barbara County Interior Mountains; Santa Cruz and Anacapa Islands",
+                "geocode": {
+                    "SAME": [
+                        "006083",
+                        "006111"
+                    ],
+                    "UGC": [
+                        "CAZ038",
+                        "CAZ349",
+                        "CAZ350",
+                        "CAZ351",
+                        "CAZ352",
+                        "CAZ353",
+                        "CAZ550"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/CAZ038",
+                    "https://api.weather.gov/zones/forecast/CAZ349",
+                    "https://api.weather.gov/zones/forecast/CAZ350",
+                    "https://api.weather.gov/zones/forecast/CAZ351",
+                    "https://api.weather.gov/zones/forecast/CAZ352",
+                    "https://api.weather.gov/zones/forecast/CAZ353",
+                    "https://api.weather.gov/zones/forecast/CAZ550"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6df8c047e1cbe829627cc92d595584cc92d7c79f.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.6df8c047e1cbe829627cc92d595584cc92d7c79f.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-09-30T09:46:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-01T12:17:00-07:00",
+                "effective": "2026-10-01T12:17:00-07:00",
+                "onset": "2026-10-02T10:00:00-07:00",
+                "expires": "2026-10-01T12:32:28-07:00",
+                "ends": "2026-10-08T20:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Severe",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Extreme Heat Watch",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Los Angeles/Oxnard CA",
+                "headline": "The Extreme Heat Watch has been replaced. Please see the latest information from NWS Los Angeles/Oxnard CA on this developing situation.",
+                "description": "The Extreme Heat Watch has been replaced. Please see the latest information from NWS Los Angeles/Oxnard CA on this developing situation.",
+                "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+                "response": "Monitor",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWLOX"
+                    ],
+                    "WMOidentifier": [
+                        "WWUS76 KLOX 011917"
+                    ],
+                    "NWSheadline": [
+                        "EXTREME HEAT WARNING IN EFFECT FROM 10 AM FRIDAY TO 8 PM PDT THURSDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.UPG.KLOX.XH.A.0006.261002T1700Z-261009T0300Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-08T20:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "XHA"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0142b0389798c01d5bb5f28f9aa7320092c5196d.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0142b0389798c01d5bb5f28f9aa7320092c5196d.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.0142b0389798c01d5bb5f28f9aa7320092c5196d.001.1",
+                "areaDesc": "Lower Matanuska Valley; Southern Susitna Valley",
+                "geocode": {
+                    "SAME": [
+                        "002170"
+                    ],
+                    "UGC": [
+                        "AKZ711",
+                        "AKZ746"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/AKZ711",
+                    "https://api.weather.gov/zones/forecast/AKZ746"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0fad6b84fb446e26e7fd80e35cd6ee85cda474d5.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.0fad6b84fb446e26e7fd80e35cd6ee85cda474d5.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-09-30T22:44:00-08:00"
+                    }
+                ],
+                "sent": "2026-10-01T06:24:00-08:00",
+                "effective": "2026-10-01T06:24:00-08:00",
+                "onset": "2026-10-01T06:24:00-08:00",
+                "expires": "2026-10-01T06:39:37-08:00",
+                "ends": "2026-10-01T10:00:00-08:00",
+                "status": "Actual",
+                "messageType": "Cancel",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Observed",
+                "urgency": "Past",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Anchorage AK",
+                "headline": "The Dense Fog Advisory has been cancelled.",
+                "description": "The Dense Fog Advisory has been cancelled and is no longer in effect.",
+                "instruction": null,
+                "response": "AllClear",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "NPWAER"
+                    ],
+                    "WMOidentifier": [
+                        "WWAK71 PAFC 011424"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IS CANCELLED"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CAN.PAFC.FG.Y.0013.000000T0000Z-261001T1800Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-01T10:00:00-08:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "FGY"
+                    ]
+                }
+            }
+        }
+    ],
+    "title": "Watches, warnings, and advisories for Washington, Oregon, Idaho, California, Alaska, Eastern N. Pacific Ocean, N. Pacific Ocean Near Alaska",
+    "updated": "2026-10-04T23:08:29+00:00",
+    "pagination": {
+        "next": "https://api.weather.gov/alerts?message_type%5B0%5D=cancel&area%5B0%5D=WA&area%5B1%5D=OR&area%5B2%5D=ID&area%5B3%5D=CA&area%5B4%5D=AK&area%5B5%5D=PZ&area%5B6%5D=PK&limit=10&cursor=eyJ0IjoxNzkwODY0NjQwLCJpIjoidXJuOm9pZDoyLjQ5LjAuMS44NDAuMC4wMTQyYjAzODk3OThjMDFkNWJiNWYyOGY5YWE3MzIwMDkyYzUxOTZkLjAwMS4xIn0%3D"
+    }
+}

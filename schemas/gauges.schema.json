@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/gauges.schema.json",
+  "title": "Gauge Reference",
+  "description": "site/data/ref/gauges.json (blueprint 5.5). Thresholds copied verbatim; nulls stay null.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "sourceIds",
+    "gauges"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.gauges/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "minItems": 1
+    },
+    "gauges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "country",
+          "agency",
+          "lid",
+          "usgsId",
+          "wscId",
+          "name",
+          "river",
+          "region",
+          "wfo",
+          "rfc",
+          "lat",
+          "lon",
+          "timeZone",
+          "stages",
+          "isForecastPoint",
+          "hydrographImage",
+          "links",
+          "nationIds",
+          "selection"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^nwps:[A-Z0-9]+$"
+          },
+          "country": {
+            "enum": [
+              "US",
+              "CA"
+            ]
+          },
+          "agency": {
+            "enum": [
+              "NWS"
+            ]
+          },
+          "lid": {
+            "type": "string",
+            "pattern": "^[A-Z0-9]{5}$"
+          },
+          "usgsId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9]{8,15}$"
+          },
+          "wscId": {
+            "type": "null"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "river": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "region": {
+            "$ref": "common.schema.json#/$defs/regionCode"
+          },
+          "wfo": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[A-Z]{3}$"
+          },
+          "rfc": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "stages": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "unit",
+                  "basis",
+                  "action",
+                  "minor",
+                  "moderate",
+                  "major",
+                  "sourceId",
+                  "retrievedAt"
+                ],
+                "properties": {
+                  "unit": {
+                    "enum": [
+                      "ft",
+                      "m"
+                    ]
+                  },
+                  "basis": {
+                    "enum": [
+                      "stage",
+                      "flow"
+                    ]
+                  },
+                  "action": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "minor": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "moderate": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "major": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "sourceId": {
+                    "$ref": "common.schema.json#/$defs/sourceId"
+                  },
+                  "retrievedAt": {
+                    "$ref": "common.schema.json#/$defs/isoDate"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "isForecastPoint": {
+            "type": "boolean"
+          },
+          "hydrographImage": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/httpsUrl"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "common.schema.json#/$defs/httpsUrl"
+            }
+          },
+          "nationIds": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/nationId"
+            }
+          },
+          "selection": {
+            "enum": [
+              "auto",
+              "curated"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

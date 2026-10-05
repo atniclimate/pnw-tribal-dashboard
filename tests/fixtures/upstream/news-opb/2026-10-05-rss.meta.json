@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-opb",
+  "label": "rss",
+  "file": "2026-10-05-rss.xml",
+  "url": "https://www.opb.org/arc/outboundfeeds/rss/?outputType=xml",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/rss+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T06:25:56.283Z",
+  "status": 200,
+  "contentType": "application/xml; charset=utf-8",
+  "lastModified": "Mon, 05 Oct 2026 06:24:12 GMT",
+  "bytes": 139530,
+  "sha256": "7d69d567203f7ad6fa8d35cce9ef1829dccbe6d20575110c71571eff18d0d061",
+  "covers": [
+    "rss",
+    "html-summaries"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Oregon Public Broadcasting RSS feed."
+}

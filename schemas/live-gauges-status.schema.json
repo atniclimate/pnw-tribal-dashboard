@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/live-gauges-status.schema.json",
+  "title": "Live Envelope: gauges-status.json",
+  "description": "site/data/live/gauges-status.json: NWPS observed and forecast status with the NWS category.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "sourceIds",
+    "generatedAt",
+    "observedAt",
+    "asOf",
+    "asOfBasis",
+    "completeness",
+    "carriedForward",
+    "failure",
+    "perSource",
+    "diagnostics",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.live.gauges-status/1"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/kebabId"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "minItems": 1
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "observedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "asOf": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "asOfBasis": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/asOfBasis"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completeness": {
+      "enum": [
+        "complete",
+        "partial",
+        "rejected"
+      ]
+    },
+    "carriedForward": {
+      "type": "boolean"
+    },
+    "failure": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message",
+            "at"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string"
+            },
+            "at": {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "perSource": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok",
+          "count",
+          "asOf"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "asOf": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "observed",
+          "forecast"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(nwps|wsc):[A-Z0-9]+$"
+          },
+          "observed": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "stage",
+                  "unit",
+                  "flow",
+                  "flowUnit",
+                  "category",
+                  "validTime"
+                ],
+                "properties": {
+                  "stage": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "flow": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "flowUnit": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "category": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "no_flooding",
+                          "action",
+                          "minor",
+                          "moderate",
+                          "major",
+                          "not_defined",
+                          "out_of_service"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "validTime": {
+                    "anyOf": [
+                      {
+                        "$ref": "common.schema.json#/$defs/isoDateTime"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "forecast": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "stage",
+                  "unit",
+                  "category",
+                  "validTime",
+                  "crestStage",
+                  "crestTime"
+                ],
+                "properties": {
+                  "stage": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "unit": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "category": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "no_flooding",
+                          "action",
+                          "minor",
+                          "moderate",
+                          "major",
+                          "not_defined",
+                          "out_of_service"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "validTime": {
+                    "anyOf": [
+                      {
+                        "$ref": "common.schema.json#/$defs/isoDateTime"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "crestStage": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "crestTime": {
+                    "anyOf": [
+                      {
+                        "$ref": "common.schema.json#/$defs/isoDateTime"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

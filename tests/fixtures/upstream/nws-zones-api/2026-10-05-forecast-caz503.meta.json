@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-zones-api",
+  "label": "forecast-caz503",
+  "file": "2026-10-05-forecast-caz503.json",
+  "url": "https://api.weather.gov/zones/forecast/CAZ503",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:45.943Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": "Thu, 16 Apr 2026 16:31:22 GMT",
+  "bytes": 9391,
+  "sha256": "41bd1d7b636f16f7c6ade5a5ec8ea42eb411efee3c8e48d8731e2c455a64c6d1",
+  "covers": [
+    "fire-public-zone-code-collision"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Zone CAZ503 as a forecast zone."
+}

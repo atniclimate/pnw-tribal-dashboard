@@ -1,0 +1,35 @@
+{
+  "schema": "cthd.ids-lock/1",
+  "entries": [
+    {
+      "id": "us-wa-lummi-tribe-of-the-lummi-reservation",
+      "key": "bia-tld:Lummi Tribe of the Lummi Reservation",
+      "name": "Lummi Tribe of the Lummi Reservation",
+      "mintedAt": "2026-10-04"
+    },
+    {
+      "id": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+      "key": "bia-tld:Confederated Tribes of Siletz Indians of Oregon",
+      "name": "Confederated Tribes of Siletz Indians of Oregon",
+      "mintedAt": "2026-10-04"
+    },
+    {
+      "id": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+      "key": "bia-tld:Shoshone-Bannock Tribes of the Fort Hall Reservation",
+      "name": "Shoshone-Bannock Tribes of the Fort Hall Reservation",
+      "mintedAt": "2026-10-04"
+    },
+    {
+      "id": "us-ak-organized-village-of-kasaan",
+      "key": "bia-anv:Organized Village of Kasaan",
+      "name": "Organized Village of Kasaan",
+      "mintedAt": "2026-10-04"
+    },
+    {
+      "id": "ca-fn-602",
+      "key": "isc:602",
+      "name": "?aqam",
+      "mintedAt": "2026-10-04"
+    }
+  ]
+}

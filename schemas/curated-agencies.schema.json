@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/curated-agencies.schema.json",
+  "title": "Compiled Agencies",
+  "description": "site/data/curated/agencies.json, compiled by scripts/compile (blueprint 6.3).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.curated.agencies/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "jurisdiction",
+          "url",
+          "parentId"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "state",
+              "province",
+              "federal",
+              "county",
+              "regional-district",
+              "nation",
+              "ngo",
+              "other"
+            ]
+          },
+          "jurisdiction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/httpsUrl"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parentId": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/kebabId"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

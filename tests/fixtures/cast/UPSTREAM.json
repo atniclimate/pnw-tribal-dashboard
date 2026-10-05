@@ -1,0 +1,247 @@
+{
+  "schema": "cthd.cast-upstream/1",
+  "repository": "https://github.com/atniclimate/CAST",
+  "commit": "ecf516c6b65b5c0a9e020302aa0240867e302ae7",
+  "copiedAt": "2026-10-05T06:30:08.927Z",
+  "purpose": "CAST parity tests (npm run test:cast): the JavaScript ports must reproduce CAST outputs for these inputs. Files are byte-for-byte copies; do not edit them. To refresh, copy again from a newer CAST commit and update this file.",
+  "files": [
+    {
+      "path": "core-status/src/index.ts",
+      "upstreamPath": "packages/core-status/src/index.ts",
+      "sha256": "1bb44d606e75649929464f97e3d68e7c6fa83d0e0b823fa514a040a59df1a9df",
+      "bytes": 5789,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "core-status/src/index.test.ts",
+      "upstreamPath": "packages/core-status/src/index.test.ts",
+      "sha256": "c991d1d907a6ba51f2a4f50e3fc8e355f4a839a9d9dd3cbd63f1a85b7bf47f40",
+      "bytes": 4052,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/MAPPING.md",
+      "upstreamPath": "packages/alerts-schema/MAPPING.md",
+      "sha256": "003e653b81231d9d21e041264a3fae24ebe6f865186643201d32bc0d21574576",
+      "bytes": 4447,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/src/model.ts",
+      "upstreamPath": "packages/alerts-schema/src/model.ts",
+      "sha256": "0e55021184679b20f2debc749cd60ff59ef4bc7d0256c81769c15326ee232f25",
+      "bytes": 4968,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/src/mappings.ts",
+      "upstreamPath": "packages/alerts-schema/src/mappings.ts",
+      "sha256": "0cb68887751c606d3bee9632988dd3a7d40a7aeb1b01ba04793ed13ef8734d26",
+      "bytes": 3785,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/src/lifecycle.ts",
+      "upstreamPath": "packages/alerts-schema/src/lifecycle.ts",
+      "sha256": "155a1d043b268a7a6b9ae93082a2cbc5e99891dcc21535eec1781faaf9b55c43",
+      "bytes": 4158,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/src/index.test.ts",
+      "upstreamPath": "packages/alerts-schema/src/index.test.ts",
+      "sha256": "cba5f56977d0c23db53f89c2628a331791b7011b6c63a0dd02d7d3cfa81755b5",
+      "bytes": 5848,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/src/index.ts",
+      "upstreamPath": "packages/ingest-nws/src/index.ts",
+      "sha256": "aba56dbd6579a50bfa3f6551cec74ab64afbac7409a38d21ae3fe0fd4412af4c",
+      "bytes": 15202,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/src/index.test.ts",
+      "upstreamPath": "packages/ingest-nws/src/index.test.ts",
+      "sha256": "76d4d755549aae44e16b626a4946cf0195798ccd6d56829e5d4dff06595908a4",
+      "bytes": 11907,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/src/geomet.ts",
+      "upstreamPath": "packages/ingest-eccc/src/geomet.ts",
+      "sha256": "476362649800a016beddfde2f40eeff949e138a4ba5ddd8067ef79ef426fcdfa",
+      "bytes": 7990,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/src/index.test.ts",
+      "upstreamPath": "packages/ingest-eccc/src/index.test.ts",
+      "sha256": "bf9ac36f7304faa2a221ad6cb21a6c18d9611631c4beb7a80e0e5181e151f42f",
+      "bytes": 8635,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "sources/src/index.ts",
+      "upstreamPath": "packages/sources/src/index.ts",
+      "sha256": "b42bcf8ee66ce01e1355d8cb341d3565964493b42a3a47c9d975966f44b4fcd5",
+      "bytes": 8902,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "sources/src/index.test.ts",
+      "upstreamPath": "packages/sources/src/index.test.ts",
+      "sha256": "6acf63ab97d91cb9af684458fc8baec7927b19935185d2e656c12fa15a371a8f",
+      "bytes": 3632,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/fixtures/eccc-bilingual.live-sanitized.json",
+      "upstreamPath": "packages/alerts-schema/fixtures/eccc-bilingual.live-sanitized.json",
+      "sha256": "e8c40f1c21779ba5dd5af4ac3fc0e71716ceb956e0765603633cafdaef1868fa",
+      "bytes": 2121,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/fixtures/eccc-bilingual.synthetic.json",
+      "upstreamPath": "packages/alerts-schema/fixtures/eccc-bilingual.synthetic.json",
+      "sha256": "7164d0a296d89fbae8c3b3489488969201d67f49c9d9b303bcad28fcf4b3cd00",
+      "bytes": 1132,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/fixtures/nws-cap-update-chain.synthetic.json",
+      "upstreamPath": "packages/alerts-schema/fixtures/nws-cap-update-chain.synthetic.json",
+      "sha256": "78e1c0927bc2e88fe2728a3157d7744fb67ff160149a3049c2b7b7eaf07c119c",
+      "bytes": 1291,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/fixtures/nws-zone-update.live-sanitized.json",
+      "upstreamPath": "packages/alerts-schema/fixtures/nws-zone-update.live-sanitized.json",
+      "sha256": "79f3a4c864b228b0be98ded54e0f9d3f4b748909ba5404d5cae76a9e1b9c2b94",
+      "bytes": 1180,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "alerts-schema/fixtures/README.md",
+      "upstreamPath": "packages/alerts-schema/fixtures/README.md",
+      "sha256": "8e736a84fb2dbde5ebe278b2c299f5ecf8707a39f492c2dc19bbfff190e4cbe8",
+      "bytes": 795,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/live/alert-flood-warning-polygon-LAC019.json",
+      "upstreamPath": "packages/ingest-nws/fixtures/live/alert-flood-warning-polygon-LAC019.json",
+      "sha256": "b78dc6d079acdf3de08aa09a06e7ebc5680c4881400ad1ba95add2307e2c8d62",
+      "bytes": 5775,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/live/alert-red-flag-warning-zone-ORZ691.json",
+      "upstreamPath": "packages/ingest-nws/fixtures/live/alert-red-flag-warning-zone-ORZ691.json",
+      "sha256": "ac5771d1208ebd02f3345716a101100890724dd2526dd60b8b1607f6ec1ac2ba",
+      "bytes": 3996,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/live/zone-forecast-IDZ007.json",
+      "upstreamPath": "packages/ingest-nws/fixtures/live/zone-forecast-IDZ007.json",
+      "sha256": "0a397bda100124b39b68d3ece0e5b51606496a74ce39ec94d58e29f32b3fe3e7",
+      "bytes": 32606,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/manifest.yaml",
+      "upstreamPath": "packages/ingest-nws/fixtures/manifest.yaml",
+      "sha256": "6da38a564504e8e75e81627fd73be36ef37c2b3cf07231e81174f2810021257c",
+      "bytes": 1921,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/synthetic/cancel.json",
+      "upstreamPath": "packages/ingest-nws/fixtures/synthetic/cancel.json",
+      "sha256": "00099b12772bfcb6e62d7b508dd5ca59404bae67a1bb47e93e9cf85c2ffdd8c0",
+      "bytes": 1157,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/synthetic/malformed-feature.json",
+      "upstreamPath": "packages/ingest-nws/fixtures/synthetic/malformed-feature.json",
+      "sha256": "24f0280b14c551e74fd9058c73753b2c7ce330fa579a4a0060b9c62a50d1c95a",
+      "bytes": 217,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/synthetic/missing-coverage.json",
+      "upstreamPath": "packages/ingest-nws/fixtures/synthetic/missing-coverage.json",
+      "sha256": "ba83c50e53e389d223ee5f2fedbf9653ce182bb5b2a1f0b9ddd59885f1d00d0a",
+      "bytes": 881,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-nws/fixtures/synthetic/test-message.json",
+      "upstreamPath": "packages/ingest-nws/fixtures/synthetic/test-message.json",
+      "sha256": "8e86317ccc49623a4585bb897e28559e0a961915d676c965bb87506c1e935648",
+      "bytes": 860,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/live/T_WWCN13_C_CWVR_202607170903_2092774527.cap",
+      "upstreamPath": "packages/ingest-eccc/fixtures/live/T_WWCN13_C_CWVR_202607170903_2092774527.cap",
+      "sha256": "3e2247813d5c6a5a11906de897a9599a3eda1ed3a2cf0807ddb666b928a1f26d",
+      "bytes": 25677,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/live/weather-alerts-items-limit10.json",
+      "upstreamPath": "packages/ingest-eccc/fixtures/live/weather-alerts-items-limit10.json",
+      "sha256": "b09dac9c9094a5186ed9aac56dc00c87cc47af9f6f48338500d460ab192aa384",
+      "bytes": 76756,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/manifest.yaml",
+      "upstreamPath": "packages/ingest-eccc/fixtures/manifest.yaml",
+      "sha256": "2453a37826aed750dbf379e014ae16f16f83d1651567a9cf27ae558bab0c63ad",
+      "bytes": 1469,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/synthetic/ended-statement.json",
+      "upstreamPath": "packages/ingest-eccc/fixtures/synthetic/ended-statement.json",
+      "sha256": "d0e6eaf67c33e92a0c16b1bb9721a94b823695a338ca95e9929b3d96e6d04265",
+      "bytes": 783,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/synthetic/impact-precedence.json",
+      "upstreamPath": "packages/ingest-eccc/fixtures/synthetic/impact-precedence.json",
+      "sha256": "fe481e83b3bb486f425815e0efbc8bb9d335e65426d4991f66dd1024c9bbde9a",
+      "bytes": 2466,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/synthetic/malformed-feature.json",
+      "upstreamPath": "packages/ingest-eccc/fixtures/synthetic/malformed-feature.json",
+      "sha256": "add711b5db0df0ff3e4c0206808ddd542729799cbc0555260c95645249516993",
+      "bytes": 1110,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/synthetic/parity-geomet.json",
+      "upstreamPath": "packages/ingest-eccc/fixtures/synthetic/parity-geomet.json",
+      "sha256": "77dd864b9a29d7d6be5f116be7306d5fa63c7927a3ef91e058b703adea7702de",
+      "bytes": 998,
+      "trackedAtCommit": true
+    },
+    {
+      "path": "ingest-eccc/fixtures/synthetic/parity.cap",
+      "upstreamPath": "packages/ingest-eccc/fixtures/synthetic/parity.cap",
+      "sha256": "71bd7de6a1bf3c47c68e240fe04839a11b1ce9449cc25683ab397c24d2cc4972",
+      "bytes": 2741,
+      "trackedAtCommit": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+  <identifier>synthetic-eccc-parity-001</identifier>
+  <sender>cap-pac@canada.ca</sender>
+  <sent>2026-07-17T20:30:00Z</sent>
+  <status>Actual</status>
+  <msgType>Alert</msgType>
+  <scope>Public</scope>
+  <references>cap-pac@canada.ca,synthetic-eccc-prior-001,2026-07-17T19:30:00Z</references>
+  <info>
+    <language>en-CA</language>
+    <category>Met</category>
+    <event>Wind</event>
+    <urgency>Expected</urgency>
+    <severity>Minor</severity>
+    <certainty>Likely</certainty>
+    <effective>2026-07-17T21:00:00Z</effective>
+    <onset>2026-07-17T21:00:00Z</onset>
+    <expires>2026-07-18T03:00:00Z</expires>
+    <headline>Synthetic wind watch</headline>
+    <description>Strong winds are possible.</description>
+    <parameter><valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName><value>watch</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName><value>Synthetic wind watch</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.1:MSC_Impact</valueName><value>High</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.1:Colour</valueName><value>red</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName><value>active</value></parameter>
+    <area>
+      <areaDesc>Synthetic area</areaDesc>
+      <polygon>49,-123 49,-122 50,-122 49,-123</polygon>
+      <geocode><valueName>province</valueName><value>BC</value></geocode>
+    </area>
+  </info>
+  <info>
+    <language>fr-CA</language>
+    <category>Met</category>
+    <event>Vent</event>
+    <urgency>Expected</urgency>
+    <severity>Minor</severity>
+    <certainty>Likely</certainty>
+    <effective>2026-07-17T21:00:00Z</effective>
+    <onset>2026-07-17T21:00:00Z</onset>
+    <expires>2026-07-18T03:00:00Z</expires>
+    <headline>Veille de vent synthétique</headline>
+    <description>Des vents forts sont possibles.</description>
+    <parameter><valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName><value>watch</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName><value>Veille de vent synthétique</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.1:MSC_Impact</valueName><value>High</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.1:Colour</valueName><value>red</value></parameter>
+    <parameter><valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName><value>active</value></parameter>
+    <area>
+      <areaDesc>Zone synthétique</areaDesc>
+      <polygon>49,-123 49,-122 50,-122 49,-123</polygon>
+      <geocode><valueName>province</valueName><value>BC</value></geocode>
+    </area>
+  </info>
+</alert>

@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you cite or reference this dashboard, please cite it as below."
+title: "Cascadia Tribal Hazard Dashboard"
+type: software
+authors:
+  - family-names: Freeland
+    given-names: Patrick A.
+    affiliation: "ATNI Climate, Affiliated Tribes of Northwest Indians"
+  - name: "ATNI Climate, Affiliated Tribes of Northwest Indians"
+repository-code: "https://github.com/atniclimate/pnw-tribal-dashboard"
+url: "https://atniclimate.github.io/pnw-tribal-dashboard/"
+license-url: "https://github.com/atniclimate/pnw-tribal-dashboard/blob/main/LICENSE"

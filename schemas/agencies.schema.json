@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/agencies.schema.json",
+  "title": "Agencies",
+  "description": "data/agencies.yaml (blueprint 5.3).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name",
+      "kind",
+      "jurisdiction",
+      "url",
+      "parentId"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/kebabId"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "enum": [
+          "state",
+          "province",
+          "federal",
+          "county",
+          "regional-district",
+          "nation",
+          "ngo",
+          "other"
+        ]
+      },
+      "jurisdiction": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "url": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "parentId": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    }
+  }
+}

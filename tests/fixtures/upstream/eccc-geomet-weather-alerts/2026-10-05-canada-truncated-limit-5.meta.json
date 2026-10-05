@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-geomet-weather-alerts",
+  "label": "canada-truncated-limit-5",
+  "file": "2026-10-05-canada-truncated-limit-5.json",
+  "url": "https://api.weather.gc.ca/collections/weather-alerts/items?limit=5&f=json",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:17.252Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 22120,
+  "sha256": "f86f874b2daf031b90200883c8127653a631315556f290c51bdd2ac67ef7e3e6",
+  "covers": [
+    "bilingual",
+    "truncated-collection"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "limit=5 so numberMatched exceeds the features returned and a next link is present."
+}

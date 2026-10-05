@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "bc-rfc-flood-advisories",
+  "label": "all-basins-attributes",
+  "file": "2026-10-05-all-basins-attributes.json",
+  "url": "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=geojson",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:17.774Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": "Mon, 24 Aug 2026 16:53:22 GMT",
+  "bytes": 81546,
+  "sha256": "a82318804bf6c3e36cc006ef1a929d8d8d7b1df2acd47624949a800e9d96e11c",
+  "covers": [
+    "attributes-only",
+    "no-advisory-state"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Every basin record, attributes only. Advisory domain: 1 No Advisory, 2 High Streamflow Advisory, 3 Flood Watch, 4 Flood Warning."
+}

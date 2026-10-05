@@ -1,0 +1,26 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-geomet-weather-alerts",
+  "label": "canada-with-geometry",
+  "file": "2026-10-05-canada-with-geometry.json",
+  "url": "https://api.weather.gc.ca/collections/weather-alerts/items?limit=500&f=json",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:16.983Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 98528,
+  "sha256": "339594acaa3ceca34818ab99c8aebfc0df8f0b145c811dd446fa465205df9783",
+  "covers": [
+    "bilingual",
+    "with-geometry",
+    "complete-collection"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "All Canadian alerts in effect at capture, with geometry. No BC alert was in effect, so bilingual cases come from other provinces."
+}

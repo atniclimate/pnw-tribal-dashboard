@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/live-ar-products.schema.json",
+  "title": "Live Envelope: ar-products.json",
+  "description": "site/data/live/ar-products.json: newest complete CW3E cycle per product (blueprint 5.9).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "sourceIds",
+    "generatedAt",
+    "observedAt",
+    "asOf",
+    "asOfBasis",
+    "completeness",
+    "carriedForward",
+    "failure",
+    "perSource",
+    "diagnostics",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.live.ar-products/1"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/kebabId"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "minItems": 1
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "observedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "asOf": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "asOfBasis": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/asOfBasis"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completeness": {
+      "enum": [
+        "complete",
+        "partial",
+        "rejected"
+      ]
+    },
+    "carriedForward": {
+      "type": "boolean"
+    },
+    "failure": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message",
+            "at"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string"
+            },
+            "at": {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "perSource": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok",
+          "count",
+          "asOf"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "asOf": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "product",
+          "model",
+          "domain",
+          "cycle",
+          "forecastHours",
+          "urls"
+        ],
+        "properties": {
+          "product": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domain": {
+            "type": "string",
+            "minLength": 1
+          },
+          "cycle": {
+            "type": "string",
+            "pattern": "^[0-9]{10}$"
+          },
+          "forecastHours": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/httpsUrl"
+            }
+          }
+        }
+      }
+    }
+  }
+}

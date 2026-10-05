@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/hazards.schema.json",
+  "title": "Hazard Categories",
+  "description": "site/data/ref/hazards.json: each category with its label and Safety anchor (blueprint 3.9).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "categories"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.hazards/1"
+    },
+    "categories": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "common.schema.json#/$defs/hazardCategory"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "safetyAnchor"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "safetyAnchor": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-z-]+$"
+          }
+        }
+      }
+    }
+  }
+}

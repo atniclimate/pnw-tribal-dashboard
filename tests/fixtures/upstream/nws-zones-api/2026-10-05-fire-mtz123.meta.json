@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-zones-api",
+  "label": "fire-mtz123",
+  "file": "2026-10-05-fire-mtz123.json",
+  "url": "https://api.weather.gov/zones/fire/MTZ123",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:23:47.030Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": "Thu, 16 Apr 2026 16:25:34 GMT",
+  "bytes": 81065,
+  "sha256": "9ee32dd7876685d786d4191134e2165bdd0c3befc3266ce63fefc6539079c4a6",
+  "covers": [
+    "fire-zone-geometry"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Fire-weather zone MTZ123, named by the Red Flag Warning fixture. No public forecast zone MTZ123 exists (api.weather.gov/zones/forecast/MTZ123 returned 404 at capture)."
+}

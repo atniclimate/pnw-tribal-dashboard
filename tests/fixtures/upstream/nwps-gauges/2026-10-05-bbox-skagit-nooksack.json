@@ -1,0 +1,324 @@
+{
+  "gauges": [
+    {
+      "lid": "HUTW1",
+      "name": "Hutchinson Creek near Acme",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.724444444444,
+      "longitude": -122.15222222222,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": ""
+      },
+      "status": {
+        "observed": {
+          "primary": 0.97,
+          "primaryUnit": "ft",
+          "secondary": -999,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "not_defined",
+          "validTime": "2026-10-05T03:15:00Z"
+        },
+        "forecast": {
+          "primary": -999,
+          "primaryUnit": "",
+          "secondary": -999,
+          "secondaryUnit": "",
+          "floodCategory": "fcst_not_current",
+          "validTime": "0001-01-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "lid": "MFNW1",
+      "name": "Middle Fork Nooksack River near Deming",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.779444444444,
+      "longitude": -122.10527777778,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": "HGIFZ"
+      },
+      "status": {
+        "observed": {
+          "primary": 3.32,
+          "primaryUnit": "ft",
+          "secondary": 0.273,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "not_defined",
+          "validTime": "2026-10-05T05:00:00Z"
+        },
+        "forecast": {
+          "primary": 4.18,
+          "primaryUnit": "ft",
+          "secondary": 0.798,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "not_defined",
+          "validTime": "2026-10-14T12:00:00Z"
+        }
+      }
+    },
+    {
+      "lid": "MVEW1",
+      "name": "Skagit River near Mt Vernon",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.445,
+      "longitude": -122.33416666667,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": "HGIFZ"
+      },
+      "status": {
+        "observed": {
+          "primary": 11.16,
+          "primaryUnit": "ft",
+          "secondary": 7.69,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-05T05:15:00Z"
+        },
+        "forecast": {
+          "primary": 10.87,
+          "primaryUnit": "ft",
+          "secondary": 7.16,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-05T12:00:00Z"
+        }
+      }
+    },
+    {
+      "lid": "NKSW1",
+      "name": "Nooksack River at Ferndale",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.84483249,
+      "longitude": -122.5893389,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": "HGIFZ"
+      },
+      "status": {
+        "observed": {
+          "primary": 4.33,
+          "primaryUnit": "ft",
+          "secondary": 1.01,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-05T05:30:00Z"
+        },
+        "forecast": {
+          "primary": 4.53,
+          "primaryUnit": "ft",
+          "secondary": 1.19,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-14T12:00:00Z"
+        }
+      }
+    },
+    {
+      "lid": "NRKW1",
+      "name": "Nooksack River at North Cedarvillle",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.84178209,
+      "longitude": -122.2943258,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": "HGIFZ"
+      },
+      "status": {
+        "observed": {
+          "primary": 138.15,
+          "primaryUnit": "ft",
+          "secondary": 0.851,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-05T05:30:00Z"
+        },
+        "forecast": {
+          "primary": 138.89,
+          "primaryUnit": "ft",
+          "secondary": 1.94,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-14T12:00:00Z"
+        }
+      }
+    },
+    {
+      "lid": "NSFW1",
+      "name": "South Fork Nooksack River at Potter Rd",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.7891666666667,
+      "longitude": -122.1975,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": ""
+      },
+      "status": {
+        "observed": {
+          "primary": -999,
+          "primaryUnit": "",
+          "secondary": -999,
+          "secondaryUnit": "",
+          "floodCategory": "out_of_service",
+          "validTime": "0001-01-01T00:00:00Z"
+        },
+        "forecast": {
+          "primary": -999,
+          "primaryUnit": "",
+          "secondary": -999,
+          "secondaryUnit": "",
+          "floodCategory": "out_of_service",
+          "validTime": "0001-01-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "lid": "NSSW1",
+      "name": "South Fork Nooksack River near Saxon Bridge",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.67761256,
+      "longitude": -122.1665454,
+      "pedts": {
+        "observed": "HGIRG",
+        "forecast": "HGIFZ"
+      },
+      "status": {
+        "observed": {
+          "primary": 0.61,
+          "primaryUnit": "ft",
+          "secondary": 0.181,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-05T05:00:00Z"
+        },
+        "forecast": {
+          "primary": 1.63,
+          "primaryUnit": "ft",
+          "secondary": 0.747,
+          "secondaryUnit": "kcfs",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-14T12:00:00Z"
+        }
+      }
+    },
+    {
+      "lid": "SMRW1",
+      "name": "Samish River near Burlington",
+      "rfc": {
+        "abbreviation": "NWRFC",
+        "name": "Northwest River Forecast Center"
+      },
+      "wfo": {
+        "abbreviation": "SEW",
+        "name": "Seattle"
+      },
+      "state": {
+        "abbreviation": "WA",
+        "name": "Washington"
+      },
+      "latitude": 48.54594127,
+      "longitude": -122.3382169,
+      "pedts": {
+        "observed": "QRIRZ",
+        "forecast": "QRIFZ"
+      },
+      "status": {
+        "observed": {
+          "primary": 0.0294,
+          "primaryUnit": "kcfs",
+          "secondary": 4.4,
+          "secondaryUnit": "ft",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-05T05:00:00Z"
+        },
+        "forecast": {
+          "primary": 0.03951,
+          "primaryUnit": "kcfs",
+          "secondary": 4.5,
+          "secondaryUnit": "ft",
+          "floodCategory": "no_flooding",
+          "validTime": "2026-10-14T12:00:00Z"
+        }
+      }
+    }
+  ]
+}

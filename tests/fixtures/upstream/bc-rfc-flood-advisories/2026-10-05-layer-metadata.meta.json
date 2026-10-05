@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "bc-rfc-flood-advisories",
+  "label": "layer-metadata",
+  "file": "2026-10-05-layer-metadata.json",
+  "url": "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0?f=json",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:18.166Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": "Mon, 24 Aug 2026 16:53:22 GMT",
+  "bytes": 10964,
+  "sha256": "a6e7797eac6c261528bed20dc7881675c7973538f10b3f34e5c6413fe5d94553",
+  "covers": [
+    "layer-metadata",
+    "coded-value-domain"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Layer metadata including the Advisory coded-value domain."
+}

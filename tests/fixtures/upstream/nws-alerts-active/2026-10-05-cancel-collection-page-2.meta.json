@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "cancel-collection-page-2",
+  "file": "2026-10-05-cancel-collection-page-2.json",
+  "url": "https://api.weather.gov/alerts?message_type%5B0%5D=cancel&area%5B0%5D=WA&area%5B1%5D=OR&area%5B2%5D=ID&area%5B3%5D=CA&area%5B4%5D=AK&area%5B5%5D=PZ&area%5B6%5D=PK&limit=10&cursor=eyJ0IjoxNzkxMDM5MTIwLCJpIjoidXJuOm9pZDoyLjQ5LjAuMS44NDAuMC5iNDVhZWE4NjYyM2IzNmZhYmZmZDg3YzQxYzkxYzhhZjc3YTdkZGE5LjAwMS4xIn0%3D",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:47.053Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 43986,
+  "sha256": "3d13f27f49a7c9867ff52683e7364deebd07d8c8cfd3586cce3bb1250a5a10cf",
+  "covers": [
+    "cancel",
+    "paginated-collection"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Page 2, fetched by following pagination.next of page 1."
+}

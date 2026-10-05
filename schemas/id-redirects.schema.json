@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/id-redirects.schema.json",
+  "title": "Nation Id Redirects",
+  "description": "data/registry/id-redirects.json, applied by core/url-state.js (blueprint 5.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "redirects"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.id-redirects/1"
+    },
+    "redirects": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "common.schema.json#/$defs/nationId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "to",
+          "since",
+          "reason"
+        ],
+        "properties": {
+          "to": {
+            "$ref": "common.schema.json#/$defs/nationId"
+          },
+          "since": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

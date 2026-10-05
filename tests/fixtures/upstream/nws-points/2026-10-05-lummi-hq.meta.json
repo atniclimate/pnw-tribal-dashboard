@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-points",
+  "label": "lummi-hq",
+  "file": "2026-10-05-lummi-hq.json",
+  "url": "https://api.weather.gov/points/48.79202,-122.6262",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:51.072Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 3955,
+  "sha256": "acdec43c38563de255ba0abde5a8920e7fa8332fe1517b024be03f658dabcc6e",
+  "covers": [
+    "points-metadata"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "NWS /points for a registry fixture headquarters coordinate (BIA Tribal Leaders Directory or Alaska Native Villages)."
+}

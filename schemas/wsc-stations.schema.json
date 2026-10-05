@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/wsc-stations.schema.json",
+  "title": "Water Survey of Canada Stations",
+  "description": "site/data/ref/wsc-stations.json (blueprint 5.5). No invented thresholds.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "sourceIds",
+    "stations"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.wsc-stations/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "minItems": 1
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "lat",
+          "lon",
+          "region",
+          "timeZone",
+          "links",
+          "stages",
+          "thresholdNote",
+          "nationIds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^wsc:[0-9]{2}[A-Z]{2}[0-9]{3}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          },
+          "region": {
+            "$ref": "common.schema.json#/$defs/regionCode"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "common.schema.json#/$defs/httpsUrl"
+            }
+          },
+          "stages": {
+            "type": "null"
+          },
+          "thresholdNote": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nationIds": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/nationId"
+            }
+          }
+        }
+      }
+    }
+  }
+}

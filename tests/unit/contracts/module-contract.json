@@ -1,0 +1,970 @@
+{
+  "schema": "cthd.module-contract/1",
+  "modules": [
+    {
+      "path": "site/static/js/alerts/banner.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "requiredSourcesFor",
+        "summarizeForBanner",
+        "bannerCopy"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/categories.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "categorize"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/designation.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "designationOf",
+        "designationShape"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/eccc.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "normalizeEcccCollection",
+        "ecccRequestParams",
+        "ecccInScope"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/footprint.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "inFootprint",
+        "jurisdictionsOf"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/lifecycle.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "resolveLifecycle",
+        "isExpired"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/mapping.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "MAPPING_TABLES",
+        "mapNwsDimensions",
+        "mapEcccDimensions",
+        "mapBcRfc",
+        "mapEmcr"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/model.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "createAlertId",
+        "compareSeverityBands",
+        "highestSeverityBand",
+        "typedZoneKey",
+        "sortAlerts",
+        "toIndexEntry",
+        "joinAlert"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/ntwc.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "normalizeNtwcFeed"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/nws.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "normalizeNwsCollection",
+        "normalizeNwsFeature",
+        "nwsRequestPlan",
+        "nwsWebUrl"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/relevance.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "nationIdsForAlert",
+        "groupForNation"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/service.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "loadAllAlerts",
+        "mergeDirectWithSnapshot"
+      ]
+    },
+    {
+      "path": "site/static/js/alerts/zones.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "resolveZoneGeometry"
+      ]
+    },
+    {
+      "path": "site/static/js/bc/evacuations.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "normalizeEvacuations"
+      ]
+    },
+    {
+      "path": "site/static/js/bc/rfc-advisories.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "normalizeRfcAdvisories"
+      ]
+    },
+    {
+      "path": "site/static/js/bc/tsunami.js",
+      "owner": "L3",
+      "dom": false,
+      "exports": [
+        "normalizeTsunamiNotifications"
+      ]
+    },
+    {
+      "path": "site/static/js/config/app.js",
+      "owner": "L0",
+      "dom": false,
+      "complete": true,
+      "exports": [
+        "APP"
+      ]
+    },
+    {
+      "path": "site/static/js/config/pages.js",
+      "owner": "L0",
+      "dom": false,
+      "complete": true,
+      "exports": [
+        "PRODUCT_NAME",
+        "PRODUCT_DESCRIPTION",
+        "PREDECESSOR",
+        "CONTACT_EMAIL",
+        "SITE_BASE_PATH",
+        "PAGES",
+        "NAV_ORDER",
+        "DASHBOARD_PANELS",
+        "SAFETY_ANCHORS",
+        "page"
+      ]
+    },
+    {
+      "path": "site/static/js/core/dom.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "h",
+        "safeUrl",
+        "telHref",
+        "clear",
+        "on"
+      ]
+    },
+    {
+      "path": "site/static/js/core/embed.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "initEmbed",
+        "isEmbedMode",
+        "isFramed",
+        "postHeight"
+      ]
+    },
+    {
+      "path": "site/static/js/core/geo.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "haversineKm",
+        "pointInGeometry",
+        "bboxOf",
+        "bboxIntersects",
+        "nearest"
+      ]
+    },
+    {
+      "path": "site/static/js/core/lastgood.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "readLastGood",
+        "writeLastGood",
+        "evictLastGood"
+      ]
+    },
+    {
+      "path": "site/static/js/core/net.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "fetchJson",
+        "fetchText",
+        "fetchAllPages",
+        "fetchLocal",
+        "clearMemoryCache"
+      ]
+    },
+    {
+      "path": "site/static/js/core/poller.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "createPoller"
+      ]
+    },
+    {
+      "path": "site/static/js/core/priority.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "createLimiter",
+        "sharedLimiter"
+      ]
+    },
+    {
+      "path": "site/static/js/core/provenance.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "renderProvenance",
+        "asOfLabel"
+      ]
+    },
+    {
+      "path": "site/static/js/core/sources.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "loadSources",
+        "source",
+        "url",
+        "isEnabled",
+        "getData"
+      ]
+    },
+    {
+      "path": "site/static/js/core/status.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "STATUS_STATES",
+        "validateSnapshot",
+        "createStatusRegistry",
+        "stateFromAge",
+        "deriveStatus"
+      ]
+    },
+    {
+      "path": "site/static/js/core/storage.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "getItem",
+        "setItem",
+        "removeItem"
+      ]
+    },
+    {
+      "path": "site/static/js/core/store.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "createStore"
+      ]
+    },
+    {
+      "path": "site/static/js/core/sw-register.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "registerServiceWorker"
+      ]
+    },
+    {
+      "path": "site/static/js/core/time.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "zonedDayKey",
+        "splitByZonedDay",
+        "formatAsOf",
+        "formatDate",
+        "zoneAbbreviation",
+        "relativeAge",
+        "parseIsoDuration"
+      ]
+    },
+    {
+      "path": "site/static/js/core/units.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "toNumberOrNull",
+        "isMissingReading",
+        "unitSystemFor",
+        "formatPrecipitation",
+        "formatStage",
+        "formatFlow",
+        "formatTemperature"
+      ]
+    },
+    {
+      "path": "site/static/js/core/url-state.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "parseQuery",
+        "serializeQuery",
+        "readState",
+        "writeState",
+        "onStateChange",
+        "linkWithState"
+      ]
+    },
+    {
+      "path": "site/static/js/data/contacts.js",
+      "owner": "L13",
+      "dom": false,
+      "exports": [
+        "loadContacts",
+        "contactsFor",
+        "isVerificationDue"
+      ]
+    },
+    {
+      "path": "site/static/js/data/ids.js",
+      "owner": "L0",
+      "dom": false,
+      "complete": true,
+      "exports": [
+        "US_STATE_CODES",
+        "MAX_SLUG_LENGTH",
+        "NATION_ID_PATTERN",
+        "SLUG_PATTERN",
+        "slugify",
+        "mintUsNationId",
+        "firstNationId",
+        "isNationId",
+        "parseNationId",
+        "hasNamePlaceholder",
+        "resolveNationId",
+        "assignNationId",
+        "mintPrefixedId",
+        "mintContactId"
+      ]
+    },
+    {
+      "path": "site/static/js/data/nations.js",
+      "owner": "L5",
+      "dom": false,
+      "exports": [
+        "loadNationsIndex",
+        "loadNation",
+        "searchKey",
+        "searchNations",
+        "displayName"
+      ]
+    },
+    {
+      "path": "site/static/js/data/reference.js",
+      "owner": "L2",
+      "dom": false,
+      "exports": [
+        "loadReference"
+      ]
+    },
+    {
+      "path": "site/static/js/data/resources.js",
+      "owner": "L13",
+      "dom": false,
+      "exports": [
+        "loadResources",
+        "filterResources"
+      ]
+    },
+    {
+      "path": "site/static/js/declarations/curated.js",
+      "owner": "L11",
+      "dom": false,
+      "exports": [
+        "curatedStatus"
+      ]
+    },
+    {
+      "path": "site/static/js/declarations/openfema.js",
+      "owner": "L11",
+      "dom": false,
+      "exports": [
+        "femaQueryParams",
+        "groupFemaRows"
+      ]
+    },
+    {
+      "path": "site/static/js/declarations/service.js",
+      "owner": "L11",
+      "dom": false,
+      "exports": [
+        "loadDeclarations"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/afd.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "loadLatestAfd"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/cw3e.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "cw3eUrl",
+        "resolveCycleFromManifest",
+        "probeCycleInBrowser"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/eccc-citypage.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "loadCityPage",
+        "normalizeCityPage"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/goes.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "goesStillUrl",
+        "goesAnimationUrl"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/gridpoint-qpf.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "aggregateGridpointDaily"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/nws-forecast.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "loadPointForecast",
+        "normalizeForecastPeriods"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/radar.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "nearestRadarSite",
+        "iemValidTime",
+        "radarTimeBucket"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/wpc.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "wpcProducts"
+      ]
+    },
+    {
+      "path": "site/static/js/hydro/flood-category.js",
+      "owner": "L7",
+      "dom": false,
+      "exports": [
+        "categoryLabel",
+        "isObservationCurrent"
+      ]
+    },
+    {
+      "path": "site/static/js/hydro/gauges-service.js",
+      "owner": "L7",
+      "dom": false,
+      "exports": [
+        "loadGauges",
+        "nearbyGauges"
+      ]
+    },
+    {
+      "path": "site/static/js/hydro/nwps.js",
+      "owner": "L7",
+      "dom": false,
+      "exports": [
+        "normalizeNwpsGaugeList",
+        "normalizeNwpsGauge",
+        "hydrographImageUrl"
+      ]
+    },
+    {
+      "path": "site/static/js/hydro/wsc.js",
+      "owner": "L7",
+      "dom": false,
+      "exports": [
+        "normalizeWscRealtime"
+      ]
+    },
+    {
+      "path": "site/static/js/map/adapter.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "requestMap",
+        "whenAlertsPainted"
+      ]
+    },
+    {
+      "path": "site/static/js/map/attribution.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "attributionLines",
+        "mountAttribution"
+      ]
+    },
+    {
+      "path": "site/static/js/map/create-map.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "createMap"
+      ]
+    },
+    {
+      "path": "site/static/js/map/fallback-svg.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "renderOutlineMap"
+      ]
+    },
+    {
+      "path": "site/static/js/map/feature-list.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "createFeatureList"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/alerts.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createAlertsLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/basemap.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createBasemapLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/bc.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createBcLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/boundaries.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createBoundariesLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/gauges.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createGaugesLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/hq.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createHqLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/outlines.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createOutlinesLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/radar.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createRadarLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/layers/zones.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "createZonesLayer"
+      ]
+    },
+    {
+      "path": "site/static/js/map/legend.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "renderLegend"
+      ]
+    },
+    {
+      "path": "site/static/js/map/loader.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "MAPLIBRE_VERSION",
+        "MAPLIBRE_BASE",
+        "loadMapLibre",
+        "loadTopojson"
+      ]
+    },
+    {
+      "path": "site/static/js/map/sovereignty.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "SOVEREIGNTY_HEADLINE",
+        "SOVEREIGNTY_BODY",
+        "mountSovereigntyNote",
+        "sovereigntyControl",
+        "sovereigntyInline"
+      ]
+    },
+    {
+      "path": "site/static/js/map/style.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "buildStyle"
+      ]
+    },
+    {
+      "path": "site/static/js/map/support.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "probeWebGL",
+        "chooseMode"
+      ]
+    },
+    {
+      "path": "site/static/js/map/topo.js",
+      "owner": "L8",
+      "dom": false,
+      "exports": [
+        "decodeTopo"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/alerts.js",
+      "owner": "L11",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/archive.js",
+      "owner": "L14",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/contacts.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/dashboard.js",
+      "owner": "L10",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/embed.js",
+      "owner": "L14",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/forecasts.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/news.js",
+      "owner": "L14",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/resources.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/safety.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/pages/usage.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "main"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/alert-banner.js",
+      "owner": "L10",
+      "dom": true,
+      "exports": [
+        "renderAlertBanner"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/alert-card.js",
+      "owner": "L11",
+      "dom": true,
+      "exports": [
+        "alertCard"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/alert-list.js",
+      "owner": "L11",
+      "dom": true,
+      "exports": [
+        "renderAlertList"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/bottom-bar.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "initBottomBar"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/charts/bars.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "qpfBars"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/chrome.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "initChrome"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/contact-card.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "contactCard"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/copy-print.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "copyList",
+        "printWithNote"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/disclosure.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "initDisclosure"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/filter-chips.js",
+      "owner": "L11",
+      "dom": true,
+      "exports": [
+        "createFilterChips"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/gauge-detail.js",
+      "owner": "L7",
+      "dom": true,
+      "exports": [
+        "renderGaugeDetail"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/gauge-list.js",
+      "owner": "L7",
+      "dom": true,
+      "exports": [
+        "renderGaugeList"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/live-region.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "createLiveRegion",
+        "announce"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/media-viewer.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "createMediaViewer"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/nation-picker.js",
+      "owner": "L10",
+      "dom": true,
+      "exports": [
+        "createNationPicker"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/panel.js",
+      "owner": "L2",
+      "dom": true,
+      "exports": [
+        "mountPanel"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/status-pill.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "statusPill",
+        "updateStatusPill"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/summary-tiles.js",
+      "owner": "L10",
+      "dom": true,
+      "exports": [
+        "renderSummaryTiles"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/tabs.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "initTabs"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/toast.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "showToast"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/video-player.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "createVideoPlayer"
+      ]
+    }
+  ]
+}

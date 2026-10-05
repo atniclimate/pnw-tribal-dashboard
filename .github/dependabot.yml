@@ -1,0 +1,19 @@
+# Monthly, grouped dependency updates (blueprint 2.4). A maplibre-gl bump must re-run scripts/dev/vendor.mjs
+# and pass check:vendor before it merges.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      development:
+        patterns: ["*"]
+    open-pull-requests-limit: 3
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]

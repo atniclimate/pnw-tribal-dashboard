@@ -1,0 +1,92 @@
+{
+  "id": "us-ak-organized-village-of-kasaan",
+  "castId": null,
+  "name": "Organized Village of Kasaan",
+  "nameSource": {
+    "kind": "bia-anv",
+    "citation": "BIA Alaska Native Villages, tribefullname, OBJECTID 173",
+    "url": "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/AlaskaNativeVillages/FeatureServer/0",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "alaska-native-village",
+  "country": "US",
+  "jurisdictions": [
+    "AK-SE"
+  ],
+  "region": "ak-se",
+  "hq": {
+    "lat": 55.53828,
+    "lon": -132.4064,
+    "precision": "office",
+    "sourceId": "bia-anv",
+    "sourceRecordId": "173",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      55.53828,
+      -132.4064
+    ]
+  ],
+  "bbox": [
+    -132.56515,
+    55.44845,
+    -132.24765,
+    55.62811
+  ],
+  "boundary": {
+    "status": "point-only",
+    "detailRef": null,
+    "parts": []
+  },
+  "timeZone": "America/Sitka",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": {
+    "wfo": [
+      "AJK"
+    ],
+    "point": [
+      55.53828,
+      -132.4064
+    ],
+    "forecastZones": [
+      "forecast:AKZ328"
+    ],
+    "countyZones": [
+      "county:AKC198"
+    ],
+    "fireZones": [
+      "fire:AKZ328"
+    ],
+    "marineZones": []
+  },
+  "eccc": null,
+  "radar": {
+    "nexrad": "PACG",
+    "ridgeLoop": "PACG",
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": null,
+    "biaAnvObjectId": 173,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Registry test fixture built by scripts/dev/registry-fixture.mjs; not for display."
+  },
+  "flags": []
+}

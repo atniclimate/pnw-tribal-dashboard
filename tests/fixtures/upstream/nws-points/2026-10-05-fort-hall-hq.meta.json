@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-points",
+  "label": "fort-hall-hq",
+  "file": "2026-10-05-fort-hall-hq.json",
+  "url": "https://api.weather.gov/points/43.02637,-112.4334",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:52.239Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 3925,
+  "sha256": "70096e6c503b3461985aad8093074c98cca976ab117407e5630dceba43871912",
+  "covers": [
+    "points-metadata"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "NWS /points for a registry fixture headquarters coordinate (BIA Tribal Leaders Directory or Alaska Native Villages)."
+}

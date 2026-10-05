@@ -1,0 +1,30 @@
+Cascadia Tribal Hazard Dashboard
+
+Copyright (c) 2026 ATNI Climate, Affiliated Tribes of Northwest Indians.
+All rights reserved.
+
+Lead developer: Patrick A. Freeland
+
+This repository is public so that partners and the public can see how the
+dashboard works and where its information comes from. Publication does not
+grant a license. No part of the original source code, design, or content in
+this repository may be copied, modified, distributed, or used to create
+derivative works without written permission from ATNI Climate, Affiliated
+Tribes of Northwest Indians.
+
+Embedding: any site may embed the published dashboard pages, unmodified,
+through the iframe snippets the dashboard provides.
+
+Citation: Freeland, Patrick A. (2026). Cascadia Tribal Hazard Dashboard.
+ATNI Climate, Affiliated Tribes of Northwest Indians. See CITATION.cff.
+
+Third-party material keeps its own terms and is not covered by this notice:
+software dependencies (see package-lock.json), vendored libraries such as
+MapLibre GL JS and topojson-client (license files ship beside them), fonts
+under the SIL Open Font License 1.1, files under tests/fixtures/cast/ copied
+from ATNI-CAST (MIT), and the data, imagery, and feeds listed in
+DATA.md.
+
+The May 2026 dashboard (the repository-root index.html and its copy at
+site/classic/index.html) was published under the MIT License before
+10/05/2026, and that grant continues for those published versions.

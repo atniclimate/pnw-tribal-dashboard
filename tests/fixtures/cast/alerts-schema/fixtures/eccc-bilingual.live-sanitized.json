@@ -1,0 +1,57 @@
+{
+  "_fixture": {
+    "synthetic": false,
+    "sanitized": true,
+    "capturedFrom": "corpus/eccc/T_WWCN13_C_CWVR_202607170903_2092774527.cap",
+    "capturedAt": "2026-07-17",
+    "omitted": ["long descriptions", "instructions", "most parameters", "most polygon coordinates", "most geocodes"]
+  },
+  "identifier": "urn:oid:2.49.0.1.124.2092774527.2026",
+  "sender": "cap-pac@canada.ca",
+  "sent": "2026-07-17T09:07:40-00:00",
+  "messageType": "Update",
+  "references": [
+    "cap-pac@canada.ca,urn:oid:2.49.0.1.124.1330076534.2026,2026-07-15T23:39:32-00:00",
+    "cap-pac@canada.ca,urn:oid:2.49.0.1.124.3944518493.2026,2026-07-15T23:46:49-00:00",
+    "cap-pac@canada.ca,urn:oid:2.49.0.1.124.1516669419.2026,2026-07-16T12:31:58-00:00",
+    "cap-pac@canada.ca,urn:oid:2.49.0.1.124.3382952562.2026,2026-07-16T23:12:42-00:00"
+  ],
+  "info": [
+    {
+      "language": "en-CA",
+      "event": "heat",
+      "urgency": "Immediate",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "effective": "2026-07-17T09:07:40-00:00",
+      "onset": "2026-07-17T09:03:00-00:00",
+      "expires": "2026-07-18T01:07:40-00:00",
+      "headline": "yellow warning - heat - in effect",
+      "parameters": { "MSC_Impact": "moderate", "Colour": "yellow" },
+      "area": {
+        "areaDesc": "B.C. North Peace River",
+        "geometryBasis": "polygon",
+        "firstPolygonCoordinate": "56.0691,-120.0013",
+        "geocodes": ["CLC:087320", "CAP-CP:5955010"]
+      }
+    },
+    {
+      "language": "fr-CA",
+      "event": "chaleur",
+      "urgency": "Immediate",
+      "severity": "Moderate",
+      "certainty": "Likely",
+      "effective": "2026-07-17T09:07:40-00:00",
+      "onset": "2026-07-17T09:03:00-00:00",
+      "expires": "2026-07-18T01:07:40-00:00",
+      "headline": "avertissement jaune - chaleur - en vigueur",
+      "parameters": { "MSC_Impact": "modéré", "Colour": "jaune" },
+      "area": {
+        "areaDesc": "rivière de la Paix Nord C.-B.",
+        "geometryBasis": "polygon",
+        "firstPolygonCoordinate": "56.0691,-120.0013",
+        "geocodes": ["CLC:087320", "CAP-CP:5955010"]
+      }
+    }
+  ]
+}

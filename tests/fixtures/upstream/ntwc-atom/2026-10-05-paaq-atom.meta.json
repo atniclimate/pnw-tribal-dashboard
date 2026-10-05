@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "ntwc-atom",
+  "label": "paaq-atom",
+  "file": "2026-10-05-paaq-atom.xml",
+  "url": "https://www.tsunami.gov/events/xml/PAAQAtom.xml",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/atom+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T06:25:17.474Z",
+  "status": 200,
+  "contentType": "text/xml",
+  "lastModified": "Tue, 29 Sep 2026 21:10:37 GMT",
+  "bytes": 1976,
+  "sha256": "39e31899668a7f7b9ed17a0b697a27071e47b6c51bf978a963ac7e14b9ae718c",
+  "covers": [
+    "atom-feed"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "National Tsunami Warning Center Atom feed (Alaska, British Columbia, U.S. West Coast)."
+}

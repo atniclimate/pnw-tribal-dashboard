@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-cancel",
+      "geometry": null,
+      "properties": {
+        "id": "synthetic-cancel",
+        "areaDesc": "Synthetic County",
+        "geocode": {
+          "UGC": ["SYN001"],
+          "SAME": ["999999"]
+        },
+        "references": [
+          {
+            "identifier": "synthetic-original",
+            "sender": "synthetic@nws.test",
+            "sent": "2026-07-17T16:00:00Z"
+          }
+        ],
+        "sent": "2026-07-17T18:00:00Z",
+        "effective": "2026-07-17T18:00:00Z",
+        "onset": null,
+        "expires": null,
+        "messageType": "Cancel",
+        "severity": "Minor",
+        "certainty": "Observed",
+        "urgency": "Past",
+        "event": "Flood Warning",
+        "headline": "Synthetic flood warning cancellation",
+        "description": "Synthetic fixture for a cancellation message.",
+        "instruction": "Continue to use caution near waterways.",
+        "parameters": {
+          "VTEC": ["/O.CAN.KSYN.FL.W.0001.260717T1600Z-260717T1800Z/"]
+        },
+        "language": "en-US"
+      }
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/live-bc-hazards.schema.json",
+  "title": "Live Envelope: bc-hazards.json",
+  "description": "site/data/live/bc-hazards.json: candidate British Columbia provincial streams.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "sourceIds",
+    "generatedAt",
+    "observedAt",
+    "asOf",
+    "asOfBasis",
+    "completeness",
+    "carriedForward",
+    "failure",
+    "perSource",
+    "diagnostics",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.live.bc-hazards/1"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/kebabId"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "minItems": 1
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "observedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "asOf": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "asOfBasis": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/asOfBasis"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completeness": {
+      "enum": [
+        "complete",
+        "partial",
+        "rejected"
+      ]
+    },
+    "carriedForward": {
+      "type": "boolean"
+    },
+    "failure": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message",
+            "at"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string"
+            },
+            "at": {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "perSource": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok",
+          "count",
+          "asOf"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "asOf": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "sourceId",
+          "kind",
+          "title",
+          "status",
+          "issuedBy",
+          "updatedAt",
+          "band",
+          "posture",
+          "mappingApplied",
+          "nationIds",
+          "geometry"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceId": {
+            "enum": [
+              "bc-rfc-flood-advisories",
+              "bc-emcr-evacuations",
+              "bc-embc-tsunami"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "flood-advisory",
+              "evacuation-order",
+              "evacuation-alert",
+              "tsunami-notification"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string"
+          },
+          "issuedBy": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "updatedAt": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "band": {
+            "$ref": "common.schema.json#/$defs/band"
+          },
+          "posture": {
+            "$ref": "common.schema.json#/$defs/posture"
+          },
+          "mappingApplied": {
+            "$ref": "common.schema.json#/$defs/mappingApplied"
+          },
+          "nationIds": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/nationId"
+            }
+          },
+          "geometry": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/geometry"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

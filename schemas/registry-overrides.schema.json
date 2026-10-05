@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/registry-overrides.schema.json",
+  "title": "Registry Overrides",
+  "description": "data/registry/overrides.yaml: reviewed corrections with a source and reason (blueprint 3.11, 6.2).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "nationId",
+      "field",
+      "value",
+      "sourceUrl",
+      "reason",
+      "verifiedAt"
+    ],
+    "properties": {
+      "nationId": {
+        "$ref": "common.schema.json#/$defs/nationId"
+      },
+      "field": {
+        "enum": [
+          "timeZone",
+          "hq",
+          "jurisdictions",
+          "region",
+          "aliases",
+          "website",
+          "gauges"
+        ]
+      },
+      "value": {},
+      "sourceUrl": {
+        "$ref": "common.schema.json#/$defs/httpsUrl"
+      },
+      "reason": {
+        "type": "string",
+        "minLength": 1
+      },
+      "verifiedAt": {
+        "$ref": "common.schema.json#/$defs/isoDate"
+      }
+    }
+  }
+}

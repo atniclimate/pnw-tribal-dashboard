@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "update-chain-current",
+  "file": "2026-10-05-update-chain-current.json",
+  "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9a364d0d82ceedce2bffbec18a157120d43f28b8.002.1",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:46.260Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 6856,
+  "sha256": "3594ef6dea4dbaa521bbe4951adf2ca31f42171a8ddb13b346991d1b93f49093",
+  "covers": [
+    "update-chain",
+    "marine-alert"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "The current Update message of a chain (Southeast Alaska marine zones)."
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "openfema-declarations",
+  "label": "dr-4906-wa-multi-county",
+  "file": "2026-10-05-dr-4906-wa-multi-county.json",
+  "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=femaDeclarationString+eq+%27DR-4906-WA%27&%24orderby=designatedArea+asc",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:55.891Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": null,
+  "bytes": 47863,
+  "sha256": "9bfa03e2f4810d3e2e9ae15fc4516033c75bdb352bf57e485a393b021b0e9d64",
+  "covers": [
+    "multi-county-rows",
+    "grouping"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Every DisasterDeclarationsSummaries row for DR-4906-WA (49 rows), one per designated area."
+}

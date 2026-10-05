@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-test-message",
+      "geometry": null,
+      "properties": {
+        "id": "synthetic-test-message",
+        "areaDesc": "Synthetic County",
+        "geocode": {
+          "UGC": ["SYN001"],
+          "SAME": ["999999"]
+        },
+        "sent": "2026-07-17T18:00:00Z",
+        "effective": "2026-07-17T18:00:00Z",
+        "expires": null,
+        "status": "Test",
+        "messageType": "Alert",
+        "severity": "Unknown",
+        "certainty": "Unknown",
+        "urgency": "Unknown",
+        "event": "Test Message",
+        "headline": null,
+        "description": "Synthetic monitoring message only. Please disregard.",
+        "instruction": "Synthetic monitoring message only. Please disregard.",
+        "language": "en-US"
+      }
+    }
+  ]
+}

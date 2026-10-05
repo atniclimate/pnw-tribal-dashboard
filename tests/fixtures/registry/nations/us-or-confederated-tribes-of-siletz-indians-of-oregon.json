@@ -1,0 +1,101 @@
+{
+  "id": "us-or-confederated-tribes-of-siletz-indians-of-oregon",
+  "castId": null,
+  "name": "Confederated Tribes of Siletz Indians of Oregon",
+  "nameSource": {
+    "kind": "bia-tld",
+    "citation": "BIA Tribal Leaders Directory, tribefullname, OBJECTID 343",
+    "url": "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "OR"
+  ],
+  "region": "or",
+  "hq": {
+    "lat": 44.71973,
+    "lon": -123.9166,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "343",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      44.71973,
+      -123.9166
+    ]
+  ],
+  "bbox": [
+    -124.07961,
+    44.47283,
+    -123.64871,
+    45.02878
+  ],
+  "boundary": {
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-or-confederated-tribes-of-siletz-indians-of-oregon.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0083",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
+  },
+  "timeZone": "America/Los_Angeles",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": {
+    "wfo": [
+      "PQR"
+    ],
+    "point": [
+      44.71973,
+      -123.9166
+    ],
+    "forecastZones": [
+      "forecast:ORZ103"
+    ],
+    "countyZones": [
+      "county:ORC041"
+    ],
+    "fireZones": [
+      "fire:ORZ681"
+    ],
+    "marineZones": []
+  },
+  "eccc": null,
+  "radar": {
+    "nexrad": "KRTX",
+    "ridgeLoop": "KRTX",
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0083"
+    ],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": 343,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Registry test fixture built by scripts/dev/registry-fixture.mjs; not for display."
+  },
+  "flags": []
+}

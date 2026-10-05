@@ -1,0 +1,34 @@
+{
+  "type": "FeatureCollection",
+  "timeStamp": "2026-07-17T21:20:00Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-valid-neighbour",
+      "geometry": { "type": "Polygon", "coordinates": [[[-123, 48], [-122, 48], [-122, 49], [-123, 48]]] },
+      "properties": {
+        "id": "synthetic-valid-neighbour",
+        "alert_type": "watch",
+        "alert_name_en": "Valid synthetic watch",
+        "alert_text_en": "This valid item must survive its malformed neighbour.",
+        "publication_datetime": "2026-07-17T20:20:00Z",
+        "validity_datetime": "2026-07-17T20:20:00Z",
+        "expiration_datetime": "2026-07-18T02:20:00Z",
+        "impact_en": "Moderate",
+        "province": "BC",
+        "status_en": "in effect"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "alert_type": "warning",
+        "alert_name_en": "Malformed synthetic warning",
+        "alert_text_en": "This item intentionally lacks identity and geometry.",
+        "publication_datetime": "not-a-timestamp",
+        "province": "BC"
+      }
+    }
+  ]
+}

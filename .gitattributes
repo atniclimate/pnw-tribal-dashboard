@@ -1,0 +1,16 @@
+# Line endings: LF for authored text everywhere, whatever a contributor's core.autocrlf says.
+* text=auto eol=lf
+
+# Kept byte for byte: captured upstream responses (their SHA-256 is checked), CAST copies (hashed in
+# UPSTREAM.json), and the May 2026 dashboard with its copies (byte-identical until Gate V).
+tests/fixtures/upstream/** -text
+tests/fixtures/cast/** -text
+/index.html -text
+site/classic/** -text
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.woff2 binary
+*.mp4 binary
+*.zip binary

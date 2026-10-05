@@ -1,0 +1,50 @@
+{
+  "schema": "cthd.budgets/1",
+  "description": "Byte budgets (gzip) and timing targets from blueprint 8.1, 8.2, and 4.2. Enforced by scripts/check/budgets.mjs from each page's critical set and by Playwright network logs and marks. Owner: lane L0; values change only by a reviewed edit.",
+  "bytes": {
+    "htmlPerPage": { "gzipMax": 12288, "note": "static chrome and panel skeletons" },
+    "cssCritical": { "gzipMax": 20480, "note": "tokens, fonts, base, layout, components" },
+    "jsStaticGraph": { "gzipMax": 46080, "note": "a page's static import graph; maps and players are dynamic imports" },
+    "fontsPreloaded": { "gzipMax": 46080, "note": "League Spartan variable latin and Roboto 400 latin" },
+    "firstDataTypical": { "gzipMax": 25600, "note": "alerts.json index, nations/<n>.json, sources.json" },
+    "beforeFirstAlertPaint": { "gzipMax": 163840, "note": "total before performance.mark('alerts-painted')" },
+    "stormAlertIndexAlarm": { "gzipMax": 256000, "note": "storm-day alerts.json measured separately; alarm, not failure" },
+    "mapInteractive": {
+      "maplibreVendoredMax": 337920,
+      "mapModulesApprox": 5120,
+      "firstLoadLabelBytes": 500000,
+      "note": "MapLibre GL JS 6.12.0 JS and CSS (about 315 KB) plus map/* plus tiles in view, outlines, headquarters points, and the Nation detail file or the overview; never before alerts-painted and a map request; check:budgets fails when the vendored set grows past 330 KB"
+    },
+    "mapOutline": {
+      "topojsonClientApprox": 3072,
+      "note": "topojson-client plus outlines.topo.json and files already fetched; no tiles and no third-party request"
+    },
+    "imageWithoutTap": { "max": 153600, "note": "the 300 px GOES still and WPC images qualify" },
+    "requestWithoutTap": { "max": 307200, "note": "asserted on every page by Playwright" },
+    "serviceWorkerPrecache": { "max": 460800, "note": "vendor/maplibre-gl-* and map/* are never precached" }
+  },
+  "geometry": {
+    "hqPoints": { "rawMax": 40960 },
+    "boundariesOverview": { "rawMax": 614400, "gzipMax": 184320 },
+    "boundaryDetailEach": { "rawTypical": [5120, 81920] },
+    "boundaryDetailTotal": { "rawMax": 15728640 },
+    "nwsZones": { "rawMax": 460800, "gzipMax": 153600 },
+    "ecccRegions": { "rawMax": 204800 },
+    "outlines": { "rawMax": 122880 },
+    "gaugesStatus": { "gzipMax": 81920 }
+  },
+  "timing": {
+    "viewport": { "width": 360, "height": 740 },
+    "profiles": {
+      "constrained": { "downloadKbps": 1600, "latencyMs": 150, "cpuSlowdown": 4 },
+      "storm": { "downloadKbps": 400, "latencyMs": 400, "cpuSlowdown": 4 }
+    },
+    "targets": {
+      "constrained": { "alertsPaintedMs": 3000, "lcpMs": 2500, "lcpPages": ["dashboard", "contacts"], "tbtMs": 200 },
+      "storm": { "alertsPaintedMs": 8000, "maxRequestBeforeTapBytes": 307200 },
+      "constrainedMap": { "mapReadyMs": 6000, "outlineModeMs": 2000, "maxLongTaskFromMapMs": 200, "from": "Show Map tap, cold cache" },
+      "stormMap": { "outlineModeMs": 4000, "mapReadyMs": 15000, "from": "Show Map tap, cold cache" },
+      "cls": { "max": 0.05 }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "cancel-collection-page-1",
+  "file": "2026-10-05-cancel-collection-page-1.json",
+  "url": "https://api.weather.gov/alerts?message_type=cancel&area=WA,OR,ID,CA,AK,PZ,PK&limit=10",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:46.749Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 50914,
+  "sha256": "386b59baa28bea8a1bb02e3b930594307f7217e46fec15aa12df982f871edc5e",
+  "covers": [
+    "cancel",
+    "paginated-collection"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Recent Cancel messages in footprint states; page 1 of a cursor-paginated collection."
+}

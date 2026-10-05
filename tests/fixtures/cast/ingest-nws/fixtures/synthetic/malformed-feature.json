@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-malformed",
+      "geometry": null,
+      "properties": {
+        "id": "synthetic-malformed"
+      }
+    }
+  ]
+}

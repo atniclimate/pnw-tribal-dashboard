@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/registry-names.schema.json",
+  "title": "Name Corrections",
+  "description": "data/registry/names.yaml: corrections from each Nation's own published name (blueprint 5.2).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "nationId",
+      "name",
+      "sourceUrl",
+      "verifiedAt"
+    ],
+    "properties": {
+      "nationId": {
+        "$ref": "common.schema.json#/$defs/nationId"
+      },
+      "name": {
+        "$ref": "common.schema.json#/$defs/displayName"
+      },
+      "preferredName": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/displayName"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "sourceUrl": {
+        "$ref": "common.schema.json#/$defs/httpsUrl"
+      },
+      "verifiedAt": {
+        "$ref": "common.schema.json#/$defs/isoDate"
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  }
+}

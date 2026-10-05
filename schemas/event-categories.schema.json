@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/event-categories.schema.json",
+  "title": "Event Category Table",
+  "description": "site/data/ref/nws-event-categories.json and eccc-event-categories.json (blueprint 3.9).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "agency",
+    "generatedAt",
+    "sourceIds",
+    "events"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.event-categories/1"
+    },
+    "agency": {
+      "enum": [
+        "nws",
+        "eccc"
+      ]
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      }
+    },
+    "events": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "categories",
+          "designation",
+          "reviewed"
+        ],
+        "properties": {
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/hazardCategory"
+            },
+            "minItems": 1
+          },
+          "designation": {
+            "$ref": "common.schema.json#/$defs/designation"
+          },
+          "reviewed": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

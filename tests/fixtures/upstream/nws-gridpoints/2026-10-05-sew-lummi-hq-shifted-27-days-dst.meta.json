@@ -1,0 +1,27 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-gridpoints",
+  "label": "sew-lummi-hq-shifted-27-days-dst",
+  "file": "2026-10-05-sew-lummi-hq-shifted-27-days-dst.json",
+  "url": "https://api.weather.gov/gridpoints/SEW/127,126",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:53.626Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": "Sun, 04 Oct 2026 18:26:24 GMT",
+  "bytes": 178712,
+  "sha256": "57c73d18c9dece1577d71d7b69714a5525bef3e018866432f4154a3a0158a251",
+  "covers": [
+    "gridpoint-qpf",
+    "dst-transition-2026-11-01"
+  ],
+  "derivedFrom": "2026-10-05-sew-lummi-hq.json",
+  "edits": [
+    "Every timestamp of the form YYYY-MM-DDTHH:MM:SS+00:00 (validTime interval starts, updateTime, validTimes, generatedAt) was shifted forward by exactly 27 days (648 hours), so the series spans the 11/01/2026 09:00 UTC end of daylight saving time in America/Los_Angeles. Durations, values, units, and geometry are unchanged."
+  ],
+  "notes": "A live gridpoint cannot span 11/01/2026 until about 10/25/2026; recapture a real one then and retire this derived file."
+}

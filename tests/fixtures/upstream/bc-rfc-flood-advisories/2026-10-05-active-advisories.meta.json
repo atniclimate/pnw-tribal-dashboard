@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "bc-rfc-flood-advisories",
+  "label": "active-advisories",
+  "file": "2026-10-05-active-advisories.json",
+  "url": "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0/query?where=Advisory%3E1&outFields=*&outSR=4326&geometryPrecision=5&f=geojson",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:17.985Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": "Mon, 24 Aug 2026 16:53:22 GMT",
+  "bytes": 98,
+  "sha256": "1ce7eb457779acd1dc230a1bcb4692d06f27533481f26cbfe0e9e599134c0cd4",
+  "covers": [
+    "active-only-query"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Basins with an advisory above No Advisory, with geometry in EPSG:4326."
+}

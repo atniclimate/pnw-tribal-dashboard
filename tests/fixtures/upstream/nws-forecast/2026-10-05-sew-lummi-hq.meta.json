@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-forecast",
+  "label": "sew-lummi-hq",
+  "file": "2026-10-05-sew-lummi-hq.json",
+  "url": "https://api.weather.gov/gridpoints/SEW/127,126/forecast",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:53.859Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": "Mon, 05 Oct 2026 00:59:58 GMT",
+  "bytes": 12913,
+  "sha256": "078e07afa7417fba356ef6a080cf2c203492b1fe1366188b3be19e6a64e93985",
+  "covers": [
+    "fourteen-periods"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Point forecast (14 periods) for the Lummi Tribe of the Lummi Reservation headquarters point."
+}

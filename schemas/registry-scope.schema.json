@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/registry-scope.schema.json",
+  "title": "Registry Scope",
+  "description": "data/registry/scope.yaml: explicit includes and excludes beyond the headquarters-in-footprint rule (blueprint 6.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "include",
+    "exclude"
+  ],
+  "properties": {
+    "include": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key",
+          "reason",
+          "sourceUrl"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 3
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceUrl": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/httpsUrl"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "exclude": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key",
+          "reason",
+          "sourceUrl"
+        ],
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 3
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceUrl": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/httpsUrl"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

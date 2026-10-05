@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/footprint-ugc.schema.json",
+  "title": "Footprint UGC Index",
+  "description": "site/data/geo/footprint-ugc.json (blueprint 3.7.3, 6.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "zones",
+    "edgeCodes",
+    "marineToRegion"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.footprint-ugc/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "zones": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/zoneKey"
+      },
+      "uniqueItems": true
+    },
+    "edgeCodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}[A-Z][0-9]{3}$"
+      },
+      "uniqueItems": true
+    },
+    "marineToRegion": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^P[ZK]Z[0-9]{3}$"
+      },
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/regionCode"
+      }
+    }
+  }
+}

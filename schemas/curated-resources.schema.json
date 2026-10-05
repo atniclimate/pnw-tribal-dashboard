@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/curated-resources.schema.json",
+  "title": "Compiled Resources",
+  "description": "site/data/curated/resources.json, compiled by scripts/compile (blueprint 6.3).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.curated.resources/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "url",
+          "publisher",
+          "description",
+          "category",
+          "hazards",
+          "scope",
+          "nationId",
+          "phone",
+          "status",
+          "verifiedAt",
+          "sourceUrl"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^res-[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "enum": [
+              "alerts-signup",
+              "shelter",
+              "evacuation",
+              "roads",
+              "rivers",
+              "tribal-government",
+              "recovery",
+              "financial-assistance",
+              "health",
+              "volunteer",
+              "preparedness",
+              "forecast-office"
+            ]
+          },
+          "hazards": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/hazardCategory"
+            },
+            "uniqueItems": true
+          },
+          "scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "level",
+              "region"
+            ],
+            "properties": {
+              "level": {
+                "$ref": "common.schema.json#/$defs/scopeLevel"
+              },
+              "region": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "nationId": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/nationId"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "phone": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/phoneE164"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "enum": [
+              "evergreen",
+              "seasonal"
+            ]
+          },
+          "validFrom": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          },
+          "validUntil": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          },
+          "verifiedAt": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          },
+          "sourceUrl": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "seasonal"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "validFrom",
+                "validUntil"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

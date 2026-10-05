@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-missing-coverage",
+      "geometry": null,
+      "properties": {
+        "id": "synthetic-missing-coverage",
+        "geocode": {
+          "UGC": [],
+          "SAME": []
+        },
+        "references": [],
+        "sent": "2026-07-17T17:00:00Z",
+        "effective": "2026-07-17T17:00:00Z",
+        "onset": "2026-07-17T17:00:00Z",
+        "expires": "2026-07-17T19:00:00Z",
+        "messageType": "Alert",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "event": "Flood Watch",
+        "headline": "Synthetic flood watch without coverage",
+        "description": "Synthetic fixture for a missing coverage rejection.",
+        "instruction": "Monitor official forecasts.",
+        "language": "en-US"
+      }
+    }
+  ]
+}

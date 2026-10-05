@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/ids-lock.schema.json",
+  "title": "Frozen Nation Id Lock",
+  "description": "data/registry/ids.lock.json: append-only; ids are minted once and never re-derived from names (blueprint 5.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "entries"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.ids-lock/1"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "key",
+          "name",
+          "mintedAt"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/nationId"
+          },
+          "key": {
+            "type": "string",
+            "minLength": 3
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mintedAt": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          }
+        }
+      }
+    }
+  }
+}

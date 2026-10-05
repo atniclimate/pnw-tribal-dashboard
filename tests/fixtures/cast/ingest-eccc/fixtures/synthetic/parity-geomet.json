@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "timeStamp": "2026-07-17T21:30:00Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-eccc-parity-001",
+      "geometry": { "type": "Polygon", "coordinates": [[[-123, 49], [-122, 49], [-122, 50], [-123, 49]]] },
+      "properties": {
+        "id": "synthetic-eccc-parity-001",
+        "alert_type": "watch",
+        "alert_name_en": "Synthetic wind watch",
+        "alert_text_en": "Strong winds are possible.",
+        "alert_name_fr": "Veille de vent synthétique",
+        "alert_text_fr": "Des vents forts sont possibles.",
+        "publication_datetime": "2026-07-17T20:30:00Z",
+        "validity_datetime": "2026-07-17T21:00:00Z",
+        "expiration_datetime": "2026-07-18T03:00:00Z",
+        "impact_en": "High",
+        "risk_colour_en": "red",
+        "severity": "Minor",
+        "confidence_en": "Likely",
+        "feature_name_en": "Synthetic area",
+        "province": "BC",
+        "status_en": "in effect"
+      }
+    }
+  ]
+}

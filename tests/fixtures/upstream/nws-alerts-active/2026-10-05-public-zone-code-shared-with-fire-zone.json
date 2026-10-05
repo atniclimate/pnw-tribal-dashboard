@@ -1,0 +1,125 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.88aff7678d95bf891f5ac2dd21ca25d6ddfd9c30.001.1",
+        "areaDesc": "Sonoma Coastal Range; North Bay Interior Mountains; North Bay Interior Valleys; San Francisco Bay Shoreline; East Bay Interior Valleys; Santa Cruz Mountains; Santa Clara Valley Including San Jose; Eastern Santa Clara Hills; East Bay Hills; Southern Salinas Valley/Arroyo Seco and Lake San Antonio; Santa Lucia Mountains and Los Padres National Forest; Mountains Of San Benito County And Interior Monterey County Including Pinnacles National Park",
+        "geocode": {
+            "SAME": [
+                "006097",
+                "006055",
+                "006041",
+                "006001",
+                "006013",
+                "006081",
+                "006085",
+                "006087",
+                "006053",
+                "006069"
+            ],
+            "UGC": [
+                "CAZ503",
+                "CAZ504",
+                "CAZ506",
+                "CAZ508",
+                "CAZ510",
+                "CAZ512",
+                "CAZ513",
+                "CAZ514",
+                "CAZ515",
+                "CAZ516",
+                "CAZ517",
+                "CAZ518"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/forecast/CAZ503",
+            "https://api.weather.gov/zones/forecast/CAZ504",
+            "https://api.weather.gov/zones/forecast/CAZ506",
+            "https://api.weather.gov/zones/forecast/CAZ508",
+            "https://api.weather.gov/zones/forecast/CAZ510",
+            "https://api.weather.gov/zones/forecast/CAZ512",
+            "https://api.weather.gov/zones/forecast/CAZ513",
+            "https://api.weather.gov/zones/forecast/CAZ514",
+            "https://api.weather.gov/zones/forecast/CAZ515",
+            "https://api.weather.gov/zones/forecast/CAZ516",
+            "https://api.weather.gov/zones/forecast/CAZ517",
+            "https://api.weather.gov/zones/forecast/CAZ518"
+        ],
+        "references": [
+            {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7517e1a3cd82f6d60949eb0a82ce51d6c71ea53c.002.1",
+                "identifier": "urn:oid:2.49.0.1.840.0.7517e1a3cd82f6d60949eb0a82ce51d6c71ea53c.002.1",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "sent": "2026-10-04T21:34:00-07:00"
+            }
+        ],
+        "sent": "2026-10-04T23:01:00-07:00",
+        "effective": "2026-10-04T23:01:00-07:00",
+        "onset": "2026-10-04T23:01:00-07:00",
+        "expires": "2026-10-05T15:00:00-07:00",
+        "ends": "2026-10-07T22:00:00-07:00",
+        "status": "Actual",
+        "messageType": "Update",
+        "category": "Met",
+        "severity": "Moderate",
+        "certainty": "Likely",
+        "urgency": "Expected",
+        "event": "Heat Advisory",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS San Francisco CA",
+        "headline": "Heat Advisory issued October 4 at 11:01PM PDT until October 7 at 10:00PM PDT by NWS San Francisco CA",
+        "description": "* WHAT...Hot conditions with maximum temperatures in the mid-90s to\nlow-100s. Mild minimum temperatures and weak onshore flow will\nlimit overnight relief.\n\n* WHERE...The East Bay and San Francisco Bay Shoreline, North Bay\nInterior Mountains and Valleys, The Santa Clara Valley and Eastern\nHills, The Santa Cruz Mountains, Interior Monterey County and the\nSanta Lucia Range, Most of San Benito County and the Cholame Hills\nin Southeast Monterey County, and Southern Salinas Valley/Arroyo\nSeco and Lake San Antonio.\n\n* WHEN...Until 10 PM PDT Wednesday.\n\n* IMPACTS...For the Heat Advisory, this level of heat affects anyone\nwithout effective cooling and/or adequate hydration. Impacts likely\nin some health systems, heat-sensitive industries and\ninfrastructure.",
+        "instruction": "Hydration is a critical piece to surviving the heat. Drink water, and\nif possible, take water to those who are vulnerable.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to the early\nmorning or evening. Take action when you experience symptoms of heat\nexhaustion and/or heat stroke.\n\nBeat the heat and check the backseat! Do not leave young children or\npets in unattended vehicles. Car interiors will reach lethal\ntemperatures in a matter of minutes.",
+        "response": "Execute",
+        "note": null,
+        "parameters": {
+            "AWIPSidentifier": [
+                "NPWMTR"
+            ],
+            "WMOidentifier": [
+                "WWUS76 KMTR 050601"
+            ],
+            "NWSheadline": [
+                "HEAT ADVISORY REMAINS IN EFFECT UNTIL 10 PM PDT WEDNESDAY"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "VTEC": [
+                "/O.CON.KMTR.HT.Y.0014.000000T0000Z-261008T0500Z/"
+            ],
+            "eventEndingTime": [
+                "2026-10-07T22:00:00-07:00"
+            ],
+            "expiredReferences": [
+                "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.bb08928e50c29e025b51bdcbf1f5ace5c9e39054.003.1,2026-10-03T19:48:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.dd0d22123955bdea6a8033355257a92d8fcf98ad.001.1,2026-10-03T12:00:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.b4069299898517bf050ff0b8b7cbadb209ca7ff0.004.1,2026-10-03T07:32:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.69ad6ad39038206f4d9c2025fd06de84b61bd2ec.002.1,2026-10-02T20:53:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.829cc7ace082237070906018bd31a042a505026c.001.1,2026-10-02T01:25:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.8c49d62f93996a96cb756c4569a6927363ae308c.004.1,2026-10-03T02:02:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.cdab22d11f488b40afa659616ceee611a23c94ea.002.1,2026-10-02T11:16:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.cdab22d11f488b40afa659616ceee611a23c94ea.001.1,2026-10-02T11:16:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.77b18b88150a2580e9de200a5988ec5ec6337309.001.1,2026-10-01T09:43:00-07:00"
+            ]
+        },
+        "scope": "Public",
+        "code": "IPAWSv1.0",
+        "language": "en-US",
+        "web": "http://www.weather.gov",
+        "eventCode": {
+            "SAME": [
+                "NWS"
+            ],
+            "NationalWeatherService": [
+                "HTY"
+            ]
+        }
+    }
+}

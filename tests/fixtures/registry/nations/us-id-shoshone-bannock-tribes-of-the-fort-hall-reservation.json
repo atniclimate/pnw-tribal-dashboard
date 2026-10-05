@@ -1,0 +1,101 @@
+{
+  "id": "us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation",
+  "castId": null,
+  "name": "Shoshone-Bannock Tribes of the Fort Hall Reservation",
+  "nameSource": {
+    "kind": "bia-tld",
+    "citation": "BIA Tribal Leaders Directory, tribefullname, OBJECTID 374",
+    "url": "https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0",
+    "retrievedAt": "2026-10-04"
+  },
+  "preferredName": null,
+  "preferredNameSource": null,
+  "aliases": [],
+  "kind": "us-federally-recognized-tribe",
+  "country": "US",
+  "jurisdictions": [
+    "ID"
+  ],
+  "region": "id",
+  "hq": {
+    "lat": 43.02637,
+    "lon": -112.4334,
+    "precision": "office",
+    "sourceId": "bia-tld",
+    "sourceRecordId": "374",
+    "retrievedAt": "2026-10-04",
+    "reviewed": false
+  },
+  "samples": [
+    [
+      43.02637,
+      -112.4334
+    ]
+  ],
+  "bbox": [
+    -112.75186,
+    42.56105,
+    -111.94573,
+    43.26678
+  ],
+  "boundary": {
+    "status": "polygon",
+    "detailRef": "geo/boundaries/us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation.json",
+    "parts": [
+      {
+        "sourceId": "bia-lar",
+        "featureId": "LAR0061",
+        "kind": "land-area-representation",
+        "vintage": "2026-10-04"
+      }
+    ]
+  },
+  "timeZone": "America/Boise",
+  "timeZoneSource": "tz-lookup",
+  "units": "us",
+  "nws": {
+    "wfo": [
+      "PIH"
+    ],
+    "point": [
+      43.02637,
+      -112.4334
+    ],
+    "forecastZones": [
+      "forecast:IDZ054"
+    ],
+    "countyZones": [
+      "county:IDC011"
+    ],
+    "fireZones": [
+      "fire:IDZ410"
+    ],
+    "marineZones": []
+  },
+  "eccc": null,
+  "radar": {
+    "nexrad": "KSFX",
+    "ridgeLoop": "KSFX",
+    "eccc": null
+  },
+  "gauges": [],
+  "contactIds": [],
+  "website": null,
+  "isc": null,
+  "codes": {
+    "biaLarIds": [
+      "LAR0061"
+    ],
+    "censusAiannhce": [],
+    "censusGeoid": null,
+    "biaTldObjectId": 374,
+    "biaAnvObjectId": null,
+    "iscBandNumber": null
+  },
+  "review": {
+    "status": "draft",
+    "reviewedAt": null,
+    "notes": "Registry test fixture built by scripts/dev/registry-fixture.mjs; not for display."
+  },
+  "flags": []
+}

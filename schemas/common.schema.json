@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/common.schema.json",
+  "title": "Common Definitions",
+  "description": "Shared definitions referenced by every other schema.",
+  "$defs": {
+    "isoDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "format": "date"
+    },
+    "isoDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "httpsUrl": {
+      "type": "string",
+      "pattern": "^https://",
+      "format": "uri"
+    },
+    "httpUrl": {
+      "type": "string",
+      "pattern": "^https?://",
+      "format": "uri"
+    },
+    "kebabId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "sourceId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 80
+    },
+    "nationId": {
+      "type": "string",
+      "pattern": "^(?:us-(?:wa|or|id|ca|mt|nv|ak)-[a-z0-9]+(?:-[a-z0-9]+)*|ca-fn-[1-9][0-9]{0,4})$"
+    },
+    "zoneKey": {
+      "type": "string",
+      "pattern": "^(forecast|county|fire|marine):[A-Z]{2}[A-Z][0-9]{3}$"
+    },
+    "jurisdiction": {
+      "enum": [
+        "WA",
+        "OR",
+        "ID",
+        "BC",
+        "CA-N",
+        "MT-W",
+        "NV-N",
+        "AK-SE",
+        "MARINE"
+      ]
+    },
+    "regionCode": {
+      "enum": [
+        "wa",
+        "or",
+        "id",
+        "bc",
+        "ca-n",
+        "mt-w",
+        "nv-n",
+        "ak-se"
+      ]
+    },
+    "usState": {
+      "enum": [
+        "WA",
+        "OR",
+        "ID",
+        "CA",
+        "MT",
+        "NV",
+        "AK"
+      ]
+    },
+    "hazardCategory": {
+      "enum": [
+        "flood",
+        "coastal",
+        "rain-landslide",
+        "wind",
+        "winter",
+        "cold",
+        "heat",
+        "fire",
+        "smoke-air",
+        "marine",
+        "tsunami",
+        "avalanche",
+        "geologic",
+        "evacuation",
+        "other"
+      ]
+    },
+    "band": {
+      "enum": [
+        "extreme",
+        "severe",
+        "moderate",
+        "minor",
+        "unstated"
+      ]
+    },
+    "posture": {
+      "enum": [
+        "act-now",
+        "prepare",
+        "monitor",
+        "ended"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "observed",
+        "likely",
+        "possible",
+        "unknown"
+      ]
+    },
+    "designation": {
+      "enum": [
+        "emergency",
+        "warning",
+        "watch",
+        "advisory",
+        "statement",
+        "other"
+      ]
+    },
+    "agency": {
+      "enum": [
+        "nws",
+        "eccc",
+        "ntwc",
+        "bc-rfc"
+      ]
+    },
+    "asOfBasis": {
+      "enum": [
+        "issued",
+        "observed",
+        "valid",
+        "model-run",
+        "retrieved"
+      ]
+    },
+    "statusState": {
+      "enum": [
+        "live",
+        "cached",
+        "stale",
+        "degraded",
+        "unavailable"
+      ]
+    },
+    "pageId": {
+      "enum": [
+        "dashboard",
+        "alerts",
+        "forecasts",
+        "contacts",
+        "resources",
+        "safety",
+        "news",
+        "usage",
+        "archive",
+        "archive-event",
+        "embed",
+        "classic",
+        "not-found",
+        "offline"
+      ]
+    },
+    "lineType": {
+      "enum": [
+        "24-7",
+        "emergency-management",
+        "government-main",
+        "band-office",
+        "duty-officer",
+        "non-emergency",
+        "public-information",
+        "tty",
+        "tribal-liaison",
+        "flood-hotline",
+        "email",
+        "web"
+      ]
+    },
+    "scopeLevel": {
+      "enum": [
+        "nation",
+        "county",
+        "regional-district",
+        "state",
+        "province",
+        "federal",
+        "regional"
+      ]
+    },
+    "mappingApplied": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        }
+      }
+    },
+    "bbox": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "latLon": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        }
+      ],
+      "items": false,
+      "minItems": 2
+    },
+    "position": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 3
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "Point",
+            "MultiPoint",
+            "LineString",
+            "MultiLineString",
+            "Polygon",
+            "MultiPolygon",
+            "GeometryCollection"
+          ]
+        },
+        "coordinates": {
+          "type": "array"
+        },
+        "geometries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/geometry"
+          }
+        },
+        "bbox": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "languageBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "headline",
+        "description"
+      ],
+      "properties": {
+        "headline": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "instruction": {
+          "type": "string"
+        }
+      }
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phoneE164": {
+      "type": "string",
+      "pattern": "^(?:\\+[1-9][0-9]{6,14}|211|311|511|911|988)$"
+    }
+  }
+}

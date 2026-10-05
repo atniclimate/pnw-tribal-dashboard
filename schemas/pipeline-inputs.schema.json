@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/pipeline-inputs.schema.json",
+  "title": "Pinned Pipeline Inputs",
+  "description": "data/pipeline/inputs.yaml: pinned upstream files with URL, vintage, SHA-256, and licence (blueprint 1.1, 6.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inputs"
+  ],
+  "properties": {
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "sourceId",
+          "url",
+          "file",
+          "vintage",
+          "sha256",
+          "licence"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          "sourceId": {
+            "$ref": "common.schema.json#/$defs/sourceId"
+          },
+          "url": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          },
+          "file": {
+            "type": "string",
+            "minLength": 1
+          },
+          "vintage": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "licence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

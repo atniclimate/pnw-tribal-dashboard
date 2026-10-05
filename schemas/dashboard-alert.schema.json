@@ -1,0 +1,496 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/dashboard-alert.schema.json",
+  "title": "Dashboard Alert",
+  "description": "A superset of CAST NormalizedAlert (blueprint 3.7.1). $defs.index is the alerts.json form (no text, no geometry).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "alertId",
+    "eventId",
+    "sourceId",
+    "sent",
+    "messageType",
+    "references",
+    "lifecycleState",
+    "event",
+    "originalDesignation",
+    "band",
+    "posture",
+    "confidence",
+    "effective",
+    "expires",
+    "translationAuthority",
+    "provenance",
+    "agency",
+    "designation",
+    "categories",
+    "zones",
+    "jurisdictions",
+    "marine",
+    "nationIds",
+    "senderName",
+    "webUrl",
+    "geometry",
+    "sourceLanguage"
+  ],
+  "properties": {
+    "alertId": {
+      "type": "string",
+      "pattern": "^(nws|eccc|ntwc|bc-rfc):.+"
+    },
+    "eventId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceId": {
+      "$ref": "common.schema.json#/$defs/sourceId"
+    },
+    "sent": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "messageType": {
+      "enum": [
+        "alert",
+        "update",
+        "cancel"
+      ]
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lifecycleState": {
+      "enum": [
+        "active",
+        "superseded",
+        "cancelled",
+        "expired"
+      ]
+    },
+    "event": {
+      "type": "string",
+      "minLength": 1
+    },
+    "originalDesignation": {
+      "type": "string"
+    },
+    "band": {
+      "$ref": "common.schema.json#/$defs/band"
+    },
+    "posture": {
+      "$ref": "common.schema.json#/$defs/posture"
+    },
+    "confidence": {
+      "$ref": "common.schema.json#/$defs/confidence"
+    },
+    "effective": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "onset": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "expires": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "areaDesc": {
+      "type": "string"
+    },
+    "translationAuthority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agency",
+        "originalId",
+        "fetchedAt",
+        "mappingApplied",
+        "coverage"
+      ],
+      "properties": {
+        "agency": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originalId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fetchedAt": {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        "mappingApplied": {
+          "$ref": "common.schema.json#/$defs/mappingApplied"
+        },
+        "coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "geometryBasis",
+            "geocodes"
+          ],
+          "properties": {
+            "geometryBasis": {
+              "enum": [
+                "polygon",
+                "zone",
+                "point",
+                "none"
+              ]
+            },
+            "geocodes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "agency": {
+      "$ref": "common.schema.json#/$defs/agency"
+    },
+    "ends": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "designation": {
+      "$ref": "common.schema.json#/$defs/designation"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/hazardCategory"
+      },
+      "minItems": 1
+    },
+    "zones": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/zoneKey"
+      }
+    },
+    "jurisdictions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/jurisdiction"
+      }
+    },
+    "marine": {
+      "type": "boolean"
+    },
+    "nationIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/nationId"
+      }
+    },
+    "senderName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "webUrl": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/httpsUrl"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "urgency": {
+      "type": "string"
+    },
+    "certainty": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "geometry": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/geometry"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sourceLanguage": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z]{2}-[A-Z]{2}$"
+      },
+      "additionalProperties": {
+        "$ref": "common.schema.json#/$defs/languageBlock"
+      }
+    }
+  },
+  "$defs": {
+    "index": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "alertId",
+        "eventId",
+        "sourceId",
+        "sent",
+        "messageType",
+        "references",
+        "lifecycleState",
+        "event",
+        "originalDesignation",
+        "band",
+        "posture",
+        "confidence",
+        "effective",
+        "expires",
+        "translationAuthority",
+        "provenance",
+        "agency",
+        "designation",
+        "categories",
+        "zones",
+        "jurisdictions",
+        "marine",
+        "nationIds",
+        "senderName",
+        "webUrl"
+      ],
+      "properties": {
+        "alertId": {
+          "type": "string",
+          "pattern": "^(nws|eccc|ntwc|bc-rfc):.+"
+        },
+        "eventId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceId": {
+          "$ref": "common.schema.json#/$defs/sourceId"
+        },
+        "sent": {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        "messageType": {
+          "enum": [
+            "alert",
+            "update",
+            "cancel"
+          ]
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lifecycleState": {
+          "enum": [
+            "active",
+            "superseded",
+            "cancelled",
+            "expired"
+          ]
+        },
+        "event": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originalDesignation": {
+          "type": "string"
+        },
+        "band": {
+          "$ref": "common.schema.json#/$defs/band"
+        },
+        "posture": {
+          "$ref": "common.schema.json#/$defs/posture"
+        },
+        "confidence": {
+          "$ref": "common.schema.json#/$defs/confidence"
+        },
+        "effective": {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        "onset": {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        "expires": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "areaDesc": {
+          "type": "string"
+        },
+        "translationAuthority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "agency",
+            "originalId",
+            "fetchedAt",
+            "mappingApplied",
+            "coverage"
+          ],
+          "properties": {
+            "agency": {
+              "type": "string",
+              "minLength": 1
+            },
+            "originalId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "fetchedAt": {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            },
+            "mappingApplied": {
+              "$ref": "common.schema.json#/$defs/mappingApplied"
+            },
+            "coverage": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "geometryBasis",
+                "geocodes"
+              ],
+              "properties": {
+                "geometryBasis": {
+                  "enum": [
+                    "polygon",
+                    "zone",
+                    "point",
+                    "none"
+                  ]
+                },
+                "geocodes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "agency": {
+          "$ref": "common.schema.json#/$defs/agency"
+        },
+        "ends": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "designation": {
+          "$ref": "common.schema.json#/$defs/designation"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/hazardCategory"
+          },
+          "minItems": 1
+        },
+        "zones": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/zoneKey"
+          }
+        },
+        "jurisdictions": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/jurisdiction"
+          }
+        },
+        "marine": {
+          "type": "boolean"
+        },
+        "nationIds": {
+          "type": "array",
+          "items": {
+            "$ref": "common.schema.json#/$defs/nationId"
+          }
+        },
+        "senderName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "webUrl": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/httpsUrl"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "urgency": {
+          "type": "string"
+        },
+        "certainty": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

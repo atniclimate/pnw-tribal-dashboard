@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "timeStamp": "2026-07-17T21:10:00Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "synthetic-ended-statement",
+      "geometry": { "type": "Polygon", "coordinates": [[[-125, 48], [-124, 48], [-124, 49], [-125, 48]]] },
+      "properties": {
+        "id": "synthetic-ended-statement",
+        "alert_type": "statement",
+        "alert_name_en": "Weather statement ended",
+        "alert_text_en": "The synthetic event has ended.",
+        "publication_datetime": "2026-07-17T20:10:00Z",
+        "validity_datetime": "2026-07-17T19:00:00Z",
+        "expiration_datetime": "2026-07-17T20:10:00Z",
+        "impact_en": "Low",
+        "confidence_en": "Observed",
+        "province": "BC",
+        "status_en": "ended"
+      }
+    }
+  ]
+}

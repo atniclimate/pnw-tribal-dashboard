@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-points",
+  "label": "siletz-hq",
+  "file": "2026-10-05-siletz-hq.json",
+  "url": "https://api.weather.gov/points/44.71973,-123.9166",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:51.711Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 3923,
+  "sha256": "8e9ec16efcdc9a857bbb122a4c9baec9b8c09ae367054a7d66079cd283888cdc",
+  "covers": [
+    "points-metadata"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "NWS /points for a registry fixture headquarters coordinate (BIA Tribal Leaders Directory or Alaska Native Villages)."
+}

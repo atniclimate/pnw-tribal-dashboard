@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/news-sources.schema.json",
+  "title": "News Sources",
+  "description": "data/news-sources.yaml (blueprint 5.8).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "name",
+      "kind",
+      "regions",
+      "homepage",
+      "feed",
+      "feedFormat",
+      "verifiedAt"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "enum": [
+          "official",
+          "media",
+          "video",
+          "community"
+        ]
+      },
+      "regions": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/jurisdiction"
+        },
+        "minItems": 1
+      },
+      "homepage": {
+        "$ref": "common.schema.json#/$defs/httpsUrl"
+      },
+      "feed": {
+        "anyOf": [
+          {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "feedFormat": {
+        "enum": [
+          "rss",
+          "atom",
+          "youtube-atom",
+          "none"
+        ]
+      },
+      "maxItems": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 50
+      },
+      "maxAgeDays": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 60
+      },
+      "verifiedAt": {
+        "$ref": "common.schema.json#/$defs/isoDate"
+      }
+    }
+  }
+}

@@ -1,17 +1,21 @@
-# PNW Tribal Weather Alert Dashboard
+# Cascadia Tribal Hazard Dashboard
 
-Live weather, hazard, and flood-monitoring dashboard for Pacific Northwest Tribal Nations. Single-file static site (HTML + CSS + JS), served via GitHub Pages.
+Weather, flood, and hazard information for Tribal Nations and First Nations across Cascadia: Washington, Oregon, Idaho, British Columbia, northern California, western Montana, northern Nevada, and Southeast Alaska. Built by ATNI Climate, Affiliated Tribes of Northwest Indians, for use on phones over poor connections.
 
-**Live**: https://atniclimate.github.io/pnw-tribal-dashboard/
+**Live site:** https://atniclimate.github.io/pnw-tribal-dashboard/
 
-## Embedding on a Squarespace site
+## Status
 
-Drop the snippet below into a single Code Block. Tested on Squarespace 7.1 / Plus plan; works on any plan that allows iframes.
+The live site serves the May 2026 dashboard (`index.html`). The rebuilt multi-page dashboard is in development under `site/` and replaces it at launch. Pages under `site/` are incomplete and are not indexed by search engines until launch.
+
+## Embed on Squarespace
+
+Paste this into a Squarespace Code Block:
 
 ```html
 <iframe
   src="https://atniclimate.github.io/pnw-tribal-dashboard/"
-  title="PNW Tribal Weather Alert Dashboard"
+  title="Cascadia Tribal Hazard Dashboard"
   style="width:100%;height:90vh;min-height:600px;border:0;display:block;"
   loading="lazy"
   allow="geolocation"
@@ -19,42 +23,35 @@ Drop the snippet below into a single Code Block. Tested on Squarespace 7.1 / Plu
 ></iframe>
 ```
 
-## What it shows
+At launch, every page also has its own snippet (with `?embed=1` for a view without site navigation) on the dashboard's Embed page.
 
-- **Active alerts** (NWS) for OR, WA, ID — auto-refreshed every minute, filterable by hazard category.
-- **Interactive map** with three views: current radar, 3-day precipitation forecast, and river-gauge flooding status.
-- **Tribal reservation boundaries** overlaid from a curated GeoJSON.
-- **7-day forecast** for the selected Tribal community (NWS Points API).
-- **QPF precipitation map** from NOAA NWRFC (Today / 3-Day / 7-Day).
-- **Curated seasonal road closures** (winter passes only, displayed Nov-May).
-- **Emergency contacts and resource links.**
+## Repository
 
-The "Daily Breakdown" panel is labeled **SAMPLE** — those values are illustrative only until we wire up real NWS gridpoint QPF data.
+| Path | Contents |
+|---|---|
+| `index.html` | The May 2026 dashboard, live until launch |
+| `site/` | The new dashboard: HTML pages, scripts, styles, and fonts |
+| `schemas/` | JSON Schemas for every data file |
+| `scripts/` | Data compile, snapshot, and check scripts |
+| `tests/` | Unit and browser tests, with dated captures of the public sources |
+| `DATA.md` | Every data source and its terms |
 
-## Data sources
+## Local Development
 
-- [NWS / weather.gov](https://www.weather.gov) — alerts, point forecasts
-- [USGS Water Services](https://waterservices.usgs.gov) — real-time gauge heights
-- [NOAA WPC](https://www.wpc.ncep.noaa.gov) — QPF maps (24h / 48h / 7-day national imagery)
-- [Iowa Environmental Mesonet](https://mesonet.agron.iastate.edu) — radar and forecast tile layers
-- [CARTO Basemaps](https://carto.com) — dark base tiles
-- Tribal boundaries: BIA Federal Register 89 FR 944 (Jan 2024), simplified GeoJSON hosted at `atniclimate/maps`
-
-## Local development
+Requires Node.js 24 (see `.nvmrc`). In PowerShell:
 
 ```powershell
-# Open directly in a browser (everything is in one file)
-Start-Process index.html
-
-# Or serve over HTTP if you want fetch() to work the same as production
-python -m http.server 8000
-# then open http://localhost:8000/
+npm ci
+npm run dev       # serves the new dashboard locally
+npm run verify    # lint, typecheck, tests, data validation, and checks
 ```
 
-## Deploy
+## Data
 
-Pushing to `main` automatically updates the Pages site. No build step.
+Every panel names its source and an "as of" time. Boundaries and headquarters points come from public federal and national sources and are representations, not jurisdiction. See `DATA.md`.
 
-## License
+## License and Credit
 
-Code: MIT. Tribal boundary data: per BIA terms.
+Copyright 2026 ATNI Climate, Affiliated Tribes of Northwest Indians. All rights reserved; see `LICENSE`. Lead developer: Patrick A. Freeland. To cite this work, see `CITATION.cff`.
+
+This dashboard succeeds IndigenousACCESS.org, built during the December 2025 atmospheric river events.

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/curated-imagery-products.schema.json",
+  "title": "Compiled Imagery Products",
+  "description": "site/data/curated/imagery-products.json, compiled by scripts/compile (blueprint 6.3).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.curated.imagery-products/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "sourceId",
+          "url",
+          "kind",
+          "typicalBytes",
+          "loadPolicy"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          "sourceId": {
+            "$ref": "common.schema.json#/$defs/sourceId"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          },
+          "still": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          },
+          "kind": {
+            "enum": [
+              "still",
+              "loop-gif",
+              "video"
+            ]
+          },
+          "typicalBytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "loadPolicy": {
+            "enum": [
+              "auto",
+              "tap",
+              "link"
+            ]
+          },
+          "larger": {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          "animation": {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          "stamp": {
+            "enum": [
+              "last-modified",
+              "cycle",
+              "none"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

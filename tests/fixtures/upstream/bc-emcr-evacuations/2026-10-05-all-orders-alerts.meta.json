@@ -1,0 +1,27 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "bc-emcr-evacuations",
+  "label": "all-orders-alerts",
+  "file": "2026-10-05-all-orders-alerts.json",
+  "url": "https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/Evacuation_Orders_and_Alerts/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&geometryPrecision=4&f=geojson",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:18.426Z",
+  "status": 200,
+  "contentType": "application/json; charset=utf-8",
+  "lastModified": "Mon, 05 Oct 2026 06:12:05 GMT",
+  "bytes": 45738,
+  "sha256": "f730aa3f93c6c86870ba0a6de2fcd8ab5c32e4467b719ea8f36f84ede1dd1ca6",
+  "covers": [
+    "orders",
+    "alerts",
+    "stale-records",
+    "first-nation-issuer"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Every record in the layer at capture, with geometry in EPSG:4326 at four decimals."
+}

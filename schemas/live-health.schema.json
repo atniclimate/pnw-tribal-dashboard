@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/live-health.schema.json",
+  "title": "Live Envelope: health.json",
+  "description": "site/data/live/health.json: public status table (blueprint 6.4, 7.8).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "sourceIds",
+    "generatedAt",
+    "observedAt",
+    "asOf",
+    "asOfBasis",
+    "completeness",
+    "carriedForward",
+    "failure",
+    "perSource",
+    "diagnostics",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.live.health/1"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/kebabId"
+    },
+    "sourceIds": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "minItems": 1
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "observedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "asOf": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDateTime"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "asOfBasis": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/asOfBasis"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completeness": {
+      "enum": [
+        "complete",
+        "partial",
+        "rejected"
+      ]
+    },
+    "carriedForward": {
+      "type": "boolean"
+    },
+    "failure": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message",
+            "at"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "message": {
+              "type": "string"
+            },
+            "at": {
+              "$ref": "common.schema.json#/$defs/isoDateTime"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "perSource": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "common.schema.json#/$defs/sourceId"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ok",
+          "count",
+          "asOf"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "asOf": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "diagnostics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "state",
+          "observedAt",
+          "carriedForward",
+          "failure",
+          "detail"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "task",
+              "source",
+              "compile"
+            ]
+          },
+          "state": {
+            "$ref": "common.schema.json#/$defs/statusState"
+          },
+          "observedAt": {
+            "anyOf": [
+              {
+                "$ref": "common.schema.json#/$defs/isoDateTime"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "carriedForward": {
+            "type": "boolean"
+          },
+          "failure": {
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "code",
+                  "message",
+                  "at"
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "at": {
+                    "$ref": "common.schema.json#/$defs/isoDateTime"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

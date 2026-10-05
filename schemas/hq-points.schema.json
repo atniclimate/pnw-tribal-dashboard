@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/hq-points.schema.json",
+  "title": "Headquarters Points",
+  "description": "site/data/geo/hq-points.json (blueprint 4.2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "features"
+  ],
+  "properties": {
+    "type": {
+      "const": "FeatureCollection"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "properties",
+          "geometry"
+        ],
+        "properties": {
+          "type": {
+            "const": "Feature"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "nationId",
+              "name",
+              "hasBoundary"
+            ],
+            "properties": {
+              "nationId": {
+                "$ref": "common.schema.json#/$defs/nationId"
+              },
+              "name": {
+                "$ref": "common.schema.json#/$defs/displayName"
+              },
+              "hasBoundary": {
+                "type": "boolean"
+              }
+            }
+          },
+          "geometry": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "coordinates"
+            ],
+            "properties": {
+              "type": {
+                "const": "Point"
+              },
+              "coordinates": {
+                "$ref": "common.schema.json#/$defs/position"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

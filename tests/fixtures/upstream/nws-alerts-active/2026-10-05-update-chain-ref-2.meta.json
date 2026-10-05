@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "update-chain-ref-2",
+  "file": "2026-10-05-update-chain-ref-2.json",
+  "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5e78674a380ad219242e2b6b802cd0db102fe5ec.002.1",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:46.552Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 6668,
+  "sha256": "d62b7abb84e954f10aa7420552cd25a5afa092edc4e47edba96b034c387ed4aa",
+  "covers": [
+    "update-chain"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Referenced message 2 of the chain (sent 2026-10-04T18:32:00-08:00)."
+}

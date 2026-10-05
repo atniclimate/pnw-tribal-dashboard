@@ -1,0 +1,35 @@
+{
+  "_fixture": {
+    "synthetic": false,
+    "sanitized": true,
+    "capturedFrom": "corpus/nws/alert-flash-flood-watch-zone-IDZ072.json",
+    "capturedAt": "2026-07-17",
+    "omitted": ["long description", "instruction", "provider URLs", "routing parameters"]
+  },
+  "identifier": "urn:oid:2.49.0.1.840.0.fdf1aeffc4bd9d4294c8197fe485d64f973cf7cb.001.1",
+  "sender": "w-nws.webmaster@noaa.gov",
+  "sent": "2026-07-17T01:26:00-06:00",
+  "messageType": "Update",
+  "references": [
+    {
+      "identifier": "urn:oid:2.49.0.1.840.0.dbd236e1d736d661786265b1ab50bf96b54ab443.001.1",
+      "sender": "w-nws.webmaster@noaa.gov",
+      "sent": "2026-07-16T13:07:00-06:00"
+    }
+  ],
+  "language": "en-US",
+  "event": "Flash Flood Watch",
+  "severity": "Severe",
+  "urgency": "Future",
+  "certainty": "Possible",
+  "effective": "2026-07-17T01:26:00-06:00",
+  "onset": "2026-07-17T13:00:00-06:00",
+  "expires": "2026-07-17T21:00:00-06:00",
+  "headline": "Flash Flood Watch issued July 17 at 1:26AM MDT until July 17 at 9:00PM MDT by NWS Pocatello ID",
+  "areaDesc": "Sawtooth/Stanley Basin",
+  "geometry": null,
+  "geocode": {
+    "SAME": ["016013", "016037"],
+    "UGC": ["IDZ072"]
+  }
+}

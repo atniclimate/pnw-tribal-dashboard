@@ -1,0 +1,477 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <identifier>urn:oid:2.49.0.1.124.2092774527.2026</identifier>
+    <sender>cap-pac@canada.ca</sender>
+    <sent>2026-07-17T09:07:40-00:00</sent>
+    <status>Actual</status>
+    <msgType>Update</msgType>
+    <source>Env. Can. - Can. Met. Ctr. – Montréal</source>
+    <scope>Public</scope>
+    <code>profile:CAP-CP:0.4</code>
+    <code>layer:SOREM:1.0</code>
+    <code>layer:EC-MSC-SMC:1.0</code>
+    <code>layer:EC-MSC-SMC:1.1</code>
+    <code>layer:SOREM:2.0</code>
+    <note>Service Notice – April 2026: The Environment and Climate Change Canada (ECCC) CAP Service undergoes changes from time to time as the business of alerting evolves. For Spring 2026, changes are expected to include... 1) ECCC's initiative to introduce free-form polygons to represent the true threat area of a weather hazard is tentatively set for June 2026 deployment. Data changes will appear in CAP following this deployment, 2) marine alerts will now be issued for smaller zone splits in certain areas of Atlantic and Pacific waters and 3) other minor improvements and corrections. For more information on these changes: https://comm.collab.science.gc.ca/mailman3/hyperkitty/list/dd_info@comm.collab.science.gc.ca/ | Notification de service – avril 2026: Le service du PAC d’Environnement et Changement climatique Canada (ECCC) subit périodiquement des changements à mesure que le système d’alerte évolue. Pour le printemps 2026, il y aura des changements incluant... 1) l’initiative d’ECCC visant à introduire des polygones libres pour représenter la véritable zone de menace d’un danger météorologique devrait être déployée provisoirement en juin 2026. Des changements de données apparaîtront dans le PAC à la suite de ce déploiement, 2) les alertes marines seront désormais émises pour des subdivisions de zones plus petites dans certaines régions des eaux de l’Atlantique et du Pacifique et 3) d’autres améliorations et corrections mineures. Pour plus d’informations sur ces changements: https://comm.collab.science.gc.ca/mailman3/hyperkitty/list/dd_info@comm.collab.science.gc.ca/</note>
+    <references>cap-pac@canada.ca,urn:oid:2.49.0.1.124.1330076534.2026,2026-07-15T23:39:32-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.3944518493.2026,2026-07-15T23:46:49-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.1516669419.2026,2026-07-16T12:31:58-00:00 cap-pac@canada.ca,urn:oid:2.49.0.1.124.3382952562.2026,2026-07-16T23:12:42-00:00</references>
+    <info>
+        <language>en-CA</language>
+        <category>Met</category>
+        <category>Health</category>
+        <event>heat</event>
+        <responseType>Monitor</responseType>
+        <urgency>Immediate</urgency>
+        <severity>Moderate</severity>
+        <certainty>Likely</certainty>
+        <audience>general public</audience>
+        <eventCode>
+            <valueName>profile:CAP-CP:Event:0.4</valueName>
+            <value>temperature</value>
+        </eventCode>
+        <effective>2026-07-17T09:07:40-00:00</effective>
+        <onset>2026-07-17T09:03:00-00:00</onset>
+        <expires>2026-07-18T01:07:40-00:00</expires>
+        <senderName>Environment Canada</senderName>
+        <headline>yellow warning - heat - in effect</headline>
+        <description>
+This is a heat warning. Temperatures are high and there is a risk to public health.
+
+What:
+Daytime highs in the high twenties and low thirties combined with overnight lows in the low teens.
+
+When:
+Fort Nelson: Now to middle of next week
+B.C. North Peace River: Now through today
+
+Where:
+Fort Nelson, B.C. North Peace River
+
+Additional Information:
+for the B.C. North Peace River, high temperatures will moderate after today, but begin to rise again early next week.
+
+Fort Nelson is expected to experience high temperatures through the middle of next week.
+
+###
+
+Heat affects everyone, but the risks are greater for: seniors, people who live alone, people with pre-existing health conditions such as diabetes, heart disease or respiratory disease, people with mental illness such as schizophrenia, depression, or anxiety, people with substance use disorders, people with limited mobility.
+
+Check on family, friends and neighbours, who are at higher risk, particularly if they live alone, to make sure they have a cool space.
+
+For more information: https://www.canada.ca/en/health-canada/services/climate-change-health/extreme-heat/how-protect-yourself.html https://www.canada.ca/en/health-canada/services/climate-change-health/extreme-heat/who-is-at-risk.html
+
+To get more information: - Check the local news for health and safety updates. - Check HealthLinkBC online resources about heat-related illness and how to protect yourself at https://www.healthlinkbc.ca/healthlinkbc-files/heat-related-illness. - Call HealthLinkBC at 8-1-1 to ask about heat-related illness.
+
+Environment Canada and local Medical Health Officers expect an increase in health and safety risks from heat and are advising the public to take precautions.
+
+Please continue to monitor alerts and forecasts issued by Environment Canada. To report severe weather, send an email to BCstorm@ec.gc.ca or post reports on X using #BCStorm.
+</description>
+        <instruction>
+Watch for early signs of heat illness (feeling unwell, fatigue, thirst, headache, unusually dark urine) as these can rapidly evolve into life-threatening emergencies.
+
+Ask a health professional, such as a pharmacist or physician, how medications or health conditions can affect your risk in the heat.
+
+Anyone working in the heat should take regularly scheduled breaks in a cool or shaded space.
+</instruction>
+        <web>https://weather.gc.ca/</web>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+            <value>warning</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+            <value>no</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Parent_URI</valueName>
+            <value>msc/alert/environment/hazard/alert-3.0-ascii/consolidated-xml-2.0/20260717090337527/WW_13_73_CWVR/EHW/232857657197134325202607150502_WW_13_73_CWVR/actual/en_proper_complete_c-fr_proper_complete_c/NinJo</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:CAP_count</valueName>
+            <value>A:21015 M:108490 C:124926</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName>
+            <value>yellow warning - heat</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Coverage</valueName>
+            <value>Interior and Northern British Columbia</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Designation_Code</valueName>
+            <value>WW_13_73_CWVR</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Event_End_Time</valueName>
+            <value>2026-07-23T02:00:00.000Z</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:MSC_Risk_Tiered_Ranking</valueName>
+            <value>8</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:MSC_Impact</valueName>
+            <value>moderate</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:MSC_Confidence</valueName>
+            <value>high</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Colour</valueName>
+            <value>yellow</value>
+        </parameter>
+        <area>
+            <areaDesc>B.C. North Peace River</areaDesc>
+            <polygon>56.0691,-120.0013 55.9599,-120.0013 55.8971,-120.2857 55.8267,-120.6878 55.7305,-121.6606 55.7146,-121.8504 55.7116,-122.0337 56.2943,-122.6457 56.9577,-123.2874 56.9999,-123.3 57.058,-123.1581 57.0999,-122.9999 57.1397,-121.5476 57.0999,-120.0013 56.7699,-120.0013 56.4573,-119.9861 56.2107,-119.9982 56.1476,-120.0013 56.0691,-120.0013</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>087320</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955010</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955021</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955023</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955025</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955030</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955034</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955040</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955042</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955801</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955802</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955803</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955804</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955808</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Fort Nelson</areaDesc>
+            <polygon>57.2379,-119.9857 57.0999,-120.0013 57.0723,-121.5305 57.0999,-122.9999 57.5317,-123.4638 58,-123.817 58.2678,-123.8503 58.4669,-123.833 58.9744,-123.8541 59.4674,-123.817 59.7415,-123.8528 59.9356,-123.817 59.9998,-123.817 60,-123.817 60,-123.8085 60.0001,-123.7954 60.0004,-123.7728 60.0416,-122.1769 60.0007,-120.8537 60.0094,-120.3721 60.0004,-120.0013 59.4749,-120.0013 58.9507,-120.0013 58.0792,-120.0012 57.3805,-120.0012 57.2379,-119.9857</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>088100</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955040</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5959</value>
+            </geocode>
+        </area>
+    </info>
+    <info>
+        <language>fr-CA</language>
+        <category>Met</category>
+        <category>Health</category>
+        <event>chaleur</event>
+        <responseType>Monitor</responseType>
+        <urgency>Immediate</urgency>
+        <severity>Moderate</severity>
+        <certainty>Likely</certainty>
+        <audience>grand public</audience>
+        <eventCode>
+            <valueName>profile:CAP-CP:Event:0.4</valueName>
+            <value>temperature</value>
+        </eventCode>
+        <effective>2026-07-17T09:07:40-00:00</effective>
+        <onset>2026-07-17T09:03:00-00:00</onset>
+        <expires>2026-07-18T01:07:40-00:00</expires>
+        <senderName>Environnement Canada</senderName>
+        <headline>avertissement jaune - chaleur - en vigueur</headline>
+        <description>
+Le présent bulletin est un avertissement de chaleur. Les températures sont élevées et il y a un risque pour la santé publique.
+
+Quoi :
+Maximums diurnes de 27 à 33 degrés et minimums nocturnes de 13 à 15 degrés.
+
+Quand :
+Fort Nelson : jusqu'au milieu de la semaine prochaine.
+Rivière de la Paix Nord en C.-B. : toute la journée aujourd'hui.
+
+Où :
+Fort Nelson, rivière de la Paix Nord en C.-B.
+
+Renseignements supplémentaires :
+Pour la  rivière de la Paix Nord en C.-B., les températures élevées s'atténueront après aujourd'hui, mais elles commenceront à augmenter de nouveau au début de la semaine prochaine.
+
+À Fort Nelson, les températures devraient être élevées jusqu'au milieu de la semaine prochaine.
+
+###
+
+La chaleur affecte tout le monde mais les risques sont plus grands pour : les personnes âgées, les personnes vivant seules, les personnes souffrant de problèmes de santé préexistants tels que le diabète, les personnes souffrant d’une maladie cardiaque ou respiratoire, les personnes atteintes de maladie mentale comme la schizophrénie, la dépression ou l'anxiété, les personnes souffrant de troubles liés aux substances, les personnes à mobilité réduite.
+
+Vérifiez l’état de votre famille, vos amis et vos voisins, qui sont davantage à risque, particulièrement s’ils vivent seuls, pour garantir qu’ils ont un espace frais.
+
+Pour obtenir plus de renseignments : https://www.canada.ca/fr/sante-canada/services/changements-climatiques-sante/chaleur-accablante/comment-se-proteger.html https://www.canada.ca/fr/sante-canada/services/changements-climatiques-sante/chaleur-accablante/personnes-a-risque.html
+
+Pour plus de renseignements : - Prenez connaissance des nouvelles locales pour obtenir les mises à jour relatives à la santé et à la sécurité. - Consultez les ressources du site Web de HealthLinkBC pour connaître les malaises liés à la chaleur et les mesures à prendre pour se protéger à https://www.healthlinkbc.ca/healthlinkbc-files/heat-related-illness (anglais seulement). - Communiquez avec HealthLinkBC (8-1-1) pour poser des questions sur les malaises liés à la chaleur.
+
+Environnement Canada et les agents de soins de santé locaux prévoient une augmentation des risques pour la santé et la sécurité en raison de la chaleur. Le public devrait prendre les précautions qui s’imposent.
+
+Veuillez continuer à surveiller les alertes et les prévisions émises par Environnement Canada. Pour signaler du temps violent, envoyez un courriel à meteoBC@ec.gc.ca ou publiez un message sur X en utilisant #BCMeteo.
+</description>
+        <instruction>
+Surveillez les symptômes précoces des maladies causées par la chaleur (sentiment de malaise, fatigue, soif, mal de tête, urine anormalement foncée) car ceux-ci peuvent rapidement devenir des urgences mettant la vie en danger. 
+
+Renseignez-vous auprès d’un professionnel de la santé, tel qu’un pharmacien ou un médecin, de l’effet de vos médicaments ou de vos problèmes de santé sur les risques auxquels la chaleur vous expose.
+
+Tous qui travaillent dans la chaleur devraient prendre régulièrement des pauses dans un endroit frais ou à l’ombre.
+</instruction>
+        <web>https://meteo.gc.ca/</web>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Type</valueName>
+            <value>warning</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Broadcast_Intrusive</valueName>
+            <value>no</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:1.0:Broadcast_Immediately</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Parent_URI</valueName>
+            <value>msc/alert/environment/hazard/alert-3.0-ascii/consolidated-xml-2.0/20260717090337527/WW_13_73_CWVR/EHW/232857657197134325202607150502_WW_13_73_CWVR/actual/en_proper_complete_c-fr_proper_complete_c/NinJo</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:CAP_count</valueName>
+            <value>A:21015 M:108490 C:124926</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Name</valueName>
+            <value>avertissement jaune - chaleur</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.0:Alert_Coverage</valueName>
+            <value>intérieur et le nord de la Colombie-Britannique</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Designation_Code</valueName>
+            <value>WW_13_73_CWVR</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:SOREM:2.0:WirelessImmediate</valueName>
+            <value>No</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Alert_Location_Status</valueName>
+            <value>active</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Event_End_Time</valueName>
+            <value>2026-07-23T02:00:00.000Z</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:MSC_Risk_Tiered_Ranking</valueName>
+            <value>8</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:MSC_Impact</valueName>
+            <value>modéré</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:MSC_Confidence</valueName>
+            <value>élevée</value>
+        </parameter>
+        <parameter>
+            <valueName>layer:EC-MSC-SMC:1.1:Colour</valueName>
+            <value>jaune</value>
+        </parameter>
+        <area>
+            <areaDesc>rivière de la Paix Nord C.-B.</areaDesc>
+            <polygon>56.0691,-120.0013 55.9599,-120.0013 55.8971,-120.2857 55.8267,-120.6878 55.7305,-121.6606 55.7146,-121.8504 55.7116,-122.0337 56.2943,-122.6457 56.9577,-123.2874 56.9999,-123.3 57.058,-123.1581 57.0999,-122.9999 57.1397,-121.5476 57.0999,-120.0013 56.7699,-120.0013 56.4573,-119.9861 56.2107,-119.9982 56.1476,-120.0013 56.0691,-120.0013</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>087320</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955010</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955021</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955023</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955025</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955030</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955034</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955040</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955042</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955801</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955802</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955803</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955804</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955808</value>
+            </geocode>
+        </area>
+        <area>
+            <areaDesc>Fort Nelson</areaDesc>
+            <polygon>57.2379,-119.9857 57.0999,-120.0013 57.0723,-121.5305 57.0999,-122.9999 57.5317,-123.4638 58,-123.817 58.2678,-123.8503 58.4669,-123.833 58.9744,-123.8541 59.4674,-123.817 59.7415,-123.8528 59.9356,-123.817 59.9998,-123.817 60,-123.817 60,-123.8085 60.0001,-123.7954 60.0004,-123.7728 60.0416,-122.1769 60.0007,-120.8537 60.0094,-120.3721 60.0004,-120.0013 59.4749,-120.0013 58.9507,-120.0013 58.0792,-120.0012 57.3805,-120.0012 57.2379,-119.9857</polygon>
+            <geocode>
+                <valueName>layer:EC-MSC-SMC:1.0:CLC</valueName>
+                <value>088100</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5955040</value>
+            </geocode>
+            <geocode>
+                <valueName>profile:CAP-CP:Location:0.3</valueName>
+                <value>5959</value>
+            </geocode>
+        </area>
+    </info>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="Environment Canada">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+<Reference URI="">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+<DigestValue>cAN/ocN6xqBh2ibLyo2ho2q8/+t3klMFr6nIR+k2t4U=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>slpPuZeyxTbx0PhhxYT5PB5PLn+4MdsTO9oO3I7zx5BhbaOc7sHB241nYIdevgFn
+z/J678TTyKo2MrUf+cFpm5rCxype+Qq8kbfk9Av/pkfQKNZ+rfd+BCMpabdZJzUN
+pib77nOk37+OYyudFB6prh9JvGx8328XkM9GD3/TiWCH4qnWFgsH3o3V2X76j6mZ
+5nnqyeHdUTJLj3MfIlNDP5JpBLUoIMhQ7W0T6pgk0y3Kp8/iHRvEoYFQTgf/pzDU
++/PwX8foYq5Bg+mAKBPzn49zbZ21XAaXS7sHWL5BjATbqpugraXF0fE0Omw8jHA8
+HoBUO3bD1l3wH2/KriA6zA==</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>MIIHDDCCBfSgAwIBAgIQM2dJyev0XEPJoQlSaOQgYDANBgkqhkiG9w0BAQsFADCB
+ujELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xKDAmBgNVBAsT
+H1NlZSB3d3cuZW50cnVzdC5uZXQvbGVnYWwtdGVybXMxOTA3BgNVBAsTMChjKSAy
+MDEyIEVudHJ1c3QsIEluYy4gLSBmb3IgYXV0aG9yaXplZCB1c2Ugb25seTEuMCwG
+A1UEAxMlRW50cnVzdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eSAtIEwxSzAeFw0y
+NDA0MTkwOTQ3MDZaFw0yNTA1MTkwOTQ3MDRaMGwxCzAJBgNVBAYTAkNBMQ8wDQYD
+VQQIEwZRdWViZWMxETAPBgNVBAcTCEdhdGluZWF1MR8wHQYDVQQKExZTaGFyZWQg
+U2VydmljZXMgQ2FuYWRhMRgwFgYDVQQDDA8qLndlYXRoZXIuZ2MuY2EwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDARd6fBVAjKlOvocp442ydQbSCoxHW
+91i1r5TkucsGLkzm92HQsj4eVNCl6Uti3hd3yYL1QxFTImdyUs2ETlDoU/hVFEey
+IevKo3m3ufuv9YryXGtoRcthMITEPrIy6vOyNbGaxJw1J6/AkOs7oAm3kUlx6PS8
+vOnuoyik1r6Q9qx1XP9Z05cIyyIBhsyjdS124Jj01quCjz5COPMXKU1LlaU8LeSA
+qILe9DyC3XWluZGxZH+tGiw42mpiCD3JGlCsXQujU5y4jg2fq8/ePsM3OUzM/Dxs
+kGMMN7LAG9/H4CINJ+aXZQvlgTfIZp2eWLvHy5dnsbi3VAJOEtgRVzedAgMBAAGj
+ggNZMIIDVTAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSSLKB4osVSIvgfhk+6NayJ
+BDAXuDAfBgNVHSMEGDAWgBSConB03bxTP8971PfNf6dgxgpMvzBoBggrBgEFBQcB
+AQRcMFowIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLmVudHJ1c3QubmV0MDMGCCsG
+AQUFBzAChidodHRwOi8vYWlhLmVudHJ1c3QubmV0L2wxay1jaGFpbjI1Ni5jZXIw
+MwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2NybC5lbnRydXN0Lm5ldC9sZXZlbDFr
+LmNybDCBnQYDVR0RBIGVMIGSgg8qLndlYXRoZXIuZ2MuY2GCDXdlYXRoZXIuZ2Mu
+Y2GCC21ldGVvLmdjLmNhgg0qLm1ldGVvLmdjLmNhghUqLmFscGhhLndlYXRoZXIu
+Z2MuY2GCEyouYWxwaGEubWV0ZW8uZ2MuY2GCFCouYmV0YS53ZWF0aGVyLmdjLmNh
+ghIqLmJldGEubWV0ZW8uZ2MuY2EwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQG
+CCsGAQUFBwMBBggrBgEFBQcDAjATBgNVHSAEDDAKMAgGBmeBDAECAjCCAYAGCisG
+AQQB1nkCBAIEggFwBIIBbAFqAHYAouMK5EXvva2bfjjtR2d3U9eCW4SU1yteGyzE
+uVCkR+cAAAGO9cCizQAABAMARzBFAiEA7hlkvyyYsnhbas5WDwoTkdGWf92Ukckw
+rGyUqMPZQjkCID8oQlHWS11haifx+i9tBr0epmrzkh2/bbneb9WNrlUvAHcATnWj
+J1yaEMM4W2zU3z9S6x3w4I4bjWnAsfpksWKaOd8AAAGO9cCi2AAABAMASDBGAiEA
+iE1jLaXrlPxrkIiq7NU0gH/sDiUlHCmMrT79KUy2V+YCIQCb2GrTID6NO3hb8bGs
+ctd8ipYRuu1FnDY8X3MGVDcWnAB3AObSMWNAd4zBEEEG13G5zsHSQPaWhIb7uocy
+Hf0eN45QAAABjvXAovkAAAQDAEgwRgIhALRWB9aVOe3Zi9j6MEVKJl1NKQKIycr3
+8IfKeHxckblpAiEA85xjN3iBFvEVT4yIxO4qKRelbpFGomgSrYnfwTSUwHIwDQYJ
+KoZIhvcNAQELBQADggEBADGEK5tU92TqoTWPh1lfSRTDVCpk5qhqmIuaTeYQMonV
+AgHF5rktrUhXmMzRJEef8XRwLvApT4zOn+TV+NOUpi8q6tDWxx7dE8+moIf6tXq8
+d4OQ+VDO/C6nz/xA8FqvxAbPfqCJ6DqgitSyXhF01XkNMfVcknGAzhc/HemuukI1
+3DTuaATlbaXkHjSp+O0mXCykCIgH/9eMuOoFMzhdQhtJiLf2MMVclJ72/YzgVveA
+XrSTVE5F4BYdp9hX+0BTg5zNgg1wwvVVOwuIOTFqSSJCzGHjl/1i8IyyPLKB3ilt
+B+0V7IdmIxlvPbL//qNkzyUVufkewAoLMqCOUIZA0eY=</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature></alert>

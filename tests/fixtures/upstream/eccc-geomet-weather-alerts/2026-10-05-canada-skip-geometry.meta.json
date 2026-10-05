@@ -1,0 +1,26 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-geomet-weather-alerts",
+  "label": "canada-skip-geometry",
+  "file": "2026-10-05-canada-skip-geometry.json",
+  "url": "https://api.weather.gc.ca/collections/weather-alerts/items?limit=500&skipGeometry=true&f=json",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:17.159Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 56296,
+  "sha256": "9ded8c74f16ec997d20f832c25f4e2efabc22cc55d579098ae74115e13b4573f",
+  "covers": [
+    "bilingual",
+    "without-geometry",
+    "complete-collection"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Same request with skipGeometry=true."
+}

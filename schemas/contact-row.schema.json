@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/contact-row.schema.json",
+  "title": "Contact CSV Row",
+  "description": "One row of data/contacts/<jurisdiction>.csv; columns match em_contacts_verified.csv after renaming (blueprint 5.3). Empty cells are empty strings.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "scope_level",
+    "org",
+    "line_type",
+    "source_url",
+    "source_kind",
+    "verified_at",
+    "verified_method",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ct-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "scope_level": {
+      "enum": [
+        "nation",
+        "county",
+        "regional-district",
+        "state",
+        "province",
+        "federal",
+        "regional"
+      ]
+    },
+    "region": {
+      "type": "string"
+    },
+    "nation_id": {
+      "type": "string",
+      "pattern": "^(?:|us-(?:wa|or|id|ca|mt|nv|ak)-[a-z0-9]+(?:-[a-z0-9]+)*|ca-fn-[1-9][0-9]{0,4})$"
+    },
+    "agency_id": {
+      "type": "string"
+    },
+    "county_fips": {
+      "type": "string"
+    },
+    "org": {
+      "type": "string"
+    },
+    "office": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "line_type": {
+      "enum": [
+        "24-7",
+        "emergency-management",
+        "government-main",
+        "band-office",
+        "duty-officer",
+        "non-emergency",
+        "public-information",
+        "tty",
+        "tribal-liaison",
+        "flood-hotline",
+        "email",
+        "web"
+      ]
+    },
+    "phone_e164": {
+      "type": "string",
+      "pattern": "^(?:|\\+[1-9][0-9]{6,14}|211|311|511|911|988)$"
+    },
+    "phone_display": {
+      "type": "string"
+    },
+    "ext": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "hours": {
+      "type": "string"
+    },
+    "published_by_nation": {
+      "enum": [
+        "true",
+        "false",
+        ""
+      ]
+    },
+    "person": {
+      "type": "string"
+    },
+    "source_url": {
+      "$ref": "common.schema.json#/$defs/httpsUrl"
+    },
+    "source_publisher": {
+      "type": "string"
+    },
+    "source_kind": {
+      "enum": [
+        "nation-official",
+        "state-official",
+        "provincial-official",
+        "county-official",
+        "agency-official",
+        "federal-directory"
+      ]
+    },
+    "source_snippet": {
+      "type": "string"
+    },
+    "verified_at": {
+      "$ref": "common.schema.json#/$defs/isoDate"
+    },
+    "verified_method": {
+      "enum": [
+        "page-text-match",
+        "official-pdf",
+        "phone-confirmed",
+        "nation-confirmed",
+        "federal-directory"
+      ]
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "needs-reverification",
+        "conflict",
+        "retired"
+      ]
+    },
+    "preferred": {
+      "enum": [
+        "true",
+        "false",
+        ""
+      ]
+    },
+    "review_due": {
+      "type": "string",
+      "pattern": "^(?:|\\d{4}-\\d{2}-\\d{2})$"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "person": {
+            "minLength": 1
+          }
+        },
+        "required": [
+          "person"
+        ]
+      },
+      "then": {
+        "properties": {
+          "published_by_nation": {
+            "const": "true"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/footprint.schema.json",
+  "title": "Footprint Definition",
+  "description": "data/pipeline/footprint.yaml: the coverage area; a warning while ratified is false (blueprint 6.6, Q2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ratified",
+    "states",
+    "provinces",
+    "counties"
+  ],
+  "properties": {
+    "ratified": {
+      "type": "boolean"
+    },
+    "ratifiedOn": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/usState"
+      },
+      "uniqueItems": true
+    },
+    "provinces": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "BC"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "counties": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "CA": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "MT": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "NV": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "AK": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+version: 1
+fixtures:
+  - path: live/alert-flood-warning-polygon-LAC019.json
+    kind: live
+    source_url: https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ebc8a992966a453c26dec8a2e503e6c196f99a47.001.1
+    fetched_at: 2026-07-17T18:01:38.955Z
+    sha256: b78dc6d079acdf3de08aa09a06e7ebc5680c4881400ad1ba95add2307e2c8d62
+    branches: [polygon, update-chain, vtec]
+
+  - path: live/alert-red-flag-warning-zone-ORZ691.json
+    kind: live
+    source_url: https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5780a808b2b22aab2c83c93f68cceb63cee07c68.001.1
+    fetched_at: 2026-07-17T18:01:30.030Z
+    sha256: ac5771d1208ebd02f3345716a101100890724dd2526dd60b8b1607f6ec1ac2ba
+    branches: [zone-only, ugc, same, vtec]
+
+  - path: live/zone-forecast-IDZ007.json
+    kind: live
+    source_url: https://api.weather.gov/zones/forecast/IDZ007
+    fetched_at: 2026-07-17T18:02:07.789Z
+    sha256: 0a397bda100124b39b68d3ece0e5b51606496a74ce39ec94d58e29f32b3fe3e7
+    branches: [zone-metadata-reference]
+
+  - path: synthetic/malformed-feature.json
+    kind: synthetic
+    sha256: 24f0280b14c551e74fd9058c73753b2c7ce330fa579a4a0060b9c62a50d1c95a
+    branches: [malformed-feature]
+
+  - path: synthetic/missing-coverage.json
+    kind: synthetic
+    sha256: ba83c50e53e389d223ee5f2fedbf9653ce182bb5b2a1f0b9ddd59885f1d00d0a
+    branches: [missing-geometry-and-geocodes]
+
+  - path: synthetic/cancel.json
+    kind: synthetic
+    sha256: 00099b12772bfcb6e62d7b508dd5ca59404bae67a1bb47e93e9cf85c2ffdd8c0
+    branches: [cancel-message]
+
+  - path: synthetic/test-message.json
+    kind: synthetic
+    sha256: 8e86317ccc49623a4585bb897e28559e0a961915d676c965bb87506c1e935648
+    branches: [status-test-excluded]
+    note: >
+      Models the api.weather.gov KEEPALIVE monitoring entries observed in the
+      live national alerts/active capture (CAP status Test, null headline).
+      Proves test/exercise exclusion as a countable diagnostic.

@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-geomet-weather-alerts",
+  "label": "bc-province-filter",
+  "file": "2026-10-05-bc-province-filter.json",
+  "url": "https://api.weather.gc.ca/collections/weather-alerts/items?filter=properties.province=BC&limit=500&f=json",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:25:16.851Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 859,
+  "sha256": "92d0ec45ef547d93bf617bb5574d5365dd97b563841025def2283f4c766a2b1a",
+  "covers": [
+    "empty-collection",
+    "bc-scope"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "The registered British Columbia request. No BC alert was in effect at capture, so the collection is empty (numberMatched 0)."
+}

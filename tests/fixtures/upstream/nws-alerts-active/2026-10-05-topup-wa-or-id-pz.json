@@ -1,0 +1,863 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.58aa6fce64b3cd065d794533743071cdf55fc182.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.58aa6fce64b3cd065d794533743071cdf55fc182.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.58aa6fce64b3cd065d794533743071cdf55fc182.001.1",
+                "areaDesc": "Central U.S. Waters Strait Of Juan De Fuca; East Entrance U.S. Waters Strait Of Juan De Fuca",
+                "geocode": {
+                    "SAME": [
+                        "057131",
+                        "057132"
+                    ],
+                    "UGC": [
+                        "PZZ131",
+                        "PZZ132"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ131",
+                    "https://api.weather.gov/zones/forecast/PZZ132"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.820f494687c260efab1422a16349a39fda82bd68.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.820f494687c260efab1422a16349a39fda82bd68.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T14:08:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T21:35:00-07:00",
+                "effective": "2026-10-04T21:35:00-07:00",
+                "onset": "2026-10-04T21:35:00-07:00",
+                "expires": "2026-10-05T05:00:00-07:00",
+                "ends": "2026-10-05T05:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Seattle WA",
+                "headline": "Small Craft Advisory issued October 4 at 9:35PM PDT until October 5 at 5:00AM PDT by NWS Seattle WA",
+                "description": "* WHAT...West winds 20 to 30 kt.\n\n* WHERE...Central U. S. Waters Strait Of Juan De Fuca and East\nEntrance U. S. Waters Strait Of Juan De Fuca.\n\n* WHEN...Until 5 AM PDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+                "instruction": "A Small Craft Advisory means that wind speeds of 21 to 33 knots\nand/or seas 10 feet or higher are expected to produce hazardous\nwave conditions to small craft. Inexperienced mariners,\nespecially those operating smaller vessels should avoid\nnavigating in these conditions.",
+                "response": "Avoid",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWSEW"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KSEW 050435"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY REMAINS IN EFFECT UNTIL 5 AM PDT MONDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CON.KSEW.SC.Y.0132.000000T0000Z-261005T1200Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-05T05:00:00-07:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f10d9157e7cad614fe6afd33dbd9c9c3594147f3.001.1,2026-10-04T08:12:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f4c96233458b50d15440e07c6b531dcd21e62c57.001.1,2026-10-04T01:32:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.0a0e57a0345a18efe03f88be5c87becbd82940d3.001.1,2026-10-03T21:13:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2158df8af11189aee5b0b30f4a8d6ae88cd69b13.001.1,2026-10-03T14:04:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.003.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.003.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.003.1",
+                "areaDesc": "Columbia River Bar",
+                "geocode": {
+                    "SAME": [
+                        "057210"
+                    ],
+                    "UGC": [
+                        "PZZ210"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ210"
+                ],
+                "references": [],
+                "sent": "2026-10-04T21:20:00-07:00",
+                "effective": "2026-10-04T21:20:00-07:00",
+                "onset": "2026-10-04T21:20:00-07:00",
+                "expires": "2026-10-05T12:00:00-07:00",
+                "ends": "2026-10-05T12:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Alert",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Portland OR",
+                "headline": "Dense Fog Advisory issued October 4 at 9:20PM PDT until October 5 at 12:00PM PDT by NWS Portland OR",
+                "description": "* WHAT...Dense fog will reduce visibility to 1 NM or less.\n\n* WHERE...In the Main Channel of the Columbia River Bar.\n\n* WHEN...Until noon PDT Monday.\n\n* IMPACTS...Low visibility will make navigation difficult.",
+                "instruction": "If you must navigate, proceed with caution. Use proper fog\nsignals. Make sure all running lights are on. Remember to use\nyour radar and compass.",
+                "response": "Prepare",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWPQR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KPQR 050420"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IN EFFECT UNTIL NOON PDT MONDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.NEW.KPQR.MF.Y.0004.261005T0420Z-261005T1900Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-05T12:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "MFY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.002.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.002.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.002.1",
+                "areaDesc": "Coastal waters from Cape Shoalwater WA to Cape Falcon OR out 10 nm; Coastal waters from Cape Falcon to Cape Foulweather OR out 10 nm; Waters from Cape Shoalwater WA to Cape Falcon OR from 10 to 60 nm; Waters from Cape Falcon to Cape Foulweather OR from 10 to 60 nm",
+                "geocode": {
+                    "SAME": [
+                        "057251",
+                        "057252",
+                        "057271",
+                        "057272"
+                    ],
+                    "UGC": [
+                        "PZZ251",
+                        "PZZ252",
+                        "PZZ271",
+                        "PZZ272"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ251",
+                    "https://api.weather.gov/zones/forecast/PZZ252",
+                    "https://api.weather.gov/zones/forecast/PZZ271",
+                    "https://api.weather.gov/zones/forecast/PZZ272"
+                ],
+                "references": [],
+                "sent": "2026-10-04T21:20:00-07:00",
+                "effective": "2026-10-04T21:20:00-07:00",
+                "onset": "2026-10-04T21:20:00-07:00",
+                "expires": "2026-10-05T12:00:00-07:00",
+                "ends": "2026-10-05T12:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Alert",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Portland OR",
+                "headline": "Dense Fog Advisory issued October 4 at 9:20PM PDT until October 5 at 12:00PM PDT by NWS Portland OR",
+                "description": "* WHAT...Dense fog will reduce visibility to 1 NM or less.\n\n* WHERE...Coastal waters from Cape Shoalwater WA to Cape Falcon\nOR out 10 NM, Coastal waters from Cape Falcon to Cape\nFoulweather OR out 10 NM, Waters from Cape Shoalwater WA to\nCape Falcon OR from 10 to 60 NM and Waters from Cape Falcon to\nCape Foulweather OR from 10 to 60 NM.\n\n* WHEN...Until noon PDT Monday.\n\n* IMPACTS...Low visibility will make navigation difficult.",
+                "instruction": "If you must navigate, proceed with caution. Use proper fog\nsignals. Make sure all running lights are on. Remember to use\nyour radar and compass.",
+                "response": "Prepare",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWPQR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KPQR 050420"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IN EFFECT UNTIL NOON PDT MONDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.NEW.KPQR.MF.Y.0004.261005T0420Z-261005T1900Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-05T12:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "MFY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.1",
+                "areaDesc": "Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+                "geocode": {
+                    "SAME": [
+                        "057253",
+                        "057273"
+                    ],
+                    "UGC": [
+                        "PZZ253",
+                        "PZZ273"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ253",
+                    "https://api.weather.gov/zones/forecast/PZZ273"
+                ],
+                "references": [],
+                "sent": "2026-10-04T21:20:00-07:00",
+                "effective": "2026-10-04T21:20:00-07:00",
+                "onset": "2026-10-04T21:20:00-07:00",
+                "expires": "2026-10-05T13:30:00-07:00",
+                "ends": "2026-10-05T12:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Alert",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Dense Fog Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Portland OR",
+                "headline": "Dense Fog Advisory issued October 4 at 9:20PM PDT until October 5 at 12:00PM PDT by NWS Portland OR",
+                "description": "* WHAT...For the Dense Fog Advisory, dense fog will reduce\nvisibility to 1 NM or less. For the Small Craft Advisory, seas\n5 to 7 ft at 12 seconds and north winds 15 to 20 kt with gusts\nup to 25 kt expected.\n\n* WHERE...Coastal waters from Cape Foulweather to Florence OR\nout 10 NM and Waters from Cape Foulweather to Florence OR from\n10 to 60 NM.\n\n* WHEN...Dense Fog Advisory, until noon PDT Monday. Small Craft\nAdvisory, from 11 AM to 11 PM PDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft. Low\nvisibility will make navigation difficult.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.\n\nIf you must navigate, proceed with caution. Use proper fog\nsignals. Make sure all running lights are on. Remember to use\nyour radar and compass.",
+                "response": "Prepare",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWPQR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KPQR 050420"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IN EFFECT UNTIL NOON PDT MONDAY... ...SMALL CRAFT ADVISORY REMAINS IN EFFECT FROM 11 AM TO 11 PM PDT MONDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.NEW.KPQR.MF.Y.0004.261005T0420Z-261005T1900Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-05T12:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "MFY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.2",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.2",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.7cb1a52cf7d4a4a95b21c97d276cfdaa47ba7e44.001.2",
+                "areaDesc": "Coastal waters from Cape Foulweather to Florence OR out 10 nm; Waters from Cape Foulweather to Florence OR from 10 to 60 nm",
+                "geocode": {
+                    "SAME": [
+                        "057253",
+                        "057273"
+                    ],
+                    "UGC": [
+                        "PZZ253",
+                        "PZZ273"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ253",
+                    "https://api.weather.gov/zones/forecast/PZZ273"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b3997834abe588eaf544ef1784ffb6f55def9406.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.b3997834abe588eaf544ef1784ffb6f55def9406.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T13:10:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T21:20:00-07:00",
+                "effective": "2026-10-04T21:20:00-07:00",
+                "onset": "2026-10-05T11:00:00-07:00",
+                "expires": "2026-10-05T13:30:00-07:00",
+                "ends": "2026-10-05T23:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Portland OR",
+                "headline": "Small Craft Advisory issued October 4 at 9:20PM PDT until October 5 at 11:00PM PDT by NWS Portland OR",
+                "description": "* WHAT...For the Dense Fog Advisory, dense fog will reduce\nvisibility to 1 NM or less. For the Small Craft Advisory, seas\n5 to 7 ft at 12 seconds and north winds 15 to 20 kt with gusts\nup to 25 kt expected.\n\n* WHERE...Coastal waters from Cape Foulweather to Florence OR\nout 10 NM and Waters from Cape Foulweather to Florence OR from\n10 to 60 NM.\n\n* WHEN...Dense Fog Advisory, until noon PDT Monday. Small Craft\nAdvisory, from 11 AM to 11 PM PDT Monday.\n\n* IMPACTS...Conditions will be hazardous to small craft. Low\nvisibility will make navigation difficult.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.\n\nIf you must navigate, proceed with caution. Use proper fog\nsignals. Make sure all running lights are on. Remember to use\nyour radar and compass.",
+                "response": "Avoid",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWPQR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KPQR 050420"
+                    ],
+                    "NWSheadline": [
+                        "DENSE FOG ADVISORY IN EFFECT UNTIL NOON PDT MONDAY... ...SMALL CRAFT ADVISORY REMAINS IN EFFECT FROM 11 AM TO 11 PM PDT MONDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.CON.KPQR.SC.Y.0103.261005T1800Z-261006T0600Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-05T23:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.001.1",
+                "areaDesc": "Waters from Pt. St. George to Cape Mendocino CA from 10 to 60 nm",
+                "geocode": {
+                    "SAME": [
+                        "057470"
+                    ],
+                    "UGC": [
+                        "PZZ470"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ470"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8c6fb4fe9cd3f23c8a1cae61d1a4ce1037782641.001.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.8c6fb4fe9cd3f23c8a1cae61d1a4ce1037782641.001.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T15:07:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T20:52:00-07:00",
+                "effective": "2026-10-04T20:52:00-07:00",
+                "onset": "2026-10-04T20:52:00-07:00",
+                "expires": "2026-10-05T05:00:00-07:00",
+                "ends": "2026-10-06T21:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Eureka CA",
+                "headline": "Small Craft Advisory issued October 4 at 8:52PM PDT until October 6 at 9:00PM PDT by NWS Eureka CA",
+                "description": "* WHAT...North winds 15 to 25 kt with gusts up to 30 kt and seas\n6 to 9 feet.\n\n* WHERE...Waters from Pt. St. George to Cape Mendocino CA from\n10 to 60 nm.\n\n* WHEN...Until 9 PM PDT Tuesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+                "response": "Avoid",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWEKA"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KEKA 050352"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY NOW IN EFFECT UNTIL 9 PM PDT TUESDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.EXT.KEKA.SC.Y.0088.000000T0000Z-261007T0400Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-06T21:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.002.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.002.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.1db8899696f5685fdfb39e957b11b224933a367d.002.1",
+                "areaDesc": "Waters from Cape Mendocino to Pt. Arena CA from 10 to 60 nm",
+                "geocode": {
+                    "SAME": [
+                        "057475"
+                    ],
+                    "UGC": [
+                        "PZZ475"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ475"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8c6fb4fe9cd3f23c8a1cae61d1a4ce1037782641.002.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.8c6fb4fe9cd3f23c8a1cae61d1a4ce1037782641.002.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T15:07:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T20:52:00-07:00",
+                "effective": "2026-10-04T20:52:00-07:00",
+                "onset": "2026-10-04T20:52:00-07:00",
+                "expires": "2026-10-05T05:00:00-07:00",
+                "ends": "2026-10-06T21:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Eureka CA",
+                "headline": "Small Craft Advisory issued October 4 at 8:52PM PDT until October 6 at 9:00PM PDT by NWS Eureka CA",
+                "description": "* WHAT...North winds 15 to 20 kt with gusts up to 30 kt and seas\n6 to 9 feet.\n\n* WHERE...Waters from Cape Mendocino to Pt. Arena CA from 10 to\n60 nm.\n\n* WHEN...Until 9 PM PDT Tuesday.\n\n* IMPACTS...Conditions will be hazardous to small craft.",
+                "instruction": "Inexperienced mariners, especially those operating smaller\nvessels, should avoid navigating in hazardous conditions.",
+                "response": "Avoid",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWEKA"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KEKA 050352"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY NOW IN EFFECT UNTIL 9 PM PDT TUESDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.EXT.KEKA.SC.Y.0088.000000T0000Z-261007T0400Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-06T21:00:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.003.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.003.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.003.1",
+                "areaDesc": "Waters from Cape Blanco OR to Pt. St. George CA from 10 to 60 nm",
+                "geocode": {
+                    "SAME": [
+                        "057376"
+                    ],
+                    "UGC": [
+                        "PZZ376"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ376"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.004.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.004.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T02:03:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T13:40:00-07:00",
+                "effective": "2026-10-04T13:40:00-07:00",
+                "onset": "2026-10-04T13:40:00-07:00",
+                "expires": "2026-10-05T02:45:00-07:00",
+                "ends": "2026-10-06T23:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Medford OR",
+                "headline": "Small Craft Advisory issued October 4 at 1:40PM PDT until October 6 at 11:00PM PDT by NWS Medford OR",
+                "description": "* WHAT...North winds 15 to 25 kt with gusts up to 30 kt and seas\n6 to 8 ft at 6 to 7 seconds expected.\n\n* WHERE...Waters south of Cape Blanco and 10-60 nm from shore.\n\n* WHEN...Until 11 PM PDT Tuesday.\n\n* IMPACTS...Gusty winds and/or steep seas could capsize or\ndamage smaller vessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
+                "instruction": "Inexperienced mariners and those operating smaller vessels should\nremain in port and avoid the area of hazardous conditions.",
+                "response": "Avoid",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWMFR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KMFR 042040"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY NOW IN EFFECT UNTIL 11 PM PDT TUESDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.EXT.KMFR.SC.Y.0078.000000T0000Z-261007T0600Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-06T23:00:00-07:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f759b8d263acc874943e820c9edc7347eddca6ce.004.1,2026-10-03T13:56:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.561c23bc1ce9ceb4c12984f82f1aca006a168af6.004.1,2026-10-03T02:00:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3c4d559178ec9dab219a192ba88209a01e273406.001.1,2026-10-02T21:08:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3a768637153bdc27456e7355942d572cce45f79e.004.1,2026-10-02T14:32:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4f8c0b2b8856115bc1f45458bfade5fbf79611dc.001.2,2026-10-02T01:45:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.39e94a81c7eb9d6bcae3d2fc90a789ade89639b6.001.1,2026-10-01T12:25:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1324742a2d3764c8602a8fd13f4a898e9f3b942b.001.2,2026-10-01T05:14:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f6573df49760dec07cb50134e3453bc0d2e77069.001.1,2026-09-30T11:30:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.c3e1f288b8b424060e37ed8e4632e749f664265a.001.1,2026-09-30T02:05:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.dab2300c37c80e1c1d0f5bfbb0adc408f2733efa.001.1,2026-09-29T13:12:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d7cfa1b5fa79ed0fee7fb3189bc698eed50c1bbc.001.1,2026-09-29T03:30:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.b5a93dbf2cec4d2edcbf6140ac20eb893000a344.001.1,2026-09-28T14:51:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.838ec7a46bc4523cea6dc6bd8e2d21001f14da5a.001.2,2026-09-28T04:32:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e01da058edd73b6999d7d9df4b648cbb4af9b1ad.001.1,2026-09-27T12:41:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.36e77115ba4022ec22aee3722c50ef6c8aac3752.002.1,2026-09-27T01:47:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.edfe822cd710aae534de782f77b3f7649cf31022.002.1,2026-09-26T14:38:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e9439e58adcb0a72558f69edea671ab8ddfcdf51.002.1,2026-09-26T02:22:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.50cfaef120fae04b5589b2ff23f78da185692aa5.002.1,2026-09-25T15:09:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.690b74ba7be064e3471e4fe64b2a2734f6bc203d.002.1,2026-09-25T06:41:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.83a4a038dd680d3eee820cec8f9f5bb0e58e8b17.001.2,2026-09-25T01:48:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.001.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.001.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.001.1",
+                "areaDesc": "Coastal waters from Florence to Cape Blanco OR out 10 nm; Coastal waters from Cape Blanco OR to Pt. St. George CA out 10 nm",
+                "geocode": {
+                    "SAME": [
+                        "057350",
+                        "057356"
+                    ],
+                    "UGC": [
+                        "PZZ350",
+                        "PZZ356"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ350",
+                    "https://api.weather.gov/zones/forecast/PZZ356"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.001.2",
+                        "identifier": "urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.001.2",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T02:03:00-07:00"
+                    },
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.002.2",
+                        "identifier": "urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.002.2",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T02:03:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T13:40:00-07:00",
+                "effective": "2026-10-04T13:40:00-07:00",
+                "onset": "2026-10-04T23:00:00-07:00",
+                "expires": "2026-10-05T02:45:00-07:00",
+                "ends": "2026-10-06T23:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Medford OR",
+                "headline": "Small Craft Advisory issued October 4 at 1:40PM PDT until October 6 at 11:00PM PDT by NWS Medford OR",
+                "description": "* WHAT...North winds 15 to 25 kt with gusts up to 30 kt and seas\n5 to 7 ft at 6 to 7 seconds expected.\n\n* WHERE...Waters north of Cape Blanco from the shore to 10 nm.\n\n* WHEN..From 11 PM Sunday to 11 PM PDT Monday.\n\n* IMPACTS...Gusty winds and/or steep seas could capsize or\ndamage smaller vessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
+                "instruction": "Inexperienced mariners and those operating smaller vessels should\nremain in port and avoid the area of hazardous conditions.",
+                "response": "Avoid",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWMFR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KMFR 042040"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY NOW IN EFFECT FROM 11 PM THIS EVENING TO 11 PM PDT TUESDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.EXT.KMFR.SC.Y.0082.261005T0600Z-261007T0600Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-06T23:00:00-07:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f759b8d263acc874943e820c9edc7347eddca6ce.002.2,2026-10-03T13:56:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f759b8d263acc874943e820c9edc7347eddca6ce.001.2,2026-10-03T13:56:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.002.1",
+            "type": "Feature",
+            "geometry": null,
+            "properties": {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.002.1",
+                "@type": "wx:Alert",
+                "id": "urn:oid:2.49.0.1.840.0.c8c635923ce2a149b596dac6cf8802757223a5dc.002.1",
+                "areaDesc": "Waters from Florence to Cape Blanco OR from 10 to 60 nm",
+                "geocode": {
+                    "SAME": [
+                        "057370"
+                    ],
+                    "UGC": [
+                        "PZZ370"
+                    ]
+                },
+                "affectedZones": [
+                    "https://api.weather.gov/zones/forecast/PZZ370"
+                ],
+                "references": [
+                    {
+                        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.003.1",
+                        "identifier": "urn:oid:2.49.0.1.840.0.6110408294620629e16853b8ba8df31010fcf445.003.1",
+                        "sender": "w-nws.webmaster@noaa.gov",
+                        "sent": "2026-10-04T02:03:00-07:00"
+                    }
+                ],
+                "sent": "2026-10-04T13:40:00-07:00",
+                "effective": "2026-10-04T13:40:00-07:00",
+                "onset": "2026-10-04T13:40:00-07:00",
+                "expires": "2026-10-05T02:45:00-07:00",
+                "ends": "2026-10-06T23:00:00-07:00",
+                "status": "Actual",
+                "messageType": "Update",
+                "category": "Met",
+                "severity": "Minor",
+                "certainty": "Likely",
+                "urgency": "Expected",
+                "event": "Small Craft Advisory",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "senderName": "NWS Medford OR",
+                "headline": "Small Craft Advisory issued October 4 at 1:40PM PDT until October 6 at 11:00PM PDT by NWS Medford OR",
+                "description": "* WHAT...North winds 15 to 20 kt with seas 5 to 7 ft at 6 to 7\nseconds expected.\n\n* WHERE...Waters north of Cape Blanco and 10-60 nm from shore.\nHighest winds and steepest seas from Cape Arago southward.\n\n* WHEN...Until 11 PM PDT Tuesday.\n\n* IMPACTS...Gusty winds and/or steep seas could capsize or\ndamage smaller vessels.\n\n* View the hazard area in detail at https://go.usa.gov/x6hks",
+                "instruction": "Inexperienced mariners and those operating smaller vessels should\nremain in port and avoid the area of hazardous conditions.",
+                "response": "Avoid",
+                "note": null,
+                "parameters": {
+                    "AWIPSidentifier": [
+                        "MWWMFR"
+                    ],
+                    "WMOidentifier": [
+                        "WHUS76 KMFR 042040"
+                    ],
+                    "NWSheadline": [
+                        "SMALL CRAFT ADVISORY NOW IN EFFECT UNTIL 11 PM PDT TUESDAY"
+                    ],
+                    "BLOCKCHANNEL": [
+                        "EAS",
+                        "NWEM",
+                        "CMAS"
+                    ],
+                    "VTEC": [
+                        "/O.EXT.KMFR.SC.Y.0081.000000T0000Z-261007T0600Z/"
+                    ],
+                    "eventEndingTime": [
+                        "2026-10-06T23:00:00-07:00"
+                    ],
+                    "expiredReferences": [
+                        "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f759b8d263acc874943e820c9edc7347eddca6ce.003.1,2026-10-03T13:56:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.561c23bc1ce9ceb4c12984f82f1aca006a168af6.003.1,2026-10-03T02:00:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3c4d559178ec9dab219a192ba88209a01e273406.002.1,2026-10-02T21:08:00-07:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3a768637153bdc27456e7355942d572cce45f79e.002.1,2026-10-02T14:32:00-07:00"
+                    ]
+                },
+                "scope": "Public",
+                "code": "IPAWSv1.0",
+                "language": "en-US",
+                "web": "http://www.weather.gov",
+                "eventCode": {
+                    "SAME": [
+                        "NWS"
+                    ],
+                    "NationalWeatherService": [
+                        "SCY"
+                    ]
+                }
+            }
+        }
+    ],
+    "title": "Current watches, warnings, and advisories for Washington, Oregon, Idaho, Eastern N. Pacific Ocean",
+    "updated": "2026-10-05T06:23:38+00:00"
+}

@@ -1,0 +1,658 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/nation.schema.json",
+  "title": "Nation Record",
+  "description": "site/data/registry/nations/<id>.json (blueprint 5.2). No person keys can appear: every object is closed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "castId",
+    "name",
+    "nameSource",
+    "preferredName",
+    "preferredNameSource",
+    "aliases",
+    "kind",
+    "country",
+    "jurisdictions",
+    "region",
+    "hq",
+    "samples",
+    "bbox",
+    "boundary",
+    "timeZone",
+    "timeZoneSource",
+    "units",
+    "nws",
+    "eccc",
+    "radar",
+    "gauges",
+    "contactIds",
+    "website",
+    "isc",
+    "codes",
+    "review",
+    "flags"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/nationId"
+    },
+    "castId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^tn_[0-9a-f]{32}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "name": {
+      "$ref": "common.schema.json#/$defs/displayName"
+    },
+    "nameSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "citation",
+        "url",
+        "retrievedAt"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "federal-register",
+            "bia-tld",
+            "bia-anv",
+            "isc-registered-name",
+            "names-override"
+          ]
+        },
+        "citation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "$ref": "common.schema.json#/$defs/httpsUrl"
+        },
+        "retrievedAt": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        }
+      }
+    },
+    "preferredName": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/displayName"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "preferredNameSource": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "url",
+            "verifiedAt"
+          ],
+          "properties": {
+            "url": {
+              "$ref": "common.schema.json#/$defs/httpsUrl"
+            },
+            "verifiedAt": {
+              "$ref": "common.schema.json#/$defs/isoDate"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "kind": {
+      "enum": [
+        "us-federally-recognized-tribe",
+        "first-nation",
+        "alaska-native-village"
+      ]
+    },
+    "country": {
+      "enum": [
+        "US",
+        "CA"
+      ]
+    },
+    "jurisdictions": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/jurisdiction"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "region": {
+      "$ref": "common.schema.json#/$defs/regionCode"
+    },
+    "hq": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lat",
+        "lon",
+        "precision",
+        "sourceId",
+        "sourceRecordId",
+        "retrievedAt",
+        "reviewed"
+      ],
+      "properties": {
+        "lat": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lon": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "precision": {
+          "enum": [
+            "office",
+            "community",
+            "centroid"
+          ]
+        },
+        "sourceId": {
+          "$ref": "common.schema.json#/$defs/sourceId"
+        },
+        "sourceRecordId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrievedAt": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "reviewed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "samples": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/$defs/latLon"
+      },
+      "minItems": 1,
+      "maxItems": 9
+    },
+    "bbox": {
+      "$ref": "common.schema.json#/$defs/bbox"
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "detailRef",
+        "parts"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "polygon",
+            "point-only"
+          ]
+        },
+        "detailRef": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^geo/boundaries/[a-z0-9-]+\\.json$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourceId",
+              "featureId",
+              "kind",
+              "vintage"
+            ],
+            "properties": {
+              "sourceId": {
+                "$ref": "common.schema.json#/$defs/sourceId"
+              },
+              "featureId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "land-area-representation",
+                  "reservation",
+                  "off-reservation-trust-land",
+                  "indian-reserve",
+                  "census-aiannh-legal"
+                ]
+              },
+              "vintage": {
+                "$ref": "common.schema.json#/$defs/isoDate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "timeZone": {
+      "type": "string",
+      "pattern": "^(America|Pacific)/[A-Za-z_]+$"
+    },
+    "timeZoneSource": {
+      "enum": [
+        "tz-lookup",
+        "override"
+      ]
+    },
+    "units": {
+      "enum": [
+        "us",
+        "metric"
+      ]
+    },
+    "nws": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "wfo",
+            "point",
+            "forecastZones",
+            "countyZones",
+            "fireZones",
+            "marineZones"
+          ],
+          "properties": {
+            "wfo": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$"
+              },
+              "minItems": 1
+            },
+            "point": {
+              "$ref": "common.schema.json#/$defs/latLon"
+            },
+            "forecastZones": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^forecast:[A-Z]{2}[A-Z][0-9]{3}$"
+              },
+              "uniqueItems": true
+            },
+            "countyZones": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^county:[A-Z]{2}[A-Z][0-9]{3}$"
+              },
+              "uniqueItems": true
+            },
+            "fireZones": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^fire:[A-Z]{2}[A-Z][0-9]{3}$"
+              },
+              "uniqueItems": true
+            },
+            "marineZones": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^marine:[A-Z]{2}[A-Z][0-9]{3}$"
+              },
+              "uniqueItems": true
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "eccc": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "citypageId",
+            "citypageName",
+            "distanceKm",
+            "forecastZones"
+          ],
+          "properties": {
+            "citypageId": {
+              "type": "string",
+              "pattern": "^[a-z]{2}-[0-9]+$"
+            },
+            "citypageName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "distanceKm": {
+              "type": "number",
+              "minimum": 0
+            },
+            "forecastZones": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "radar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nexrad",
+        "ridgeLoop",
+        "eccc"
+      ],
+      "properties": {
+        "nexrad": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{4}$"
+        },
+        "ridgeLoop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z]{4}$"
+        },
+        "eccc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "gauges": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(nwps|wsc):[A-Z0-9]+$"
+      },
+      "uniqueItems": true
+    },
+    "contactIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ct-[a-z0-9]+(-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true
+    },
+    "website": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "url",
+            "verifiedAt"
+          ],
+          "properties": {
+            "url": {
+              "$ref": "common.schema.json#/$defs/httpsUrl"
+            },
+            "verifiedAt": {
+              "$ref": "common.schema.json#/$defs/isoDate"
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "isc": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "bandNumber",
+            "tribalCouncil"
+          ],
+          "properties": {
+            "bandNumber": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "tribalCouncil": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "codes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "biaLarIds",
+        "censusAiannhce",
+        "censusGeoid",
+        "biaTldObjectId",
+        "biaAnvObjectId",
+        "iscBandNumber"
+      ],
+      "properties": {
+        "biaLarIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "censusAiannhce": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9]{4}$"
+          }
+        },
+        "censusGeoid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "biaTldObjectId": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "biaAnvObjectId": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "iscBandNumber": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reviewedAt",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "draft",
+            "reviewed",
+            "nation-confirmed"
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/isoDate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "name-orthography-needs-nation-source",
+          "tz-needs-confirmation",
+          "hq-moved"
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "review": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "reviewed",
+                  "nation-confirmed"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "name": {
+            "not": {
+              "pattern": "[?�]"
+            }
+          },
+          "flags": {
+            "not": {
+              "contains": {
+                "const": "name-orthography-needs-nation-source"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "country": {
+            "const": "CA"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "id": {
+            "pattern": "^ca-fn-"
+          },
+          "isc": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "boundary": {
+            "properties": {
+              "status": {
+                "const": "polygon"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "boundary": {
+            "properties": {
+              "detailRef": {
+                "type": "string"
+              },
+              "parts": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

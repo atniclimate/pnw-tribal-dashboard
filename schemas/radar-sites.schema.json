@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/radar-sites.schema.json",
+  "title": "Radar Sites",
+  "description": "site/data/ref/radar-sites.json (blueprint 4.4, 7.3).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "sites"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.radar-sites/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "agency",
+          "name",
+          "lat",
+          "lon",
+          "ridge",
+          "sourceUrl"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z0-9]{3,5}$"
+          },
+          "agency": {
+            "enum": [
+              "NWS",
+              "ECCC"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          },
+          "ridge": {
+            "type": "boolean"
+          },
+          "sourceUrl": {
+            "$ref": "common.schema.json#/$defs/httpsUrl"
+          }
+        }
+      }
+    }
+  }
+}

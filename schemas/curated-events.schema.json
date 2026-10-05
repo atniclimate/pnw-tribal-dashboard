@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/curated-events.schema.json",
+  "title": "Compiled Events",
+  "description": "site/data/curated/events.json, compiled by scripts/compile (blueprint 6.3).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generatedAt",
+    "items"
+  ],
+  "properties": {
+    "schema": {
+      "const": "cthd.curated.events/1"
+    },
+    "generatedAt": {
+      "$ref": "common.schema.json#/$defs/isoDateTime"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "period",
+          "summary",
+          "archivedAt",
+          "compiledFrom",
+          "entries",
+          "femaDisasterNumbers",
+          "notes"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/kebabId"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "period": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "start",
+              "end"
+            ],
+            "properties": {
+              "start": {
+                "$ref": "common.schema.json#/$defs/isoDate"
+              },
+              "end": {
+                "$ref": "common.schema.json#/$defs/isoDate"
+              }
+            }
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "archivedAt": {
+            "$ref": "common.schema.json#/$defs/isoDate"
+          },
+          "compiledFrom": {
+            "type": "string",
+            "minLength": 1
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "date",
+                "kind",
+                "title",
+                "issuedBy",
+                "url",
+                "verifiedAt",
+                "linkStatus",
+                "archiveUrl"
+              ],
+              "properties": {
+                "date": {
+                  "$ref": "common.schema.json#/$defs/isoDate"
+                },
+                "kind": {
+                  "enum": [
+                    "tribal-declaration",
+                    "state-declaration",
+                    "county-notice",
+                    "resolution",
+                    "shelter",
+                    "river-crest",
+                    "news",
+                    "resource"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "issuedBy": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "url": {
+                  "$ref": "common.schema.json#/$defs/httpsUrl"
+                },
+                "verifiedAt": {
+                  "$ref": "common.schema.json#/$defs/isoDate"
+                },
+                "linkStatus": {
+                  "enum": [
+                    "ok",
+                    "dead"
+                  ]
+                },
+                "archiveUrl": {
+                  "anyOf": [
+                    {
+                      "$ref": "common.schema.json#/$defs/httpsUrl"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "femaDisasterNumbers": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

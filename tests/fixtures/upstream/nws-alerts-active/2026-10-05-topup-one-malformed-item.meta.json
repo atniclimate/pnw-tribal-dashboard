@@ -1,0 +1,26 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "topup-one-malformed-item",
+  "file": "2026-10-05-topup-one-malformed-item.json",
+  "url": "https://api.weather.gov/alerts/active?area=WA,OR,ID,PZ&status=actual",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:23:46.769Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 45515,
+  "sha256": "277fa3034805df67a78dc66d1c393a615a97853c242705e570bba75141193a15",
+  "covers": [
+    "malformed-item"
+  ],
+  "derivedFrom": "2026-10-05-topup-wa-or-id-pz.json",
+  "edits": [
+    "The first feature's properties.event value \"Small Craft Advisory\" was replaced with null (first occurrence of the \"event\" key in the file). Every other byte is unchanged."
+  ],
+  "notes": "A live collection never contained a malformed item at capture time, so this case is a one-value edit of a real capture."
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-alerts-active",
+  "label": "test-messages",
+  "file": "2026-10-05-test-messages.json",
+  "url": "https://api.weather.gov/alerts?status=test&limit=5",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T06:24:47.221Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 13251,
+  "sha256": "9826cd41cf646ded33fb3d2bc945c82833d7b879d5b0f3092182a6eff2323fd6",
+  "covers": [
+    "test-message"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "NWS KEEPALIVE monitoring messages with CAP status Test; the parser must exclude and count them."
+}

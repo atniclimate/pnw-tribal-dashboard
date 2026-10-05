@@ -1,0 +1,112 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "s": "https://schema.org/",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "unit": "http://codes.wmo.int/common/unit/",
+            "@vocab": "https://api.weather.gov/ontology#",
+            "geometry": {
+                "@id": "s:GeoCoordinates",
+                "@type": "geo:wktLiteral"
+            },
+            "city": "s:addressLocality",
+            "state": "s:addressRegion",
+            "distance": {
+                "@id": "s:Distance",
+                "@type": "s:QuantitativeValue"
+            },
+            "bearing": {
+                "@type": "s:QuantitativeValue"
+            },
+            "value": {
+                "@id": "s:value"
+            },
+            "unitCode": {
+                "@id": "s:unitCode",
+                "@type": "@id"
+            },
+            "forecastOffice": {
+                "@type": "@id"
+            },
+            "forecastGridData": {
+                "@type": "@id"
+            },
+            "publicZone": {
+                "@type": "@id"
+            },
+            "county": {
+                "@type": "@id"
+            }
+        }
+    ],
+    "id": "https://api.weather.gov/points/44.7197,-123.9166",
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            -123.9166,
+            44.7197
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/points/44.7197,-123.9166",
+        "@type": "wx:Point",
+        "cwa": "PQR",
+        "type": "land",
+        "forecastOffice": "https://api.weather.gov/offices/PQR",
+        "gridId": "PQR",
+        "gridX": 65,
+        "gridY": 76,
+        "forecast": "https://api.weather.gov/gridpoints/PQR/65,76/forecast",
+        "forecastHourly": "https://api.weather.gov/gridpoints/PQR/65,76/forecast/hourly",
+        "forecastGridData": "https://api.weather.gov/gridpoints/PQR/65,76",
+        "observationStations": "https://api.weather.gov/gridpoints/PQR/65,76/stations",
+        "relativeLocation": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.9187001,
+                    44.7218344
+                ]
+            },
+            "properties": {
+                "city": "Siletz",
+                "state": "OR",
+                "distance": {
+                    "unitCode": "wmoUnit:m",
+                    "value": 0
+                },
+                "bearing": {
+                    "unitCode": "wmoUnit:degree_(angle)",
+                    "value": 0
+                }
+            }
+        },
+        "forecastZone": "https://api.weather.gov/zones/forecast/ORZ103",
+        "county": "https://api.weather.gov/zones/county/ORC041",
+        "fireWeatherZone": "https://api.weather.gov/zones/fire/ORZ681",
+        "timeZone": "America/Los_Angeles",
+        "radarStation": "KRTX",
+        "astronomicalData": {
+            "sunrise": "2026-10-05T07:18:57-07:00",
+            "sunset": "2026-10-05T18:48:58-07:00",
+            "transit": "2026-10-05T13:03:58-07:00",
+            "civilTwilightBegin": "2026-10-05T06:49:53-07:00",
+            "civilTwilightEnd": "2026-10-05T19:18:02-07:00",
+            "nauticalTwilightBegin": "2026-10-05T06:16:05-07:00",
+            "nauticalTwilightEnd": "2026-10-05T19:51:51-07:00",
+            "astronomicalTwilightBegin": "2026-10-05T05:41:57-07:00",
+            "astronomicalTwilightEnd": "2026-10-05T20:25:58-07:00"
+        },
+        "nwr": {
+            "transmitter": "KIH33",
+            "sameCode": "041041",
+            "areaBroadcast": "https://api.weather.gov/radio/KIH33/broadcast",
+            "pointBroadcast": "https://api.weather.gov/points/44.7197,-123.9166/radio"
+        }
+    }
+}

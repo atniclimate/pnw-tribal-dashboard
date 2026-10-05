@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nwps-gauges",
+  "label": "gauge-hutw1-null-thresholds",
+  "file": "2026-10-05-gauge-hutw1-null-thresholds.json",
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges/HUTW1",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T06:25:18.854Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 3000,
+  "sha256": "4e1dfe3f0e66cd34f19c9985f6545c624ce20c371627e34e5ce275802c3d4da9",
+  "covers": [
+    "gauge-detail",
+    "null-thresholds"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Gauge detail for Hutchinson Creek near Acme, which has no flood categories defined: NWPS publishes every category threshold (action, minor, moderate, major; stage and flow) as the -9999 sentinel, which the reference builder must store as null and the page must show as not_defined, never as normal."
+}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark light">
+  <meta name="robots" content="noindex">
+  <title>Cascadia Tribal Hazard Dashboard</title>
+  <meta name="description" content="Active weather, flood, and hazard alerts, river levels, forecasts, and emergency contacts for Tribal Nations and First Nations across Cascadia.">
+  <script src="./static/js/boot/flags.js"></script>
+  <link rel="preload" href="./static/fonts/league-spartan-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./static/fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./static/css/tokens.css">
+  <link rel="stylesheet" href="./static/css/fonts.css">
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="stylesheet" href="./static/css/layout.css">
+  <link rel="stylesheet" href="./static/css/components.css">
+  <link rel="stylesheet" href="./static/css/print.css" media="print">
+  <!-- modulepreload:start -->
+  <link rel="modulepreload" href="./static/js/pages/dashboard.js">
+  <link rel="modulepreload" href="./static/js/ui/chrome.js">
+  <link rel="modulepreload" href="./static/js/core/embed.js">
+  <link rel="modulepreload" href="./static/js/ui/panel.js">
+  <link rel="modulepreload" href="./static/js/alerts/service.js">
+  <link rel="modulepreload" href="./static/js/ui/alert-banner.js">
+  <!-- modulepreload:end -->
+  <script type="module" src="./static/js/pages/dashboard.js"></script>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./static/img/favicon.svg" type="image/svg+xml">
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main">Skip to Main Content</a>
+  <!-- chrome:start -->
+  <header class="site-header">
+    <a class="site-header__brand" href="./">
+      <span class="site-header__org">ATNI Climate</span>
+      <span class="site-header__product">Cascadia Tribal Hazard Dashboard</span>
+    </a>
+    <a class="nation-chip" href="./#choose-nation" data-action="open-nation-picker"><span class="nation-chip__label">Nation:</span> <span data-nation-chip-name>All of Cascadia</span></a>
+  </header>
+  <nav class="site-nav" aria-label="Primary">
+    <ul class="site-nav__list">
+        <li><a href="./" aria-current="page">Dashboard</a></li>
+        <li><a href="./alerts/">Alerts</a></li>
+        <li><a href="./forecasts/">Forecasts</a></li>
+        <li><a href="./contacts/">Contacts</a></li>
+        <li><a href="./resources/">Resources</a></li>
+        <li><a href="./safety/">Safety</a></li>
+        <li><a href="./news/">News</a></li>
+        <li><a href="./usage/">Usage</a></li>
+    </ul>
+  </nav>
+  <div class="embed-bar" data-embed-only>
+    <span class="embed-bar__brand">ATNI Climate</span>
+    <span class="embed-bar__title" data-embed-title></span>
+    <a class="embed-bar__open" href="./" target="_blank" rel="noopener" data-embed-open>Open Full Page</a>
+    <a class="embed-bar__sources" href="./usage/?view=sources" target="_blank" rel="noopener">Sources and Disclaimer</a>
+  </div>
+  <!-- chrome:end -->
+  <main id="main" tabindex="-1">
+    <h1 class="page-title" id="page-title" data-scope-heading>All of Cascadia</h1>
+    <noscript><p class="panel-note">Live alerts need JavaScript. Official alerts are always at
+      <a href="https://www.weather.gov/">weather.gov</a> and
+      <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">weather.gc.ca</a>. In an emergency, call 911.</p></noscript>
+      <section class="panel" data-panel="alert-banner" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="alert-banner-h" data-embed-panel="banner" aria-live="polite">
+        <h2 class="panel__title" id="alert-banner-h">Alert Status</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+    <section class="callout callout--quiet" id="choose-nation" aria-labelledby="choose-nation-h">
+      <h2 id="choose-nation-h">Choose a Nation</h2>
+      <p>Select a Tribal Nation or First Nation to see its alerts, rivers, forecast, and emergency contacts.</p>
+    </section>
+      <section class="panel" data-panel="nation-alerts" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="nation-alerts-h" data-embed-panel="alerts">
+        <h2 class="panel__title" id="nation-alerts-h">Alerts for This Area</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="jurisdictions" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="jurisdictions-h">
+        <h2 class="panel__title" id="jurisdictions-h">Alerts by Area</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="nation" data-sources="cthd-registry" aria-labelledby="nation-h" data-embed-panel="nation">
+        <h2 class="panel__title" id="nation-h">Nation</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="call" data-sources="cthd-contacts" aria-labelledby="call-h" data-embed-panel="contacts">
+        <h2 class="panel__title" id="call-h">Call</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="rivers" data-sources="nwps-gauges eccc-hydrometric-realtime" aria-labelledby="rivers-h" data-embed-panel="rivers">
+        <h2 class="panel__title" id="rivers-h">Rivers</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="rain" data-sources="nws-gridpoints" aria-labelledby="rain-h">
+        <h2 class="panel__title" id="rain-h">Rain Next 3 Days</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="forecast" data-sources="nws-forecast eccc-citypage-realtime" aria-labelledby="forecast-h">
+        <h2 class="panel__title" id="forecast-h">7-Day Forecast</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="map" data-sources="nws-alerts-active eccc-geomet-weather-alerts bia-lar census-aiannh-2025 nrcan-aboriginal-lands-bc carto-dark-matter" aria-labelledby="map-h" data-embed-panel="map" data-map-panel>
+        <h2 class="panel__title" id="map-h">Map</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="declarations" data-sources="openfema-declarations cthd-curated-declarations" aria-labelledby="declarations-h">
+        <h2 class="panel__title" id="declarations-h">Declarations</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+      <section class="panel" data-panel="official-news" data-sources="cthd-news" aria-labelledby="official-news-h">
+        <h2 class="panel__title" id="official-news-h">Official News</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+    <section class="what-to-do" aria-labelledby="what-to-do-h">
+      <h2 id="what-to-do-h">What to Do Now</h2>
+      <ul class="bullets">
+        <li><a href="./safety/#flood">Flood and Debris Flows</a></li>
+        <li><a href="./safety/#atmospheric-rivers">Atmospheric Rivers and Landslides</a></li>
+        <li><a href="./safety/#wind">Wind and Power Outages</a></li>
+        <li><a href="./safety/#winter">Winter Storms and Extreme Cold</a></li>
+        <li><a href="./safety/#heat">Extreme Heat</a></li>
+        <li><a href="./safety/#smoke">Wildfire Smoke and Air Quality</a></li>
+        <li><a href="./safety/#wildfire">Wildfire Evacuation</a></li>
+        <li><a href="./safety/#tsunami">Tsunami and Coastal Hazards</a></li>
+        <li><a href="./safety/#earthquake">Earthquake</a></li>
+        <li><a href="./safety/#kit">Emergency Kit and Drinking Water After Disasters</a></li>
+      </ul>
+    </section>
+  </main>
+  <!-- chrome:start -->
+  <footer class="site-footer">
+    <p class="site-footer__safety">This dashboard does not replace official warnings or 911. In an emergency, call 911.</p>
+    <p class="site-footer__sovereignty"><strong>Representation, not jurisdiction.</strong> Boundary lines shown here come from public federal sources; they are not a Tribal Nation's own statement of its land or authority.</p>
+    <p class="site-footer__sources">Sources used on this page: <span data-footer-sources><a href="./usage/?view=sources">see the Sources list</a></span>.</p>
+    <p class="site-footer__links"><a href="./usage/">Usage and Disclaimer</a> <a href="./usage/?view=privacy">Privacy</a> <a href="./usage/?view=accessibility">Accessibility</a> <a href="./archive/">Event Archive</a> <a href="./embed/">Embedding</a></p>
+    <p class="site-footer__credit">An ATNI Climate product. Successor to IndigenousACCESS.org. Contact <a href="mailto:climate@atnitribes.org">climate@atnitribes.org</a>.</p>
+    <p class="site-footer__build" data-build-info hidden></p>
+  </footer>
+  <nav class="bottom-bar" aria-label="Quick Actions">
+    <a class="bottom-bar__item" href="./alerts/">Alerts</a>
+    <a class="bottom-bar__item" href="./forecasts/?view=rivers">Rivers</a>
+    <a class="bottom-bar__item" href="./contacts/" data-action="open-call-sheet">Call</a>
+    <a class="bottom-bar__item" href="./contacts/?view=near-me">Near Me</a>
+  </nav>
+  <!-- chrome:end -->
+</body>
+</html>

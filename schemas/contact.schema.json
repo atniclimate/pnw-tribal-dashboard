@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/contact.schema.json",
+  "title": "Contact",
+  "description": "One compiled contact (blueprint 5.3). Role-based; a person value requires publishedByNation true.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "scope",
+    "org",
+    "office",
+    "lineType",
+    "phone",
+    "email",
+    "url",
+    "hours",
+    "publishedByNation",
+    "person",
+    "source",
+    "verification",
+    "status",
+    "sortWeight"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ct-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "region",
+        "nationId",
+        "agencyId",
+        "countyFips"
+      ],
+      "properties": {
+        "level": {
+          "$ref": "common.schema.json#/$defs/scopeLevel"
+        },
+        "region": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nationId": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/nationId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "agencyId": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/kebabId"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "countyFips": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{5}$"
+        }
+      }
+    },
+    "org": {
+      "type": "string",
+      "minLength": 1
+    },
+    "office": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lineType": {
+      "$ref": "common.schema.json#/$defs/lineType"
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "e164",
+            "display",
+            "ext"
+          ],
+          "properties": {
+            "e164": {
+              "$ref": "common.schema.json#/$defs/phoneE164"
+            },
+            "display": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ext": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "email": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "email"
+    },
+    "url": {
+      "anyOf": [
+        {
+          "$ref": "common.schema.json#/$defs/httpsUrl"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "hours": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publishedByNation": {
+      "type": "boolean"
+    },
+    "person": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "publisher",
+        "kind",
+        "snippet"
+      ],
+      "properties": {
+        "url": {
+          "$ref": "common.schema.json#/$defs/httpsUrl"
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "nation-official",
+            "state-official",
+            "provincial-official",
+            "county-official",
+            "agency-official",
+            "federal-directory"
+          ]
+        },
+        "snippet": {
+          "type": "string"
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verifiedAt",
+        "method",
+        "reviewDue"
+      ],
+      "properties": {
+        "verifiedAt": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        },
+        "method": {
+          "enum": [
+            "page-text-match",
+            "official-pdf",
+            "phone-confirmed",
+            "nation-confirmed",
+            "federal-directory"
+          ]
+        },
+        "reviewDue": {
+          "$ref": "common.schema.json#/$defs/isoDate"
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "verified",
+        "needs-reverification",
+        "conflict",
+        "retired"
+      ]
+    },
+    "sortWeight": {
+      "type": "integer"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "person": {
+            "type": "string"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "publishedByNation": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}
