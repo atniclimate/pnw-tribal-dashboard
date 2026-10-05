@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-global-bc",
+  "label": "rss",
+  "file": "2026-10-05-rss.xml",
+  "url": "https://globalnews.ca/bc/feed/",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/rss+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T09:40:25.967Z",
+  "status": 200,
+  "contentType": "application/rss+xml; charset=UTF-8",
+  "lastModified": "Thu, 01 Oct 2026 17:33:12 GMT",
+  "bytes": 19964,
+  "sha256": "da018d9053a22e2cd5c0cd16a3c28048ab085464fdabf20654b5ec414b228e40",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

@@ -592,6 +592,8 @@ export interface GaugeStatus {
     category: FloodCategory | 'out_of_service' | null; validTime: string | null } | null;
   forecast: { stage: number | null; unit: string | null; category: FloodCategory | null; validTime: string | null;
     crestStage: number | null; crestTime: string | null } | null;
+  /** WSC stations only (blueprint 7.3 view=rivers: level and discharge with trend); absent or null when not computed. */
+  trend?: 'rising' | 'falling' | 'steady' | null;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -777,6 +779,13 @@ export interface CthdMap {
   setLayer(id: string, on: boolean): void;
   onModeChange(fn: (mode: MapMode, reason: string) => void): () => void;
   destroy(): void;
+  // Additive, optional members (Wave 2 finisher for L0, at the request of L8 and L11). Pages feature-detect them.
+  /** The "Load Interactive Map" offer from outline mode; resolves true when the interactive map is live. */
+  loadInteractive?(): Promise<boolean>;
+  /** British Columbia hazard polygons (EMCR evacuations, River Forecast Centre) as a FeatureCollection. */
+  setBcHazards?(collection: unknown): void;
+  /** Selects one alert and frames its area; null clears the selection. Not yet implemented by map/ (L8). */
+  focusAlert?(alertId: string | null): void;
 }
 
 // ---------------------------------------------------------------------------------------------

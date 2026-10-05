@@ -1,0 +1,28 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-opb",
+  "label": "rss-doctype-entity",
+  "file": "2026-10-05-rss-doctype-entity.xml",
+  "url": "https://www.opb.org/arc/outboundfeeds/rss/?outputType=xml",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/rss+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T06:25:56.283Z",
+  "status": 200,
+  "contentType": "application/xml; charset=utf-8",
+  "lastModified": "Mon, 05 Oct 2026 06:24:12 GMT",
+  "bytes": 139573,
+  "sha256": "36bb33bbbabe9d3da4c084620eda4b2aae8dd0450eb8620938dfd1eede3cbd2f",
+  "covers": [
+    "doctype",
+    "entity"
+  ],
+  "derivedFrom": "2026-10-05-rss.xml",
+  "edits": [
+    "A DOCTYPE declaration with one internal ENTITY (name x, value \"expanded\") was inserted on a new line after the XML declaration.",
+    "The first <title> of the first <item> now ends with &x; so a parser that expanded entities would change the title."
+  ],
+  "notes": "Derived: no live feed declares a DOCTYPE or ENTITY. The news task must reject the whole feed before parsing."
+}

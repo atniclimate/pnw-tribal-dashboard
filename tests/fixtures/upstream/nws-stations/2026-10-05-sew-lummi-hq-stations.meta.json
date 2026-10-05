@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nws-stations",
+  "label": "sew-lummi-hq-stations",
+  "file": "2026-10-05-sew-lummi-hq-stations.json",
+  "url": "https://api.weather.gov/gridpoints/SEW/127,126/stations?limit=5",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/geo+json"
+  },
+  "capturedAt": "2026-10-05T09:43:32.397Z",
+  "status": 200,
+  "contentType": "application/geo+json",
+  "lastModified": null,
+  "bytes": 9923,
+  "sha256": "89fc61be4404a7ead6a82a7a5f7377c88a2236436bf132727e6de3d0cd58d0a9",
+  "covers": [
+    "observation-stations"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

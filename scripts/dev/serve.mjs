@@ -15,6 +15,10 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { gzipSync } from 'node:zlib';
+
+/** Media types GitHub Pages serves compressed. */
+const COMPRESSIBLE = /^(?:text\/|application\/(?:json|manifest\+json|xml|javascript)|image\/svg\+xml)/;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SITE_DIR = path.join(ROOT, 'site');
@@ -88,10 +92,17 @@ export function startServer(opts = {}) {
       if (found && 'redirect' in found) { res.writeHead(301, { Location: found.redirect + url.search }); res.end(); return; }
       const file = found ? found.file : path.join(SITE_DIR, '404.html');
       const status = found ? 200 : 404;
-      const body = await readFile(file).catch(() => Buffer.from('Not found'));
+      const raw = await readFile(file).catch(() => Buffer.from('Not found'));
+      const type = MIME[path.extname(file).toLowerCase()] ?? 'application/octet-stream';
+      // GitHub Pages gzips text responses for clients that accept it; do the same, so transfer sizes measured
+      // against this server (budget.spec.mjs: no request over 300 KB before a tap) match production.
+      const gzip = COMPRESSIBLE.test(type) && /\bgzip\b/.test(String(req.headers['accept-encoding'] ?? ''));
+      const body = gzip ? gzipSync(raw) : raw;
       res.writeHead(status, {
-        'Content-Type': MIME[path.extname(file).toLowerCase()] ?? 'application/octet-stream',
+        'Content-Type': type,
         'Content-Length': body.length,
+        ...(gzip ? { 'Content-Encoding': 'gzip' } : {}),
+        Vary: 'Accept-Encoding',
         'Cache-Control': 'no-store',
         'X-Content-Type-Options': 'nosniff',
       });

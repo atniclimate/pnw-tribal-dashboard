@@ -165,6 +165,21 @@
             "type": "string",
             "pattern": "^(nwps|wsc):[A-Z0-9]+$"
           },
+          "trend": {
+            "description": "Optional, Water Survey of Canada stations only: direction of the level over the prior readings the wsc task keeps (blueprint 7.3 view=rivers). Absent or null means not computed.",
+            "anyOf": [
+              {
+                "enum": [
+                  "rising",
+                  "falling",
+                  "steady"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "observed": {
             "anyOf": [
               {

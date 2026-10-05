@@ -42,7 +42,8 @@
       "$ref": "common.schema.json#/$defs/httpsUrl"
     },
     "method": {
-      "const": "GET"
+      "enum": ["GET", "HEAD"],
+      "description": "HEAD for probe bundles that record Last-Modified and size without the body."
     },
     "requestHeaders": {
       "type": "object",

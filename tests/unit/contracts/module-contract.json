@@ -483,12 +483,50 @@
       ]
     },
     {
+      "path": "site/static/js/forecast/imagery.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "AUTO_LOAD_MAX_BYTES",
+        "imageDims",
+        "imageryStatus",
+        "loadCatalog",
+        "loadStamps",
+        "loadsWithoutTap",
+        "sizeLabel",
+        "stampMap"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/nation-context.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "loadNationContext",
+        "loadNationOptions",
+        "nationContextFrom",
+        "systemFor"
+      ]
+    },
+    {
       "path": "site/static/js/forecast/nws-forecast.js",
       "owner": "L12",
       "dom": false,
       "exports": [
         "loadPointForecast",
         "normalizeForecastPeriods"
+      ]
+    },
+    {
+      "path": "site/static/js/forecast/observation.js",
+      "owner": "L12",
+      "dom": false,
+      "exports": [
+        "MAX_OBSERVATION_AGE_MS",
+        "MAX_STATIONS_TRIED",
+        "loadCurrentObservation",
+        "normalizeObservation",
+        "stationIds"
       ]
     },
     {
@@ -852,6 +890,16 @@
       ]
     },
     {
+      "path": "site/static/js/ui/contacts-views.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "markOutwardLinks",
+        "mountDirectory",
+        "mountNearMe"
+      ]
+    },
+    {
       "path": "site/static/js/ui/copy-print.js",
       "owner": "L13",
       "dom": true,
@@ -877,6 +925,55 @@
       ]
     },
     {
+      "path": "site/static/js/ui/forecast-panels.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "NO_NATION",
+        "afdParagraphs",
+        "compass",
+        "renderAfd",
+        "renderLocalBc",
+        "renderLocalUs",
+        "renderObservation",
+        "renderPeriods",
+        "renderQpf",
+        "renderUnavailable",
+        "unavailableStatus"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/forecast-view-imagery.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "GOES_KEYS",
+        "panels"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/forecast-view-local.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "panels"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/forecast-view-rivers.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "panels"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/forecast-views.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": []
+    },
+    {
       "path": "site/static/js/ui/gauge-detail.js",
       "owner": "L7",
       "dom": true,
@@ -890,6 +987,22 @@
       "dom": true,
       "exports": [
         "renderGaugeList"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/imagery-panels.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "CW3E_FAMILIES",
+        "PENDING_TERMS_NOTE",
+        "RADAR_USEFUL_KM",
+        "mountMapFrame",
+        "renderCw3e",
+        "renderGoes",
+        "renderMtpw",
+        "renderRidge",
+        "renderWpc"
       ]
     },
     {
@@ -923,6 +1036,15 @@
       "dom": true,
       "exports": [
         "mountPanel"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/resources-hub.js",
+      "owner": "L13",
+      "dom": true,
+      "exports": [
+        "markOutwardLinks",
+        "mountResources"
       ]
     },
     {

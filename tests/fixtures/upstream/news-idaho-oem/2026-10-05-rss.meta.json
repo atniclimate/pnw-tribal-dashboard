@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-idaho-oem",
+  "label": "rss",
+  "file": "2026-10-05-rss.xml",
+  "url": "https://ioem.idaho.gov/feed/",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/rss+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T09:46:47.506Z",
+  "status": 200,
+  "contentType": "application/rss+xml; charset=UTF-8",
+  "lastModified": "Thu, 01 Oct 2026 18:19:56 GMT",
+  "bytes": 63411,
+  "sha256": "a9dade8733bc636f29fc62169dceaffd0bab887630f78954abad13d6f598a771",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

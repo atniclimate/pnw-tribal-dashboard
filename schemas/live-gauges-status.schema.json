@@ -165,6 +165,21 @@
             "type": "string",
             "pattern": "^(nwps|wsc):[A-Z0-9]+$"
           },
+          "trend": {
+            "description": "Optional, Water Survey of Canada stations only (see live-wsc-status.schema.json); NWPS items omit it.",
+            "anyOf": [
+              {
+                "enum": [
+                  "rising",
+                  "falling",
+                  "steady"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "observed": {
             "anyOf": [
               {

@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-youtube-pnwwx",
+  "label": "atom",
+  "file": "2026-10-05-atom.xml",
+  "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCSxR0IZEq1WhTJqAnQGyk4g",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/atom+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T09:41:27.093Z",
+  "status": 200,
+  "contentType": "text/xml; charset=UTF-8",
+  "lastModified": null,
+  "bytes": 18553,
+  "sha256": "15e59fb97917b3479b124509c3a5d31d1071dd1001e7b3dc39cb5057e590ab76",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

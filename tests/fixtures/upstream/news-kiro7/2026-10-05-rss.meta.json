@@ -1,0 +1,22 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-kiro7",
+  "label": "rss",
+  "file": "2026-10-05-rss.xml",
+  "url": "https://www.kiro7.com/arc/outboundfeeds/rss/?outputType=xml",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/rss+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T09:40:23.476Z",
+  "status": 200,
+  "contentType": "application/xml; charset=utf-8",
+  "lastModified": "Mon, 05 Oct 2026 09:32:21 GMT",
+  "bytes": 51402,
+  "sha256": "9270fa6ce324d98a4cbd333281ddd93cc68bb041f956eb69249015b5368fabad",
+  "covers": [],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

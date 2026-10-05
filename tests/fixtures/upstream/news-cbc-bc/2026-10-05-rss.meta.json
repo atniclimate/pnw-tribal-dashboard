@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-cbc-bc",
+  "label": "rss",
+  "file": "2026-10-05-rss.xml",
+  "url": "https://www.cbc.ca/webfeed/rss/rss-canada-britishcolumbia",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "pnw-tribal-dashboard/1.0",
+    "Accept": "application/rss+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T09:45:16.149Z",
+  "status": 200,
+  "contentType": "application/xml;charset=UTF-8",
+  "lastModified": null,
+  "bytes": 24677,
+  "sha256": "0be0553a1179cc2f3f36fb3d57007089c6bdcdc3e218f05964448d48c4c92793",
+  "covers": [
+    "rss"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "CBC British Columbia RSS feed. The shared project User-Agent (with parentheses and an email address) received no response from www.cbc.ca on 10/05/2026, so this capture and the news task send the shorter pnw-tribal-dashboard/1.0 identifier."
+}

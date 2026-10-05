@@ -1,0 +1,26 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "news-opb",
+  "label": "rss-http-link",
+  "file": "2026-10-05-rss-http-link.xml",
+  "url": "https://www.opb.org/arc/outboundfeeds/rss/?outputType=xml",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/rss+xml, application/xml"
+  },
+  "capturedAt": "2026-10-05T06:25:56.283Z",
+  "status": 200,
+  "contentType": "application/xml; charset=utf-8",
+  "lastModified": "Mon, 05 Oct 2026 06:24:12 GMT",
+  "bytes": 139529,
+  "sha256": "44e635e9aec05571764615439e2dfa9aff0e76fda6bac3961fa87d461ef0e87a",
+  "covers": [
+    "http-link"
+  ],
+  "derivedFrom": "2026-10-05-rss.xml",
+  "edits": [
+    "The <link> element of the first <item> was changed from its https address to the same address beginning with http://."
+  ],
+  "notes": "Derived: the live OPB feed uses https links. The news task upgrades an http link only when its https address answers."
+}
