@@ -29,5 +29,5 @@ A real, minimal registry for tests and local development until lane L5 commits t
 ## Rebuilding
 
 ```powershell
-node scripts/dev/registry-fixture.mjs --raw I:\extreme-weather-monitor\old-site\data-raw\2026-10-04
+node scripts/dev/registry-fixture.mjs --raw <folder of the pinned 10/04/2026 downloads>
 ```
