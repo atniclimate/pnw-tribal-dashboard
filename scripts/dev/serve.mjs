@@ -4,6 +4,8 @@
  * the same subpath GitHub Pages uses, with the MIME types Pages sends (.mjs as text/javascript, which
  * module scripts and the MapLibre module worker require). Directory URLs serve index.html; a directory
  * URL without its trailing slash redirects; unknown paths get site/404.html with status 404, as on Pages.
+ * The repository's dev/ pages (component gallery, module harness) are served at <BASE>dev/ by this server
+ * only; dev/ sits outside site/, so assemble-site.mjs never deploys it.
  *
  *   node scripts/dev/serve.mjs [--port 8080] [--host 127.0.0.1]
  *
@@ -16,6 +18,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SITE_DIR = path.join(ROOT, 'site');
+/** Development pages (repository dev/), served at `${BASE}dev/` locally and never deployed. */
+export const DEV_DIR = path.join(ROOT, 'dev');
 export const BASE = '/pnw-tribal-dashboard/';
 
 /** @type {Readonly<Record<string, string>>} */
@@ -50,14 +54,16 @@ async function isDir(p) {
 }
 
 /**
- * Resolve a request path to a file under site/, or a redirect, or null.
+ * Resolve a request path to a file under site/ (or under dev/ for `${BASE}dev/...`), or a redirect, or null.
  * @param {string} urlPath decoded path beginning with BASE
  * @returns {Promise<{ file: string } | { redirect: string } | null>}
  */
 export async function resolvePath(urlPath) {
-  const rel = urlPath.slice(BASE.length);
-  const target = path.resolve(SITE_DIR, rel);
-  if (target !== SITE_DIR && !target.startsWith(SITE_DIR + path.sep)) return null;
+  let rel = urlPath.slice(BASE.length);
+  let dir = SITE_DIR;
+  if (rel === 'dev' || rel.startsWith('dev/')) { dir = DEV_DIR; rel = rel.slice('dev'.length).replace(/^\//, ''); }
+  const target = path.resolve(dir, rel);
+  if (target !== dir && !target.startsWith(dir + path.sep)) return null;
   if (await isFile(target)) return { file: target };
   if (await isDir(target)) {
     if (!urlPath.endsWith('/')) return { redirect: `${urlPath}/` };
@@ -104,5 +110,5 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const port = Number(val('--port') ?? process.env.PORT ?? 8080);
   const host = val('--host') ?? '127.0.0.1';
   await startServer({ port, host });
-  console.log(`Serving site/ at http://localhost:${port}${BASE}`);
+  console.log(`Serving site/ at http://localhost:${port}${BASE} (dev/ pages at ${BASE}dev/)`);
 }

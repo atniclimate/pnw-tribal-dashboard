@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/gauges.schema.json",
   "title": "Gauge Reference",
-  "description": "site/data/ref/gauges.json (blueprint 5.5). Thresholds copied verbatim; nulls stay null.",
+  "description": "site/data/ref/gauges.json (blueprint 5.5). Thresholds copied verbatim in the published unit (stage in ft or m, flow in cfs or kcfs); nulls stay null.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -132,11 +132,41 @@
                   "sourceId",
                   "retrievedAt"
                 ],
+                "if": {
+                  "properties": {
+                    "basis": {
+                      "const": "flow"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "unit": {
+                      "enum": [
+                        "cfs",
+                        "kcfs"
+                      ]
+                    }
+                  }
+                },
+                "else": {
+                  "properties": {
+                    "unit": {
+                      "enum": [
+                        "ft",
+                        "m"
+                      ]
+                    }
+                  }
+                },
                 "properties": {
                   "unit": {
+                    "description": "Threshold unit as published by NWPS: ft or m for basis stage, cfs or kcfs for basis flow.",
                     "enum": [
                       "ft",
-                      "m"
+                      "m",
+                      "cfs",
+                      "kcfs"
                     ]
                   },
                   "basis": {

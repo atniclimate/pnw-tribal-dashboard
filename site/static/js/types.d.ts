@@ -556,6 +556,13 @@ export type QpfState =
 
 export type FloodCategory = 'no_flooding' | 'action' | 'minor' | 'moderate' | 'major' | 'not_defined';
 
+/** Flood thresholds copied verbatim in the published unit: stage basis in ft or m, flow basis in cfs or kcfs. */
+export type GaugeThresholds =
+  | { unit: 'ft' | 'm'; basis: 'stage'; action: number | null; minor: number | null; moderate: number | null;
+      major: number | null; sourceId: string; retrievedAt: string }
+  | { unit: 'cfs' | 'kcfs'; basis: 'flow'; action: number | null; minor: number | null; moderate: number | null;
+      major: number | null; sourceId: string; retrievedAt: string };
+
 export interface Gauge {
   id: string;
   country: 'US' | 'CA';
@@ -571,8 +578,7 @@ export interface Gauge {
   lat: number;
   lon: number;
   timeZone: string;
-  stages: { unit: 'ft' | 'm'; basis: 'stage' | 'flow'; action: number | null; minor: number | null; moderate: number | null;
-    major: number | null; sourceId: string; retrievedAt: string } | null;
+  stages: GaugeThresholds | null;
   isForecastPoint: boolean;
   hydrographImage: string | null;
   links: Record<string, string>;
@@ -603,9 +609,22 @@ export interface LiveEnvelope<T> {
   completeness: 'complete' | 'partial' | 'rejected';
   carriedForward: boolean;
   failure: { code: string; message: string; at: string } | null;
-  perSource: Record<string, { ok: boolean; count: number; asOf: string | null }>;
+  perSource: Record<string, LivePerSource>;
   diagnostics: Record<string, number>;
   items: T[];
+}
+
+/**
+ * One source's facts inside an envelope. `completeness` and `carriedForward` are optional per-source
+ * refinements of the envelope fields (integration ruling, Wave 1); a writer that omits them leaves the
+ * envelope-level values in force.
+ */
+export interface LivePerSource {
+  ok: boolean;
+  count: number;
+  asOf: string | null;
+  completeness?: 'complete' | 'partial' | 'rejected';
+  carriedForward?: boolean;
 }
 
 export interface LiveManifest {

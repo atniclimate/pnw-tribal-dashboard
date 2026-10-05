@@ -40,8 +40,9 @@ test.describe('with JavaScript on', () => {
     expect(badModules).toEqual([]);
   });
 
+  // panel= is honored on the Dashboard only (blueprint 1.4); core/embed.js clears it on every other page.
   test('boot flags apply before paint: embed=1 marks the document', async ({ page }) => {
-    await page.goto('alerts/?embed=1&lowdata=1&panel=banner');
+    await page.goto('./?embed=1&lowdata=1&panel=banner');
     await expect(page.locator('html')).toHaveAttribute('data-embed', '1');
     await expect(page.locator('html')).toHaveAttribute('data-lowdata', '1');
     await expect(page.locator('html')).toHaveAttribute('data-panel-only', 'banner');
@@ -66,7 +67,10 @@ test.describe('static chrome with JavaScript off', () => {
       await expect(page.locator('footer.site-footer')).toBeVisible();
       await expect(page.locator('footer.site-footer')).toContainText('Representation, not jurisdiction.');
       await expect(page.locator('footer.site-footer')).toContainText('In an emergency, call 911.');
-      await expect(page.getByRole('navigation', { name: 'Quick Actions' }).getByRole('link')).toHaveText(['Alerts', 'Rivers', 'Call', 'Near Me']);
+      // The Quick Actions bar is phone-only (hidden at 720 px and wider), so it is read with hidden elements included.
+      const quick = page.getByRole('navigation', { name: 'Quick Actions', includeHidden: true });
+      await expect(quick.getByRole('link', { includeHidden: true })).toHaveText(['Alerts', 'Rivers', 'Call', 'Near Me']);
+      if ((page.viewportSize()?.width ?? 0) < 720) await expect(quick).toBeVisible();
       await expect(page.locator('main#main h1')).toHaveCount(1);
       // Every navigation link resolves to a page the server has.
       for (const href of await nav.getByRole('link').evaluateAll((els) => els.map((a) => String(a.getAttribute('href') ? new URL(a.getAttribute('href') ?? '', a.baseURI).href : '')))) {
