@@ -72,7 +72,9 @@ function sourceList(status, sources) {
   for (const id of status.sourceIds) {
     const rec = known.get(id);
     if (items.length) items.push(', ');
-    items.push(rec ? h('a', { href: rec.humanUrl }, rec.attribution || rec.owner) : id);
+    // Source pages are always other sites: open them in a new tab (blueprint 7.12, as core/embed.js does for
+    // links present at load), so a footer added after load needs no page-side observer.
+    items.push(rec ? h('a', { href: rec.humanUrl, target: '_blank', rel: 'noopener noreferrer' }, rec.attribution || rec.owner) : id);
   }
   return h('span', { class: 'provenance__src' }, status.sourceIds.length === 1 ? 'Source: ' : 'Sources: ', ...items);
 }

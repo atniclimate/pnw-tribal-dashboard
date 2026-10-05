@@ -111,6 +111,9 @@ async function attempt(job) {
     if (job.cache) init.cache = job.cache;
     const res = await fetch(job.url, init);
     if (!res.ok) {
+      // An error body is never read, so release it: an unconsumed body keeps the request open, which holds
+      // a connection slot on a poor network and keeps the page from reaching network idle.
+      try { await res.body?.cancel(); } catch { /* already closed */ }
       const retryAfterMs = parseRetryAfter(res.headers.get('retry-after'));
       return {
         ok: false, retryable: res.status === 502 || res.status === 503 || res.status === 504,

@@ -87,7 +87,7 @@ export function mountPanel(slot, spec) {
     footer.append(
       h('span', { class: 'provenance__src' }, 'Source: ', ...spec.sourceIds.flatMap((id, i) => {
         const r = findSource(id);
-        return [i ? ', ' : '', r ? h('a', { href: r.humanUrl }, r.attribution || r.owner) : id];
+        return [i ? ', ' : '', r ? h('a', { href: r.humanUrl, target: '_blank', rel: 'noopener noreferrer' }, r.attribution || r.owner) : id];
       })),
       h('span', { class: 'provenance__asof' }, 'Loading'),
     );
