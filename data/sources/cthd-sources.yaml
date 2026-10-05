@@ -1,0 +1,27 @@
+id: cthd-sources
+title: Cascadia Tribal Hazard Dashboard Source Registry
+owner: ATNI Climate, Affiliated Tribes of Northwest Indians
+url: https://atniclimate.github.io/pnw-tribal-dashboard/data/curated/sources.json
+humanUrl: https://atniclimate.github.io/pnw-tribal-dashboard/usage/
+license: Copyright ATNI Climate. Published for transparency; each listed source keeps its own terms.
+attribution: ATNI Climate
+cadence: Rebuilt at every deploy from the source records in the repository.
+region: both
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, BC]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Same-origin file compiled from data/sources by scripts/compile/sources.mjs; cross-origin access does not apply.
+  timeoutMs: 12000
+  retries: 2
+  priority: 3
+usedBy: [usage]
+verifiedAt: 2026-10-05
+notes: Dataset record for the dashboard's own compiled source list, so the Usage page can name a registered source in its provenance footer.

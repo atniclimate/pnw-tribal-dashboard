@@ -1,0 +1,40 @@
+{
+  "schema": "cthd.routes/1",
+  "description": "Routes, views, viewports, and the hosts the mocked Playwright suite may reach (blueprint 10.1, 10.2). Any request to a host that is neither listed here nor derived from the source registry for that page fails the test. Read by tests/e2e/support/harness.mjs. Owner: lane L15.",
+  "alwaysAllowedHosts": ["localhost", "127.0.0.1"],
+  "registryHosts": "Per page, the hosts of site/data/curated/sources.json records whose access.mode is direct, direct+snapshot, image, tiles, or video and whose usedBy lists the page id; a tile template's {s} becomes a wildcard label. The mocked suite fulfills or aborts these requests; it never lets one reach the network.",
+  "extraHosts": {},
+  "viewports": {
+    "phone": { "width": 360, "height": 740 },
+    "narrow": { "width": 320, "height": 740 },
+    "desktop": { "width": 1280, "height": 800 }
+  },
+  "routes": [
+    { "id": "dashboard", "path": "./", "page": "dashboard", "nav": "Dashboard", "views": [] },
+    { "id": "alerts", "path": "alerts/", "page": "alerts", "nav": "Alerts", "views": ["list", "map", "declarations"] },
+    { "id": "forecasts", "path": "forecasts/", "page": "forecasts", "nav": "Forecasts", "views": ["local", "precip", "radar", "ar", "satellite", "rivers"] },
+    { "id": "contacts", "path": "contacts/", "page": "contacts", "nav": "Contacts", "views": ["directory", "near-me"] },
+    { "id": "resources", "path": "resources/", "page": "resources", "nav": "Resources", "views": [] },
+    { "id": "safety", "path": "safety/", "page": "safety", "nav": "Safety", "views": [] },
+    { "id": "news", "path": "news/", "page": "news", "nav": "News", "views": [] },
+    { "id": "usage", "path": "usage/", "page": "usage", "nav": "Usage", "views": ["usage", "sources", "status", "accessibility", "privacy"] },
+    { "id": "archive", "path": "archive/", "page": "archive", "nav": null, "views": [] },
+    { "id": "archive-event", "path": "archive/2025-12-atmospheric-river/", "page": "archive-event", "nav": null, "views": [] },
+    { "id": "embed", "path": "embed/", "page": "embed", "nav": null, "views": [] },
+    { "id": "offline", "path": "offline.html", "page": "offline", "nav": null, "views": [] },
+    { "id": "not-found", "path": "no-such-page/deeper/", "page": "not-found", "nav": null, "views": [], "status": 404 }
+  ],
+  "deepLinks": [
+    { "scenario": 6, "region": "Washington", "query": "?n=us-wa-lummi-tribe-of-the-lummi-reservation", "zone": "America/Los_Angeles" },
+    { "scenario": 6, "region": "Idaho", "query": "?n=us-id-shoshone-bannock-tribes-of-the-fort-hall-reservation", "zone": "America/Boise" },
+    { "scenario": 6, "region": "British Columbia", "query": "?n=ca-fn-602", "zone": "America/Edmonton" },
+    { "scenario": 6, "region": "Southeast Alaska", "query": "?n=us-ak-organized-village-of-kasaan", "zone": "America/Sitka" }
+  ],
+  "nearMePositions": [
+    { "scenario": 8, "region": "Washington", "latitude": 48.79202, "longitude": -122.6262 },
+    { "scenario": 8, "region": "Idaho", "latitude": 43.0338, "longitude": -112.4355 },
+    { "scenario": 8, "region": "British Columbia", "latitude": 49.5, "longitude": -115.77 },
+    { "scenario": 8, "region": "Southeast Alaska", "latitude": 55.5399, "longitude": -132.4017 },
+    { "scenario": 8, "region": "Outside the footprint", "latitude": 40.7128, "longitude": -74.006 }
+  ]
+}

@@ -1,0 +1,34 @@
+id: cthd-health
+title: Cascadia Tribal Hazard Dashboard Source Health
+owner: ATNI Climate, Affiliated Tribes of Northwest Indians
+url: https://atniclimate.github.io/pnw-tribal-dashboard/data/live/health.json
+humanUrl: https://atniclimate.github.io/pnw-tribal-dashboard/usage/
+license: Copyright ATNI Climate. Operational status of the dashboard's own scheduled copies.
+attribution: ATNI Climate
+cadence: Rewritten by each scheduled snapshot run, about every ten minutes.
+region: both
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, BC]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Same-origin file written by the snapshot runner; cross-origin access does not apply.
+  timeoutMs: 12000
+  retries: 2
+  priority: 3
+  snapshot:
+    task: health
+    files: [health.json]
+    cadenceMin: 10
+freshness:
+  freshForMs: 900000
+  usableForMs: 7200000
+usedBy: [usage, dashboard]
+verifiedAt: 2026-10-05
+notes: Dataset record for the public status table. Carries per-source last-success times and the carried-forward flags; absence is shown as an unavailable status, never as a healthy one.

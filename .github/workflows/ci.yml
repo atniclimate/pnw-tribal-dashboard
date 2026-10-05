@@ -1,7 +1,9 @@
 # CI for pull requests and pushes (blueprint 6.5, 10.1).
-# L0 skeleton: lint, typecheck, unit tests, CAST parity, data validation, the static checks that exist,
-# actionlint, and the mocked Playwright suite on Chromium. Lane L15 owns this file after Wave 0 and wires
-# every remaining 10.1 check, the Android and WebKit iPhone emulation projects, and axe.
+# Lint, typecheck, unit and static tests (tests/unit, tests/static), CAST parity, data validation, every static
+# check of blueprint 10.1 through `npm run check` (chrome, preload, csp, vendor, tokens, contrast, fonts, copy,
+# panels, no-fabrication, budgets), actionlint, and the mocked Playwright suite on the desktop, Android phone,
+# WebKit iPhone, and no-WebGL projects, with axe inside the specs. Owner: lane L15 (after L0's skeleton).
+# Wave 3 adds source-health.yml and e2e-live.yml.
 # Every action is pinned by full commit SHA; only first-party actions/* are used.
 name: CI
 
@@ -62,7 +64,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium webkit
       - run: npx playwright test
       - if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
