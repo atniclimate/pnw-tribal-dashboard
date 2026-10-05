@@ -1,0 +1,275 @@
+# Evergreen and seasonal resources (blueprint 5.6). Every URL returned HTTP 200 on 10/05/2026 (see the L6 lane report).
+# Event-specific items (Tribal emergency proclamations, shelter notices) live in data/events/, never here.
+- id: res-211info
+  title: "211info"
+  url: "https://www.211info.org/"
+  publisher: "211info"
+  description: "Referral service for shelter, food, and other help in Oregon and southwest Washington."
+  category: shelter
+  hazards: [other]
+  scope: { level: regional, region: "OR" }
+  nationId: null
+  phone: "211"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.211info.org/"
+- id: res-washington-211
+  title: "Washington 211"
+  url: "https://wa211.org/"
+  publisher: "Washington 211"
+  description: "Statewide referral line for shelter, food, and disaster help in Washington."
+  category: shelter
+  hazards: [other]
+  scope: { level: state, region: "WA" }
+  nationId: null
+  phone: "211"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://wa211.org/"
+- id: res-red-cross-washington
+  title: "American Red Cross in Washington"
+  url: "https://www.redcross.org/local/washington.html"
+  publisher: "American Red Cross"
+  description: "Local chapters, shelters, and disaster relief information for Washington."
+  category: shelter
+  hazards: [flood, winter, fire]
+  scope: { level: state, region: "WA" }
+  nationId: null
+  phone: "+18007332767"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.redcross.org/local/washington.html"
+- id: res-red-cross-oregon
+  title: "American Red Cross in Oregon"
+  url: "https://www.redcross.org/local/oregon.html"
+  publisher: "American Red Cross"
+  description: "Local chapters, shelters, and disaster relief information for Oregon."
+  category: shelter
+  hazards: [flood, winter, fire]
+  scope: { level: state, region: "OR" }
+  nationId: null
+  phone: "+18007332767"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.redcross.org/local/oregon.html"
+- id: res-oralert
+  title: "ORAlert Emergency Notifications"
+  url: "https://oralert.gov/"
+  publisher: "Oregon Department of Emergency Management"
+  description: "Sign-up page for local emergency alerts in Oregon."
+  category: alerts-signup
+  hazards: [evacuation, flood, fire]
+  scope: { level: state, region: "OR" }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://oralert.gov/"
+- id: res-wsdot-travel-center-map
+  title: "WSDOT Travel Center Map"
+  url: "https://wsdot.com/travel/real-time/map/"
+  publisher: "Washington State Department of Transportation"
+  description: "Road closures, pass conditions, and traffic cameras for Washington. Dial 511 for recorded conditions."
+  category: roads
+  hazards: [winter, flood, rain-landslide]
+  scope: { level: state, region: "WA" }
+  nationId: null
+  phone: "511"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://wsdot.com/travel/real-time/map/"
+- id: res-tripcheck
+  title: "TripCheck Oregon Traveler Information"
+  url: "https://tripcheck.com/"
+  publisher: "Oregon Department of Transportation"
+  description: "Road conditions, closures, and cameras for Oregon. Dial 511 for recorded conditions."
+  category: roads
+  hazards: [winter, flood, rain-landslide]
+  scope: { level: state, region: "OR" }
+  nationId: null
+  phone: "511"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://tripcheck.com/"
+- id: res-noaa-national-water-prediction-service
+  title: "NOAA National Water Prediction Service"
+  url: "https://water.noaa.gov/"
+  publisher: "National Oceanic and Atmospheric Administration"
+  description: "River gauge observations and flood forecasts across the United States."
+  category: rivers
+  hazards: [flood]
+  scope: { level: federal, region: null }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://water.noaa.gov/"
+- id: res-usgs-water-data
+  title: "USGS Water Data for the Nation"
+  url: "https://waterdata.usgs.gov/"
+  publisher: "United States Geological Survey"
+  description: "Current streamflow and water level data from monitoring stations."
+  category: rivers
+  hazards: [flood]
+  scope: { level: federal, region: null }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://waterdata.usgs.gov/"
+- id: res-whatcom-county-river-conditions
+  title: "Whatcom County River Conditions and Forecasts"
+  url: "https://www.whatcomcounty.us/666/Forecasts-Current-River-Conditions"
+  publisher: "Whatcom County"
+  description: "Local river monitoring, forecasts, and flood phase information for the Nooksack River basin."
+  category: rivers
+  hazards: [flood]
+  scope: { level: county, region: "WA" }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.whatcomcounty.us/666/Forecasts-Current-River-Conditions"
+- id: res-skagit-county-emergency-management
+  title: "Skagit County Emergency Management"
+  url: "https://www.skagitcountywa.gov/public-safety/emergency-management/"
+  publisher: "Skagit County"
+  description: "Alert sign-up, evacuation information, and preparedness for Skagit County."
+  category: evacuation
+  hazards: [flood, evacuation]
+  scope: { level: county, region: "WA" }
+  nationId: null
+  phone: "+13604161850"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.skagitcountywa.gov/public-safety/emergency-management/"
+- id: res-washington-voad
+  title: "Washington Voluntary Organizations Active in Disaster"
+  url: "https://www.wavoad.org/"
+  publisher: "Washington VOAD"
+  description: "Coordination network for volunteer and nonprofit disaster response in Washington."
+  category: volunteer
+  hazards: [other]
+  scope: { level: state, region: "WA" }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.wavoad.org/"
+- id: res-red-cross-volunteer
+  title: "Become a Red Cross Volunteer"
+  url: "https://www.redcross.org/volunteer/become-a-volunteer.html"
+  publisher: "American Red Cross"
+  description: "Volunteer opportunities with the American Red Cross."
+  category: volunteer
+  hazards: [other]
+  scope: { level: federal, region: null }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.redcross.org/volunteer/become-a-volunteer.html"
+- id: res-nws-weather-safety
+  title: "National Weather Service Weather Safety"
+  url: "https://www.weather.gov/safety/"
+  publisher: "National Weather Service"
+  description: "Preparedness guidance for flood, wind, winter, heat, and other hazards."
+  category: preparedness
+  hazards: [flood, wind, winter, heat, cold, tsunami]
+  scope: { level: federal, region: null }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.weather.gov/safety/"
+- id: res-ready-gov
+  title: "Ready.gov Emergency Preparedness"
+  url: "https://www.ready.gov/"
+  publisher: "Federal Emergency Management Agency"
+  description: "Preparedness checklists, plans, and kits for individuals and communities."
+  category: preparedness
+  hazards: [other]
+  scope: { level: federal, region: null }
+  nationId: null
+  phone: null
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.ready.gov/"
+- id: res-lummi-nation-government
+  title: "Lummi Nation Government"
+  url: "https://www.lummi-nsn.gov/"
+  publisher: "Lummi Nation"
+  description: "Tribal government website, including the Lummi Indian Business Council emergency hotline."
+  category: tribal-government
+  hazards: [other]
+  scope: { level: nation, region: "WA" }
+  nationId: "us-wa-lummi-tribe-of-the-lummi-reservation"
+  phone: "+13603122000"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.lummi-nsn.gov/"
+- id: res-tulalip-tribes-government
+  title: "Tulalip Tribes Government"
+  url: "https://www.tulaliptribes-nsn.gov/"
+  publisher: "Tulalip Tribes of Washington"
+  description: "Tribal government website."
+  category: tribal-government
+  hazards: [other]
+  scope: { level: nation, region: "WA" }
+  nationId: "us-wa-tulalip-tribes-of-washington"
+  phone: "+13607164000"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.tulaliptribes-nsn.gov/"
+- id: res-nooksack-indian-tribe-government
+  title: "Nooksack Indian Tribe Government"
+  url: "https://nooksacktribe.org/"
+  publisher: "Nooksack Indian Tribe"
+  description: "Tribal government website."
+  category: tribal-government
+  hazards: [other]
+  scope: { level: nation, region: "WA" }
+  nationId: "us-wa-nooksack-indian-tribe"
+  phone: "+13605925176"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://nooksacktribe.org/"
+- id: res-puyallup-tribe-government
+  title: "Puyallup Tribe of Indians Government"
+  url: "https://www.puyalluptribe-nsn.gov/"
+  publisher: "Puyallup Tribe of Indians"
+  description: "Tribal government website."
+  category: tribal-government
+  hazards: [other]
+  scope: { level: nation, region: "WA" }
+  nationId: "us-wa-puyallup-tribe-of-the-puyallup-reservation"
+  phone: "+12535737800"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.puyalluptribe-nsn.gov/"
+- id: res-siletz-tribe-government
+  title: "Confederated Tribes of Siletz Indians Government"
+  url: "https://ctsi.nsn.us/"
+  publisher: "Confederated Tribes of Siletz Indians"
+  description: "Tribal government website."
+  category: tribal-government
+  hazards: [other]
+  scope: { level: nation, region: "OR" }
+  nationId: "us-or-confederated-tribes-of-siletz-indians-of-oregon"
+  phone: "+15414442532"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://ctsi.nsn.us/"
+- id: res-sauk-suiattle-tribe-government
+  title: "Sauk-Suiattle Indian Tribe Government"
+  url: "https://www.sauk-suiattle.com/contact/"
+  publisher: "Sauk-Suiattle Indian Tribe"
+  description: "Tribal government contact page."
+  category: tribal-government
+  hazards: [other]
+  scope: { level: nation, region: "WA" }
+  nationId: "us-wa-sauk-suiattle-indian-tribe"
+  phone: "+13604360131"
+  status: evergreen
+  verifiedAt: "2026-10-05"
+  sourceUrl: "https://www.sauk-suiattle.com/contact/"

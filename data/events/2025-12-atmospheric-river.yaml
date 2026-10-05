@@ -1,0 +1,60 @@
+id: "2025-12-atmospheric-river"
+title: "December 2025 Atmospheric River and Flooding"
+period: { start: "2025-12-05", end: "2025-12-19" }
+summary: "A long-lasting atmospheric river brought record flooding, landslides, and evacuations to western Washington and neighboring areas in December 2025. The State of Washington, Tribal governments, and counties issued emergency proclamations, and the federal government later declared an emergency and a major disaster."
+archivedAt: "2026-10-05"
+compiledFrom: "Items moved out of the legacy Resources page and re-sourced from the issuing governments or news reports; each entry keeps its original date and was link checked on 10/05/2026. Legacy hardcoded monitor rows without a verifiable source were not migrated."
+entries:
+  - date: "2025-12-10"
+    kind: state-declaration
+    title: "Governor Declares Statewide Emergency for Flooding (Proclamation 25-07)"
+    issuedBy: "Office of the Governor of Washington"
+    url: "https://governor.wa.gov/news/2025/governor-ferguson-declares-statewide-emergency-responding-major-flooding"
+    verifiedAt: "2026-10-05"
+    linkStatus: ok
+    archiveUrl: null
+  - date: "2025-12-10"
+    kind: tribal-declaration
+    title: "Snoqualmie Tribal Council Approves Resolution 345-2025, Tribal State of Emergency"
+    issuedBy: "Snoqualmie Indian Tribe"
+    url: "https://snoqualmietribe.us/snoqualmie-tribal-council-passes-motion-to-approve-resolution-345-2025-declaring-a-tribal-state-of-emergency-related-to-flooding/"
+    verifiedAt: "2026-10-05"
+    linkStatus: ok
+    archiveUrl: null
+  - date: "2025-12-10"
+    kind: county-notice
+    title: "Whatcom County Flood Update: Shelters and Other Resources for Flood-Impacted Residents"
+    issuedBy: "Whatcom County"
+    url: "https://www.whatcomcounty.us/CivicAlerts.aspx?AID=5264"
+    verifiedAt: "2026-10-05"
+    linkStatus: ok
+    archiveUrl: null
+  - date: "2025-12-11"
+    kind: tribal-declaration
+    title: "Lummi Nation Declares State of Emergency as Floodwaters Crest"
+    issuedBy: "Lummi Nation (reported by The Bellingham Herald)"
+    url: "https://www.bellinghamherald.com/news/local/article313634296.html"
+    verifiedAt: "2026-10-05"
+    linkStatus: ok
+    archiveUrl: null
+  - date: "2025-12-16"
+    kind: state-declaration
+    title: "Governor Amends Proclamation 25-07 (Proclamation 25-07.1)"
+    issuedBy: "Office of the Governor of Washington"
+    url: "https://governor.wa.gov/sites/default/files/proclamations/25-07.1%20-%20Atmospheric%20River%20(tmp).pdf"
+    verifiedAt: "2026-10-05"
+    linkStatus: ok
+    archiveUrl: null
+  - date: "2026-04-11"
+    kind: news
+    title: "FEMA Announces Major Disaster Declaration for Washington Flooding and Storms"
+    issuedBy: "Federal Emergency Management Agency"
+    url: "https://www.fema.gov/press-release/20260411/president-donald-j-trump-approves-major-disaster-declaration-washington"
+    verifiedAt: "2026-10-05"
+    linkStatus: ok
+    archiveUrl: null
+femaDisasterNumbers: [3629, 4906]
+notes:
+  - "Federal numbers come from OpenFEMA: emergency declaration 3629 was declared 12/12/2025 for Washington, and major disaster declaration 4906 was declared 04/07/2026 for the incident period 12/05/2025 through 12/19/2025. The FEMA press release is dated 04/11/2026."
+  - "The Nooksack Indian Tribe proclamation of 12/11/2025 is not listed because its only known source, a social media post, could not be link checked. It is held for the maintainer."
+  - "Legacy Resources items for the Samish Indian Nation flooding page and the Quinault Indian Nation were not migrated as dated events; their pages carry no issuance date."

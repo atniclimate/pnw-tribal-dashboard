@@ -1,0 +1,193 @@
+# Organizations referenced by contacts and resources (blueprint 5.3). Verified 10/05/2026 against each organization's own site.
+- id: wa-emd
+  name: "Washington Military Department, Emergency Management Division"
+  kind: state
+  jurisdiction: "WA"
+  url: "https://mil.wa.gov/emd-contact-us"
+  parentId: null
+- id: or-oem
+  name: "Oregon Department of Emergency Management"
+  kind: state
+  jurisdiction: "OR"
+  url: "https://www.oregon.gov/oem/Pages/Contact-Us.aspx"
+  parentId: null
+- id: id-ioem
+  name: "Idaho Office of Emergency Management"
+  kind: state
+  jurisdiction: "ID"
+  url: "https://ioem.idaho.gov/about/"
+  parentId: null
+- id: id-ems
+  name: "Idaho Emergency Medical Services"
+  kind: state
+  jurisdiction: "ID"
+  url: "https://ems.idaho.gov/statecomm/"
+  parentId: null
+- id: ca-caloes
+  name: "California Governor's Office of Emergency Services"
+  kind: state
+  jurisdiction: "CA"
+  url: "https://www.caloes.ca.gov/"
+  parentId: null
+- id: ak-dhsem
+  name: "Alaska Division of Homeland Security and Emergency Management"
+  kind: state
+  jurisdiction: "AK"
+  url: "https://ready.alaska.gov/Contact"
+  parentId: null
+- id: mt-des
+  name: "Montana Disaster and Emergency Services"
+  kind: state
+  jurisdiction: "MT"
+  url: "https://des.mt.gov/"
+  parentId: null
+- id: nv-oem
+  name: "Nevada Office of Emergency Management, Homeland Security"
+  kind: state
+  jurisdiction: "NV"
+  url: "https://www.dem.nv.gov/agency-overview/"
+  parentId: null
+- id: bc-emcr
+  name: "British Columbia Ministry of Emergency Management and Climate Readiness"
+  kind: province
+  jurisdiction: "BC"
+  url: "https://www2.gov.bc.ca/gov/content/safety/emergency-management/contact-us"
+  parentId: null
+- id: fness
+  name: "First Nations' Emergency Services Society of British Columbia"
+  kind: ngo
+  jurisdiction: "BC"
+  url: "https://www.fness.bc.ca/"
+  parentId: null
+- id: isc
+  name: "Indigenous Services Canada"
+  kind: federal
+  jurisdiction: "CA"
+  url: "https://www.sac-isc.gc.ca/"
+  parentId: null
+- id: psc
+  name: "Public Safety Canada"
+  kind: federal
+  jurisdiction: "CA"
+  url: "https://www.publicsafety.gc.ca/"
+  parentId: null
+- id: fema
+  name: "Federal Emergency Management Agency"
+  kind: federal
+  jurisdiction: "US"
+  url: "https://www.fema.gov/"
+  parentId: null
+- id: bia
+  name: "Bureau of Indian Affairs"
+  kind: federal
+  jurisdiction: "US"
+  url: "https://www.bia.gov/"
+  parentId: null
+- id: ihs
+  name: "Indian Health Service"
+  kind: federal
+  jurisdiction: "US"
+  url: "https://www.ihs.gov/"
+  parentId: null
+- id: wa-whatcom-county-em
+  name: "Whatcom County Division of Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://www.whatcomcounty.us/201/Emergency-Management"
+  parentId: null
+- id: wa-skagit-county-em
+  name: "Skagit County Department of Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://www.skagitcountywa.gov/public-safety/emergency-management/"
+  parentId: null
+- id: wa-king-county-em
+  name: "King County Office of Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://kingcounty.gov/en/dept/executive-services/governance-leadership/emergency-management"
+  parentId: null
+- id: wa-pierce-county-em
+  name: "Pierce County Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://www.piercecountywa.gov/104/Emergency-Management"
+  parentId: null
+- id: wa-thurston-county-em
+  name: "Thurston County Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://www.thurstoncountywa.gov/departments/emergency-management"
+  parentId: null
+- id: wa-grays-harbor-county-em
+  name: "Grays Harbor County Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://www.graysharbor.us/departments/emergency_management/"
+  parentId: null
+- id: wa-pacific-county-em
+  name: "Pacific County Emergency Management Agency"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://pcema.info/"
+  parentId: null
+- id: wa-clallam-county-em
+  name: "Clallam County Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://www.clallamcountywa.gov/226/Emergency-Management"
+  parentId: null
+- id: wa-jefferson-county-em
+  name: "Jefferson County Department of Emergency Management"
+  kind: county
+  jurisdiction: "WA"
+  url: "https://www.co.jefferson.wa.us/950/Dept-of-Emergency-Management"
+  parentId: null
+- id: or-clackamas-county-em
+  name: "Clackamas County Disaster Management"
+  kind: county
+  jurisdiction: "OR"
+  url: "https://www.clackamas.us/dm"
+  parentId: null
+- id: or-clatsop-county-em
+  name: "Clatsop County Emergency Management"
+  kind: county
+  jurisdiction: "OR"
+  url: "https://www.clatsopcounty.gov/621/Emergency-Management"
+  parentId: null
+- id: or-tillamook-county-em
+  name: "Tillamook County Emergency Management"
+  kind: county
+  jurisdiction: "OR"
+  url: "https://www.tillamookcounty.gov/972/Emergency-Management"
+  parentId: null
+- id: or-lincoln-county-em
+  name: "Lincoln County Emergency Management"
+  kind: county
+  jurisdiction: "OR"
+  url: "https://co.lincoln.or.us/708/Emergency-Management"
+  parentId: null
+- id: or-curry-county-em
+  name: "Curry County Emergency Management"
+  kind: county
+  jurisdiction: "OR"
+  url: "https://www.currycountyor.gov/departments/emergency_management/index.php"
+  parentId: null
+- id: ca-humboldt-county-em
+  name: "Humboldt County Office of Emergency Services"
+  kind: county
+  jurisdiction: "CA"
+  url: "https://humboldtgov.org/356/Office-of-Emergency-Services"
+  parentId: null
+- id: ca-mendocino-county-em
+  name: "Mendocino County Office of Emergency Services"
+  kind: county
+  jurisdiction: "CA"
+  url: "https://mendoready.org/"
+  parentId: null
+- id: ca-siskiyou-county-em
+  name: "Siskiyou County Office of Emergency Services"
+  kind: county
+  jurisdiction: "CA"
+  url: "https://www.siskiyoucounty.gov/emergencyservices"
+  parentId: null

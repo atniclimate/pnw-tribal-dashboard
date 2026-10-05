@@ -1,0 +1,27 @@
+id: cthd-contacts
+title: Cascadia Tribal Hazard Dashboard Curated Contacts
+owner: ATNI Climate, Affiliated Tribes of Northwest Indians
+url: https://atniclimate.github.io/pnw-tribal-dashboard/data/curated/contacts.json
+humanUrl: https://atniclimate.github.io/pnw-tribal-dashboard/contacts/
+license: Copyright ATNI Climate. Published for transparency; each listed source keeps its own terms.
+attribution: ATNI Climate
+cadence: Compiled from data/contacts/*.csv at build time; every row is re-verified within one hundred eighty days.
+region: both
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, BC]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Same-origin file committed under site/data/curated; cross-origin access does not apply.
+  timeoutMs: 12000
+  retries: 2
+  priority: 3
+usedBy: [contacts, safety, dashboard]
+verifiedAt: 2026-10-05
+notes: Role-based emergency lines only. Each row carries a source URL, a verbatim snippet containing the number, a check date, and a method. Every row is draft until the maintainer signs off.

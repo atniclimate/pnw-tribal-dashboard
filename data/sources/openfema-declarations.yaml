@@ -1,0 +1,27 @@
+id: openfema-declarations
+title: OpenFEMA Disaster Declarations Summaries
+owner: Federal Emergency Management Agency
+url: https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries
+humanUrl: https://www.fema.gov/about/openfema/api
+license: Public domain (U.S. Government work).
+attribution: Federal Emergency Management Agency, OpenFEMA
+cadence: Updated by FEMA as declarations are made; the dashboard snapshot refreshes about every thirty minutes.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-json
+status: active
+deprecation: null
+access:
+  mode: direct+snapshot
+  cors:
+    status: verified-wildcard
+    acao: '*'
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: GET with an Origin header returned Access-Control-Allow-Origin star on 10/05/2026.
+  timeoutMs: 30000
+  retries: 2
+  priority: 1
+usedBy: [alerts, dashboard]
+verifiedAt: 2026-10-05
+notes: The legacy fema.gov/api path is retired; use /api/open/v2. Rows repeat per designated area, so the dashboard groups them by disaster number.

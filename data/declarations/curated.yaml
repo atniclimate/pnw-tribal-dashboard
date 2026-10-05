@@ -1,0 +1,60 @@
+# Curated state, Tribal, and local declarations that OpenFEMA does not carry (blueprint 5.7).
+# Every row below was read from the issuing government's own page or a news report of the issuance on 10/05/2026.
+# The legacy DecTool hardcoded rows (labeled "Simulating the 2025 event") are NOT migrated: none carried a verifiable source.
+# Status (active, expired) is computed at render from issuedOn and effectiveUntil, never stored.
+- id: decl-wa-emergency-proclamation-25-07
+  issuer: { type: state, name: "Washington Governor", nationId: null }
+  kind: emergency-proclamation
+  title: "Emergency Proclamation 25-07, December Atmospheric River and Winter Weather Event"
+  issuedOn: "2025-12-10"
+  effectiveUntil: null
+  source:
+    url: "https://governor.wa.gov/sites/default/files/proclamations/25-07%20-%20Atmospheric%20River.pdf"
+    title: "Emergency Proclamation by the Governor 25-07"
+    publisher: "Office of the Governor of Washington"
+  verifiedAt: "2026-10-05"
+  reviewBy: "2026-11-04"
+  eventId: "2025-12-atmospheric-river"
+  femaDisasterNumber: null
+- id: decl-wa-emergency-proclamation-25-07-1
+  issuer: { type: state, name: "Washington Governor", nationId: null }
+  kind: emergency-proclamation
+  title: "Emergency Proclamation 25-07.1, Amending 25-07 (Expanded Authorization Through 01/15/2026)"
+  issuedOn: "2025-12-16"
+  effectiveUntil: "2026-01-15"
+  source:
+    url: "https://governor.wa.gov/sites/default/files/proclamations/25-07.1%20-%20Atmospheric%20River%20(tmp).pdf"
+    title: "Emergency Proclamation by the Governor Amending Proclamation 25-07, 25-07.1"
+    publisher: "Office of the Governor of Washington"
+  verifiedAt: "2026-10-05"
+  reviewBy: "2026-11-04"
+  eventId: "2025-12-atmospheric-river"
+  femaDisasterNumber: null
+- id: decl-snoqualmie-tribe-resolution-345-2025
+  issuer: { type: tribal, name: "Snoqualmie Indian Tribe", nationId: "us-wa-snoqualmie-indian-tribe" }
+  kind: emergency-declaration
+  title: "Resolution 345-2025, Tribal State of Emergency Related to Flooding"
+  issuedOn: "2025-12-10"
+  effectiveUntil: null
+  source:
+    url: "https://snoqualmietribe.us/snoqualmie-tribal-council-passes-motion-to-approve-resolution-345-2025-declaring-a-tribal-state-of-emergency-related-to-flooding/"
+    title: "Snoqualmie Tribal Council Passes Motion to Approve Resolution 345-2025"
+    publisher: "Snoqualmie Indian Tribe"
+  verifiedAt: "2026-10-05"
+  reviewBy: "2026-11-04"
+  eventId: "2025-12-atmospheric-river"
+  femaDisasterNumber: null
+- id: decl-lummi-nation-state-of-emergency-2025-12
+  issuer: { type: tribal, name: "Lummi Nation", nationId: "us-wa-lummi-tribe-of-the-lummi-reservation" }
+  kind: emergency-declaration
+  title: "Lummi Nation State of Emergency During Whatcom County Flooding"
+  issuedOn: "2025-12-11"
+  effectiveUntil: null
+  source:
+    url: "https://www.bellinghamherald.com/news/local/article313634296.html"
+    title: "Lummi Nation declares state of emergency; floodwaters crest in Ferndale"
+    publisher: "The Bellingham Herald"
+  verifiedAt: "2026-10-05"
+  reviewBy: "2026-11-04"
+  eventId: "2025-12-atmospheric-river"
+  femaDisasterNumber: null

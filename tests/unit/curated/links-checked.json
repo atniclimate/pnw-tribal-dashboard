@@ -1,0 +1,497 @@
+{
+ "note": "Dated link-check capture for every URL in the L6 curated files. Status is the HTTP status of a GET with a browser User-Agent. A recorded non-200 for a page whose text was matched is a bot-gate status, not a dead page.",
+ "links": [
+  {
+   "url": "https://co.lincoln.or.us/708/Emergency-Management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://ctsi.nsn.us/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://des.mt.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://ems.idaho.gov/statecomm/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://governor.wa.gov/news/2025/governor-ferguson-declares-statewide-emergency-responding-major-flooding",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://governor.wa.gov/sites/default/files/proclamations/25-07%20-%20Atmospheric%20River.pdf",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://governor.wa.gov/sites/default/files/proclamations/25-07.1%20-%20Atmospheric%20River%20(tmp).pdf",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://humboldtgov.org/356/Office-of-Emergency-Services",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://ioem.idaho.gov/about/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://ioem.idaho.gov/hazardous-materials/hazmat-response-general-procedures/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://ioem.idaho.gov/wp-content/uploads/2026/04/IDEOP-2025-Signed-Final-Combined.pdf",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://kingcounty.gov/en/dept/executive-services/governance-leadership/emergency-management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://mendoready.org/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://mil.wa.gov/asset/6a611b07e2e4a/07-20-2026-Statewide-EM-Contacts-1.pdf",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://mil.wa.gov/asset/6a612b07dcf82/EMD-Staff-Phone-Roster-07-15-2026.pdf",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://mil.wa.gov/emd-contact-us",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://nooksacktribe.org/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://oralert.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://pcema.info/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://ready.alaska.gov/Contact",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://ready.alaska.gov/Documents/Operations/CommunityDocs/Alaska%20Disaster%20Handbook%20v2%20update%203%202026%20Full%20Page.pdf",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://snoqualmietribe.us/snoqualmie-tribal-council-passes-motion-to-approve-resolution-345-2025-declaring-a-tribal-state-of-emergency-related-to-flooding/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://tripcheck.com/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://wa211.org/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://water.noaa.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://waterdata.usgs.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://wsdot.com/travel/real-time/map/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.211info.org/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.bellinghamherald.com/news/local/article313634296.html",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.bia.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.bia.gov/bia/ojs/contact-us",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.bia.gov/contact-us",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.bia.gov/oem",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.bia.gov/oem/tacgassist",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.bia.gov/regional-offices/pacific",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.caloes.ca.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.caloes.ca.gov/office-of-the-director/operations/response-operations/headquarters-response/california-state-warning-center/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.caloes.ca.gov/office-of-the-director/policy-administration/tribal-coordination/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.caloes.ca.gov/wp-content/uploads/2023/08/OTC-Regional-Assignment-1.pdf",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.clackamas.us/dm",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.clallamcountywa.gov/226/Emergency-Management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.clatsopcounty.gov/621/Emergency-Management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.co.jefferson.wa.us/950/Dept-of-Emergency-Management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.currycountyor.gov/departments/emergency_management/index.php",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.dem.nv.gov/agency-overview/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.disasterassistance.gov/",
+   "status": 403,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.fema.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.fema.gov/about/regions/region-10",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.fema.gov/about/regions/region-9",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.fema.gov/press-release/20260411/president-donald-j-trump-approves-major-disaster-declaration-washington",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.fness.bc.ca/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.graysharbor.us/departments/emergency_management/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.ihs.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.ihs.gov/california/index.cfm/about-us/contact-us/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.ihs.gov/portland/contactus/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.lummi-nsn.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.oem.nv.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.oregon.gov/oem/Pages/Contact-Us.aspx",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.oregon.gov/oem/emops/Pages/OERS.aspx",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.piercecountywa.gov/104/Emergency-Management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.publicsafety.gc.ca/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.puyalluptribe-nsn.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.ready.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.redcross.org/local/oregon.html",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.redcross.org/local/washington.html",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.redcross.org/volunteer/become-a-volunteer.html",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.sac-isc.gc.ca/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.sac-isc.gc.ca/eng/1100100021003/1612465942223",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.sac-isc.gc.ca/eng/1291132820288/1603310905799",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.sauk-suiattle.com/contact/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.siskiyoucounty.gov/emergencyservices",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.skagitcountywa.gov/public-safety/emergency-management/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32613",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.thurstoncountywa.gov/departments/emergency-management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.tillamookcounty.gov/972/Emergency-Management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.tulaliptribes-nsn.gov/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.wavoad.org/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.weather.gov/safety/",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.whatcomcounty.us/201/Emergency-Management",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.whatcomcounty.us/666/Forecasts-Current-River-Conditions",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www.whatcomcounty.us/CivicAlerts.aspx?AID=5264",
+   "status": 200,
+   "finalUrl": "https://www.whatcomcounty.us/m/newsflash/home/detail/5264",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "url": "https://www2.gov.bc.ca/gov/content/safety/emergency-management/contact-us",
+   "status": 200,
+   "finalUrl": null,
+   "checkedAt": "2026-10-05"
+  }
+ ]
+}
