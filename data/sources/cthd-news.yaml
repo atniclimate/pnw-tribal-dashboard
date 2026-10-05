@@ -1,0 +1,34 @@
+id: cthd-news
+title: Cascadia Tribal Hazard Dashboard News Items
+owner: ATNI Climate, Affiliated Tribes of Northwest Indians
+url: https://atniclimate.github.io/pnw-tribal-dashboard/site/data/live/news.json
+humanUrl: https://atniclimate.github.io/pnw-tribal-dashboard/site/news/
+license: Copyright ATNI Climate for the compiled list; each item links to its publisher and remains theirs.
+attribution: ATNI Climate, from the listed news publishers
+cadence: Rewritten by the scheduled news snapshot task about every 30 minutes.
+region: both
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE, BC]
+kind: file
+status: active
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Same-origin file written by the snapshot runner; cross-origin access does not apply. The upstream feeds send no CORS header for most publishers, so no feed is read from the browser.
+  timeoutMs: 12000
+  retries: 2
+  priority: 3
+  snapshot:
+    task: news
+    files: [news.json]
+    cadenceMin: 30
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+usedBy: [dashboard, news]
+verifiedAt: 2026-10-05
+notes: Items are plain text with https links only and carry a per-source status list, so an unavailable feed is shown as unavailable. YouTube channels appear as text links. Reddit communities are labeled links only, never fetched. Feed-level source records are held in the curated news-sources list.

@@ -1,0 +1,38 @@
+id: iem-nexrad-n0q
+title: NEXRAD Base Reflectivity Tiles (Iowa Environmental Mesonet)
+owner: Iowa Environmental Mesonet, Iowa State University
+url: https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q
+urlTemplate: https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q/{z}/{x}/{y}.png
+humanUrl: https://mesonet.agron.iastate.edu/
+license: Data are National Weather Service radar products (U.S. public domain) served by the Iowa Environmental Mesonet; keep the attribution.
+attribution: "Radar: NOAA NWS via Iowa Environmental Mesonet"
+cadence: Composite refreshed about every 5 minutes; valid time read from n0q_0.json.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: xyz-tiles
+status: active
+deprecation: null
+access:
+  mode: tiles
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Tile 6/10/22.png and /data/gis/images/4326/USCOMP/n0q_0.json with Origin https://atniclimate.github.io returned HTTP 200 and Access-Control-Allow-Origin * on 10/05/2026."
+  timeoutMs: 15000
+  retries: 1
+  priority: 2
+freshness:
+  freshForMs: 600000
+  usableForMs: 3600000
+health:
+  probe: https://mesonet.agron.iastate.edu/data/gis/images/4326/USCOMP/n0q_0.json
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/json
+  minBytes: 50
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Web Mercator tiles used as a MapLibre raster source. Valid time comes from n0q_0.json (last modified 10/05/2026 08:53 UTC at probe). No usage terms beyond the Iowa Environmental Mesonet attribution were recorded; the maintainer may wish to confirm them.

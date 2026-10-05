@@ -1,0 +1,40 @@
+id: nws-points
+title: NWS Points Lookup
+owner: NOAA National Weather Service
+url: https://api.weather.gov/points
+urlTemplate: https://api.weather.gov/points/{lat},{lon}
+humanUrl: https://www.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Grid mapping changes rarely; held in browser memory for one hour per point.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-geojson
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /points/47.6062,-122.3321 with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/geo+json on 10/05/2026 (also the 10/04/2026 link audit)."
+  headers:
+    Accept: application/geo+json
+  timeoutMs: 12000
+  retries: 2
+  priority: 1
+freshness:
+  freshForMs: 3600000
+  usableForMs: 86400000
+health:
+  probe: https://api.weather.gov/points/47.6062,-122.3321
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/geo+json
+  minBytes: 1000
+  maxBytes: null
+usedBy: [dashboard, forecasts, contacts]
+verifiedAt: 2026-10-05
+notes: Resolves a Nation headquarters point to the forecast office, grid cell, forecast and gridpoint URLs, and zone codes. Browsers cannot set User-Agent, so no contact header is sent from the page. Returns HTTP 404 for points outside NWS coverage, which includes British Columbia.

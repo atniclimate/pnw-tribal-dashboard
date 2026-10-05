@@ -1,0 +1,40 @@
+id: nws-afd
+title: NWS Area Forecast Discussion
+owner: NOAA National Weather Service
+url: https://api.weather.gov/products/types/AFD
+urlTemplate: https://api.weather.gov/products/types/AFD/locations/{wfo}
+humanUrl: https://www.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Issued by each forecast office a few times a day; newest product first in the list.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-json
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /products/types/AFD/locations/SEW with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/ld+json on 10/05/2026."
+  headers:
+    Accept: application/ld+json
+  timeoutMs: 12000
+  retries: 2
+  priority: 2
+freshness:
+  freshForMs: 10800000
+  usableForMs: 43200000
+health:
+  probe: https://api.weather.gov/products/types/AFD/locations/SEW
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/ld+json
+  minBytes: 500
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: The list response is followed by one product fetch at /products/{id}. The discussion is shown collapsed, as plain text, with its issuance time and office. The forecast office code comes from nws-points.

@@ -1,0 +1,38 @@
+id: eccc-citypage-realtime
+title: ECCC City Page Weather Forecasts
+owner: Environment and Climate Change Canada, Meteorological Service of Canada
+url: https://api.weather.gc.ca/collections/citypageweather-realtime/items
+urlTemplate: https://api.weather.gc.ca/collections/citypageweather-realtime/items?{query}
+humanUrl: https://weather.gc.ca/
+license: Environment and Climate Change Canada Data Servers End-use Licence; content and intent must not be altered.
+attribution: Environment and Climate Change Canada
+cadence: Updated as Environment and Climate Change Canada reissues each city forecast, several times a day.
+region: ca
+coverage: [BC]
+kind: ogc-features
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /collections/citypageweather-realtime/items?limit=1&f=json with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/json on 10/05/2026."
+  timeoutMs: 15000
+  retries: 2
+  priority: 1
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://api.weather.gc.ca/collections/citypageweather-realtime/items?limit=1&f=json
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/json
+  minBytes: 1000
+  maxBytes: null
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: The blueprint counts 126 British Columbia sites. The page labels the forecast with the city name and its distance in kilometers from the Nation headquarters. No numeric precipitation bars are drawn for British Columbia unless a verified source supplies them.

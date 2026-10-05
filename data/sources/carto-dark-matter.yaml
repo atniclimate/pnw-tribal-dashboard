@@ -1,0 +1,35 @@
+id: carto-dark-matter
+title: CARTO Dark Matter Basemap Tiles
+owner: CARTO, with map data from OpenStreetMap contributors
+url: https://basemaps.cartocdn.com/dark_all
+urlTemplate: https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png
+humanUrl: https://carto.com/basemaps/
+license: Terms of use pending maintainer review (decision Q10); map data under the Open Database License, copyright OpenStreetMap contributors.
+attribution: © OpenStreetMap contributors © CARTO
+cadence: Static basemap tiles; the style changes rarely.
+region: both
+coverage: [WA, OR, ID, BC, CA-N, MT-W, NV-N, AK-SE]
+kind: xyz-tiles
+status: active-pending-terms
+deprecation: null
+access:
+  mode: tiles
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Tile 6/10/22.png on the bare host basemaps.cartocdn.com with Origin https://atniclimate.github.io returned HTTP 200, image/png, Access-Control-Allow-Origin * on 10/05/2026."
+  timeoutMs: 15000
+  retries: 1
+  priority: 3
+health:
+  probe: https://basemaps.cartocdn.com/dark_all/6/10/22.png
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: image/png
+  minBytes: 500
+  maxBytes: null
+usedBy: [dashboard, alerts, forecasts]
+verifiedAt: 2026-10-05
+notes: Pending maintainer decision Q10 (whether CARTO terms permit this public, non-commercial use, or another provider is funded). One host, no subdomain list; the @2x tile URL is used on high-density screens. Outline mode is the fallback when tiles fail. The attribution is always visible.

@@ -1,0 +1,38 @@
+id: eccc-geomet-radar
+title: ECCC Radar Mosaic (MSC GeoMet WMS)
+owner: Environment and Climate Change Canada, Meteorological Service of Canada
+url: https://geo.weather.gc.ca/geomet
+urlTemplate: https://geo.weather.gc.ca/geomet?service=WMS&version=1.3.0&request=GetMap&layers={layer}&styles=&crs=EPSG:3857&bbox={bbox-epsg-3857}&width=256&height=256&format=image/png&transparent=true&time={time}
+humanUrl: https://weather.gc.ca/radar/index_e.html
+license: Environment and Climate Change Canada Data Servers End-use Licence; content must not be altered.
+attribution: Environment and Climate Change Canada
+cadence: Radar composites every 6 minutes; the time dimension is read from GetCapabilities.
+region: ca
+coverage: [BC]
+kind: wms
+status: active
+deprecation: null
+access:
+  mode: tiles
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GetMap (RADAR_1KM_RRAI, EPSG:3857, 256 px) and GetCapabilities with Origin https://atniclimate.github.io returned HTTP 200 and Access-Control-Allow-Origin * on 10/05/2026."
+  timeoutMs: 15000
+  retries: 1
+  priority: 2
+freshness:
+  freshForMs: 900000
+  usableForMs: 3600000
+health:
+  probe: https://geo.weather.gc.ca/geomet?service=WMS&version=1.3.0&request=GetCapabilities&layer=RADAR_1KM_RRAI
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: text/xml
+  minBytes: 1000
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Layers RADAR_1KM_RRAI (rain) and RADAR_1KM_RSNO (snow). The retired ALERTS layer is not used. The valid time shown on the map is read from the capabilities time dimension, not assumed.

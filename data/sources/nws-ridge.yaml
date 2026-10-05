@@ -1,0 +1,38 @@
+id: nws-ridge
+title: NWS RIDGE Radar Images
+owner: NOAA National Weather Service, Radar Operations Center
+url: https://radar.weather.gov/ridge/standard/
+urlTemplate: https://radar.weather.gov/ridge/standard/{SITE}_0.gif
+humanUrl: https://radar.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Still and loop images regenerated about every 5 minutes.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: image
+status: active
+deprecation: null
+access:
+  mode: image
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /ridge/standard/KATX_0.gif with Origin https://atniclimate.github.io returned HTTP 200, image/gif, 34,139 bytes, no Access-Control-Allow-Origin header on 10/05/2026."
+  timeoutMs: 15000
+  retries: 1
+  priority: 3
+freshness:
+  freshForMs: 900000
+  usableForMs: 3600000
+health:
+  probe: https://radar.weather.gov/ridge/standard/KATX_0.gif
+  expectStatus: 200
+  expectAcao: null
+  expectType: image/gif
+  minBytes: 1000
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Works in an img element but cannot be a MapLibre image source or read into a canvas. Site codes come from nws-radar-stations; loops are at {SITE}_loop.gif (about 30 to 330 KB on 10/04/2026) and load on tap.

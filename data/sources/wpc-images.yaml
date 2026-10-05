@@ -1,0 +1,38 @@
+id: wpc-images
+title: WPC Quantitative Precipitation and Excessive Rainfall Images
+owner: NOAA National Weather Service, Weather Prediction Center
+url: https://www.wpc.ncep.noaa.gov/qpf/
+urlTemplate: https://www.wpc.ncep.noaa.gov/qpf/{file}
+humanUrl: https://www.wpc.ncep.noaa.gov/qpf/qpf2.shtml
+license: Public domain (U.S. Government work); acknowledge NOAA.
+attribution: NOAA National Weather Service, Weather Prediction Center
+cadence: Regenerated as each forecast is issued, between several times a day and daily.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: image
+status: active
+deprecation: null
+access:
+  mode: image
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /qpf/p168i.gif with Origin https://atniclimate.github.io returned HTTP 200, image/gif, 63,940 bytes, no Access-Control-Allow-Origin header on 10/05/2026."
+  timeoutMs: 15000
+  retries: 1
+  priority: 3
+freshness:
+  freshForMs: 21600000
+  usableForMs: 86400000
+health:
+  probe: https://www.wpc.ncep.noaa.gov/qpf/p168i.gif
+  expectStatus: 200
+  expectAcao: null
+  expectType: image/gif
+  minBytes: 1000
+  maxBytes: null
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: Stable file names per the 10/04/2026 link audit and blueprint, namely fill_94qwbg.gif, d13_fill.gif, p168i.gif, 94ewbg.gif, 98ewbg.gif, 99ewbg.gif (other names such as 93ewbg.gif and fill_98qwbg.gif also answered 200). The retired NWRFC fcstprecip image names and qpf_fill.html return 404 and are not used. Each image carries its Last-Modified time as an as-of stamp.

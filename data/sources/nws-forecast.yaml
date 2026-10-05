@@ -1,0 +1,40 @@
+id: nws-forecast
+title: NWS Seven-Day Forecast
+owner: NOAA National Weather Service
+url: https://api.weather.gov/gridpoints
+urlTemplate: https://api.weather.gov/gridpoints/{wfo}/{x},{y}/forecast
+humanUrl: https://forecast.weather.gov/
+license: U.S. public domain unless otherwise noted; acknowledge NWS; do not imply endorsement.
+attribution: National Weather Service
+cadence: Updated by the forecast office as the forecast is revised, typically several times a day.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-geojson
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET /gridpoints/SEW/124,67/forecast with Origin https://atniclimate.github.io returned HTTP 200, Access-Control-Allow-Origin *, application/geo+json, 12,876 bytes on 10/05/2026."
+  headers:
+    Accept: application/geo+json
+  timeoutMs: 12000
+  retries: 2
+  priority: 1
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://api.weather.gov/gridpoints/SEW/124,67/forecast
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: application/geo+json
+  minBytes: 1000
+  maxBytes: null
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: All 14 periods are shown and labeled 7-Day Forecast. The forecast URL comes from the nws-points response. Current Conditions come only from a station observation, never from the first forecast period.

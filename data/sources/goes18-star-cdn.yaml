@@ -1,0 +1,38 @@
+id: goes18-star-cdn
+title: GOES-18 Pacific Northwest Sector Imagery
+owner: NOAA NESDIS Center for Satellite Applications and Research
+url: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/
+urlTemplate: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/{product}/{file}
+humanUrl: https://www.star.nesdis.noaa.gov/GOES/sector.php?sat=G18&sector=pnw
+license: Public domain (U.S. Government work); acknowledge NOAA.
+attribution: NOAA NESDIS Center for Satellite Applications and Research, GOES-18
+cadence: Stills about every 10 minutes; animations rebuilt periodically.
+region: both
+coverage: [WA, OR, ID, BC, CA-N, MT-W, NV-N, AK-SE]
+kind: image
+status: active
+deprecation: null
+access:
+  mode: image
+  cors:
+    status: verified-wildcard
+    acao: "*"
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "GET GEOCOLOR/300x300.jpg with Origin https://atniclimate.github.io returned HTTP 200, image/jpeg, 80,247 bytes, Access-Control-Allow-Origin * on 10/05/2026."
+  timeoutMs: 20000
+  retries: 1
+  priority: 3
+freshness:
+  freshForMs: 1800000
+  usableForMs: 10800000
+health:
+  probe: https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/300x300.jpg
+  expectStatus: 200
+  expectAcao: "*"
+  expectType: image/jpeg
+  minBytes: 5000
+  maxBytes: null
+usedBy: [forecasts]
+verifiedAt: 2026-10-05
+notes: Use the lowercase /pnw/ folder; the uppercase /PNW/ path returns 404. Products GEOCOLOR, AirMass, and bands 08, 09, 10, and 13. Animations exist only for GEOCOLOR, AirMass, 08, and 13 (GIF 5.6 to 11.8 MB, MP4 about 1.1 MB); bands 09 and 10 are stills only. Stills load by default and the 600 px still and MP4 load on tap.
