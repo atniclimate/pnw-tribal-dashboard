@@ -1,0 +1,47 @@
+id: news-cbc-bc
+title: CBC British Columbia News Feed
+owner: Canadian Broadcasting Corporation
+url: https://www.cbc.ca/webfeed/rss/rss-canada-britishcolumbia
+urlTemplate: https://www.cbc.ca/{path}
+humanUrl: https://www.cbc.ca/news/canada/british-columbia
+license: "The feed carries the notice \"FOR PERSONAL USE ONLY\" and points to the CBC terms of use for RSS. Whether a headline, short summary, and link on a public dashboard is within those terms has not been reviewed by a person; maintainer decision pending."
+attribution: CBC News
+cadence: Read by the scheduled news snapshot task about every 30 minutes.
+region: ca
+coverage: [BC]
+kind: feed
+status: active-pending-terms
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L14 probe 10/05/2026 with Origin https://atniclimate.github.io: HTTP 200, no Access-Control-Allow-Origin header, application/xml."
+  headers:
+    User-Agent: pnw-tribal-dashboard/1.0
+  timeoutMs: 20000
+  retries: 1
+  priority: 3
+  snapshot:
+    task: news
+    files: [news.json]
+    cadenceMin: 30
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://www.cbc.ca/webfeed/rss/rss-canada-britishcolumbia
+  expectStatus: 200
+  expectAcao: null
+  expectType: application/xml
+  minBytes: 5000
+  maxBytes: null
+usedBy: [dashboard, news]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: "RSS 2.0. The shared project User-Agent (parentheses and an email address) received no response from www.cbc.ca on 10/05/2026, so this source sends the shorter header recorded in access.headers. The older rss.cbc.ca lineup address did not answer from the build host on 10/05/2026; this is the feed address cbc.ca documents at cbc.ca/rss."

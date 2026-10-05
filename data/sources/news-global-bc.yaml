@@ -1,0 +1,45 @@
+id: news-global-bc
+title: Global News British Columbia Feed
+owner: Global News (Corus Entertainment)
+url: https://globalnews.ca/bc/feed/
+urlTemplate: https://globalnews.ca/{path}
+humanUrl: https://globalnews.ca/bc/
+license: "Publisher feed terms apply and have not yet been reviewed by a person. Only the headline, a short plain-text summary, and a link to the publisher are shown."
+attribution: Global News
+cadence: Read by the scheduled news snapshot task about every 30 minutes.
+region: ca
+coverage: [BC]
+kind: feed
+status: active-pending-terms
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L14 probe 10/05/2026 with Origin https://atniclimate.github.io: HTTP 200, no Access-Control-Allow-Origin header, application/rss+xml."
+  timeoutMs: 20000
+  retries: 1
+  priority: 3
+  snapshot:
+    task: news
+    files: [news.json]
+    cadenceMin: 30
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://globalnews.ca/bc/feed/
+  expectStatus: 200
+  expectAcao: null
+  expectType: application/rss+xml
+  minBytes: 5000
+  maxBytes: null
+usedBy: [dashboard, news]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: "RSS 2.0 (WordPress)."

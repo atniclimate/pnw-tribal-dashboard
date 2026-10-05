@@ -1,0 +1,364 @@
+# News and media sources (blueprint 5.8). Schema: schemas/news-sources.schema.json.
+#
+# Entries with a feed are fetched by the scheduled news snapshot task (scripts/snapshot/tasks/news.mjs),
+# never by a browser; each has a matching source record, data/sources/<id>.yaml. Entries with
+# feedFormat none are shown as plain links in the News page source directory and are never fetched.
+# kind community entries are labeled "Community, Unverified" and are never fetched.
+#
+# Carried forward from the 38 sources of the legacy IndigenousACCESS.org news page, with these changes
+# (checked 10/05/2026): the retired CORS proxy is gone; KLSR (certificate expired) and the CW network
+# page (not a news source and refuses automated requests) are dropped; KOBI 5 refused an automated check
+# with HTTP 403 and is held out until a person confirms it; the three Yakima and Tri-Cities and one Eugene
+# addresses that now redirect are listed at their current addresses; the Whatcom County page moved from
+# /1046/ to /201/; the CBC British Columbia feed is the https feed that cbc.ca documents.
+# The BC Government News site (news.gov.bc.ca) publishes an Emergency Management and Climate Readiness feed
+# whose server does not send its intermediate certificate, so Node cannot verify it; it is a link only
+# until that is fixed or a maintainer rules otherwise.
+
+# Feeds fetched by the snapshot task
+
+- id: news-idaho-oem
+  name: Idaho Office of Emergency Management
+  kind: official
+  regions: [ID]
+  homepage: https://ioem.idaho.gov/
+  feed: https://ioem.idaho.gov/feed/
+  feedFormat: rss
+  maxItems: 10
+  maxAgeDays: 60
+  verifiedAt: 2026-10-05
+
+- id: news-opb
+  name: Oregon Public Broadcasting
+  kind: media
+  regions: [OR, WA]
+  homepage: https://www.opb.org/
+  feed: https://www.opb.org/arc/outboundfeeds/rss/?outputType=xml
+  feedFormat: rss
+  maxItems: 10
+  maxAgeDays: 14
+  verifiedAt: 2026-10-05
+
+- id: news-kiro7
+  name: KIRO 7 (Seattle)
+  kind: media
+  regions: [WA]
+  homepage: https://www.kiro7.com/news/
+  feed: https://www.kiro7.com/arc/outboundfeeds/rss/?outputType=xml
+  feedFormat: rss
+  maxItems: 10
+  maxAgeDays: 14
+  verifiedAt: 2026-10-05
+
+- id: news-global-bc
+  name: Global News British Columbia
+  kind: media
+  regions: [BC]
+  homepage: https://globalnews.ca/bc/
+  feed: https://globalnews.ca/bc/feed/
+  feedFormat: rss
+  maxItems: 10
+  maxAgeDays: 14
+  verifiedAt: 2026-10-05
+
+- id: news-cbc-bc
+  name: CBC British Columbia
+  kind: media
+  regions: [BC]
+  homepage: https://www.cbc.ca/news/canada/british-columbia
+  feed: https://www.cbc.ca/webfeed/rss/rss-canada-britishcolumbia
+  feedFormat: rss
+  maxItems: 10
+  maxAgeDays: 14
+  verifiedAt: 2026-10-05
+
+- id: news-youtube-pnwwx
+  name: Pacific Northwest Weather Watch (YouTube)
+  kind: video
+  regions: [WA, OR, BC]
+  homepage: https://www.youtube.com/@pacificnorthwestweather
+  feed: https://www.youtube.com/feeds/videos.xml?channel_id=UCSxR0IZEq1WhTJqAnQGyk4g
+  feedFormat: youtube-atom
+  maxItems: 5
+  maxAgeDays: 30
+  verifiedAt: 2026-10-05
+
+# Official links without a feed
+
+- id: news-nws-seattle
+  name: National Weather Service Seattle
+  kind: official
+  regions: [WA]
+  homepage: https://www.weather.gov/sew/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-nws-portland
+  name: National Weather Service Portland
+  kind: official
+  regions: [OR]
+  homepage: https://www.weather.gov/pqr/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-whatcom-em
+  name: Whatcom County Emergency Management
+  kind: official
+  regions: [WA]
+  homepage: https://www.whatcomcounty.us/201/Emergency-Management
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-bc-gov
+  name: BC Government News, Emergency Management and Climate Readiness
+  kind: official
+  regions: [BC]
+  homepage: https://news.gov.bc.ca/ministries/emergency-management-and-climate-readiness
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+# Washington stations and outlets
+
+- id: news-komo
+  name: KOMO 4 (Seattle)
+  kind: media
+  regions: [WA]
+  homepage: https://komonews.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-king5
+  name: KING 5 (Seattle)
+  kind: media
+  regions: [WA]
+  homepage: https://www.king5.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-fox13
+  name: FOX 13 Seattle
+  kind: media
+  regions: [WA]
+  homepage: https://www.fox13seattle.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-cascade-pbs
+  name: Cascade PBS
+  kind: media
+  regions: [WA]
+  homepage: https://www.cascadepbs.org/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-krem
+  name: KREM 2 (Spokane)
+  kind: media
+  regions: [WA]
+  homepage: https://www.krem.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-kxly
+  name: KXLY 4 (Spokane)
+  kind: media
+  regions: [WA]
+  homepage: https://www.kxly.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-khq
+  name: KHQ 6 (Spokane)
+  kind: media
+  regions: [WA]
+  homepage: https://www.khq.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-kayu
+  name: KAYU 28 (Spokane)
+  kind: media
+  regions: [WA]
+  homepage: https://www.kayu.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-nbc-right-now
+  name: NBC Right Now (Tri-Cities)
+  kind: media
+  regions: [WA, OR]
+  homepage: https://www.nbcrightnow.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-triyak
+  name: Tri-Yak News (Yakima and Tri-Cities)
+  kind: media
+  regions: [WA]
+  homepage: https://www.triyaknews.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+# Oregon stations
+
+- id: news-katu
+  name: KATU 2 (Portland)
+  kind: media
+  regions: [OR, WA]
+  homepage: https://katu.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-koin
+  name: KOIN 6 (Portland)
+  kind: media
+  regions: [OR, WA]
+  homepage: https://www.koin.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-kgw
+  name: KGW 8 (Portland)
+  kind: media
+  regions: [OR, WA]
+  homepage: https://www.kgw.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-kptv
+  name: KPTV FOX 12 (Portland)
+  kind: media
+  regions: [OR, WA]
+  homepage: https://www.kptv.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-kezi
+  name: KEZI 9 (Eugene)
+  kind: media
+  regions: [OR]
+  homepage: https://www.kezi.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-kval
+  name: KVAL 13 (Eugene)
+  kind: media
+  regions: [OR]
+  homepage: https://kval.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-nbc16
+  name: NBC 16 (Eugene)
+  kind: media
+  regions: [OR]
+  homepage: https://nbc16.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-ktvz
+  name: KTVZ 21 (Bend)
+  kind: media
+  regions: [OR]
+  homepage: https://ktvz.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-kdrv
+  name: KDRV 12 (Medford)
+  kind: media
+  regions: [OR]
+  homepage: https://www.kdrv.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-ktvl
+  name: KTVL 10 (Medford)
+  kind: media
+  regions: [OR]
+  homepage: https://ktvl.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+# Northern California
+
+- id: news-lost-coast-outpost
+  name: Lost Coast Outpost (Humboldt and Del Norte)
+  kind: media
+  regions: [CA-N]
+  homepage: https://lostcoastoutpost.com/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+# Community links, never fetched; shown as "Community, Unverified"
+
+- id: news-reddit-bellingham
+  name: r/Bellingham
+  kind: community
+  regions: [WA]
+  homepage: https://www.reddit.com/r/Bellingham/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-reddit-washington
+  name: r/Washington
+  kind: community
+  regions: [WA]
+  homepage: https://www.reddit.com/r/Washington/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-reddit-seattle
+  name: r/Seattle
+  kind: community
+  regions: [WA]
+  homepage: https://www.reddit.com/r/Seattle/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-reddit-vancouver
+  name: r/vancouver
+  kind: community
+  regions: [BC]
+  homepage: https://www.reddit.com/r/vancouver/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05
+
+- id: news-reddit-victoriabc
+  name: r/VictoriaBC
+  kind: community
+  regions: [BC]
+  homepage: https://www.reddit.com/r/VictoriaBC/
+  feed: null
+  feedFormat: none
+  verifiedAt: 2026-10-05

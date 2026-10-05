@@ -35,6 +35,9 @@
   <link rel="modulepreload" href="../static/js/core/lastgood.js">
   <link rel="modulepreload" href="../static/js/core/storage.js">
   <link rel="modulepreload" href="../static/js/core/status.js">
+  <link rel="modulepreload" href="../static/js/core/url-state.js">
+  <link rel="modulepreload" href="../static/js/ui/live-region.js">
+  <link rel="modulepreload" href="../static/js/ui/status-pill.js">
   <!-- modulepreload:end -->
   <script type="module" src="../static/js/pages/news.js"></script>
   <link rel="manifest" href="../manifest.webmanifest">
@@ -74,13 +77,22 @@
     <noscript><p class="panel-note">Live data on this page needs JavaScript. Official alerts are always at
       <a href="https://www.weather.gov/">weather.gov</a> and
       <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">weather.gc.ca</a>. In an emergency, call 911.</p></noscript>
+    <p class="lede">Headlines from official agencies, news outlets, and one weather video channel across Cascadia, read by a scheduled update and shown newest first. This page is not an alert source: use <a href="../alerts/">Alerts</a> for warnings.</p>
+    <div class="news-controls" data-news-controls></div>
       <section class="panel" data-panel="news" data-sources="cthd-news" aria-labelledby="news-h">
         <h2 class="panel__title" id="news-h">Latest News</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
-    <section class="community-links" aria-labelledby="community-h">
-      <h2 id="community-h">Community, Unverified</h2>
-    </section>
+      <section class="panel" data-panel="news-directory" data-sources="cthd-news" aria-labelledby="news-directory-h">
+        <h2 class="panel__title" id="news-directory-h">Source Directory</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+    <div class="community-links">
+      <section class="panel" data-panel="news-community" data-sources="cthd-news" aria-labelledby="community-h">
+        <h2 class="panel__title" id="community-h">Community, Unverified</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
+    </div>
   </main>
   <!-- chrome:start -->
   <footer class="site-footer">

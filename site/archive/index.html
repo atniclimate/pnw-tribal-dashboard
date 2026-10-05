@@ -71,9 +71,14 @@
   <!-- chrome:end -->
   <main id="main" tabindex="-1">
     <h1 class="page-title" id="page-title">Event Archive</h1>
-    <ul class="bullets archive-list">
+    <p class="lede">Past events, kept with their original dates. Nothing here is current: for the situation now, use <a href="../alerts/">Alerts</a>.</p>
+    <noscript><ul class="bullets archive-list">
       <li><a href="./2025-12-atmospheric-river/">December 2025 Atmospheric Rivers</a></li>
-    </ul>
+    </ul></noscript>
+      <section class="panel" data-panel="archive-index" data-sources="cthd-events" aria-labelledby="archive-index-h">
+        <h2 class="panel__title" id="archive-index-h">Archived Events</h2>
+        <div class="panel__body" data-panel-body></div>
+      </section>
   </main>
   <!-- chrome:start -->
   <footer class="site-footer">

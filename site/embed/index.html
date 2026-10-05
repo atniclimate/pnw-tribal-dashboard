@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="noindex">
@@ -22,6 +22,18 @@
   <link rel="modulepreload" href="../static/js/pages/embed.js">
   <link rel="modulepreload" href="../static/js/ui/chrome.js">
   <link rel="modulepreload" href="../static/js/core/embed.js">
+  <link rel="modulepreload" href="../static/js/core/dom.js">
+  <link rel="modulepreload" href="../static/js/config/pages.js">
+  <link rel="modulepreload" href="../static/js/data/ids.js">
+  <link rel="modulepreload" href="../static/js/core/net.js">
+  <link rel="modulepreload" href="../static/js/config/app.js">
+  <link rel="modulepreload" href="../static/js/core/priority.js">
+  <link rel="modulepreload" href="../static/js/core/sources.js">
+  <link rel="modulepreload" href="../static/js/core/lastgood.js">
+  <link rel="modulepreload" href="../static/js/core/storage.js">
+  <link rel="modulepreload" href="../static/js/core/status.js">
+  <link rel="modulepreload" href="../static/js/core/time.js">
+  <link rel="modulepreload" href="../static/js/ui/live-region.js">
   <!-- modulepreload:end -->
   <script type="module" src="../static/js/pages/embed.js"></script>
   <link rel="manifest" href="../manifest.webmanifest">
@@ -58,9 +70,38 @@
   <!-- chrome:end -->
   <main id="main" tabindex="-1">
     <h1 class="page-title" id="page-title">Embedding the Dashboard</h1>
+    <p class="lede">Copy a snippet, paste it into a Squarespace Code Block, and a page of the dashboard appears inside the page. Each snippet is one page or view. Unmodified embedding of the published pages is permitted.</p>
+    <section aria-labelledby="embed-steps-h" id="embed-steps">
+      <h2 id="embed-steps-h">Adding It to Squarespace</h2>
+      <ol>
+        <li>Edit the Squarespace page and choose where the dashboard should appear.</li>
+        <li>Add a Code block (Add Block, then Code). Code blocks are not available on every Squarespace plan.</li>
+        <li>Paste the snippet. Leave Display Source Code unchecked, so visitors see the dashboard instead of the code.</li>
+        <li>Apply and save. The page shows the dashboard once it is published; the editor preview can look empty.</li>
+      </ol>
+      <p class="caption">Use the script line once per Squarespace page, even with several snippets. Without it, each frame keeps the fixed height written in the snippet. The dashboard in the frame always carries its own source and sovereignty notes and a link to open the full page.</p>
+    </section>
+    <noscript><p class="panel-note">The generator needs JavaScript. This snippet embeds the whole dashboard (the Dashboard page); every address on this page follows the same pattern.</p>
+<pre><code>&lt;iframe data-cthd
+  src="https://atniclimate.github.io/pnw-tribal-dashboard/?embed=1"
+  title="Cascadia Tribal Hazard Dashboard: Overview"
+  style="width:100%;height:1500px;border:0;display:block;"
+  loading="eager"
+  referrerpolicy="strict-origin-when-cross-origin"&gt;&lt;/iframe&gt;
+&lt;script src="https://atniclimate.github.io/pnw-tribal-dashboard/embed.js" defer&gt;&lt;/script&gt;</code></pre></noscript>
     <form class="embed-form" id="embed-form" aria-labelledby="embed-form-h">
       <h2 id="embed-form-h">Snippet Generator</h2>
     </form>
+    <section aria-labelledby="embed-preview-h" id="embed-preview-section">
+      <h2 id="embed-preview-h">Live Preview</h2>
+      <p class="caption">The preview shows the chosen page as it appears in a frame, from this copy of the site. The snippet itself points to the published address.</p>
+      <div id="embed-preview-host"></div>
+    </section>
+    <section aria-labelledby="embed-reference-h">
+      <h2 id="embed-reference-h">All Snippets</h2>
+      <p class="caption">One snippet for every page and view. Addresses can also carry a Nation (<code>n</code>) on the Dashboard, Alerts, Forecasts, Contacts, and Resources pages; use the generator above for that.</p>
+      <div id="embed-reference"></div>
+    </section>
   </main>
   <!-- chrome:start -->
   <footer class="site-footer">

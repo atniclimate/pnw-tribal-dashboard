@@ -1,0 +1,45 @@
+id: news-youtube-pnwwx
+title: Pacific Northwest Weather Watch YouTube Channel Feed
+owner: Pacific Northwest Weather Watch (YouTube channel)
+url: https://www.youtube.com/feeds/videos.xml?channel_id=UCSxR0IZEq1WhTJqAnQGyk4g
+urlTemplate: https://www.youtube.com/{path}
+humanUrl: https://www.youtube.com/@pacificnorthwestweather
+license: "Channel owner's videos on YouTube. Only the title and a link are shown; no thumbnail or player loads and no request goes to YouTube until a person follows the link."
+attribution: Pacific Northwest Weather Watch
+cadence: Read by the scheduled news snapshot task about every 30 minutes.
+region: both
+coverage: [WA, OR, BC]
+kind: feed
+status: active-pending-terms
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L14 probe 10/05/2026 with Origin https://atniclimate.github.io: HTTP 200, no Access-Control-Allow-Origin header, text/xml."
+  timeoutMs: 20000
+  retries: 1
+  priority: 3
+  snapshot:
+    task: news
+    files: [news.json]
+    cadenceMin: 30
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://www.youtube.com/feeds/videos.xml?channel_id=UCSxR0IZEq1WhTJqAnQGyk4g
+  expectStatus: 200
+  expectAcao: null
+  expectType: text/xml
+  minBytes: 2000
+  maxBytes: null
+usedBy: [dashboard, news]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: "Atom (YouTube). Items render as text links (\"Watch on YouTube\"). The channel is a community weather commentator, not an official source."

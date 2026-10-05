@@ -1,0 +1,45 @@
+id: news-idaho-oem
+title: Idaho Office of Emergency Management News Feed
+owner: Idaho Office of Emergency Management
+url: https://ioem.idaho.gov/feed/
+urlTemplate: https://ioem.idaho.gov/{path}
+humanUrl: https://ioem.idaho.gov/
+license: "Published by a state agency. Headlines, short plain-text summaries, and links are shown with attribution; each item remains the agency's."
+attribution: Idaho Office of Emergency Management
+cadence: Read by the scheduled news snapshot task about every 30 minutes.
+region: us
+coverage: [ID]
+kind: feed
+status: active
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: absent
+    acao: null
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: "Lane L14 probe 10/05/2026 with Origin https://atniclimate.github.io: HTTP 200, no Access-Control-Allow-Origin header, application/rss+xml."
+  timeoutMs: 20000
+  retries: 1
+  priority: 3
+  snapshot:
+    task: news
+    files: [news.json]
+    cadenceMin: 30
+freshness:
+  freshForMs: 3600000
+  usableForMs: 21600000
+health:
+  probe: https://ioem.idaho.gov/feed/
+  expectStatus: 200
+  expectAcao: null
+  expectType: application/rss+xml
+  minBytes: 2000
+  maxBytes: null
+usedBy: [dashboard, news]
+exports:
+  castId: null
+  ddmKey: null
+verifiedAt: 2026-10-05
+notes: "RSS 2.0 (WordPress). Official source, shown first in the Official sort. A quiet feed is shown as \"no items in the last sixty days\", never as an outage."
