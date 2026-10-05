@@ -114,10 +114,18 @@ describe('ordering and scoping', () => {
     assert.match(NO_VERIFIED_NOTICE, /No verified emergency contact is on file for this Nation yet/);
   });
 
-  test('every registry Nation without a contact row is the documented ten', () => {
+  test('every registry Nation without a contact row is the documented twenty-two (packet amendments 10/05/2026, B.5)', () => {
     const have = new Set(contacts.map((c) => c.scope.nationId).filter(Boolean));
-    const none = index.filter((/** @type {any} */ n) => !have.has(n.id));
-    assert.equal(none.length, 10);
+    const none = index.filter((/** @type {any} */ n) => !have.has(n.id)).map((/** @type {any} */ n) => n.id).sort();
+    assert.deepEqual(none, [
+      // Already without a contact before the amendments (ten).
+      'ca-fn-554', 'ca-fn-558', 'ca-fn-576', 'ca-fn-577', 'ca-fn-580', 'ca-fn-598', 'ca-fn-628', 'ca-fn-666', 'ca-fn-667', 'ca-fn-668',
+      // New with the amendments: every row was in contention (twelve).
+      'ca-fn-539', 'ca-fn-547', 'ca-fn-608', 'ca-fn-675', 'ca-fn-677', 'ca-fn-696',
+      'us-ak-organized-village-of-kasaan', 'us-ca-alturas-indian-rancheria-california', 'us-ca-greenville-rancheria',
+      'us-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana', 'us-mt-chippewa-cree-indians-of-the-rocky-boys-reservation-montana',
+      'us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian',
+    ].sort());
   });
 
   test('county lines join through the NWS county zone', () => {

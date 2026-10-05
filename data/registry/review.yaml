@@ -1,0 +1,12 @@
+# Maintainer approval of the Nation registry review packet (blueprint 6.2 and 12.3; read by scripts/reference/50-registry.mjs).
+# The maintainer approved the L5 registry packet with amendments on 10/05/2026 (packet-amendments-2026-10-05.md,
+# Section F). The builder marks a record `reviewed` (review.reviewedAt = approvedOn, hq.reviewed true, and its `code`
+# and `name-exact` crosswalk rows reviewed) only when its id was minted on or before approvedOn, it is not held below,
+# and it carries no flag. A Nation minted by a later refresh stays draft until a new approval covers it, and every
+# `name-reviewed` land-area candidate stays unreviewed until it is confirmed on its own.
+approvedOn: '2026-10-05'
+approver: maintainer
+decision: packet-amendments-2026-10-05.md
+holds:
+  - nationId: ca-fn-709
+    reason: The spelling is confirmed only by the Tŝilhqot'in National Government, not by the Nation's own site, ISC, or BIA; the record stays draft until the maintainer accepts that source or the Nation publishes its own.

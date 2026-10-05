@@ -24,7 +24,7 @@
     "sourceId": "isc-first-nations",
     "sourceRecordId": "704",
     "retrievedAt": "2026-10-04",
-    "reviewed": false
+    "reviewed": true
   },
   "samples": [
     [
@@ -137,9 +137,9 @@
     "iscBandNumber": 704
   },
   "review": {
-    "status": "draft",
-    "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 6 reserve polygons joined through the ISC reserve relation."
+    "status": "reviewed",
+    "reviewedAt": "2026-10-05",
+    "notes": "Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer). BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 6 reserve polygons joined through the ISC reserve relation."
   },
   "flags": []
 }

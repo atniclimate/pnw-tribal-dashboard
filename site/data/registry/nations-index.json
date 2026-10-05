@@ -288,7 +288,7 @@
         58.09197,
         -122.69818
       ],
-      "tz": "America/Dawson_Creek",
+      "tz": "America/Fort_Nelson",
       "hasBoundary": true
     },
     {
@@ -1262,7 +1262,7 @@
     },
     {
       "id": "ca-fn-602",
-      "name": "?aqam",
+      "name": "ʔaq̓am",
       "preferredName": null,
       "aliases": [],
       "jurisdictions": [
@@ -1279,9 +1279,11 @@
     },
     {
       "id": "ca-fn-603",
-      "name": "Yaqit ?a·knuqli‘it First Nation",
+      "name": "Yaq̓it ʔa·knuqⱡi’it First Nation",
       "preferredName": null,
-      "aliases": [],
+      "aliases": [
+        "Yaqit a·knuqli‘it First Nation"
+      ],
       "jurisdictions": [
         "BC"
       ],
@@ -1296,9 +1298,11 @@
     },
     {
       "id": "ca-fn-604",
-      "name": "?Akisq'nuk First Nation",
+      "name": "ʔAkisq̓nuk First Nation",
       "preferredName": null,
-      "aliases": [],
+      "aliases": [
+        "Akisq'nuk First Nation"
+      ],
       "jurisdictions": [
         "BC"
       ],
@@ -3064,7 +3068,7 @@
     },
     {
       "id": "ca-fn-709",
-      "name": "?Esdilagh First Nation",
+      "name": "ʔEsdilagh First Nation",
       "preferredName": null,
       "aliases": [],
       "jurisdictions": [
@@ -3626,7 +3630,7 @@
         55.12617,
         -131.5734
       ],
-      "tz": "America/Sitka",
+      "tz": "America/Metlakatla",
       "hasBoundary": true
     },
     {
@@ -4253,9 +4257,10 @@
     },
     {
       "id": "us-ca-puliklatribe-of-yurok-people",
-      "name": "PuliklaTribe of Yurok People",
+      "name": "Pulikla Tribe of Yurok People",
       "preferredName": null,
       "aliases": [
+        "PuliklaTribe of Yurok People",
         "Resighini",
         "Resighini Rancheria, California"
       ],
@@ -4657,7 +4662,7 @@
         41.99757,
         -116.1309
       ],
-      "tz": "America/Los_Angeles",
+      "tz": "America/Denver",
       "hasBoundary": true
     },
     {

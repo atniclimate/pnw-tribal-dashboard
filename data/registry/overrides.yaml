@@ -1,5 +1,7 @@
 # Reviewed corrections with a source and reason (blueprint 3.11, 6.2; schema registry-overrides).
-# Draft entries: a maintainer review (names, includes and excludes, time zone overrides) precedes `reviewed`.
+# The twenty timeZone entries were ratified by the maintainer on 10/05/2026 (packet amendments, Section A): each
+# headquarters carries the IANA zone the tz database assigns to that place, overridden where the lookup is wrong
+# or where local practice needed confirmation.
 - nationId: us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada
   field: jurisdictions
   value: [NV-N, ID]
@@ -12,33 +14,123 @@
   sourceUrl: https://www.federalregister.gov/documents/2026/01/30/2026-01899/indian-entities-recognized-by-and-eligible-to-receive-services-from-the-united-states-bureau-of
   reason: The listed name is "Nevada and Oregon"; the reservation spans both states. First entry is the headquarters jurisdiction (McDermitt, Nevada).
   verifiedAt: '2026-10-05'
+- nationId: us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada
+  field: timeZone
+  value: America/Denver
+  sourceUrl: https://github.com/eggert/tz/blob/main/northamerica
+  reason: Ratified 10/05/2026 (packet amendments). Owyhee observes Mountain Time, and the tz database lists "Nevada border (Jackpot, Owyhee, and Mountain City)" under America/Denver. Owyhee is legally in the Pacific zone (49 CFR 71.9(a)), and boundary lookups return America/Los_Angeles, which is wrong for local practice.
+  verifiedAt: '2026-10-05'
+- nationId: us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian
+  field: timeZone
+  value: America/Los_Angeles
+  sourceUrl: https://www.ecfr.gov/current/title-49/subtitle-A/part-71
+  reason: Ratified 10/05/2026 (packet amendments). 49 CFR 71.9(a) and 71.10 place Nevada, and Malheur County south of T. 35 S., in the Pacific zone; the tz database and OpenStreetMap agree for McDermitt. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: us-ak-metlakatla-indian-community-annette-island-reserve
+  field: timeZone
+  value: America/Metlakatla
+  sourceUrl: https://data.iana.org/time-zones/tzdb/zone.tab
+  reason: Ratified 10/05/2026 (packet amendments). The tz database lists "America/Metlakatla Alaska - Annette Island". Metlakatla returned to Alaska time on 01/20/2019; America/Sitka gives the same clock today, but only America/Metlakatla follows a future change at Annette Island.
+  verifiedAt: '2026-10-05'
 - nationId: us-ak-petersburg-indian-association
   field: timeZone
   value: America/Sitka
   sourceUrl: https://www.ecfr.gov/current/title-49/subtitle-A/part-71
-  reason: Draft correction for maintainer ratification. Petersburg is in the Alaska standard time zone (49 CFR part 71), but tz-lookup resolves the headquarters point to America/Vancouver, one hour off. America/Sitka is the zone the Alaska records for neighboring Southeast communities already carry.
+  reason: Ratified 10/05/2026 (packet amendments). Petersburg observes Alaska time (49 CFR part 71), and the tz database history places it with Sitka; tz-lookup resolves the headquarters point to America/Vancouver, one hour off.
   verifiedAt: '2026-10-05'
 - nationId: us-ak-wrangell-cooperative-association
   field: timeZone
   value: America/Sitka
   sourceUrl: https://www.ecfr.gov/current/title-49/subtitle-A/part-71
-  reason: Draft correction for maintainer ratification. Wrangell is in the Alaska standard time zone (49 CFR part 71), but tz-lookup resolves the headquarters point to America/Vancouver, one hour off. America/Sitka is the zone the Alaska records for neighboring Southeast communities already carry.
+  reason: Ratified 10/05/2026 (packet amendments). Wrangell observes Alaska time (49 CFR part 71), and the tz database history places it with Sitka; tz-lookup resolves the headquarters point to America/Vancouver, one hour off.
   verifiedAt: '2026-10-05'
 - nationId: ca-fn-596
   field: timeZone
   value: America/Vancouver
   sourceUrl: https://data.iana.org/time-zones/tzdb/zone1970.tab
-  reason: Draft correction for maintainer ratification. The Osoyoos headquarters lies in British Columbia (Pacific time, America/Vancouver in the IANA database), but tz-lookup resolves the point near the international border to America/Los_Angeles.
+  reason: Ratified 10/05/2026 (packet amendments). The Osoyoos headquarters lies in British Columbia (America/Vancouver in the IANA database); tz-lookup resolves the point near the international border to America/Los_Angeles.
   verifiedAt: '2026-10-05'
 - nationId: ca-fn-598
   field: timeZone
   value: America/Vancouver
   sourceUrl: https://data.iana.org/time-zones/tzdb/zone1970.tab
-  reason: Draft correction for maintainer ratification. The Lower Similkameen headquarters lies in British Columbia (Pacific time, America/Vancouver in the IANA database), but tz-lookup resolves the point near the international border to America/Los_Angeles.
+  reason: Ratified 10/05/2026 (packet amendments). The Lower Similkameen headquarters lies in British Columbia (America/Vancouver in the IANA database); tz-lookup resolves the point near the international border to America/Los_Angeles.
   verifiedAt: '2026-10-05'
 - nationId: ca-fn-658
   field: timeZone
   value: America/Vancouver
   sourceUrl: https://data.iana.org/time-zones/tzdb/zone1970.tab
-  reason: Draft correction for maintainer ratification. The Pacheedaht First Nation headquarters lies on Vancouver Island, British Columbia (Pacific time, America/Vancouver in the IANA database), but tz-lookup resolves the point near Juan de Fuca Strait to America/Los_Angeles.
+  reason: Ratified 10/05/2026 (packet amendments). The Pacheedaht First Nation headquarters lies on Vancouver Island, British Columbia (America/Vancouver in the IANA database); tz-lookup resolves the point near Juan de Fuca Strait to America/Los_Angeles.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-542
+  field: timeZone
+  value: America/Dawson_Creek
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). Moberly Lake lies in the Peace River Regional District, which the Province lists as using mountain standard time year round; the tz database zone is America/Dawson_Creek. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-545
+  field: timeZone
+  value: America/Dawson_Creek
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). Moberly Lake lies in the Peace River Regional District, which the Province lists as using mountain standard time year round; the tz database zone is America/Dawson_Creek. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-546
+  field: timeZone
+  value: America/Dawson_Creek
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). The headquarters near Hudson's Hope lies in the Peace River Regional District, which the Province lists as using mountain standard time year round; the tz database zone is America/Dawson_Creek. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-547
+  field: timeZone
+  value: America/Dawson_Creek
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). Buick, north of Fort St. John, lies in the Peace River Regional District, which the Province lists as using mountain standard time year round; the tz database zone is America/Dawson_Creek. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-548
+  field: timeZone
+  value: America/Dawson_Creek
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). Rose Prairie, north of Fort St. John, lies in the Peace River Regional District, which the Province lists as using mountain standard time year round; the tz database zone is America/Dawson_Creek. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-544
+  field: timeZone
+  value: America/Fort_Nelson
+  sourceUrl: https://www.northernrockies.ca/node/19
+  reason: Ratified 10/05/2026 (packet amendments). The Northern Rockies Regional Municipality places Prophet River First Nation at Mile 233 of the Alaska Highway, inside the municipality, whose tz database zone is America/Fort_Nelson. America/Dawson_Creek gives the same clock today; the change is for precision.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-543
+  field: timeZone
+  value: America/Fort_Nelson
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). The Province lists Fort Nelson and the Northern Rockies Regional Municipality as using mountain standard time year round; the tz database zone is America/Fort_Nelson. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-602
+  field: timeZone
+  value: America/Edmonton
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). The Province states that the East Kootenay, including Cranbrook, remains aligned with Alberta; the tz database places it in America/Edmonton. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-603
+  field: timeZone
+  value: America/Edmonton
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). The Province states that the East Kootenay remains aligned with Alberta; Grasmere lies in that region, which the tz database places in America/Edmonton. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-604
+  field: timeZone
+  value: America/Edmonton
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). The Province states that the East Kootenay, including Invermere, remains aligned with Alberta; Windermere lies in the same regional district, which the tz database places in America/Edmonton. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-605
+  field: timeZone
+  value: America/Edmonton
+  sourceUrl: https://www2.gov.bc.ca/gov/content/governments/celebrating-british-columbia/daylight-saving-time
+  reason: Ratified 10/05/2026 (packet amendments). The Province states that the East Kootenay, including Invermere, remains aligned with Alberta; the tz database places it in America/Edmonton. Confirms the lookup zone.
+  verifiedAt: '2026-10-05'
+- nationId: ca-fn-606
+  field: timeZone
+  value: America/Creston
+  sourceUrl: https://data.iana.org/time-zones/tzdb/zone1970.tab
+  reason: Ratified 10/05/2026 (packet amendments). The tz database lists "America/Phoenix MST - AZ (most areas), Creston BC" and links America/Creston to it (year-round UTC-7). America/Creston is kept because it is a valid IANA name with the same rules. Confirms the lookup zone.
   verifiedAt: '2026-10-05'

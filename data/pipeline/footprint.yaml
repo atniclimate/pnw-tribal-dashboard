@@ -1,20 +1,19 @@
 # Footprint definition: the coverage area of the dashboard (blueprint 6.2, question Q2).
 #
-# DRAFT. ratified is false until the maintainer ratifies the county and borough lists below; validate:data
-# warns while it is false. Counties are Census cartographic boundary NAME values (2024), state by state.
-ratified: false
-ratifiedOn: null
+# Ratified by the maintainer on 10/05/2026 (packet amendments, Section E). Counties are Census cartographic boundary
+# NAME values (2024), state by state.
+ratified: true
+ratifiedOn: '2026-10-05'
 states: [WA, OR, ID]
 provinces: [BC]
 counties:
-  # Northern California: the eleven counties proposed in Q2.
+  # Northern California: the eleven counties proposed in Q2, ratified as drafted.
   CA: [Del Norte, Humboldt, Trinity, Mendocino, Siskiyou, Modoc, Shasta, Lassen, Tehama, Plumas, Lake]
-  # Western Montana: counties west of the Continental Divide, plus Glacier, Pondera, and Hill for the
-  # Blackfeet Nation and the Chippewa Cree Tribe (Q2 asks whether those two Nations are in).
-  MT: [Lincoln, Flathead, Sanders, Lake, Mineral, Missoula, Ravalli, Granite, Powell, Deer Lodge, Silver Bow, Beaverhead, Glacier, Pondera, Hill]
-  # Northern Nevada: Elko (Duck Valley) and Humboldt (Fort McDermitt); Q2 asks whether all Nations in those
-  # two counties are in or only those two Nations.
+  # Western Montana: counties west of the Continental Divide, plus Glacier and Pondera (Blackfeet Nation) and Hill and
+  # Chouteau (Chippewa Cree Tribe), ruled in 10/05/2026.
+  MT: [Lincoln, Flathead, Sanders, Lake, Mineral, Missoula, Ravalli, Granite, Powell, Deer Lodge, Silver Bow, Beaverhead, Glacier, Pondera, Hill, Chouteau]
+  # Northern Nevada: Elko (Duck Valley) and Humboldt (Fort McDermitt), as alert geometry only.
   NV: [Elko, Humboldt]
-  # Southeast Alaska: the ten boroughs and census areas proposed in Q2.
+  # Southeast Alaska: the ten boroughs and census areas proposed in Q2, ratified as drafted.
   AK: [Yakutat, Hoonah-Angoon, Skagway, Haines, Juneau, Sitka, Petersburg, Wrangell, Ketchikan Gateway, Prince of Wales-Hyder]
-notes: Draft proposal from the 10/04/2026 architecture review, pending maintainer ratification of Q2. Blackfeet Nation and Chippewa Cree Tribe membership, and the Nevada scope, are open questions. British Columbia is the whole province, drawn from the Emergency Management and Climate Readiness response regions.
+notes: Ratified 10/05/2026 (packet amendments) on the maintainer's approval. Blackfeet Nation and Chippewa Cree Tribe are in. Northern Nevada Nations are only the Shoshone-Paiute Tribes of the Duck Valley Reservation and the Fort McDermitt Paiute and Shoshone Tribes (scope.yaml includes); Elko and Humboldt counties are alert geometry only. British Columbia is the whole province, drawn from the Emergency Management and Climate Readiness response regions.

@@ -12,7 +12,8 @@
  * guard; Nation count gates against the 6.2 ranges (warning while `footprint.yaml` has `ratified: false`);
  * source count reconciliation; names with `?` or U+FFFD (never `reviewed`); id stability (lock, records, and
  * redirects agree, and an id of a previous registry never vanishes); at least 95 percent of NRCan polygons
- * joined to a First Nation; every record `draft` until the maintainer approves the packet. Wave 2 gates (boundaryGates):
+ * joined to a First Nation; a `reviewed` record carries a review date, a reviewed headquarters, and no flag (the approval
+ * is data/registry/review.yaml, applied by 50-registry). Wave 2 gates (boundaryGates):
  * boundary detail files schema-valid with source, id, and vintage on every feature, overview at most 600 KB and detail
  * files at most 15 MB, interior samples inside land areas, parts equal to the detail features, at least 95 percent of the
  * British Columbia reserve polygons drawn, a typed NWS zone list or ECCC linkage on every record with keys that exist in
@@ -30,7 +31,9 @@ import { PENDING_JOINS, compact, computeJoins, cwaByForecastZone, gaugeCandidate
 
 /** Expected Nation counts (blueprint 6.2; adjustable by a reviewed pull request). */
 export const COUNT_GATES = Object.freeze({
-  usOutsideAlaska: Object.freeze({ min: 120, max: 170 }),
+  // 75 to 95 since the packet amendments of 10/05/2026 (Section E.2): the earlier 120 to 170 was an estimate that no reading
+  // of "northern California" reaches.
+  usOutsideAlaska: Object.freeze({ min: 75, max: 95 }),
   southeastAlaska: Object.freeze({ min: 15, max: 25 }),
   britishColumbia: Object.freeze({ min: 195, max: 210 }),
 });
@@ -88,7 +91,12 @@ export function registryGates(c) {
   for (const r of c.records) {
     if (ids.has(r.id)) f.problems.push(`duplicate Nation id ${r.id}`);
     ids.add(r.id);
-    if (r.review?.status !== 'draft') f.warnings.push(`${r.id}: review.status is ${r.review?.status}; wave 1 leaves every record draft until the maintainer approves the packet`);
+    if (r.review?.status !== 'draft') {
+      // A reviewed record was approved by the maintainer (review.yaml): it needs the approval date, a reviewed headquarters, and no flag.
+      if (!r.review?.reviewedAt) f.problems.push(`${r.id}: review.status is ${r.review?.status} without review.reviewedAt`);
+      if (r.hq?.reviewed !== true) f.problems.push(`${r.id}: review.status is ${r.review?.status} but hq.reviewed is not true`);
+      if (r.flags?.length) f.problems.push(`${r.id}: review.status is ${r.review?.status} while the record carries ${r.flags.join(', ')}`);
+    }
     if (/[?�]/.test(r.name)) {
       if (r.review?.status !== 'draft') f.problems.push(`${r.id}: name "${r.name}" carries ? or U+FFFD and cannot be reviewed`);
       else if (!r.flags.includes('name-orthography-needs-nation-source')) f.problems.push(`${r.id}: name carries ? or U+FFFD without the name-orthography-needs-nation-source flag`);
@@ -97,7 +105,9 @@ export function registryGates(c) {
     if (!r.nameSource?.url || !r.hq?.sourceId || !r.timeZone) f.problems.push(`${r.id}: missing name source, headquarters provenance, or time zone`);
     if (r.country === 'US' && r.kind === 'first-nation') f.problems.push(`${r.id}: kind first-nation on a U.S. Nation`);
     // Time zone consistent with jurisdiction: an Alaska record in a Pacific zone or a British Columbia record in a United States zone fails.
-    if (!tzConsistent(r.jurisdictions, r.timeZone)) f.problems.push(`${r.id}: time zone ${r.timeZone} is not consistent with jurisdiction ${r.jurisdictions?.[0] ?? '(none)'}; correct it in data/registry/overrides.yaml (field timeZone) and keep the tz-needs-confirmation flag until the maintainer ratifies it`);  }
+    if (!tzConsistent(r.jurisdictions, r.timeZone)) f.problems.push(`${r.id}: time zone ${r.timeZone} is not consistent with jurisdiction ${r.jurisdictions?.[0] ?? '(none)'}; correct it with a timeZone entry in data/registry/overrides.yaml once the maintainer ratifies the zone`);  }
+  const reviewedCount = c.records.filter((r) => r.review?.status !== 'draft').length;
+  f.notes.push(`review status: ${reviewedCount} reviewed, ${c.records.length - reviewedCount} draft (${c.records.filter((r) => r.review?.status === 'draft').map((r) => r.id).slice(0, 5).join(', ') || 'none'}${c.records.length - reviewedCount > 5 ? ', ...' : ''})`);
   const lockIds = new Set(c.lock.entries.map((e) => e.id));
   for (const id of ids) if (!lockIds.has(id)) f.problems.push(`${id} is not in ids.lock.json (ids come only from the lock)`);
   const redirected = new Set(Object.keys(c.redirects.redirects ?? {}));
@@ -351,7 +361,12 @@ const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 export function writePacket(dir, out, extra = null) {
   mkdirSync(dir, { recursive: true });
   const { records, report } = out;
+  const rv = report.review ?? { reviewed: 0, draft: records.length, held: [] };
   const counts = countRegistry(records);
+  const gUs = COUNT_GATES.usOutsideAlaska;
+  const gSe = COUNT_GATES.southeastAlaska;
+  const gBc = COUNT_GATES.britishColumbia;
+  const usMet = counts.usOutsideAlaska >= gUs.min && counts.usOutsideAlaska <= gUs.max;
   const us = records.filter((r) => r.country === 'US');
   const bc = records.filter((r) => r.country === 'CA');
   const qnames = records.filter((r) => /[?�]/.test(r.name));
@@ -388,13 +403,13 @@ export function writePacket(dir, out, extra = null) {
   const otherNoPoly = pointOnly.filter((r) => r.country === 'US' && r.region !== 'ak-se');
   const packet = `# Nation Registry Review Packet, Wave 2 (Draft)
 
-Prepared 10/05/2026 for the maintainer by lane L5. Every record is \`review.status: draft\`. Nothing in this packet is decided: each item below is a request for a ruling, and no record becomes \`reviewed\` until the maintainer approves it. Source files are pinned in \`data/registry/inputs.yaml\` with SHA-256 values; this packet is regenerated by \`node scripts/reference/90-validate.mjs --packet <folder> --raw <folders>\`.
+Prepared 10/05/2026 for the maintainer by lane L5. ${rv.reviewed ? `Approved with amendments by the maintainer on 10/05/2026 (packet-amendments-2026-10-05.md): ${rv.reviewed} records are \`reviewed\` and ${rv.draft} ${rv.draft === 1 ? 'stays' : 'stay'} \`draft\`${rv.held.length ? ` (${rv.held.join(', ')})` : ''}. The decision tables below are kept as the record of what was asked.` : 'Every record is `review.status: draft`. Nothing in this packet is decided: each item below is a request for a ruling, and no record becomes `reviewed` until the maintainer approves it.'} Source files are pinned in \`data/registry/inputs.yaml\` with SHA-256 values; this packet is regenerated by \`node scripts/reference/90-validate.mjs --packet <folder> --raw <folders>\`.
 
 ## The Brief
 
-The draft registry holds ${counts.total} Nations: ${counts.us} U.S. Tribes (${counts.usOutsideAlaska} outside Alaska and ${counts.southeastAlaska} in Southeast Alaska) and ${counts.britishColumbia} British Columbia First Nations. U.S. names come from the Federal Register notice of 01/30/2026 (91 FR 4102) and are cross-checked to the BIA Tribal Leaders Directory; British Columbia names are the ISC registered names. Headquarters points come from the Directory (U.S.) and the ISC location file (British Columbia), each with its source record id and retrieval date. The footprint edges are the Q2 proposal and remain unratified.${sizes ? ` Wave 2 adds land-area polygons for ${polyIds.size} Nations (${sizes.bySource['bia-lar']} BIA land area representations, ${sizes.bySource['census-aiannh-2025']} Census legal areas, and ${sizes.bySource['nrcan-aboriginal-lands-bc']} NRCan reserve polygons), and the joins to NWS zones, ECCC city pages and zones, radar, and gauges. ${spell(pointOnly.length)} Nations stay point-only (see Boundaries). Every polygon, match, and join is a draft; the polygons are representations, not jurisdiction.` : ' Boundaries, NWS zones, ECCC city pages, radar, and gauges are wave 2 joins and are empty in every record.'}
+The draft registry holds ${counts.total} Nations: ${counts.us} U.S. Tribes (${counts.usOutsideAlaska} outside Alaska and ${counts.southeastAlaska} in Southeast Alaska) and ${counts.britishColumbia} British Columbia First Nations. U.S. names come from the Federal Register notice of 01/30/2026 (91 FR 4102) and are cross-checked to the BIA Tribal Leaders Directory; British Columbia names are the ISC registered names. Headquarters points come from the Directory (U.S.) and the ISC location file (British Columbia), each with its source record id and retrieval date. ${rv.reviewed ? 'The footprint edges were ratified by the maintainer on 10/05/2026 (Chouteau County, Montana, added).' : 'The footprint edges are the Q2 proposal and remain unratified.'}${sizes ? ` Wave 2 adds land-area polygons for ${polyIds.size} Nations (${sizes.bySource['bia-lar']} BIA land area representations, ${sizes.bySource['census-aiannh-2025']} Census legal areas, and ${sizes.bySource['nrcan-aboriginal-lands-bc']} NRCan reserve polygons), and the joins to NWS zones, ECCC city pages and zones, radar, and gauges. ${spell(pointOnly.length)} Nations stay point-only (see Boundaries). Every polygon, match, and join is a draft; the polygons are representations, not jurisdiction.` : ' Boundaries, NWS zones, ECCC city pages, radar, and gauges are wave 2 joins and are empty in every record.'}
 
-${cand.length ? `The land-area recall gap that the crosswalk review raised (twenty-one Tribes with no LAR or Census identifier) is closed by place-phrase candidates: ${cand.length} candidate matches are recorded as \`name-reviewed\` with \`reviewed: false\` for the maintainer to confirm (see Land Area Candidates). ` : ''}Two findings need the maintainer first. The U.S. count outside Alaska (${counts.usOutsideAlaska}) is below the blueprint gate of 120 to 170 because the proposed northern California county list reaches only ${us.filter((r) => r.region === 'ca-n').length} Tribes; see Decision One. ${cap(spell(qnames.length))} British Columbia names carry the ISC \`?\` placeholder and need each Nation's own published spelling; see Names Containing a Question Mark.
+${cand.length ? `The land-area recall gap that the crosswalk review raised (twenty-one Tribes with no LAR or Census identifier) is closed by place-phrase candidates: ${cand.length} candidate matches are recorded as \`name-reviewed\` with \`reviewed: false\` for the maintainer to confirm (see Land Area Candidates). ` : ''}${usMet ? `The U.S. count outside Alaska (${counts.usOutsideAlaska}) is within the gate of ${gUs.min} to ${gUs.max}; the northern California county list reaches ${us.filter((r) => r.region === 'ca-n').length} Tribes.` : `The U.S. count outside Alaska (${counts.usOutsideAlaska}) is outside the gate of ${gUs.min} to ${gUs.max}; the northern California county list reaches ${us.filter((r) => r.region === 'ca-n').length} Tribes; see Decision One.`} ${qnames.length ? `${cap(spell(qnames.length))} British Columbia names carry the ISC \`?\` placeholder and need each Nation's own published spelling; see Names Containing a Question Mark.` : 'No displayed name carries the ISC `?` placeholder.'}
 
 ## Decisions Requested
 
@@ -422,9 +437,9 @@ ${table(['No.', 'Decision', 'Where the evidence is', 'Default if no ruling'], [
 ## Counts and Gates
 
 ${table(['Gate (blueprint 6.2)', 'Range', 'Actual', 'Result'], [
-  ['U.S. Tribes outside Alaska', '120 to 170', String(counts.usOutsideAlaska), counts.usOutsideAlaska >= 120 && counts.usOutsideAlaska <= 170 ? 'met' : 'NOT MET (warning while the footprint is unratified)'],
-  ['Southeast Alaska', '15 to 25', String(counts.southeastAlaska), counts.southeastAlaska >= 15 && counts.southeastAlaska <= 25 ? 'met' : 'NOT MET'],
-  ['British Columbia First Nations', '195 to 210', String(counts.britishColumbia), counts.britishColumbia >= 195 && counts.britishColumbia <= 210 ? 'met' : 'NOT MET'],
+  ['U.S. Tribes outside Alaska', `${gUs.min} to ${gUs.max}`, String(counts.usOutsideAlaska), usMet ? 'met' : 'NOT MET'],
+  ['Southeast Alaska', `${gSe.min} to ${gSe.max}`, String(counts.southeastAlaska), counts.southeastAlaska >= gSe.min && counts.southeastAlaska <= gSe.max ? 'met' : 'NOT MET'],
+  ['British Columbia First Nations', `${gBc.min} to ${gBc.max}`, String(counts.britishColumbia), counts.britishColumbia >= gBc.min && counts.britishColumbia <= gBc.max ? 'met' : 'NOT MET'],
 ])}
 
 U.S. Nations by state of the headquarters id prefix: ${Object.entries(stateCount).sort().map(([k, v]) => `${k} ${v}`).join(', ')}.
@@ -505,13 +520,13 @@ ${cap(spell(qnames.length))} record${qnames.length === 1 ? '' : 's'} carry the I
 
 ## Time Zones
 
-Every zone comes from \`@photostructure/tz-lookup\` at the headquarters point, except the ${tzOverride.length} draft overrides below (\`overrides.yaml\`, field \`timeZone\`, each with a source and reason, none ratified). Counts: ${Object.entries(tzCount).sort().map(([k, v]) => `${k} ${v}`).join(', ')}.
+Every zone comes from \`@photostructure/tz-lookup\` at the headquarters point, except the ${tzOverride.length} overrides below (\`overrides.yaml\`, field \`timeZone\`, each with a source and reason${rv.reviewed ? '; ratified by the maintainer on 10/05/2026' : ', none ratified'}). Counts: ${Object.entries(tzCount).sort().map(([k, v]) => `${k} ${v}`).join(', ')}.
 
-A validator gate in \`90-validate.mjs\` fails any record whose zone is not consistent with its first jurisdiction (\`TZ_BY_JURISDICTION\` in \`50-registry.mjs\`: for example Southeast Alaska must be an Alaska zone, and British Columbia must be a Canadian zone). The builder's lookup check found ${spell(tzOverride.length)} border-point lookups that were wrong by jurisdiction (the two Southeast Alaska records were an hour off); they are corrected by draft overrides and stay flagged until the maintainer ratifies them:
+A validator gate in \`90-validate.mjs\` fails any record whose zone is not consistent with its first jurisdiction (\`TZ_BY_JURISDICTION\` in \`50-registry.mjs\`: for example Southeast Alaska must be an Alaska zone, and British Columbia must be a Canadian zone). The builder's lookup check found ${spell(tzOverride.filter((r) => !tzConsistent(r.jurisdictions, tzLookupWrong[r.id] ?? '')).length)} border-point lookups that were wrong by jurisdiction (the two Southeast Alaska records were an hour off). An override is a ratified zone and clears the flag (packet amendments 10/05/2026, A.3); a record without one is flagged when its lookup disagrees with its jurisdiction or needs local-practice confirmation:
 
-${table(['Id', 'Lookup zone', 'Draft override zone'], tzOverride.map((r) => [r.id, tzLookupWrong[r.id] ?? '', r.timeZone]))}
+${table(['Id', 'Lookup zone', 'Override zone'], tzOverride.map((r) => [r.id, tzLookupWrong[r.id] ?? '', r.timeZone]))}
 
-Flagged \`tz-needs-confirmation\` (${tzFlag.length}): Duck Valley and Fort McDermitt (Q15), the five draft corrections above, and every British Columbia Nation in a zone other than \`America/Vancouver\` (local practice in the East Kootenay, Peace, Fort Nelson, and Creston areas differs).
+Flagged \`tz-needs-confirmation\` (${tzFlag.length})${tzFlag.length ? ': Duck Valley and Fort McDermitt (Q15) without an override, any border-point lookup without an override, and every British Columbia Nation without an override in a zone other than `America/Vancouver` (local practice in the East Kootenay, Peace, Fort Nelson, and Creston areas differs).' : '.'}
 
 ${table(['Id', 'Zone'], tzFlag.map((r) => [r.id, r.timeZone]))}
 
@@ -525,7 +540,7 @@ ${table(['Check', 'Count', 'Detail'], [
   ['NRCan polygons not joined to a First Nation', String(report.bc.nrcanUnjoined.length), report.bc.nrcanUnjoined.map((/** @type {any} */ x) => `${x.alcode} ${x.name}`).join('; ') || 'none'],
 ])}
 
-The method is in \`L5-crosswalk.md\`. No match is marked reviewed. The unmatched rows above are the counts after the place-phrase candidates of wave 2; the Tribes still unmatched have no land-area record of that name in the pinned files (Snoqualmie has a Census reservation and no LAR; Potter Valley, Scotts Valley, and Elem have a LAR and, for the first two, no Census area; the Coos, Lower Umpqua, and Siuslaw confederation has Census areas and no LAR).
+The method is in \`L5-crosswalk.md\`. ${rv.reviewed ? 'The `code` and `name-exact` rows of approved records are marked reviewed; every `name-reviewed` candidate stays unreviewed.' : 'No match is marked reviewed.'} The unmatched rows above are the counts after the place-phrase candidates of wave 2; the Tribes still unmatched have no land-area record of that name in the pinned files (Snoqualmie has a Census reservation and no LAR; Potter Valley, Scotts Valley, and Elem have a LAR and, for the first two, no Census area; the Coos, Lower Umpqua, and Siuslaw confederation has Census areas and no LAR).
 
 ## Land Area Candidates
 
@@ -586,7 +601,7 @@ ${table(['Join', 'Rule', 'Result'], [
 
 ## Remaining Work
 
-■ Maintainer rulings on the decisions above; no record becomes \`reviewed\` before the packet is approved.
+${rv.reviewed ? `■ The held record${rv.held.length === 1 ? '' : 's'} (${rv.held.join(', ') || 'none'}) and the place-phrase land-area candidates need their own confirmation.` : '■ Maintainer rulings on the decisions above; no record becomes `reviewed` before the packet is approved.'}
 
 ■ Replace the Natural Earth outline scope aid with the L4 \`emcr-bc-boundaries\` outline for the British Columbia membership test.
 
@@ -602,7 +617,7 @@ ${table(['Join', 'Rule', 'Result'], [
   };
   const cross = `# Nation Registry Crosswalk Notes, Wave 2 (Draft)
 
-Prepared 10/05/2026 by lane L5. This file explains exactly how the BIA, Census, ISC, and NRCan identifiers and names were matched to registry Nations. The rows themselves are \`data/registry/crosswalk-us.json\` and \`data/registry/crosswalk-bc.json\`. Every row has \`reviewed: false\`; no match is a reviewed match until the maintainer approves the packet. Match methods use the schema's words: \`code\` (an identifier equal in both sources), \`name-exact\` (a normalized name equal in both sources), \`name-reviewed\` (a place-phrase candidate that the build accepted under the rules below, awaiting the maintainer's confirmation; \`reviewed\` stays false) and \`manual\` (a person decided; none yet).
+Prepared 10/05/2026 by lane L5. This file explains exactly how the BIA, Census, ISC, and NRCan identifiers and names were matched to registry Nations. The rows themselves are \`data/registry/crosswalk-us.json\` and \`data/registry/crosswalk-bc.json\`. ${rv.reviewed ? 'After the maintainer\'s approval of 10/05/2026, the `code` and `name-exact` rows of reviewed records carry `reviewed: true`; every other row carries `reviewed: false`.' : 'Every row has `reviewed: false`; no match is a reviewed match until the maintainer approves the packet.'} Match methods use the schema's words: \`code\` (an identifier equal in both sources), \`name-exact\` (a normalized name equal in both sources), \`name-reviewed\` (a place-phrase candidate that the build accepted under the rules below, awaiting the maintainer's confirmation; \`reviewed\` stays false) and \`manual\` (a person decided; none yet).
 
 ## The Brief
 

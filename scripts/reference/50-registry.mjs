@@ -14,8 +14,9 @@
  * cartographic boundaries and Natural Earth admin-1) used only to decide footprint membership.
  *
  * Outputs: data/registry/{ids.lock.json, crosswalk-us.json, crosswalk-bc.json, draft-registry.json}. The ids
- * lock is append-only (ids come only from site/static/js/data/ids.js, assignNationId). Every record is
- * `review.status: draft`. No person field is ever read past the allowlist.
+ * lock is append-only (ids come only from site/static/js/data/ids.js, assignNationId). Every record is built as
+ * `review.status: draft`; the maintainer's approval in data/registry/review.yaml (applyApproval) then marks the
+ * approved records `reviewed`. No person field is ever read past the allowlist.
  *
  * Boundaries, NWS zones, ECCC city pages, radar, and gauges are wave 2 joins (they need L4 outputs) and are
  * left null or empty here; scripts/reference/70-joins.mjs projects the draft into site/data/registry.
@@ -51,7 +52,7 @@ export const SOURCE_URLS = Object.freeze({
   'isc-first-nations': 'https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/',
 });
 
-/** Footprint edges that are rules, not lists of Nations (Q2 proposal; footprint.yaml is `ratified: false`). */
+/** Footprint edges that are rules, not lists of Nations (footprint.yaml, ratified 10/05/2026). */
 export const STATE_RULES = Object.freeze({
   Washington: { all: true, jurisdiction: 'WA', region: 'wa', st: 'wa' },
   Oregon: { all: true, jurisdiction: 'OR', region: 'or', st: 'or' },
@@ -439,6 +440,77 @@ function shapefileAttributes(zip, shpPattern) {
 }
 
 // ---------------------------------------------------------------------------------------------
+// The maintainer's approval (data/registry/review.yaml)
+// ---------------------------------------------------------------------------------------------
+
+/**
+ * @typedef {{ approvedOn: string, approver: string, decision: string, holds?: { nationId: string, reason: string }[] }} Approval
+ */
+
+/** Crosswalk methods an approval marks reviewed; `name-reviewed` candidates and `manual` rows are confirmed one by one. */
+export const APPROVED_MATCH_METHODS = Object.freeze(['code', 'name-exact']);
+
+/**
+ * Check the shape of review.yaml (it has no catalog schema; a malformed approval must never mark a record reviewed).
+ * @param {unknown} v
+ * @returns {Approval | null}
+ */
+export function readApproval(v) {
+  if (v === null || v === undefined) return null;
+  const a = /** @type {any} */ (v);
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (typeof a !== 'object' || !iso.test(String(a.approvedOn ?? '')) || !a.approver || !a.decision) throw new Error('data/registry/review.yaml needs approvedOn (YYYY-MM-DD), approver, and decision');
+  for (const h of a.holds ?? []) if (!h?.nationId || !h?.reason) throw new Error('data/registry/review.yaml: every hold needs nationId and reason');
+  const extra = Object.keys(a).filter((k) => !['approvedOn', 'approver', 'decision', 'holds'].includes(k));
+  if (extra.length) throw new Error(`data/registry/review.yaml: unknown keys ${extra.join(', ')}`);
+  return a;
+}
+
+/**
+ * Apply the maintainer's approval in place (pure over its arguments). A record becomes `reviewed` only when its id was
+ * minted on or before the approval date, it is not held, and it carries no flag; its headquarters becomes reviewed and
+ * its `code` and `name-exact` crosswalk rows become reviewed. Every other record stays draft, with the reason in its notes.
+ * @param {Rec[]} records
+ * @param {any[]} crossRows the U.S. and British Columbia crosswalk rows
+ * @param {{ entries: { id: string, mintedAt: string }[] }} lock
+ * @param {Approval | null} approval
+ * @returns {{ reviewed: number, draft: number, held: string[], flagged: string[], newer: string[] }}
+ */
+export function applyApproval(records, crossRows, lock, approval) {
+  const out = { reviewed: 0, draft: records.length, held: /** @type {string[]} */ ([]), flagged: /** @type {string[]} */ ([]), newer: /** @type {string[]} */ ([]) };
+  if (!approval) return out;
+  const minted = new Map(lock.entries.map((e) => [e.id, e.mintedAt]));
+  const holds = new Map((approval.holds ?? []).map((h) => [h.nationId, h.reason]));
+  const ref = `${approval.decision}; approver: ${approval.approver}`;
+  const date = approval.approvedOn.split('-');
+  const us = `${date[1]}/${date[2]}/${date[0]}`;
+  /** @type {Set<string>} */
+  const approved = new Set();
+  for (const r of records) {
+    const basis = String(r.review.notes).replace(/^Draft built by scripts\/reference\/50-registry\.mjs\. /, '');
+    const at = minted.get(r.id);
+    if (holds.has(r.id)) {
+      out.held.push(r.id);
+      r.review.notes = `Held as draft by the approval of ${us} (${ref}): ${holds.get(r.id)} ${basis}`;
+    } else if (r.flags.length) {
+      out.flagged.push(r.id);
+      r.review.notes = `Not covered by the approval of ${us} (${ref}): the record carries ${r.flags.join(', ')}. ${basis}`;
+    } else if (!at || at > approval.approvedOn) {
+      out.newer.push(r.id);
+      r.review.notes = `Not covered by the approval of ${us} (${ref}): the id was minted after it. ${basis}`;
+    } else {
+      r.review = { status: 'reviewed', reviewedAt: approval.approvedOn, notes: `Approved with amendments ${us} (${ref}). ${basis}` };
+      r.hq.reviewed = true;
+      approved.add(r.id);
+    }
+  }
+  for (const row of crossRows) if (approved.has(row.nationId) && APPROVED_MATCH_METHODS.includes(row.matchMethod)) row.reviewed = true;
+  out.reviewed = approved.size;
+  out.draft = records.length - approved.size;
+  return out;
+}
+
+// ---------------------------------------------------------------------------------------------
 // The build
 // ---------------------------------------------------------------------------------------------
 
@@ -446,7 +518,7 @@ function shapefileAttributes(zip, shpPattern) {
 
 /**
  * @param {Record<string, { pin: any, path: string }>} inputs
- * @param {{ lock: any, scope: { include: any[], exclude: any[] }, overrides: any[], names: any[], mintedAt: string }} cfg
+ * @param {{ lock: any, scope: { include: any[], exclude: any[] }, overrides: any[], names: any[], mintedAt: string, review?: Approval | null }} cfg
  */
 export function buildDraft(inputs, cfg) {
   // ---- BIA Tribal Leaders Directory: allowlist applied the moment a feature is read ----
@@ -516,7 +588,7 @@ export function buildDraft(inputs, cfg) {
       const c = countyAt(lon, lat);
       county = c ? `${c.NAMELSAD} (${c.STUSPS})` : '';
       const list = state === 'California' ? CA_COUNTIES : AK_SE_BOROUGHS;
-      if (c && list.includes(c.NAME)) basis = `${state === 'California' ? 'county' : 'borough or census area'} ${c.NAMELSAD} (Q2 proposal, unratified)`;
+      if (c && list.includes(c.NAME)) basis = `${state === 'California' ? 'county' : 'borough or census area'} ${c.NAMELSAD} (footprint.yaml, ratified 10/05/2026)`;
       else report.us[state === 'California' ? 'caOutside' : 'akOutside'].push({ objectId: row.OBJECTID, name, county, city: row.city ?? '' });
     }
     if (!basis) continue;
@@ -558,15 +630,18 @@ export function buildDraft(inputs, cfg) {
     const jurisdictions = jOv ? jOv.value : [rule.jurisdiction];
     /** @type {string[]} */
     const flags = [];
-    // Duck Valley and Fort McDermitt (Q15) until a time zone override is ratified; any lookup that disagrees with the
-    // jurisdiction (a border-point lookup) stays flagged even when a draft override corrects it, until the maintainer ratifies it.
-    if ((tzOv ? false : id.includes('duck-valley') || id.includes('fort-mcdermitt')) || !tzConsistent(jurisdictions, lookupTz)) flags.push('tz-needs-confirmation');
+    // Without a timeZone override, Duck Valley and Fort McDermitt (Q15) and any lookup that disagrees with the jurisdiction
+    // (a border-point lookup) are flagged. An override in overrides.yaml is a ratified zone (packet amendments 10/05/2026, A.3),
+    // so it clears the flag.
+    if (!tzOv && (id.includes('duck-valley') || id.includes('fort-mcdermitt') || !tzConsistent(jurisdictions, lookupTz))) flags.push('tz-needs-confirmation');
     const aliasSet = new Map();
     for (const a of [row.tribealternatename, row.tribeshortname, row.tribalcomponentname, ...(fr ? fr.former : []), ...(c.isAnv ? [] : [])]) {
       const v = a ? collapse(String(a)) : '';
       if (v && normName(v) !== normName(formal) && !aliasSet.has(normName(v))) aliasSet.set(normName(v), v);
     }
     for (const a of override(id, 'aliases')?.value ?? []) if (!aliasSet.has(normName(a))) aliasSet.set(normName(a), a);
+    // A names.yaml correction keeps the registered (Federal Register) form as a search alias (for example "PuliklaTribe").
+    if (names && normName(formal) !== normName(names.name) && !aliasSet.has(normName(formal))) aliasSet.set(normName(formal), formal);
     const anvRow = anvByObjectId.get(row.OBJECTID);
     const rec = {
       id, castId: null, name: names ? names.name : formal,
@@ -585,7 +660,7 @@ export function buildDraft(inputs, cfg) {
       timeZone: tz, timeZoneSource: tzOv ? 'override' : 'tz-lookup', units: 'us',
       nws: null, eccc: null, radar: { nexrad: null, ridgeLoop: null, eccc: null }, gauges: [], contactIds: [], website: null, isc: null,
       codes: { biaLarIds: [], censusAiannhce: [], censusGeoid: null, biaTldObjectId: row.OBJECTID, biaAnvObjectId: anvRow ? anvRow.OBJECTID : null, iscBandNumber: null },
-      review: { status: 'draft', reviewedAt: null, notes: `Draft built by scripts/reference/50-registry.mjs. Footprint basis: ${c.basis}.` },
+      review: { status: 'draft', reviewedAt: null, notes: `Draft built by scripts/reference/50-registry.mjs. Footprint basis: ${c.basis.replace(/\.$/, '')}.` },
       flags,
     };
     // crosswalk rows
@@ -780,7 +855,8 @@ export function buildDraft(inputs, cfg) {
     const flags = [];
     const shown = names ? names.name : name;
     if (hasNamePlaceholder(shown)) flags.push('name-orthography-needs-nation-source');
-    if ((TZ_CONFIRM.has(tz) && !tzOv) || !tzConsistent(['BC'], lookupTz)) flags.push('tz-needs-confirmation');
+    // A ratified timeZone override clears both the local-practice and the border-point checks (packet amendments 10/05/2026, A.3).
+    if (!tzOv && (TZ_CONFIRM.has(tz) || !tzConsistent(['BC'], lookupTz))) flags.push('tz-needs-confirmation');
     const aliasSet = new Map();
     if (hasNamePlaceholder(name)) {
       const plain = collapse(name.replace(/[?�]/g, ''));
@@ -835,6 +911,7 @@ export function buildDraft(inputs, cfg) {
   // An alias never equals another Nation's name (the names gate): search keys that collide are dropped.
   const allNames = new Set(records.map((r) => normName(r.name)));
   for (const r of records) r.aliases = r.aliases.filter((/** @type {string} */ a) => !allNames.has(normName(a)));
+  report.review = applyApproval(records, [...crossUs, ...crossBc], lock, cfg.review ?? null);
   records.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   crossUs.sort((a, b) => (a.nationId + a.sourceId + a.sourceKey).localeCompare(b.nationId + b.sourceId + b.sourceKey, 'en'));
   crossBc.sort((a, b) => (a.nationId + a.sourceId + a.sourceKey).localeCompare(b.nationId + b.sourceId + b.sourceKey, 'en'));
@@ -860,6 +937,7 @@ export function loadConfig(mintedAt = new Date().toISOString().slice(0, 10)) {
     scope: readYamlOr(path.join(REGISTRY_DIR, 'scope.yaml'), { include: [], exclude: [] }),
     overrides: readYamlOr(path.join(REGISTRY_DIR, 'overrides.yaml'), []),
     names: readYamlOr(path.join(REGISTRY_DIR, 'names.yaml'), []),
+    review: readApproval(readYamlOr(path.join(REGISTRY_DIR, 'review.yaml'), null)),
     mintedAt,
   };
 }
@@ -905,7 +983,7 @@ export async function main(argv = process.argv.slice(2)) {
     stats: out.report.sourceCounts, bc: { nrcanPolygons: out.report.bc.nrcanPolygons, nrcanJoined: out.report.bc.nrcanJoined, nrcanUnjoined: out.report.bc.nrcanUnjoined },
     records: out.records,
   }));
-  console.log(`50-registry: ${out.records.length} draft records (${out.records.filter((r) => r.country === 'US').length} U.S., ${out.records.filter((r) => r.country === 'CA').length} British Columbia); ${out.lock.entries.length - before} ids minted`);
+  console.log(`50-registry: ${out.records.length} records (${out.records.filter((r) => r.country === 'US').length} U.S., ${out.records.filter((r) => r.country === 'CA').length} British Columbia; ${out.report.review.reviewed} reviewed, ${out.report.review.draft} draft${out.report.review.held.length ? `, held: ${out.report.review.held.join(', ')}` : ''}${out.report.review.flagged.length ? `, flagged: ${out.report.review.flagged.join(', ')}` : ''}); ${out.lock.entries.length - before} ids minted`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();

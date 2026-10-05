@@ -1,5 +1,30 @@
 # Name corrections from each Nation's own published name (blueprint 5.2; schema registry-names).
-# Empty on purpose: no correction has been verified against a Nation's own site yet. Each entry needs the Nation id,
-# the corrected name, a sourceUrl on the Nation's own domain, and a verifiedAt date, and the maintainer approves it.
-# The records that need one are listed in the review packet (names containing ? or U+FFFD).
-[]
+# Each entry names the Nation id, the corrected name (NFC, exact code points), the source, and the date it was read.
+# Ratified by the maintainer on 10/05/2026 (packet amendments, Sections C and D). Every ? in an ISC name stands for
+# U+0294 LATIN LETTER GLOTTAL STOP; three names also lost U+0313 COMBINING COMMA ABOVE. ca-fn-709 is applied so that
+# no displayed name carries a ?, but its record stays draft (its source is not the Nation's own site).
+- nationId: ca-fn-602
+  name: 'ʔaq̓am'
+  sourceUrl: https://www.aqam.net/
+  verifiedAt: '2026-10-05'
+  notes: 'the Nation''s own published name (page title of its website), read 10/05/2026; the ISC registered name lost U+0294 and U+0313'
+- nationId: ca-fn-603
+  name: 'Yaq̓it ʔa·knuqⱡi’it First Nation'
+  sourceUrl: https://tobaccoplains.org/
+  verifiedAt: '2026-10-05'
+  notes: 'the Nation''s own published name (page title, heading, and footer of its website; the Ktunaxa Nation site agrees), read 10/05/2026; the ISC registered name lost U+0294, U+0313, and U+2C61'
+- nationId: ca-fn-604
+  name: 'ʔAkisq̓nuk First Nation'
+  sourceUrl: https://akisqnuk.org/
+  verifiedAt: '2026-10-05'
+  notes: 'the Nation''s own published name (header and logo label of its website), read 10/05/2026; the ISC registered name lost U+0294 and carried an ASCII apostrophe for U+0313'
+- nationId: ca-fn-709
+  name: 'ʔEsdilagh First Nation'
+  sourceUrl: https://tsilhqotin.ca/our-nation/communities/
+  verifiedAt: '2026-10-05'
+  notes: 'the Tŝilhqot''in National Government communities page, read 10/05/2026; the Nation has no working website of its own, so the record stays draft until the maintainer accepts this source or the Nation publishes its own spelling'
+- nationId: us-ca-puliklatribe-of-yurok-people
+  name: 'Pulikla Tribe of Yurok People'
+  sourceUrl: https://puliklatribe.gov/?p=3530
+  verifiedAt: '2026-10-05'
+  notes: 'the Tribe''s own published name, read 10/05/2026; the Federal Register notice of 01/30/2026 prints "PuliklaTribe" without a space, and that form stays a search alias; the id is unchanged (Decision 10)'

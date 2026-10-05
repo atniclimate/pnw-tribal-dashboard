@@ -33,8 +33,8 @@ describe('catalog integrity', () => {
       assert.equal(new URL(p.url).hostname, new URL(src.url).hostname, `${p.id}: host`);
       if (p.larger) assert.ok(ids.has(p.larger), `${p.id}: larger ${p.larger}`);
       if (p.animation) assert.ok(ids.has(p.animation), `${p.id}: animation ${p.animation}`);
-      assert.ok(['last-modified', 'cycle'].includes(p.stamp), `${p.id}: every image has a stamp rule, never none`);
-      assert.equal(p.stamp, p.sourceId === 'cw3e-images' ? 'cycle' : 'last-modified');
+      assert.ok(!['cw3e-images', 'ssec-mtpw2'].includes(p.sourceId), `${p.id}: CW3E and SSEC are link-only, so no image is listed`);
+      assert.equal(p.stamp, 'last-modified');
     }
   });
 
@@ -170,13 +170,12 @@ describe('radar', () => {
 });
 
 describe('every image is stamped', () => {
-  const heads = ['goes18-star-cdn', 'wpc-images', 'nws-ridge', 'ssec-mtpw2'].flatMap((s) => fixture(s, '2026-10-05-head-probe.json').results);
+  const heads = ['goes18-star-cdn', 'wpc-images', 'nws-ridge'].flatMap((s) => fixture(s, '2026-10-05-head-probe.json').results);
 
   test('a real Last-Modified exists for every stamped product, and the stamp map reads them', () => {
     const items = heads.map((/** @type {any} */ r) => ({ productId: r.productId, url: r.url, status: r.status, lastModified: r.lastModified ? new Date(r.lastModified).toISOString() : null, contentLength: r.contentLength, checkedAt: '2026-10-05T09:50:00.000Z' }));
     const stamps = stampMap({ completeness: 'complete', items });
-    const stamped = catalog.filter((p) => p.sourceId !== 'cw3e-images');
-    for (const p of stamped) assert.ok(stamps.get(p.id)?.lastModified, `${p.id} has a stamp`);
+    for (const p of catalog) assert.ok(stamps.get(p.id)?.lastModified, `${p.id} has a stamp`);
   });
 
   test('a panel with no stamp is unavailable with a reason, never shown unstamped', () => {

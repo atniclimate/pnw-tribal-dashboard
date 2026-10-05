@@ -71,9 +71,10 @@ export function ringProblems(geom) {
 }
 
 describe('footprint.yaml', () => {
-  test('is a draft that covers WA, OR, ID, BC, and the proposed sub-regions, marked ratified false', () => {
-    assert.equal(def.ratified, false);
-    assert.equal(def.ratifiedOn, null);
+  test('covers WA, OR, ID, BC, and the sub-regions, ratified by the maintainer on 10/05/2026', () => {
+    assert.equal(def.ratified, true);
+    assert.equal(def.ratifiedOn, '2026-10-05');
+    assert.match(String(def.notes), /^Ratified 10\/05\/2026 \(packet amendments\)/);
     assert.deepEqual(def.states, ['WA', 'OR', 'ID']);
     assert.deepEqual(def.provinces, ['BC']);
     assert.deepEqual(Object.keys(def.counties).sort(), ['AK', 'CA', 'MT', 'NV']);
@@ -82,6 +83,9 @@ describe('footprint.yaml', () => {
     assert.equal(def.counties.AK.length, 10);
     assert.ok(def.counties.NV.includes('Elko') && def.counties.NV.includes('Humboldt'));
     assert.ok(def.counties.MT.includes('Missoula') && def.counties.MT.includes('Flathead'));
+    // Hill and Chouteau hold the Rocky Boy's Reservation (packet amendments, Section E.3).
+    assert.ok(def.counties.MT.includes('Hill') && def.counties.MT.includes('Chouteau'));
+    assert.equal(def.counties.MT.length, 16);
   });
 
   test('validates against its schema', async () => {
@@ -93,12 +97,12 @@ describe('footprint.yaml', () => {
 });
 
 describe('footprint.json', () => {
-  test('has one polygon feature per jurisdiction and carries ratified false', () => {
-    assert.equal(footprint.ratified, false);
+  test('has one polygon feature per jurisdiction and carries the ratified flag', () => {
+    assert.equal(footprint.ratified, true);
     const codes = footprint.features.map((/** @type {any} */ f) => f.properties.region).sort();
     assert.deepEqual(codes, ['ak-se', 'bc', 'ca-n', 'id', 'mt-w', 'nv-n', 'or', 'wa']);
     for (const f of footprint.features) {
-      assert.equal(f.properties.ratified, false);
+      assert.equal(f.properties.ratified, true);
       assert.ok(f.properties.name.length > 0);
       assert.ok(['Polygon', 'MultiPolygon'].includes(f.geometry.type));
     }

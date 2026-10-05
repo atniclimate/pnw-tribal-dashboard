@@ -16,7 +16,8 @@
  *   data/registry/joins-build.json                per-Nation nws, eccc, radar, and gauges plus the join report
  *   site/data/registry/nations/<id>.json, nations-index.json, id-redirects.json, site/data/geo/hq-points.json
  *
- * Join rules (every one is a documented policy, never an invented value; every record stays `review.status: draft`):
+ * Join rules (every one is a documented policy, never an invented value; the joins never change `review`, which 50-registry
+ * sets from the maintainer's approval in data/registry/review.yaml):
  *   nws        U.S. Nations only. A zone is listed when it contains the headquarters, an interior sample, or the inner point
  *              of any land-area part (each part also takes the nearest zone within five kilometres when none contains it), or covers at
  *              least two percent of the land area (grid of points inside the detail polygons; zone edges are simplified to

@@ -27,7 +27,7 @@
     "sourceId": "bia-tld",
     "sourceRecordId": "554",
     "retrievedAt": "2026-10-04",
-    "reviewed": false
+    "reviewed": true
   },
   "samples": [
     [
@@ -58,7 +58,7 @@
     ]
   },
   "timeZone": "America/Los_Angeles",
-  "timeZoneSource": "tz-lookup",
+  "timeZoneSource": "override",
   "units": "us",
   "nws": {
     "wfo": [
@@ -106,11 +106,9 @@
     "iscBandNumber": null
   },
   "review": {
-    "status": "draft",
-    "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: scope.yaml include: Northern Nevada, named in the Data Rulings (Fort McDermitt). The Directory name lists Nevada and Oregon.."
+    "status": "reviewed",
+    "reviewedAt": "2026-10-05",
+    "notes": "Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer). Footprint basis: scope.yaml include: Northern Nevada, named in the Data Rulings (Fort McDermitt). The Directory name lists Nevada and Oregon."
   },
-  "flags": [
-    "tz-needs-confirmation"
-  ]
+  "flags": []
 }

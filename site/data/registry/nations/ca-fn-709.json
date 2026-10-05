@@ -1,12 +1,12 @@
 {
   "id": "ca-fn-709",
   "castId": null,
-  "name": "?Esdilagh First Nation",
+  "name": "ʔEsdilagh First Nation",
   "nameSource": {
-    "kind": "isc-registered-name",
-    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 709",
-    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
-    "retrievedAt": "2026-10-04"
+    "kind": "names-override",
+    "citation": "data/registry/names.yaml: the Tŝilhqot'in National Government communities page, read 10/05/2026; the Nation has no working website of its own, so the record stays draft until the maintainer accepts this source or the Nation publishes its own spelling",
+    "url": "https://tsilhqotin.ca/our-nation/communities/",
+    "retrievedAt": "2026-10-05"
   },
   "preferredName": null,
   "preferredNameSource": null,
@@ -198,9 +198,7 @@
   "review": {
     "status": "draft",
     "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 14 reserve polygons joined through the ISC reserve relation."
+    "notes": "Held as draft by the approval of 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer): The spelling is confirmed only by the Tŝilhqot'in National Government, not by the Nation's own site, ISC, or BIA; the record stays draft until the maintainer accepts that source or the Nation publishes its own. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 14 reserve polygons joined through the ISC reserve relation."
   },
-  "flags": [
-    "name-orthography-needs-nation-source"
-  ]
+  "flags": []
 }

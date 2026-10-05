@@ -27,7 +27,7 @@
     "sourceId": "bia-tld",
     "sourceRecordId": "413",
     "retrievedAt": "2026-10-04",
-    "reviewed": false
+    "reviewed": true
   },
   "samples": [
     [
@@ -102,9 +102,9 @@
     "iscBandNumber": null
   },
   "review": {
-    "status": "draft",
-    "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: scope.yaml include: The reservation lies in Lake County, which is on the northern California list; the Directory office point is in Santa Rosa (Sonoma County), so the headquarters rule alone would leave it out.."
+    "status": "reviewed",
+    "reviewedAt": "2026-10-05",
+    "notes": "Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer). Footprint basis: scope.yaml include: Included by the maintainer's ruling of 10/05/2026. The reservation lies in Lake County, which is on the northern California list; the Directory office point is in Santa Rosa (Sonoma County), so the headquarters rule alone would leave it out."
   },
   "flags": []
 }

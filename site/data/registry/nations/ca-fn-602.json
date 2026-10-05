@@ -1,12 +1,12 @@
 {
   "id": "ca-fn-602",
   "castId": null,
-  "name": "?aqam",
+  "name": "ʔaq̓am",
   "nameSource": {
-    "kind": "isc-registered-name",
-    "citation": "ISC First Nations location file, BAND_NAME for BAND_NUMBER 602",
-    "url": "https://data.sac-isc.gc.ca/geomatics/rest/directories/arcgisoutput/DonneesOuvertes_OpenData/Premiere_Nation_First_Nation/",
-    "retrievedAt": "2026-10-04"
+    "kind": "names-override",
+    "citation": "data/registry/names.yaml: the Nation's own published name (page title of its website), read 10/05/2026; the ISC registered name lost U+0294 and U+0313",
+    "url": "https://www.aqam.net/",
+    "retrievedAt": "2026-10-05"
   },
   "preferredName": null,
   "preferredNameSource": null,
@@ -24,7 +24,7 @@
     "sourceId": "isc-first-nations",
     "sourceRecordId": "602",
     "retrievedAt": "2026-10-04",
-    "reviewed": false
+    "reviewed": true
   },
   "samples": [
     [
@@ -105,7 +105,7 @@
     ]
   },
   "timeZone": "America/Edmonton",
-  "timeZoneSource": "tz-lookup",
+  "timeZoneSource": "override",
   "units": "metric",
   "nws": null,
   "eccc": {
@@ -141,12 +141,9 @@
     "iscBandNumber": 602
   },
   "review": {
-    "status": "draft",
-    "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 6 reserve polygons joined through the ISC reserve relation."
+    "status": "reviewed",
+    "reviewedAt": "2026-10-05",
+    "notes": "Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer). BC basis: headquarters inside, or within 10 km of, the British Columbia outline; 6 reserve polygons joined through the ISC reserve relation."
   },
-  "flags": [
-    "name-orthography-needs-nation-source",
-    "tz-needs-confirmation"
-  ]
+  "flags": []
 }

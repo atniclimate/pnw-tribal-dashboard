@@ -463,9 +463,13 @@ test('L5: no overview feature is null geometry, and the restored ones are listed
   assert.deepEqual(restored, ['07351', '07402', '07904', '10236']);
 });
 
-test('L5: every record stays draft and no crosswalk row is reviewed after the wave 2 build', { skip: SKIP }, () => {
-  for (const r of records) { assert.equal(r.review.status, 'draft'); assert.equal(r.hq.reviewed, false); }
-  for (const f of ['crosswalk-us', 'crosswalk-bc']) for (const row of readJson(`data/registry/${f}.json`).rows) assert.equal(row.reviewed, false);
+test('L5: after the 10/05/2026 approval only ca-fn-709 stays draft, and no place-phrase candidate is reviewed', { skip: SKIP }, () => {
+  for (const r of records) {
+    const draft = r.id === 'ca-fn-709';
+    assert.equal(r.review.status, draft ? 'draft' : 'reviewed', r.id);
+    assert.equal(r.hq.reviewed, !draft, r.id);
+  }
+  for (const f of ['crosswalk-us', 'crosswalk-bc']) for (const row of readJson(`data/registry/${f}.json`).rows) if (row.matchMethod === 'name-reviewed') assert.equal(row.reviewed, false, `${row.nationId} ${row.sourceKey}`);
 });
 
 test('L5: the ECCC city page capture is a dated real capture with a response hash and no forecast text', { skip: SKIP }, () => {

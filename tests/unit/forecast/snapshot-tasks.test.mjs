@@ -1,13 +1,14 @@
 // @ts-check
 /**
- * Blueprint 5.9 and 6.4 (L12): the imagery-stamps and ar-products snapshot tasks. HEAD results come from the
- * real probe bundles in tests/fixtures/upstream; envelopes validate against their live schemas.
+ * Blueprint 5.9 and 6.4 (L12): the imagery-stamps snapshot task. HEAD results come from the real probe bundles
+ * in tests/fixtures/upstream; envelopes validate against their live schemas. CW3E and SSEC are link-only
+ * (decision Q11, 10/05/2026), so no task requests either provider.
  */
 import assert from 'node:assert/strict';
 import { before, describe, test } from 'node:test';
 import { loadAjv } from '../../../scripts/check/lib/data-files.mjs';
 import { envelopeErrors } from '../../../scripts/lib/live.mjs';
-import arProducts from '../../../scripts/snapshot/tasks/ar-products.mjs';
+import { readdir } from 'node:fs/promises';
 import imageryStamps, { httpDateToIso, stampedProducts } from '../../../scripts/snapshot/tasks/imagery-stamps.mjs';
 import { fixture } from './helpers.mjs';
 
@@ -15,7 +16,7 @@ import { fixture } from './helpers.mjs';
 let ajv;
 before(async () => { ajv = await loadAjv(); });
 
-const bundles = ['goes18-star-cdn', 'wpc-images', 'nws-ridge', 'ssec-mtpw2'].flatMap((s) => fixture(s, '2026-10-05-head-probe.json').results);
+const bundles = ['goes18-star-cdn', 'wpc-images', 'nws-ridge'].flatMap((s) => fixture(s, '2026-10-05-head-probe.json').results);
 const byUrl = new Map(bundles.map((/** @type {any} */ r) => [r.url, r]));
 const NOW = new Date('2026-10-05T09:55:00Z');
 
@@ -38,7 +39,7 @@ describe('imagery-stamps', () => {
   test('every stamped product is read once, and the envelope validates', async () => {
     const products = await stampedProducts();
     assert.ok(products.length >= 70);
-    assert.ok(products.every((p) => p.sourceId !== 'cw3e-images'), 'CW3E is stamped from the model cycle by ar-products');
+    assert.ok(products.every((p) => p.sourceId !== 'cw3e-images' && p.sourceId !== 'ssec-mtpw2'), 'CW3E and SSEC are link-only and never requested');
     const out = await imageryStamps.run(ctx(http((u) => byUrl.get(u))));
     const env = /** @type {any} */ (out['imagery-stamps.json']);
     assert.deepEqual(envelopeErrors(ajv, 'imagery-stamps.json', env), []);
@@ -46,7 +47,7 @@ describe('imagery-stamps', () => {
     assert.equal(env.items.length, products.length);
     assert.equal(env.asOfBasis, 'issued');
     for (const i of env.items) assert.match(i.lastModified, /^\d{4}-\d\d-\d\dT/);
-    assert.deepEqual(Object.keys(env.perSource).sort(), ['goes18-star-cdn', 'nws-ridge', 'ssec-mtpw2', 'wpc-images']);
+    assert.deepEqual(Object.keys(env.perSource).sort(), ['goes18-star-cdn', 'nws-ridge', 'wpc-images']);
     assert.equal(env.asOf, [...env.items.map((/** @type {any} */ i) => i.lastModified)].sort().at(-1));
   });
 
@@ -75,11 +76,14 @@ describe('imagery-stamps', () => {
   });
 });
 
-describe('ar-products envelope', () => {
-  test('validates against its live schema', async () => {
-    const real = fixture('cw3e-images', '2026-10-05-head-probe-ivt-uswc.json');
-    const ok = new Map(real.results.map((/** @type {any} */ r) => [r.url, r]));
-    const out = await arProducts.run(ctx(http((u) => ok.get(u))));
-    assert.deepEqual(envelopeErrors(ajv, 'ar-products.json', out['ar-products.json']), []);
+describe('link-only sources', () => {
+  test('no snapshot task is registered for CW3E or SSEC images, and the stamped products never name them', async () => {
+    const files = await readdir(new URL('../../../scripts/snapshot/tasks/', import.meta.url));
+    assert.ok(!files.includes('ar-products.mjs'), 'the ar-products task is retired');
+    const out = await imageryStamps.run(ctx(http((u) => {
+      assert.ok(!/cw3e\.ucsd\.edu|tropic\.ssec\.wisc\.edu/.test(u), `no request goes to ${u}`);
+      return byUrl.get(u);
+    })));
+    assert.equal(/** @type {any} */ (out['imagery-stamps.json']).completeness, 'complete');
   });
 });

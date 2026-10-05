@@ -48,7 +48,8 @@ test('L6: schema-valid contacts with source_url, verified_at, verified_method, a
     assert.deepEqual(errs(vRow)(r), [], r.id);
     for (const k of /** @type {const} */ (['source_url', 'verified_at', 'verified_method', 'line_type', 'source_snippet'])) assert.ok(r[k], `${r.id} lacks ${k}`);
     assert.ok(r.verified_at >= '2026-10-05', `${r.id} verified before 10/05/2026`);
-    assert.match(r.notes, /^draft: /, `${r.id} must be marked draft`);
+    // Signed off by the maintainer 10/05/2026 (packet amendments, Section F): the draft marker is gone.
+    assert.doesNotMatch(r.notes, /draft/i, `${r.id} still carries a draft marker`);
     const key = r.phone_e164 ? digits(r.phone_e164).slice(-10) : r.email.toLowerCase();
     const hay = r.phone_e164 ? digits(r.source_snippet) : r.source_snippet.toLowerCase();
     assert.ok(hay.includes(key), `${r.id} snippet does not contain its number or mailbox`);
@@ -84,15 +85,36 @@ test('L6: all twenty audit corrections applied and re-verified', () => {
   assert.ok(!live.has('5038467575'), 'the unverified Washington County number must not be published until re-verified');
 });
 
-test('L6: Washington duty-officer conflict recorded in conflicts.csv', async () => {
-  const c = (await load('conflicts')).rows;
-  assert.deepEqual(c.map((r) => r.phone_e164).sort(), ['+12535124901', '+12539124901']);
-  for (const r of c) { assert.equal(r.status, 'conflict'); assert.notEqual(r.preferred, 'true'); assert.match(r.notes, /800-258-5990/); }
+test('L6: the Washington duty-officer conflict is excluded; the 24-hour State Alert and Warning Center line stays preferred', async () => {
+  // Packet amendments 10/05/2026, Section B.2 rows 1 and 2: a contact in contention is not included, so conflicts.csv keeps only its header.
+  const c = await load('conflicts');
+  assert.equal(c.header.join(','), CONTACT_HEADER.join(','));
+  assert.deepEqual(c.rows, []);
   const preferred = rows.find((r) => r.id === 'ct-wa-emd-alert-warning-center-24-7');
   assert.equal(preferred?.preferred, 'true');
   const { items, held } = compileRows(files, opts);
-  assert.equal(held.length, 2);
+  assert.equal(held.length, 0);
   assert.ok(!items.some((i) => ['+12535124901', '+12539124901'].includes(i.phone?.e164)), 'conflicting numbers must not render');
+});
+
+test('L6: the twenty-four rows excluded by the packet amendments are gone, and Ashcroft is re-sourced to its ISC profile', async () => {
+  const all = [];
+  for (const n of ['agencies', 'ak', 'audit-tribal', 'bc-1', 'bc-2', 'bc-3', 'bc-4', 'ca-1', 'ca-2', 'conflicts', 'mt-nv', 'or-id', 'wa-1', 'wa-2']) all.push(...(await load(n)).rows);
+  assert.equal(all.length, 448);
+  const ids = new Set(all.map((r) => r.id));
+  for (const id of ['ct-wa-emd-duty-officer-statewide-contacts-pdf', 'ct-wa-emd-duty-officer-staff-roster-pdf', 'ct-ca-greenville-rancheria-government-main',
+    'ct-ca-fn-539-band-office', 'ct-ca-fn-547-government-main', 'ct-ca-fn-547-band-office-isc', 'ct-ca-fn-675-government-main', 'ct-ca-fn-675-band-office',
+    'ct-ca-fn-696-government-main', 'ct-ca-fn-696-band-office-isc', 'ct-ca-fn-677-government-main', 'ct-ca-fn-677-band-office-isc', 'ct-ca-fn-608-band-office',
+    'ct-ca-fn-608-isc-band-office', 'ct-blk-main', 'ct-blk-bia-office', 'ct-cc-council', 'ct-cc-bia-office', 'ct-fm-main', 'ct-fm-bia-office',
+    'ct-ca-alturas-indian-rancheria-california-government-main', 'ct-upperskagit-main', 'ct-organized-village-of-kasaan-government-main', 'ct-ca-fn-685-government-main']) {
+    assert.equal(ids.has(id), false, `${id} must be excluded`);
+  }
+  const ashcroft = all.find((r) => r.id === 'ct-ca-fn-685-band-office-isc');
+  assert.equal(ashcroft?.phone_e164, '+12504539154');
+  assert.equal(ashcroft?.source_kind, 'federal-directory');
+  assert.equal(ashcroft?.published_by_nation, 'false');
+  assert.match(String(ashcroft?.source_url), /BAND_NUMBER=685/);
+  for (const r of all) assert.doesNotMatch(r.org, /\?/, `${r.id}: displayed organization name carries the ISC placeholder`);
 });
 
 test('L6: no personal mobile numbers; no person names unless Nation-published on the Nation domain', () => {

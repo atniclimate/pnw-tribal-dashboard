@@ -26,7 +26,7 @@
     "sourceId": "bia-tld",
     "sourceRecordId": "490",
     "retrievedAt": "2026-10-04",
-    "reviewed": false
+    "reviewed": true
   },
   "samples": [
     [
@@ -104,9 +104,9 @@
     "iscBandNumber": null
   },
   "review": {
-    "status": "draft",
-    "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: scope.yaml include: Included provisionally so lane L6 contact records resolve. Q2 asks whether the Blackfeet Nation is in the footprint (Glacier County lies east of the Continental Divide). Move to exclude if the maintainer rules it out.."
+    "status": "reviewed",
+    "reviewedAt": "2026-10-05",
+    "notes": "Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer). Footprint basis: scope.yaml include: Included by the maintainer's ruling of 10/05/2026 (packet amendments, Section D). The Tribe is an ATNI member (ATNI Priority Climate Action Plan, April 2024, Table 3), so it is inside the ATNI service area; Glacier and Pondera counties are in the footprint."
   },
   "flags": []
 }

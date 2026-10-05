@@ -152,9 +152,11 @@ test('L8: the basemap gives up when more than half its tiles fail, or offline, a
   assert.equal(BASEMAP_OFF_TEXT, 'Base map not enabled; outlines shown.');
   assert.ok(carto.urlTemplate.includes('basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'));
   assert.ok(!/a\.|b\.|c\.|d\./.test(new URL(carto.urlTemplate.replace('{z}/{x}/{y}', '0/0/0')).hostname.slice(0, 2)), 'one host, no a to d subdomains');
-  assert.ok(basemapTileUrl(carto.urlTemplate, { highDensity: true, lowData: false }).endsWith('{y}@2x.png'));
-  assert.ok(basemapTileUrl(carto.urlTemplate, { highDensity: true, lowData: true }).endsWith('{y}.png'));
-  assert.ok(basemapTileUrl(carto.urlTemplate, { highDensity: false, lowData: false }).endsWith('{y}.png'));
+  // The tile URL carries the ATNI key as a query parameter; the placeholder stays until the key is issued.
+  assert.ok(carto.urlTemplate.endsWith('?key=<ATNI_BASEMAP_KEY>'));
+  assert.ok(basemapTileUrl(carto.urlTemplate, { highDensity: true, lowData: false }).includes('{y}@2x.png?key='));
+  assert.ok(basemapTileUrl(carto.urlTemplate, { highDensity: true, lowData: true }).includes('{y}.png?key='));
+  assert.ok(basemapTileUrl(carto.urlTemplate, { highDensity: false, lowData: false }).includes('{y}.png?key='));
 });
 
 test('L8: radar valid times parse from the two published shapes and fall back to null', () => {

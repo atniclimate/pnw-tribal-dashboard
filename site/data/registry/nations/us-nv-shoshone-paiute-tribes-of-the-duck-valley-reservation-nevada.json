@@ -27,7 +27,7 @@
     "sourceId": "bia-tld",
     "sourceRecordId": "579",
     "retrievedAt": "2026-10-04",
-    "reviewed": false
+    "reviewed": true
   },
   "samples": [
     [
@@ -57,8 +57,8 @@
       }
     ]
   },
-  "timeZone": "America/Los_Angeles",
-  "timeZoneSource": "tz-lookup",
+  "timeZone": "America/Denver",
+  "timeZoneSource": "override",
   "units": "us",
   "nws": {
     "wfo": [
@@ -107,11 +107,9 @@
     "iscBandNumber": null
   },
   "review": {
-    "status": "draft",
-    "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: scope.yaml include: Northern Nevada, named in the Data Rulings (Duck Valley). The reservation lies on the Idaho and Nevada line.."
+    "status": "reviewed",
+    "reviewedAt": "2026-10-05",
+    "notes": "Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer). Footprint basis: scope.yaml include: Northern Nevada, named in the Data Rulings (Duck Valley). The reservation lies on the Idaho and Nevada line."
   },
-  "flags": [
-    "tz-needs-confirmation"
-  ]
+  "flags": []
 }

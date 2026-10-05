@@ -6205,10 +6205,12 @@
         ],
         "forecastZones": [
           "forecast:MTZ311",
-          "forecast:MTZ305"
+          "forecast:MTZ305",
+          "forecast:MTZ310"
         ],
         "countyZones": [
-          "county:MTC041"
+          "county:MTC041",
+          "county:MTC015"
         ],
         "fireZones": [
           "fire:MTZ113"

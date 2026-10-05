@@ -12,7 +12,7 @@ import { load as loadYaml, CORE_SCHEMA } from 'js-yaml';
 import { ROOT } from '../../../scripts/check/lib/pages.mjs';
 import { PERSON_KEYS, loadAjv, personKeyHits } from '../../../scripts/check/lib/data-files.mjs';
 import {
-  BC_TOLERANCE_KM, CENSUS_LEGAL_MTFCC, TLD_ALLOW, decodeEntities, distanceToOutlineKm, normName, parseFederalRegister, pointInGeometry, splitFrEntry, tzConsistent,
+  BC_TOLERANCE_KM, CENSUS_LEGAL_MTFCC, TLD_ALLOW, applyApproval, decodeEntities, distanceToOutlineKm, normName, parseFederalRegister, pointInGeometry, readApproval, splitFrEntry, tzConsistent,
 } from '../../../scripts/reference/50-registry.mjs';
 import { compact, hqBbox, project } from '../../../scripts/reference/70-joins.mjs';
 import { COUNT_GATES, countRegistry, registryGates } from '../../../scripts/reference/90-validate.mjs';
@@ -149,8 +149,46 @@ test('L5: a reviewed name with a placeholder fails; a redirect excuses a vanishe
   assert.ok(f.warnings.some((w) => /wave 2 joins pending/.test(w)));
 });
 
-test('L5: count gates read the blueprint 6.2 ranges', () => {
-  assert.deepEqual(COUNT_GATES.usOutsideAlaska, { min: 120, max: 170 });
+test('L5: a reviewed record needs a review date, a reviewed headquarters, and no flag', () => {
+  const lock = { entries: ['us-wa-a', 'us-wa-b', 'us-wa-c'].map((id, i) => ({ id, key: `k${i}` })) };
+  const f = registryGates({
+    records: [
+      rec('us-wa-a', { review: { status: 'reviewed', reviewedAt: '2026-10-05' }, hq: { sourceId: 'bia-tld', reviewed: true } }),
+      rec('us-wa-b', { review: { status: 'reviewed', reviewedAt: null }, hq: { sourceId: 'bia-tld', reviewed: false } }),
+      rec('us-wa-c', { review: { status: 'reviewed', reviewedAt: '2026-10-05' }, hq: { sourceId: 'bia-tld', reviewed: true }, flags: ['tz-needs-confirmation'] }),
+    ], lock, redirects: { redirects: {} }, ratified: true,
+  });
+  const text = f.problems.join('\n');
+  assert.doesNotMatch(text, /us-wa-a: review/);
+  assert.match(text, /us-wa-b: review\.status is reviewed without review\.reviewedAt/);
+  assert.match(text, /us-wa-b: review\.status is reviewed but hq\.reviewed is not true/);
+  assert.match(text, /us-wa-c: review\.status is reviewed while the record carries tz-needs-confirmation/);
+  assert.ok(f.notes.some((n) => /review status: 3 reviewed, 0 draft/.test(n)));
+});
+
+test('L5: the approval reviews only unflagged, unheld records minted on or before its date', () => {
+  const mk = (/** @type {string} */ id, /** @type {string[]} */ flags = []) => ({ id, flags, hq: { reviewed: false }, review: { status: 'draft', reviewedAt: null, notes: 'Draft built by scripts/reference/50-registry.mjs. Footprint basis: state WA.' } });
+  const recs = [mk('us-wa-a'), mk('us-wa-held'), mk('us-wa-flag', ['tz-needs-confirmation']), mk('us-wa-new')];
+  const rows = [
+    { nationId: 'us-wa-a', matchMethod: 'code', reviewed: false }, { nationId: 'us-wa-a', matchMethod: 'name-exact', reviewed: false },
+    { nationId: 'us-wa-a', matchMethod: 'name-reviewed', reviewed: false }, { nationId: 'us-wa-held', matchMethod: 'code', reviewed: false },
+  ];
+  const lock = { entries: [{ id: 'us-wa-a', mintedAt: '2026-10-05' }, { id: 'us-wa-held', mintedAt: '2026-10-05' }, { id: 'us-wa-flag', mintedAt: '2026-10-05' }, { id: 'us-wa-new', mintedAt: '2026-11-01' }] };
+  const approval = readApproval({ approvedOn: '2026-10-05', approver: 'maintainer', decision: 'd.md', holds: [{ nationId: 'us-wa-held', reason: 'Source pending.' }] });
+  const rep = applyApproval(recs, rows, lock, approval);
+  assert.deepEqual([rep.reviewed, rep.draft, rep.held, rep.flagged, rep.newer], [1, 3, ['us-wa-held'], ['us-wa-flag'], ['us-wa-new']]);
+  assert.deepEqual(recs[0]?.review, { status: 'reviewed', reviewedAt: '2026-10-05', notes: 'Approved with amendments 10/05/2026 (d.md; approver: maintainer). Footprint basis: state WA.' });
+  assert.equal(recs[0]?.hq.reviewed, true);
+  assert.equal(recs[1]?.review.status, 'draft');
+  assert.match(String(recs[1]?.review.notes), /^Held as draft by the approval of 10\/05\/2026 .*Source pending\./);
+  assert.deepEqual(rows.map((r) => r.reviewed), [true, true, false, false]);
+  assert.equal(readApproval(null), null);
+  assert.throws(() => readApproval({ approvedOn: '10/05/2026', approver: 'maintainer', decision: 'd.md' }), /approvedOn/);
+  assert.throws(() => readApproval({ approvedOn: '2026-10-05', approver: 'maintainer', decision: 'd.md', extra: 1 }), /unknown keys/);
+});
+
+test('L5: count gates read the blueprint 6.2 ranges (U.S. outside Alaska 75 to 95 since 10/05/2026)', () => {
+  assert.deepEqual(COUNT_GATES.usOutsideAlaska, { min: 75, max: 95 });
   assert.deepEqual(COUNT_GATES.southeastAlaska, { min: 15, max: 25 });
   assert.deepEqual(COUNT_GATES.britishColumbia, { min: 195, max: 210 });
   assert.deepEqual(countRegistry([rec('us-wa-a'), rec('us-ak-b', { region: 'ak-se' }), rec('ca-fn-1')]), { total: 3, us: 2, usOutsideAlaska: 1, southeastAlaska: 1, britishColumbia: 1 });
@@ -184,18 +222,27 @@ test('L5: every record is schema-valid with name source, headquarters provenance
     assert.ok(r.nameSource.url.startsWith('https://') && r.nameSource.citation);
     assert.ok(r.hq.sourceId && r.hq.sourceRecordId && r.hq.retrievedAt);
     assert.match(r.timeZone, /^(America|Pacific)\//);
-    assert.equal(r.review.status, 'draft', `${r.id} must stay draft until the maintainer approves the packet`);
-    assert.equal(r.hq.reviewed, false);
+    // Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md, Section F): 302 reviewed, ca-fn-709 held as draft.
+    if (r.id === 'ca-fn-709') {
+      assert.equal(r.review.status, 'draft', 'ca-fn-709 stays draft until its spelling has a Nation source');
+      assert.equal(r.hq.reviewed, false);
+    } else {
+      assert.equal(r.review.status, 'reviewed', r.id);
+      assert.equal(r.review.reviewedAt, '2026-10-05', r.id);
+      assert.match(r.review.notes, /^Approved with amendments 10\/05\/2026 \(packet-amendments-2026-10-05\.md; approver: maintainer\)\./, r.id);
+      assert.equal(r.hq.reviewed, true, r.id);
+    }
   }
+  assert.equal(records.filter((r) => r.review.status === 'reviewed').length, 302);
 });
 
 test('L5: counts are within the gates that apply and reconciled to the source counts', { skip: SKIP }, () => {
   const c = countRegistry(records);
   assert.ok(c.southeastAlaska >= COUNT_GATES.southeastAlaska.min && c.southeastAlaska <= COUNT_GATES.southeastAlaska.max, `Southeast Alaska ${c.southeastAlaska}`);
   assert.ok(c.britishColumbia >= COUNT_GATES.britishColumbia.min && c.britishColumbia <= COUNT_GATES.britishColumbia.max, `British Columbia ${c.britishColumbia}`);
-  // The U.S. count outside Alaska is below its gate under the unratified Q2 county proposal; that is a reported
-  // warning in the review packet (Decision One), so this test pins the figure instead of hiding it.
-  assert.ok(c.usOutsideAlaska > 0);
+  // The footprint was ratified on 10/05/2026 with the gate of 75 to 95 (packet amendments, Section E).
+  assert.ok(c.usOutsideAlaska >= COUNT_GATES.usOutsideAlaska.min && c.usOutsideAlaska <= COUNT_GATES.usOutsideAlaska.max, `U.S. outside Alaska ${c.usOutsideAlaska}`);
+  assert.deepEqual([c.usOutsideAlaska, c.southeastAlaska, c.britishColumbia], [83, 19, 201]);
   const draft = readJson('data/registry/draft-registry.json');
   assert.equal(draft.records.length, records.length);
   assert.equal(draft.stats.iscLocationRows, 638);
@@ -205,16 +252,25 @@ test('L5: counts are within the gates that apply and reconciled to the source co
   assert.equal(readJson('site/data/geo/hq-points.json').features.length, records.length);
 });
 
-test('L5: zero names with ? or U+FFFD among reviewed records, and every flagged record is listed', { skip: SKIP }, () => {
+test('L5: zero names with ? or U+FFFD, and the names.yaml corrections carry the exact code points', { skip: SKIP }, () => {
   const flagged = records.filter((r) => hasNamePlaceholder(r.name));
-  assert.ok(flagged.length > 0, 'the 10/04/2026 ISC export carries the ? placeholder');
-  for (const r of flagged) {
-    assert.ok(r.flags.includes('name-orthography-needs-nation-source'), r.id);
-    assert.notEqual(r.review.status, 'reviewed');
-    assert.equal(r.country, 'CA');
+  assert.deepEqual(flagged.map((r) => r.id), [], 'every ISC placeholder is corrected through names.yaml (packet amendments, Section C)');
+  for (const r of records) assert.equal(r.flags.includes('name-orthography-needs-nation-source'), false, r.id);
+  const byId = new Map(records.map((r) => [r.id, r]));
+  // U+0294 glottal stop, U+0313 combining comma above, U+00B7, U+2C61, and U+2019, in NFC.
+  for (const [id, name] of [
+    ['ca-fn-602', 'ʔaq̓am'],
+    ['ca-fn-603', 'Yaq̓it ʔa·knuqⱡi’it First Nation'],
+    ['ca-fn-604', 'ʔAkisq̓nuk First Nation'],
+    ['ca-fn-709', 'ʔEsdilagh First Nation'],
+    ['us-ca-puliklatribe-of-yurok-people', 'Pulikla Tribe of Yurok People'],
+  ]) {
+    const r = byId.get(id);
+    assert.equal(r?.name, name, id);
+    assert.equal(r?.name, String(r?.name).normalize('NFC'), id);
+    assert.equal(r?.nameSource.kind, 'names-override', id);
   }
-  for (const r of records) if (r.flags.includes('name-orthography-needs-nation-source')) assert.ok(hasNamePlaceholder(r.name) || r.nameSource.kind === 'names-override');
-  // The review packet lists every flagged record from this same set (90-validate.mjs writePacket reads the records).
+  assert.ok(byId.get('us-ca-puliklatribe-of-yurok-people')?.aliases.includes('PuliklaTribe of Yurok People'), 'the Federal Register form stays a search alias');
 });
 
 test('L5: no person keys anywhere in the registry files', { skip: SKIP }, () => {
@@ -222,7 +278,7 @@ test('L5: no person keys anywhere in the registry files', { skip: SKIP }, () => 
     assert.deepEqual(personKeyHits(readJson(rel)), [], rel);
   }
   for (const r of records) assert.deepEqual(personKeyHits(r), [], r.id);
-  for (const rel of ['data/registry/scope.yaml', 'data/registry/overrides.yaml', 'data/registry/inputs.yaml']) assert.deepEqual(personKeyHits(readYaml(rel)), [], rel);
+  for (const rel of ['data/registry/scope.yaml', 'data/registry/overrides.yaml', 'data/registry/inputs.yaml', 'data/registry/names.yaml', 'data/registry/review.yaml']) assert.deepEqual(personKeyHits(readYaml(rel)), [], rel);
 });
 
 test('L5: id stability: every id is in the lock, ids are unique, First Nation ids follow the band number', { skip: SKIP }, () => {
@@ -241,14 +297,15 @@ test('L5: id stability: every id is in the lock, ids are unique, First Nation id
   assert.equal(redirects.schema, 'cthd.id-redirects/1');
 });
 
-test('L5: crosswalk rows point at real Nations, carry a method, and none is marked reviewed', { skip: SKIP }, () => {
+test('L5: crosswalk rows point at real Nations, carry a method, and only code and name-exact rows of reviewed Nations are reviewed', { skip: SKIP }, () => {
   const ids = new Set(records.map((r) => r.id));
+  const reviewed = new Set(records.filter((r) => r.review.status === 'reviewed').map((r) => r.id));
   for (const f of ['crosswalk-us', 'crosswalk-bc']) {
     const cw = readJson(`data/registry/${f}.json`);
     assert.ok(cw.rows.length > 0);
     for (const row of cw.rows) {
       assert.ok(ids.has(row.nationId), `${f}: ${row.nationId}`);
-      assert.equal(row.reviewed, false);
+      assert.equal(row.reviewed, reviewed.has(row.nationId) && ['code', 'name-exact'].includes(row.matchMethod), `${f}: ${row.nationId} ${row.sourceKey}`);
       assert.ok(['code', 'name-exact', 'name-reviewed', 'manual'].includes(row.matchMethod));
     }
   }
@@ -297,16 +354,32 @@ test('L5: headquarters points are inside plausible ranges for the footprint', { 
   }
 });
 
-test('L5: every committed record has a time zone consistent with its jurisdiction, and the five border-point corrections are flagged overrides', { skip: SKIP }, () => {
+test('L5: every committed record has a time zone consistent with its jurisdiction, and the twenty ratified overrides clear every flag', { skip: SKIP }, () => {
   for (const r of records) assert.ok(tzConsistent(r.jurisdictions, r.timeZone), `${r.id}: ${r.timeZone} for ${r.jurisdictions[0]}`);
   const byId = new Map(records.map((r) => [r.id, r]));
-  for (const [id, zone] of [['us-ak-petersburg-indian-association', 'America/Sitka'], ['us-ak-wrangell-cooperative-association', 'America/Sitka'],
-    ['ca-fn-596', 'America/Vancouver'], ['ca-fn-598', 'America/Vancouver'], ['ca-fn-658', 'America/Vancouver']]) {
+  // Packet amendments 10/05/2026, Section A.2: three changes, five ratified corrections, twelve confirmations.
+  const decided = [
+    ['us-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada', 'America/Denver'],
+    ['us-nv-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian', 'America/Los_Angeles'],
+    ['us-ak-metlakatla-indian-community-annette-island-reserve', 'America/Metlakatla'],
+    ['us-ak-petersburg-indian-association', 'America/Sitka'], ['us-ak-wrangell-cooperative-association', 'America/Sitka'],
+    ['ca-fn-596', 'America/Vancouver'], ['ca-fn-598', 'America/Vancouver'], ['ca-fn-658', 'America/Vancouver'],
+    ['ca-fn-542', 'America/Dawson_Creek'], ['ca-fn-545', 'America/Dawson_Creek'], ['ca-fn-546', 'America/Dawson_Creek'],
+    ['ca-fn-547', 'America/Dawson_Creek'], ['ca-fn-548', 'America/Dawson_Creek'], ['ca-fn-544', 'America/Fort_Nelson'], ['ca-fn-543', 'America/Fort_Nelson'],
+    ['ca-fn-602', 'America/Edmonton'], ['ca-fn-603', 'America/Edmonton'], ['ca-fn-604', 'America/Edmonton'], ['ca-fn-605', 'America/Edmonton'],
+    ['ca-fn-606', 'America/Creston'],
+  ];
+  assert.equal(decided.length, 20);
+  for (const [id, zone] of decided) {
     const r = byId.get(id);
     assert.equal(r?.timeZone, zone, id);
     assert.equal(r?.timeZoneSource, 'override', id);
-    assert.ok(r?.flags.includes('tz-needs-confirmation'), `${id} stays flagged until the maintainer ratifies the override`);
   }
+  assert.equal(records.filter((r) => r.timeZoneSource === 'override').length, 20);
+  assert.deepEqual(records.filter((r) => r.flags.includes('tz-needs-confirmation')).map((r) => r.id), []);
+  const overrides = readYaml('data/registry/overrides.yaml').filter((/** @type {any} */ o) => o.field === 'timeZone');
+  assert.equal(overrides.length, 20);
+  for (const o of overrides) assert.match(o.reason, /^Ratified 10\/05\/2026 \(packet amendments\)\./, o.nationId);
 });
 
 test('L5: Census off-reservation trust land (G2102, GEOID suffix T) reaches the crosswalk', { skip: SKIP }, () => {

@@ -155,7 +155,7 @@ describe('carry-forward', () => {
     const tasks = await tasksDir('bad-tasks', {
       'thrower.mjs': "export default { id: 'tsunami', sourceIds: ['ntwc-atom'], cadenceMin: 10, outputs: ['tsunami.json'], async run() { throw new Error('boom'); } };\n",
       'invalid.mjs': "export default { id: 'wsc', sourceIds: ['eccc-hydrometric-realtime'], cadenceMin: 30, outputs: ['wsc-status.json'], async run() { return { 'wsc-status.json': { schema: 'cthd.live.wsc-status/1', items: 'nope' } }; } };\n",
-      'slow.mjs': "export default { id: 'ar-products', sourceIds: ['cw3e-images'], cadenceMin: 60, outputs: ['ar-products.json'], run() { return new Promise(() => {}); } };\n",
+      'slow.mjs': "export default { id: 'imagery-stamps', sourceIds: ['wpc-images'], cadenceMin: 30, outputs: ['imagery-stamps.json'], run() { return new Promise(() => {}); } };\n",
       'broken.mjs': "export default { id: 'Not Kebab', outputs: [] };\n",
     });
     const out = dir('bad-out');
@@ -164,10 +164,10 @@ describe('carry-forward', () => {
     const codes = Object.fromEntries(r.outcomes.map((o) => [o.id, o.failure?.code ?? null]));
     assert.equal(codes.tsunami, 'task-threw');
     assert.equal(codes.wsc, 'invalid-envelope');
-    assert.equal(codes['ar-products'], 'task-timeout');
+    assert.equal(codes['imagery-stamps'], 'task-timeout');
     assert.equal(codes.broken, 'invalid-task-module');
     assert.equal(codes.news, null);
-    for (const f of ['tsunami.json', 'wsc-status.json', 'ar-products.json']) assert.equal((await readJson(out, f)).completeness, 'rejected', f);
+    for (const f of ['tsunami.json', 'wsc-status.json', 'imagery-stamps.json']) assert.equal((await readJson(out, f)).completeness, 'rejected', f);
     assert.equal((await readJson(out, 'news.json')).completeness, 'complete');
     const health = await readJson(out, 'health.json');
     assert.equal(health.diagnostics.tasksInvalid, 1);

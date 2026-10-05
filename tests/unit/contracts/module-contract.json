@@ -447,16 +447,6 @@
       ]
     },
     {
-      "path": "site/static/js/forecast/cw3e.js",
-      "owner": "L12",
-      "dom": false,
-      "exports": [
-        "cw3eUrl",
-        "resolveCycleFromManifest",
-        "probeCycleInBrowser"
-      ]
-    },
-    {
       "path": "site/static/js/forecast/eccc-citypage.js",
       "owner": "L12",
       "dom": false,
@@ -994,13 +984,10 @@
       "owner": "L12",
       "dom": true,
       "exports": [
-        "CW3E_FAMILIES",
-        "PENDING_TERMS_NOTE",
         "RADAR_USEFUL_KM",
         "mountMapFrame",
-        "renderCw3e",
         "renderGoes",
-        "renderMtpw",
+        "renderLinkOut",
         "renderRidge",
         "renderWpc"
       ]

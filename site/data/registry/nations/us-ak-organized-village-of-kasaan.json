@@ -26,7 +26,7 @@
     "sourceId": "bia-anv",
     "sourceRecordId": "173",
     "retrievedAt": "2026-10-04",
-    "reviewed": false
+    "reviewed": true
   },
   "samples": [
     [
@@ -88,9 +88,9 @@
     "iscBandNumber": null
   },
   "review": {
-    "status": "draft",
-    "reviewedAt": null,
-    "notes": "Draft built by scripts/reference/50-registry.mjs. Footprint basis: borough or census area Prince of Wales-Hyder Census Area (Q2 proposal, unratified)."
+    "status": "reviewed",
+    "reviewedAt": "2026-10-05",
+    "notes": "Approved with amendments 10/05/2026 (packet-amendments-2026-10-05.md; approver: maintainer). Footprint basis: borough or census area Prince of Wales-Hyder Census Area (footprint.yaml, ratified 10/05/2026)."
   },
   "flags": []
 }
