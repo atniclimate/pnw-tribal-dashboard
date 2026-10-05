@@ -33,8 +33,9 @@ test.describe('scenario 1: all upstreams down, no snapshot', () => {
         })(),
       })));
       for (const p of panels) {
-        // Static informational panels (Resources, Safety text, Contacts directory) are not data panels in this sense.
-        if (!/^(resources|safety|contacts)/.test(p.name)) {
+        // Static informational panels (Resources, Safety text, Contacts directory, the News source directory and
+        // community links, all from committed files) are not data panels in this sense.
+        if (!/^(resources|safety|contacts|news-directory|news-community)/.test(p.name)) {
           expect(['unavailable', 'loading', ''], `${p.name} is "${p.status}" with every upstream down`).toContain(p.status);
         }
         if (p.status === 'unavailable') {

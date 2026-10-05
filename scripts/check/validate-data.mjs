@@ -106,9 +106,11 @@ export async function loadCorpus() {
   const nations = [];
   /** @type {Set<string>} */
   const registryFiles = new Set();
-  for (const base of ['site/data/registry', 'tests/fixtures/registry']) {
+  // detailRef is relative to the data root the runtime fetches from (`data/${detailRef}`): production
+  // geometry lives in site/data/geo beside site/data/registry; the fixture keeps its geo/ inside its own root.
+  for (const [base, dataRoot] of /** @type {const} */ ([['site/data/registry', 'site/data'], ['tests/fixtures/registry', 'tests/fixtures/registry']])) {
     for (const f of await listDir(`${base}/nations`, /\.json$/)) nations.push({ file: f, rec: /** @type {any} */ (await readIf(f)) });
-    for (const f of await walkData(`${base}/geo`)) registryFiles.add(f);
+    for (const f of await walkData(`${dataRoot}/geo`)) registryFiles.add(f);
   }
   const prodNations = nations.filter((n) => n.file.startsWith('site/data/registry/'));
   const productionNationIds = prodNations.length ? new Set(prodNations.map((n) => String(n.rec.id))) : null;
@@ -124,6 +126,12 @@ export async function loadCorpus() {
   const resources = /** @type {any[]} */ ((await readIf('data/resources.yaml')) ?? []).map((rec, i) => ({ file: `data/resources.yaml #${i + 1}`, rec }));
   const declarations = /** @type {any[]} */ ((await readIf('data/declarations/curated.yaml')) ?? []).map((rec, i) => ({ file: `data/declarations/curated.yaml #${i + 1}`, rec }));
   const gauges = /** @type {any} */ (await readIf('site/data/ref/gauges.json'));
+  const wscStations = /** @type {any} */ (await readIf('site/data/ref/wsc-stations.json'));
+  // Registry gauge lists hold NWPS ids and wsc: station ids (schema and L7 allow both), so resolve against the union.
+  const gaugeIds = gauges ? new Set([
+    ...gauges.gauges.map((/** @type {any} */ g) => String(g.id)),
+    ...(wscStations?.stations ?? []).map((/** @type {any} */ s) => String(s.id)),
+  ]) : null;
   const footprint = /** @type {any} */ ((await readIf('data/pipeline/footprint.yaml')) ?? null);
   /** @type {{ file: string, id: string }[]} */
   const fetchIds = [];
@@ -133,7 +141,7 @@ export async function loadCorpus() {
   }
   return {
     sourceIds, nations, productionNationIds, contacts, agencyIds: agencies ? new Set(agencies.map((a) => String(a.id))) : null,
-    eventIds, resources, declarations, gaugeIds: gauges ? new Set(gauges.gauges.map((/** @type {any} */ g) => String(g.id))) : null,
+    eventIds, resources, declarations, gaugeIds,
     footprint, fetchIds, registryFiles,
   };
 }
@@ -157,7 +165,7 @@ export function crossReferences(c) {
   }
   for (const n of c.nations) {
     const prod = n.file.startsWith('site/data/registry/');
-    const regRoot = path.posix.dirname(path.posix.dirname(n.file));
+    const regRoot = prod ? 'site/data' : path.posix.dirname(path.posix.dirname(n.file));
     const ref = n.rec.boundary?.detailRef;
     if (ref && !c.registryFiles.has(`${regRoot}/${ref}`)) f.problems.push(`${n.file}: boundary.detailRef ${ref} does not resolve`);
     if (c.contacts.length) for (const id of n.rec.contactIds ?? []) if (!contactIds.has(id)) f.problems.push(`${n.file}: contactIds ${id} does not resolve`);

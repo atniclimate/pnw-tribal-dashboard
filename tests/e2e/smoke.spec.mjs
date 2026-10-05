@@ -23,6 +23,18 @@ for (const route of routes) {
           if (m.type() === 'error' && /^Failed to load resource/.test(m.text()) && m.location().url.endsWith(route.path)) documentStatus.push(m.text());
         });
       }
+      // Chromium also logs every failed subresource. Two kinds are failures by design here and are excused, one
+      // message each: upstream requests that the guard aborts (no upstream is called in this test), and
+      // data/live/ files, which only the snapshot deploy writes (absence is shown as status on the page).
+      // A missing same-origin asset (script, style, font, image, committed data) still fails.
+      page.on('console', (m) => {
+        if (m.type() !== 'error' || !/^Failed to load resource/.test(m.text())) return;
+        const at = m.location().url;
+        if (!at) return;
+        let upstream = false;
+        try { upstream = new URL(at).origin !== new URL(String(test.info().project.use.baseURL)).origin; } catch { /* unparsable location */ }
+        if (upstream || /\/data\/live\//.test(at)) documentStatus.push(m.text());
+      });
       const res = await page.goto(route.path);
       expect(res?.status()).toBe(route.status ?? 200);
       await page.waitForLoadState('networkidle');

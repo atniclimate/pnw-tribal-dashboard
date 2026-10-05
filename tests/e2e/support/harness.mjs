@@ -176,9 +176,10 @@ export const PAGE_LANES = {
  * @param {string} selector
  * @param {string} lane
  * @param {number} [timeout]
+ * @param {'visible' | 'attached'} [state] `attached` for elements a page delivers inside a closed tab or view
  */
-export async function mountedOrSkip(page, test, selector, lane, timeout = 4000) {
-  const present = await page.locator(selector).first().waitFor({ timeout }).then(() => true, () => false);
+export async function mountedOrSkip(page, test, selector, lane, timeout = 4000, state = 'visible') {
+  const present = await page.locator(selector).first().waitFor({ timeout, state }).then(() => true, () => false);
   test.skip(!present, `${selector} is not present yet (lane ${lane} pending)`);
   return present;
 }

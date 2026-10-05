@@ -23,7 +23,8 @@ for (const mode of /** @type {const} */ (['mocked', 'failure', 'embed'])) {
       await page.goto(`${route.path}${mode === 'embed' ? '?embed=1' : ''}`);
       const hasPanels = await page.locator('[data-panel]').count();
       test.skip(hasPanels === 0, 'the page has no data panels');
-      await mountedOrSkip(page, test, '[data-panel] [data-provenance]', PAGE_LANES[route.page] ?? 'page lane');
+      // Attached, not visible: a page may hold panels in a view that is not open (Usage Sources and Status).
+      await mountedOrSkip(page, test, '[data-panel] [data-provenance]', PAGE_LANES[route.page] ?? 'page lane', 4000, 'attached');
       await page.waitForLoadState('networkidle');
       expect(await provenanceProblems(page, await registeredSourceIds())).toEqual([]);
     });
@@ -41,13 +42,17 @@ test.describe('check 3: sovereignty note on every map and boundary display', () 
         const note = page.locator('.sovereignty-note').first();
         await expect(note).toBeVisible();
         await expect(note).toContainText(SENTENCE);
-        await note.scrollIntoViewIfNeeded();
-        const covered = await note.evaluate((el) => {
+        // The page's pre-map note is replaced by the map's own note when the map mounts, so the check reads the
+        // current first note in one step (scroll, then hit-test) and retries until the swap has settled.
+        await expect.poll(() => page.evaluate((sentence) => {
+          const el = document.querySelector('.sovereignty-note');
+          if (!el) return 'no note';
+          if (!(el.textContent ?? '').toLowerCase().includes(sentence.toLowerCase())) return 'sentence missing';
+          el.scrollIntoView({ block: 'center' });
           const r = el.getBoundingClientRect();
           const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-          return !(hit && (el === hit || el.contains(hit)));
-        });
-        expect(covered, 'elementFromPoint at the note center returns something else').toBe(false);
+          return hit && (el === hit || el.contains(hit)) ? 'ok' : `covered by ${hit?.tagName}.${hit?.className}`;
+        }, SENTENCE.source), { timeout: 10_000, message: 'elementFromPoint at the note center returns the note' }).toBe('ok');
       });
     }
   }

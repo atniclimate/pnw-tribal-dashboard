@@ -42,6 +42,11 @@ describe('check:csp', () => {
     assert.equal(hostOf('https://{s}.tiles.test/{z}/{x}/{y}.png'), '*.tiles.test');
   });
 
+  test('only the embed generator may frame, and only this site', () => {
+    assert.match(expectedCsp('embed', SOURCES), /frame-src 'self';/);
+    for (const id of ['alerts', 'forecasts', 'dashboard', null]) assert.match(expectedCsp(id, SOURCES), /frame-src 'none';/);
+  });
+
   test('a generated page passes, and a map page carries worker-src and the tile host in both directives', () => {
     const html = page(expectedCsp('alerts', SOURCES), MAP_BODY);
     assert.ok(isMapPage(html));
@@ -189,7 +194,8 @@ describe('validate:data gates', () => {
   const corpus = (over) => ({
     sourceIds: new Set(['bia-lar']), nations: [], productionNationIds: new Set(['us-wa-a']), contacts: [], agencyIds: new Set(['wa-em']),
     eventIds: new Set(['ev-1']), resources: [], declarations: [], gaugeIds: new Set(['nwps:AAAA1']), footprint: null, fetchIds: [],
-    registryFiles: new Set(['site/data/registry/geo/boundaries/us-wa-a.json']), ...over,
+    // Production detailRef resolves under site/data (the runtime fetches data/<detailRef>), not site/data/registry.
+    registryFiles: new Set(['site/data/geo/boundaries/us-wa-a.json']), ...over,
   });
   const nation = (/** @type {Record<string, any>} */ over) => ({
     file: 'site/data/registry/nations/us-wa-a.json',

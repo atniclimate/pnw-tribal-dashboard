@@ -80,7 +80,9 @@ export function expectedCsp(pageId, sources) {
     `img-src 'self' data:${list(img)}`,
     `media-src 'self'${list(media)}`,
     `connect-src 'self'${list(connect)}`,
-    "frame-src 'none'", "object-src 'none'", "base-uri 'self'", "form-action 'none'", 'upgrade-insecure-requests',
+    // The /embed/ generator shows a live preview iframe of this site's own pages (blueprint 7.11); every
+    // other page frames nothing.
+    pageId === 'embed' ? "frame-src 'self'" : "frame-src 'none'", "object-src 'none'", "base-uri 'self'", "form-action 'none'", 'upgrade-insecure-requests',
   ].join('; ');
 }
 

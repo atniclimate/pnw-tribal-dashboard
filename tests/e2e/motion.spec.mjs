@@ -36,11 +36,12 @@ test.describe('reduced motion', () => {
   test('scenario 17: selecting a Nation changes the map view with no intermediate camera frames', async ({ page }) => {
     await attachGuards(page, { pageId: 'alerts' });
     await page.goto('alerts/?view=map');
-    await mountedOrSkip(page, test, '.sovereignty-note', 'L8', 6000);
-    const interactive = await page.locator('canvas.maplibregl-canvas').count();
-    test.skip(interactive === 0, 'no interactive map mounted (outline mode or lane L8 pending)');
-    const frames = await page.evaluate(() => /** @type {any} */ (window).__cthdMapMoves ?? null);
-    test.skip(frames === null, 'the map exposes no camera-frame counter yet (lane L8 hook window.__cthdMapMoves pending)');
+    await mountedOrSkip(page, test, 'canvas.maplibregl-canvas', 'L8', 8000);
+    // The map frame counts its camera frames in data-map-moves (map/create-map.js). Under reduced motion the
+    // initial view is a jump, so at most one frame is drawn for it.
+    await page.locator('[data-map-camera]').first().waitFor({ timeout: 8000 });
+    await page.waitForTimeout(800);
+    const frames = await page.evaluate(() => Number(document.querySelector('[data-map-camera]')?.getAttribute('data-map-moves') ?? '0'));
     expect(frames).toBeLessThanOrEqual(1);
   });
 });
@@ -53,14 +54,17 @@ test.describe('interactive map', () => {
     const canvas = page.locator('canvas.maplibregl-canvas').first();
     await canvas.focus();
     await expect(canvas).toBeFocused();
-    const before = await page.evaluate(() => /** @type {any} */ (window).__cthdMapState?.() ?? null);
-    test.skip(before === null, 'the map exposes no state hook yet (lane L8 hook window.__cthdMapState pending)');
+    // The settled view is published on the map frame as data-map-camera="lng,lat,zoom" (map/create-map.js).
+    const camera = () => page.evaluate(() => (document.querySelector('[data-map-camera]')?.getAttribute('data-map-camera') ?? '').split(',').map(Number));
+    await page.locator('[data-map-camera]').first().waitFor({ timeout: 8000 });
+    await page.waitForTimeout(800);
+    const before = await camera();
     await page.keyboard.press('ArrowRight');
+    await expect.poll(async () => (await camera())[0], { timeout: 5000 }).not.toBe(before[0]);
     await page.keyboard.press('+');
-    const after = await page.evaluate(() => /** @type {any} */ (window).__cthdMapState());
-    expect(after.zoom).toBeGreaterThan(before.zoom);
-    expect(after.center[0]).not.toBe(before.center[0]);
-    const names = await page.locator('[data-feature-list] li').allTextContents();
+    await expect.poll(async () => (await camera())[2], { timeout: 5000 }).toBeGreaterThan(/** @type {number} */ (before[2]));
+    // The map's feature list (map/feature-list.js) names what is drawn in view.
+    const names = await page.locator('.map-feature-list li').allTextContents();
     expect(names.length).toBeGreaterThan(0);
   });
 
@@ -68,6 +72,9 @@ test.describe('interactive map', () => {
     const g = await attachGuards(page, { pageId: 'alerts' });
     await page.goto('alerts/?view=map');
     await mountedOrSkip(page, test, 'canvas.maplibregl-canvas', 'L8', 8000);
+    // The viewer is looking at the map when the GPU fails: the map panel sits below the fold on this page, so
+    // it is scrolled to the top of the viewport first. The note under the frame must then still be in view.
+    await page.evaluate(() => document.querySelector('[data-map-panel]')?.scrollIntoView({ block: 'start' }));
     await page.evaluate(() => {
       const c = /** @type {HTMLCanvasElement} */ (document.querySelector('canvas.maplibregl-canvas'));
       const gl = c.getContext('webgl2') ?? c.getContext('webgl');
@@ -83,14 +90,23 @@ test.describe('interactive map', () => {
     await attachGuards(page, { pageId: 'alerts' });
     await page.goto('alerts/?view=map');
     await mountedOrSkip(page, test, '[data-map-panel] canvas', 'L8', 8000);
+    await page.waitForTimeout(1200);
     const box = await page.locator('[data-map-panel] canvas').first().boundingBox();
     test.skip(!box, 'map canvas has no box');
     if (!box) return;
     const cdp = await page.context().newCDPSession(page);
-    const x = box.x + box.width / 2;
-    const y = box.y + box.height - 20;
+    // Raw touch events (as in map.spec.mjs): Input.synthesizeScrollGesture does not scroll a page in headless
+    // Chromium even away from the map, so it cannot tell a map that swallows the gesture from one that does not.
+    const x = Math.round(box.x + box.width / 2);
+    const y = Math.round(box.y + box.height / 2);
     const before = await page.evaluate(() => window.scrollY);
-    await cdp.send('Input.synthesizeScrollGesture', { x, y, yDistance: -200, gestureSourceType: 'touch', speed: 800 });
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y }] });
+    for (let step = 1; step <= 10; step += 1) {
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x, y: y - step * 20 }] });
+      await page.waitForTimeout(20);
+    }
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await page.waitForTimeout(600);
     expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(before);
   });
 });

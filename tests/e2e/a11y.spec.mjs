@@ -10,6 +10,10 @@ import { attachGuards, axeProblems, loadRoutes, stylesApplied } from './support/
 
 const { routes } = await loadRoutes();
 
+// Axe over the full Contacts directory (every verified line is a card) takes about twenty seconds alone and
+// more under a parallel run, so this file allows a minute per case.
+test.describe.configure({ timeout: 60_000 });
+
 for (const route of routes) {
   test(`${route.id}: no serious or critical axe violations`, async ({ page }) => {
     await attachGuards(page, { pageId: route.page });
