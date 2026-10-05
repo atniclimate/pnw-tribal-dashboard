@@ -15,6 +15,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { haversineKm } from '../../site/static/js/core/geo.js';
 import { STATE_REGIONS, normalizeNwpsGauge } from '../../site/static/js/hydro/nwps.js';
 import { normalizeWscStations } from '../../site/static/js/hydro/wsc.js';
 import { FOOTPRINT_TILES, nwpsBboxUrl, nwpsDetailUrl } from '../snapshot/tasks/gauges.mjs';
@@ -159,6 +160,30 @@ export async function buildGauges(opts) {
   };
 }
 
+/** A gauge is associated with a Nation when it lies within this distance of the Nation's headquarters point. */
+export const ASSOCIATION_KM = 25;
+
+/**
+ * Nation associations (blueprint 7.3 "Nearby gauges"): the ids of Nations whose headquarters point lies within
+ * ASSOCIATION_KM of each gauge or station. Proximity only: never "gauges affecting", never upstream or downstream.
+ * Reviewed override ids already on a gauge are kept. Pure; returns new arrays.
+ * @template {{ lat: number, lon: number, nationIds: string[] }} P
+ * @param {P[]} places
+ * @param {{ id: string, hq: [number, number] | null }[]} nations
+ * @param {number} [maxKm]
+ * @returns {P[]}
+ */
+export function associateNations(places, nations, maxKm = ASSOCIATION_KM) {
+  return places.map((p) => {
+    const ids = new Set(p.nationIds);
+    for (const n of nations) {
+      if (!n.hq) continue;
+      if (haversineKm([p.lat, p.lon], [n.hq[0], n.hq[1]]) <= maxKm) ids.add(n.id);
+    }
+    return { ...p, nationIds: [...ids].sort() };
+  });
+}
+
 /**
  * One record per line, so a monthly reference pull request reads as a reviewable diff.
  * @param {Record<string, unknown>} doc
@@ -175,6 +200,19 @@ export function serializeReference(doc, listKey) {
 async function main(argv) {
   const outIdx = argv.indexOf('--out');
   const outDir = path.resolve(ROOT, (outIdx >= 0 ? argv[outIdx + 1] : undefined) ?? 'site/data/ref');
+  if (argv.includes('--associate')) {
+    // Offline pass: rewrite nationIds in the committed reference from the Nation index (no network).
+    const { readFile } = await import('node:fs/promises');
+    const index = JSON.parse(await readFile(path.join(ROOT, 'site', 'data', 'registry', 'nations-index.json'), 'utf8'));
+    const nations = index.nations.map((/** @type {{ id: string, hq: [number, number] | null }} */ n) => ({ id: n.id, hq: n.hq }));
+    for (const [file, key] of /** @type {[string, string][]} */ ([['gauges.json', 'gauges'], ['wsc-stations.json', 'stations']])) {
+      const doc = JSON.parse(await readFile(path.join(outDir, file), 'utf8'));
+      doc[key] = associateNations(doc[key], nations);
+      await writeFile(path.join(outDir, file), serializeReference(doc, key));
+      process.stdout.write(`${file}: ${doc[key].filter((/** @type {{ nationIds: string[] }} */ r) => r.nationIds.length > 0).length} of ${doc[key].length} associated\n`);
+    }
+    return;
+  }
   const { parseDataFile, loadAjv, SCHEMA_BASE } = await import('../check/lib/data-files.mjs');
   /** @type {{ createHttp?: () => Http }} */
   let httpModule;
@@ -184,6 +222,13 @@ async function main(argv) {
   }
   const overrides = /** @type {GaugeOverride[]} */ (await parseDataFile('data/registry/gauges-overrides.yaml'));
   const out = await buildGauges({ http: httpModule.createHttp(), now: new Date(), overrides, log: (m) => process.stdout.write(`${m}\n`) });
+  {
+    const { readFile } = await import('node:fs/promises');
+    const index = JSON.parse(await readFile(path.join(ROOT, 'site', 'data', 'registry', 'nations-index.json'), 'utf8'));
+    const nations = index.nations.map((/** @type {{ id: string, hq: [number, number] | null }} */ n) => ({ id: n.id, hq: n.hq }));
+    out.gauges.gauges = associateNations(out.gauges.gauges, nations);
+    out.wsc.stations = associateNations(out.wsc.stations, nations);
+  }
   const ajv = await loadAjv();
   for (const [file, doc] of [['gauges', out.gauges], ['wsc-stations', out.wsc]]) {
     const validate = ajv.getSchema(`${SCHEMA_BASE}${file}.schema.json`);
