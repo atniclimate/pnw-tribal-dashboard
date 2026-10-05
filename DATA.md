@@ -21,16 +21,16 @@ Boundary lines, headquarters points, and names come from public federal and nati
 | Environment and Climate Change Canada | Weather alerts, city page forecasts, radar, hydrometric data, forecast zones | ECCC Data Servers End-use Licence v2.1; attribution required; alert content and intent must not be altered |
 | Indigenous Services Canada | First Nation locations and relation files | Open Government Licence, Canada |
 | Natural Resources Canada | Aboriginal Lands (AL_TA) for British Columbia | Open Government Licence, Canada 2.0 |
-| Province of British Columbia | River Forecast Centre advisories, EMCR evacuation orders and alerts, EMBC tsunami notifications, EMCR region boundaries | Province of British Columbia terms (pending) |
+| Province of British Columbia | EMCR evacuation orders and alerts, EMCR region boundaries; River Forecast Centre advisories and EMBC tsunami notifications (pending written confirmation) | Open Government Licence - British Columbia: "Contains information licensed under the Open Government Licence – British Columbia."; no Provincial endorsement implied |
 
 ## Other Data and Imagery
 
 | Publisher | Data | Terms |
 |---|---|---|
-| CARTO and OpenStreetMap contributors | Dark Matter basemap tiles | Map data ODbL 1.0, "© OpenStreetMap contributors © CARTO"; CARTO basemap terms (pending) |
-| Iowa Environmental Mesonet, Iowa State University | NEXRAD mosaic tiles | Attribution "Radar: NOAA NWS via Iowa Environmental Mesonet" |
-| Center for Western Weather and Water Extremes, Scripps Institution of Oceanography, UC San Diego | Atmospheric river forecast images | Research use with credit (pending) |
-| Space Science and Engineering Center, University of Wisconsin-Madison | MIMIC-TPW2 animation | Credit required (pending) |
+| CARTO and OpenStreetMap contributors | Dark Matter basemap tiles | Map data ODbL 1.0, "© OpenStreetMap contributors © CARTO"; CARTO free non-commercial tier with an ATNI key |
+| Iowa Environmental Mesonet, Iowa State University | NEXRAD mosaic tiles | Public domain; credit appreciated: "Radar: NOAA NWS via Iowa Environmental Mesonet" |
+| Center for Western Weather and Water Extremes, Scripps Institution of Oceanography, UC San Diego | Atmospheric river forecasts (link only) | Provided for research and not for operational decisions; linked, never embedded |
+| Space Science and Engineering Center, University of Wisconsin-Madison | MIMIC-TPW2 animation (link only) | Copyright reserved, experimental product; linked, never embedded |
 | News publishers | Headlines and short summaries on the News page | Each publisher's terms; titles and links only, with short plain-text summaries |
 
 ## Fonts and Libraries

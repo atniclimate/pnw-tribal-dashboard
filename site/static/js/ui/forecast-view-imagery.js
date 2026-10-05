@@ -4,20 +4,17 @@
  * radar. Loaded on first use by pages/forecasts.js (a dynamic import). DOM module.
  */
 import { APP } from '../config/app.js';
-import { fetchLocal } from '../core/net.js';
 import { renderProvenance } from '../core/provenance.js';
 import { findSource } from '../core/sources.js';
-import { deriveStatus } from '../core/status.js';
 import { h } from '../core/dom.js';
 import { panelStatuses } from './panel.js';
-import { cycleDate, resolveCycleFromManifest } from '../forecast/cw3e.js';
 import { goesProduct } from '../forecast/goes.js';
 import { imageryStatus, loadCatalog, loadStamps } from '../forecast/imagery.js';
 import { nearestRadarSite, ridgeProductIds, ridgeSites } from '../forecast/radar.js';
 import { wpcProducts } from '../forecast/wpc.js';
 import { loadReference } from '../data/reference.js';
 import { NO_NATION, unavailableStatus } from './forecast-panels.js';
-import { mountMapFrame, renderCw3e, renderGoes, renderMtpw, renderRidge, renderWpc } from './imagery-panels.js';
+import { mountMapFrame, renderGoes, renderLinkOut, renderRidge, renderWpc } from './imagery-panels.js';
 
 /** @typedef {import('../types.js').StatusSnapshot} StatusSnapshot */
 
@@ -42,6 +39,29 @@ async function getImagery() {
  */
 const imageryCtx = (ctx, r) => ({ catalog: r.catalog, stamps: r.stamps, timeZone: ctx.timeZone(), lowData: ctx.lowData() });
 
+/**
+ * A panel for a source whose terms allow a link and nothing more (decision Q11, 10/05/2026). Its status is
+ * honestly unavailable: the dashboard holds no data from the source. The provenance footer still names the
+ * source, and the panel carries a plain text link and the reason. No request goes to the provider.
+ * @param {string} sourceId
+ * @param {string} label
+ * @param {string} note
+ * @returns {import('./forecast-views.js').ViewPanels[string]}
+ */
+function linkOutPanel(sourceId, label, note) {
+  return {
+    async load() {
+      return { data: null, status: unavailableStatus([sourceId], 'Shown as a link only. The provider does not allow its images to be shown here.') };
+    },
+    render() {},
+    unavailable(body) {
+      const href = findSource(sourceId)?.humanUrl ?? '';
+      if (!href) { body.append(h('p', { class: 'panel-unavailable' }, 'The link to this source is not available.')); return; }
+      return renderLinkOut(body, { id: sourceId, href, label, note }).destroy;
+    },
+  };
+}
+
 /** @type {import('./forecast-views.js').ViewPanels} */
 export const panels = {
   'precip-wpc': {
@@ -55,34 +75,11 @@ export const panels = {
     render(body, data, _s, ctx) { return renderWpc(body, data.products, imageryCtx(ctx, data.r)).destroy; },
   },
 
-  'ar-cw3e': {
-    async load(_ctx, signal) {
-      const res = await fetchLocal('data/live/ar-products.json', { priority: 2, cache: 'no-cache', signal });
-      const env = res.ok ? /** @type {any} */ (res.data) : null;
-      const now = new Date();
-      const resolved = resolveCycleFromManifest(env, now);
-      if (!resolved) return { data: null, status: unavailableStatus(['cw3e-images'], 'The scheduled model-run list is not available, so no forecast image can be stamped with its model run.') };
-      const policy = findSource('cw3e-images')?.freshness ?? APP.freshness.forecasts;
-      const status = deriveStatus({ sourceIds: ['cw3e-images'], policy, now, snapshot: { asOf: cycleDate(resolved.cycle).toISOString(), asOfBasis: 'model-run', carriedForward: Boolean(env?.carriedForward) } });
-      const r = await getImagery();
-      return { data: { manifest: env, stale: resolved.stale, r }, status };
-    },
-    render(body, data, _s, ctx) {
-      const r = data.r.catalog ? data.r : { catalog: new Map(), stamps: new Map() };
-      return renderCw3e(body, { manifest: data.manifest, stale: data.stale }, imageryCtx(ctx, r)).destroy;
-    },
-  },
+  'ar-cw3e': linkOutPanel('cw3e-images', 'Atmospheric river forecasts (CW3E)',
+    'CW3E provides these forecasts for research and not for operational decisions, so the dashboard links to them and does not display them.'),
 
-  'ar-mtpw': {
-    async load() {
-      const r = await getImagery();
-      const product = r.catalog?.get('ssec-mtpw2-epac');
-      if (!r.catalog || !product) return { data: null, status: unavailableStatus(['ssec-mtpw2'], 'The animation is not listed.') };
-      const status = imageryStatus('ssec-mtpw2', r.env, r.stamps, [product.id], new Date());
-      return { data: status.state === 'unavailable' ? null : { product, stamp: r.stamps.get(product.id)?.lastModified ?? null, r }, status };
-    },
-    render(body, data, _s, ctx) { return renderMtpw(body, { product: data.product, stamp: data.stamp }, imageryCtx(ctx, data.r)).destroy; },
-  },
+  'ar-mtpw': linkOutPanel('ssec-mtpw2', 'Total precipitable water animation (CIMSS, experimental)',
+    'This is an experimental product and its copyright is reserved by the Space Science and Engineering Center, University of Wisconsin-Madison, so the dashboard links to it and does not display it.'),
 
   'satellite-goes': {
     async load() {

@@ -47,7 +47,6 @@
     { "schema": "live-wsc-status.schema.json", "files": ["site/data/live/wsc-status.json"] },
     { "schema": "live-declarations-fema.schema.json", "files": ["site/data/live/declarations-fema.json"] },
     { "schema": "live-news.schema.json", "files": ["site/data/live/news.json"] },
-    { "schema": "live-ar-products.schema.json", "files": ["site/data/live/ar-products.json"] },
     { "schema": "live-imagery-stamps.schema.json", "files": ["site/data/live/imagery-stamps.json"] },
     { "schema": "live-health.schema.json", "files": ["site/data/live/health.json"] },
     { "schema": "live-manifest.schema.json", "files": ["site/data/live/manifest.json"] },

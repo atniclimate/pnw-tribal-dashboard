@@ -51,7 +51,7 @@
     "capture": "node scripts/dev/capture-fixture.mjs",
     "export:cast": "node scripts/export/to-cast.mjs",
     "export:ddm": "node scripts/export/to-ddm.mjs",
-    "health:probe": "node scripts/health/probe.mjs",
+    "health:probe": "node scripts/health/probe-sources.mjs",
     "health:links": "node scripts/health/links.mjs",
     "actionlint": "node scripts/dev/actionlint.mjs"
   },

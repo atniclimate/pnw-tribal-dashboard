@@ -2,7 +2,7 @@
 /**
  * Forecasts page (blueprint 7.3, 8.3, 10.2; lane L12). Upstream payloads are the dated captures in
  * tests/fixtures/upstream (real NWS and ECCC responses); the scheduled files (imagery-stamps.json,
- * ar-products.json, gauges-status.json) are produced by the real snapshot tasks and normalizers from real HEAD
+ * gauges-status.json) are produced by the real snapshot tasks and normalizers from real HEAD
  * and gauge captures; image and video bodies are test doubles (a one pixel PNG), so only the requests, labels,
  * and controls are asserted, never imagery. The browser clock is fixed at 10/05/2026 10:00 UTC so the captures
  * are the age they were when taken.
@@ -10,7 +10,6 @@
 import { readFile } from 'node:fs/promises';
 import { expect, test } from '@playwright/test';
 import imageryStamps from '../../../scripts/snapshot/tasks/imagery-stamps.mjs';
-import arProducts from '../../../scripts/snapshot/tasks/ar-products.mjs';
 import { normalizeNwpsGaugeList } from '../../../site/static/js/hydro/nwps.js';
 import { attachGuards, axeProblems, horizontalOverflow } from '../support/harness.mjs';
 
@@ -23,12 +22,11 @@ const BC = 'ca-fn-602';
 /** One transparent pixel: a stand-in body for image requests. */
 const PIXEL = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=', 'base64');
 
-const bundles = ['goes18-star-cdn', 'wpc-images', 'nws-ridge', 'ssec-mtpw2'];
+const bundles = ['goes18-star-cdn', 'wpc-images', 'nws-ridge'];
 /** @returns {Promise<Record<string, any>>} */
 async function scheduledFiles() {
   const heads = (await Promise.all(bundles.map((s) => json(`${s}/2026-10-05-head-probe.json`)))).flatMap((b) => b.results);
-  const cw = (await json('cw3e-images/2026-10-05-head-probe-ivt-uswc.json')).results;
-  const byUrl = new Map([...heads, ...cw].map((r) => [r.url, r]));
+  const byUrl = new Map(heads.map((r) => [r.url, r]));
   const http = {
     /** @param {string} id @param {string} url */
     async head(id, url) {
@@ -39,12 +37,11 @@ async function scheduledFiles() {
   };
   const ctx = /** @type {any} */ ({ now: NOW, http, log() {} });
   const stamps = (await imageryStamps.run(ctx))['imagery-stamps.json'];
-  const ar = (await arProducts.run(ctx))['ar-products.json'];
   const gaugeFixture = await json('nwps-gauges/2026-10-05-bbox-skagit-nooksack.json');
   const items = normalizeNwpsGaugeList(gaugeFixture, { fetchedAt: '2026-10-05T06:25:00.000Z', now: NOW });
   const times = items.map((i) => i.observed?.validTime).filter(Boolean).sort();
   const gauges = { schema: 'cthd.live.gauges-status/1', id: 'gauges', sourceIds: ['nwps-gauges'], generatedAt: NOW.toISOString(), observedAt: NOW.toISOString(), asOf: times.at(-1) ?? null, asOfBasis: 'valid', completeness: 'complete', carriedForward: false, failure: null, perSource: { 'nwps-gauges': { ok: true, count: items.length, asOf: times.at(-1) ?? null } }, diagnostics: {}, items };
-  return { 'imagery-stamps.json': stamps, 'ar-products.json': ar, 'gauges-status.json': gauges };
+  return { 'imagery-stamps.json': stamps, 'gauges-status.json': gauges };
 }
 
 /**
@@ -79,7 +76,7 @@ async function world(page, opts = {}) {
           return body ? route.fulfill({ status: 200, contentType: 'application/geo+json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) }) : route.fulfill({ status: 404, contentType: 'application/json', body: '{}' });
         },
         'api.weather.gc.ca': (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(city) }),
-        'cdn.star.nesdis.noaa.gov': image, 'www.wpc.ncep.noaa.gov': image, 'radar.weather.gov': image, 'cw3e.ucsd.edu': image, 'tropic.ssec.wisc.edu': image,
+        'cdn.star.nesdis.noaa.gov': image, 'www.wpc.ncep.noaa.gov': image, 'radar.weather.gov': image,
       },
     }),
   });
@@ -238,33 +235,22 @@ test.describe('Radar view', () => {
 });
 
 test.describe('Atmospheric Rivers view', () => {
-  test('CW3E images wait for a tap, name their model run, step by twelve hours, and credit the source', async ({ page }) => {
-    const { imageRequests } = await world(page);
+  test('CW3E and the Total Precipitable Water animation are link-only: a labeled link, the reason, and no request to either provider', async ({ page }) => {
+    const { g, imageRequests } = await world(page);
     await page.goto('forecasts/?view=ar');
-    const ar = panel(page, 'ar-cw3e');
-    await expect(ar.locator('[data-viewer="cw3e"] .media-viewer__caption')).toContainText('Model run 10/05/2026 00 UTC, forecast hour 0');
-    expect(imageRequests.some((u) => u.includes('cw3e'))).toBe(false);
-    await ar.getByRole('button', { name: /^Load Image/ }).click();
-    await expect(ar.locator('img')).toHaveAttribute('src', /ivt_map__v1__GFS_25__USWC__2026100500__1__F000\.png$/);
-    await ar.getByRole('button', { name: 'Next 12 Hours' }).click();
-    await expect(ar.locator('[data-viewer="cw3e"] .media-viewer__caption')).toContainText('forecast hour 12');
-    await expect(ar.locator('img')).toHaveCount(0);
-    await expect(ar).toContainText('Scripps Institution of Oceanography, UC San Diego');
-    await expect(ar).toContainText('Hotlinking terms for this source are under review');
-    expect(imageRequests.filter((u) => u.includes('cw3e'))).toHaveLength(1);
-  });
-
-  test('the Total Precipitable Water animation prints its size and loads only on tap, with a Stop button', async ({ page }) => {
-    const { imageRequests } = await world(page);
-    await page.goto('forecasts/?view=ar');
+    const cw = panel(page, 'ar-cw3e');
+    const link = cw.getByRole('link', { name: 'Atmospheric river forecasts (CW3E)' });
+    await expect(link).toHaveAttribute('href', 'https://cw3e.ucsd.edu/iwv-and-ivt-forecasts/');
+    await expect(cw).toContainText('research and not for operational decisions');
+    await expect(cw.locator('[data-provenance]')).toContainText('Center for Western Weather and Water Extremes');
+    await expect(cw.locator('img, button')).toHaveCount(0);
     const mtpw = panel(page, 'ar-mtpw');
-    const load = mtpw.getByRole('button', { name: /^Load Animation \(\d+\.\d MB\)$/ });
-    await expect(load).toBeVisible();
-    expect(imageRequests.some((u) => u.includes('ssec'))).toBe(false);
-    await load.click();
-    await expect(mtpw.locator('img')).toHaveAttribute('src', /mimictpw_epac_latest\.gif$/);
-    await mtpw.getByRole('button', { name: 'Stop Animation' }).click();
-    await expect(mtpw.locator('img')).toHaveCount(0);
+    const link2 = mtpw.getByRole('link', { name: 'Total precipitable water animation (CIMSS, experimental)' });
+    await expect(link2).toHaveAttribute('href', 'https://tropic.ssec.wisc.edu/real-time/mtpw2/home.php');
+    await expect(mtpw).toContainText('experimental product');
+    await expect(mtpw.locator('img, button')).toHaveCount(0);
+    expect(imageRequests.some((u) => /cw3e|ssec/.test(u))).toBe(false);
+    expect(g.requests.some((r) => /cw3e\.ucsd\.edu|tropic\.ssec\.wisc\.edu/.test(r.url))).toBe(false);
   });
 });
 

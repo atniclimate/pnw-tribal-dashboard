@@ -4,8 +4,8 @@ owner: Province of British Columbia, Emergency Management and Climate Readiness
 url: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/Evacuation_Orders_and_Alerts/FeatureServer/0
 urlTemplate: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/Evacuation_Orders_and_Alerts/FeatureServer/0/query?{query}
 humanUrl: https://www.emergencyinfobc.gov.bc.ca/
-license: Licence not yet confirmed for republication (Q8); hidden as a candidate until checked.
-attribution: Emergency Management and Climate Readiness, Province of British Columbia
+license: Open Government Licence - British Columbia (stated on the ArcGIS item and the BC Data Catalogue record 7efd46d0-b5d3-4dff-af80-d376c42aec33, checked 10/05/2026); API Terms of Use for OGL Information apply.
+attribution: Contains information licensed under the Open Government Licence - British Columbia. Emergency Management and Climate Readiness, Province of British Columbia.
 cadence: Updated as local authorities issue and rescind orders; the snapshot reads it every ten minutes.
 region: ca
 coverage: [BC]
@@ -48,5 +48,6 @@ verifiedAt: 2026-10-05
 notes: >-
   Not CAP: rendered as its own section and never merged into alert counts. ORDER_ALERT_STATUS "Order" is an
   evacuation order (act-now) and "Alert" an evacuation alert (prepare) under atni-cthd-emcr 0.1.0
-  (provisional, Q8); 16 records (eight orders, eight alerts) on 10/05/2026. Names and issuing agencies are
-  shown exactly as published.
+  (mapping provisional until the maintainer ratifies it, Q8); 16 records (eight orders, eight alerts) on
+  10/05/2026. Names and issuing agencies are shown exactly as published. Licence confirmed 10/05/2026 (Q8).
+  Stays a candidate until the maintainer ratifies the Q8 band and posture mapping.

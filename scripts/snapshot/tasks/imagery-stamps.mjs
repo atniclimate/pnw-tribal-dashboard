@@ -1,8 +1,8 @@
 // @ts-check
 /**
  * Snapshot task `imagery-stamps` (blueprint 5.9, 6.4): Last-Modified per catalog image, read with HEAD
- * requests, so the browser can stamp every image without a cross-origin read (WPC, RIDGE, and SSEC send no
- * CORS header). CW3E products are stamped from the model cycle by the `ar-products` task instead.
+ * requests, so the browser can stamp every image without a cross-origin read (WPC and RIDGE send no CORS
+ * header). CW3E and SSEC are link-only (decision Q11, 10/05/2026) and are never requested.
  * Never throws for upstream failures: a failed HEAD is recorded with its status, and when nothing answers
  * the envelope is `rejected` so the runner carries the previous copy forward.
  */
@@ -13,7 +13,7 @@ import { CORE_SCHEMA, load as loadYaml } from 'js-yaml';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 export const PRODUCTS_FILE = path.join(ROOT, 'data', 'imagery', 'products.yaml');
-export const STAMPED_SOURCES = Object.freeze(['goes18-star-cdn', 'nws-ridge', 'ssec-mtpw2', 'wpc-images']);
+export const STAMPED_SOURCES = Object.freeze(['goes18-star-cdn', 'nws-ridge', 'wpc-images']);
 const CONCURRENCY = 6;
 
 /**

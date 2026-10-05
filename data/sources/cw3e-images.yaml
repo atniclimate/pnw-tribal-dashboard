@@ -1,31 +1,25 @@
 id: cw3e-images
-title: CW3E Atmospheric River Forecast Images
+title: CW3E Atmospheric River Forecasts (Link Only)
 owner: Center for Western Weather and Water Extremes, Scripps Institution of Oceanography, UC San Diego
-url: https://cw3e.ucsd.edu/images/
-urlTemplate: https://cw3e.ucsd.edu/images/{product}/v1/{model}/{domain}/{YYYYMMDDHH}/1/{product}__v1__{model}__{domain}__{YYYYMMDDHH}__1__F{hhh}.png
+url: https://cw3e.ucsd.edu/iwv-and-ivt-forecasts/
 humanUrl: https://cw3e.ucsd.edu/iwv-and-ivt-forecasts/
-license: Research use; hotlinking terms pending maintainer decision (Q11). Credit CW3E, Scripps Institution of Oceanography, UC San Diego.
+license: 'CW3E disclaimer (https://cw3e.ucsd.edu/disclaimer/): data limited to research purposes and not intended to support decision making operations; link-out only, no embedding or hotlinking.'
 attribution: Center for Western Weather and Water Extremes, Scripps Institution of Oceanography, UC San Diego
-cadence: Model cycles at 00 and 12 UTC; images appear 2 to 7 hours after the cycle.
+cadence: Model cycles at 00 and 12 UTC; the dashboard links to the provider's page and shows no image.
 region: both
 coverage: [WA, OR, ID, BC, CA-N, MT-W, NV-N, AK-SE]
-kind: image
-status: active-pending-terms
+kind: page
+status: active
 deprecation: null
 access:
-  mode: image
+  mode: link
   cors:
     status: absent
     acao: null
     origin: https://atniclimate.github.io
     checkedAt: 2026-10-05
     evidence: "GET ivt_map GFS_25 USWC 2026100412 F000 with Origin https://atniclimate.github.io returned HTTP 200, image/png, 145,677 bytes, no Access-Control-Allow-Origin header on 10/05/2026 (also cw3e_probe.json, acao null)."
-  timeoutMs: 20000
-  retries: 1
   priority: 3
-freshness:
-  freshForMs: 50400000
-  usableForMs: 129600000
 usedBy: [forecasts]
 verifiedAt: 2026-10-05
-notes: Freshness corrected 10/05/2026 because the as-of time is the model run, and a run is published two to seven hours after its time, so the newest run is normally up to about thirteen hours old. Pending maintainer decision Q11 (hotlinking with credit, or contact CW3E first); link-out is the fallback. CW3E retired every current or latest image URL, so the newest complete cycle is found by the ar-products snapshot task, with a browser fallback that steps back six hours. Products include ivt_map and iwv_map (USWC, NEPac, NPac, IntWest), landfalltool, and arscale_map. Each image is 150 to 320 KB and loads on tap. Every image shows its model run time.
+notes: 'Decided 10/05/2026 (Q11): do not hotlink or embed; link out only. Permission requested from the CW3E webmaster; embedding returns only on a written reply. Prior notes about image discovery and the ar-products task are superseded.'

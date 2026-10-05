@@ -4,7 +4,7 @@ owner: Iowa Environmental Mesonet, Iowa State University
 url: https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q
 urlTemplate: https://mesonet.agron.iastate.edu/cache/tile.py/1.0.0/nexrad-n0q/{z}/{x}/{y}.png
 humanUrl: https://mesonet.agron.iastate.edu/
-license: Data are National Weather Service radar products (U.S. public domain) served by the Iowa Environmental Mesonet; keep the attribution.
+license: 'Public domain: "may be used freely by anyone for any lawful purpose" (https://mesonet.agron.iastate.edu/disclaimer.php, checked 10/05/2026). Attribution appreciated, not required; no rate limits published.'
 attribution: "Radar: NOAA NWS via Iowa Environmental Mesonet"
 cadence: Composite refreshed about every 5 minutes; valid time read from n0q_0.json.
 region: us
@@ -35,4 +35,4 @@ health:
   maxBytes: null
 usedBy: [forecasts]
 verifiedAt: 2026-10-05
-notes: Web Mercator tiles used as a MapLibre raster source. Valid time comes from n0q_0.json (last modified 10/05/2026 08:53 UTC at probe). No usage terms beyond the Iowa Environmental Mesonet attribution were recorded; the maintainer may wish to confirm them.
+notes: 'Web Mercator tiles used as a MapLibre raster source. Valid time comes from n0q_0.json (last modified 10/05/2026 08:53 UTC at probe). Terms confirmed 10/05/2026: public domain, no published rate limits; five-minute cache header on /cache/; courtesy notice to IEM recommended before launch.'

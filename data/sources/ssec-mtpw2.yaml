@@ -1,19 +1,18 @@
 id: ssec-mtpw2
-title: MIMIC-TPW2 Total Precipitable Water Animations
+title: MIMIC-TPW2 Total Precipitable Water Animations (Link Only)
 owner: Space Science and Engineering Center (SSEC), University of Wisconsin-Madison, Cooperative Institute for Meteorological Satellite Studies
-url: https://tropic.ssec.wisc.edu/real-time/mtpw2/
-urlTemplate: https://tropic.ssec.wisc.edu/real-time/mtpw2/webAnims/tpw_nrl_colors/{region}/mimictpw_{region}_latest.gif
-humanUrl: https://tropic.ssec.wisc.edu/real-time/mtpw2/
-license: Terms pending maintainer decision (Q11); credit CIMSS, University of Wisconsin-Madison.
+url: https://tropic.ssec.wisc.edu/real-time/mtpw2/home.php
+humanUrl: https://tropic.ssec.wisc.edu/real-time/mtpw2/home.php
+license: Copyright 2011 Space Science and Engineering Center, University of Wisconsin-Madison; no reuse terms published; experimental product; link-out only, no embedding or hotlinking.
 attribution: CIMSS, University of Wisconsin-Madison
-cadence: Latest animation regenerated about hourly.
+cadence: Latest animation regenerated about hourly; the dashboard links to the provider's page and shows no image.
 region: both
 coverage: [WA, OR, ID, BC, CA-N, MT-W, NV-N, AK-SE]
-kind: image
-status: active-pending-terms
+kind: page
+status: active
 deprecation: null
 access:
-  mode: image
+  mode: link
   cors:
     status: absent
     acao: null
@@ -23,16 +22,6 @@ access:
   timeoutMs: 30000
   retries: 0
   priority: 3
-freshness:
-  freshForMs: 7200000
-  usableForMs: 43200000
-health:
-  probe: https://tropic.ssec.wisc.edu/real-time/mtpw2/webAnims/tpw_nrl_colors/epac/mimictpw_epac_latest.gif
-  expectStatus: 200
-  expectAcao: null
-  expectType: image/gif
-  minBytes: 100000
-  maxBytes: null
 usedBy: [forecasts]
 verifiedAt: 2026-10-05
-notes: Pending maintainer decision Q11. Replaces the frozen v1 path (mimic-tpw/epac/anim/latest72hrs.gif, last modified 02/18/2019). The Eastern Pacific file is about 8.2 MB, so it loads only on tap behind a size-labeled button. The namer (about 10.3 MB) and alaska (about 9.0 MB) files answered HTTP 200 at the same path pattern on 10/05/2026; the earlier home.php link returns 404, so the human link is the real-time/mtpw2/ index.
+notes: 'Decided 10/05/2026 (Q11): do not hotlink; link out only. Permission to be requested from SSEC or CIMSS. Prior notes about the 8.2 MB file and the tap loader are superseded.'

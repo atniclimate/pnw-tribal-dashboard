@@ -4,8 +4,8 @@ owner: Province of British Columbia, BC River Forecast Centre
 url: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0
 urlTemplate: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/BC_Flood_Advisory_and_Warning_Notifications_(Public_View)/FeatureServer/0/query?{query}
 humanUrl: https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/drought-flooding-dikes-dams/river-forecast-centre
-license: Licence not yet confirmed for republication (Q8); hidden as a candidate until checked.
-attribution: BC River Forecast Centre
+license: 'Open Government Licence - British Columbia stated on the companion web map item; the feature service item states Copyright Province of British Columbia, all rights reserved (checked 10/05/2026). Written confirmation requested.'
+attribution: Contains information licensed under the Open Government Licence - British Columbia. BC River Forecast Centre.
 cadence: Updated by the centre as advisories change; the snapshot reads it every ten minutes.
 region: ca
 coverage: [BC]
@@ -49,4 +49,5 @@ notes: >-
   Query where=Advisory>1 (outSR 4326, f=geojson). The Advisory field is coded 1 No Advisory, 2 High
   Streamflow Advisory, 3 Flood Watch, 4 Flood Warning (layer metadata 10/05/2026; 286 basins, all at No
   Advisory at capture). Band stays unstated until the maintainer ratifies atni-cthd-bcrfc 0.1.0 (Q8);
-  posture follows the designation. exceededTransferLimit marks the panel degraded.
+  posture follows the designation. exceededTransferLimit marks the panel degraded. Licence check 10/05/2026
+  (Q8): conflicting item text; confirmation email to Data@gov.bc.ca and the River Forecast Centre pending.

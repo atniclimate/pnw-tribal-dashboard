@@ -2,7 +2,7 @@ id: carto-dark-matter
 title: CARTO Dark Matter Basemap Tiles
 owner: CARTO, with map data from OpenStreetMap contributors
 url: https://basemaps.cartocdn.com/dark_all
-urlTemplate: https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png
+urlTemplate: https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png?key=<ATNI_BASEMAP_KEY>
 humanUrl: https://carto.com/basemaps/
 license: Free non-commercial tier (5 million tile requests a month) with an ATNI API key, CARTO Basemap Terms updated 09/29/2026; map data under the Open Database License, copyright OpenStreetMap contributors.
 attribution: © OpenStreetMap contributors © CARTO
@@ -24,7 +24,7 @@ access:
   retries: 1
   priority: 3
 health:
-  probe: https://basemaps.cartocdn.com/dark_all/6/10/22.png
+  probe: https://basemaps.cartocdn.com/dark_all/6/10/22.png?key=%3CATNI_BASEMAP_KEY%3E
   expectStatus: 200
   expectAcao: "*"
   expectType: image/png

@@ -1,16 +1,14 @@
 // @ts-check
 /**
- * Imagery panels of the forecasts page: WPC, CW3E, MIMIC-TPW2, GOES, RIDGE, and the lazy map frame
+ * Imagery panels of the forecasts page: WPC, GOES, RIDGE, the link-only panels, and the lazy map frame
  * (blueprint 7.3, 8.3). DOM module. Nothing here requests an image or a map until a tap, except the images the
- * viewer is allowed to load on its own (policy auto, 150 KB or less, low-data mode off).
+ * viewer is allowed to load on its own (policy auto, 150 KB or less, low-data mode off). CW3E and MIMIC-TPW2
+ * are link-only (decision Q11, 10/05/2026): no image request goes to either provider.
  */
 import { clear, h } from '../core/dom.js';
-import { findSource, source } from '../core/sources.js';
-import { formatAsOf } from '../core/time.js';
 import { createMediaViewer } from './media-viewer.js';
-import { cw3eUrl, cycleDate, manifestItem, modelRunLabel, probeCycleInBrowser, FORECAST_HOURS } from '../forecast/cw3e.js';
 import { GOES_PRODUCTS, goesProduct, goesProductIds } from '../forecast/goes.js';
-import { imageDims, sizeLabel } from '../forecast/imagery.js';
+import { sizeLabel } from '../forecast/imagery.js';
 import { RIDGE_MOSAIC, ridgeProductIds } from '../forecast/radar.js';
 import { WPC_GROUP_TITLES, WPC_LABELS, wpcLabel, wpcProducts } from '../forecast/wpc.js';
 
@@ -19,9 +17,6 @@ import { WPC_GROUP_TITLES, WPC_LABELS, wpcLabel, wpcProducts } from '../forecast
 
 /** Beyond this distance a single radar's reflectivity does not reach the headquarters. */
 export const RADAR_USEFUL_KM = 250;
-
-/** Shown wherever a source's hotlinking terms are still under review (decision Q11). */
-export const PENDING_TERMS_NOTE = 'Hotlinking terms for this source are under review (maintainer decision Q11), so its images load only when you tap, and each one links to its source.';
 
 /**
  * @param {string} label
@@ -156,175 +151,17 @@ export function renderRidge(body, d, ctx) {
   return { destroy: () => viewers.forEach((v) => v.destroy()) };
 }
 
-/** Product families offered for CW3E, with their labels, models, and domains. */
-export const CW3E_FAMILIES = Object.freeze([
-  { product: 'ivt_map', label: 'Integrated Vapor Transport (IVT)', models: ['GFS_25', 'ECMWF_HRes'], stepped: true },
-  { product: 'iwv_map', label: 'Integrated Water Vapor (IWV)', models: ['GFS_25', 'ECMWF_HRes'], stepped: true },
-  { product: 'landfalltool_ivt250_probability', label: 'Landfall Tool: IVT 250 Probability', models: ['GEFS_50'], stepped: false },
-  { product: 'arscale_map_mean', label: 'Atmospheric River Scale, Ensemble Mean', models: ['GEFS_50'], stepped: false },
-]);
-const MODEL_LABELS = Object.freeze(/** @type {Record<string, string>} */ ({ GFS_25: 'GFS', ECMWF_HRes: 'ECMWF', GEFS_50: 'GEFS' }));
-const DOMAIN_LABELS = Object.freeze(/** @type {Record<string, string>} */ ({
-  USWC: 'U.S. West Coast', NEPac: 'Northeast Pacific (covers British Columbia and Southeast Alaska)', IntWest: 'Interior West', NPac: 'North Pacific',
-  coast: 'Coast', foothills: 'Foothills', inland: 'Inland',
-}));
-
 /**
- * @param {string} id
- * @param {string} labelText
- * @param {{ value: string, label: string }[]} options
- * @param {string} selected
- * @param {(v: string) => void} onChange
- * @returns {HTMLElement}
- */
-function selectField(id, labelText, options, selected, onChange) {
-  const select = h('select', { id, class: 'nation-picker__input' }, options.map((o) => h('option', { value: o.value, selected: o.value === selected }, o.label)));
-  select.addEventListener('change', () => onChange(/** @type {HTMLSelectElement} */ (select).value));
-  return h('div', { class: 'nation-picker' }, h('label', { class: 'nation-picker__label', for: id }, labelText), select);
-}
-
-/**
+ * A link-only panel for a source whose terms do not allow embedding (decision Q11, 10/05/2026): a note that
+ * says why, and a plain text link to the provider's page. No image is requested.
  * @param {HTMLElement} body
- * @param {{ manifest: any, stale: boolean }} d
- * @param {ImageryCtx} ctx
- * @param {{ now?: () => Date }} [opts]
+ * @param {{ id: string, href: string, label: string, note: string }} d
  * @returns {{ destroy(): void }}
  */
-export function renderCw3e(body, d, ctx, opts = {}) {
+export function renderLinkOut(body, d) {
   clear(body);
-  const template = /** @type {string} */ (source('cw3e-images').urlTemplate);
-  const sel = { family: 0, model: 'GFS_25', domain: 'USWC', fh: 0 };
-  /** @type {string | null} */
-  let probedCycle = null;
-  const viewerEl = h('div', { 'data-viewer': 'cw3e' });
-  const controls = h('div', { 'data-cw3e-controls': '' });
-  const probeNote = h('p', { class: 'panel-note', 'data-cw3e-stale': '' });
-  const family = () => /** @type {(typeof CW3E_FAMILIES)[number]} */ (CW3E_FAMILIES[sel.family]);
-
-  /** @returns {{ cycle: string, url: string } | null} */
-  function resolve() {
-    const f = family();
-    const item = manifestItem(d.manifest, f.product, sel.model, sel.domain);
-    if (item && !d.stale) {
-      const i = item.forecastHours.indexOf(f.stepped ? sel.fh : /** @type {number} */ (item.forecastHours[0]));
-      const u = item.urls[i];
-      return u ? { cycle: item.cycle, url: u } : null;
-    }
-    if (d.stale && probedCycle) {
-      const fh = f.stepped ? sel.fh : (f.product === 'arscale_map_mean' ? 168 : 384);
-      return { cycle: probedCycle, url: cw3eUrl(template, { product: f.product, model: sel.model, domain: sel.domain, cycle: probedCycle, fh }) };
-    }
-    return null;
-  }
-
-  const credit = 'Image credit: Center for Western Weather and Water Extremes, Scripps Institution of Oceanography, UC San Diego.';
-  /** @type {ReturnType<typeof createMediaViewer> | null} */
-  let viewer = null;
-
-  function paintViewer() {
-    const r = resolve();
-    const f = family();
-    if (!r) {
-      viewer?.destroy(); viewer = null; clear(viewerEl);
-      viewerEl.append(h('p', { class: 'panel-note', 'data-cw3e-none': '' }, d.stale
-        ? 'The scheduled model-run list is out of date. Use the button above to look for the newest model run in this browser.'
-        : 'No complete model run is listed for this combination.'));
-      return;
-    }
-    /** @type {ImageryProduct} */
-    const product = { id: `cw3e-${f.product}-${sel.model}-${sel.domain}`.toLowerCase().replace(/_/g, '-'), sourceId: 'cw3e-images', url: r.url, kind: 'still', typicalBytes: f.product === 'arscale_map_mean' ? 500_000 : 200_000, loadPolicy: 'tap', stamp: 'cycle' };
-    const hourText = f.stepped ? `, forecast hour ${sel.fh}` : '';
-    const patch = { label: `${f.label}, ${MODEL_LABELS[sel.model] ?? sel.model}, ${DOMAIN_LABELS[sel.domain] ?? sel.domain}`, stampText: `${modelRunLabel(r.cycle)}${hourText}`, credit, note: PENDING_TERMS_NOTE, forceTap: true };
-    const stamp = cycleDate(r.cycle).toISOString();
-    if (viewer) viewer.setProduct(product, stamp, patch);
-    else viewer = createMediaViewer(viewerEl, { product, stamp, timeZone: ctx.timeZone ?? '', lowData: ctx.lowData, ...patch, catalog: ctx.catalog, stamps: ctx.stamps });
-  }
-
-  function paintControls() {
-    clear(controls);
-    const f = family();
-    if (!f.models.includes(sel.model)) sel.model = /** @type {string} */ (f.models[0]);
-    const domains = f.product === 'landfalltool_ivt250_probability' ? ['coast', 'foothills', 'inland'] : f.product === 'arscale_map_mean' ? ['coast'] : sel.model === 'GFS_25' ? ['USWC', 'NEPac', 'IntWest', 'NPac'] : ['USWC', 'NEPac', 'IntWest'];
-    if (!domains.includes(sel.domain)) sel.domain = /** @type {string} */ (domains[0]);
-    controls.append(selectField('cw3e-product', 'Product', CW3E_FAMILIES.map((x, i) => ({ value: String(i), label: x.label })), String(sel.family), (v) => { sel.family = Number(v); paintControls(); paintViewer(); }));
-    if (f.models.length > 1) controls.append(selectField('cw3e-model', 'Model', f.models.map((m) => ({ value: m, label: MODEL_LABELS[m] ?? m })), sel.model, (v) => { sel.model = v; paintControls(); paintViewer(); }));
-    controls.append(selectField('cw3e-domain', 'Area', domains.map((x) => ({ value: x, label: DOMAIN_LABELS[x] ?? x })), sel.domain, (v) => { sel.domain = v; paintViewer(); }));
-    if (f.stepped) {
-      const hours = FORECAST_HOURS.map((x) => ({ value: String(x), label: `Forecast hour ${x}` }));
-      controls.append(selectField('cw3e-hour', 'Forecast Hour', hours, String(sel.fh), (v) => { sel.fh = Number(v); paintViewer(); }));
-      const step = h('div', { class: 'media-viewer__controls' });
-      const prev = h('button', { type: 'button', class: 'btn btn--secondary', 'data-action': 'hour-previous' }, 'Previous 12 Hours');
-      const next = h('button', { type: 'button', class: 'btn btn--secondary', 'data-action': 'hour-next' }, 'Next 12 Hours');
-      prev.addEventListener('click', () => { sel.fh = Math.max(0, sel.fh - 12); paintControls(); paintViewer(); });
-      next.addEventListener('click', () => { sel.fh = Math.min(168, sel.fh + 12); paintControls(); paintViewer(); });
-      step.append(prev, next);
-      controls.append(step);
-    }
-    if (d.stale) {
-      const find = h('button', { type: 'button', class: 'btn btn--secondary', 'data-action': 'find-newest-run' }, 'Find the Newest Model Run');
-      find.addEventListener('click', async () => {
-        clear(probeNote); probeNote.append('Looking for the newest model run. Each attempt loads one image.');
-        const f2 = family();
-        const probeHour = f2.stepped ? 0 : (f2.product === 'arscale_map_mean' ? 168 : 384);
-        const found = await probeCycleInBrowser((cycle) => cw3eUrl(template, { product: f2.product, model: sel.model, domain: sel.domain, cycle, fh: probeHour }), (opts.now ?? (() => new Date()))());
-        clear(probeNote);
-        if (!found) { probeNote.append('No recent model run could be loaded. Open the images at the source instead.'); return; }
-        probedCycle = /** @type {string} */ (/(\d{10})__1__F/.exec(found)?.[1]);
-        probeNote.append(`Found the newest model run this browser could load: ${modelRunLabel(probedCycle)}.`);
-        paintViewer();
-      });
-      controls.append(find, probeNote);
-    }
-  }
-
-  const note = h('p', { class: 'panel-note' }, PENDING_TERMS_NOTE, ' ', h('a', { href: findSource('cw3e-images')?.humanUrl ?? '', rel: 'noopener' }, 'Open the forecasts at CW3E'), '.');
-  body.append(controls, viewerEl, note);
-  paintControls();
-  paintViewer();
-  return { destroy: () => viewer?.destroy() };
-}
-
-/**
- * The MIMIC-TPW2 animation: a GIF that plays as soon as it loads, so it loads only on a labeled tap and stops
- * on a visible button. With reduced motion it is offered only as a link to the source.
- * @param {HTMLElement} body
- * @param {{ product: ImageryProduct, stamp: string | null }} d
- * @param {ImageryCtx} ctx
- * @param {{ reducedMotion?: boolean }} [opts]
- * @returns {{ destroy(): void }}
- */
-export function renderMtpw(body, d, ctx, opts = {}) {
-  clear(body);
-  const reduced = opts.reducedMotion ?? Boolean(globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
-  const size = sizeLabel(d.product.typicalBytes);
-  const stage = h('div', { class: 'media-viewer__stage', 'data-viewer': 'mtpw' });
-  const controls = h('div', { class: 'media-viewer__controls' });
-  const dims = imageDims(d.product);
-  const stampText = d.stamp ? `Animation time ${formatAsOf(d.stamp, ctx.timeZone)}` : null;
-  function idle() {
-    clear(stage); clear(controls);
-    stage.append(h('p', { class: 'media-viewer__notice' }, 'This animation loads when you tap.'));
-    if (reduced) controls.append(h('a', { class: 'btn btn--link', href: d.product.url, rel: 'noopener' }, `Open Animation at the Source (${size})`));
-    else {
-      const play = h('button', { type: 'button', class: 'btn btn--secondary', 'data-action': 'load-animation' }, `Load Animation (${size})`);
-      play.addEventListener('click', playing);
-      controls.append(play);
-    }
-  }
-  function playing() {
-    clear(stage); clear(controls);
-    stage.append(h('img', { src: d.product.url, alt: `Total precipitable water over the Eastern Pacific, animation. ${stampText ?? ''}`.trim(), width: dims.width, height: dims.height, decoding: 'async', 'data-image-id': d.product.id }));
-    const stop = h('button', { type: 'button', class: 'btn btn--secondary', 'data-action': 'stop-animation' }, 'Stop Animation');
-    stop.addEventListener('click', idle);
-    controls.append(stop);
-  }
-  if (!d.stamp) {
-    stage.append(h('p', { class: 'media-viewer__notice' }, 'This animation has no published time, so it is not shown.'));
-  } else idle();
-  body.append(h('figure', { class: 'media-viewer' }, stage, controls,
-    h('figcaption', { class: 'media-viewer__caption' }, 'Total precipitable water, Eastern Pacific, last 72 hours. ',
-      d.stamp ? h('span', { class: 'stamp' }, 'Animation time ', h('time', { datetime: d.stamp }, formatAsOf(d.stamp, ctx.timeZone))) : null,
-      ' Credit: CIMSS, University of Wisconsin-Madison. ', PENDING_TERMS_NOTE)));
+  body.append(h('p', { class: 'panel-note', 'data-link-out': d.id }, d.note, ' ',
+    h('a', { class: 'btn btn--link', href: d.href, target: '_blank', rel: 'noopener noreferrer' }, d.label)));
   return { destroy: () => { clear(body); } };
 }
 

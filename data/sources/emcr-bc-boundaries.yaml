@@ -2,9 +2,9 @@ id: emcr-bc-boundaries
 title: Emergency Management and Climate Readiness Response Regions
 owner: Province of British Columbia, Emergency Management and Climate Readiness
 url: https://openmaps.gov.bc.ca/geo/pub/ows
-humanUrl: https://catalogue.data.gov.bc.ca/
-license: Open Government Licence - British Columbia
-attribution: Contains information licensed under the Open Government Licence - British Columbia, Province of British Columbia
+humanUrl: https://catalogue.data.gov.bc.ca/dataset/emergency-management-and-climate-readiness-boundaries
+license: Open Government Licence - British Columbia (BC Data Catalogue, checked 10/05/2026)
+attribution: Contains information licensed under the Open Government Licence - British Columbia. Emergency Management and Climate Readiness, Province of British Columbia.
 cadence: Boundaries change rarely; read by the monthly reference build.
 region: ca
 coverage: [BC]

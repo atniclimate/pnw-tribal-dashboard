@@ -4,8 +4,8 @@ owner: Province of British Columbia, Emergency Management and Climate Readiness
 url: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/EMBC_Tsunami_Notifications_VIEW/FeatureServer/0
 urlTemplate: https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/EMBC_Tsunami_Notifications_VIEW/FeatureServer/0/query?{query}
 humanUrl: https://www.emergencyinfobc.gov.bc.ca/
-license: Licence not yet confirmed for republication (Q8); hidden as a candidate until checked.
-attribution: Emergency Management and Climate Readiness, Province of British Columbia
+license: 'Reference zones: Open Government Licence - British Columbia. Live status layer: Copyright Province of British Columbia, all rights reserved, no licence named (checked 10/05/2026). Written confirmation requested.'
+attribution: Contains information licensed under the Open Government Licence - British Columbia. Emergency Management and Climate Readiness, Province of British Columbia.
 cadence: Event-driven; the snapshot reads it every ten minutes.
 region: ca
 coverage: [BC, MARINE]
@@ -46,4 +46,5 @@ notes: >-
   Attributes only (returnGeometry=false): an unfiltered query with geometry returned 9.8 MB in the link
   audit, while the five zone records without geometry are about 2 KB (10/05/2026). STATUS is coded 1
   Tsunami Warning, 2 Tsunami Advisory, 3 Tsunami Watch, 4 Cancellation, 5 No Notification; every zone (A to
-  E) was at No Notification on 10/05/2026.
+  E) was at No Notification on 10/05/2026. Licence check 10/05/2026 (Q8): live status layer lacks a stated
+  licence; NTWC covers life-safety coverage meanwhile.
