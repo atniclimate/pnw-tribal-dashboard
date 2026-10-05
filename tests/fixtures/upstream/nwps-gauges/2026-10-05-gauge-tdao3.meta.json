@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nwps-gauges",
+  "label": "gauge-tdao3",
+  "file": "2026-10-05-gauge-tdao3.json",
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges/TDAO3",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T07:44:36.070Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 3257,
+  "sha256": "51e5480341ab1002c88c0c63a0639e97e9e1ce26f9b32b4e9bb1156b3d74605c",
+  "covers": [
+    "gauge-detail",
+    "legacy-stages"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

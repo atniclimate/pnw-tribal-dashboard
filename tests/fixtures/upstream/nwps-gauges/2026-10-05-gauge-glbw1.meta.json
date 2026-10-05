@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nwps-gauges",
+  "label": "gauge-glbw1",
+  "file": "2026-10-05-gauge-glbw1.json",
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges/GLBW1",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T07:45:20.944Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 58527,
+  "sha256": "15c26f055cfebd15a6979f61c99c297aea598b8ea27aa493fef6fbe8533062a7",
+  "covers": [
+    "gauge-detail",
+    "legacy-stages"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

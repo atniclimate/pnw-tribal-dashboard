@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-hydrometric-realtime",
+  "label": "bc-window-40min",
+  "file": "2026-10-05-bc-window-40min.json",
+  "url": "https://api.weather.gc.ca/collections/hydrometric-realtime/items?f=json&limit=60&PROV_TERR_STATE_LOC=BC&datetime=2026-10-05T07:05:54Z/..",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T07:45:55.098Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 30568,
+  "sha256": "5362f8b8e10630ca8d2ccc86da7cfa011d2946f4b5f6efac8494df976f1e39a2",
+  "covers": [
+    "realtime-window"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

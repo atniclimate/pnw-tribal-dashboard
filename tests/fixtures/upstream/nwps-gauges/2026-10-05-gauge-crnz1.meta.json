@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nwps-gauges",
+  "label": "gauge-crnz1",
+  "file": "2026-10-05-gauge-crnz1.json",
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges/CRNZ1",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T07:44:31.462Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 78534,
+  "sha256": "cb28d28545a67e37cbbaa9d1b4a5bedc5529a40a7ffd0b9675e3041fb6c955df",
+  "covers": [
+    "gauge-detail",
+    "legacy-stages"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

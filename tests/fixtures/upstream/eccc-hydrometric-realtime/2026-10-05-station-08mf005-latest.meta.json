@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-hydrometric-realtime",
+  "label": "station-08mf005-latest",
+  "file": "2026-10-05-station-08mf005-latest.json",
+  "url": "https://api.weather.gc.ca/collections/hydrometric-realtime/items?f=json&limit=6&STATION_NUMBER=08MF005&sortby=-DATETIME",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T07:45:56.528Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 3995,
+  "sha256": "600148525c333723b94317a2235e56547b8a5540844b639c3427b84fb5905a2f",
+  "covers": [
+    "realtime-station"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

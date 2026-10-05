@@ -1,0 +1,36 @@
+id: nwps-gauges
+title: National Water Prediction Service Gauges
+owner: National Weather Service, National Water Center (NOAA)
+url: https://api.water.noaa.gov/nwps/v1/gauges
+humanUrl: https://water.noaa.gov/
+license: Public domain (U.S. Government work).
+attribution: NOAA National Weather Service, National Water Prediction Service
+cadence: Observations about every fifteen minutes; forecasts at each River Forecast Center cycle.
+region: us
+coverage: [WA, OR, ID]
+kind: api-json
+status: active
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: verified-wildcard
+    acao: '*'
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: GET /gauges/MVEW1 with an Origin header returned Access-Control-Allow-Origin star on 10/05/2026. Responses were not compressed, so the full footprint list is read by the snapshot task only.
+  headers:
+    Accept: application/json
+  timeoutMs: 30000
+  retries: 2
+  priority: 1
+  snapshot:
+    task: gauges
+    files: [gauges-status.json]
+    cadenceMin: 15
+freshness:
+  freshForMs: 1800000
+  usableForMs: 21600000
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: The list endpoint (bbox query) carries each gauge's observed and forecast stage, flow, and the National Weather Service flood category; the detail endpoint (/gauges/{lid}) adds the official thresholds and is read by the monthly reference build only. The dashboard shows the National Weather Service category and never computes one. Sentinel values -999 and -9999 mean no value.

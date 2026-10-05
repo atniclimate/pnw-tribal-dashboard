@@ -1,0 +1,64 @@
+# Reviewed gauge corrections (blueprint 5.5). Each entry names the gauge that is shown (gaugeId) and,
+# for a replacement, the legacy identifier it supersedes (replaces). Evidence: the 10/04/2026 NWPS
+# link audit and the dated fixtures in tests/fixtures/upstream/nwps-gauges. Nation joins (nationIds)
+# are left to the registry lane; none are asserted here.
+- gaugeId: nwps:MVEW1
+  action: replace
+  replaces: nwps:SKGW1
+  note: SKGW1 does not exist in NWPS (404 on 10/04/2026). The Skagit River near Mount Vernon is MVEW1, USGS 12200500.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/MVEW1
+- gaugeId: nwps:SQUW1
+  action: replace
+  replaces: nwps:SNOQ1
+  note: SNOQ1 does not exist in NWPS (404). The Snoqualmie River at Snoqualmie Falls is SQUW1.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/SQUW1
+- gaugeId: nwps:SNAW1
+  action: replace
+  replaces: nwps:SNHW1
+  note: SNHW1 does not exist in NWPS (404). The Snohomish River at Snohomish is SNAW1.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/SNAW1
+- gaugeId: nwps:CENW1
+  action: replace
+  replaces: nwps:CEHW1
+  note: CEHW1 does not exist in NWPS (404). The Chehalis River at Centralia is CENW1.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/CENW1
+- gaugeId: nwps:ARLW1
+  action: replace
+  replaces: nwps:ARWW1
+  note: ARWW1 does not exist in NWPS (404). The Stillaguamish River at Arlington is ARLW1, USGS 12167400.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/ARLW1
+- gaugeId: nwps:GLBW1
+  action: replace
+  replaces: nwps:GOLW1
+  note: GOLW1 does not exist in NWPS (404). The Skykomish River near Gold Bar is GLBW1, USGS 12134500.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/GLBW1
+- gaugeId: nwps:GRAO3
+  action: replace
+  replaces: nwps:GPSO3
+  note: GPSO3 does not exist in NWPS (404). The Rogue River at Grants Pass is GRAO3.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/GRAO3
+- gaugeId: nwps:BIGI1
+  action: replace
+  replaces: nwps:GLNI1
+  note: GLNI1 does not exist in NWPS (404). The Boise River at Boise (Glenwood Bridge) is BIGI1, USGS 13206000.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/BIGI1
+- gaugeId: nwps:SMNI1
+  action: replace
+  replaces: nwps:SALI1
+  note: SALI1 does not exist in NWPS (404). The Salmon River at Salmon is SMNI1, USGS 13302500.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/SMNI1
+- gaugeId: nwps:EKTO3
+  action: replace
+  replaces: nwps:ELKO3
+  note: ELKO3 is Elk Creek near Trail, not the Umpqua River. The Umpqua River near Elkton is EKTO3, USGS 14321000.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/EKTO3
+- gaugeId: nwps:SNAI1
+  action: replace
+  replaces: nwps:BLFI1
+  note: BLFI1 is the Blackfoot River near Blackfoot, USGS 13068500. The Snake River at Blackfoot is SNAI1, USGS 13062500.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/SNAI1
+- gaugeId: nwps:CRNW1
+  action: replace
+  replaces: nwps:CRNZ1
+  note: CRNZ1 is the discharge pseudo-point for the Snoqualmie River near Carnation and carries no action stage. CRNW1 carries the 50.7 ft action stage.
+  sourceUrl: https://api.water.noaa.gov/nwps/v1/gauges/CRNW1

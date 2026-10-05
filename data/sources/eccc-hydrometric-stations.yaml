@@ -1,0 +1,32 @@
+id: eccc-hydrometric-stations
+title: Environment and Climate Change Canada Hydrometric Stations
+owner: Environment and Climate Change Canada, Water Survey of Canada
+url: https://api.weather.gc.ca/collections/hydrometric-stations/items
+humanUrl: https://wateroffice.ec.gc.ca/
+license: Open Government Licence - Canada 2.0
+attribution: Contains information licensed under the Open Government Licence - Canada, Water Survey of Canada
+cadence: Station list changes rarely; read by the monthly reference build.
+region: ca
+coverage: [BC]
+kind: ogc-features
+status: active
+deprecation: null
+access:
+  mode: build
+  cors:
+    status: verified-wildcard
+    acao: '*'
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: GET /collections/hydrometric-stations/items with an Origin header returned Access-Control-Allow-Origin star on 10/05/2026. Read at build time only.
+  headers:
+    Accept: application/json
+  timeoutMs: 60000
+  retries: 2
+  priority: 3
+freshness:
+  freshForMs: 2592000000
+  usableForMs: 7776000000
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: Filter PROV_TERR_STATE_LOC=BC, STATUS_EN=Active, REAL_TIME=1 (434 stations on 10/05/2026). Station records carry no flood thresholds, and none are invented.

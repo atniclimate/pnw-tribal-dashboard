@@ -1,0 +1,36 @@
+id: eccc-hydrometric-realtime
+title: Environment and Climate Change Canada Hydrometric Real-Time
+owner: Environment and Climate Change Canada, Water Survey of Canada
+url: https://api.weather.gc.ca/collections/hydrometric-realtime/items
+humanUrl: https://wateroffice.ec.gc.ca/
+license: Open Government Licence - Canada 2.0
+attribution: Contains information licensed under the Open Government Licence - Canada, Water Survey of Canada
+cadence: Provisional readings about every five to fifteen minutes, with a lag of roughly thirty to forty minutes.
+region: ca
+coverage: [BC]
+kind: ogc-features
+status: active
+deprecation: null
+access:
+  mode: snapshot
+  cors:
+    status: verified-wildcard
+    acao: '*'
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: GET /collections/hydrometric-realtime/items with an Origin header returned Access-Control-Allow-Origin star on 10/05/2026. The snapshot task makes one windowed request per run, in respect of the service's request-volume guidance.
+  headers:
+    Accept: application/json
+  timeoutMs: 60000
+  retries: 2
+  priority: 2
+  snapshot:
+    task: wsc
+    files: [wsc-status.json]
+    cadenceMin: 30
+freshness:
+  freshForMs: 1800000
+  usableForMs: 21600000
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: Level (metres) and discharge (cubic metres per second) are provisional and unreviewed. The Water Survey of Canada publishes no flood categories, so none are shown; British Columbia River Forecast Centre advisories are a separate source. Use the datetime window filter with PROV_TERR_STATE_LOC=BC; the collection returns oldest rows first by default.

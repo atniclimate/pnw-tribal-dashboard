@@ -1,0 +1,201 @@
+{
+  "lid": "ELKO3",
+  "usgsId": "14338000",
+  "reachId": "23923878",
+  "name": "Elk Creek near Trail",
+  "description": "",
+  "rfc": {
+    "abbreviation": "NWRFC",
+    "name": "Northwest River Forecast Center"
+  },
+  "wfo": {
+    "abbreviation": "MFR",
+    "name": "Medford"
+  },
+  "state": {
+    "abbreviation": "OR",
+    "name": "Oregon"
+  },
+  "county": "Jackson",
+  "timeZone": "PST8PDT",
+  "latitude": 42.6787364,
+  "longitude": -122.7419867,
+  "pedts": {
+    "observed": "HGIRG",
+    "forecast": "HGIFZ"
+  },
+  "status": {
+    "observed": {
+      "primary": 3.63,
+      "primaryUnit": "ft",
+      "secondary": 0.021,
+      "secondaryUnit": "kcfs",
+      "floodCategory": "not_defined",
+      "validTime": "2026-10-05T06:30:00Z"
+    },
+    "forecast": {
+      "primary": 3.65,
+      "primaryUnit": "ft",
+      "secondary": 0.022,
+      "secondaryUnit": "kcfs",
+      "floodCategory": "not_defined",
+      "validTime": "2026-10-05T12:00:00Z"
+    }
+  },
+  "flood": {
+    "stageUnits": "ft",
+    "flowUnits": "cfs",
+    "categories": {
+      "major": {
+        "stage": -9999,
+        "flow": -9999
+      },
+      "moderate": {
+        "stage": -9999,
+        "flow": -9999
+      },
+      "minor": {
+        "stage": -9999,
+        "flow": -9999
+      },
+      "action": {
+        "stage": -9999,
+        "flow": -9999
+      }
+    },
+    "lro": null,
+    "crests": {
+      "historic": [
+        {
+          "occurredTime": "1964-12-22T00:00:00Z",
+          "stage": 18.84,
+          "flow": 19200,
+          "preliminary": "R",
+          "olddatum": false
+        },
+        {
+          "occurredTime": "1996-11-18T22:40:00Z",
+          "stage": 10.89,
+          "flow": 7999,
+          "preliminary": "O",
+          "olddatum": false
+        },
+        {
+          "occurredTime": "1996-12-08T14:00:00Z",
+          "stage": 10,
+          "flow": 6234,
+          "preliminary": "O",
+          "olddatum": false
+        }
+      ],
+      "recent": [
+        {
+          "occurredTime": "1996-12-08T14:00:00Z",
+          "stage": 10,
+          "flow": 6234,
+          "preliminary": "O",
+          "olddatum": false
+        },
+        {
+          "occurredTime": "1996-11-18T22:40:00Z",
+          "stage": 10.89,
+          "flow": 7999,
+          "preliminary": "O",
+          "olddatum": false
+        },
+        {
+          "occurredTime": "1964-12-22T00:00:00Z",
+          "stage": 18.84,
+          "flow": 19200,
+          "preliminary": "R",
+          "olddatum": false
+        }
+      ]
+    },
+    "lowWaters": {
+      "historic": []
+    },
+    "impacts": []
+  },
+  "images": {
+    "probability": {
+      "weekint": {
+        "stage": "https://water.noaa.gov/resources/probabilistic/exceedance/ELKO3.SSTG.prob.weekint.png",
+        "flow": "https://water.noaa.gov/resources/probabilistic/exceedance/ELKO3.QINE.prob.weekint.png",
+        "volume": "https://water.noaa.gov/resources/probabilistic/exceedance/ELKO3.volume.prob.weekint.png"
+      },
+      "entperiod": {
+        "stage": "https://water.noaa.gov/resources/probabilistic/exceedance/ELKO3.SSTG.exceed.90day.png",
+        "flow": "https://water.noaa.gov/resources/probabilistic/exceedance/ELKO3.QINE.exceed.90day.png",
+        "volume": "https://water.noaa.gov/resources/probabilistic/exceedance/ELKO3.volume.exceed.90day.png"
+      },
+      "shortrange": "https://water.noaa.gov/resources/probabilistic/short_term/ELKO3.shortrange.hefs.png"
+    },
+    "hydrograph": {
+      "default": "https://water.noaa.gov/resources/hydrographs/elko3_hg.png",
+      "floodcat": "https://water.noaa.gov/resources/hydrographs/elko3_record.png"
+    },
+    "photos": []
+  },
+  "dataAttribution": [
+    {
+      "abbrev": "US Geological Survey",
+      "text": "USGS--Water Resources of the United States",
+      "title": "US Geological Survey",
+      "url": "https://waterdata.usgs.gov/nwis/uv?site_no=14338000"
+    },
+    {
+      "abbrev": "USGS",
+      "text": "14338000",
+      "title": "Observations courtesy of U.S. Geological Survey",
+      "url": "https://waterdata.usgs.gov/nwis/inventory/?site_no=14338000"
+    }
+  ],
+  "impactsLowWaters": [],
+  "normalThreshold": {
+    "value": 0,
+    "units": "ft"
+  },
+  "hydronotes": [],
+  "datums": {
+    "vertical": {
+      "value": [
+        {
+          "label": "National Geodetic Vertical Datum of 1929",
+          "abbrev": "NGVD29",
+          "description": "A fixed reference adopted as a standard geodetic datum for elevations determined by leveling. The datum was derived for surveys from a general adjustment of the first-order leveling nets of both the United States and Canada. In the adjustment, mean sea level was held fixed as observed at 21 tide stations in the United States and 5 in Canada. The year indicates the time of the general adjustment. A synonym for Sea-level Datum of 1929. The geodetic datum is fixed and does not take into account the changing stands of sea level. Because there are many variables affecting sea level, and because the geodetic datum represents a best fit over a broad area, the relationship between the geodetic datum and local mean sea level is not consistent from one location to another in either time or space. For this reason, the National Geodetic Vertical Datum should not be confused with mean sea level. See North American Vertical Datum of 1988 (NAVD 88). NGVD 29 should not be used as Mean Sea Level. NGVD 29 is no longer supported by NGS.",
+          "value": 1493.91
+        }
+      ]
+    },
+    "horizontal": {
+      "value": []
+    },
+    "notes": {
+      "value": []
+    }
+  },
+  "inundation": {
+    "enabled": false,
+    "url": "",
+    "zeroDatum": null,
+    "downloads": null,
+    "siteSpecificInfo": "",
+    "dataAttribution": []
+  },
+  "upstreamLid": "",
+  "downstreamLid": "",
+  "inService": {
+    "enabled": true,
+    "message": ""
+  },
+  "lowThreshold": {
+    "units": "ft",
+    "value": 0
+  },
+  "forecastReliability": "Forecasts are issued routinely year-round.",
+  "TruncateObs": "-1",
+  "TruncateFcst": "7",
+  "ObservedFloodCategory": "not_defined",
+  "ForecastFloodCategory": "not_defined"
+}

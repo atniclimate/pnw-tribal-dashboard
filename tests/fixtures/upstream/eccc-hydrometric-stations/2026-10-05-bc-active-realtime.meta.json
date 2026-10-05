@@ -1,0 +1,24 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-hydrometric-stations",
+  "label": "bc-active-realtime",
+  "file": "2026-10-05-bc-active-realtime.json",
+  "url": "https://api.weather.gc.ca/collections/hydrometric-stations/items?f=json&limit=40&PROV_TERR_STATE_LOC=BC&STATUS_EN=Active&REAL_TIME=1",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T07:45:54.186Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 88826,
+  "sha256": "df85192c5b237f3de56f9bb22861365552aa96aaf68401d78db95d760c9637ed",
+  "covers": [
+    "station-list"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

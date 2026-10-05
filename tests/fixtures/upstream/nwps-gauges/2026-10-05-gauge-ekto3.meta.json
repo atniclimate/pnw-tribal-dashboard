@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nwps-gauges",
+  "label": "gauge-ekto3",
+  "file": "2026-10-05-gauge-ekto3.json",
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges/EKTO3",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-05T07:44:44.588Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 20046,
+  "sha256": "f165854b7f7412f8163ddfc85bf3e6bf96fd010e5f94724ec10f4d6f9f517be3",
+  "covers": [
+    "gauge-detail",
+    "legacy-stages"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}
