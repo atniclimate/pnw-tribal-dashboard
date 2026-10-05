@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Core Runtime Harness</title>
+  <!--
+    Developer harness for the core runtime library (lane L2). Never deployed: dev/ is outside site/.
+    tests/e2e/harness.spec.mjs serves it at /pnw-tribal-dashboard/dev/harness.html next to site/ and drives
+    mountPanel and the DOM helpers in a real browser. The panel bodies carry test text, not observations.
+  -->
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; margin: 0 auto; max-width: 48rem; padding: 0 16px 48px; }
+    .panel { border: 1px solid #888; margin: 16px 0; padding: 12px 16px; }
+    .provenance { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 14px; border-top: 1px solid #888; margin-top: 12px; padding-top: 8px; }
+    .status-pill { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+    .status-pill__icon { width: 12px; height: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Core Runtime Harness</h1>
+  <p>Developer page for the core runtime library. It is not part of the site.</p>
+
+  <section class="panel" data-panel="harness-a" data-sources="harness-source" aria-labelledby="harness-a-h">
+    <h2 class="panel__title" id="harness-a-h">Harness Panel A</h2>
+    <div class="panel__body" data-panel-body></div>
+  </section>
+
+  <section class="panel" data-panel="harness-b" data-sources="harness-source harness-other" aria-labelledby="harness-b-h">
+    <h2 class="panel__title" id="harness-b-h">Harness Panel B</h2>
+    <div class="panel__body" data-panel-body></div>
+  </section>
+
+  <div id="sandbox"></div>
+
+  <script type="module">
+    import { mountPanel, panelStatuses } from '../static/js/ui/panel.js';
+    import { registerSources } from '../static/js/core/sources.js';
+    import { deriveStatus } from '../static/js/core/status.js';
+    import { h, safeUrl, telHref, clear, on } from '../static/js/core/dom.js';
+    import { formatAsOf, zonedDayKey, splitByZonedDay } from '../static/js/core/time.js';
+    import { parseQuery, serializeQuery, writeState, readState } from '../static/js/core/url-state.js';
+
+    // Registry records describe the harness's own pseudo-sources.
+    const base = {
+      owner: 'Harness', url: 'https://www.weather.gov/', humanUrl: 'https://www.weather.gov/', license: 'test', attribution: 'Harness Agency',
+      cadence: 'test', region: 'us', coverage: ['WA'], kind: 'page', status: 'active', deprecation: null, usedBy: ['dashboard'], verifiedAt: '2026-10-05',
+      access: { mode: 'link', cors: { status: 'unverified', acao: null, origin: 'none', checkedAt: '2026-10-05', evidence: 'test' } },
+    };
+    registerSources([
+      { ...base, id: 'harness-source', title: 'Harness Source', attribution: 'Harness Agency' },
+      { ...base, id: 'harness-other', title: 'Harness Other', attribution: 'Other Harness Agency', humanUrl: 'https://weather.gc.ca/' },
+    ]);
+
+    window.harness = { mountPanel, panelStatuses, deriveStatus, h, safeUrl, telHref, clear, on, formatAsOf, zonedDayKey, splitByZonedDay, parseQuery, serializeQuery, writeState, readState };
+    window.harnessReady = true;
+  </script>
+</body>
+</html>

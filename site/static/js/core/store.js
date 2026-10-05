@@ -1,10 +1,8 @@
 // @ts-check
 /**
  * Tiny store with change detection; inputs are never re-rendered (blueprint 3.13). DOM-free.
- *
- * STUB (lane L0). Owner: lane L2. Signatures are the contract; bodies throw until the owner implements them.
+ * A set that changes nothing notifies nobody, so a typing field is not rebuilt by an unrelated update.
  */
-const NOT_IMPLEMENTED = 'not implemented';
 
 /**
  * @template {object} T
@@ -12,5 +10,21 @@ const NOT_IMPLEMENTED = 'not implemented';
  * @returns {import('../types.js').Store<T>}
  */
 export function createStore(initial) {
-  throw new Error(NOT_IMPLEMENTED);
+  let state = { ...initial };
+  /** @type {Set<(state: T, prev: T) => void>} */
+  const listeners = new Set();
+  return {
+    get: () => state,
+    set(patch) {
+      const keys = /** @type {(keyof T)[]} */ (Object.keys(patch));
+      if (!keys.some((k) => !Object.is(state[k], patch[k]))) return;
+      const prev = state;
+      state = { ...state, ...patch };
+      for (const fn of [...listeners]) fn(state, prev);
+    },
+    subscribe(fn) {
+      listeners.add(fn);
+      return () => { listeners.delete(fn); };
+    },
+  };
 }

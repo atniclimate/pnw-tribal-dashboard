@@ -1,10 +1,35 @@
 // @ts-check
 /**
  * Time zones per Nation, house-style date formatting, and DST-safe day bucketing (blueprint 3.11). DOM-free.
- *
- * STUB (lane L0). Owner: lane L2. Signatures are the contract; bodies throw until the owner implements them.
+ * Every rendered time prints its zone abbreviation; relative ages never stand alone.
  */
-const NOT_IMPLEMENTED = 'not implemented';
+
+const HOUR_MS = 3_600_000;
+const UNAVAILABLE = 'Time unavailable';
+
+/** @type {Map<string, Intl.DateTimeFormat>} */
+const formatters = new Map();
+
+/**
+ * Cached formatter; construction is the slow part of Intl.
+ * @param {string} key
+ * @param {() => Intl.DateTimeFormat} make
+ * @returns {Intl.DateTimeFormat}
+ */
+function cached(key, make) {
+  let f = formatters.get(key);
+  if (!f) { f = make(); formatters.set(key, f); }
+  return f;
+}
+
+/**
+ * @param {string | Date} iso
+ * @returns {Date | null} null when unparseable
+ */
+function toDate(iso) {
+  const d = iso instanceof Date ? iso : new Date(iso);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
 
 /**
  * 'YYYY-MM-DD' for an instant in a zone.
@@ -13,11 +38,12 @@ const NOT_IMPLEMENTED = 'not implemented';
  * @returns {string}
  */
 export function zonedDayKey(date, timeZone) {
-  throw new Error(NOT_IMPLEMENTED);
+  return cached(`day|${timeZone}`, () => new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' })).format(date);
 }
 
 /**
- * Split an interval value across zoned days by hour; DST-safe.
+ * Split an interval value across zoned days by hour; NWS gridpoint intervals are whole hours. DST-safe
+ * because each hour is a real elapsed hour mapped to its local day.
  * @param {Date} start
  * @param {Date} end
  * @param {number} value
@@ -25,27 +51,35 @@ export function zonedDayKey(date, timeZone) {
  * @returns {Map<string, number>}
  */
 export function splitByZonedDay(start, end, value, timeZone) {
-  throw new Error(NOT_IMPLEMENTED);
+  /** @type {Map<string, number>} */
+  const out = new Map();
+  const hours = Math.max(1, Math.round((end.getTime() - start.getTime()) / HOUR_MS));
+  for (let i = 0; i < hours; i += 1) {
+    const key = zonedDayKey(new Date(start.getTime() + i * HOUR_MS), timeZone);
+    out.set(key, (out.get(key) ?? 0) + value / hours);
+  }
+  return out;
 }
 
 /**
- * '10/04/2026 3:15 PM PDT': MM/DD/YYYY, 12-hour time, zone abbreviation.
- * @param {string} iso
- * @param {string} [timeZone] viewer's zone when absent
- * @returns {string}
+ * Parts of an instant in a zone, with 12-hour time.
+ * @param {Date} d
+ * @param {string | undefined} timeZone viewer's zone when absent
  */
-export function formatAsOf(iso, timeZone) {
-  throw new Error(NOT_IMPLEMENTED);
-}
-
-/**
- * '10/04/2026'.
- * @param {string} iso
- * @param {string} [timeZone]
- * @returns {string}
- */
-export function formatDate(iso, timeZone) {
-  throw new Error(NOT_IMPLEMENTED);
+function parts(d, timeZone) {
+  const fmt = cached(`parts|${timeZone ?? ''}`, () => new Intl.DateTimeFormat('en-US', {
+    ...(timeZone ? { timeZone } : {}),
+    year: 'numeric', month: '2-digit', day: '2-digit', hour: 'numeric', minute: '2-digit', hour12: true, timeZoneName: 'short',
+  }));
+  /** @type {Record<string, string>} */
+  const p = {};
+  for (const part of fmt.formatToParts(d)) p[part.type] = part.value;
+  /** @param {string} t */
+  const g = (t) => p[t] ?? '';
+  return {
+    month: g('month'), day: g('day'), year: g('year'), hour: g('hour'), minute: g('minute'),
+    dayPeriod: g('dayPeriod').toUpperCase(), timeZoneName: g('timeZoneName'),
+  };
 }
 
 /**
@@ -55,7 +89,46 @@ export function formatDate(iso, timeZone) {
  * @returns {string}
  */
 export function zoneAbbreviation(date, timeZone) {
-  throw new Error(NOT_IMPLEMENTED);
+  return parts(date, timeZone).timeZoneName;
+}
+
+/**
+ * '10/04/2026 3:15 PM PDT': MM/DD/YYYY, 12-hour time, zone abbreviation.
+ * @param {string} iso
+ * @param {string} [timeZone] viewer's zone when absent
+ * @returns {string}
+ */
+export function formatAsOf(iso, timeZone) {
+  const d = toDate(iso);
+  if (!d) return UNAVAILABLE;
+  const p = parts(d, timeZone);
+  return `${p.month}/${p.day}/${p.year} ${p.hour}:${p.minute} ${p.dayPeriod} ${p.timeZoneName}`;
+}
+
+/**
+ * '3:15 PM PDT'.
+ * @param {string} iso
+ * @param {string} [timeZone]
+ * @returns {string}
+ */
+export function formatTime(iso, timeZone) {
+  const d = toDate(iso);
+  if (!d) return UNAVAILABLE;
+  const p = parts(d, timeZone);
+  return `${p.hour}:${p.minute} ${p.dayPeriod} ${p.timeZoneName}`;
+}
+
+/**
+ * '10/04/2026'.
+ * @param {string} iso
+ * @param {string} [timeZone]
+ * @returns {string}
+ */
+export function formatDate(iso, timeZone) {
+  const d = toDate(iso);
+  if (!d) return UNAVAILABLE;
+  const p = parts(d, timeZone);
+  return `${p.month}/${p.day}/${p.year}`;
 }
 
 /**
@@ -65,14 +138,31 @@ export function zoneAbbreviation(date, timeZone) {
  * @returns {string}
  */
 export function relativeAge(iso, now) {
-  throw new Error(NOT_IMPLEMENTED);
+  const d = toDate(iso);
+  if (!d) return UNAVAILABLE;
+  const s = Math.floor((now.getTime() - d.getTime()) / 1000);
+  if (s < 60) return 'just now';
+  const m = Math.floor(s / 60);
+  if (m < 60) return `${m} min ago`;
+  const h = Math.floor(m / 60);
+  if (h < 48) return `${h} hr ago`;
+  return `${Math.floor(h / 24)} days ago`;
 }
 
+const DURATION = /^P(?:(\d+(?:\.\d+)?)W)?(?:(\d+(?:\.\d+)?)D)?(?:T(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?(?:(\d+(?:\.\d+)?)S)?)?$/;
+
 /**
- * Milliseconds.
+ * Milliseconds. Weeks, days, hours, minutes, and seconds only: years and months have no fixed length, and
+ * NWS gridpoint intervals never use them. Throws on anything else.
  * @param {string} duration for example 'PT6H' or 'P1DT6H'
  * @returns {number}
  */
 export function parseIsoDuration(duration) {
-  throw new Error(NOT_IMPLEMENTED);
+  const m = DURATION.exec(String(duration));
+  if (!m || duration === 'P' || /T$/.test(duration)) throw new Error(`Unsupported ISO 8601 duration: "${duration}"`);
+  /** @param {number} i */
+  const n = (i) => (m[i] === undefined ? 0 : Number(m[i]));
+  const [w, d, h, min, s] = [n(1), n(2), n(3), n(4), n(5)];
+  if (w === undefined || d === undefined || h === undefined || min === undefined || s === undefined) throw new Error('unreachable');
+  return Math.round((((w * 7 + d) * 24 + h) * 60 + min) * 60_000 + s * 1000);
 }
