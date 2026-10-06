@@ -13,6 +13,7 @@ import { categoryLabel, observedDisplay } from '../hydro/flood-category.js';
 import { hydrographText } from '../hydro/nwps.js';
 import { WSC_THRESHOLD_NOTE } from '../hydro/wsc.js';
 import { floodToken, readingText } from './gauge-list.js';
+import { mountHydrograph } from './charts/hydrograph.js';
 
 /** @typedef {import('../types.js').Gauge} Gauge */
 /** @typedef {import('../types.js').GaugeStatus} GaugeStatus */
@@ -71,8 +72,8 @@ export function buildGaugeDetailModel(gauge, status, opts) {
  * @param {HTMLElement} el
  * @param {Gauge} gauge
  * @param {GaugeStatus | null} status
- * @param {{ timeZone: string }} opts
- * @returns {void}
+ * @param {import('./charts/hydrograph.js').HydrographOptions} opts
+ * @returns {() => void}
  */
 export function renderGaugeDetail(el, gauge, status, opts) {
   const m = buildGaugeDetailModel(gauge, status, opts);
@@ -86,7 +87,7 @@ export function renderGaugeDetail(el, gauge, status, opts) {
     h('p', { class: 'gauge-card__stamp' }, [gauge.river, agency, ids].filter(Boolean).join('. ')));
 
   const latest = h('section', { class: `gauge-card${m.display.current ? '' : ' gauge-card--not-current'}`, 'data-flood': floodToken(m.isWsc ? null : m.display.category), 'aria-label': 'Latest Observation' },
-    h('h4', { class: 'gauge-card__name' }, 'Latest Observation'),
+    h('h4', { class: 'gauge-card__name' }, 'Latest Observation in the Scheduled Copy'),
     h('span', { class: 'gauge-card__reading' }, m.observed.reading),
     h('span', { class: 'gauge-card__category' }, m.isWsc ? 'No official flood category for this station' : m.display.label),
     h('span', { class: 'gauge-card__stamp' }, m.observed.time ? `Observed ${m.observed.time}` : 'No observation time'),
@@ -109,8 +110,8 @@ export function renderGaugeDetail(el, gauge, status, opts) {
   /** @type {HTMLElement[]} */
   const hydro = [];
   if (gauge.hydrographImage) {
-    hydro.push(h('section', { class: 'gauge-detail__hydrograph' },
-      h('h4', {}, 'Hydrograph'),
+    hydro.push(h('details', { class: 'gauge-detail__hydrograph' },
+      h('summary', {}, 'Official Hydrograph Image and Snapshot Values'),
       h('img', { src: gauge.hydrographImage, alt: m.alt, width: HYDROGRAPH_SIZE.width, height: HYDROGRAPH_SIZE.height, loading: 'lazy', decoding: 'async' }),
       h('table', {},
         h('caption', {}, 'Hydrograph Values as Text'),
@@ -123,6 +124,10 @@ export function renderGaugeDetail(el, gauge, status, opts) {
     ? h('ul', { class: 'gauge-detail__links' }, links.map(([k, href]) => h('li', {}, h('a', { href, rel: 'noopener' }, LINK_LABELS[k]))))
     : null;
 
-  el.append(header, latest, stageTable, ...hydro);
+  const chart = h('section', { class: 'gauge-detail__chart', 'aria-label': 'Interactive River Hydrograph' });
+  el.append(header, latest, chart, stageTable, ...hydro);
+  const cleanup = gauge.lid || gauge.wscId ? mountHydrograph(chart, gauge, opts) : () => {};
+  if (!gauge.lid && !gauge.wscId) chart.append(h('p', { class: 'panel-note' }, 'This station has no supported identifier for interactive history. Open the official station page for observations and history.'));
   if (linkList) el.append(linkList);
+  return cleanup;
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://cdn.star.nesdis.noaa.gov https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://radar.weather.gov https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self' https://cdn.star.nesdis.noaa.gov; connect-src 'self' https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://services6.arcgis.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://cdn.star.nesdis.noaa.gov https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://radar.weather.gov https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self' https://cdn.star.nesdis.noaa.gov; connect-src 'self' https://api.water.noaa.gov https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://services6.arcgis.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
   <title>Forecasts | Cascadia Tribal Hazard Dashboard</title>
@@ -16,10 +16,12 @@
   <link rel="stylesheet" href="../static/css/base.css">
   <link rel="stylesheet" href="../static/css/layout.css">
   <link rel="stylesheet" href="../static/css/components.css">
+  <link rel="stylesheet" href="../static/css/charts.css">
   <link rel="stylesheet" href="../static/css/print.css" media="print">
   <!-- modulepreload:start -->
   <link rel="modulepreload" href="../static/js/pages/forecasts.js">
   <link rel="modulepreload" href="../static/js/ui/chrome.js">
+  <link rel="modulepreload" href="../static/js/core/url-state.js">
   <link rel="modulepreload" href="../static/js/core/embed.js">
   <link rel="modulepreload" href="../static/js/ui/panel.js">
   <link rel="modulepreload" href="../static/js/core/dom.js">
@@ -35,7 +37,6 @@
   <link rel="modulepreload" href="../static/js/core/storage.js">
   <link rel="modulepreload" href="../static/js/core/status.js">
   <link rel="modulepreload" href="../static/js/ui/tabs.js">
-  <link rel="modulepreload" href="../static/js/core/url-state.js">
   <link rel="modulepreload" href="../static/js/forecast/nation-context.js">
   <link rel="modulepreload" href="../static/js/core/units.js">
   <!-- modulepreload:end -->
@@ -132,7 +133,7 @@
       <p class="panel-note" data-airmass-note hidden>Air Mass combines infrared channels to show the character of air masses. NOAA publishes a quick guide with the color key: <a href="https://goes.noaa.gov/documents/QuickGuide_GOESR_AirMassRGB_final.pdf">Air Mass RGB Quick Guide</a>.</p>
     </section>
     <section class="view" data-view="radar" aria-label="Radar">
-      <section class="panel" data-panel="radar-map" data-sources="iem-nexrad-n0q eccc-geomet-radar carto-dark-matter" aria-labelledby="radar-map-h" data-map-panel>
+      <section class="panel" data-panel="radar-map" data-sources="iem-nexrad-n0q eccc-geomet-radar" aria-labelledby="radar-map-h" data-map-panel>
         <h2 class="panel__title" id="radar-map-h">Radar Map</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
@@ -142,7 +143,7 @@
       </section>
     </section>
     <section class="view" data-view="rivers" aria-label="Rivers">
-      <section class="panel" data-panel="rivers-gauges" data-sources="nwps-gauges eccc-hydrometric-realtime" aria-labelledby="rivers-gauges-h">
+      <section class="panel" data-panel="rivers-gauges" data-sources="nwps-gauges nwps-gauge-series eccc-hydrometric-realtime eccc-hydrometric-series" aria-labelledby="rivers-gauges-h">
         <h2 class="panel__title" id="rivers-gauges-h">River Gauges</h2>
         <div class="panel__body" data-panel-body></div>
       </section>

@@ -72,12 +72,14 @@ export function createHqLayer(opts) {
     },
     async add(c) {
       ctx = /** @type {MapContext} */ (c);
+      const activeContext = ctx;
       const map = ctx.map;
       if (!map) return;
       const [pts, idx] = await Promise.all([
         ctx.fetchLocal(HQ_FILE, { signal: ctx.signal, priority: 1, ttlMs: DATA_TTL_MS }),
         ctx.fetchLocal(NATIONS_INDEX_FILE, { signal: ctx.signal, priority: 1, ttlMs: DATA_TTL_MS }),
       ]);
+      if (ctx !== activeContext || ctx.map !== map) return;
       if (!pts.ok || !idx.ok) {
         ctx.status(layerStatus('unavailable', 'Headquarters points are unavailable; the Nation list is the fallback.', this.sourceIds));
         return;
@@ -87,22 +89,23 @@ export function createHqLayer(opts) {
         const g = /** @type {any} */ (f.geometry);
         items.set(f.properties.nationId, { name: f.properties.name, lngLat: [g.coordinates[0], g.coordinates[1]], hasBoundary: f.properties.hasBoundary });
       }
-      const fill = ctx.token('--ink-heading');
+      const fill = ctx.token('--ink-muted');
       const ring = ctx.token('--ground');
       map.addSource(sourceKey, { type: 'geojson', data, promoteId: 'nationId', tolerance: 0.5, buffer: 64, maxzoom: 12 });
-      const circle = { 'circle-radius': 5, 'circle-color': fill, 'circle-stroke-color': ring, 'circle-stroke-width': 1.5 };
+      const circle = { 'circle-radius': 3, 'circle-color': fill };
       addOrdered(map, 'hq', { id: 'overview', type: 'circle', source: sourceKey, maxzoom: 7, paint: circle });
       addOrdered(map, 'hq', { id: 'no-polygon', type: 'circle', source: sourceKey, minzoom: 7, filter: ['==', ['get', 'hasBoundary'], false], paint: circle });
       addOrdered(map, 'selection', {
         id: 'hq', type: 'circle', source: sourceKey,
         paint: {
           'circle-radius': 11, 'circle-color': ring, 'circle-opacity': 0,
-          'circle-stroke-color': fill, 'circle-stroke-width': 3,
+          'circle-stroke-color': ctx.token('--ink-heading'), 'circle-stroke-width': 3,
           'circle-stroke-opacity': ['case', ['boolean', ['feature-state', 'selected'], false], 1, 0],
         },
       });
       if (selected) mark(selected, true);
-      ctx.status(layerStatus('live', 'Headquarters points drawn from the Nation registry.', this.sourceIds));
+      const generatedAt = /** @type {{generatedAt?: string}} */ (idx.data).generatedAt ?? null;
+      ctx.status(layerStatus('cached', 'Nation locations from the compiled registry. The date is the registry build, not a weather observation.', this.sourceIds, generatedAt, 'retrieved'));
     },
     setVisible(on) { setLayersVisible(ctx?.map ?? null, ids, on); },
     highlight(id) {

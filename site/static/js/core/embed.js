@@ -1,21 +1,5 @@
 // @ts-check
-/**
- * Embed behavior (blueprint 1.4, 1.5). boot/flags.js has already marked <html> with data-embed,
- * data-framed, and data-panel-only before first paint; this module adds what needs script:
- *
- *   - the embed bar's page title and its "Open Full Page" link (the same URL without embed and panel);
- *   - in embed mode, links that leave the current page open in a new tab with rel="noopener", and links
- *     that stay on the page (views, filters, anchors) stay inside the frame and keep embed=1 when the page
- *     was opened with it; in every mode, links to other sites open in a new tab;
- *   - height messages to the host page when framed: { source: 'cthd', type: 'resize', page, height },
- *     target origin '*', height only, at most once per 250 ms, and only when the height changes;
- *   - single-panel embeds (panel=) only on the Dashboard and only for the six known panels.
- *
- * Every page imports this module through its entry module, and the module wires itself on import, so
- * embedding works on every page whether or not the page lane has called initEmbed yet. initEmbed is
- * idempotent. DOM module; it reads no storage and registers no service worker. It imports nothing, so it
- * adds no module to any page's preload list. Owner: lane L1.
- */
+/** Embed chrome, safe link targets, and height-only messages (250 ms maximum rate). Self-wiring, idempotent, no storage or service worker. Single-panel embeds are Dashboard-only; see DESIGN.md. */
 
 /** @typedef {import('../types.js').PageId} PageId */
 

@@ -1,13 +1,5 @@
 // @ts-check
-/**
- * Contacts page views (blueprint 7.4), imported by pages/contacts.js. Moved out of the entry module by the Wave 2
- * finisher so the entry's static import graph fits budgets.json jsStaticGraph; the code is lane L13's, unchanged.
- *
- * Directory: search, jurisdiction and type chips, and a Nation filter, all applied by toggling `hidden` on
- * cards that already exist, so no control is ever rebuilt under the person typing. Print and Copy List both
- * state the active filter. Near Me: the person taps "Use My Location"; coordinates are rounded to three
- * decimals before any request, sent only to api.weather.gov, and never stored.
- */
+/** Contact filters preserve mounted controls. Copy and print name active filters. Opt-in location is rounded to three decimals, sent only to NWS, and never stored. */
 import { setNationChip } from './chrome.js';
 import { mountPanel } from './panel.js';
 import { h, telHref } from '../core/dom.js';

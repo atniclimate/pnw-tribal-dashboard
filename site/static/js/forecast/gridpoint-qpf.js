@@ -55,23 +55,24 @@ export function aggregateGridpointDaily(props, timeZone, now) {
   const p = /** @type {any} */ (props) ?? {};
   const qpfSeries = Array.isArray(p.quantitativePrecipitation?.values) ? p.quantitativePrecipitation.values : [];
   const uom = String(p.quantitativePrecipitation?.uom ?? '');
+  if (!['wmoUnit:mm', 'wmoUnit:in'].includes(uom)) return [];
   const popSeries = Array.isArray(p.probabilityOfPrecipitation?.values) ? p.probabilityOfPrecipitation.values : [];
 
-  /** @type {Map<string, { raw: number, hours: number, pop: number | null }>} */
+  /** @type {Map<string, { raw: number, hours: number, pop: number | null, hasQpf: boolean }>} */
   const days = new Map();
   /** @param {string} key */
   const ensure = (key) => {
     let d = days.get(key);
-    if (!d) { d = { raw: 0, hours: 0, pop: null }; days.set(key, d); }
+    if (!d) { d = { raw: 0, hours: 0, pop: null, hasQpf: false }; days.set(key, d); }
     return d;
   };
 
   for (const entry of qpfSeries) {
     const iv = parseValidTime(entry?.validTime);
-    if (!iv || !Number.isFinite(entry.value)) continue;
+    if (!iv || !Number.isFinite(entry.value) || entry.value < 0) continue;
     const totalMs = iv.end.getTime() - iv.start.getTime();
-    if (totalMs <= 0) { ensure(zonedDayKey(iv.start, timeZone)).raw += entry.value; continue; }
-    for (const [key, v] of splitByZonedDay(iv.start, iv.end, entry.value, timeZone)) ensure(key).raw += v;
+    if (totalMs <= 0) continue;
+    for (const [key, v] of splitByZonedDay(iv.start, iv.end, entry.value, timeZone)) { const day = ensure(key); day.raw += v; day.hasQpf = true; }
     const hours = Math.max(1, Math.round(totalMs / HOUR_MS));
     for (const [key, h] of splitByZonedDay(iv.start, iv.end, hours, timeZone)) ensure(key).hours += h;
   }
@@ -90,7 +91,7 @@ export function aggregateGridpointDaily(props, timeZone, now) {
   const todayKey = zonedDayKey(now, timeZone);
   return [...days.entries()]
     .sort(([a], [b]) => a.localeCompare(b))
-    .filter(([k]) => k >= todayKey)
+    .filter(([k, v]) => k >= todayKey && v.hasQpf)
     .slice(0, 7)
     .map(([key, v]) => {
       const [y, m, d] = key.split('-').map(Number);

@@ -1,12 +1,5 @@
 // @ts-check
-/**
- * APG tabs (blueprint 7.3, 9.7) that enhance the static view links every page ships: without script, each
- * `.tabs__tab` is a link to `?view=<id>` and every view section stays visible; with script, the links
- * become a tablist with automatic activation (Left and Right arrows, Home, End), a roving tab stop, and
- * one visible `[data-view]` section at a time. On phones the strip scrolls inside itself as a segmented
- * control, and the selected tab is scrolled into view. The URL is the page's to update: onChange
- * receives the view id. DOM module. Owner: lane L1.
- */
+/** APG automatic tabs with roving focus and arrow/Home/End keys. Static view links work without script. onChange delegates URL state to the page. */
 
 /**
  * @param {HTMLElement} root the `.tabs` element holding `.tabs__tab` links or buttons with data-view-link

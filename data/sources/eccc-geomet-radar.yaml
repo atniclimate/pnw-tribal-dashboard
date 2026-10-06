@@ -33,6 +33,6 @@ health:
   expectType: text/xml
   minBytes: 1000
   maxBytes: null
-usedBy: [forecasts]
+usedBy: [dashboard, forecasts]
 verifiedAt: 2026-10-05
 notes: Layers RADAR_1KM_RRAI (rain) and RADAR_1KM_RSNO (snow). The retired ALERTS layer is not used. The valid time shown on the map is read from the capabilities time dimension, not assumed.

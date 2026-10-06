@@ -11,6 +11,7 @@
  */
 import { fetchJson, fetchText } from '../../core/net.js';
 import { findSource } from '../../core/sources.js';
+import { stateFromAge } from '../../core/status.js';
 import { formatAsOf, formatTime } from '../../core/time.js';
 import { APP } from '../../config/app.js';
 import { addOrdered, layerStatus, removeAll, setLayersVisible } from '../style.js';
@@ -118,28 +119,50 @@ export function createRadarLayer(opts) {
   let timers = [];
   let lastUs = 0;
   let lastCa = 0;
+  let generation = 0;
+  const requests = new Set();
+  const failures = new Set();
+  /** @type {(() => void) | null} */
+  let cleanupErrors = null;
   const sourceIds = [IEM_TILES_ID, ECCC_TILES_ID];
 
-  /** @returns {{ signal?: AbortSignal }} */
-  const signalOf = () => (ctx?.signal ? { signal: ctx.signal } : {});
+  function stopRequests() {
+    generation += 1;
+    for (const request of requests) request.abort();
+    requests.clear();
+  }
 
   /** @param {Date} when */
   const clock = (when) => formatTime(when.toISOString());
 
   function report() {
     if (!ctx) return;
-    if (usTime || caTime) ctx.status(layerStatus('live', 'Radar shown at its published valid time.', sourceIds, usTime ?? caTime));
-    else ctx.status(layerStatus('degraded', `Mosaic time not published; checked ${usChecked || caChecked}`.trim(), sourceIds));
+    const now = new Date();
+    const regions = [{ time: usTime, id: IEM_TILES_ID }, { time: caTime, id: ECCC_TILES_ID }];
+    const times = regions.flatMap(({ time }) => time ? [time] : []).sort();
+    const ages = regions.map(({ time, id }) => {
+      const policy = findSource(id)?.freshness;
+      return time && policy ? stateFromAge(time, now, policy) : 'degraded';
+    });
+    const asOf = times[0] ?? null;
+    if (failures.size) ctx.status(layerStatus('degraded', 'Some radar tiles are unavailable. Transparent areas may be missing coverage, not clear weather. Toggle radar off and on to retry.', sourceIds, asOf));
+    else if (ages.includes('degraded')) ctx.status(layerStatus('degraded', 'A regional radar time is missing or beyond its usable age. Coverage and freshness are incomplete; regional times appear in the legend.', sourceIds, asOf));
+    else if (ages.includes('stale')) ctx.status(layerStatus('stale', 'A regional radar mosaic is older than its expected update interval. Check the regional valid times in the legend.', sourceIds, asOf));
+    else ctx.status(layerStatus('live', 'Observed radar within each source\'s expected update interval. Coverage gaps do not mean clear weather; regional valid times appear in the legend.', sourceIds, asOf));
   }
 
   async function refreshUs() {
     const map = ctx?.map;
     const rec = findSource(IEM_TILES_ID);
-    if (!map || !rec?.urlTemplate) return;
+    if (!map || !rec?.urlTemplate || !visible || document.hidden) return;
+    const mine = generation;
+    const request = new AbortController(); requests.add(request);
     lastUs = Date.now();
     const now = new Date();
     /** @type {import('maplibre-gl').RasterTileSource | undefined} */ (map.getSource('radar-us'))?.setTiles([iemTileUrl(rec.urlTemplate, now)]);
-    const res = await fetchJson(IEM_TIME_ID, signalOf());
+    const res = await fetchJson(IEM_TIME_ID, { signal: request.signal });
+    requests.delete(request);
+    if (mine !== generation || ctx?.map !== map || !visible) return;
     usTime = res.ok ? parseIemValidTime(res.data) : null;
     usChecked = `${clock(new Date())}.`;
     report();
@@ -148,9 +171,13 @@ export function createRadarLayer(opts) {
   async function refreshCa() {
     const map = ctx?.map;
     const rec = findSource(ECCC_TILES_ID);
-    if (!map || !rec?.urlTemplate) return;
+    if (!map || !rec?.urlTemplate || !visible || document.hidden) return;
+    const mine = generation;
+    const request = new AbortController(); requests.add(request);
     lastCa = Date.now();
-    const res = await fetchText(ECCC_TIMES_ID, { params: { service: 'WMS', version: '1.3.0', request: 'GetCapabilities', layer: ECCC_LAYERS.rain }, ...signalOf() });
+    const res = await fetchText(ECCC_TIMES_ID, { params: { service: 'WMS', version: '1.3.0', request: 'GetCapabilities', layer: ECCC_LAYERS.rain }, signal: request.signal });
+    requests.delete(request);
+    if (mine !== generation || ctx?.map !== map || !visible) return;
     caTime = res.ok ? parseGeometLatestTime(res.data, ECCC_LAYERS.rain) : null;
     caChecked = `${clock(new Date())}.`;
     /** @type {import('maplibre-gl').RasterTileSource | undefined} */ (map.getSource('radar-ca-rain'))?.setTiles([wmsTileUrl(rec.urlTemplate, ECCC_LAYERS.rain, caTime)]);
@@ -170,7 +197,7 @@ export function createRadarLayer(opts) {
   }
 
   function onVisibility() {
-    if (document.hidden) { stopTimers(); return; }
+    if (document.hidden) { stopTimers(); stopRequests(); lastUs = 0; lastCa = 0; return; }
     startTimers();
     if (visible && ctx) {
       if (Date.now() - lastUs >= APP.poll.radarTiles) void refreshUs();
@@ -194,15 +221,21 @@ export function createRadarLayer(opts) {
       const paint = { 'raster-opacity': RADAR_OPACITY, 'raster-fade-duration': 0 };
       if (us?.urlTemplate) {
         map.addSource('radar-us', { type: 'raster', tiles: [iemTileUrl(us.urlTemplate, new Date())], tileSize: 256, maxzoom: 12, bounds: /** @type {any} */ (US_BOUNDS), attribution: us.attribution });
-        addOrdered(map, 'radar', { id: 'us', type: 'raster', source: 'radar-us', paint });
+        addOrdered(map, 'radar', { id: 'us', type: 'raster', source: 'radar-us', paint, layout: { visibility: visible ? 'visible' : 'none' } });
       }
       if (ca?.urlTemplate) {
         for (const [key, layer] of Object.entries(ECCC_LAYERS)) {
           map.addSource(`radar-ca-${key === 'rain' ? 'rain' : 'snow'}`, { type: 'raster', tiles: [wmsTileUrl(ca.urlTemplate, layer, null)], tileSize: 256, maxzoom: 12, bounds: /** @type {any} */ (BC_BOUNDS), attribution: ca.attribution });
-          addOrdered(map, 'radar', { id: key === 'rain' ? 'ca-rain' : 'ca-snow', type: 'raster', source: `radar-ca-${key}`, paint });
+          addOrdered(map, 'radar', { id: key === 'rain' ? 'ca-rain' : 'ca-snow', type: 'raster', source: `radar-ca-${key}`, paint, layout: { visibility: visible ? 'visible' : 'none' } });
         }
       }
       document.addEventListener('visibilitychange', onVisibility);
+      const onError = (/** @type {import('maplibre-gl').ErrorEvent} */ event) => {
+        const sourceId = /** @type {{sourceId?: string}} */ (event).sourceId;
+        if (visible && sourceId && sources.includes(sourceId)) { failures.add(sourceId); report(); }
+      };
+      map.on('error', onError);
+      cleanupErrors = () => map.off('error', onError);
       startTimers();
       // The first valid-time reads run after the layer is on the map, so a slow time endpoint never delays it.
       void refreshUs();
@@ -211,7 +244,7 @@ export function createRadarLayer(opts) {
     setVisible(on) {
       visible = on;
       setLayersVisible(ctx?.map ?? null, ids, on);
-      if (on) { startTimers(); onVisibility(); } else stopTimers();
+      if (on) { failures.clear(); lastUs = 0; lastCa = 0; startTimers(); onVisibility(); } else { stopTimers(); stopRequests(); }
     },
     legendItems() {
       /** @type {import('../../types.js').LegendItem[]} */
@@ -229,6 +262,8 @@ export function createRadarLayer(opts) {
     },
     remove() {
       stopTimers();
+      stopRequests();
+      cleanupErrors?.(); cleanupErrors = null;
       document.removeEventListener('visibilitychange', onVisibility);
       removeAll(ctx?.map ?? null, ids, sources);
       ctx = null;

@@ -1,14 +1,5 @@
 // @ts-check
-/**
- * Fetch with timeout, retry, priority, dedupe, and in-memory TTL (blueprint 3.2). The only place in site/
- * that calls fetch(). Never throws for network outcomes; never resolves ok on a non-OK status.
- *
- * Rules: the URL always comes from the source registry (core/sources.js); at most four concurrent upstream
- * requests per page, served by priority; 12 s timeout per attempt; two retries, only for network, timeout,
- * and HTTP 502, 503, 504, with backoff of 1 s then 3 s plus or minus 20 percent; HTTP 429 honors Retry-After
- * (seconds or an HTTP date) up to 30 s once, then returns rate-limited; other 4xx are final; offline
- * short-circuits; concurrent identical requests share one fetch.
- */
+/** Registry-only fetch: timeout, retry, priority, dedupe, TTL, and offline handling. Network outcomes never throw; non-OK responses never resolve ok. Retry and concurrency policy are defined by constants below. */
 import { APP } from '../config/app.js';
 import { SITE_BASE_PATH } from '../config/pages.js';
 import { sharedLimiter } from './priority.js';

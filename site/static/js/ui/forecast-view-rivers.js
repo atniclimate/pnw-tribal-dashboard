@@ -7,34 +7,55 @@
 import { normalizeRfcAdvisories } from '../bc/rfc-advisories.js';
 import { clear, h } from '../core/dom.js';
 import { getData } from '../core/sources.js';
+import { onStateChange, linkWithState } from '../core/url-state.js';
 import { loadGauges, nearbyGauges } from '../hydro/gauges-service.js';
 import { renderGaugeDetail } from './gauge-detail.js';
 import { renderGaugeList } from './gauge-list.js';
 
 let showAllGauges = false;
-let atOrAbove = false;
+/** @typedef {Awaited<ReturnType<typeof loadGauges>> & {nation: import('../forecast/nation-context.js').NationContext | null}} GaugeData */
+/** The reference list remains usable when the separate current-reading snapshot fails. */
+/** @type {WeakMap<import('./forecast-views.js').ViewContext, GaugeData>} */
+const referenceGauges = new WeakMap();
 
 /** @type {import('./forecast-views.js').ViewPanels} */
 export const panels = {
   'rivers-gauges': {
     async load(ctx, signal) {
+      referenceGauges.delete(ctx);
       const n = await ctx.nationReady();
       const g = await loadGauges({ nation: n?.record ?? null, signal });
-      return { data: g.gauges.length > 0 ? { ...g, nation: n } : null, status: g.status };
+      const data = g.gauges.length > 0 ? { ...g, nation: n } : null;
+      if (data && !signal.aborted) referenceGauges.set(ctx, data);
+      return { data, status: g.status };
     },
-    render(body, data, _status, ctx) {
+    unavailable(body, status, ctx) {
+      const data = referenceGauges.get(ctx);
+      if (data && data.nation?.id === ctx.nation()?.id) return panels['rivers-gauges']?.render(body, data, status, ctx);
+      clear(body);
+      body.append(h('p', { class: 'panel-unavailable' }, status.detail ?? 'The gauge reference list could not be loaded.'));
+    },
+    render(body, data, status, ctx) {
       const tz = data.nation?.timeZone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
+      /** @type {(() => void) | null} */
+      let detailCleanup = null;
+      let selectedId = ctx.state().g;
       const draw = () => {
         const selected = ctx.state().g;
+        detailCleanup?.(); detailCleanup = null;
         clear(body);
+        if (status.state === 'unavailable') body.append(
+          h('p', { class: 'panel-unavailable', role: 'status' }, status.detail ?? 'Current gauge readings are unavailable.'),
+          h('p', {}, 'Station locations remain available. Select a station to request its observation history.'),
+        );
         if (typeof selected === 'string') {
           const gauge = data.gauges.find((/** @type {any} */ x) => x.id === selected);
           if (gauge) {
-            const back = h('a', { class: 'btn btn--link', href: '?view=rivers' }, 'Back to the Gauge List');
-            back.addEventListener('click', (e) => { e.preventDefault(); ctx.writeState({ g: undefined }); draw(); });
+            const back = h('a', { class: 'btn btn--link', href: linkWithState('?view=rivers') }, 'Back to the Gauge List');
+            back.addEventListener('click', (e) => { e.preventDefault(); ctx.writeState({ g: undefined }, { push: true }); });
             const detail = h('div', {});
             body.append(back, detail);
-            renderGaugeDetail(detail, gauge, data.statuses.get(gauge.id) ?? null, { timeZone: tz });
+            detailCleanup = renderGaugeDetail(detail, gauge, data.statuses.get(gauge.id) ?? null, { timeZone: gauge.timeZone ?? tz, system: ctx.system(), state: ctx.state, onChange: (patch) => ctx.writeState(patch) });
             return;
           }
         }
@@ -42,9 +63,6 @@ export const panels = {
         const useNearby = Boolean(data.nation) && nearby.length > 0 && !showAllGauges;
         const list = useNearby ? nearby : data.gauges;
         const controls = h('div', { class: 'filter-chips' });
-        const toggle = h('button', { type: 'button', class: 'filter-chip', 'aria-pressed': String(atOrAbove) }, 'At or Above Action Stage');
-        toggle.addEventListener('click', () => { atOrAbove = !atOrAbove; draw(); });
-        controls.append(toggle);
         if (data.nation && nearby.length > 0) {
           const all = h('button', { type: 'button', class: 'filter-chip', 'aria-pressed': String(showAllGauges) }, 'Show All Gauges');
           all.addEventListener('click', () => { showAllGauges = !showAllGauges; draw(); });
@@ -54,11 +72,13 @@ export const panels = {
         const holder = h('div', {});
         body.append(holder);
         renderGaugeList(holder, list, data.statuses, {
-          timeZone: tz, atOrAboveAction: atOrAbove,
-          onSelect: (id) => { ctx.writeState({ g: id }, { push: true }); draw(); },
+          timeZone: tz,
+          onSelect: (id) => { ctx.writeState({ g: id }, { push: true }); },
         });
       };
       draw();
+      const unsubscribe = onStateChange(() => { const next = ctx.state().g; if (next !== selectedId) { selectedId = next; draw(); } });
+      return () => { unsubscribe(); detailCleanup?.(); };
     },
   },
 

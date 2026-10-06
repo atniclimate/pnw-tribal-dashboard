@@ -1,0 +1,33 @@
+id: nwps-gauge-series
+title: National Water Prediction Service Gauge Time Series
+owner: National Weather Service, National Water Center (NOAA)
+url: https://api.water.noaa.gov/nwps/v1/gauges
+urlTemplate: https://api.water.noaa.gov/nwps/v1/gauges/{lid}/stageflow
+humanUrl: https://water.noaa.gov/about/api
+license: Public domain (U.S. Government work).
+attribution: NOAA National Weather Service, National Water Prediction Service
+cadence: Observations about every fifteen minutes; forecasts at each River Forecast Center cycle.
+region: us
+coverage: [WA, OR, ID, CA-N, MT-W, NV-N, AK-SE]
+kind: api-json
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: '*'
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: GET /gauges/MVEW1/stageflow with the deployment Origin returned HTTP 200 and Access-Control-Allow-Origin star on 10/05/2026. The documented response contains observed and forecast values with validTime, units, and issue times.
+  headers:
+    Accept: application/json
+  timeoutMs: 12000
+  retries: 1
+  priority: 2
+freshness:
+  freshForMs: 1800000
+  usableForMs: 21600000
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: Requested only for the selected gauge. Observations and forecasts remain separate series. Missing history and sentinel values are not filled or interpolated as observations. Flood category remains the agency category from the gauge snapshot. Documentation at https://api.water.noaa.gov/nwps/v1/docs/.

@@ -9,12 +9,10 @@ import { findNearestCityPage, loadCityPage, normalizeCityPage } from '../forecas
 import { loadQpf } from '../forecast/gridpoint-qpf.js';
 import { loadPoint, loadPointForecast } from '../forecast/nws-forecast.js';
 import { loadCurrentObservation } from '../forecast/observation.js';
+import { onStateChange } from '../core/url-state.js';
 import { NO_NATION, renderAfd, renderLocalBc, renderLocalUs, renderQpf, unavailableStatus } from './forecast-panels.js';
 
 /** @typedef {import('../types.js').StatusSnapshot} StatusSnapshot */
-
-/** @type {Map<string, Promise<{ point: import('../forecast/nws-forecast.js').NwsPoint | null, status: StatusSnapshot }>>} */
-const points = new Map();
 
 /**
  * The forecast grid for the Nation's headquarters, asked for once per Nation (the request itself is also held
@@ -25,11 +23,20 @@ const points = new Map();
 async function pointFor(ctx, signal) {
   const nation = ctx.nation();
   if (!nation) return null;
-  let p = points.get(nation.id);
-  if (!p) { p = loadPoint(nation.hq, { signal }); points.set(nation.id, p); }
-  const res = await p;
-  if (!res.point) points.delete(nation.id);
-  return res;
+  // core/net owns the TTL cache. Retaining a signal-bound promise here can give
+  // the next Nation selection an aborted request from an earlier render.
+  return loadPoint(nation.hq, { signal });
+}
+
+/** Keep the sibling forecast and precipitation controls synchronized without replacing the focused control. */
+/** @param {import('./forecast-views.js').ViewContext} ctx @param {(controls: import('./forecast-explorer.js').ForecastControls) => void} draw */
+function connectedControls(ctx, draw) {
+  let writing = false;
+  const key = () => { const s = ctx.state(); return [s.units, s.range, s.day, s.period].join('|'); };
+  let previous = key();
+  const controls = { state: ctx.state, onChange: (/** @type {import('../types.js').UrlState} */ patch) => { writing = true; ctx.writeState(patch); previous = key(); writing = false; } };
+  draw(controls);
+  return onStateChange(() => { const next = key(); if (next !== previous) { previous = next; if (!writing) draw(controls); } });
 }
 
 /** @type {import('./forecast-views.js').ViewPanels} */
@@ -58,8 +65,9 @@ export const panels = {
       const obs = f.point ? await loadCurrentObservation(f.point, n.hq, { signal }) : { observation: null };
       return { data: { kind: 'us', nation: n, office: f.office, periods: f.periods, observation: obs.observation, system: ctx.system() }, status: f.status };
     },
-    render(body, data) {
-      if (data.kind === 'bc') renderLocalBc(body, data); else renderLocalUs(body, data);
+    render(body, data, _status, ctx) {
+      if (data.kind === 'bc') return connectedControls(ctx, (controls) => renderLocalBc(body, { ...data, system: ctx.system() }, controls));
+      else return connectedControls(ctx, (controls) => renderLocalUs(body, { ...data, system: ctx.system() }, controls));
     },
   },
 
@@ -74,7 +82,7 @@ export const panels = {
       if (r.state.state !== 'ready') return { data: null, status: r.status.state === 'unavailable' ? r.status : unavailableStatus(['nws-gridpoints'], r.state.state === 'error' ? r.state.message : 'No precipitation data.') };
       return { data: { ...r.state, system: ctx.system() }, status: r.status };
     },
-    render(body, data) { renderQpf(body, data, data.system); },
+    render(body, data, _status, ctx) { return connectedControls(ctx, (controls) => renderQpf(body, data, ctx.system(), controls)); },
   },
 
   'forecast-afd': {

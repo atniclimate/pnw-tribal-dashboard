@@ -1,15 +1,10 @@
 // @ts-check
-/**
- * Chrome behavior (blueprint 7.0): the current navigation item, the Nation chip label, the footer's list
- * of sources used on the page, and the deploy time. The chrome itself is static HTML in every page, so
- * navigation works with script off; this module only refines it. Data never reaches the DOM except as
- * text. Offline registration loads after the page load event. DOM module. Owner: lane L1.
- */
+/** Enhance static navigation, Nation labels, source credits, and offline registration. Owner: L1. */
 
 /** @typedef {import('../types.js').PageId} PageId */
+import { linkWithState, onStateChange } from '../core/url-state.js';
 
 /**
- * Registry source ids named by the page's panels (`[data-panel][data-sources]`), in first-seen order.
  * @param {ParentNode} root
  * @returns {string[]}
  */
@@ -23,7 +18,6 @@ export function pageSourceIds(root) {
 }
 
 /**
- * Sets the Nation chip's visible name (text only). Pages call it after a Nation is chosen.
  * @param {string | null} name the Nation's display name, or null for all of Cascadia
  * @returns {void}
  */
@@ -40,6 +34,13 @@ export function setNationChip(name) {
 export function initChrome(opts) {
   void opts.page;
   let disposed = false;
+  const navigation = [...document.querySelectorAll('.site-nav a, .bottom-bar a, .site-header__brand')]
+    .map((el) => ({ el, href: el.getAttribute('href') ?? '' }));
+  const syncNavigation = () => {
+    for (const { el, href } of navigation) el.setAttribute('href', linkWithState(href, ['n', 'j', 'units', 'lowdata', 'embed']));
+  };
+  syncNavigation();
+  const stopNavigation = onStateChange(syncNavigation);
   /** @type {(() => void) | null} */
   let cleanOffline = null;
   void import('./offline.js').then(({ initOffline }) => {
@@ -88,6 +89,7 @@ export function initChrome(opts) {
 
   return () => {
     disposed = true;
+    stopNavigation();
     cleanOffline?.();
   };
 }

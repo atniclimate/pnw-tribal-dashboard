@@ -8,7 +8,9 @@ Weather, flood, and hazard information for Tribal Nations and First Nations acro
 
 The multi-page dashboard is published from `site/` by GitHub Actions. Deployments require passing CI for the exact source commit. Public agency snapshots refresh every ten minutes, with failed or stale sources identified on the page. The previous dashboard remains available at [Classic](https://atniclimate.github.io/pnw-tribal-dashboard/classic/).
 
-Choose a Nation to view local alerts, forecasts, rivers, and verified contacts. Share the resulting URL to preserve that selection. The map loads on request and works with local outlines while a basemap key is unavailable. Safety currently provides official agency resources; additional editorial guidance awaits review.
+Choose a Nation to view local alerts, forecasts, rivers, and verified contacts. Share the resulting URL to preserve that selection. Safety currently provides official agency resources; additional editorial guidance awaits review.
+
+The current source revision adds an interactive map workspace with layer controls, selectable alerts and gauges, forecast plots, and river history charts. The map loads after alerts have painted; low-data mode keeps it on request. Local outlines remain available while a basemap key is unavailable. Charts support pointer and keyboard inspection and a data table. These changes remain unreleased until their exact commit passes CI and deploys.
 
 ## Embed on Squarespace
 

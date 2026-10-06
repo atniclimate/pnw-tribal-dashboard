@@ -11,7 +11,7 @@
  */
 import { decodeTopo } from '../topo.js';
 import { addOrdered, bandColor, layerStatus, removeAll, setLayersVisible } from '../style.js';
-import { alertName, bandRank, centerOf, emptyCollection } from '../topo.js';
+import { alertName, bandRank, centerOf, emptyCollection, geometryBounds } from '../topo.js';
 
 /** @typedef {import('../style.js').MapContext} MapContext */
 /** @typedef {import('../style.js').MapLayerX} MapLayerX */
@@ -107,7 +107,7 @@ export function buildZoneFeatures(alerts, zones) {
  */
 export function createZonesLayer(opts) {
   const sourceKey = 'zones';
-  const ids = ['zones:fill', 'zones:line'];
+  const ids = ['zones:fill', 'zones:line', 'selection:zones'];
   /** @type {MapContext | null} */
   let ctx = null;
   /** @type {DashboardAlert[]} */
@@ -117,7 +117,17 @@ export function createZonesLayer(opts) {
   /** @type {{ nws: any, eccc: any }} */
   const topologies = { nws: null, eccc: null };
   let generation = 0;
+  let selected = '';
   const sourceIds = ['nws-zones-api', 'eccc-public-forecast-zones'];
+  /** @type {import('../../types.js').StatusSnapshot | null} */
+  let feedStatus = null;
+  /** @param {string} detail @param {boolean} [missing] */
+  function report(detail, missing = false) {
+    const ids = [...new Set([...sourceIds, ...(feedStatus?.sourceIds ?? [])])];
+    if (!feedStatus) { ctx?.status(layerStatus('unavailable', detail + ' Feed freshness was not supplied to this map.', ids)); return; }
+    ctx?.status({ ...feedStatus, sourceIds: ids, detail: detail + ' ' + (feedStatus.detail ?? 'Date describes the alert feed, not the zone geometry.'),
+      ...(missing && feedStatus.asOf ? { state: /** @type {const} */ ('degraded'), completeness: /** @type {const} */ ('partial') } : {}) });
+  }
 
   /**
    * @param {'nws' | 'eccc'} which
@@ -143,6 +153,7 @@ export function createZonesLayer(opts) {
     if (!need.nws && !need.eccc) {
       items = [];
       /** @type {import('maplibre-gl').GeoJSONSource | undefined} */ (map.getSource(sourceKey))?.setData(/** @type {any} */ (emptyCollection()));
+      report('No zone-based areas in the current alert selection.');
       return;
     }
     const [nws, eccc] = await Promise.all([need.nws ? decoded('nws') : null, need.eccc ? decoded('eccc') : null]);
@@ -151,9 +162,9 @@ export function createZonesLayer(opts) {
     items = built.items;
     /** @type {import('maplibre-gl').GeoJSONSource | undefined} */ (c.map.getSource(sourceKey))?.setData(/** @type {any} */ (built.collection));
     if (built.missing.length) {
-      c.status(layerStatus('degraded', 'Area shown as text; map outline unavailable for some zones.', sourceIds));
+      report('Area shown as text; map outline unavailable for some zones.', true);
     } else {
-      c.status(layerStatus('live', 'Forecast zone coverage drawn from local zone files.', sourceIds));
+      report('Forecast zone coverage drawn from local zone files.');
     }
   }
 
@@ -168,15 +179,29 @@ export function createZonesLayer(opts) {
       const color = bandColor(ctx.token);
       addOrdered(map, 'zones', { id: 'fill', type: 'fill', source: sourceKey, paint: { 'fill-color': color, 'fill-opacity': 0.15 } });
       addOrdered(map, 'zones', { id: 'line', type: 'line', source: sourceKey, paint: { 'line-color': color, 'line-width': 1.5, 'line-dasharray': [6, 4] } });
+      addOrdered(map, 'selection', { id: 'zones', type: 'line', source: sourceKey, filter: ['==', ['get', 'alertId'], selected], paint: { 'line-color': ctx.token('--ink-heading'), 'line-width': 4, 'line-dasharray': [6, 4] } });
       await apply();
     },
     setData(data) {
-      const d = /** @type {{ alerts?: DashboardAlert[] }} */ (data ?? {});
+      const d = /** @type {{ alerts?: DashboardAlert[], status?: import('../../types.js').StatusSnapshot | null }} */ (data ?? {});
       if (!Array.isArray(d.alerts)) return;
       pending = d.alerts;
+      feedStatus = d.status ?? null;
       void apply();
     },
     setVisible(on) { setLayersVisible(ctx?.map ?? null, ids, on); },
+    highlight(id) {
+      selected = id ?? '';
+      if (ctx?.map?.getLayer('selection:zones')) ctx.map.setFilter('selection:zones', ['==', ['get', 'alertId'], selected]);
+    },
+    async bounds(id) {
+      const alert = pending.find((a) => a.alertId === id);
+      if (!alert) return null;
+      const need = zoneFilesNeeded([alert]);
+      const [nws, eccc] = await Promise.all([need.nws ? decoded('nws') : null, need.eccc ? decoded('eccc') : null]);
+      const collection = buildZoneFeatures([alert], { nws, eccc }).collection;
+      return geometryBounds({ type: 'GeometryCollection', geometries: collection.features.map((f) => f.geometry) });
+    },
     legendItems() {
       return [{ id: 'zones', label: 'Forecast Zone Coverage (Whole Zone)', swatchClass: 'legend__swatch--zone', note: 'Dashed edge; the alert covers the whole zone, not a drawn polygon.' }];
     },

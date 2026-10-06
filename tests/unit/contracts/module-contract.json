@@ -1090,6 +1090,103 @@
       "exports": [
         "createVideoPlayer"
       ]
+    },
+    {
+      "path": "site/static/js/hydro/nwps-series.js",
+      "owner": "L7",
+      "dom": false,
+      "exports": [
+        "loadRiverHistory",
+        "normalizeRiverHistory",
+        "riverValue"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/hydro/wsc-series.js",
+      "owner": "L7",
+      "dom": false,
+      "exports": [
+        "loadWscHistory",
+        "normalizeWscHistory"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/map/controls.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "mountMapControls"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/pages/dashboard-state.js",
+      "owner": "L10",
+      "dom": false,
+      "exports": [
+        "WORKSPACE_VIEWS",
+        "nationPatch",
+        "scopeKey",
+        "workspaceState"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/ui/charts/hydrograph.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "mountHydrograph"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/ui/charts/time-series.js",
+      "owner": "L12",
+      "dom": true,
+      "exports": [
+        "renderTimeSeries"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/ui/forecast-explorer.js",
+      "owner": "L10",
+      "dom": true,
+      "exports": [
+        "renderForecastExplorer",
+        "renderQpfExplorer"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/ui/bc-forecast-explorer.js",
+      "owner": "L10",
+      "dom": true,
+      "exports": [
+        "renderBcForecastExplorer"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/map/dashboard-map.js",
+      "owner": "L8",
+      "dom": true,
+      "exports": [
+        "mountDashboardMap"
+      ],
+      "complete": true
+    },
+    {
+      "path": "site/static/js/ui/dashboard-secondary.js",
+      "owner": "L10",
+      "dom": true,
+      "exports": [
+        "mountSecondaryPanels"
+      ],
+      "complete": true
     }
   ]
 }

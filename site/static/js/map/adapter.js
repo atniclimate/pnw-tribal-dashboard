@@ -26,7 +26,7 @@ import { APP } from '../config/app.js';
  * The static import graph of create-map.js inside map/, preloaded in parallel before create-map.js is
  * imported. tests/unit/map/preload.test.mjs keeps this list equal to that graph.
  */
-export const CREATE_MAP_GRAPH = Object.freeze(['create-map.js', 'attribution.js', 'fallback-svg.js', 'feature-list.js', 'legend.js', 'loader.js',
+export const CREATE_MAP_GRAPH = Object.freeze(['create-map.js', 'attribution.js', 'controls.js', 'fallback-svg.js', 'feature-list.js', 'legend.js', 'loader.js',
   'sovereignty.js', 'style.js', 'support.js', 'topo.js']);
 
 /** Layer module names create-map can import (kept equal to the files in layers/ by the preload test). */

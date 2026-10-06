@@ -8,6 +8,7 @@ import { getData } from '../core/sources.js';
 import { isoOrNull } from './nws-forecast.js';
 
 /** @typedef {import('../types.js').StatusSnapshot} StatusSnapshot */
+/** @typedef {{ name: string, summary: string, temperatures: { value: number, unit: 'C' | 'F', kind: string }[] }} CityPeriod */
 
 /** Half-width of the search box, in degrees, when a Nation record names no city page. */
 export const SEARCH_HALF_DEGREES = 0.5;
@@ -50,18 +51,26 @@ export async function loadCityPage(citypageId, opts = {}) {
 /**
  * Text exactly as published by ECCC.
  * @param {unknown} feature
- * @returns {{ siteId: string, name: string, lastUpdated: string | null, periods: { name: string, summary: string }[] }}
+ * @returns {{ siteId: string, name: string, lastUpdated: string | null, periods: CityPeriod[] }}
  */
 export function normalizeCityPage(feature) {
   const f = /** @type {any} */ (firstFeature(feature));
   const p = f?.properties ?? {};
   const forecasts = Array.isArray(p.forecastGroup?.forecasts) ? p.forecastGroup.forecasts : [];
-  /** @type {{ name: string, summary: string }[]} */
+  /** @type {CityPeriod[]} */
   const periods = [];
   for (const item of forecasts) {
     const name = item?.period?.textForecastName?.en;
     const summary = item?.textSummary?.en;
-    if (typeof name === 'string' && typeof summary === 'string') periods.push({ name, summary });
+    /** @type {CityPeriod['temperatures']} */
+    const temperatures = [];
+    for (const reading of Array.isArray(item?.temperatures?.temperature) ? item.temperatures.temperature : []) {
+      const value = reading?.value?.en; const unit = reading?.units?.en;
+      if (typeof value === 'number' && Number.isFinite(value) && (unit === 'C' || unit === 'F')) temperatures.push({
+        value, unit, kind: typeof reading?.class?.en === 'string' ? reading.class.en : 'temperature',
+      });
+    }
+    if (typeof name === 'string' && typeof summary === 'string') periods.push({ name, summary, temperatures });
   }
   return {
     siteId: String(p.identifier ?? f?.id ?? ''),

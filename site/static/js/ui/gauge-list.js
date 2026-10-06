@@ -9,6 +9,7 @@
 
 import { clear, h, on } from '../core/dom.js';
 import { formatAsOf } from '../core/time.js';
+import { linkWithState } from '../core/url-state.js';
 import { NOT_CURRENT_TEXT, categoryLabel, observedDisplay } from '../hydro/flood-category.js';
 
 /** @typedef {import('../types.js').Gauge} Gauge */
@@ -144,7 +145,7 @@ export function buildGaugeListModel(gauges, statuses, opts) {
  */
 function rowEl(row, opts) {
   const g = /** @type {Gauge} */ (row.gauge);
-  const href = `?view=rivers&g=${encodeURIComponent(g.id)}`;
+  const href = linkWithState(`?view=rivers&g=${encodeURIComponent(g.id)}`);
   return h('li', { class: `gauge-card${row.current ? '' : ' gauge-card--not-current'}`, 'data-flood': floodToken(row.category), 'data-gauge': g.id },
     h('h4', { class: 'gauge-card__name' },
       h('a', { href, 'data-action': 'select-gauge', 'data-gauge': g.id }, g.name)),
@@ -164,7 +165,7 @@ function rowEl(row, opts) {
  * @returns {void}
  */
 export function renderGaugeList(el, gauges, statuses, opts) {
-  const state = { categories: /** @type {string[]} */ ([]), atOrAbove: opts.atOrAboveAction === true, all: false };
+  const state = { categories: /** @type {string[]} */ ([]), atOrAbove: opts.atOrAboveAction === true, all: false, query: '', region: '' };
   const now = new Date();
   clear(el);
   el.classList.add('gauge-list');
@@ -174,10 +175,13 @@ export function renderGaugeList(el, gauges, statuses, opts) {
   const chipBar = h('div', { class: 'filter-chips', role: 'group', 'aria-label': 'Flood Category' });
   const summary = h('p', { class: 'gauge-list__summary', role: 'status', 'aria-live': 'polite' });
   const body = h('div', { class: 'gauge-list__body' });
-  el.append(toggleLabel, chipBar, summary, body);
+  const search = /** @type {HTMLInputElement} */ (h('input', { type: 'search', 'aria-label': 'Find a River or Gauge', placeholder: 'River, gauge name, or station ID' }));
+  const region = /** @type {HTMLSelectElement} */ (h('select', { 'aria-label': 'Gauge Region' }, h('option', { value: '' }, 'All Regions'), REGION_ORDER.filter((key) => gauges.some((g) => g.region === key)).map((key) => h('option', { value: key }, REGION_LABELS[key]))));
+  el.append(h('div', { class: 'chart-controls' }, h('label', {}, 'Find a River or Gauge', search), h('label', {}, 'Region', region)), toggleLabel, chipBar, summary, body);
 
   const draw = () => {
-    const model = buildGaugeListModel(gauges, statuses, { timeZone: opts.timeZone, now, categories: state.categories, atOrAboveAction: state.atOrAbove });
+    const matching = gauges.filter((g) => (!state.region || g.region === state.region) && (!state.query || `${g.name} ${g.river ?? ''} ${g.id}`.toLocaleLowerCase().includes(state.query)));
+    const model = buildGaugeListModel(matching, statuses, { timeZone: opts.timeZone, now, categories: state.categories, atOrAboveAction: state.atOrAbove });
     clear(chipBar);
     for (const c of CATEGORY_CHIPS) {
       const n = model.counts[c.key] ?? 0;
@@ -199,9 +203,13 @@ export function renderGaugeList(el, gauges, statuses, opts) {
         h('ul', { class: 'gauge-list__rows', role: 'list' }, rows.map((r) => rowEl(r, opts)))));
     }
     if (model.shown > drawn) {
-      body.append(h('button', { type: 'button', class: 'button', 'data-action': 'show-all' }, `Show All ${model.shown} Gauges`));
+      body.append(h('button', { type: 'button', class: 'btn btn--secondary', 'data-action': 'show-all' }, `Show All ${model.shown} Gauges`));
     }
+    summary.textContent = model.shown === 0 ? 'No gauges match these filters. Clear the search or change a filter.' : `Showing ${drawn} of ${model.shown} matching gauges.`;
   };
+
+  search.addEventListener('input', () => { state.query = search.value.trim().toLocaleLowerCase(); state.all = false; draw(); });
+  region.addEventListener('change', () => { state.region = region.value; state.all = false; draw(); });
 
   on(el, 'chip', (_e, t) => {
     const key = t.dataset.key ?? '';
@@ -212,7 +220,7 @@ export function renderGaugeList(el, gauges, statuses, opts) {
   on(el, 'toggle-action', (_e, t) => { state.atOrAbove = /** @type {HTMLInputElement} */ (t).checked; draw(); }, 'change');
   on(el, 'show-all', () => { state.all = true; draw(); });
   on(el, 'select-gauge', (e, t) => {
-    if (opts.onSelect) { e.preventDefault(); opts.onSelect(t.dataset.gauge ?? ''); }
+    if (opts.onSelect) { e.preventDefault(); t.focus({ preventScroll: true }); opts.onSelect(t.dataset.gauge ?? ''); }
   });
   draw();
 }

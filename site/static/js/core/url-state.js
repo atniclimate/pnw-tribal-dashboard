@@ -1,9 +1,5 @@
 // @ts-check
-/**
- * URL as state: query string, not hash, so it survives an iframe src, SMS sharing, and GitHub Pages
- * (blueprint 3.5). Unknown keys are preserved on every write; renamed Nation ids are rewritten silently
- * through id-redirects. parseQuery and serializeQuery are pure; the rest touch location and history. DOM module.
- */
+/** Shareable query state. Preserve unknown keys and follow Nation ID redirects. */
 
 /** @typedef {import('../types.js').UrlStateSchema} UrlStateSchema */
 /** @typedef {import('../types.js').UrlState} UrlState */
@@ -17,7 +13,6 @@ const MAX_STRING = 200;
 let redirects = {};
 
 /**
- * Supplies id-redirects.json so n= rewrites renamed ids silently. Pass null to clear.
  * @param {IdRedirects | null} doc
  * @returns {void}
  */
@@ -96,7 +91,6 @@ function parseValue(raw, spec) {
 }
 
 /**
- * Pure parser: typed values; invalid values dropped; keys outside the schema ignored (but see serializeQuery).
  * @param {string} search with or without the leading '?'
  * @param {UrlStateSchema} schema
  * @returns {UrlState}
@@ -132,9 +126,6 @@ function formatValue(value) {
 }
 
 /**
- * Pure serializer. Every key already in baseSearch (unknown keys, embed) is kept unless the state sets it
- * to undefined, false, or an empty list; keys are written in sorted order so equal states give equal URLs.
- * Returns '' or a string with the leading '?'.
  * @param {UrlState} state
  * @param {string} [baseSearch] existing query whose unknown keys are preserved
  * @returns {string}
@@ -152,7 +143,6 @@ export function serializeQuery(state, baseSearch = '') {
 }
 
 /**
- * parseQuery over location.search.
  * @param {UrlStateSchema} schema
  * @returns {UrlState}
  */
@@ -170,7 +160,6 @@ function notify() {
 }
 
 /**
- * Merges a patch into the URL (unknown keys kept).
  * @param {UrlState} patch
  * @param {{ push?: boolean }} [opts] replaceState for filters (default); pushState for Nation and view
  * @returns {void}
@@ -189,7 +178,6 @@ export function writeState(patch, opts = {}) {
 }
 
 /**
- * popstate and programmatic writes.
  * @param {(state: URLSearchParams) => void} fn
  * @returns {() => void}
  */
@@ -203,7 +191,6 @@ export function onStateChange(fn) {
 }
 
 /**
- * A link that carries the kept keys. The href's own query wins over the carried keys.
  * @param {string} href
  * @param {string[]} [keep] default ['n', 'embed', 'units', 'lowdata']
  * @returns {string}

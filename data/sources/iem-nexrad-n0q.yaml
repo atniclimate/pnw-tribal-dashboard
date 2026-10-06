@@ -33,6 +33,6 @@ health:
   expectType: application/json
   minBytes: 50
   maxBytes: null
-usedBy: [forecasts]
+usedBy: [dashboard, forecasts]
 verifiedAt: 2026-10-05
 notes: 'Web Mercator tiles used as a MapLibre raster source. Valid time comes from n0q_0.json (last modified 10/05/2026 08:53 UTC at probe). Terms confirmed 10/05/2026: public domain, no published rate limits; five-minute cache header on /cache/; courtesy notice to IEM recommended before launch.'

@@ -8,7 +8,7 @@
  *
  * Owner: lane L8.
  */
-import { OUTLINES_FILE, decodeOutlines } from '../topo.js';
+import { OUTLINES_FILE, centerOf, decodeOutlines } from '../topo.js';
 import { addOrdered, layerStatus, removeAll, setLayersVisible } from '../style.js';
 
 /** @typedef {import('../style.js').MapContext} MapContext */
@@ -39,9 +39,13 @@ export async function loadOutlines(fetchLocal, topojson, signal) {
  */
 export function createOutlinesLayer(opts) {
   const sourceKey = 'outlines';
-  const ids = ['outlines:counties', 'outlines:states', 'outlines:province'];
+  const ids = ['basemap:local-land', 'outlines:counties', 'outlines:states', 'outlines:province'];
   /** @type {MapContext | null} */
   let ctx = null;
+  /** @type {import('maplibre-gl').Marker[]} */
+  const labels = [];
+  /** @type {(() => void) | null} */
+  let offZoom = null;
   return {
     id: 'outlines',
     sourceIds: ['census-cartographic-boundaries'],
@@ -57,6 +61,7 @@ export function createOutlinesLayer(opts) {
       }
       const ink = ctx.token('--ink-muted');
       map.addSource(sourceKey, { type: 'geojson', data, tolerance: 0.5, buffer: 64, maxzoom: 12, attribution: OUTLINES_ATTRIBUTION });
+      addOrdered(map, 'basemap', { id: 'local-land', type: 'fill', source: sourceKey, filter: ['in', ['get', 'layer'], ['literal', ['states', 'province']]], paint: { 'fill-color': ctx.token('--surface-overlay'), 'fill-opacity': 1 } });
       const line = (/** @type {string} */ id, /** @type {string} */ layer, /** @type {number} */ width, /** @type {number} */ opacity) => addOrdered(map, 'outlines', {
         id, type: 'line', source: sourceKey, filter: ['==', ['get', 'layer'], layer],
         layout: { 'line-join': 'round' }, paint: { 'line-color': ink, 'line-width': width, 'line-opacity': opacity },
@@ -64,11 +69,28 @@ export function createOutlinesLayer(opts) {
       line('counties', 'counties', 0.75, 0.5);
       line('states', 'states', 1, 0.9);
       line('province', 'province', 1.5, 0.9);
-      ctx.status(layerStatus('live', 'Outlines drawn from local files.', this.sourceIds));
+      const lib = ctx.maplibregl;
+      if (lib) for (const f of data.features) {
+        const p = /** @type {{layer?: string, name?: string}} */ (f.properties);
+        if (!['states', 'province'].includes(p?.layer ?? '') || !p.name) continue;
+        const at = centerOf(f.geometry);
+        if (!at) continue;
+        const element = document.createElement('span');
+        element.className = 'map-region-label';
+        element.textContent = p.name;
+        element.setAttribute('aria-hidden', 'true');
+        labels.push(new lib.Marker({ element, anchor: 'center' }).setLngLat(at).addTo(map));
+      }
+      const syncLabels = () => { for (const label of labels) label.getElement().hidden = map.getZoom() >= 8; };
+      offZoom = ctx.onZoom(syncLabels);
+      syncLabels();
+      ctx.status(layerStatus('live', 'Local state, province, and county reference geometry. Road and terrain tiles are not enabled.', this.sourceIds));
     },
     setVisible(on) { setLayersVisible(ctx?.map ?? null, ids, on); },
     legendItems() { return [{ id: 'outlines', label: 'State, Province, and County Outlines', swatchClass: 'map-swatch--outline' }]; },
     remove() {
+      offZoom?.(); offZoom = null;
+      for (const label of labels.splice(0)) label.remove();
       removeAll(ctx?.map ?? null, ids, [sourceKey]);
       ctx = null;
     },

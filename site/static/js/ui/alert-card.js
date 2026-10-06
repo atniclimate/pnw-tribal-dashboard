@@ -1,17 +1,5 @@
 // @ts-check
-/**
- * Alert card: event as issued, designation badge, band chip, posture, area, times in the right zone; expands to description and What to Do verbatim (blueprint 7.2). DOM module.
- *
- * The title is the event exactly as the agency issued it; no derived word replaces it. Band, designation,
- * and posture are three separate marks, and each carries a word, so color is never the only signal. The full
- * text (description and CAP instruction) is source-authored and is rendered unaltered: paragraphs and line
- * breaks are kept, nothing is truncated, summarized, or reworded. For Environment and Climate Change Canada
- * alerts a Français toggle swaps to the agency's own French block; a missing language is never synthesized.
- * The declaration cards (federal and curated) and the British Columbia notice card share this card shell, so
- * they live here too.
- *
- * Owner: lane L11.
- */
+/** Source-authored alert text stays verbatim, including available French. Band, designation, and posture have separate worded marks. Shared shell for alert, declaration, and BC notice cards. */
 import { h } from '../core/dom.js';
 import { formatAsOf } from '../core/time.js';
 import { languageBlockFor, splitZoneKey } from '../alerts/model.js';

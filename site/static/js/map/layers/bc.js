@@ -9,7 +9,7 @@
  *
  * Owner: lane L8.
  */
-import { addOrdered, bandColor, removeAll, setLayersVisible } from '../style.js';
+import { addOrdered, bandColor, layerStatus, removeAll, setLayersVisible } from '../style.js';
 import { centerOf, emptyCollection } from '../topo.js';
 
 /** @typedef {import('../style.js').MapContext} MapContext */
@@ -58,6 +58,7 @@ export function createBcLayer(opts) {
     const built = buildBcFeatures(pending);
     items = built.items;
     /** @type {import('maplibre-gl').GeoJSONSource | undefined} */ (map.getSource(sourceKey))?.setData(/** @type {any} */ (built.collection));
+    ctx?.status(layerStatus(pending ? 'live' : 'unavailable', pending ? `${items.length} supplied provincial areas. Source status and official instructions appear in the provincial detail.` : 'No provincial geometry has been supplied to this map. This does not indicate an absence of hazards.', ['bc-emcr-evacuations']));
   }
 
   return {

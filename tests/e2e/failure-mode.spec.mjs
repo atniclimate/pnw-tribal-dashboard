@@ -1,8 +1,9 @@
 // @ts-check
 /**
  * Blueprint 10.2 scenarios 1 to 3. With every external host aborted and no snapshot, every panel is
- * unavailable with an official link, the banner never reads as an all-clear, and no panel body contains a
- * digit outside <time> or any numeric observation pattern. Scenarios 2 and 3 (stale snapshot with a 503,
+ * unavailable with an official link (packaged reference geography remains usable), the banner never reads as an all-clear, and no unavailable panel body contains a
+ * numeric observation. Reference station identifiers, dates and the injected HTTP 404 diagnostic are allowed.
+ * Scenarios 2 and 3 (stale snapshot with a 503,
  * truncated collection with a malformed item) need the alert engine and its dated fixtures
  * (tests/fixtures/upstream/nws-alerts-active) and skip until lanes L10 and L11 mount the banner on their pages.
  * Owner: lane L15.
@@ -29,19 +30,38 @@ test.describe('scenario 1: all upstreams down, no snapshot', () => {
           const b = /** @type {HTMLElement | null} */ (p.querySelector('[data-panel-body]'))?.cloneNode(true);
           if (!(b instanceof HTMLElement)) return '';
           b.querySelectorAll('time').forEach((t) => t.remove());
-          return b.textContent ?? '';
+          // Station names, IDs and counts are reference data; their reading fields are checked below.
+          if (p.getAttribute('data-panel') === 'rivers') b.querySelectorAll('.gauge-list').forEach((list) => list.remove());
+          // The injected missing snapshot's HTTP status is an error diagnostic, not an observation.
+          return (b.textContent ?? '').replace(/\(HTTP 404\)/g, '');
         })(),
       })));
       for (const p of panels) {
         // Static informational panels (Resources, Safety text, Contacts and Dashboard Call directories, the News source directory and
         // community links, all from committed files) are not data panels in this sense.
         if (!/^(resources|safety|contacts|call$|news-directory|news-community)/.test(p.name)) {
+          // Packaged reference geography remains usable without current weather feeds.
+          if (p.name === 'map') {
+            const provenance = page.locator('[data-panel="map"] [data-provenance]').first();
+            await expect(provenance).toHaveAttribute('data-status', 'cached');
+            await expect(provenance).toContainText('Reference geography loaded');
+            await expect(provenance).toContainText('Current conditions have separate layer statuses');
+            await expect(provenance.locator('time').first()).toHaveAttribute('datetime', /\d{4}-\d{2}-\d{2}/);
+            continue;
+          }
           // Declarations can retain their committed, reviewed list while the federal feed is unavailable.
           const allowed = ['unavailable', 'loading', '', ...(p.name === 'declarations' ? ['degraded'] : [])];
           expect(allowed, `${p.name} is "${p.status}" with every upstream down`).toContain(p.status);
         }
         if (p.status === 'unavailable') {
           expect(p.link, `${p.name} names an official link`).toBe(true);
+          if (p.name === 'rivers' && await page.locator('[data-panel="rivers"] .gauge-list').count()) {
+            const readings = await page.locator('[data-panel="rivers"] .gauge-card__reading').allTextContents();
+            expect(readings.length).toBeGreaterThan(0);
+            expect(readings.every((reading) => reading === 'No reading')).toBe(true);
+            await expect(page.locator('[data-panel="rivers"] .gauge-card:not(.gauge-card--not-current)')).toHaveCount(0);
+            expect((await page.locator('[data-panel="rivers"] .gauge-card').allTextContents()).some((text) => text.includes('Forecast crest'))).toBe(false);
+          }
           expect(/\d/.test(p.body), `${p.name} body contains a digit outside <time>: "${p.body.slice(0, 80)}"`).toBe(false);
           expect(OBSERVATION_PATTERN.test(p.body), `${p.name} shows a numeric observation`).toBe(false);
         }

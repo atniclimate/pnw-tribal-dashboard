@@ -32,6 +32,6 @@ health:
   expectType: application/json
   minBytes: 50
   maxBytes: null
-usedBy: [forecasts]
+usedBy: [dashboard, forecasts]
 verifiedAt: 2026-10-05
 notes: Companion to iem-nexrad-n0q so the map can read the mosaic valid time (meta.valid) through the registry-only fetch path. Added by lane L8 because the tile record's template cannot be fetched as JSON.

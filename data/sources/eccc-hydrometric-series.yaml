@@ -1,0 +1,32 @@
+id: eccc-hydrometric-series
+title: Water Survey of Canada Station Time Series
+owner: Environment and Climate Change Canada, Water Survey of Canada
+url: https://api.weather.gc.ca/collections/hydrometric-realtime/items
+humanUrl: https://wateroffice.ec.gc.ca/
+license: Open Government Licence - Canada 2.0
+attribution: Contains information licensed under the Open Government Licence - Canada, Water Survey of Canada
+cadence: Provisional readings about every five to fifteen minutes, with a lag of roughly thirty to forty minutes.
+region: ca
+coverage: [BC]
+kind: ogc-features
+status: active
+deprecation: null
+access:
+  mode: direct
+  cors:
+    status: verified-wildcard
+    acao: '*'
+    origin: https://atniclimate.github.io
+    checkedAt: 2026-10-05
+    evidence: Bounded station history GET for STATION_NUMBER=07EA004 returned HTTP 200 and Access-Control-Allow-Origin star with the deployment Origin on 10/05/2026. Documented station and datetime filters are used.
+  headers:
+    Accept: application/json
+  timeoutMs: 20000
+  retries: 1
+  priority: 2
+freshness:
+  freshForMs: 1800000
+  usableForMs: 21600000
+usedBy: [dashboard, forecasts]
+verifiedAt: 2026-10-05
+notes: One bounded request when a station detail is opened. Station filter, past seventy-two-hour datetime window, newest-first sort, and maximum one thousand records. Missing or truncated history is explicit. Level and discharge remain provisional observations with no invented flood category or forecast. Collection documentation at https://api.weather.gc.ca/collections/hydrometric-realtime.

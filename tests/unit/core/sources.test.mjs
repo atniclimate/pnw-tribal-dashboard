@@ -180,6 +180,7 @@ describe('getData: direct', () => {
     assert.deepEqual(r.data, { v: 1 });
     assert.equal(r.status.state, 'cached');
     assert.equal(r.status.asOf, '2026-10-04T12:00:00.000Z');
+    assert.equal(r.status.asOfBasis, 'issued');
     assert.equal(r.status.detail, 'Saved on this device');
   });
 

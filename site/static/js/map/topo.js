@@ -14,6 +14,32 @@
 /** The tile-free fallback geometry both modes draw (blueprint 4.2). */
 export const OUTLINES_FILE = 'data/geo/outlines.topo.json';
 
+/** Geographic extent, ignoring malformed coordinate pairs.
+ * @param {unknown} geometry
+ * @returns {[number, number, number, number] | null}
+ */
+export function geometryBounds(geometry) {
+  let west = Infinity; let south = Infinity; let east = -Infinity; let north = -Infinity;
+  const walk = (/** @type {unknown} */ value) => {
+    if (!Array.isArray(value)) return;
+    if (typeof value[0] === 'number') {
+      const [lon, lat] = value;
+      if (typeof lat !== 'number' || !Number.isFinite(lon) || !Number.isFinite(lat) || Math.abs(lon) > 180 || Math.abs(lat) > 90) return;
+      west = Math.min(west, lon); east = Math.max(east, lon);
+      south = Math.min(south, lat); north = Math.max(north, lat);
+    } else for (const child of value) walk(child);
+  };
+  if (!geometry || typeof geometry !== 'object') return null;
+  const g = /** @type {{type?: string, coordinates?: unknown, geometries?: unknown[]}} */ (geometry);
+  if (g.type === 'GeometryCollection') {
+    for (const child of g.geometries ?? []) {
+      const box = geometryBounds(child);
+      if (box) { walk([box[0], box[1]]); walk([box[2], box[3]]); }
+    }
+  } else walk(g.coordinates);
+  return Number.isFinite(west) ? [west, south, east, north] : null;
+}
+
 /**
  * Decodes one named object of a topology into a GeoJSON FeatureCollection. A geometry `id` that the file
  * carries is copied into `properties.id` when the properties lack one, so `promoteId` and the feature list

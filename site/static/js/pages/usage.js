@@ -125,7 +125,7 @@ function mountStatus(slot, wanted) {
     },
     render: (body, data) => {
       const items = /** @type {Array<{ id: string, kind: string, state: string, observedAt: string | null, detail: string, carriedForward: boolean }>} */ (data);
-      body.append(h('div', { class: 'table-wrap' }, h('table', {},
+      body.append(h('div', { class: 'table-wrap', tabindex: 0, role: 'region', 'aria-label': 'System Status table' }, h('table', {},
         h('caption', {}, 'Each scheduled task, source, and compile step, and what the last run found.'),
         h('thead', {}, h('tr', {}, ['Name', 'Kind', 'Status', 'Last Observed', 'Detail'].map((t) => h('th', { scope: 'col' }, t)))),
         h('tbody', {}, items.map((i) => {

@@ -1,8 +1,5 @@
 // @ts-check
-/**
- * Access mode as configuration (blueprint 3.12). Every URL in the browser comes from here. DOM-free.
- * The registry is data/curated/sources.json, compiled from data/sources/*.yaml.
- */
+/** Registry-controlled source URLs, access modes, freshness, and device fallback. */
 import { APP } from '../config/app.js';
 import { fetchJson, fetchLocal } from './net.js';
 import { readLastGood, writeLastGood } from './lastgood.js';
@@ -15,9 +12,6 @@ import { deriveStatus } from './status.js';
 /** @typedef {import('../types.js').FreshnessPolicy} FreshnessPolicy */
 /** @typedef {Record<string, string | number | string[]>} Params */
 /**
- * Extra options for getData. `onSnapshot` fires with the scheduled copy as soon as it is read, so a page can
- * paint before the direct request finishes (direct+snapshot). `asOfOf` reads the upstream's own time out of a
- * direct payload; without it the Last-Modified header is used, and then the retrieval time with basis 'retrieved'.
  * @typedef {FetchOptions & {
  *   onSnapshot?: (result: { data: unknown, status: StatusSnapshot }) => void,
  *   asOfOf?: (data: unknown) => { asOf: string | null, asOfBasis: AsOfBasis | null, completeness?: 'complete' | 'partial', detail?: string },
@@ -34,7 +28,6 @@ const registry = new Map();
 let loading = null;
 
 /**
- * Replaces the registry with the given records. For tests and the developer harness; pages call loadSources().
  * @param {SourceRecord[]} records
  * @returns {void}
  */
@@ -44,8 +37,6 @@ export function registerSources(records) {
 }
 
 /**
- * Loads data/curated/sources.json once; concurrent callers share one request. Throws when the registry
- * cannot be loaded, because nothing on the page can name a source without it.
  * @param {AbortSignal} [signal]
  * @returns {Promise<void>}
  */
@@ -67,7 +58,6 @@ export async function loadSources(signal) {
 }
 
 /**
- * Throws on an unknown id (CAST registry invariant).
  * @param {string} id
  * @returns {SourceRecord}
  */
@@ -78,7 +68,6 @@ export function source(id) {
 }
 
 /**
- * The record, or null: for display code that tolerates ids outside the registry (curated datasets).
  * @param {string} id
  * @returns {SourceRecord | null}
  */
@@ -96,9 +85,6 @@ function encodeValue(v) {
 }
 
 /**
- * Fills urlTemplate, encodes params, appends defaults. A `{name}` placeholder takes that param; `{query}`
- * takes every param not consumed by a named placeholder as a sorted query string. Without a template the
- * params become a query string on `url`.
  * @param {string} id
  * @param {Params} [params]
  * @returns {string}
@@ -128,7 +114,6 @@ export function url(id, params = {}) {
 }
 
 /**
- * False for status 'candidate' unless config flag enableCandidateSources is on, and for retired sources.
  * @param {string} id
  * @returns {boolean}
  */
@@ -160,7 +145,6 @@ function unavailable(id, reason, now) {
 }
 
 /**
- * Reads the scheduled copy for a source from data/live.
  * @param {SourceRecord} rec
  * @param {GetDataOptions} opts
  * @returns {Promise<{ ok: true, data: any, snapshot: { asOf: string | null, asOfBasis: AsOfBasis | null, carriedForward: boolean } } | { ok: false, reason: string }>}
@@ -187,7 +171,6 @@ async function readSnapshot(rec, opts) {
 }
 
 /**
- * Image, video, and tile sources: no fetch of the media; the stamp comes from imagery-stamps.json.
  * @param {SourceRecord} rec
  * @param {Params} params
  * @param {GetDataOptions} opts
@@ -220,7 +203,6 @@ async function resolveMedia(rec, params, opts, now) {
 }
 
 /**
- * Resolves by access.mode: direct, direct+snapshot, snapshot, image, video, tiles, link, build.
  * @param {string} id
  * @param {Params} [params]
  * @param {GetDataOptions} [opts]
@@ -263,14 +245,14 @@ export async function getData(id, params = {}, opts = {}) {
       const res = await fetchJson(id, { ...opts, params });
       if (res.ok) {
         const status = directStatus(rec, res, opts, policy, now);
-        if (status.asOf) writeLastGood(id, requestUrl, { asOf: status.asOf, data: res.data });
+        if (status.asOf) writeLastGood(id, requestUrl, { asOf: status.asOf, asOfBasis: status.asOfBasis, data: res.data });
         return { data: res.data, status };
       }
       const saved = readLastGood(id, requestUrl);
       if (saved) {
         return {
           data: saved.data,
-          status: deriveStatus({ sourceIds: [id], policy, now, direct: { ok: false, error: res.error }, device: { asOf: saved.asOf, asOfBasis: 'retrieved' } }),
+          status: deriveStatus({ sourceIds: [id], policy, now, direct: { ok: false, error: res.error }, device: { asOf: saved.asOf, asOfBasis: saved.asOfBasis ?? opts.asOfOf?.(saved.data)?.asOfBasis ?? 'retrieved' } }),
         };
       }
       return unavailable(id, `${rec.attribution || rec.owner} could not be reached (${res.error.message}).`, now);

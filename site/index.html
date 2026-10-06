@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self'; connect-src 'self' https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://www.fema.gov; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self'; connect-src 'self' https://api.water.noaa.gov https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://geo.weather.gc.ca https://mesonet.agron.iastate.edu https://www.fema.gov; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
   <title>Cascadia Tribal Hazard Dashboard</title>
@@ -17,10 +17,12 @@
   <link rel="stylesheet" href="./static/css/layout.css">
   <link rel="stylesheet" href="./static/css/components.css">
   <link rel="stylesheet" href="./static/css/dashboard.css">
+  <link rel="stylesheet" href="./static/css/charts.css">
   <link rel="stylesheet" href="./static/css/print.css" media="print">
   <!-- modulepreload:start -->
   <link rel="modulepreload" href="./static/js/pages/dashboard.js">
   <link rel="modulepreload" href="./static/js/ui/chrome.js">
+  <link rel="modulepreload" href="./static/js/core/url-state.js">
   <link rel="modulepreload" href="./static/js/core/embed.js">
   <link rel="modulepreload" href="./static/js/ui/panel.js">
   <link rel="modulepreload" href="./static/js/core/dom.js">
@@ -35,8 +37,8 @@
   <link rel="modulepreload" href="./static/js/core/lastgood.js">
   <link rel="modulepreload" href="./static/js/core/storage.js">
   <link rel="modulepreload" href="./static/js/core/status.js">
-  <link rel="modulepreload" href="./static/js/core/url-state.js">
   <link rel="modulepreload" href="./static/js/alerts/lifecycle.js">
+  <link rel="modulepreload" href="./static/js/pages/dashboard-state.js">
   <!-- modulepreload:end -->
   <script type="module" src="./static/js/pages/dashboard.js"></script>
   <link rel="manifest" href="./manifest.webmanifest">
@@ -71,10 +73,20 @@
     <a class="embed-bar__sources" href="./usage/?view=sources" target="_blank" rel="noopener">Sources and Disclaimer</a>
   </div>
   <!-- chrome:end -->
-  <main id="main" tabindex="-1">
-    <h1 class="page-title" id="page-title" data-scope-heading>All of Cascadia</h1>
-    <p class="dashboard-intro">Weather and hazard information for Tribal Nations and First Nations across Cascadia. Check the source and time beside each update.</p>
+  <main id="main" tabindex="-1" data-dashboard-workspace data-dashboard-view="overview">
+    <div class="dashboard-workspace-heading">
+      <div class="dashboard-heading-copy"><p class="eyebrow">Cascadia Hazard Workspace</p><h1 class="page-title" id="page-title" data-scope-heading>All of Cascadia</h1><p class="caption" data-dashboard-selection>Choose a Nation for local alerts, forecasts, rivers, and contacts.</p></div>
+      <div class="dashboard-landscape" aria-hidden="true" hidden></div>
+      <div class="dashboard-heading-actions">
+        <section class="dashboard-location" id="choose-nation" aria-labelledby="choose-nation-h">
+          <h2 class="visually-hidden" id="choose-nation-h">Explore a Nation's Conditions</h2>
+          <div class="dashboard-actions"><button type="button" class="btn btn--primary" data-dashboard-picker disabled title="Loading Nation search">Choose a Nation</button><button type="button" class="btn btn--secondary" data-dashboard-clear>All of Cascadia</button></div>
+        </section>
+        <div class="dashboard-utilities"><a class="btn btn--secondary dashboard-map-jump" href="#dashboard-map">Map</a><button type="button" class="btn btn--secondary" data-dashboard-refresh>Refresh</button><button type="button" class="btn btn--secondary" data-dashboard-share>Share View</button></div>
+      </div>
+    </div>
     <p class="panel-note" data-scope-notice role="status" hidden></p>
+    <p class="dashboard-feedback caption" data-dashboard-status role="status" aria-live="polite" hidden></p>
     <noscript><p class="panel-note">Live alerts need JavaScript. Official alerts are always at
       <a href="https://www.weather.gov/">weather.gov</a> and
       <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">weather.gc.ca</a>. In an emergency, call 911.</p></noscript>
@@ -82,12 +94,21 @@
         <h2 class="panel__title" id="alert-banner-h">Alert Status</h2>
         <div class="panel__body" data-panel-body><p>Alert status unknown. Checking official sources. This is not an all-clear.</p></div>
       </section>
-    <section class="callout callout--quiet" id="choose-nation" aria-labelledby="choose-nation-h">
-      <h2 id="choose-nation-h">Choose a Nation</h2>
-      <p>Select a Tribal Nation or First Nation to see its alerts, rivers, forecast, and emergency contacts.</p>
-      <div class="dashboard-actions"><button type="button" class="btn btn--primary" data-dashboard-picker>Choose a Nation</button><a class="btn btn--secondary" href="./contacts/?view=near-me">Near Me</a></div>
-    </section>
-      <section class="panel" data-panel="nation-alerts" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="nation-alerts-h" data-embed-panel="alerts">
+    <div class="dashboard-workspace-tools">
+      <div class="dashboard-views" role="group" aria-label="Workspace View">
+        <button type="button" class="btn btn--secondary" data-dashboard-tab="overview" aria-pressed="true" aria-controls="dashboard-overview">Alerts and Overview</button>
+        <button type="button" class="btn btn--secondary" data-dashboard-tab="forecast" aria-pressed="false" aria-controls="dashboard-forecast">Local Forecast</button>
+        <button type="button" class="btn btn--secondary" data-dashboard-tab="rivers" aria-pressed="false" aria-controls="dashboard-rivers">River Levels</button>
+      </div>
+      <div class="dashboard-filters" data-dashboard-filter role="group" aria-label="Filter Hazards"></div>
+      <details class="dashboard-filter-disclosure"><summary>More Filters</summary><div class="dashboard-filters dashboard-filters--more" data-dashboard-more-filters></div></details>
+    </div>
+      <section class="panel dashboard-map-panel" id="dashboard-map" tabindex="-1" data-panel="map" data-sources="cthd-registry nws-alerts-active eccc-geomet-weather-alerts bia-lar census-aiannh-2025 nrcan-aboriginal-lands-bc nwps-gauges eccc-hydrometric-realtime iem-nexrad-n0q eccc-geomet-radar" aria-labelledby="map-h" data-embed-panel="map" data-map-panel>
+        <h2 class="panel__title" id="map-h">Explore the Map</h2>
+        <div class="panel__body" data-panel-body><p>Preparing the regional map. Alerts remain available while the map loads.</p></div>
+      </section>
+      <aside class="panel dashboard-detail" data-dashboard-detail aria-label="Selected Map Feature" tabindex="-1" hidden></aside>
+      <section class="panel" id="dashboard-overview" data-panel="nation-alerts" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="nation-alerts-h" data-embed-panel="alerts">
         <h2 class="panel__title" id="nation-alerts-h">Alerts for This Area</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
@@ -96,27 +117,23 @@
         <div class="panel__body" data-panel-body></div>
       </section>
       <section class="panel" data-panel="nation" data-sources="cthd-registry" aria-labelledby="nation-h" data-embed-panel="nation">
-        <h2 class="panel__title" id="nation-h">Nation</h2>
+        <h2 class="panel__title" id="nation-h">Nation Context</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
       <section class="panel" data-panel="call" data-sources="cthd-contacts" aria-labelledby="call-h" data-embed-panel="contacts">
-        <h2 class="panel__title" id="call-h">Call</h2>
+        <h2 class="panel__title" id="call-h">Emergency Contacts</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
-      <section class="panel" data-panel="rivers" data-sources="nwps-gauges eccc-hydrometric-realtime" aria-labelledby="rivers-h" data-embed-panel="rivers">
-        <h2 class="panel__title" id="rivers-h">Rivers</h2>
+      <section class="panel" id="dashboard-rivers" data-panel="rivers" data-sources="nwps-gauges nwps-gauge-series eccc-hydrometric-realtime eccc-hydrometric-series" aria-labelledby="rivers-h" data-embed-panel="rivers">
+        <h2 class="panel__title" id="rivers-h">River Levels</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
       <section class="panel" data-panel="rain" data-sources="nws-gridpoints" aria-labelledby="rain-h">
         <h2 class="panel__title" id="rain-h">Rain Next 3 Days</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
-      <section class="panel" data-panel="forecast" data-sources="nws-forecast eccc-citypage-realtime" aria-labelledby="forecast-h">
+      <section class="panel" id="dashboard-forecast" data-panel="forecast" data-sources="nws-forecast eccc-citypage-realtime" aria-labelledby="forecast-h">
         <h2 class="panel__title" id="forecast-h">7-Day Forecast</h2>
-        <div class="panel__body" data-panel-body></div>
-      </section>
-      <section class="panel" data-panel="map" data-sources="nws-alerts-active eccc-geomet-weather-alerts bia-lar census-aiannh-2025 nrcan-aboriginal-lands-bc carto-dark-matter" aria-labelledby="map-h" data-embed-panel="map" data-map-panel>
-        <h2 class="panel__title" id="map-h">Map</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
       <section class="panel" data-panel="declarations" data-sources="openfema-declarations cthd-curated-declarations" aria-labelledby="declarations-h">
@@ -127,8 +144,8 @@
         <h2 class="panel__title" id="official-news-h">Official News</h2>
         <div class="panel__body" data-panel-body></div>
       </section>
-    <section class="what-to-do" aria-labelledby="what-to-do-h">
-      <h2 id="what-to-do-h">What to Do Now</h2>
+    <details class="what-to-do">
+      <summary>Safety Guidance by Hazard</summary>
       <ul class="bullets">
         <li><a href="./safety/#flood">Flood and Debris Flows</a></li>
         <li><a href="./safety/#atmospheric-rivers">Atmospheric Rivers and Landslides</a></li>
@@ -141,7 +158,8 @@
         <li><a href="./safety/#earthquake">Earthquake</a></li>
         <li><a href="./safety/#kit">Emergency Kit and Drinking Water After Disasters</a></li>
       </ul>
-    </section>
+    </details>
+    <p class="caption dashboard-photo-credit" data-landscape-credit hidden>Archival Landscape: Lake Chelan, 06/24/2013. Courtesy of North Cascades National Park Service Complex. <a href="https://npgallery.nps.gov/AssetDetail/5c249b3d1a6a4c609f5a29682cc178ce">Photograph and Public-Domain Credit</a>. This image does not show current conditions.</p>
   </main>
   <!-- chrome:start -->
   <footer class="site-footer">

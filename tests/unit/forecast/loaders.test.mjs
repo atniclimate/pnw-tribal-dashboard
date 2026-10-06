@@ -150,7 +150,8 @@ describe('British Columbia city page', () => {
     assert.equal(c.name, 'Cranbrook');
     assert.equal(c.lastUpdated, '2026-10-05T06:02:12.000Z');
     assert.equal(c.periods.length, 12);
-    assert.deepEqual(c.periods[0], { name: 'Tonight', summary: 'Clear. Fog patches developing overnight. Low plus 5.' });
+    assert.deepEqual(c.periods[0], { name: 'Tonight', summary: 'Clear. Fog patches developing overnight. Low plus 5.', temperatures: [{ value: 5, unit: 'C', kind: 'low' }] });
+    assert.deepEqual(c.periods[1]?.temperatures, [{ value: 22, unit: 'C', kind: 'high' }]);
   });
 
   test('the nearest city page is chosen by distance and labeled with kilometers from headquarters', async () => {

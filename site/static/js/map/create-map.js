@@ -23,6 +23,7 @@ import { findSource, loadSources } from '../core/sources.js';
 import { APP } from '../config/app.js';
 import { statusPill, updateStatusPill } from '../ui/status-pill.js';
 import { attributionLines, mountAttribution } from './attribution.js';
+import { mountMapControls } from './controls.js';
 import { createFeatureList } from './feature-list.js';
 import { renderOutlineMap } from './fallback-svg.js';
 import { renderLegend } from './legend.js';
@@ -30,7 +31,7 @@ import { loadMapLibre, loadMapStyles, loadTopojson } from './loader.js';
 import { mountSovereigntyNote, setSovereigntyDatasets, sovereigntyControl } from './sovereignty.js';
 import { buildStyle } from './style.js';
 import { probeWebGL } from './support.js';
-import { OUTLINES_FILE, alertPolygons, boundsForViewport, decodeOutlines, paddedBounds } from './topo.js';
+import { OUTLINES_FILE, alertPolygons, boundsForViewport, decodeOutlines, geometryBounds, paddedBounds } from './topo.js';
 
 /** @typedef {import('../types.js').CreateMapOptions} CreateMapOptions */
 /** @typedef {import('../types.js').CthdMap} CthdMap */
@@ -44,6 +45,15 @@ import { OUTLINES_FILE, alertPolygons, boundsForViewport, decodeOutlines, padded
  * @typedef {CthdMap & {
  *   loadInteractive(): Promise<boolean>,
  *   setBcHazards(collection: unknown): void,
+ *   setGaugeScope(ids: string[] | null): void,
+ *   focusAlert(id: string): Promise<boolean>,
+ *   focusGauge(id: string): boolean,
+ *   resetView(): void,
+ *   fitNation(): void,
+ *   resize(): void,
+ *   layerStates(): import('./controls.js').LayerState[],
+ *   onLayerChange(fn: (id: string, on: boolean) => void): () => void,
+ *   onLayerStatus(fn: (id: string, status: import('../types.js').StatusSnapshot) => void): () => void,
  *   camera(): { lng: number, lat: number, zoom: number } | null,
  *   rendered(): { kind: string, id: string, name: string, source: string }[],
  *   inspect(): { glyphs: string | null, sprite: unknown, layers: { id: string, type: string, text: boolean, visible: boolean, minzoom: number | null, maxzoom: number | null, dashed: boolean }[], sources: string[] } | null,
@@ -99,8 +109,10 @@ const SOURCE_KIND = Object.freeze({
   zones: ['alert', 'alertId'],
   gauges: ['gauge', 'gaugeId'],
   bc: ['bc-hazard', 'bcId'],
+  'boundaries-overview': ['nation', 'nationId'],
+  'boundaries-detail': ['nation', 'nationId'],
 });
-const HIT_LAYERS = Object.freeze(['hq:overview', 'hq:no-polygon', 'gauges:nwps', 'gauges:wsc', 'alerts:fill', 'zones:fill', 'bc:fill']);
+const HIT_LAYERS = Object.freeze(['hq:overview', 'hq:no-polygon', 'gauges:nwps', 'gauges:wsc', 'alerts:fill', 'zones:fill', 'bc:fill', 'boundaries:detail-fill', 'boundaries:overview-fill']);
 
 /**
  * Lets the browser run other work (input, paint) before the next step; `scheduler.yield` where it exists.
@@ -177,8 +189,10 @@ export async function createMap(frame, opts) {
   note.after(extras);
   const notice = h('p', { class: 'map-notice', hidden: true });
   const legendEl = h('ul', { class: 'map-legend', 'aria-label': 'Map Legend' });
+  const key = h('div', { class: 'map-key', role: 'group', 'aria-label': 'Visible Map Symbols' });
+  const legendDetails = h('details', { class: 'map-legend-disclosure' }, h('summary', {}, 'Map Key and Layer Notes'), legendEl);
   const listHost = h('div', { class: 'map-feature-list-host' });
-  extras.append(notice, legendEl, listHost);
+  extras.append(notice, key, legendDetails, listHost);
   frame.dataset.mapMode = 'loading';
 
   /**
@@ -205,6 +219,8 @@ export async function createMap(frame, opts) {
   const layers = new Map();
   /** @type {Map<string, import('../types.js').StatusSnapshot>} */
   const layerStatuses = new Map();
+  /** @type {import('../types.js').StatusSnapshot | null} */
+  let alertStatus = null;
   /** @type {ReturnType<typeof renderOutlineMap> | null} */
   let outline = null;
   /** @type {ReturnType<typeof createFeatureList> | null} */
@@ -223,10 +239,58 @@ export async function createMap(frame, opts) {
   let transition = Promise.resolve();
   /** @type {[number, number, number, number]} */
   let footprint = FALLBACK_BOX;
-  /** @type {{ lng: number, lat: number, zoom: number } | null} */
-  let initialCamera = null;
   let selectedKey = '';
   let readyMarked = false;
+  let focusGeneration = 0;
+  let featureGeneration = 0;
+  /** @type {string | null} */
+  let pendingGauge = null;
+  /** @type {string[] | null} */
+  let gaugeScope = null;
+  /** @type {Map<string, Promise<void>>} */
+  const layerReady = new Map();
+  /** @type {Map<string, () => void>} */
+  const resolveLayerReady = new Map();
+  /** @type {Set<(id: string, on: boolean) => void>} */
+  const layerListeners = new Set();
+  /** @type {Set<(id: string, status: import('../types.js').StatusSnapshot) => void>} */
+  const statusListeners = new Set();
+  for (const id of opts.layers) S.layerOn.set(id, !(opts.controls && id === 'radar'));
+  const controls = opts.controls ? mountMapControls(frame, { layers: opts.layers, setLayer, reset: resetView, fit: fitNation }) : null;
+
+  /** @returns {import('./controls.js').LayerState[]} */
+  function layerStates() {
+    return opts.layers.map((id) => ({ id, on: S.layerOn.get(id) !== false, status: layerStatuses.get(id) ?? null }));
+  }
+
+  function refreshControls() {
+    controls?.update(layerStates(), S.mode, S.nationRecord?.name ?? null);
+  }
+
+  /** @param {string} id @param {boolean} on */
+  function setLayer(id, on) {
+    if (S.destroyed || !opts.layers.includes(id)) return;
+    const changed = (S.layerOn.get(id) !== false) !== on;
+    S.layerOn.set(id, on);
+    layers.get(id)?.setVisible(on);
+    refreshLegend(); refreshList(); refreshControls();
+    if (changed) for (const fn of layerListeners) fn(id, on);
+  }
+
+  function resetView() {
+    featureGeneration += 1;
+    pendingGauge = null;
+    popup?.remove();
+    if (map) map.fitBounds(/** @type {import('maplibre-gl').LngLatBoundsLike} */ (footprint), { padding: 24, animate: false });
+    setNotice('Regional extent shown. Nation selection and layer choices are preserved.');
+  }
+
+  function fitNation() {
+    if (!map || !S.nationRecord) return;
+    const record = S.nationRecord;
+    if (record.bbox) moveCamera(record.bbox, record.boundary?.status === 'point-only');
+    else if (record.hq) map.jumpTo({ center: [record.hq.lon, record.hq.lat], zoom: 9 });
+  }
 
   const token = (/** @type {string} */ name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   const lookup = (/** @type {string} */ id) => findSource(id);
@@ -269,6 +333,8 @@ export async function createMap(frame, opts) {
       ];
     }
     renderLegend(legendEl, items);
+    key.replaceChildren(...items.filter((item) => /^alert-(extreme|severe|moderate|minor|unstated)$/.test(item.id) || ['hq', 'gauge-none'].includes(item.id)).map((item) =>
+      h('span', { class: 'map-key__item' }, h('span', { class: `legend__swatch ${item.swatchClass}`, 'aria-hidden': 'true' }), item.id === 'alert-extreme' ? 'Extreme Alert Area' : item.label)));
   }
 
   /** @returns {FeatureItem[]} */
@@ -315,7 +381,7 @@ export async function createMap(frame, opts) {
   /** Layers report in bursts while they load; one coalesced refresh keeps that from becoming a long task. */
   function scheduleRefresh() {
     if (refreshTimer || S.destroyed) return;
-    refreshTimer = setTimeout(() => { refreshTimer = null; refreshLegend(); refreshList(); }, 80);
+    refreshTimer = setTimeout(() => { refreshTimer = null; refreshLegend(); refreshList(); refreshControls(); }, 80);
   }
 
   /** @param {(mode: 'interactive' | 'outline', reason: string) => void} fn */
@@ -404,6 +470,7 @@ export async function createMap(frame, opts) {
     setPill(state, pillLabel, state === 'degraded' ? reason : '');
     refreshLegend();
     refreshList();
+    refreshControls();
     if (!readyMarked) { readyMarked = true; performance.mark('map-ready'); }
   }
 
@@ -420,6 +487,9 @@ export async function createMap(frame, opts) {
     marker = null;
     for (const l of layers.values()) { try { l.remove(); } catch { /* map already gone */ } }
     layers.clear();
+    for (const resolve of resolveLayerReady.values()) resolve();
+    resolveLayerReady.clear();
+    layerReady.clear();
     layerStatuses.clear();
     const m = map;
     map = null;
@@ -450,10 +520,15 @@ export async function createMap(frame, opts) {
     const key = `${kind}:${id}`;
     if (selectedKey === key) return;
     for (const l of layers.values()) l.highlight?.(null);
+    if (kind !== 'nation' && S.nationId) {
+      layers.get('hq')?.highlight?.(S.nationId);
+      layers.get('boundaries')?.highlight?.(S.nationId);
+    }
     selectedKey = key;
     const target = kind === 'nation' ? layers.get('hq') : layers.get(kind === 'alert' ? 'alerts' : kind === 'gauge' ? 'gauges' : 'bc');
     target?.highlight?.(id);
     if (kind === 'nation') layers.get('boundaries')?.highlight?.(id);
+    if (kind === 'alert') layers.get('zones')?.highlight?.(id);
   }
 
   function clearHighlight() {
@@ -482,12 +557,14 @@ export async function createMap(frame, opts) {
     p.on('close', () => {
       document.removeEventListener('keydown', onKey);
       if (popup === p) popup = null;
-      list?.focusItem(item.kind, item.id);
+      if (document.activeElement === document.body) list?.focusItem(item.kind, item.id);
     });
   }
 
   /** @param {FeatureItem} item */
   function activate(item) {
+    featureGeneration += 1;
+    pendingGauge = null;
     highlight(item.kind, item.id);
     if (S.mode === 'interactive') openPopup(item);
     opts.onSelect?.({ kind: item.kind, id: item.id });
@@ -523,11 +600,12 @@ export async function createMap(frame, opts) {
   /** @param {string} name @param {import('../types.js').StatusSnapshot} snapshot */
   function onLayerStatus(name, snapshot) {
     if (S.destroyed || S.mode !== 'interactive') return;
+    for (const fn of statusListeners) fn(name, snapshot);
     if (name === 'basemap') {
       // `degraded` is a real tile failure. `unavailable` is a basemap that is off by configuration (Q10: no key
       // yet); that is not a fault, so the pill stays live and the legend states the absence.
-      if (snapshot.state === 'degraded') setPill('degraded', 'Map Degraded', snapshot.detail ?? '');
-      else if (snapshot.state === 'live' || snapshot.state === 'unavailable') setPill('live', 'Map Live', '');
+      if (snapshot.state === 'degraded' || snapshot.state === 'unavailable' && !snapshot.detail?.includes('not enabled')) setPill('degraded', 'Map Degraded', snapshot.detail ?? '');
+      else if (snapshot.state === 'live' || snapshot.state === 'unavailable') setPill('live', 'Interactive Map', '');
     }
     scheduleRefresh();
   }
@@ -609,7 +687,7 @@ export async function createMap(frame, opts) {
     m.touchZoomRotate.disableRotation();
     m.keyboard.disableRotation();
     m.addControl(new maplibregl.NavigationControl({ showCompass: false, showZoom: true }), 'top-right');
-    m.addControl(resetControl(), 'top-right');
+    if (!opts.controls) m.addControl(resetControl(), 'top-right');
     m.addControl(sovereigntyControl(note.id), 'bottom-left');
 
     // Failure watchers (blueprint 4.8).
@@ -648,7 +726,7 @@ export async function createMap(frame, opts) {
       const present = HIT_LAYERS.filter((id) => m.getLayer(id));
       if (!present.length) return;
       const f = m.queryRenderedFeatures(e.point, { layers: present })[0];
-      if (!f) { popup?.remove(); clearHighlight(); return; }
+      if (!f) { popup?.remove(); clearHighlight(); if (S.nationId) highlight('nation', S.nationId); return; }
       const spec = /** @type {Record<string, string[]>} */ (SOURCE_KIND)[f.source];
       if (!spec) return;
       const props = /** @type {any} */ (f.properties ?? {});
@@ -659,9 +737,15 @@ export async function createMap(frame, opts) {
       list?.focusItem(/** @type {string} */ (spec[0]), id);
     };
     m.on('click', onClick);
+    const onPointer = (/** @type {import('maplibre-gl').MapMouseEvent} */ e) => {
+      const present = HIT_LAYERS.filter((id) => m.getLayer(id));
+      cv.classList.toggle('map-canvas--feature-hover', present.length > 0 && m.queryRenderedFeatures(e.point, { layers: present }).length > 0);
+    };
+    m.on('mousemove', onPointer);
     mapCleanups.push(
       () => m.off('error', onError), () => m.off('moveend', onMove), () => m.off('resize', onResize), () => m.off('click', onClick),
       () => cv.removeEventListener('webglcontextlost', onLost), () => cv.removeEventListener('webglcontextrestored', onRestored),
+      () => m.off('mousemove', onPointer),
     );
 
     /** @type {((e: any) => void) | null} */
@@ -686,28 +770,39 @@ export async function createMap(frame, opts) {
     frame.dataset.mapMode = 'interactive';
     canvas.classList.add('map-canvas--interactive');
     setNotice('');
-    const c0 = m.getCenter();
-    initialCamera = { lng: c0.lng, lat: c0.lat, zoom: m.getZoom() };
 
     // Layers: outlines first, then the basemap beneath; the rest load without holding the map back.
     const instances = await layersPromise;
     performance.mark('map-load');
     if (S.destroyed || map !== m) return false;
     /** @param {string} name @param {MapLayerX} layer */
-    const addLayer = (name, layer) => Promise.resolve().then(() => layer.add(layerCtx(name))).then(() => {
+    const addLayer = (name, layer) => {
+      const ready = Promise.resolve().then(() => layer.add(layerCtx(name))).then(async () => {
       if (S.destroyed || map !== m) return;
       pushData(layer);
+      if (name === 'gauges') layer.setScope?.(gaugeScope);
+      if (name === 'boundaries') await layer.focus?.(S.nationRecord);
+      if (S.destroyed || map !== m) return;
+      if (S.nationId && (name === 'boundaries' || name === 'hq')) layer.highlight?.(S.nationId);
       // A viewer may have switched this layer off before it reached the map.
       if (S.layerOn.get(name) === false) layer.setVisible(false);
       scheduleRefresh();
     }).catch((err) => {
       layerStatuses.set(name, { state: 'unavailable', asOf: null, detail: `Layer unavailable: ${err instanceof Error ? err.message : 'error'}`, asOfBasis: null, sourceIds: layer.sourceIds, origin: 'direct', completeness: 'partial', checkedAt: new Date().toISOString() });
+      scheduleRefresh();
+    }).finally(() => {
+      resolveLayerReady.get(name)?.(); resolveLayerReady.delete(name);
+      if (!S.destroyed && map === m && name === 'gauges' && pendingGauge) focusGauge(pendingGauge);
     });
+      return ready;
+    };
     for (const name of ADD_ORDER) {
       const layer = instances.get(name);
       if (!layer) continue;
       layers.set(name, layer);
-      S.layerOn.set(name, true);
+      layerReady.set(name, new Promise((resolve) => { resolveLayerReady.set(name, resolve); }));
+      if (!S.layerOn.has(name)) S.layerOn.set(name, true);
+      if (S.layerOn.get(name) === false) layer.setVisible(false);
     }
     // map-ready (blueprint 4.6, 8.2): the outlines are drawn, the sovereignty note is mounted, and the first
     // frame with them has rendered. Basemap tiles are not required, so a slow tile host never delays it. The
@@ -747,9 +842,11 @@ export async function createMap(frame, opts) {
       if (S.destroyed || map !== m) return false;
     }
     mountAttributionNote();
-    setPill('live', 'Map Live', '');
+    setPill('live', 'Interactive Map', '');
     refreshLegend();
     refreshList();
+    refreshControls();
+    if (S.nationId) void focus(S.nationId);
     return true;
   }
 
@@ -767,8 +864,7 @@ export async function createMap(frame, opts) {
       onAdd() {
         const b = h('button', { type: 'button', class: 'cthd-reset-view', 'aria-label': 'Reset View', title: 'Reset View' }, 'Reset');
         b.addEventListener('click', () => {
-          if (!map || !initialCamera) return;
-          map.jumpTo({ center: [initialCamera.lng, initialCamera.lat], zoom: initialCamera.zoom });
+          resetView();
         });
         el = h('div', { class: 'maplibregl-ctrl maplibregl-ctrl-group cthd-reset-ctrl' }, b);
         return el;
@@ -780,7 +876,7 @@ export async function createMap(frame, opts) {
   /** @param {MapLayerX} layer */
   function pushData(layer) {
     if (!layer.setData) return;
-    if (layer.id === 'alerts' || layer.id === 'zones') layer.setData({ alerts: S.alerts });
+    if (layer.id === 'alerts' || layer.id === 'zones') layer.setData({ alerts: S.alerts, status: alertStatus });
     else if (layer.id === 'gauges') layer.setData({ gauges: S.gauges });
     else if (layer.id === 'bc' && S.bc !== null) layer.setData({ bc: S.bc });
   }
@@ -789,6 +885,10 @@ export async function createMap(frame, opts) {
   /** @param {string | null} id */
   async function focus(id) {
     if (S.destroyed) return;
+    const mine = ++focusGeneration;
+    featureGeneration += 1;
+    pendingGauge = null;
+    popup?.remove();
     marker?.remove();
     marker = null;
     if (!id || !NATION_ID.test(id)) {
@@ -796,24 +896,33 @@ export async function createMap(frame, opts) {
       clearHighlight();
       setDatasets([]);
       await layers.get('boundaries')?.focus?.(null);
+      if (mine !== focusGeneration || S.destroyed) return;
+      if (map) resetView();
+      setNotice('');
       if (S.mode === 'outline') { drawOutline(); refreshList(); }
+      refreshControls();
       return;
     }
     S.nationId = id;
+    S.nationRecord = null; S.nationDetail = null;
+    clearHighlight();
+    void layers.get('boundaries')?.focus?.(null);
+    refreshControls();
     const rec = await fetchLocal(`data/registry/nations/${id}.json`, { signal: controller.signal, priority: 1 });
-    if (S.destroyed || S.nationId !== id) return;
+    if (S.destroyed || mine !== focusGeneration) return;
     S.nationRecord = rec.ok ? rec.data : null;
     S.nationDetail = null;
     const record = S.nationRecord;
     if (S.mode === 'interactive') {
       highlight('nation', id);
       await layers.get('boundaries')?.focus?.(record);
+      if (S.destroyed || mine !== focusGeneration) return;
       const hq = record?.hq ?? null;
       const known = layers.get('hq')?.lookup?.(id) ?? null;
-      const name = record ? (record.preferredName ?? record.name) : known?.name;
+      const name = record?.name ?? known?.name;
       const at = hq ? /** @type {[number, number]} */ ([hq.lon, hq.lat]) : known?.lngLat;
       if (maplibregl && map && at && name) {
-        marker = new maplibregl.Marker({ element: h('div', { class: 'map-nation-label' }, name), anchor: 'bottom', offset: [0, -10] }).setLngLat(at).addTo(map);
+        marker = new maplibregl.Marker({ element: h('div', { class: 'map-nation-label' }, name), anchor: 'top', offset: [0, 14] }).setLngLat(at).addTo(map);
       }
       if (map && record?.bbox) moveCamera(/** @type {[number, number, number, number]} */ (record.bbox), record.boundary?.status === 'point-only');
       else if (map && at) map.jumpTo({ center: at, zoom: 9 });
@@ -822,12 +931,54 @@ export async function createMap(frame, opts) {
       const ref = record?.boundary?.detailRef;
       if (ref) {
         const d = await fetchLocal(`data/${ref}`, { signal: controller.signal, priority: 1 });
-        if (S.destroyed || S.nationId !== id) return;
+        if (S.destroyed || mine !== focusGeneration) return;
         S.nationDetail = d.ok ? /** @type {any} */ (d.data) : null;
       }
       drawOutline();
       refreshList();
     }
+    if (!record) setNotice('The selected Nation record is unavailable. Select another Nation or retry the selection.');
+    else setNotice('');
+    refreshControls();
+  }
+
+  /** @param {string} id @returns {Promise<boolean>} */
+  async function focusAlert(id) {
+    const mine = ++featureGeneration;
+    pendingGauge = null;
+    const alert = S.alerts.find((a) => a.alertId === id);
+    if (!alert || !map) { setNotice('This alert has no interactive map available. Its named affected areas remain in the alert detail.'); return false; }
+    setLayer('alerts', true); setLayer('zones', true);
+    await Promise.all([layerReady.get('alerts'), layerReady.get('zones')]);
+    let box = geometryBounds(alert.geometry);
+    if (alert.provenance?.coverage?.geometryBasis === 'zone' || !box) box = await layers.get('zones')?.bounds?.(id) ?? null;
+    if (S.destroyed || mine !== featureGeneration) return false;
+    if (!box) { setNotice('Area shown as text; this alert has no available map geometry. Read its named affected areas and official instructions.'); return false; }
+    highlight('alert', id);
+    moveCamera(box, false);
+    setNotice(`${alert.event}: ${alert.provenance?.coverage?.geometryBasis === 'zone' ? 'whole forecast zone coverage' : 'forecaster-drawn alert area'}. See the alert detail for issue time and official instructions.`);
+    const item = collectItems().find((i) => i.kind === 'alert' && i.id === id);
+    if (item) openPopup(item);
+    return true;
+  }
+
+  /** @param {string} id @returns {boolean} */
+  function focusGauge(id) {
+    featureGeneration += 1;
+    pendingGauge = null;
+    setLayer('gauges', true);
+    const item = layers.get('gauges')?.featureItems?.().find((i) => i.id === id);
+    if (!map || !item) {
+      if (map && resolveLayerReady.has('gauges')) {
+        pendingGauge = id;
+        setNotice('Gauge locations are loading. The selected gauge will be focused when available.');
+      } else setNotice('The gauge location is unavailable on this map. Its river detail remains available.');
+      return false;
+    }
+    map.jumpTo({ center: item.lngLat, zoom: Math.max(map.getZoom(), 9) });
+    highlight('gauge', id); openPopup(item);
+    setNotice('Selected gauge location. Observation times and the hydrograph appear in its river detail.');
+    return true;
   }
 
   /**
@@ -894,9 +1045,14 @@ export async function createMap(frame, opts) {
   const handle = {
     get mode() { return S.mode; },
     get reason() { return S.reason; },
-    setAlerts(a) {
+    clearSelection() {
+      popup?.remove(); popup = null; selectedKey = '';
+      for (const layer of layers.values()) layer.highlight?.(null);
+    },
+    setAlerts(a, status) {
       S.alerts = Array.isArray(a) ? a : [];
-      for (const l of layers.values()) if (l.id === 'alerts' || l.id === 'zones') l.setData?.({ alerts: S.alerts });
+      alertStatus = status ?? null;
+      for (const l of layers.values()) if (l.id === 'alerts' || l.id === 'zones') l.setData?.({ alerts: S.alerts, status: alertStatus });
       if (S.mode === 'outline') drawOutline();
       refreshList();
     },
@@ -905,17 +1061,29 @@ export async function createMap(frame, opts) {
       layers.get('gauges')?.setData?.({ gauges: S.gauges });
       refreshList();
     },
+    setGaugeScope(ids) {
+      gaugeScope = ids;
+      layers.get('gauges')?.setScope?.(ids);
+      refreshList();
+    },
     setBcHazards(collection) {
       S.bc = collection ?? null;
       layers.get('bc')?.setData?.({ bc: S.bc });
       scheduleRefresh();
     },
     focusNation(id) { void focus(id); },
-    setLayer(id, on) {
-      S.layerOn.set(id, on);
-      layers.get(id)?.setVisible(on);
-      refreshLegend();
-      refreshList();
+    setLayer,
+    focusAlert,
+    focusGauge,
+    resetView,
+    fitNation,
+    resize() { map?.resize(); },
+    layerStates,
+    onLayerChange(fn) { layerListeners.add(fn); return () => { layerListeners.delete(fn); }; },
+    onLayerStatus(fn) {
+      statusListeners.add(fn);
+      for (const [id, status] of layerStatuses) fn(id, status);
+      return () => { statusListeners.delete(fn); };
     },
     onModeChange(fn) {
       S.listeners.add(fn);
@@ -988,6 +1156,9 @@ export async function createMap(frame, opts) {
       list?.destroy();
       list = null;
       S.listeners.clear();
+      layerListeners.clear();
+      statusListeners.clear();
+      controls?.destroy();
       removeEventListener('beforeprint', onBeforePrint);
       removeEventListener('afterprint', onAfterPrint);
       note.remove();

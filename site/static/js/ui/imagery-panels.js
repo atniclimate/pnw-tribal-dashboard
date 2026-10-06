@@ -6,6 +6,7 @@
  * are link-only (decision Q11, 10/05/2026): no image request goes to either provider.
  */
 import { clear, h } from '../core/dom.js';
+import { onStateChange } from '../core/url-state.js';
 import { createMediaViewer } from './media-viewer.js';
 import { GOES_PRODUCTS, goesProduct, goesProductIds } from '../forecast/goes.js';
 import { sizeLabel } from '../forecast/imagery.js';
@@ -49,34 +50,48 @@ const stampOf = (ctx, id) => ctx.stamps.get(id)?.lastModified ?? null;
  * @param {HTMLElement} body
  * @param {ImageryProduct[]} products
  * @param {ImageryCtx} ctx
+ * @param {{ selected?: string, onSelect?: (id: string) => void, getSelected?: () => string }} [opts]
  * @returns {{ destroy(): void }}
  */
-export function renderWpc(body, products, ctx) {
+export function renderWpc(body, products, ctx, opts = {}) {
   clear(body);
   const ordered = wpcProducts(products);
   const viewerEl = h('div', { 'data-viewer': 'wpc' });
-  const first = ordered[0];
+  const first = ordered.find((p) => p.id === opts.selected) ?? ordered[0];
   if (!first) { body.append(h('p', { class: 'panel-unavailable' }, 'No Weather Prediction Center images are listed.')); return { destroy() {} }; }
   const credit = 'Source: NOAA National Weather Service, Weather Prediction Center.';
   const viewer = createMediaViewer(viewerEl, { product: first, stamp: stampOf(ctx, first.id), timeZone: ctx.timeZone ?? '', lowData: ctx.lowData, label: wpcLabel(first.id) ?? first.id, credit, catalog: ctx.catalog, stamps: ctx.stamps });
+  let selected = first.id;
+  /** @type {Map<string, HTMLElement>} */
+  const buttons = new Map();
+  /** @param {string} id */
+  function select(id) {
+    const p = ordered.find((item) => item.id === id) ?? first;
+    if (!p || selected === p.id) return;
+    selected = p.id;
+    for (const [key, button] of buttons) button.setAttribute('aria-pressed', String(key === selected));
+    viewer.setProduct(p, stampOf(ctx, p.id), { label: wpcLabel(p.id) ?? p.id });
+  }
   for (const group of /** @type {const} */ (['qpf', 'ero'])) {
     const row = h('div', { class: 'filter-chips', role: 'group', 'aria-label': WPC_GROUP_TITLES[group] });
     for (const spec of WPC_LABELS.filter((s) => s.group === group)) {
       const p = ordered.find((x) => x.id === spec.id);
       if (!p) continue;
-      const b = chip(spec.label, p.id === first.id, () => { press(/** @type {HTMLElement} */ (b.parentElement), b); viewer.setProduct(p, stampOf(ctx, p.id), { label: wpcLabel(p.id) ?? p.id }); });
+      const b = chip(spec.label, p.id === first.id, () => { select(p.id); opts.onSelect?.(p.id); });
+      buttons.set(p.id, b);
       row.append(b);
     }
     body.append(h('h3', {}, WPC_GROUP_TITLES[group]), row);
   }
   body.append(viewerEl);
-  return { destroy: () => viewer.destroy() };
+  const stop = onStateChange(() => { if (opts.getSelected) select(opts.getSelected()); });
+  return { destroy: () => { stop(); viewer.destroy(); } };
 }
 
 /**
  * @param {HTMLElement} body
  * @param {ImageryCtx} ctx
- * @param {{ selected: string, onSelect: (key: string) => void }} opts
+ * @param {{ selected: string, onSelect: (key: string) => void, getSelected?: () => string }} opts
  * @returns {{ destroy(): void }}
  */
 export function renderGoes(body, ctx, opts) {
@@ -103,19 +118,29 @@ export function renderGoes(body, ctx, opts) {
   const viewer = createMediaViewer(viewerEl, { product: start, stamp: stampOf(ctx, start.id), timeZone: ctx.timeZone ?? '', lowData: ctx.lowData, label: labelFor(startKey), credit, catalog: ctx.catalog, stamps: ctx.stamps });
   setNote(startKey);
   const row = h('div', { class: 'filter-chips', role: 'group', 'aria-label': 'Satellite product' });
+  let active = startKey;
+  /** @type {Map<string, HTMLElement>} */
+  const buttons = new Map();
+  /** @param {string} key */
+  function select(key) {
+    const p = productFor(key); const button = buttons.get(key);
+    if (!p || !button || active === key) return;
+    active = key; press(row, button);
+    viewer.setProduct(p, stampOf(ctx, p.id), { label: labelFor(key) }); setNote(key);
+  }
   for (const g of GOES_PRODUCTS) {
     const p = productFor(g.key);
     if (!p) continue;
     const b = chip(g.label, g.key === startKey, () => {
-      press(row, b);
-      viewer.setProduct(p, stampOf(ctx, p.id), { label: labelFor(g.key) });
-      setNote(g.key);
+      select(g.key);
       opts.onSelect(g.key);
     });
+    buttons.set(g.key, b);
     row.append(b);
   }
   body.append(row, viewerEl, note);
-  return { destroy: () => viewer.destroy() };
+  const stop = onStateChange(() => { if (opts.getSelected) select(opts.getSelected()); });
+  return { destroy: () => { stop(); viewer.destroy(); } };
 }
 
 /**
@@ -169,7 +194,7 @@ export function renderLinkOut(body, d) {
  * The lazy map frame: a labeled button first, the map module (a dynamic import) only after the tap. The
  * sovereignty statement is always on the panel, with or without the map.
  * @param {HTMLElement} body
- * @param {{ label: string, layers: string[], sourceIds: string[], hq: [number, number] | null, nationId: string | null, bytes: number, importMap?: () => Promise<any> }} opts
+ * @param {{ label: string, layers: string[], sourceIds: string[], hq: [number, number] | null, nationId: string | null, bytes: number, auto?: boolean, importMap?: () => Promise<any> }} opts
  * @returns {{ destroy(): void }}
  */
 export function mountMapFrame(body, opts) {
@@ -184,16 +209,18 @@ export function mountMapFrame(body, opts) {
   /** @type {{ destroy(): void } | null} */
   let map = null;
   let destroyed = false;
-  request.addEventListener('click', async () => {
+  async function start() {
     /** @type {HTMLButtonElement} */ (request).disabled = true;
     status.textContent = `Loading map (about ${sizeLabel(opts.bytes)})`;
     try {
       const mod = await (opts.importMap ? opts.importMap() : import('../map/create-map.js'));
-      map = await mod.createMap(frame, {
-        sovereignty: { sourceIds: opts.sourceIds }, label: opts.label, layers: opts.layers, mode: 'auto',
+      if (destroyed) return;
+      map = await mod.createMap(viewport, {
+        sovereignty: { sourceIds: opts.sourceIds }, label: opts.label, layers: opts.layers, mode: 'auto', controls: true,
         ...(opts.hq ? { view: { lat: opts.hq[0], lon: opts.hq[1], zoom: 7 } } : {}),
       });
       if (destroyed) { map?.destroy(); return; }
+      /** @type {import('../types.js').CthdMap} */ (map).setLayer('radar', true);
       if (opts.nationId) /** @type {any} */ (map).focusNation?.(opts.nationId);
       request.hidden = true;
       status.textContent = '';
@@ -203,6 +230,8 @@ export function mountMapFrame(body, opts) {
       /** @type {HTMLButtonElement} */ (request).disabled = false;
       status.textContent = 'The map could not be loaded. Radar images for the nearest station are in the panel below.';
     }
-  });
+  }
+  request.addEventListener('click', () => { void start(); });
+  if (opts.auto) void start();
   return { destroy() { destroyed = true; map?.destroy(); } };
 }

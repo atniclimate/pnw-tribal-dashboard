@@ -59,6 +59,8 @@ async function world(page, opts = {}) {
     '/products/types/AFD/locations/SEW/latest': await json('nws-afd/2026-10-05-sew-latest.json'),
   };
   const city = await json('eccc-citypage-realtime/2026-10-05-bc-cranbrook.json');
+  const riverHistory = await json('nwps-gauge-series/2026-10-06-mvew1-stageflow.json');
+  const wscHistory = await json('eccc-hydrometric-series/2026-10-06-07ea004-history.json');
   /** @type {string[]} */
   const imageRequests = [];
   /** @param {import('@playwright/test').Route} route */
@@ -75,7 +77,8 @@ async function world(page, opts = {}) {
           const body = /** @type {Record<string, unknown>} */ (nws)[path];
           return body ? route.fulfill({ status: 200, contentType: 'application/geo+json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) }) : route.fulfill({ status: 404, contentType: 'application/json', body: '{}' });
         },
-        'api.weather.gc.ca': (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(city) }),
+        'api.weather.gc.ca': (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(route.request().url().includes('/hydrometric-realtime/') ? wscHistory : city) }),
+        'api.water.noaa.gov': (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(riverHistory) }),
         'cdn.star.nesdis.noaa.gov': image, 'www.wpc.ncep.noaa.gov': image, 'radar.weather.gov': image,
       },
     }),
@@ -104,9 +107,9 @@ test.describe('Local view', () => {
     await expect(local.getByRole('heading', { name: 'Current Conditions' })).toBeVisible();
     await expect(local).toContainText('Bellingham, Bellingham International Airport');
     await expect(local).toContainText('A station observation, not a forecast');
-    const bars = panel(page, 'forecast-qpf').locator('svg[data-chart="qpf-bars"]');
+    const bars = panel(page, 'forecast-qpf').locator('svg[data-chart="qpf-interactive"]');
     await expect(bars).toBeVisible();
-    await expect(bars).toContainText('Today');
+    await expect(panel(page, 'forecast-qpf').locator('[data-chart-readout]')).toContainText('Today');
     const toggle = panel(page, 'forecast-afd').locator('[data-afd-toggle]');
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
     await expect(panel(page, 'forecast-afd').locator('[data-afd-text]')).toBeHidden();
@@ -224,9 +227,9 @@ test.describe('Radar view', () => {
     await expect(ridge.locator('[data-viewer="ridge-mosaic"] img')).toHaveCount(0);
   });
 
-  test('the map waits for a tap and the sovereignty statement is on the panel', async ({ page }) => {
+  test('in low-data mode the map waits for a tap and the sovereignty statement is on the panel', async ({ page }) => {
     const { g } = await world(page);
-    await page.goto('forecasts/?view=radar');
+    await page.goto('forecasts/?view=radar&lowdata=1');
     const map = panel(page, 'radar-map');
     await expect(map.getByRole('button', { name: /^Show Map \(about \d+ KB\)$/ })).toBeVisible();
     await expect(map.locator('.sovereignty-note').first()).toContainText('Representation, not jurisdiction.');
@@ -255,6 +258,84 @@ test.describe('Atmospheric Rivers view', () => {
 });
 
 test.describe('Rivers view', () => {
+  test('interactive WSC history shows real observed level and discharge without forecast or flood categories', async ({ page }, testInfo) => {
+    await world(page);
+    await page.goto('forecasts/?view=rivers&g=wsc%3A07EA004&units=metric');
+    const river = panel(page, 'rivers-gauges');
+    await expect(river.locator('svg[data-chart="time-series"]')).toBeVisible();
+    await river.getByRole('slider').focus(); await river.getByRole('slider').press('End');
+    const source = await json('eccc-hydrometric-series/2026-10-06-07ea004-history.json');
+    const latest = source.features[0].properties;
+    const format = (/** @type {number} */ value) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(value);
+    await expect(river.locator('[data-chart-readout]')).toContainText(`Observed: ${format(latest.LEVEL)} m`);
+    await river.getByRole('combobox', { name: 'Measurement', exact: true }).selectOption('secondary');
+    await river.getByRole('slider').focus(); await river.getByRole('slider').press('End');
+    await expect(river.locator('[data-chart-readout]')).toContainText(`Observed: ${format(latest.DISCHARGE)} m³/s`);
+    await expect(river.locator('.chart-line--forecast')).toHaveCount(0);
+    await expect(river.locator('.chart-threshold')).toHaveCount(0);
+    await expect(river).toContainText('No flood category is inferred');
+    expect(await horizontalOverflow(page)).toBe(false);
+    await river.locator('.gauge-detail__chart').screenshot({ path: testInfo.outputPath('real-wsc-interaction.png') });
+  });
+
+  test('interactive river history failure has an explicit fallback and retry recovers without reload', async ({ page }) => {
+    await world(page);
+    await page.route('https://api.water.noaa.gov/**', (route) => route.abort('failed'));
+    await page.goto('forecasts/?view=rivers&g=nwps%3AMVEW1');
+    const river = panel(page, 'rivers-gauges');
+    await expect(river.getByRole('button', { name: 'Refresh River Data' })).toBeVisible({ timeout: 20_000 });
+    await expect(river.locator('.gauge-detail__chart')).toContainText('could not be reached');
+    await expect(river.locator('svg[data-chart="time-series"]')).toHaveCount(0);
+    await page.unroute('https://api.water.noaa.gov/**');
+    await river.getByRole('button', { name: 'Refresh River Data' }).click();
+    await expect(river.locator('svg[data-chart="time-series"]')).toBeVisible();
+  });
+
+  test('interactive river chart inspects real samples and changes history, measurement, and units', async ({ page }, testInfo) => {
+    await world(page);
+    await page.goto('forecasts/?view=rivers&g=nwps%3AMVEW1');
+    const river = panel(page, 'rivers-gauges');
+    const chart = river.locator('svg[data-chart="time-series"]');
+    await expect(chart).toBeVisible();
+    const source = await json('nwps-gauge-series/2026-10-06-mvew1-stageflow.json');
+    const slider = river.getByRole('slider');
+    await slider.focus();
+    await slider.press('End');
+    const end = source.forecast.data.at(-1);
+    await expect(river.locator('[data-chart-readout]')).toContainText(`Forecast: ${end.primary} ft`);
+    const total = Number(await slider.getAttribute('max'));
+    await river.getByRole('combobox', { name: 'Observed History' }).selectOption('24');
+    expect(Number(await river.getByRole('slider').getAttribute('max'))).toBeLessThan(total);
+    await expect(page).toHaveURL(/grange=24/);
+    await river.getByRole('combobox', { name: 'Measurement', exact: true }).selectOption('secondary');
+    await river.getByRole('combobox', { name: 'River Units' }).selectOption('metric');
+    await river.getByRole('slider').focus();
+    await river.getByRole('slider').press('End');
+    const flow = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(end.secondary * 28.316846592);
+    await expect(river.locator('[data-chart-readout]')).toContainText(`Forecast: ${flow} m³/s`);
+    await chart.scrollIntoViewIfNeeded();
+    const bounds = await chart.boundingBox();
+    if (!bounds) throw new Error('The river chart has no visible bounds');
+    if (testInfo.project.name.includes('phone')) await page.touchscreen.tap(bounds.x + bounds.width * 0.12, bounds.y + bounds.height * 0.4);
+    else await chart.click({ position: { x: bounds.width * 0.12, y: bounds.height * 0.4 } });
+    await expect(river.locator('[data-chart-readout]')).toContainText('Observed:');
+    const drag = await chart.evaluate((element) => {
+      const svg = /** @type {SVGSVGElement} */ (element);
+      const matrix = svg.getScreenCTM();
+      if (!matrix) throw new Error('The chart has no screen transform');
+      const start = new DOMPoint(80, 120).matrixTransform(matrix);
+      const end = new DOMPoint(svg.viewBox.baseVal.width - 1, 120).matrixTransform(matrix);
+      return { start: { x: start.x, y: start.y }, end: { x: end.x, y: end.y } };
+    });
+    await page.mouse.move(drag.start.x, drag.start.y); await page.mouse.down();
+    await page.mouse.move(drag.end.x, drag.end.y, { steps: 12 }); await page.mouse.up();
+    await expect(river.locator('[data-chart-readout]')).toContainText(`Forecast: ${flow} m³/s`);
+    await river.getByText('View Every Chart Value as a Table', { exact: true }).click();
+    await expect(river.locator('.chart-data tbody tr').first()).toBeVisible();
+    expect(await horizontalOverflow(page)).toBe(false);
+    await chart.screenshot({ path: testInfo.outputPath('real-river-interaction.png') });
+  });
+
   test('composes the gauge list and gauge detail from the committed hydrology components', async ({ page }) => {
     await world(page);
     await page.goto('forecasts/?view=rivers');
@@ -265,6 +346,35 @@ test.describe('Rivers view', () => {
     await expect(rivers.locator('.gauge-detail')).toBeVisible();
     await expect(rivers.getByRole('link', { name: 'Back to the Gauge List' })).toBeVisible();
   });
+});
+
+test('interactive local charts synchronize period, day, range, and unit selection', async ({ page }, testInfo) => {
+  await world(page);
+  await page.goto(`forecasts/?n=${LUMMI}`);
+  const local = panel(page, 'forecast-local');
+  const qpf = panel(page, 'forecast-qpf');
+  await expect(local.locator('.forecast-period')).toHaveCount(14);
+  await expect(local.locator('.chart-period-point')).toHaveCount(14);
+  await expect(local.locator('.chart-line')).toHaveCount(0);
+  const selected = local.locator('.forecast-period').nth(1);
+  const selectedName = await selected.locator('strong').innerText();
+  await selected.click();
+  await expect(local.locator('[data-forecast-selected] h3')).toHaveText(selectedName);
+  await expect(page).toHaveURL(/period=/);
+  await local.getByRole('combobox', { name: 'Forecast Units' }).selectOption('metric');
+  await expect(qpf.getByRole('combobox', { name: 'Precipitation Units' })).toHaveValue('metric');
+  await local.getByRole('slider').focus();
+  await local.getByRole('slider').press('End');
+  await expect(local.locator('[data-chart-readout]')).toContainText('°C');
+  const date = await qpf.getByRole('combobox', { name: 'Inspect Forecast Day' }).locator('option').nth(1).getAttribute('value');
+  await qpf.getByRole('combobox', { name: 'Inspect Forecast Day' }).selectOption(date ?? '');
+  await expect(local.locator('.forecast-period[aria-pressed="true"]')).toHaveCount(1);
+  await expect(page).toHaveURL(new RegExp(`day=${date}`));
+  await qpf.getByRole('combobox', { name: 'Precipitation Time Range' }).selectOption('3');
+  await expect(local.getByRole('combobox', { name: 'Forecast Time Range' })).toHaveValue('3');
+  expect(await local.locator('.forecast-period').count()).toBeLessThanOrEqual(6);
+  expect(await horizontalOverflow(page)).toBe(false);
+  await local.locator('[data-forecast-explorer]').screenshot({ path: testInfo.outputPath('real-forecast-interaction.png') });
 });
 
 test.describe('Accessibility and layout with data', () => {

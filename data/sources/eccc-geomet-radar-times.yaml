@@ -32,6 +32,6 @@ health:
   expectType: text/xml
   minBytes: 1000
   maxBytes: null
-usedBy: [forecasts]
+usedBy: [dashboard, forecasts]
 verifiedAt: 2026-10-05
 notes: Companion to eccc-geomet-radar so the map can read the radar time dimension through the registry-only fetch path (params service, version, request, layer). Added by lane L8.

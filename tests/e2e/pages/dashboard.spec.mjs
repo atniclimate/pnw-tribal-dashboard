@@ -102,7 +102,7 @@ test('an old scheduled copy never becomes an all-clear when the live sources fai
   await expect(panel.locator('time[datetime]').first()).toBeVisible();
 });
 
-test('map modules load only after Show Map and the fallback keeps its sovereignty note', async ({ page }) => {
+test('the workspace map loads after alerts paint and the fallback keeps its sovereignty note', async ({ page }) => {
   const guards = await setup(page);
   await page.addInitScript(() => {
     const original = HTMLCanvasElement.prototype.getContext;
@@ -112,10 +112,8 @@ test('map modules load only after Show Map and the fallback keeps its sovereignt
   });
   await page.goto('./');
   const map = page.locator('[data-panel="map"]');
-  await expect(map.getByRole('button', { name: 'Show Map', exact: true })).toBeVisible();
-  expect(guards.requests.filter((request) => /\/static\/(?:js\/map\/|vendor\/)/.test(request.url))).toEqual([]);
-  await map.getByRole('button', { name: 'Show Map', exact: true }).click();
   await expect(map.locator('svg.map-outline')).toBeVisible();
+  expect(await page.evaluate(() => performance.getEntriesByName('alerts-painted').length)).toBeGreaterThan(0);
   await expect(map.locator('.sovereignty-note')).toContainText('Representation, not jurisdiction');
   expect(guards.requests.some((request) => /\/map\/adapter\.js$/.test(request.url))).toBe(true);
   expect(guards.pageErrors).toEqual([]);

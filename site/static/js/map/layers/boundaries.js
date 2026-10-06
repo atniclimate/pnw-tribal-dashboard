@@ -69,6 +69,7 @@ export function createBoundariesLayer(opts) {
   let forced = false;
   let overviewLoading = false;
   let overviewLoaded = false;
+  let focusGeneration = 0;
   /** @type {string | null} */
   let selected = null;
   /** @type {(() => void) | null} */
@@ -135,6 +136,7 @@ export function createBoundariesLayer(opts) {
     async add(c) {
       ctx = /** @type {MapContext} */ (c);
       offZoom = ctx.onZoom(() => sync());
+      ctx.status(layerStatus('live', 'Nation land-area representations load at local zoom or when this layer is switched on.', sourceIds));
       sync();
       // A Nation selected before this layer reached the map is applied now.
       if (pendingRecord !== undefined) {
@@ -155,6 +157,7 @@ export function createBoundariesLayer(opts) {
       if (selected) markSelected(selected, true);
     },
     async focus(record) {
+      const generation = ++focusGeneration;
       const c = ctx;
       if (!c?.map) { pendingRecord = record; return; }
       clearDetail();
@@ -165,7 +168,7 @@ export function createBoundariesLayer(opts) {
         return;
       }
       const res = await c.fetchLocal(`data/${part.detailRef}`, { signal: c.signal, priority: 1 });
-      if (ctx !== c || !c.map) return;
+      if (ctx !== c || !c.map || generation !== focusGeneration) return;
       if (!res.ok) {
         c.setDatasets(datasetsOf(record), 'The land-area detail file is unavailable right now; headquarters location shown.');
         c.status(layerStatus('unavailable', 'The selected Nation\'s land-area file is unavailable.', sourceIds));
@@ -177,6 +180,7 @@ export function createBoundariesLayer(opts) {
       detailIds = addBoundaryLayers(c.map, 'boundaries-detail', 'detail', c.token);
       markSelected(record.id, true);
       c.setDatasets(datasetsOf(record));
+      sync();
     },
     legendItems() {
       return [
@@ -186,6 +190,7 @@ export function createBoundariesLayer(opts) {
       ];
     },
     remove() {
+      focusGeneration += 1;
       offZoom?.();
       offZoom = null;
       removeAll(ctx?.map ?? null, [...overviewIds, ...detailIds], ['boundaries-overview', 'boundaries-detail']);

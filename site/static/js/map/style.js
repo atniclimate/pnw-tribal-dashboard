@@ -35,6 +35,8 @@
  *   highlight?: (id: string | null) => void,
  *   lookup?: (id: string) => { name: string, lngLat: [number, number], hasBoundary: boolean } | null,
  *   focus?: (record: any) => Promise<void> | void,
+ *   setScope?: (ids: string[] | null) => void,
+ *   bounds?: (id: string) => Promise<[number, number, number, number] | null> | [number, number, number, number] | null,
  *   prefetch?: (io: { fetchLocal: LayerContext['fetchLocal'], signal: AbortSignal }) => void,
  * }} MapLayerX
  */
@@ -125,16 +127,18 @@ export function bandColor(token) {
  * @param {string} detail
  * @param {string[]} sourceIds
  * @param {string | null} [asOf]
+ * @param {import('../types.js').StatusSnapshot['asOfBasis']} [basis]
  * @returns {StatusSnapshot}
  */
-export function layerStatus(state, detail, sourceIds, asOf = null) {
+export function layerStatus(state, detail, sourceIds, asOf = null, basis = 'valid') {
+  const hasTime = typeof asOf === 'string' && Number.isFinite(Date.parse(asOf));
   return {
-    state,
-    asOf,
-    detail,
-    asOfBasis: asOf ? 'valid' : null,
+    state: hasTime ? state : 'unavailable',
+    asOf: hasTime ? asOf : null,
+    detail: !hasTime && state !== 'unavailable' ? `${detail} A source time is not published for this layer.` : detail,
+    asOfBasis: hasTime ? basis : null,
     sourceIds,
-    origin: 'direct',
+    origin: state === 'cached' ? 'snapshot' : 'direct',
     completeness: state === 'live' ? 'complete' : 'partial',
     checkedAt: new Date().toISOString(),
   };

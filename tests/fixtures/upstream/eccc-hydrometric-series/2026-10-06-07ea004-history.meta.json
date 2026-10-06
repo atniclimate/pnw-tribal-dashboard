@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "eccc-hydrometric-series",
+  "label": "07ea004-history",
+  "file": "2026-10-06-07ea004-history.json",
+  "url": "https://api.weather.gc.ca/collections/hydrometric-realtime/items?f=json&STATION_NUMBER=07EA004&datetime=2026-10-03T03:00:00Z/..&limit=1000&sortby=-DATETIME&properties=STATION_NUMBER,DATETIME,LEVEL,DISCHARGE,LEVEL_SYMBOL_EN,DISCHARGE_SYMBOL_EN",
+  "method": "GET",
+  "requestHeaders": {
+    "User-Agent": "(atniclimate.github.io/pnw-tribal-dashboard, climate@atnitribes.org)",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-06T03:15:19.592Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 236580,
+  "sha256": "bfcd53caacd9be2a1b54d39b4cdded4364b4fabdf6789610a706a5750cdbdef3",
+  "covers": [
+    "river-interactive-chart",
+    "wsc-observed-history"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": ""
+}

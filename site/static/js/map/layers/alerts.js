@@ -8,9 +8,9 @@
  *
  * Owner: lane L8.
  */
-import { addOrdered, bandColor, removeAll, setLayersVisible } from '../style.js';
+import { addOrdered, bandColor, layerStatus, removeAll, setLayersVisible } from '../style.js';
 import { centerOf, emptyCollection } from '../topo.js';
-import { alertPolygons, hasOwnPolygon } from '../topo.js';
+import { alertPolygons, geometryBounds, hasOwnPolygon } from '../topo.js';
 
 export { alertPolygons, hasOwnPolygon };
 
@@ -30,6 +30,8 @@ export function createAlertsLayer(opts) {
   let ctx = null;
   /** @type {DashboardAlert[]} */
   let pending = [];
+  /** @type {import('../../types.js').StatusSnapshot | null} */
+  let feedStatus = null;
   /** @type {FeatureItem[]} */
   let items = [];
   /** @type {string | null} */
@@ -51,6 +53,9 @@ export function createAlertsLayer(opts) {
     }).filter((i) => i.lngLat[0] !== 0 || i.lngLat[1] !== 0);
     const src = /** @type {import('maplibre-gl').GeoJSONSource | undefined} */ (map.getSource(sourceKey));
     src?.setData(/** @type {any} */ (fc));
+    if (selected) mark(selected, true);
+    const detail = `${fc.features.length} forecaster-drawn alert areas. ${feedStatus?.detail ?? 'Feed status and issue times are shown with the alerts.'}`;
+    ctx?.status(feedStatus ? { ...feedStatus, detail } : layerStatus('unavailable', detail + ' Feed freshness was not supplied to this map.', ['nws-alerts-active', 'eccc-geomet-weather-alerts']));
   }
 
   return {
@@ -72,9 +77,10 @@ export function createAlertsLayer(opts) {
       apply();
     },
     setData(data) {
-      const d = /** @type {{ alerts?: DashboardAlert[] }} */ (data ?? {});
+      const d = /** @type {{ alerts?: DashboardAlert[], status?: import('../../types.js').StatusSnapshot | null }} */ (data ?? {});
       if (!Array.isArray(d.alerts)) return;
       pending = d.alerts;
+      feedStatus = d.status ?? null;
       apply();
     },
     setVisible(on) { setLayersVisible(ctx?.map ?? null, ids, on); },
@@ -93,6 +99,7 @@ export function createAlertsLayer(opts) {
       ];
     },
     featureItems() { return items; },
+    bounds(id) { return geometryBounds(pending.find((a) => a.alertId === id && hasOwnPolygon(a))?.geometry); },
     remove() {
       removeAll(ctx?.map ?? null, ids, [sourceKey]);
       items = [];

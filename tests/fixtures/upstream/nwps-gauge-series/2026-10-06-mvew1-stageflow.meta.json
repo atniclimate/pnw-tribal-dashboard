@@ -1,0 +1,25 @@
+{
+  "schema": "cthd.fixture-meta/1",
+  "sourceId": "nwps-gauge-series",
+  "label": "mvew1-stageflow",
+  "file": "2026-10-06-mvew1-stageflow.json",
+  "url": "https://api.water.noaa.gov/nwps/v1/gauges/MVEW1/stageflow",
+  "method": "GET",
+  "requestHeaders": {
+    "Origin": "https://atniclimate.github.io",
+    "Accept": "application/json"
+  },
+  "capturedAt": "2026-10-06T03:08:37.1498838Z",
+  "status": 200,
+  "contentType": "application/json",
+  "lastModified": null,
+  "bytes": 465938,
+  "sha256": "3765dfc0a7c29680a951f0035d2065620c1f5557ab3d0861f8b478cd4a420915",
+  "covers": [
+    "river-interactive-chart",
+    "observation-forecast-timeseries"
+  ],
+  "derivedFrom": null,
+  "edits": [],
+  "notes": "Unmodified public NOAA body captured for deterministic interaction verification; not a production snapshot. ACAO *. Capture filename uses UTC date."
+}

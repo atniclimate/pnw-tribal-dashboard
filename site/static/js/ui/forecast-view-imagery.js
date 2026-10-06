@@ -20,7 +20,7 @@ import { mountMapFrame, renderGoes, renderLinkOut, renderRidge, renderWpc } from
 
 export const GOES_KEYS = Object.freeze(['geocolor', 'airmass', 'band-08', 'band-13', 'band-09', 'band-10']);
 const IMAGERY_TTL_MS = 10 * 60_000;
-const RADAR_MAP_SOURCES = ['iem-nexrad-n0q', 'eccc-geomet-radar', 'carto-dark-matter'];
+const RADAR_MAP_SOURCES = ['iem-nexrad-n0q', 'eccc-geomet-radar'];
 
 /** @type {{ at: number, value: { catalog: Map<string, any> | null, env: any, stamps: Map<string, any> } } | null} */
 let imagery = null;
@@ -72,7 +72,10 @@ export const panels = {
       const status = imageryStatus('wpc-images', r.env, r.stamps, products.map((p) => p.id), new Date());
       return { data: status.state === 'unavailable' ? null : { products, r }, status };
     },
-    render(body, data, _s, ctx) { return renderWpc(body, data.products, imageryCtx(ctx, data.r)).destroy; },
+    render(body, data, _s, ctx) { return renderWpc(body, data.products, imageryCtx(ctx, data.r), {
+      selected: String(ctx.state().wpc ?? 'wpc-qpf-day-1'), getSelected: () => String(ctx.state().wpc ?? 'wpc-qpf-day-1'),
+      onSelect: (id) => ctx.writeState({ wpc: id }, { push: true }),
+    }).destroy; },
   },
 
   'ar-cw3e': linkOutPanel('cw3e-images', 'Atmospheric river forecasts (CW3E)',
@@ -91,17 +94,19 @@ export const panels = {
     },
     render(body, data, _s, ctx) {
       const selected = /** @type {string} */ (ctx.state().p ?? 'geocolor');
-      return renderGoes(body, imageryCtx(ctx, data.r), { selected, onSelect: (key) => ctx.writeState({ p: key === 'geocolor' ? undefined : /** @type {any} */ (key) }) }).destroy;
+      return renderGoes(body, imageryCtx(ctx, data.r), { selected, getSelected: () => String(ctx.state().p ?? 'geocolor'),
+        onSelect: (key) => ctx.writeState({ p: key === 'geocolor' ? undefined : key }, { push: true }) }).destroy;
     },
   },
 
   'radar-map': {
-    async load() {
-      return { data: null, status: unavailableStatus(RADAR_MAP_SOURCES, 'The radar map is not loaded yet. Tap Show Map to load it.') };
+    async load(ctx) {
+      await ctx.nationReady();
+      return { data: null, status: unavailableStatus(RADAR_MAP_SOURCES, 'Current observed radar is loading. It is not a precipitation forecast. Coverage and source times appear with the map.') };
     },
     render() {},
     unavailable(body, status, ctx) {
-      body.append(h('p', { class: 'panel-unavailable' }, status.detail ?? ''));
+      body.append(h('p', { class: 'panel-note' }, 'Current observed radar, not a precipitation forecast. Transparent areas can be coverage gaps. Source times and availability appear with the map.'));
       // The map request (a labeled button) is offered only once this view is open.
       if (!ctx.isOpened('radar')) return;
       const slot = /** @type {HTMLElement} */ (document.querySelector('[data-panel="radar-map"]'));
@@ -109,19 +114,19 @@ export const panels = {
       const holder = h('div', { 'data-map-holder': '' });
       body.append(holder);
       return mountMapFrame(holder, {
-        label: 'Radar map', layers: ['basemap', 'outlines', 'hq', 'radar'], sourceIds: RADAR_MAP_SOURCES, hq: nation?.hq ?? null, nationId: nation?.id ?? null, bytes: APP.map.firstLoadLabelBytes,
+        label: 'Radar map', layers: ['outlines', 'hq', 'radar'], sourceIds: RADAR_MAP_SOURCES, hq: nation?.hq ?? null, nationId: nation?.id ?? null, bytes: APP.map.firstLoadLabelBytes, auto: !ctx.lowData(),
         importMap: async () => {
           const mod = await import('../map/create-map.js');
           return {
             createMap: async (/** @type {HTMLElement} */ f, /** @type {any} */ o) => {
               const m = await mod.createMap(f, o);
-              const now = new Date();
-              /** @type {StatusSnapshot} */
-              const live = { state: 'live', asOf: now.toISOString(), asOfBasis: 'retrieved', sourceIds: RADAR_MAP_SOURCES, origin: 'direct', completeness: 'complete', checkedAt: now.toISOString(), detail: 'Radar tiles refresh while the map is visible; valid times are in the map legend.' };
-              const footer = slot.querySelector('[data-provenance]');
-              const tz = ctx.timeZone();
-              if (footer instanceof HTMLElement) renderProvenance(footer, live, RADAR_MAP_SOURCES.map((id) => findSource(id)).filter((r) => r !== null), tz ? { timeZone: tz } : {});
-              try { panelStatuses.report('radar-map', live); } catch { /* an invalid snapshot is never shown */ }
+              m.onLayerStatus((id, snapshot) => {
+                if (id !== 'radar') return;
+                const footer = slot.querySelector('[data-provenance]');
+                const tz = ctx.timeZone();
+                if (footer instanceof HTMLElement) renderProvenance(footer, snapshot, RADAR_MAP_SOURCES.map((sourceId) => findSource(sourceId)).filter((r) => r !== null), tz ? { timeZone: tz } : {});
+                try { panelStatuses.report('radar-map', snapshot); } catch { /* Invalid source status is never promoted to live. */ }
+              });
               return m;
             },
           };

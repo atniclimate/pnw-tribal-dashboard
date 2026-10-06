@@ -1,9 +1,5 @@
 // @ts-check
-/**
- * Bounded device last-good for direct-only sources: 200 KB per entry, 2 MB total, least-recently-used
- * eviction, every call in try/catch (blueprint 3.13). Keys are cthd:v1:lg:<sourceId>:<urlHash>. DOM module
- * (localStorage, through core/storage.js). Alert last-good is the service-worker-cached snapshot, not this.
- */
+/** Direct-source device cache: 200 KB per entry, 2 MB total, LRU eviction. Alerts use the service worker. */
 import { getItem, listKeys, removeItem, setItem } from './storage.js';
 
 export const MAX_ENTRY_BYTES = 200 * 1024;
@@ -12,7 +8,6 @@ const PREFIX = 'lg:';
 const INDEX = 'lgindex';
 
 /**
- * FNV-1a, 32 bit, hex. Keys only; not a security hash.
  * @param {string} text
  * @returns {string}
  */
@@ -48,7 +43,7 @@ function writeIndex(index) {
 /**
  * @param {string} sourceId
  * @param {string} url
- * @returns {{ asOf: string, savedAt: string, data: unknown } | null}
+ * @returns {{ asOf: string, asOfBasis?: import('../types.js').AsOfBasis, savedAt: string, data: unknown } | null}
  */
 export function readLastGood(sourceId, url) {
   const key = keyFor(sourceId, url);
@@ -63,7 +58,8 @@ export function readLastGood(sourceId, url) {
     const index = readIndex();
     index[key] = Date.now();
     writeIndex(index);
-    return { asOf: entry.asOf, savedAt: entry.savedAt, data: entry.data };
+    const basis = ['issued', 'observed', 'valid', 'retrieved', 'model-run'].includes(entry.asOfBasis) ? entry.asOfBasis : undefined;
+    return { asOf: entry.asOf, ...(basis ? { asOfBasis: basis } : {}), savedAt: entry.savedAt, data: entry.data };
   } catch {
     removeItem(key);
     return null;
@@ -71,16 +67,15 @@ export function readLastGood(sourceId, url) {
 }
 
 /**
- * False when storage is blocked or the entry is too large.
  * @param {string} sourceId
  * @param {string} url
- * @param {{ asOf: string, data: unknown }} entry
+ * @param {{ asOf: string, asOfBasis?: import('../types.js').AsOfBasis | null, data: unknown }} entry
  * @returns {boolean}
  */
 export function writeLastGood(sourceId, url, entry) {
   const key = keyFor(sourceId, url);
   try {
-    const body = JSON.stringify({ asOf: entry.asOf, savedAt: new Date().toISOString(), data: entry.data });
+    const body = JSON.stringify({ asOf: entry.asOf, ...(entry.asOfBasis ? { asOfBasis: entry.asOfBasis } : {}), savedAt: new Date().toISOString(), data: entry.data });
     if (body.length > MAX_ENTRY_BYTES) return false;
     let ok = setItem(key, body);
     // A full device: drop the least recently used entries one at a time until the write fits.
@@ -98,7 +93,6 @@ export function writeLastGood(sourceId, url, entry) {
 }
 
 /**
- * Removes the least recently used entry other than `keep`.
  * @param {string} keep
  * @returns {boolean} false when there was nothing to remove
  */
@@ -113,7 +107,6 @@ function evictOldest(keep) {
 }
 
 /**
- * Least-recently-used eviction to the 2 MB budget.
  * @param {number} [reserve] characters about to be written, counted against the budget
  * @returns {void}
  */

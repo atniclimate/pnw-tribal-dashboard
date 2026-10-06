@@ -38,6 +38,12 @@ const SCHEMA = Object.freeze({
   lowdata: { type: 'flag' },
   g: { type: 'string' },
   p: { type: 'enum', values: GOES_KEYS },
+  wpc: { type: 'enum', values: ['wpc-qpf-day-1', 'wpc-qpf-day-2', 'wpc-qpf-day-3', 'wpc-qpf-days-1-3', 'wpc-qpf-days-4-5', 'wpc-qpf-days-6-7', 'wpc-qpf-7-day-total', 'wpc-ero-day-1', 'wpc-ero-day-2', 'wpc-ero-day-3'] },
+  range: { type: 'enum', values: ['3', '7'] },
+  day: { type: 'string' },
+  period: { type: 'string' },
+  grange: { type: 'enum', values: ['24', '72', '168', 'all'] },
+  gmetric: { type: 'enum', values: ['primary', 'secondary'] },
 });
 
 /** View code, loaded the first time a view's panels need it. */
@@ -60,9 +66,9 @@ const PANELS = Object.freeze([
   { name: 'ar-cw3e', view: 'ar', sourceIds: ['cw3e-images'], module: 'imagery' },
   { name: 'ar-mtpw', view: 'ar', sourceIds: ['ssec-mtpw2'], module: 'imagery' },
   { name: 'satellite-goes', view: 'satellite', sourceIds: ['goes18-star-cdn'], module: 'imagery' },
-  { name: 'radar-map', view: 'radar', sourceIds: ['iem-nexrad-n0q', 'eccc-geomet-radar', 'carto-dark-matter'], module: 'imagery' },
+  { name: 'radar-map', view: 'radar', sourceIds: ['iem-nexrad-n0q', 'eccc-geomet-radar'], module: 'imagery' },
   { name: 'radar-ridge', view: 'radar', sourceIds: ['nws-ridge'], module: 'imagery' },
-  { name: 'rivers-gauges', view: 'rivers', sourceIds: ['nwps-gauges', 'eccc-hydrometric-realtime'], poll: true, module: 'rivers' },
+  { name: 'rivers-gauges', view: 'rivers', sourceIds: ['nwps-gauges', 'nwps-gauge-series', 'eccc-hydrometric-realtime', 'eccc-hydrometric-series'], poll: true, module: 'rivers' },
   { name: 'rivers-bc-rfc', view: 'rivers', sourceIds: ['bc-rfc-flood-advisories'], poll: true, module: 'rivers' },
 ]);
 
@@ -194,10 +200,26 @@ export async function main() {
   }
 
   /** @param {boolean} [refresh] */
+  let nationGeneration = 0;
+  let requestedNation = /** @type {string | null} */ (null);
   function reloadNation(refresh = true) {
     const id = readState(SCHEMA).n;
-    nationReady = typeof id === 'string' ? loadNationContext(id).then((c) => { nation = c; return c; }) : Promise.resolve(null).then(() => { nation = null; return null; });
+    const generation = ++nationGeneration;
+    requestedNation = typeof id === 'string' ? id : null;
+    nation = null;
+    nationReady = typeof id === 'string' ? loadNationContext(id).then((c) => { if (generation !== nationGeneration) return null; nation = c; return c; }) : Promise.resolve(null);
+    setNationChip(null);
+    if (refresh) for (const [name, entry] of panels) if (opened.has(entry.view)) {
+      entry.cleanup?.(); entry.cleanup = null;
+      const slot = document.querySelector(`[data-panel="${name}"]`);
+      slot?.setAttribute('aria-busy', 'true');
+      slot?.querySelector('[data-panel-body]')?.replaceChildren(h('p', { role: 'status' }, 'Loading this location.'));
+      const footer = slot?.querySelector('[data-provenance]');
+      if (footer instanceof HTMLElement) { footer.replaceChildren(h('span', {}, 'Loading sources for this location.')); footer.dataset.status = 'unavailable'; }
+      void entry.handle.refresh();
+    }
     void nationReady.then((c) => {
+      if (generation !== nationGeneration) return;
       setNationChip(c ? c.name : null);
       const select = document.getElementById('nation-select');
       if (select instanceof HTMLSelectElement) {
@@ -208,7 +230,6 @@ export async function main() {
         const v = link.getAttribute('data-view-link') ?? '';
         link.setAttribute('href', `./?view=${v}${c ? `&n=${encodeURIComponent(c.id)}` : ''}`);
       }
-      if (refresh) for (const e of panels.values()) if (opened.has(e.view)) void e.handle.refresh();
     });
   }
 
@@ -231,7 +252,8 @@ export async function main() {
     };
     select.addEventListener('focus', () => { void fill(); });
     select.addEventListener('pointerdown', () => { void fill(); });
-    select.addEventListener('change', () => { writeState({ n: select.value || undefined }, { push: true }); });
+    void fill();
+    select.addEventListener('change', () => { writeState({ n: select.value || undefined, g: undefined, day: undefined, period: undefined }, { push: true }); });
   }
 
   const tabs = document.querySelector('[data-tabs]');
@@ -239,14 +261,19 @@ export async function main() {
   const startView = typeof state0.view === 'string' ? state0.view : (typeof state0.g === 'string' ? 'rivers' : 'local');
   mountNationSelect();
   reloadNation(false);
-  if (tabs instanceof HTMLElement) {
-    const t = initTabs(tabs, { onChange: (id) => { writeState({ view: id }, { push: true }); openView(id); } });
-    if (state0.view === undefined && startView !== 'local') t.select(startView);
-  }
+  let restoringView = false;
+  const tabHandle = tabs instanceof HTMLElement ? initTabs(tabs, { onChange: (id) => { if (!restoringView) writeState({ view: id }, { push: true }); openView(id); } }) : null;
+  if (state0.view === undefined && startView !== 'local') { restoringView = true; tabHandle?.select(startView); restoringView = false; }
   openView(startView);
+  let activeView = startView;
   onStateChange(() => {
     const s = readState(SCHEMA);
-    if ((s.n ?? null) !== (nation?.id ?? null)) reloadNation();
+    if ((s.n ?? null) !== requestedNation) reloadNation();
+    const view = typeof s.view === 'string' ? s.view : typeof s.g === 'string' ? 'rivers' : 'local';
+    if (view !== activeView) {
+      activeView = view;
+      restoringView = true; tabHandle?.select(view); restoringView = false; openView(view);
+    }
   });
 }
 

@@ -1,15 +1,5 @@
 // @ts-check
-/**
- * Status pill: shape plus word, color on the shape only (blueprint 9.5 rule 4). Five shapes, each legible
- * without color: Live a filled circle, Cached a circle with an inner dot, Stale a half-filled circle,
- * Degraded an outlined triangle, Unavailable a hollow circle with a slash. The word is always printed in
- * body ink; components.css colors the shape from the status tokens. No HTML parsing: elements are built
- * with createElement and createElementNS. DOM module. Owner: lane L1.
- *
- * Pill contract (integration ruling, Wave 1): span.status-pill.status-pill--<state>[data-status] containing
- * svg.status-pill__shape (parts classed fill or line) and span.status-pill__label. core/provenance.js builds
- * the same markup from a copy of STATUS_SHAPES (core/ may not import ui/); change both together.
- */
+/** Five status shapes with word labels; color belongs to the shape. Markup and STATUS_SHAPES must match core/provenance.js, which cannot import ui/. See DESIGN.md for the class contract. */
 
 /** @typedef {import('../types.js').StatusState} StatusState */
 

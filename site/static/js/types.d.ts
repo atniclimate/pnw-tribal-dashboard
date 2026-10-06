@@ -769,13 +769,16 @@ export interface CreateMapOptions {
   view?: { lat: number; lon: number; zoom: number };
   layers: (MapLayerId | string)[];
   mode?: 'auto' | 'outline';
+  controls?: boolean;
   onSelect?: (sel: { kind: string; id: string }) => void;
 }
 
 export interface CthdMap {
   mode: MapMode;
-  setAlerts(a: DashboardAlert[]): void;
+  setAlerts(a: DashboardAlert[], status?: StatusSnapshot): void;
+  clearSelection?(): void;
   setGauges(g: GaugeStatus[]): void;
+  setGaugeScope?(ids: string[] | null): void;
   focusNation(id: string | null): void;
   setLayer(id: string, on: boolean): void;
   onModeChange(fn: (mode: MapMode, reason: string) => void): () => void;
@@ -785,8 +788,15 @@ export interface CthdMap {
   loadInteractive?(): Promise<boolean>;
   /** British Columbia hazard polygons (EMCR evacuations, River Forecast Centre) as a FeatureCollection. */
   setBcHazards?(collection: unknown): void;
-  /** Selects one alert and frames its area; null clears the selection. Not yet implemented by map/ (L8). */
-  focusAlert?(alertId: string | null): void;
+  /** Selects one alert and frames its known area; reports missing geometry explicitly. */
+  focusAlert?(alertId: string | null): Promise<boolean>;
+  focusGauge?(gaugeId: string): boolean;
+  resetView?(): void;
+  fitNation?(): void;
+  resize?(): void;
+  layerStates?(): { id: string; on: boolean; status: StatusSnapshot | null }[];
+  onLayerChange?(fn: (id: string, on: boolean) => void): () => void;
+  onLayerStatus?(fn: (id: string, status: StatusSnapshot) => void): () => void;
 }
 
 // ---------------------------------------------------------------------------------------------

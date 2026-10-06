@@ -102,12 +102,13 @@ test('L8: gauge features say "no current reading" without a status and never imp
   // TEST INPUT: a status shaped like GaugeStatus, to exercise each category.
   /** @param {any} category @param {string | null} [validTime] */
   const status = (category, validTime = '2026-10-05T10:00:00Z') => ({ id: g.id, observed: { stage: 1, unit: 'ft', flow: null, flowUnit: null, category, validTime }, forecast: null });
-  assert.equal(drawnCategory(status('major')), 'major');
-  assert.equal(drawnCategory(status('no_flooding')), 'none');
-  assert.equal(drawnCategory(status('not_defined')), 'not-defined');
-  assert.equal(drawnCategory(status('out_of_service')), 'no-reading');
+  const now = new Date('2026-10-05T12:00:00Z');
+  assert.equal(drawnCategory(status('major'), now), 'major');
+  assert.equal(drawnCategory(status('no_flooding'), now), 'none');
+  assert.equal(drawnCategory(status('not_defined'), now), 'not-defined');
+  assert.equal(drawnCategory(status('out_of_service'), now), 'no-reading');
   assert.equal(drawnCategory(undefined), 'no-reading');
-  const joined = buildGaugeFeatures(gauges, wsc, [/** @type {any} */ (status('minor'))]);
+  const joined = buildGaugeFeatures(gauges, wsc, [/** @type {any} */ (status('minor'))], now);
   const item = joined.items.find((i) => i.id === g.id);
   assert.match(String(item?.name), /minor flooding, observed \d\d\/\d\d\/2026 \d{1,2}:\d\d [AP]M [A-Z]{3,4}$/);
   const agency = new Set(joined.collection.features.map((f) => /** @type {any} */ (f.properties).agency));

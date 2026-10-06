@@ -21,6 +21,17 @@ export const WSC_FILE = 'data/ref/wsc-stations.json';
 export const SQUARE_IMAGE = 'cthd-square';
 /** Reference files are cached in memory for an hour, so a prefetch and the layer's own read are one request. */
 const DATA_TTL_MS = 3_600_000;
+/** Same six-hour observation policy as the gauge panel; map cannot import hydro modules. */
+const OBSERVATION_MAX_AGE_MS = 6 * 60 * 60 * 1000;
+
+/** @param {GaugeStatus | undefined} status @param {Date} now */
+function observationCurrent(status, now) {
+  const observed = status?.observed;
+  if (!observed || observed.category === 'out_of_service' || !observed.validTime) return false;
+  const timestamp = Date.parse(observed.validTime);
+  return Number.isFinite(timestamp) && timestamp >= Date.UTC(1990, 0, 1)
+    && now.getTime() - timestamp <= OBSERVATION_MAX_AGE_MS;
+}
 
 /** Display words for each drawn category. */
 export const CATEGORY_TEXT = Object.freeze({
@@ -35,9 +46,11 @@ export const CATEGORY_TEXT = Object.freeze({
 
 /**
  * @param {GaugeStatus | undefined} status
+ * @param {Date} [now]
  * @returns {keyof typeof CATEGORY_TEXT}
  */
-export function drawnCategory(status) {
+export function drawnCategory(status, now = new Date()) {
+  if (!observationCurrent(status, now)) return 'no-reading';
   const c = status?.observed?.category;
   switch (c) {
     case 'major': case 'moderate': case 'minor': case 'action': return c;
@@ -52,9 +65,10 @@ export function drawnCategory(status) {
  * @param {any} gaugesRef data/ref/gauges.json
  * @param {any} wscRef data/ref/wsc-stations.json
  * @param {GaugeStatus[]} statuses
+ * @param {Date} [now]
  * @returns {{ collection: import('../../types.js').FeatureCollection, items: FeatureItem[] }}
  */
-export function buildGaugeFeatures(gaugesRef, wscRef, statuses) {
+export function buildGaugeFeatures(gaugesRef, wscRef, statuses, now = new Date()) {
   /** @type {Map<string, GaugeStatus>} */
   const byId = new Map(statuses.map((s) => [s.id, s]));
   /** @type {any[]} */
@@ -65,11 +79,14 @@ export function buildGaugeFeatures(gaugesRef, wscRef, statuses) {
   const add = (g, agency) => {
     if (typeof g?.lat !== 'number' || typeof g?.lon !== 'number') return;
     const st = byId.get(g.id);
-    const cat = drawnCategory(st);
+    const cat = drawnCategory(st, now);
     const tz = typeof g.timeZone === 'string' ? g.timeZone : undefined;
     const observed = st?.observed?.validTime;
-    const stamp = observed && cat !== 'no-reading' ? `, observed ${formatAsOf(observed, tz)}` : '';
-    const name = `${g.name}, ${CATEGORY_TEXT[cat]}${stamp}`;
+    const stamp = observed ? `, observed ${formatAsOf(observed, tz)}` : '';
+    const condition = st?.observed && cat === 'no-reading'
+      ? st.observed.category === 'out_of_service' ? 'out of service' : 'observation not current'
+      : CATEGORY_TEXT[cat];
+    const name = `${g.name}, ${condition}${stamp}`;
     features.push({ type: 'Feature', geometry: { type: 'Point', coordinates: [g.lon, g.lat] }, properties: { gaugeId: g.id, agency, flood: cat, name } });
     items.push({ kind: 'gauge', id: g.id, name, lngLat: [g.lon, g.lat] });
   };
@@ -127,6 +144,8 @@ export function createGaugesLayer(opts) {
   let items = [];
   /** @type {string | null} */
   let selected = null;
+  /** @type {Set<string> | null} */
+  let scope = null;
   const sourceIds = ['nwps-gauges', 'eccc-hydrometric-realtime'];
 
   /** @param {string | null} id @param {boolean} on */
@@ -138,7 +157,7 @@ export function createGaugesLayer(opts) {
   function apply() {
     const map = ctx?.map;
     if (!map || (!gaugesRef && !wscRef)) return;
-    const built = buildGaugeFeatures(gaugesRef, wscRef, statuses);
+    const built = buildGaugeFeatures(scope ? { gauges: gaugesRef?.gauges?.filter((/** @type {{id:string}} */ g) => scope?.has(g.id)) } : gaugesRef, scope ? { stations: wscRef?.stations?.filter((/** @type {{id:string}} */ g) => scope?.has(g.id)) } : wscRef, statuses);
     items = built.items;
     /** @type {import('maplibre-gl').GeoJSONSource | undefined} */ (map.getSource(sourceKey))?.setData(/** @type {any} */ (built.collection));
     if (selected) mark(selected, true);
@@ -153,13 +172,14 @@ export function createGaugesLayer(opts) {
     },
     async add(c) {
       ctx = /** @type {MapContext} */ (c);
+      const activeContext = ctx;
       const map = ctx.map;
       if (!map) return;
       const [g, w] = await Promise.all([
         ctx.fetchLocal(GAUGES_FILE, { signal: ctx.signal, priority: 2, ttlMs: DATA_TTL_MS }),
         ctx.fetchLocal(WSC_FILE, { signal: ctx.signal, priority: 2, ttlMs: DATA_TTL_MS }),
       ]);
-      if (ctx.map !== map) return;
+      if (ctx !== activeContext || ctx.map !== map) return;
       gaugesRef = g.ok ? g.data : null;
       wscRef = w.ok ? w.data : null;
       if (!gaugesRef && !wscRef) {
@@ -190,7 +210,8 @@ export function createGaugesLayer(opts) {
         paint: { 'icon-color': color, 'icon-halo-color': ['case', isSel, ink, keyline], 'icon-halo-width': ['case', isSel, 3, 1.5] },
       });
       apply();
-      ctx.status(layerStatus('live', 'Gauge locations drawn from the reference file; colors follow the latest status.', sourceIds));
+      const dates = [gaugesRef?.generatedAt, wscRef?.generatedAt].filter((d) => typeof d === 'string' && Number.isFinite(Date.parse(d))).sort();
+      ctx.status(layerStatus('cached', 'Gauge locations from compiled reference files. Colored markers require a current observation; hollow markers are unknown or not current. Each gauge carries its observation time.', sourceIds, dates[0] ?? null, 'retrieved'));
     },
     setData(data) {
       const d = /** @type {{ gauges?: GaugeStatus[] }} */ (data ?? {});
@@ -199,6 +220,7 @@ export function createGaugesLayer(opts) {
       apply();
     },
     setVisible(on) { setLayersVisible(ctx?.map ?? null, ids, on); },
+    setScope(ids) { scope = ids ? new Set(ids) : null; apply(); },
     highlight(id) {
       mark(selected, false);
       selected = id;

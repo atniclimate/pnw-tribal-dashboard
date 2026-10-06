@@ -45,10 +45,9 @@ test('embed mode: no serious or critical axe violations', async ({ page }) => {
 test('the Nation picker open: no serious or critical axe violations', async ({ page }) => {
   await attachGuards(page, { pageId: 'dashboard' });
   await page.goto('./');
-  const trigger = page.locator('[data-action="open-nation-picker"]').first();
+  const trigger = page.locator('[data-dashboard-picker]');
   await trigger.click();
-  const dialog = page.locator('[role="dialog"], [role="combobox"], [data-nation-picker]').first();
-  const opened = await dialog.waitFor({ timeout: 3000 }).then(() => true, () => false);
-  test.skip(!opened, 'the picker is not mounted yet (lane L10 pending)');
+  const dialog = page.getByRole('dialog', { name: 'Choose a Nation' });
+  await expect(dialog).toBeVisible();
   expect(await axeProblems(page)).toEqual([]);
 });

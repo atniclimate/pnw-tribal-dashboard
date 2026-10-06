@@ -1,12 +1,5 @@
 // @ts-check
-/**
- * Contact card with tel: link, verified date, source, and Verification Due tag (blueprint 7.4). DOM module.
- *
- * Every field reaches the DOM through h(), so upstream text is escaped by construction. A card always shows
- * where its line came from and when it was verified; a past-due or flagged line still renders, tagged
- * "Verification Due", because a likely-correct number with an honest tag beats none. A line listed by a
- * federal directory (the BIA Tribal Leaders Directory or an Indigenous Services Canada profile) says so.
- */
+/** Escaped contact cards with source, verified date, and Verification Due tags. Federal-directory fallbacks remain explicitly labeled; overdue lines remain visible with their status. */
 import { h, telHref } from '../core/dom.js';
 import { CONTACT_EMAIL } from '../config/pages.js';
 import { LINE_TYPE_LABELS, formatDay, isVerificationDue } from '../data/contacts.js';
