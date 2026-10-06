@@ -20,6 +20,7 @@ export default defineConfig({
   testDir: 'tests/e2e',
   testMatch: /\.spec\.mjs$/,
   fullyParallel: true,
+  ...(process.env.CI ? { workers: 2 } : {}),
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [['list'], ['html', { open: 'never' }]] : [['list']],

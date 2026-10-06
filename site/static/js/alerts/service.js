@@ -181,6 +181,18 @@ function snapshotStatus(env, sourceId, o) {
 }
 
 /**
+ * A saved response keeps its original age and completeness, but cannot claim a live check.
+ * @param {StatusSnapshot} status
+ * @param {NetResult} response
+ * @returns {StatusSnapshot}
+ */
+function savedStatus(status, response) {
+  if (!response.ok || !response.fromCache || status.state === 'unavailable') return status;
+  return { ...status, origin: 'device', state: status.state === 'live' ? 'cached' : status.state,
+    detail: `Saved on this device; current conditions could not be confirmed. ${status.detail ?? ''}`.trim() };
+}
+
+/**
  * The partial-data sentence for a source.
  * @param {number} itemsFailed
  * @param {boolean} truncated
@@ -360,9 +372,9 @@ export async function loadAllAlerts(opts) {
 
   /** @type {Map<string, StatusSnapshot>} */
   const statuses = new Map();
-  statuses.set(NWS_SOURCE_ID, snapshotStatus(env, NWS_SOURCE_ID, { now, pending: nwsDirect, deps }));
-  statuses.set(ECCC_SOURCE_ID, snapshotStatus(env, ECCC_SOURCE_ID, { now, pending: ecccDirect, deps }));
-  statuses.set(NTWC_ID, snapshotStatus(tsunamiEnv, NTWC_ID, { now, pending: false, deps }));
+  statuses.set(NWS_SOURCE_ID, savedStatus(snapshotStatus(env, NWS_SOURCE_ID, { now, pending: nwsDirect, deps }), indexRes));
+  statuses.set(ECCC_SOURCE_ID, savedStatus(snapshotStatus(env, ECCC_SOURCE_ID, { now, pending: ecccDirect, deps }), indexRes));
+  statuses.set(NTWC_ID, savedStatus(snapshotStatus(tsunamiEnv, NTWC_ID, { now, pending: false, deps }), tsunamiRes));
 
   const diagnostics = emptyDiagnostics();
   if (env) addDiagnostics(diagnostics, Object.fromEntries(Object.entries(env.diagnostics ?? {}).filter(([k]) => !k.includes(':'))));
@@ -445,12 +457,12 @@ export async function loadAllAlerts(opts) {
   function applyDirect(sourceId, r) {
     const snap = snapBySource.get(sourceId) ?? [];
     if (!r.ok) {
-      statuses.set(sourceId, deps.deriveStatus({
+      statuses.set(sourceId, savedStatus(deps.deriveStatus({
         sourceIds: [sourceId], policy: APP.freshness.alerts, now,
         snapshot: snapshotInputs(env, sourceId),
         direct: { ok: false, error: /** @type {import('../types.js').NetError} */ (r.error) },
         unavailableReason: 'These alerts could not be loaded right now.',
-      }));
+      }), indexRes));
       return;
     }
     addDiagnostics(diagnostics, r.diagnostics);

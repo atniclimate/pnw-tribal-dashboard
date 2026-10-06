@@ -119,7 +119,7 @@ describe('assemble', () => {
     assert.equal(await readFile(path.join(out, 'v', v1, ...deep.split('/')), 'utf8'), 'export const deep = 1;\n', 'long tar paths survive');
     assert.equal(await readFile(path.join(out, 'data', 'live', 'manifest.json'), 'utf8'), '{"generated":"locally"}\n');
     const info = JSON.parse(await readFile(path.join(out, 'build-info.json'), 'utf8'));
-    assert.deepEqual(info, { sha: sha2, sha12: v2, builtAt: now.toISOString(), swDisabled: false });
+    assert.deepEqual(info, { sha: sha2, sha12: v2, builtAt: now.toISOString(), swDisabled: false, previousSha: sha1 });
     const validate = (await loadAjv()).getSchema(`${SCHEMA_BASE}build-info.schema.json`);
     assert.ok(validate?.(info), JSON.stringify(validate?.errors));
   });
@@ -147,10 +147,42 @@ describe('assemble', () => {
     await assert.rejects(assemble({ out: path.join(repo, 'site', 'out'), sha: sha2, previous: null, repo }));
   });
 
+  test('snapshot-only deploys retain the last distinct code generation', async () => {
+    const previous = path.join(tmp, 'prev-refresh.json');
+    await writeFile(previous, JSON.stringify({ sha: sha2, sha12: sha2.slice(0, 12), previousSha: sha1 }));
+    const out = path.join(tmp, 'out-refresh');
+    const result = await assemble({ out, sha: sha2, previous, repo, log: () => {} });
+    assert.equal(result.retained, sha1.slice(0, 12));
+    const info = JSON.parse(await readFile(path.join(out, 'build-info.json'), 'utf8'));
+    assert.equal(info.previousSha, sha1);
+  });
+
   test('readTar lists regular files from git archive output', () => {
     const tar = execFileSync('git', ['archive', '--format=tar', sha1, 'site/static'], { cwd: repo });
     const names = readTar(tar).map((f) => f.name);
     assert.ok(names.includes('site/static/js/core/net.js'));
     assert.ok(names.includes(`site/static/${deep}`));
+  });
+
+  test('pins the worker and manifest to the deployed asset generation without precaching maps', async () => {
+    const site = path.join(tmp, 'offline-input');
+    await mkdir(path.join(site, 'static', 'vendor'), { recursive: true });
+    await mkdir(path.join(site, 'static', 'js', 'map'), { recursive: true });
+    await mkdir(path.join(site, 'static', 'img'), { recursive: true });
+    await writeFile(path.join(site, 'index.html'), '<script src="./static/core.js"></script><script src="./static/js/map/loader.js"></script>');
+    await writeFile(path.join(site, 'offline.html'), '<title>Offline</title>');
+    await writeFile(path.join(site, 'static', 'core.js'), '/* core */');
+    await writeFile(path.join(site, 'static', 'js', 'map', 'loader.js'), '/* map */');
+    await writeFile(path.join(site, 'static', 'img', 'favicon.svg'), '<svg/>');
+    await writeFile(path.join(site, 'manifest.webmanifest'), JSON.stringify({ icons: [{ src: './static/img/favicon.svg' }] }));
+    await writeFile(path.join(site, 'sw.js'), "const BUILD = 'development'; // CTHD_BUILD\nconst PRECACHE = /** @type {string[]} */ ([]); // CTHD_PRECACHE\n");
+    const out = path.join(tmp, 'offline-out');
+    await assemble({ out, site, sha: sha2, previous: null, repo, log: () => {} });
+    const worker = await readFile(path.join(out, 'sw.js'), 'utf8');
+    assert.match(worker, new RegExp(`const BUILD = '${sha2.slice(0, 12)}'`));
+    assert.match(worker, /core\.js/);
+    assert.doesNotMatch(worker, /map\/loader|vendor/);
+    const manifest = JSON.parse(await readFile(path.join(out, 'manifest.webmanifest'), 'utf8'));
+    assert.equal(manifest.icons[0].src, `./v/${sha2.slice(0, 12)}/img/favicon.svg`);
   });
 });

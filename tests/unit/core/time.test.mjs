@@ -8,9 +8,57 @@ process.env.TZ = 'America/New_York';
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
-import { formatAsOf, formatDate, formatTime, parseIsoDuration, relativeAge, splitByZonedDay, zoneAbbreviation, zonedDayKey } from '../../../site/static/js/core/time.js';
+import { checkTimeZoneData, formatAsOf, formatDate, formatTime, parseIsoDuration, relativeAge, splitByZonedDay, timeZoneOffsetMinutes, zoneAbbreviation, zonedDayKey } from '../../../site/static/js/core/time.js';
 
 const HOUR = 3_600_000;
+
+describe('time zone data self-check', () => {
+  test('accepts confirmed winter offsets without depending on browser abbreviations', () => {
+    /** @type {string[]} */
+    const probed = [];
+    const issues = checkTimeZoneData((date, zone) => {
+      assert.equal(date.toISOString(), '2026-11-02T12:00:00.000Z');
+      probed.push(zone);
+      return zone === 'America/Vancouver' ? -420 : -360;
+    });
+    assert.deepEqual(issues, []);
+    assert.deepEqual(probed, ['America/Vancouver', 'America/Edmonton']);
+  });
+
+  test('reports old seasonal rules and preserves the offsets the browser returned', () => {
+    const issues = checkTimeZoneData((_date, zone) => zone === 'America/Vancouver' ? -480 : -420);
+    assert.deepEqual(issues.map(({ timeZone, expectedMinutes, actualMinutes }) => ({ timeZone, expectedMinutes, actualMinutes })), [
+      { timeZone: 'America/Vancouver', expectedMinutes: -420, actualMinutes: -480 },
+      { timeZone: 'America/Edmonton', expectedMinutes: -360, actualMinutes: -420 },
+    ]);
+  });
+
+  test('reports only the stale region when a device has the British Columbia update alone', () => {
+    const issues = checkTimeZoneData(() => -420);
+    assert.equal(issues.length, 1);
+    assert.equal(issues[0]?.region, 'Alberta');
+  });
+
+  test('missing, throwing, and non-finite offset readers remain unavailable rather than passing', () => {
+    for (const reader of [() => null, () => { throw new RangeError('unsupported zone'); }, () => NaN]) {
+      const issues = checkTimeZoneData(reader);
+      assert.equal(issues.length, 2);
+      assert.ok(issues.every((issue) => issue.actualMinutes === null));
+    }
+  });
+
+  test('reads actual device offsets and leaves existing formatting unchanged after a failed check', () => {
+    const before = formatAsOf('2026-12-01T12:00:00Z', 'America/Vancouver');
+    checkTimeZoneData(() => -999);
+    assert.equal(formatAsOf('2026-12-01T12:00:00Z', 'America/Vancouver'), before);
+    assert.equal(timeZoneOffsetMinutes(new Date('2026-12-01T12:00:00Z'), 'UTC'), 0);
+    assert.equal(timeZoneOffsetMinutes(new Date('2026-12-01T12:00:00Z'), 'America/Los_Angeles'), -480);
+    assert.equal(timeZoneOffsetMinutes(new Date('2026-07-01T12:00:00Z'), 'America/Los_Angeles'), -420);
+    assert.equal(timeZoneOffsetMinutes(new Date('2026-12-01T12:00:00Z'), 'Asia/Kathmandu'), 345);
+    assert.equal(timeZoneOffsetMinutes(new Date(), 'Not/A_Zone'), null);
+    assert.equal(timeZoneOffsetMinutes(new Date(NaN), 'UTC'), null);
+  });
+});
 
 describe('formatAsOf', () => {
   test('returns "10/04/2026 3:15 PM PDT" for 22:15 UTC in Los Angeles', () => {
@@ -66,7 +114,7 @@ describe('zoneAbbreviation', () => {
 
 describe('zonedDayKey across both DST transitions in seven zones', () => {
   // Fall back 11/01/2026 (25-hour day where observed); spring forward 03/14/2027 (23-hour day where observed).
-  // British Columbia (03/09/2026) and Alberta (2026) moved to permanent time, and tzdata releases record those
+  // Pacific-time British Columbia (03/08/2026) and Alberta (2026) moved to permanent time; tzdata records those
   // changes at different versions, so whether a zone transitions depends on the runtime's zone database. The
   // module reads that database and hard-codes nothing, so the expected day length is derived from the same
   // database: 24 hours minus the change in UTC offset across the day.

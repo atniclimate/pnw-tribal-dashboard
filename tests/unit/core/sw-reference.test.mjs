@@ -43,7 +43,8 @@ function browser(o = {}) {
   win.top = o.framed ? {} : win;
   setGlobal('top', win.top);
   setGlobal('self', win.self);
-  setGlobal('location', { protocol: o.protocol ?? 'https:' });
+  const protocol = o.protocol ?? 'https:';
+  setGlobal('location', { protocol, origin: `${protocol}//example.test`, href: `${protocol}//example.test/pnw-tribal-dashboard/` });
   setGlobal('navigator', { serviceWorker: o.sw });
 }
 
@@ -52,8 +53,11 @@ function fakeSw() {
   /** @type {{ registered: string[], unregistered: number, sw: any }} */
   const state = { registered: [], unregistered: 0, sw: null };
   state.sw = {
-    register: async (/** @type {string} */ url) => { state.registered.push(url); return {}; },
-    getRegistrations: async () => [{ unregister: async () => { state.unregistered += 1; return true; } }, { unregister: async () => { state.unregistered += 1; return true; } }],
+    register: async (/** @type {string} */ url) => { state.registered.push(url); return { addEventListener: () => {}, waiting: null, installing: null }; },
+    getRegistrations: async () => [
+      { scope: 'https://example.test/pnw-tribal-dashboard/', unregister: async () => { state.unregistered += 1; return true; } },
+      { scope: 'https://example.test/another-site/', unregister: async () => { throw new Error('must preserve another application'); } },
+    ],
   };
   return state;
 }
@@ -63,7 +67,7 @@ describe('registerServiceWorker', () => {
     const f = fakeSw();
     browser({ sw: f.sw });
     assert.equal(await registerServiceWorker({ scriptUrl: '/pnw-tribal-dashboard/sw.js' }), true);
-    assert.deepEqual(f.registered, ['/pnw-tribal-dashboard/sw.js']);
+    assert.deepEqual(f.registered, ['https://example.test/pnw-tribal-dashboard/sw.js']);
     assert.equal(urls[0], 'http://localhost/pnw-tribal-dashboard/build-info.json');
   });
 
@@ -73,6 +77,22 @@ describe('registerServiceWorker', () => {
     assert.equal(await registerServiceWorker({ scriptUrl: '/sw.js' }), false);
     assert.equal(f.registered.length, 0);
     assert.equal(urls.length, 0, 'does not even read build-info');
+  });
+
+  test('refuses worker scripts from another origin or application', async () => {
+    const f = fakeSw();
+    browser({ sw: f.sw });
+    assert.equal(await registerServiceWorker({ scriptUrl: 'https://other.test/pnw-tribal-dashboard/sw.js' }), false);
+    assert.equal(await registerServiceWorker({ scriptUrl: '/other-app/sw.js' }), false);
+    assert.equal(f.registered.length, 0);
+  });
+
+  test('Save-Data registers the worker without install-time downloads', async () => {
+    const f = fakeSw();
+    browser({ sw: f.sw });
+    setGlobal('navigator', { serviceWorker: f.sw, connection: { saveData: true } });
+    assert.equal(await registerServiceWorker({ scriptUrl: '/pnw-tribal-dashboard/sw.js' }), true);
+    assert.deepEqual(f.registered, ['https://example.test/pnw-tribal-dashboard/sw.js?precache=0']);
   });
 
   test('never registers on http, or without service worker support', async () => {
@@ -89,7 +109,7 @@ describe('registerServiceWorker', () => {
     browser({ sw: f.sw });
     respond = () => new Response(JSON.stringify({ sha: 'x', swDisabled: true }), { status: 200 });
     assert.equal(await registerServiceWorker({ scriptUrl: '/sw.js' }), false);
-    assert.equal(f.unregistered, 2);
+    assert.equal(f.unregistered, 1);
     assert.equal(f.registered.length, 0);
   });
 
@@ -97,7 +117,7 @@ describe('registerServiceWorker', () => {
     const f = fakeSw();
     browser({ sw: f.sw });
     respond = () => new Response('{}', { status: 404 });
-    assert.equal(await registerServiceWorker({ scriptUrl: '/sw.js' }), true);
+    assert.equal(await registerServiceWorker({ scriptUrl: '/pnw-tribal-dashboard/sw.js' }), true);
     assert.equal(f.registered.length, 1);
   });
 
@@ -105,7 +125,7 @@ describe('registerServiceWorker', () => {
     const f = fakeSw();
     f.sw.register = async () => { throw new Error('SecurityError'); };
     browser({ sw: f.sw });
-    assert.equal(await registerServiceWorker({ scriptUrl: '/sw.js' }), false);
+    assert.equal(await registerServiceWorker({ scriptUrl: '/pnw-tribal-dashboard/sw.js' }), false);
   });
 
   test('a cross-origin top that throws on access is treated as framed', async () => {

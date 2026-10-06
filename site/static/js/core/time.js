@@ -7,6 +7,24 @@
 const HOUR_MS = 3_600_000;
 const UNAVAILABLE = 'Time unavailable';
 
+/**
+ * Rules checked against provincial sources on 10/05/2026. Probe offsets, not abbreviations or a
+ * claimed tzdb version: browser ICU releases may backport rules and use different zone labels.
+ * Local mountain-time arrangements in British Columbia are not covered by the Vancouver check.
+ * https://news.gov.bc.ca/releases/2026CITZ0009-001073
+ * https://www.alberta.ca/albertas-new-time-system-abt
+ */
+const TIME_ZONE_CHECKS = Object.freeze([
+  { timeZone: 'America/Vancouver', region: 'Pacific-time British Columbia', expectedMinutes: -420 },
+  { timeZone: 'America/Edmonton', region: 'Alberta', expectedMinutes: -360 },
+]);
+const TIME_ZONE_PROBE = '2026-11-02T12:00:00Z';
+
+/**
+ * @typedef {{ timeZone: string, region: string, expectedMinutes: number,
+ *   actualMinutes: number | null }} TimeZoneDataIssue
+ */
+
 /** @type {Map<string, Intl.DateTimeFormat>} */
 const formatters = new Map();
 
@@ -20,6 +38,44 @@ function cached(key, make) {
   let f = formatters.get(key);
   if (!f) { f = make(); formatters.set(key, f); }
   return f;
+}
+
+/**
+ * Numeric UTC offset read from the device's own time zone database. No inferred abbreviation mapping.
+ * A missing zone or unsupported offset format returns null rather than a guessed offset.
+ * @param {Date} date
+ * @param {string} timeZone
+ * @returns {number | null}
+ */
+export function timeZoneOffsetMinutes(date, timeZone) {
+  try {
+    const name = cached(`offset|${timeZone}`, () => new Intl.DateTimeFormat('en-US', {
+      timeZone, timeZoneName: 'longOffset',
+    })).formatToParts(date).find((part) => part.type === 'timeZoneName')?.value;
+    if (name === 'GMT' || name === 'UTC') return 0;
+    const match = /^(?:GMT|UTC)([+-])(\d{2}):(\d{2})$/.exec(name ?? '');
+    if (!match) return null;
+    return (match[1] === '-' ? -1 : 1) * (Number(match[2]) * 60 + Number(match[3]));
+  } catch { return null; }
+}
+
+/**
+ * Startup self-check for the confirmed 2026 Pacific-time British Columbia and Alberta rule changes.
+ * Returns only mismatches. Formatting and day bucketing continue to use the browser's actual rules;
+ * the UI warns when those rules cannot be trusted rather than silently applying an invented offset.
+ * @param {(date: Date, timeZone: string) => number | null} [readOffset]
+ * @returns {TimeZoneDataIssue[]}
+ */
+export function checkTimeZoneData(readOffset = timeZoneOffsetMinutes) {
+  /** @type {TimeZoneDataIssue[]} */
+  const issues = [];
+  for (const rule of TIME_ZONE_CHECKS) {
+    let actualMinutes = null;
+    try { actualMinutes = readOffset(new Date(TIME_ZONE_PROBE), rule.timeZone); } catch { /* unavailable */ }
+    if (actualMinutes !== null && !Number.isFinite(actualMinutes)) actualMinutes = null;
+    if (actualMinutes !== rule.expectedMinutes) issues.push({ ...rule, actualMinutes });
+  }
+  return issues;
 }
 
 /**

@@ -16,15 +16,18 @@
  * 5. Write _site/build-info.json (schemas/build-info.schema.json). `--sw-disabled` sets the service worker
  *    kill switch (`swDisabled: true`).
  *
- * Owner: lane L9. The service worker precache list arrives with the service worker (Wave 3).
+ * Owner: lane L9. The worker and manifest reference the same versioned asset generation.
  */
 import { execFileSync } from 'node:child_process';
 import { cp, mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
+import { gzipSync } from 'node:zlib';
 import { getOwn } from './lib/http.mjs';
 import { extractTar } from './lib/tar.mjs';
+import { publishSafety } from './lib/publish-safety.mjs';
+import { staticImports } from './check/modulepreload.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -35,6 +38,58 @@ export const ALLOWLIST = Object.freeze(['index.html', '404.html', 'offline.html'
 /** Markup the rewrite must step over (comments, raw-text elements) or rewrite (any start tag). */
 const TOKENS = /<!--[\s\S]*?-->|<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>|<[a-zA-Z][^>]*>/gi;
 const ATTR = /(\s(?:href|src)\s*=\s*)(["'])((?:\.\/)?(?:\.\.\/)*)static\//gi;
+
+/**
+ * Build the small offline graph from published page heads, without maps or geometry.
+ * @param {string} out
+ * @param {string} sha12
+ * @returns {Promise<string[]>}
+ */
+export async function offlineFiles(out, sha12) {
+  const files = new Set(['', 'contacts/', 'safety/', 'offline.html']);
+  for (const relative of [...files]) {
+    const file = path.join(out, relative.endsWith('.html') ? relative : `${relative}index.html`);
+    if (!(await exists(file))) { files.delete(relative); continue; }
+    const html = await readFile(file, 'utf8');
+    for (const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)) {
+      const href = match[1] ?? '';
+      if (!href.includes(`v/${sha12}/`)) continue;
+      const rel = path.posix.normalize(path.posix.join(path.posix.dirname(relative.endsWith('.html') ? relative : `${relative}index.html`), href));
+      if (rel.startsWith(`v/${sha12}/`) && !/\/(?:map|vendor)\//.test(rel) && /\.(?:js|css|woff2|svg)$/.test(rel)) files.add(rel);
+    }
+  }
+  for (const rel of [
+    `v/${sha12}/js/core/sw-register.js`, `v/${sha12}/fonts/roboto-500-latin.woff2`,
+    'data/curated/contacts.json', 'data/curated/agencies.json', 'data/curated/sources.json', 'data/curated/resources.json',
+    'data/registry/nations-index.json', 'data/registry/id-redirects.json', 'data/live/alerts.json', 'data/live/tsunami.json',
+    'data/geo/footprint-ugc.json', 'data/ref/nws-event-categories.json', 'data/ref/eccc-event-categories.json',
+  ]) if (await exists(path.join(out, rel))) files.add(rel);
+  // Follow the actual dependency graph, including CSS font subsets needed by Nation names.
+  // Page preloads are an optimization; a missing preload must not break saved pages.
+  for (const rel of files) {
+    if (!/\.(?:js|css)$/.test(rel)) continue;
+    const source = await readFile(path.join(out, rel), 'utf8');
+    const code = source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:'"`])\/\/.*$/gm, '$1');
+    const dependencies = rel.endsWith('.js') ? [...staticImports(source),
+      ...[...code.matchAll(/\bimport\(\s*["']([^"']+)["']\s*\)/g)].map((match) => match[1] ?? '')]
+      : [...source.matchAll(/url\(\s*["']?([^)'"\s]+)["']?\s*\)/g)].map((match) => match[1] ?? '');
+    for (const dependency of dependencies) {
+      if (!dependency.startsWith('.')) continue;
+      const target = path.posix.normalize(path.posix.join(path.posix.dirname(rel), dependency));
+      if (!target.startsWith(`v/${sha12}/`) || /\/(?:map|vendor)\//.test(target)) continue;
+      if (!await exists(path.join(out, target))) throw new Error(`Offline dependency is missing: ${target}`);
+      files.add(target);
+    }
+  }
+  let bytes = 0;
+  for (const rel of files) {
+    const file = path.join(out, rel === '' || rel.endsWith('/') ? `${rel}index.html` : rel);
+    const body = await readFile(file);
+    bytes += rel.endsWith('.woff2') ? body.length : gzipSync(body).length;
+  }
+  if (bytes > 450 * 1024) throw new Error(`Offline preparation exceeds 450 KB (${bytes} bytes compressed)`);
+  return [...files];
+}
 
 /**
  * Rewrite static asset references in one HTML document.
@@ -72,7 +127,7 @@ async function* walk(dir) {
  * Read the previous deploy's build info (absent or unusable gives null).
  * @param {string | null} location
  * @param {((input: string, init?: RequestInit) => Promise<Response>) | undefined} fetchImpl
- * @returns {Promise<{ sha: string, sha12: string } | null>}
+ * @returns {Promise<{ sha: string, sha12: string, previousSha: string | null } | null>}
  */
 async function readPrevious(location, fetchImpl) {
   if (!location) return null;
@@ -80,7 +135,9 @@ async function readPrevious(location, fetchImpl) {
   if (!text) return null;
   try {
     const info = JSON.parse(text);
-    if (/^[0-9a-f]{40}$/.test(info.sha) && info.sha12 === info.sha.slice(0, 12)) return { sha: info.sha, sha12: info.sha12 };
+    if (/^[0-9a-f]{40}$/.test(info.sha) && info.sha12 === info.sha.slice(0, 12)) {
+      return { sha: info.sha, sha12: info.sha12, previousSha: /^[0-9a-f]{40}$/.test(info.previousSha) ? info.previousSha : null };
+    }
   } catch { /* unusable */ }
   return null;
 }
@@ -99,7 +156,12 @@ export async function assemble(opts) {
   const site = path.resolve(opts.site ?? path.join(repo, 'site'));
   const out = path.resolve(opts.out);
   if (!/^[0-9a-f]{40}$/.test(opts.sha)) throw new Error(`--sha must be a full 40-character commit sha (got "${opts.sha}")`);
-  if (out === repo || out === site || site.startsWith(out + path.sep) || out.startsWith(site + path.sep)) {
+  const fold = (/** @type {string} */ value) => process.platform === 'win32' ? value.toLowerCase() : value;
+  const output = fold(out);
+  const source = fold(site);
+  const repository = fold(repo);
+  if (output === path.parse(output).root || output === repository || output === source
+      || repository.startsWith(output + path.sep) || source.startsWith(output + path.sep) || output.startsWith(source + path.sep)) {
     throw new Error(`refusing to assemble into ${out}`);
   }
   const sha12 = opts.sha.slice(0, 12);
@@ -118,26 +180,46 @@ export async function assemble(opts) {
     files++;
     if (!file.endsWith('.html') || file.startsWith(path.join(out, 'v') + path.sep)) continue;
     const html = await readFile(file, 'utf8');
-    const next = rewriteHtml(html, sha12);
+    const published = path.relative(out, file).split(path.sep).join('/') === 'safety/index.html' ? publishSafety(html) : html;
+    const next = rewriteHtml(published, sha12);
     if (next !== html) await writeFile(file, next);
   }
 
   /** @type {string | null} */
   let retained = null;
   const prev = await readPrevious(opts.previous, opts.fetchImpl);
-  if (prev && prev.sha12 !== sha12) {
+  // Snapshot-only deployments must keep the last distinct code generation, too.
+  const previousSha = prev?.sha === opts.sha ? prev.previousSha : prev?.sha ?? null;
+  if (previousSha && previousSha !== opts.sha) {
+    const previousSha12 = previousSha.slice(0, 12);
     try {
-      const tar = execFileSync('git', ['archive', '--format=tar', prev.sha, 'site/static'], { cwd: repo, maxBuffer: 512 * 1024 * 1024 });
-      const n = await extractTar(tar, 'site/static/', path.join(out, 'v', prev.sha12));
+      const tar = execFileSync('git', ['archive', '--format=tar', previousSha, 'site/static'], { cwd: repo, maxBuffer: 512 * 1024 * 1024, windowsHide: true });
+      const n = await extractTar(tar, 'site/static/', path.join(out, 'v', previousSha12));
       files += n;
-      retained = n > 0 ? prev.sha12 : null;
-      log(n > 0 ? `retained the previous generation v/${prev.sha12}/ (${n} files)` : `commit ${prev.sha12} has no site/static/; nothing to retain`);
+      retained = n > 0 ? previousSha12 : null;
+      log(n > 0 ? `retained the previous generation v/${previousSha12}/ (${n} files)` : `commit ${previousSha12} has no site/static/; nothing to retain`);
     } catch (e) {
-      log(`could not retain v/${prev.sha12}/ (${/** @type {Error} */ (e).message.split('\n')[0]}); pages loaded before this deploy may fail to lazy-load modules`);
+      log(`could not retain v/${previousSha12}/ (${/** @type {Error} */ (e).message.split('\n')[0]}); pages loaded before this deploy may fail to lazy-load modules`);
     }
   } else log(prev ? `previous generation is this commit (v/${sha12}/)` : 'no previous build-info.json; nothing to retain');
 
-  const info = { sha: opts.sha, sha12, builtAt: (opts.now ?? new Date()).toISOString(), swDisabled: Boolean(opts.swDisabled) };
+  const info = { sha: opts.sha, sha12, builtAt: (opts.now ?? new Date()).toISOString(), swDisabled: Boolean(opts.swDisabled),
+    ...(retained ? { previousSha } : {}) };
+  if (present.includes('manifest.webmanifest')) {
+    const manifestPath = path.join(out, 'manifest.webmanifest');
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    for (const icon of manifest.icons ?? []) if (typeof icon.src === 'string') icon.src = icon.src.replace(/^\.\/static\//, `./v/${sha12}/`);
+    await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  }
+  if (present.includes('sw.js')) {
+    const workerPath = path.join(out, 'sw.js');
+    const template = await readFile(workerPath, 'utf8');
+    const precache = info.swDisabled ? [] : await offlineFiles(out, sha12);
+    const worker = template.replace("const BUILD = 'development'; // CTHD_BUILD", `const BUILD = '${sha12}'; // CTHD_BUILD`)
+      .replace('const PRECACHE = /** @type {string[]} */ ([]); // CTHD_PRECACHE', `const PRECACHE = ${JSON.stringify(precache)}; // CTHD_PRECACHE`);
+    await writeFile(workerPath, worker);
+    log(`offline preparation: ${precache.length} files; map modules and geometry load only on request`);
+  }
   await writeFile(path.join(out, 'build-info.json'), `${JSON.stringify(info)}\n`);
   files++;
   log(`assembled ${files} files into ${out} (v/${sha12}/${info.swDisabled ? ', service worker disabled' : ''})`);
@@ -160,7 +242,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     },
   });
   try {
-    const sha = values.sha || execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).trim();
+    const sha = values.sha || execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8', windowsHide: true }).trim();
     const site = values.site ? path.resolve(values.site) : path.join(ROOT, 'site');
     if (!(await exists(site))) throw new Error(`${site} does not exist`);
     await assemble({ out: path.resolve(values.out), sha, previous: values.previous ?? null, site, swDisabled: values['sw-disabled'] });

@@ -25,6 +25,11 @@
     },
     "swDisabled": {
       "type": "boolean"
+    },
+    "previousSha": {
+      "description": "Last distinct deployed code generation, retained across snapshot-only deployments.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
     }
   }
 }

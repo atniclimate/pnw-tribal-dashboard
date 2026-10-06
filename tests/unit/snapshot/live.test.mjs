@@ -38,11 +38,13 @@ describe('sanity bounds', () => {
     assert.equal(sanityErrors('declarations-fema.json', env({ items: new Array(501).fill({}) })).length, 1);
   });
 
-  test('stages outside -50 to 2,000 ft and sentinel values fail', () => {
+  test('stage bounds allow high-elevation datums while rejecting corruption and sentinels', () => {
     assert.equal(sanityErrors('gauges-status.json', env({ items: [{ observed: { stage: 12.3, unit: 'ft' } }] })).length, 0);
-    assert.equal(sanityErrors('gauges-status.json', env({ items: [{ observed: { stage: 2001, unit: 'ft' } }] })).length, 1);
+    assert.equal(sanityErrors('gauges-status.json', env({ items: [{ observed: { stage: 20001, unit: 'ft' } }] })).length, 1);
+    assert.equal(sanityErrors('gauges-status.json', env({ items: [{ observed: { stage: 4309.33, unit: 'ft' } }] })).length, 0);
     assert.equal(sanityErrors('gauges-status.json', env({ items: [{ forecast: { stage: 1, crestStage: -60, unit: 'ft' } }] })).length, 1);
-    assert.equal(sanityErrors('wsc-status.json', env({ items: [{ stage: 700, unit: 'm' }] })).length, 1, '700 m is about 2,297 ft');
+    assert.equal(sanityErrors('wsc-status.json', env({ items: [{ stage: 750.955, unit: 'm' }] })).length, 0);
+    assert.equal(sanityErrors('wsc-status.json', env({ items: [{ stage: 7000, unit: 'm' }] })).length, 1);
     assert.ok(sanityErrors('gauges-status.json', env({ items: [{ observed: { stage: -999, unit: 'ft' } }] })).some((e) => /sentinel/.test(e)));
     assert.ok(sanityErrors('gauges-status.json', env({ items: [{ flow: -9999 }] })).some((e) => /sentinel/.test(e)));
   });

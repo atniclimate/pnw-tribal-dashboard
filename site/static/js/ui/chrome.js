@@ -3,7 +3,7 @@
  * Chrome behavior (blueprint 7.0): the current navigation item, the Nation chip label, the footer's list
  * of sources used on the page, and the deploy time. The chrome itself is static HTML in every page, so
  * navigation works with script off; this module only refines it. Data never reaches the DOM except as
- * text. It imports nothing, so it adds no module to any page's preload list. DOM module. Owner: lane L1.
+ * text. Offline registration loads after the page load event. DOM module. Owner: lane L1.
  */
 
 /** @typedef {import('../types.js').PageId} PageId */
@@ -39,6 +39,12 @@ export function setNationChip(name) {
  */
 export function initChrome(opts) {
   void opts.page;
+  let disposed = false;
+  /** @type {(() => void) | null} */
+  let cleanOffline = null;
+  void import('./offline.js').then(({ initOffline }) => {
+    if (!disposed) cleanOffline = initOffline();
+  }).catch(() => {});
 
   // Current navigation item: the static chrome marks it already; keep it true after client-side changes.
   for (const a of document.querySelectorAll('.site-nav__list a')) {
@@ -80,5 +86,8 @@ export function initChrome(opts) {
     build.hidden = false;
   }
 
-  return () => {};
+  return () => {
+    disposed = true;
+    cleanOffline?.();
+  };
 }

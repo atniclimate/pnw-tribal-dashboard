@@ -11,6 +11,7 @@
  */
 import { expect, test } from '@playwright/test';
 import { AxeBuilder } from '@axe-core/playwright';
+import { attachGuards } from '../support/harness.mjs';
 
 const BLUEPRINT_ALERTS = `<iframe data-cthd
   src="https://atniclimate.github.io/pnw-tribal-dashboard/alerts/?embed=1"
@@ -136,7 +137,8 @@ test('every row is a complete snippet with the iframe, a title, and (unless a st
   expect(codes.filter((c) => !c.includes('<script')).length).toBe(1);
 });
 
-test('Copy Snippet puts exactly the snippet on the clipboard and says so', async ({ page, context }) => {
+test('Copy Snippet puts exactly the snippet on the clipboard and says so', async ({ page, context, browserName }) => {
+  test.skip(browserName !== 'chromium', 'System clipboard reading requires Chromium clipboard permission emulation');
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('embed/');
   await page.locator('#embed-page').selectOption('forecasts');
@@ -271,13 +273,15 @@ test('no horizontal scroll at phone width, and the page is not itself embeddable
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
 });
 
-test('every request goes to this site: the page and its preview contact no third party', async ({ page }) => {
+test('the generator stays local and its live preview contacts only registered agencies', async ({ page }) => {
+  const guards = await attachGuards(page, { pageId: 'dashboard' });
   await withPreviewCsp(page);
   /** @type {string[]} */
   const urls = [];
-  page.on('request', (r) => urls.push(r.url()));
+  page.on('request', (r) => { if (r.frame() === page.mainFrame()) urls.push(r.url()); });
   await page.goto('embed/');
   await expect(page.frameLocator('#embed-preview').locator('html')).toHaveAttribute('data-embed', '1');
   await page.waitForLoadState('networkidle');
   expect([...new Set(urls.map((u) => new URL(u).hostname))]).toEqual(['localhost']);
+  expect(guards.blockedHosts).toEqual([]);
 });

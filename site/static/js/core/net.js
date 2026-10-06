@@ -129,7 +129,11 @@ async function attempt(job) {
       if (timeoutController.signal.aborted) throw e;
       return { ok: false, error: { kind: 'parse', status: res.status, message: 'The response could not be read' }, fetchedAt: new Date().toISOString(), sourceId: job.sourceId };
     }
-    return { ok: true, data, status: res.status, fetchedAt: new Date().toISOString(), lastModified: res.headers.get('last-modified'), sourceId: job.sourceId };
+    return {
+      ok: true, data, status: res.status, fetchedAt: new Date().toISOString(),
+      lastModified: res.headers.get('last-modified'), sourceId: job.sourceId,
+      ...(res.headers.get('X-CTHD-Cache') === 'cached' ? { fromCache: true } : {}),
+    };
   } catch (e) {
     if (job.signal.aborted) return { ok: false, error: { kind: 'aborted', message: 'The request was canceled' }, fetchedAt: new Date().toISOString(), sourceId: job.sourceId };
     if (timedOut) {
@@ -220,7 +224,11 @@ async function shared(spec) {
   } finally {
     if (onAbort) spec.callerSignal?.removeEventListener('abort', onAbort);
     current.refs -= 1;
-    if (current.refs === 0 && spec.callerSignal?.aborted) current.controller.abort();
+    if (current.refs === 0 && spec.callerSignal?.aborted) {
+      // A replacement load must not join this request while its canceled fetch settles.
+      if (inflight.get(spec.key) === current) inflight.delete(spec.key);
+      current.controller.abort();
+    }
   }
 }
 
@@ -341,7 +349,10 @@ export async function fetchLocal(path, opts = {}) {
   if (!LOCAL_PATH.test(path) || path.includes('..')) {
     return failure(sourceId, { kind: 'unregistered', message: 'Not a same-origin data file path' });
   }
-  if (isOffline()) return failure(sourceId, { kind: 'offline', message: 'This device is offline' });
+  // A controlling worker can answer local requests from its last successful copy.
+  if (isOffline() && !globalThis.navigator?.serviceWorker?.controller) {
+    return failure(sourceId, { kind: 'offline', message: 'This device is offline' });
+  }
   const target = `${hooks.baseUrl}${SITE_BASE_PATH}${path}`;
   return shared({
     key: `local|${target}`,

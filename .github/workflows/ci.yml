@@ -37,6 +37,8 @@ jobs:
       - run: npm run test:cast
       - run: npm run validate:data
       - run: npm run check
+        env:
+          CTHD_GATE: '1'
 
   actionlint:
     name: Workflow Lint
@@ -53,10 +55,14 @@ jobs:
       - run: '"$RUNNER_TEMP/actionlint" -color'
 
   e2e:
-    name: End-to-End (Mocked, Chromium)
+    name: End-to-End (${{ matrix.project }})
     runs-on: ubuntu-latest
     timeout-minutes: 20
     needs: verify
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium-desktop, chromium-phone, webkit-iphone, chromium-no-webgl]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -65,10 +71,32 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npx playwright install --with-deps chromium webkit
-      - run: npx playwright test
+      - name: Run browser scenarios
+        env:
+          BROWSER_PROJECT: ${{ matrix.project }}
+        run: npx playwright test --project "$BROWSER_PROJECT"
       - if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.project }}
           path: playwright-report/
           retention-days: 7
+
+  release-artifact:
+    name: Production Assets and Offline Behavior
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: verify
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run compile
+      - name: Prepare captured alerts for offline checks
+        run: node scripts/snapshot/run.mjs --out site/data/live --fixtures tests/fixtures/upstream --tasks alerts,tsunami --force --now 2026-10-05T08:30:00Z
+      - run: npm run assemble
+      - run: npx playwright test --config tests/release/playwright.config.mjs

@@ -4,6 +4,7 @@
  * (blueprint 1.3, 12.3). Owner: lane L0.
  */
 import { expect, test } from '@playwright/test';
+import { attachGuards } from './support/harness.mjs';
 
 const ROUTES = [
   { path: './', page: 'dashboard', current: 'Dashboard' },
@@ -23,29 +24,52 @@ const ROUTES = [
 const NAV = ['Dashboard', 'Alerts', 'Forecasts', 'Contacts', 'Resources', 'Safety', 'News', 'Usage'];
 
 test.describe('with JavaScript on', () => {
-  test('every page module graph loads from the same origin without script errors', async ({ page }) => {
-    /** @type {string[]} */
-    const errors = [];
-    /** @type {string[]} */
-    const badModules = [];
-    page.on('pageerror', (e) => errors.push(e.message));
-    page.on('requestfailed', (r) => { if (r.url().includes('/static/js/')) badModules.push(`${r.url()} ${r.failure()?.errorText ?? ''}`); });
-    page.on('response', (r) => { if (r.url().includes('/static/js/') && r.status() !== 200) badModules.push(`${r.url()} ${r.status()}`); });
-    for (const route of ROUTES.filter((r) => !r.status)) {
+  for (const route of ROUTES.filter((r) => !r.status)) {
+    test(`${route.page}: page module graph loads from the same origin without script errors`, async ({ page }) => {
+      /** @type {string[]} */
+      const errors = [];
+      /** @type {string[]} */
+      const badModules = [];
+      page.on('pageerror', (e) => errors.push(e.message));
+      page.on('requestfailed', (r) => { if (r.url().includes('/static/js/')) badModules.push(`${r.url()} ${r.failure()?.errorText ?? ''}`); });
+      page.on('response', (r) => { if (r.url().includes('/static/js/') && r.status() !== 200) badModules.push(`${r.url()} ${r.status()}`); });
+      await attachGuards(page, { pageId: route.page });
       await page.goto(route.path);
-      await page.waitForLoadState('load');
+      // Page modules import their remaining graph after load. Finish it before navigating away.
+      await page.waitForLoadState('networkidle');
       await expect(page.locator('html')).not.toHaveAttribute('data-embed', '1');
-    }
-    expect(errors).toEqual([]);
-    expect(badModules).toEqual([]);
-  });
+      expect(errors).toEqual([]);
+      expect(badModules).toEqual([]);
+    });
+  }
 
   // panel= is honored on the Dashboard only (blueprint 1.4); core/embed.js clears it on every other page.
   test('boot flags apply before paint: embed=1 marks the document', async ({ page }) => {
+    await attachGuards(page, { pageId: 'dashboard' });
     await page.goto('./?embed=1&lowdata=1&panel=banner');
     await expect(page.locator('html')).toHaveAttribute('data-embed', '1');
     await expect(page.locator('html')).toHaveAttribute('data-lowdata', '1');
     await expect(page.locator('html')).toHaveAttribute('data-panel-only', 'banner');
+  });
+
+  test('outdated device time rules produce a visible warning without replacing source times', async ({ page }) => {
+    await attachGuards(page, { pageId: 'alerts' });
+    await page.goto('alerts/');
+    await page.waitForLoadState('networkidle');
+    const unchanged = await page.evaluate(async () => {
+      document.querySelector('[data-time-zone-warning]')?.remove();
+      const module = await import(new URL('../static/js/ui/time-warning.js', location.href).href);
+      const before = Array.from(document.querySelectorAll('time')).map((time) => time.outerHTML);
+      module.initTimeWarning(document.querySelector('main'), [{
+        timeZone: 'America/Edmonton', region: 'Alberta', expectedMinutes: -360, actualMinutes: -420,
+      }]);
+      const after = Array.from(document.querySelectorAll('time')).map((time) => time.outerHTML);
+      return JSON.stringify(before) === JSON.stringify(after);
+    });
+    await expect(page.getByRole('status', { name: 'Local time accuracy' })).toBeVisible();
+    await expect(page.locator('[data-time-zone-warning]')).toContainText('Alberta');
+    await expect(page.locator('[data-time-zone-warning]')).toContainText('11/01/2026');
+    expect(unchanged).toBe(true);
   });
 });
 

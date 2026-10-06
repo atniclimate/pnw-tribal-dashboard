@@ -9,6 +9,7 @@
     { "schema": "registry-scope.schema.json", "files": ["data/registry/scope.yaml"] },
     { "schema": "registry-names.schema.json", "files": ["data/registry/names.yaml"] },
     { "schema": "registry-overrides.schema.json", "files": ["data/registry/overrides.yaml"] },
+    { "schema": "registry-review.schema.json", "files": ["data/registry/review.yaml"] },
     { "schema": "crosswalk.schema.json", "files": ["data/registry/crosswalk-us.json", "data/registry/crosswalk-bc.json"] },
     { "schema": "gauges-overrides.schema.json", "files": ["data/registry/gauges-overrides.yaml"] },
     { "schema": "pipeline-inputs.schema.json", "files": ["data/pipeline/inputs.yaml"] },

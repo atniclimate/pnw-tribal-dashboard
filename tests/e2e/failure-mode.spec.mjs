@@ -33,10 +33,12 @@ test.describe('scenario 1: all upstreams down, no snapshot', () => {
         })(),
       })));
       for (const p of panels) {
-        // Static informational panels (Resources, Safety text, Contacts directory, the News source directory and
+        // Static informational panels (Resources, Safety text, Contacts and Dashboard Call directories, the News source directory and
         // community links, all from committed files) are not data panels in this sense.
-        if (!/^(resources|safety|contacts|news-directory|news-community)/.test(p.name)) {
-          expect(['unavailable', 'loading', ''], `${p.name} is "${p.status}" with every upstream down`).toContain(p.status);
+        if (!/^(resources|safety|contacts|call$|news-directory|news-community)/.test(p.name)) {
+          // Declarations can retain their committed, reviewed list while the federal feed is unavailable.
+          const allowed = ['unavailable', 'loading', '', ...(p.name === 'declarations' ? ['degraded'] : [])];
+          expect(allowed, `${p.name} is "${p.status}" with every upstream down`).toContain(p.status);
         }
         if (p.status === 'unavailable') {
           expect(p.link, `${p.name} names an official link`).toBe(true);
@@ -52,8 +54,8 @@ test.describe('scenario 1: all upstreams down, no snapshot', () => {
     await attachGuards(page, { pageId: 'dashboard', down: true });
     await page.route('**/data/live/**', (r) => r.fulfill({ status: 404, body: '' }));
     await page.goto('./');
-    await mountedOrSkip(page, test, '[data-alert-banner]', 'L10, Wave 3 dashboard');
-    const banner = page.locator('[data-alert-banner]').first();
+    const banner = page.locator('[data-panel="alert-banner"] [data-banner]').first();
+    await expect(banner).toBeVisible();
     await expect(banner).toContainText(/Alert status unknown/i);
     await expect(banner).toContainText(/not an all-clear/i);
     await expect(banner).not.toContainText(/no active alerts|all clear(?! is not)/i);

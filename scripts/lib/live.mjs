@@ -20,8 +20,8 @@ export const HEALTH_SOURCE_ID = 'cthd-health';
 
 /** Live sanity bounds (blueprint 6.6). */
 export const MAX_ITEMS = Object.freeze(/** @type {Record<string, number>} */ ({ 'alerts.json': 2000, 'declarations-fema.json': 500 }));
-export const STAGE_FT_MIN = -50;
-export const STAGE_FT_MAX = 2000;
+export { STAGE_FT_MIN, STAGE_FT_MAX } from '../../site/static/js/core/units.js';
+import { STAGE_FT_MIN, STAGE_FT_MAX } from '../../site/static/js/core/units.js';
 /** Numeric values upstreams use for "no data"; none may reach a live file. */
 export const SENTINELS = Object.freeze([-999, -9999, -99999, -999999, -9999999]);
 const FT_PER_M = 3.280839895;

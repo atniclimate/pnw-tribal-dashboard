@@ -2,7 +2,7 @@
 /**
  * Nation registry loaders (L5) and search ranking (L10) (blueprint 3.6). DOM-free.
  *
- * STUB (lane L0). Owner: lane L5. Signatures are the contract; bodies throw until the owner implements them.
+ * Loaders are owned by lane L5; search and display helpers by lane L10.
  */
 
 /** @typedef {import('../types.js').NationRecord} NationRecord */
@@ -12,8 +12,6 @@
 
 import { fetchLocal } from '../core/net.js';
 import { isNationId, resolveNationId } from './ids.js';
-
-const NOT_IMPLEMENTED = 'not implemented';
 
 /**
  * data/registry/nations-index.json.
@@ -63,7 +61,8 @@ export async function loadNation(id, opts) {
  * @returns {string}
  */
 export function searchKey(text) {
-  throw new Error(NOT_IMPLEMENTED);
+  return text.normalize('NFD').replace(/\p{M}+/gu, '').toLowerCase()
+    .replace(/[ʔ7’'?]/g, "'").replace(/\s+/g, ' ').trim();
 }
 
 /**
@@ -73,7 +72,19 @@ export function searchKey(text) {
  * @returns {NationIndexEntry[]}
  */
 export function searchNations(nations, query) {
-  throw new Error(NOT_IMPLEMENTED);
+  const key = searchKey(query);
+  const words = key.split(' ').filter(Boolean);
+  return nations.map((nation) => {
+    const names = [nation.name, nation.preferredName ?? ''].map(searchKey);
+    const aliases = nation.aliases.map(searchKey);
+    const tokens = names.flatMap((name) => name.split(/[\s-]+/));
+    const rank = !key ? 3 : [...names, ...aliases].includes(key) ? 0
+      : words.every((word) => tokens.some((token) => token.startsWith(word))) ? 1
+        : words.every((word) => [...names, ...aliases].some((name) => name.includes(word))) ? 2 : -1;
+    return { nation, rank };
+  }).filter((row) => row.rank >= 0).sort((a, b) => a.rank - b.rank
+    || a.nation.name.localeCompare(b.nation.name) || a.nation.id.localeCompare(b.nation.id))
+    .map((row) => row.nation);
 }
 
 /**
@@ -82,5 +93,6 @@ export function searchNations(nations, query) {
  * @returns {{ primary: string, secondary: string | null }}
  */
 export function displayName(nation) {
-  throw new Error(NOT_IMPLEMENTED);
+  return { primary: nation.name, secondary: nation.preferredName && nation.preferredName !== nation.name
+    ? nation.preferredName : null };
 }

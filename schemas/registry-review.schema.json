@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://atniclimate.github.io/pnw-tribal-dashboard/schemas/registry-review.schema.json",
+  "title": "Registry Review Approval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["approvedOn", "approver", "decision", "holds"],
+  "properties": {
+    "approvedOn": { "type": "string", "format": "date" },
+    "approver": { "type": "string", "minLength": 1 },
+    "decision": { "type": "string", "minLength": 1 },
+    "holds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nationId", "reason"],
+        "properties": {
+          "nationId": { "$ref": "common.schema.json#/$defs/nationId" },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

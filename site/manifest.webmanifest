@@ -1,0 +1,13 @@
+{
+  "id": "./",
+  "name": "Cascadia Tribal Hazard Dashboard",
+  "short_name": "Cascadia Hazards",
+  "description": "Weather, flood, and hazard information for Tribal Nations and First Nations across Cascadia.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#010B13",
+  "theme_color": "#010B13",
+  "icons": [{ "src": "./static/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

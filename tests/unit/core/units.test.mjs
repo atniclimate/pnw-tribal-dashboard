@@ -37,8 +37,10 @@ describe('zero versus sentinel', () => {
   });
 
   test('per-unit out-of-range values are missing, boundaries are not', () => {
-    assert.equal(isMissingReading(2000, 'ft'), true);
-    assert.equal(isMissingReading(1000, 'ft'), false);
+    assert.equal(isMissingReading(20001, 'ft'), true);
+    assert.equal(isMissingReading(20000, 'ft'), false);
+    assert.equal(isMissingReading(4309.33, 'ft'), false, 'reservoir datum elevations are valid stages');
+    assert.equal(isMissingReading(750.955, 'm'), false, 'WSC stages can use elevated datums');
     assert.equal(isMissingReading(-101, 'ft'), true);
     assert.equal(isMissingReading(-1, 'cfs'), true);
     assert.equal(isMissingReading(200, 'C'), true);

@@ -46,15 +46,16 @@ describe('deploy.yml', () => {
     const { wf } = await workflow('deploy.yml');
     const jobs = Object.entries(wf.jobs);
     assert.ok(jobs.length > 0);
-    for (const [id, job] of jobs) assert.equal(/** @type {any} */ (job).if, GATE, `job ${id}`);
+    for (const [id, job] of jobs) assert.ok(String(/** @type {any} */ (job).if).startsWith(GATE), `job ${id}`);
   });
 
   test('triggers, permissions, and concurrency follow blueprint 6.5', async () => {
     const { wf } = await workflow('deploy.yml');
-    assert.deepEqual(wf.on.push, { branches: ['main'] });
+    assert.equal(wf.on.push, undefined, 'a push must pass CI before publishing');
+    assert.deepEqual(wf.on.workflow_run, { workflows: ['CI'], types: ['completed'], branches: ['main'] });
     assert.deepEqual(wf.on.schedule, [{ cron: '4,14,24,34,44,54 * * * *' }]);
     assert.ok('workflow_dispatch' in wf.on);
-    assert.deepEqual(wf.permissions, { contents: 'read', pages: 'write', 'id-token': 'write' });
+    assert.deepEqual(wf.permissions, { contents: 'read', actions: 'read', pages: 'write', 'id-token': 'write' });
     assert.deepEqual(wf.concurrency, { group: 'pages', 'cancel-in-progress': false });
   });
 
@@ -63,12 +64,17 @@ describe('deploy.yml', () => {
     const all = steps(wf);
     const runs = all.filter((/** @type {any} */ s) => s.run).map((/** @type {any} */ s) => s.run);
     const order = ['scripts/compile/all.mjs --fallback', 'scripts/snapshot/run.mjs --out site/data/live --previous',
-      'scripts/check/validate-live.mjs site/data/live', 'scripts/assemble-site.mjs --out _site --sha "$GITHUB_SHA" --previous'];
+      'scripts/check/validate-live.mjs site/data/live', 'scripts/assemble-site.mjs --out _site --sha "$RELEASE_SHA" --previous'];
     const at = order.map((o) => runs.findIndex((/** @type {string} */ r) => r.includes(o)));
     assert.ok(at.every((i) => i >= 0), JSON.stringify(at));
     assert.deepEqual([...at].sort((a, b) => a - b), at);
-    assert.equal(all[0].with['fetch-depth'], 0);
-    assert.equal(all[0].with['persist-credentials'], false);
+    const checkout = all.find((/** @type {any} */ s) => String(s.uses).startsWith('actions/checkout@'));
+    assert.equal(checkout.with['fetch-depth'], 0);
+    assert.equal(checkout.with['persist-credentials'], false);
+    assert.equal(wf.jobs.deploy.needs, 'release-check');
+    assert.match(checkout.with.ref, /needs.release-check.outputs.sha/);
+    assert.match(wf.jobs['release-check'].steps[0].run, /head_sha="\$sha"/);
+    assert.match(wf.jobs['release-check'].steps[0].run, /if \[ "\$conclusion" != success \]/);
     const upload = all.find((/** @type {any} */ s) => String(s.uses).startsWith('actions/upload-pages-artifact@'));
     assert.equal(upload.with.path, '_site');
     assert.ok(all.some((/** @type {any} */ s) => String(s.uses).startsWith('actions/deploy-pages@')));

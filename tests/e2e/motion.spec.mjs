@@ -85,7 +85,8 @@ test.describe('interactive map', () => {
     expect(await g.cspViolations()).toEqual([]);
   });
 
-  test('on touch emulation a one-finger drag over the map scrolls the page (cooperative gestures)', async ({ page, isMobile }) => {
+  test('on touch emulation a one-finger drag over the map scrolls the page (cooperative gestures)', async ({ page, isMobile, browserName }) => {
+    test.skip(browserName !== 'chromium', 'Native touch dragging uses the Chromium-only CDP Input.dispatchTouchEvent API');
     test.skip(!isMobile, 'touch emulation projects only');
     await attachGuards(page, { pageId: 'alerts' });
     await page.goto('alerts/?view=map');

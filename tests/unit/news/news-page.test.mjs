@@ -208,7 +208,7 @@ describe('The archive and news pages in the repository', () => {
       await readFile(path.join(ROOT, 'site', 'archive', 'index.html'), 'utf8'),
       await readFile(path.join(ROOT, 'site', 'archive', '2025-12-atmospheric-river', 'index.html'), 'utf8'),
     ];
-    for (const page of html) assert.match(page, /name="robots" content="noindex"/);
+    for (const page of html) assert.doesNotMatch(page, /name="robots" content="noindex"/);
   });
 
   test('the news module reads only the scheduled copy and the compiled list: no feed address, no third-party host', async () => {

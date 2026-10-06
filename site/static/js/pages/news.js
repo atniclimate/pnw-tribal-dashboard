@@ -14,7 +14,6 @@
  * block (check:preload). Pure helpers are exported for tests/unit/news. Owner: lane L14.
  */
 import { initChrome } from '../ui/chrome.js';
-import { initEmbed } from '../core/embed.js';
 import { mountPanel } from '../ui/panel.js';
 import { clear, h } from '../core/dom.js';
 import { fetchLocal } from '../core/net.js';
@@ -463,9 +462,9 @@ function buildControls(host, jurisdictions, onChange, createFilterChips) {
  */
 export async function main() {
   const page = 'news';
-  initEmbed({ page });
+  const embedReady = import('../core/embed.js').then(({ initEmbed }) => initEmbed({ page }));
   const chipsLoading = import('../ui/filter-chips.js');
-  try { await loadSources(); } catch { /* panels still render; their footers name the ids */ }
+  await Promise.all([embedReady, loadSources().catch(() => { /* panel footers still name source ids */ })]);
   /** @type {Record<string, string>} */
   const names = {};
   const rec = findSource(NEWS_SOURCE_ID);

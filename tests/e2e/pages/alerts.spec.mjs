@@ -34,6 +34,9 @@ async function setup(page) {
 }
 
 test.describe('list view', () => {
+  // No selected Nation means viewer time. Fix the zone independently of the host running this suite.
+  test.use({ timezoneId: 'UTC' });
+
   test('paints the scheduled copy with provenance, honest counts, and no horizontal scroll', async ({ page }) => {
     const g = await setup(page);
     await page.goto('alerts/');
@@ -86,7 +89,11 @@ test.describe('list view', () => {
     await setup(page);
     await page.goto('alerts/');
     const first = page.locator('[data-panel="alerts-list"] .alert-card').first();
-    await expect(first.locator('time').first()).toContainText(/(PDT|PST|AKDT|AKST|MDT|MST)$/);
+    const time = first.locator('time').first();
+    await expect(time).toBeVisible();
+    const instant = new Date(await time.getAttribute('datetime') ?? '');
+    const hour = instant.getUTCHours();
+    await expect(time).toContainText(` ${hour % 12 || 12}:${String(instant.getUTCMinutes()).padStart(2, '0')} ${hour < 12 ? 'AM' : 'PM'} UTC`);
     const target = withInstruction ?? textItems[0];
     const block = /** @type {any} */ (Object.values(target.sourceLanguage)[0]);
     const card = page.locator(`[data-alert-id="${target.alertId}"]`);

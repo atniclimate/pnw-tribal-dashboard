@@ -6,7 +6,6 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; worker-src 'self'; img-src 'self' data: https://basemaps.cartocdn.com https://water.noaa.gov https://www.wpc.ncep.noaa.gov; media-src 'self'; connect-src 'self' https://api.weather.gc.ca https://api.weather.gov https://basemaps.cartocdn.com https://www.fema.gov; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
-  <meta name="robots" content="noindex">
   <title>Cascadia Tribal Hazard Dashboard</title>
   <meta name="description" content="Active weather, flood, and hazard alerts, river levels, forecasts, and emergency contacts for Tribal Nations and First Nations across Cascadia.">
   <script src="./static/js/boot/flags.js"></script>
@@ -17,6 +16,7 @@
   <link rel="stylesheet" href="./static/css/base.css">
   <link rel="stylesheet" href="./static/css/layout.css">
   <link rel="stylesheet" href="./static/css/components.css">
+  <link rel="stylesheet" href="./static/css/dashboard.css">
   <link rel="stylesheet" href="./static/css/print.css" media="print">
   <!-- modulepreload:start -->
   <link rel="modulepreload" href="./static/js/pages/dashboard.js">
@@ -35,10 +35,8 @@
   <link rel="modulepreload" href="./static/js/core/lastgood.js">
   <link rel="modulepreload" href="./static/js/core/storage.js">
   <link rel="modulepreload" href="./static/js/core/status.js">
-  <link rel="modulepreload" href="./static/js/alerts/service.js">
-  <link rel="modulepreload" href="./static/js/alerts/model.js">
+  <link rel="modulepreload" href="./static/js/core/url-state.js">
   <link rel="modulepreload" href="./static/js/alerts/lifecycle.js">
-  <link rel="modulepreload" href="./static/js/ui/alert-banner.js">
   <!-- modulepreload:end -->
   <script type="module" src="./static/js/pages/dashboard.js"></script>
   <link rel="manifest" href="./manifest.webmanifest">
@@ -75,16 +73,19 @@
   <!-- chrome:end -->
   <main id="main" tabindex="-1">
     <h1 class="page-title" id="page-title" data-scope-heading>All of Cascadia</h1>
+    <p class="dashboard-intro">Weather and hazard information for Tribal Nations and First Nations across Cascadia. Check the source and time beside each update.</p>
+    <p class="panel-note" data-scope-notice role="status" hidden></p>
     <noscript><p class="panel-note">Live alerts need JavaScript. Official alerts are always at
       <a href="https://www.weather.gov/">weather.gov</a> and
       <a href="https://weather.gc.ca/warnings/index_e.html?prov=bc">weather.gc.ca</a>. In an emergency, call 911.</p></noscript>
       <section class="panel" data-panel="alert-banner" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="alert-banner-h" data-embed-panel="banner" aria-live="polite">
         <h2 class="panel__title" id="alert-banner-h">Alert Status</h2>
-        <div class="panel__body" data-panel-body></div>
+        <div class="panel__body" data-panel-body><p>Alert status unknown. Checking official sources. This is not an all-clear.</p></div>
       </section>
     <section class="callout callout--quiet" id="choose-nation" aria-labelledby="choose-nation-h">
       <h2 id="choose-nation-h">Choose a Nation</h2>
       <p>Select a Tribal Nation or First Nation to see its alerts, rivers, forecast, and emergency contacts.</p>
+      <div class="dashboard-actions"><button type="button" class="btn btn--primary" data-dashboard-picker>Choose a Nation</button><a class="btn btn--secondary" href="./contacts/?view=near-me">Near Me</a></div>
     </section>
       <section class="panel" data-panel="nation-alerts" data-sources="nws-alerts-active eccc-geomet-weather-alerts" aria-labelledby="nation-alerts-h" data-embed-panel="alerts">
         <h2 class="panel__title" id="nation-alerts-h">Alerts for This Area</h2>

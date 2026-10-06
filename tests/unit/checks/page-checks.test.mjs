@@ -9,7 +9,8 @@ import { describe, test } from 'node:test';
 import { chromeProblems, normalizeChrome } from '../../../scripts/check/chrome.mjs';
 import { analyzePage, staticImports } from '../../../scripts/check/modulepreload.mjs';
 import { blocks } from '../../../scripts/check/lib/pages.mjs';
-import { MIME, resolvePath } from '../../../scripts/dev/serve.mjs';
+import { MIME, localHttpBody, resolvePath, startServer } from '../../../scripts/dev/serve.mjs';
+import { getOwn } from '../../../scripts/lib/http.mjs';
 
 const root = await readFile(new URL('../../../site/index.html', import.meta.url), 'utf8');
 const alerts = await readFile(new URL('../../../site/alerts/index.html', import.meta.url), 'utf8');
@@ -67,6 +68,17 @@ describe('check:preload', () => {
 });
 
 describe('dev server', () => {
+  test('HTTP HTML removes only HTTPS upgrading from the production CSP', async (t) => {
+    const server = await startServer({ port: 0 });
+    t.after(() => new Promise((resolve) => server.close(resolve)));
+    const port = /** @type {import('node:net').AddressInfo} */ (server.address()).port;
+    const response = await getOwn(`http://127.0.0.1:${port}/pnw-tribal-dashboard/alerts/`);
+    assert.match(alerts, /; upgrade-insecure-requests/);
+    assert.equal(response, alerts.replace('; upgrade-insecure-requests', ''));
+    const script = Buffer.from('const directive = "upgrade-insecure-requests";');
+    assert.equal(localHttpBody(script, 'text/javascript'), script);
+  });
+
   test('serves .mjs and .js as text/javascript (module workers need it)', () => {
     assert.match(MIME['.mjs'] ?? '', /^text\/javascript/);
     assert.match(MIME['.js'] ?? '', /^text\/javascript/);

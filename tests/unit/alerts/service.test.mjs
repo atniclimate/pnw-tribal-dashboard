@@ -100,6 +100,19 @@ test('a complete direct set replaces the NWS snapshot set and is live', async ()
   assert.ok(r.alerts.filter((a) => a.agency === 'nws').every((a) => directIds.has(a.alertId)));
 });
 
+test('a device-saved alert snapshot never becomes live or all-clear after a failed top-up', async () => {
+  const env = snapshotEnvelope({ nwsItems: [] });
+  const mock = deps({ local: { [LIVE_FILES.index]: env } });
+  const fetchLocal = mock.fetchLocal;
+  mock.fetchLocal = async (/** @type {string} */ path) => ({ ...(await fetchLocal(path)), fromCache: true });
+  const result = await loadAllAlerts({ scope: { kind: 'footprint' }, registry: { index: null }, deps: mock });
+  const nws = result.statuses.get('nws-alerts-active');
+  assert.equal(nws?.state, 'cached');
+  assert.equal(nws?.origin, 'device');
+  assert.equal(nws?.asOf, env.asOf);
+  assert.equal(summarizeForBanner([], result.statuses, ['nws-alerts-active'], NOW).kind, 'unknown');
+});
+
 test('a malformed item and a truncated collection: degraded, every valid alert shown, no all-clear', async () => {
   const pages = { ok: true, truncated: true, pages: [ok(malformed.body)] };
   const r = await loadAllAlerts({ scope: { kind: 'footprint' }, registry: { index: null }, page: 'dashboard',

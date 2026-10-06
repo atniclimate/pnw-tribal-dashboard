@@ -2,7 +2,7 @@
 /**
  * Blueprint 10.2, every page at 360 x 740 and 1280 x 800 (the phone and desktop projects): no console
  * errors, no securitypolicyviolation, no horizontal scroll, links that leave the page open in a new tab,
- * robots noindex until Gate V, and the 404 status. Any request to a host outside routes.json and the
+ * released pages indexable, utility pages noindex, and the 404 status. Any request to a host outside routes.json and the
  * registry fails. Owner: lane L15.
  */
 import { expect, test } from '@playwright/test';
@@ -50,10 +50,15 @@ for (const route of routes) {
       if (await stylesApplied(page)) expect(await horizontalOverflow(page), 'horizontal scroll').toBe(false);
     });
 
-    test('keeps noindex until Gate V, and every outward link opens in a new tab', async ({ page }) => {
+    test('has release indexing rules, and every outward link opens in a new tab', async ({ page }) => {
       await attachGuards(page, { pageId: route.page });
       await page.goto(route.path);
-      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      const robots = page.locator('meta[name="robots"]');
+      if (['embed', 'offline', 'not-found'].includes(route.id)) {
+        await expect(robots).toHaveAttribute('content', /noindex/);
+      } else {
+        await expect(page.locator('meta[name="robots"][content*="noindex"]')).toHaveCount(0);
+      }
       const bad = await page.evaluate(() => [...document.querySelectorAll('a[href]')].filter((a) => {
         const u = new URL(/** @type {HTMLAnchorElement} */ (a).href);
         return u.origin !== location.origin && /^https?:$/.test(u.protocol);

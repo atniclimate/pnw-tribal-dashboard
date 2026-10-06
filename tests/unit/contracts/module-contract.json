@@ -1018,6 +1018,14 @@
       ]
     },
     {
+      "path": "site/static/js/ui/offline.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "initOffline"
+      ]
+    },
+    {
       "path": "site/static/js/ui/panel.js",
       "owner": "L2",
       "dom": true,
@@ -1057,6 +1065,14 @@
       "dom": true,
       "exports": [
         "initTabs"
+      ]
+    },
+    {
+      "path": "site/static/js/ui/time-warning.js",
+      "owner": "L1",
+      "dom": true,
+      "exports": [
+        "initTimeWarning"
       ]
     },
     {

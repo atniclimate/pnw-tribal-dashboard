@@ -1,8 +1,7 @@
 # Deploy the Cascadia Tribal Hazard Dashboard to GitHub Pages (blueprint 2.1, 2.7, 6.5). Owner: lane L9.
 #
-# INERT UNTIL GATE V. Every job requires the repository variable CTHD_PAGES_ACTIONS to equal 'true'. The
-# maintainer creates it only after switching the Pages source to GitHub Actions, so until then pushes, the
-# schedule, and dispatches run no job and call no upstream, and the May 2026 branch build keeps serving.
+# Every deployment requires CTHD_PAGES_ACTIONS=true and successful CI for the exact main commit.
+# Source changes deploy after CI completes; scheduled runs refresh data on that verified commit.
 #
 # Compile curated data, write live snapshots (carrying forward any failed task), validate them, assemble
 # _site/ with the versioned asset directory and the retained previous generation, then upload and deploy.
@@ -14,7 +13,9 @@
 name: Deploy
 
 on:
-  push:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
     branches: [main]
   schedule:
     # Off the hour, because top-of-hour cron queues longest (blueprint 2.7).
@@ -32,6 +33,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -43,8 +45,31 @@ env:
   SITE_URL: https://atniclimate.github.io/pnw-tribal-dashboard/
 
 jobs:
+  release-check:
+    name: Select Verified Main Commit
+    if: vars.CTHD_PAGES_ACTIONS == 'true' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      sha: ${{ steps.main.outputs.sha }}
+    steps:
+      - id: main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        shell: bash
+        run: |
+          sha=$(gh api "repos/$REPOSITORY/commits/main" --jq .sha)
+          conclusion=$(gh api --method GET "repos/$REPOSITORY/actions/workflows/ci.yml/runs" -f head_sha="$sha" -f event=push -f per_page=1 --jq '.workflow_runs[0].conclusion // "pending"')
+          if [ "$conclusion" != success ]; then
+            echo "Main commit $sha has not passed CI ($conclusion); keeping the current deployment."
+            exit 1
+          fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
   deploy:
     name: Build and Deploy
+    needs: release-check
     if: vars.CTHD_PAGES_ACTIONS == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 12
@@ -54,6 +79,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ needs.release-check.outputs.sha }}
           # Full history, so assemble-site.mjs can restore the previous asset generation with git archive.
           fetch-depth: 0
           persist-credentials: false
@@ -67,13 +93,15 @@ jobs:
       - name: Write live snapshots
         env:
           SNAPSHOT_FAIL: ${{ inputs.snapshot_fail }}
-        run: node scripts/snapshot/run.mjs --out site/data/live --previous "${SITE_URL}data/live/"
+          RELEASE_SHA: ${{ needs.release-check.outputs.sha }}
+        run: node scripts/snapshot/run.mjs --out site/data/live --previous "${SITE_URL}data/live/" --build-sha "$RELEASE_SHA"
       - name: Validate live snapshots
         run: node scripts/check/validate-live.mjs site/data/live
       - name: Assemble the site
         env:
           SW_FLAG: ${{ vars.CTHD_SW_DISABLED == 'true' && '--sw-disabled' || '' }}
-        run: node scripts/assemble-site.mjs --out _site --sha "$GITHUB_SHA" --previous "${SITE_URL}build-info.json" ${SW_FLAG:+"$SW_FLAG"}
+          RELEASE_SHA: ${{ needs.release-check.outputs.sha }}
+        run: node scripts/assemble-site.mjs --out _site --sha "$RELEASE_SHA" --previous "${SITE_URL}build-info.json" ${SW_FLAG:+"$SW_FLAG"}
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         if: ${{ !inputs.dry_run }}
         with:

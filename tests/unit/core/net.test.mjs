@@ -260,6 +260,31 @@ describe('registry, offline, and abort', () => {
 });
 
 describe('dedupe and TTL', () => {
+  test('replacement callers share a fresh request while the canceled fetch finishes', async () => {
+    /** @type {(reason: Error) => void} */
+    let rejectOld = () => {};
+    /** @type {(response: Response) => void} */
+    let releaseNew = () => {};
+    script.push(
+      () => new Promise((_resolve, reject) => { rejectOld = reject; }),
+      () => new Promise((resolve) => { releaseNew = resolve; }),
+    );
+    const ctl = new AbortController();
+    const first = fetchJson('alerts', { signal: ctl.signal });
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    ctl.abort();
+    const canceled = await first;
+    assert.ok(!canceled.ok && canceled.error.kind === 'aborted');
+    const second = fetchJson('alerts');
+    rejectOld(new DOMException('aborted', 'AbortError'));
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    const third = fetchJson('alerts');
+    releaseNew(json({ done: true }));
+    const replacements = await Promise.all([second, third]);
+    assert.ok(replacements.every((result) => result.ok));
+    assert.equal(calls.length, 2, 'the old completion must not remove the replacement from dedupe');
+  });
+
   test('concurrent identical requests share one fetch', async () => {
     script.push(() => json({ n: 1 }));
     const [a, b] = await Promise.all([fetchJson('alerts', { params: { area: 'WA' } }), fetchJson('alerts', { params: { area: 'WA' } })]);
@@ -390,6 +415,27 @@ describe('fetchText, fetchAllPages, fetchLocal', () => {
     Object.defineProperty(globalThis, 'navigator', { value: { onLine: false }, configurable: true });
     const r = await fetchLocal('data/live/alerts.json');
     assert.ok(!r.ok && r.error.kind === 'offline');
+  });
+
+  test('offline local reads reach a controlling worker and retain its cache marker', async () => {
+    Object.defineProperty(globalThis, 'navigator', {
+      value: { onLine: false, serviceWorker: { controller: {} } }, configurable: true,
+    });
+    script.push(() => json({ asOf: '2026-10-05T08:00:00Z' }, { headers: { 'X-CTHD-Cache': 'cached' } }));
+    const local = await fetchLocal('data/live/alerts.json');
+    assert.ok(local.ok);
+    assert.equal(local.fromCache, true);
+    assert.deepEqual(local.data, { asOf: '2026-10-05T08:00:00Z' });
+    const upstream = await fetchJson('alerts');
+    assert.ok(!upstream.ok && upstream.error.kind === 'offline');
+    assert.equal(calls.length, 1, 'upstream requests remain offline');
+  });
+
+  test('a normal local response is not marked as cached', async () => {
+    script.push(() => json({}));
+    const result = await fetchLocal('data/live/alerts.json');
+    assert.ok(result.ok);
+    assert.equal(result.fromCache, undefined);
   });
 
   test('fetchLocal is not held by the upstream limiter', async () => {

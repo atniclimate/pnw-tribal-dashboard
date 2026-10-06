@@ -17,7 +17,6 @@
  * Owner: lane L11.
  */
 import { initChrome } from '../ui/chrome.js';
-import { initEmbed } from '../core/embed.js';
 import { clear, h, telHref } from '../core/dom.js';
 import { fetchLocal } from '../core/net.js';
 import { loadSources } from '../core/sources.js';
@@ -56,7 +55,7 @@ const panelSlot = (id) => /** @type {HTMLElement | null} */ (document.querySelec
  */
 export async function main() {
   initChrome({ page: PAGE });
-  initEmbed({ page: PAGE });
+  const embedReady = import('../core/embed.js').then(({ initEmbed }) => initEmbed({ page: PAGE }));
   // Links to other sites open in a new tab with rel="noopener" (blueprint 1.4). Panels write their source links
   // after load, so the page marks them as they appear.
   const markOutward = () => {
@@ -85,6 +84,7 @@ export async function main() {
     import('../core/poller.js'),
     import('../config/app.js'),
     import('../ui/toast.js'),
+    embedReady,
   ]);
   const APP = appMod.APP;
 

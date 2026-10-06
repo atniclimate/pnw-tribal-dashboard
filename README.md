@@ -6,7 +6,9 @@ Weather, flood, and hazard information for Tribal Nations and First Nations acro
 
 ## Status
 
-The live site serves the May 2026 dashboard (`index.html`). The rebuilt multi-page dashboard is in development under `site/` and replaces it at launch. Pages under `site/` are incomplete and are not indexed by search engines until launch.
+The multi-page dashboard is published from `site/` by GitHub Actions. Deployments require passing CI for the exact source commit. Public agency snapshots refresh every ten minutes, with failed or stale sources identified on the page. The previous dashboard remains available at [Classic](https://atniclimate.github.io/pnw-tribal-dashboard/classic/).
+
+Choose a Nation to view local alerts, forecasts, rivers, and verified contacts. Share the resulting URL to preserve that selection. The map loads on request and works with local outlines while a basemap key is unavailable. Safety currently provides official agency resources; additional editorial guidance awaits review.
 
 ## Embed on Squarespace
 
@@ -23,14 +25,14 @@ Paste this into a Squarespace Code Block:
 ></iframe>
 ```
 
-At launch, every page also has its own snippet (with `?embed=1` for a view without site navigation) on the dashboard's Embed page.
+Every page has its own snippet (with `?embed=1` for a view without site navigation) on the [Embed page](https://atniclimate.github.io/pnw-tribal-dashboard/embed/).
 
 ## Repository
 
 | Path | Contents |
 |---|---|
-| `index.html` | The May 2026 dashboard, live until launch |
-| `site/` | The new dashboard: HTML pages, scripts, styles, and fonts |
+| `site/` | The published dashboard: HTML pages, scripts, styles, and fonts |
+| `site/classic/` | The previous dashboard, retained temporarily as a fallback |
 | `schemas/` | JSON Schemas for every data file |
 | `scripts/` | Data compile, snapshot, and check scripts |
 | `tests/` | Unit and browser tests, with dated captures of the public sources |
@@ -44,6 +46,7 @@ Requires Node.js 24 (see `.nvmrc`). In PowerShell:
 npm ci
 npm run dev       # serves the new dashboard locally
 npm run verify    # lint, typecheck, tests, data validation, and checks
+npm run test:e2e  # browser checks; CI also includes WebKit
 ```
 
 ## Data

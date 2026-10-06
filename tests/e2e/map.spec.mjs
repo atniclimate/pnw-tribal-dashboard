@@ -953,7 +953,8 @@ test.describe('map module', () => {
     await expect(page.locator('.map-print svg')).toHaveCount(0);
   });
 
-  test('no listener or WebGL context leaks across ten layer toggles and five create and destroy cycles', async ({ page }) => {
+  test('no listener or WebGL context leaks across ten layer toggles and five create and destroy cycles', async ({ page, browserName }) => {
+    test.skip(browserName !== 'chromium', 'Browser listener accounting uses the Chromium-only CDP DOMDebugger API');
     test.skip(!webglProject(page), 'interactive case');
     test.setTimeout(90_000);
     // Live WebGL contexts: every context a canvas hands out, until its own webglcontextlost event.

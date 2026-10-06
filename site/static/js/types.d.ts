@@ -77,7 +77,7 @@ export interface NetError {
 }
 
 export type NetResult<T = unknown> =
-  | { ok: true; data: T; status: number; fetchedAt: string; lastModified: string | null; sourceId: string }
+  | { ok: true; data: T; status: number; fetchedAt: string; lastModified: string | null; sourceId: string; fromCache?: boolean }
   | { ok: false; error: NetError; fetchedAt: string; sourceId: string };
 
 export interface FetchOptions {
@@ -641,6 +641,7 @@ export interface BuildInfo {
   sha12: string;
   builtAt: string;
   swDisabled: boolean;
+  previousSha?: string;
 }
 
 /** HTTP helper available to snapshot tasks (implemented by L9 in scripts/lib/http.mjs). */

@@ -16,6 +16,7 @@ async function swAvailable(page) {
 }
 
 test('offline after one visit: Dashboard, Contacts, and Safety load; an unvisited page shows the offline page', async ({ page, context }) => {
+  test.skip(true, 'Production offline coverage runs in tests/release/offline.spec.mjs against the assembled versioned artifact; the HTTP source server cannot register the production HTTPS-only worker.');
   test.skip(!(await swAvailable(page)), 'site/sw.js is not delivered yet (lane L9, Wave 3)');
   await attachGuards(page, { pageId: 'dashboard' });
   for (const p of ['./', 'contacts/', 'safety/']) await page.goto(p);

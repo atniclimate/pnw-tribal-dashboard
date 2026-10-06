@@ -11,11 +11,17 @@ const FT_PER_M = 3.280839895;
 const MM_PER_IN = 25.4;
 const CFS_PER_M3S = 35.3146667;
 
+// Agency stages are relative to the station's datum, not water depth. Mountain lake and reservoir
+// elevations legitimately exceed 2,000 ft. Share the same broad corruption guard with snapshots.
+// https://api.water.noaa.gov/about/hydrograph
+export const STAGE_FT_MIN = -50;
+export const STAGE_FT_MAX = 20_000;
+
 /** Plausible [min, max] per unit; values outside are sentinels or sensor faults, never readings. */
 /** @type {Readonly<Record<string, readonly [number, number]>>} */
 const RANGES = Object.freeze({
-  ft: [-100, 1000],
-  m: [-30, 300],
+  ft: [STAGE_FT_MIN, STAGE_FT_MAX],
+  m: [STAGE_FT_MIN / FT_PER_M, STAGE_FT_MAX / FT_PER_M],
   mm: [0, 5000],
   in: [0, 200],
   C: [-90, 60],
