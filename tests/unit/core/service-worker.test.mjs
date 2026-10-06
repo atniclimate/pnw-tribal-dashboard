@@ -20,6 +20,7 @@ function harness() {
   let unregistered = false;
   let status = 200;
   let noStore = false;
+  let afterDelete = async () => {};
   let body = JSON.stringify({ observedAt: '2026-10-05T07:00:00Z', items: [] });
   /** @param {Request | string} request */
   const key = (request) => typeof request === 'string' ? request : request.url;
@@ -32,7 +33,11 @@ function harness() {
       return {
         keys: async () => [...rows.keys()].map((url) => new Request(url)),
         match: async (/** @type {Request | string} */ request) => rows.get(key(request))?.clone(),
-        delete: async (/** @type {Request | string} */ request) => rows.delete(key(request)),
+        delete: async (/** @type {Request | string} */ request) => {
+          const deleted = rows.delete(key(request));
+          await afterDelete();
+          return deleted;
+        },
         put: async (/** @type {Request | string} */ request, /** @type {Response} */ response) => { rows.set(key(request), response.clone()); },
       };
     },
@@ -66,6 +71,7 @@ function harness() {
   return { stores, messages, fire, setOnline: (/** @type {boolean} */ value) => { online = value; },
     setBody: (/** @type {string} */ value) => { body = value; },
     setStatus: (/** @type {number} */ value) => { status = value; }, setNoStore: () => { noStore = true; },
+    setDeleteHook: (/** @type {() => Promise<void>} */ callback) => { afterDelete = callback; },
     kill: () => { killed = true; }, unregistered: () => unregistered };
 }
 
@@ -85,6 +91,42 @@ test('an offline request without a copy stays unavailable', async () => {
   const h = harness();
   h.setOnline(false);
   assert.equal((await h.fire('fetch', 'data/live/alerts.json'))?.status, 503);
+});
+
+test('concurrent offline reads cannot miss a saved alert during its LRU refresh', async () => {
+  const h = harness();
+  const fresh = await h.fire('fetch', 'data/live/alerts.json');
+  const expected = await fresh?.text();
+  h.setOnline(false);
+  let announceDeletion = () => {};
+  let releaseDeletion = () => {};
+  const deleted = new Promise((resolve) => { announceDeletion = () => resolve(undefined); });
+  const held = new Promise((resolve) => { releaseDeletion = () => resolve(undefined); });
+  h.setDeleteHook(async () => { announceDeletion(); await held; });
+  const first = h.fire('fetch', 'data/live/alerts.json');
+  await deleted;
+  const second = h.fire('fetch', 'data/live/alerts.json');
+  // Let the second request reach the cache while the first LRU operation is
+  // deliberately between delete and put. Its lookup must wait for that write.
+  await new Promise((resolve) => setImmediate(resolve));
+  releaseDeletion();
+  for (const response of await Promise.all([first, second])) {
+    assert.equal(response?.status, 200);
+    assert.equal(response?.headers.get('X-CTHD-Cache'), 'cached');
+    assert.equal(await response?.text(), expected);
+  }
+});
+
+test('a failed LRU refresh still returns the saved alert already read', async () => {
+  const h = harness();
+  const fresh = await h.fire('fetch', 'data/live/alerts.json');
+  const expected = await fresh?.text();
+  h.setOnline(false);
+  h.setDeleteHook(async () => { throw new Error('storage denied'); });
+  const response = await h.fire('fetch', 'data/live/alerts.json');
+  assert.equal(response?.status, 200);
+  assert.equal(response?.headers.get('X-CTHD-Cache'), 'cached');
+  assert.equal(await response?.text(), expected);
 });
 
 test('no-store responses are not available offline and a deleted resource is evicted', async () => {

@@ -49,21 +49,22 @@ function save(name, request, response) {
 
 /** @param {string} name @param {Request | string} request */
 async function saved(name, request) {
-  try {
+  // Lookup and LRU refresh share the write queue: no reader may observe the
+  // temporary gap between another request's delete and put of the same entry.
+  const read = writes.then(async () => {
+    if (disabled) return null;
     const cache = await caches.open(name);
     const response = await cache.match(request);
     if (!response) return null;
     // Cache insertion order is the LRU order, without changing the saved timestamp.
-    writes = writes.then(async () => {
-      if (disabled) return;
-      const current = await cache.match(request);
-      if (!current) return;
+    try {
       await cache.delete(request);
-      await cache.put(request, current);
-    }).catch(() => {});
-    await writes;
+      await cache.put(request, response.clone());
+    } catch { /* A failed LRU update must not discard the response already read. */ }
     return response;
-  } catch { return null; }
+  }).catch(() => null);
+  writes = read.then(() => {});
+  return read;
 }
 
 /** @param {Request | string} request @param {number} timeoutMs */
