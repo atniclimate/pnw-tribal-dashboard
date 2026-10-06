@@ -54,7 +54,9 @@ describe('mountPanel always renders a provenance footer', () => {
     mountPanel(/** @type {any} */ (slot), { title: 'T', sourceIds: ['src-a'], statusId: statusId(), load: () => new Promise(() => {}), render() {} });
     const f = footerOf(slot);
     assert.ok(f, 'footer present immediately');
-    assert.equal(f.getAttribute('data-status'), 'loading');
+    assert.equal(f.getAttribute('data-status'), 'unavailable');
+    assert.match(f.textContent, /No data time is available while these sources are loading/);
+    assert.equal(f.querySelector('time'), null, 'pending sources must not invent a data time');
     assert.match(f.textContent, /Source: Agency A/);
     assert.equal(bodyOf(slot).textContent, 'Loading Agency A');
     assert.doesNotMatch(bodyOf(slot).textContent, /\d/);

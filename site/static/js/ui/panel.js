@@ -82,14 +82,14 @@ export function mountPanel(slot, spec) {
     slot.setAttribute('aria-busy', 'true');
     clear(footer);
     footer.setAttribute('data-provenance', '');
-    footer.setAttribute('data-status', 'loading');
+    footer.setAttribute('data-status', 'unavailable');
     footer.setAttribute('data-source-ids', spec.sourceIds.join(' '));
     footer.append(
       h('span', { class: 'provenance__src' }, 'Source: ', ...spec.sourceIds.flatMap((id, i) => {
         const r = findSource(id);
         return [i ? ', ' : '', r ? h('a', { href: r.humanUrl, target: '_blank', rel: 'noopener noreferrer' }, r.attribution || r.owner) : id];
       })),
-      h('span', { class: 'provenance__asof' }, 'Loading'),
+      h('span', { class: 'provenance__asof' }, 'No data time is available while these sources are loading.'),
     );
   }
 

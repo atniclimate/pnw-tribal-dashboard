@@ -13,7 +13,16 @@ const { routes, viewports } = await loadRoutes();
 for (const route of routes) {
   test.describe(`${route.id}`, () => {
     test('loads without console errors, policy violations, unlisted hosts, or sideways scroll', async ({ page }) => {
-      const g = await attachGuards(page, { pageId: route.page });
+      // The generator's live preview is the Dashboard, whose registered agencies
+      // may answer inside the iframe. The generator document itself stays local.
+      const g = await attachGuards(page, { pageId: route.page === 'embed' ? 'dashboard' : route.page });
+      /** @type {string[]} */
+      const generatorExternalRequests = [];
+      if (route.page === 'embed') page.on('request', (request) => {
+        const url = new URL(request.url());
+        if (request.frame() === page.mainFrame() && /^https?:$/.test(url.protocol)
+          && url.origin !== new URL(String(test.info().project.use.baseURL)).origin) generatorExternalRequests.push(url.href);
+      });
       // Chromium logs a route's own expected non-200 document status (the 404 page) as a console error;
       // only that one message, located at the document URL, is excused. Subresource failures still fail.
       /** @type {string[]} */
@@ -47,6 +56,7 @@ for (const route of routes) {
       expect(consoleErrors, 'console errors').toEqual([]);
       expect(await g.cspViolations(), 'securitypolicyviolation events').toEqual([]);
       expect(g.blockedHosts, 'requests to hosts outside routes.json and the registry').toEqual([]);
+      expect(generatorExternalRequests, 'embed generator document stays same-origin').toEqual([]);
       if (await stylesApplied(page)) expect(await horizontalOverflow(page), 'horizontal scroll').toBe(false);
     });
 

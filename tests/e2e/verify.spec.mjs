@@ -20,6 +20,7 @@ for (const mode of /** @type {const} */ (['mocked', 'failure', 'embed'])) {
     test(`check 2, ${mode}: ${route.id} panels carry provenance`, async ({ page }) => {
       // No mocked upstream handlers exist before the page lanes land, so every external request is aborted in all three modes.
       await attachGuards(page, { pageId: route.page, down: true });
+      await page.route('**/data/live/**', (request) => request.fulfill({ status: 404, body: 'Not found' }));
       await page.goto(`${route.path}${mode === 'embed' ? '?embed=1' : ''}`);
       const hasPanels = await page.locator('[data-panel]').count();
       test.skip(hasPanels === 0, 'the page has no data panels');

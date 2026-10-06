@@ -65,7 +65,9 @@ test.describe('mountPanel always renders a provenance footer', () => {
       });
     });
     const panel = page.locator('[data-panel="harness-a"]');
-    await expect(panel.locator('[data-provenance]')).toHaveAttribute('data-status', 'loading');
+    await expect(panel.locator('[data-provenance]')).toHaveAttribute('data-status', 'unavailable');
+    await expect(panel.locator('[data-provenance]')).toContainText('No data time is available while these sources are loading.');
+    await expect(panel.locator('[data-provenance] time')).toHaveCount(0);
     await expect(panel.locator('.panel__body')).toHaveText('Loading Harness Agency');
     await expect(panel.locator('.provenance a')).toHaveAttribute('href', 'https://www.weather.gov/');
   });
