@@ -5,7 +5,7 @@
  * Both outputs state the active filter, so a copied or printed list is never mistaken for the whole
  * directory. Copy uses the Clipboard API; when it is unavailable or refused, a read-only text area with
  * the list selected takes its place (never prompt()). Print writes the note into the page, then opens the
- * print dialog; print.css keeps the note and the list and drops the controls.
+ * print dialog; the @media print rules keep the note and the list and drop the controls.
  */
 
 /**
@@ -66,7 +66,7 @@ export async function copyList(lines, filterNote) {
 }
 
 /**
- * Writes the filter note where print.css keeps it, then opens the print dialog.
+ * Writes the filter note where the print rules keep it, then opens the print dialog.
  * @param {string} filterNote
  * @returns {void}
  */

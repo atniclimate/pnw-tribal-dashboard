@@ -208,7 +208,7 @@ export function lintStylesheet(name, source, ctx) {
   const uses = (/** @type {string} */ value, /** @type {Set<string>} */ set) => [...value.matchAll(/var\(\s*(--[\w-]+)/g)].some((m) => set.has(/** @type {string} */ (m[1])));
   for (const b of ruleBlocks(css)) {
     const where = `${name}:${b.line} ${b.selector}`;
-    const lightOrPrint = /data-theme=['"]?light/.test(b.selector) || (b.media !== null && /\bprint\b/.test(b.media)) || name === 'print.css';
+    const lightOrPrint = /data-theme=['"]?light/.test(b.selector) || (b.media !== null && /\bprint\b/.test(b.media));
     for (const [prop, value] of declarations(b.body)) {
       const isTokenDef = ctx.isTokens && prop.startsWith('--');
       if (!ctx.isTokens && /#[0-9a-f]{3,8}\b|\brgba?\(|\bhsla?\(/i.test(value)) problems.push(`${where}: raw color in ${prop}: ${value} (colors live in tokens.css)`);

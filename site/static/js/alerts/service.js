@@ -342,8 +342,10 @@ function nwsAsOf(pages) {
 /**
  * Banner, lists, map, and the snapshot task never call adapters directly.
  * @param {{ scope: AlertScope, registry: { index: NationsIndex | null }, signal?: AbortSignal,
- *   page?: PageId, direct?: boolean, onSnapshot?: (result: LoadAllAlertsResult) => void, deps?: Partial<AlertDeps> }} opts
+ *   page?: PageId, direct?: boolean, onSnapshot?: (result: LoadAllAlertsResult) => void, deps?: Partial<AlertDeps>,
+ *   prefetch?: { index: Promise<NetResult>, tsunami: Promise<NetResult> } | null }} opts
  *   `page` decides the ECCC top-up (blueprint 3.7.4); `direct: false` paints from the snapshot only;
+ *   `prefetch` replaces this call's own two snapshot requests (the caller passes it to one call only);
  *   `deps` replaces network, status, and clock functions (tests and the Node task).
  * @returns {Promise<LoadAllAlertsResult>}
  */
@@ -354,11 +356,11 @@ export async function loadAllAlerts(opts) {
   const now = deps.now();
   const sig = signal ? { signal } : {};
 
-  // 1. Snapshot index and tsunami file in parallel at priority 0.
-  const [indexRes, tsunamiRes] = await Promise.all([
-    deps.fetchLocal(LIVE_FILES.index, { priority: 0, ...sig }),
-    deps.fetchLocal(LIVE_FILES.tsunami, { priority: 0, ...sig }),
-  ]);
+  // 1. Snapshot index and tsunami file in parallel at priority 0, or the caller's earlier requests (an aborted scope discards them).
+  const early = opts.prefetch && !signal?.aborted ? opts.prefetch : null;
+  const [indexRes, tsunamiRes] = await Promise.all(early
+    ? [early.index, early.tsunami]
+    : [deps.fetchLocal(LIVE_FILES.index, { priority: 0, ...sig }), deps.fetchLocal(LIVE_FILES.tsunami, { priority: 0, ...sig })]);
   const env = envelopeOf(indexRes);
   const tsunamiEnv = /** @type {TsunamiEnvelope | null} */ (/** @type {unknown} */ (envelopeOf(tsunamiRes)));
   const snapshotAll = (env?.completeness === 'rejected' ? [] : env?.items ?? []).map((e) => joinAlert(e, null, null));

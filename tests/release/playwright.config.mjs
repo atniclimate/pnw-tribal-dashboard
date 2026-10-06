@@ -4,7 +4,7 @@ import { defineConfig, devices } from '@playwright/test';
 /** Production artifact checks. Serve `npm run assemble` output with `serve --root _site --port 8089`. */
 export default defineConfig({
   testDir: '.',
-  testMatch: /offline\.spec\.mjs$/,
+  testMatch: /offline(?:-diagnostics)?\.spec\.mjs$/,
   outputDir: '../../reports/release-test-results',
   workers: 1,
   timeout: 60_000,

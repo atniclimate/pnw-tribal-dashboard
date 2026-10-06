@@ -15,6 +15,7 @@
 /** @typedef {import('../types.js').DashboardAlert} DashboardAlert */
 /** @typedef {import('../types.js').DashboardAlertIndexEntry} DashboardAlertIndexEntry */
 /** @typedef {import('../types.js').Geometry} Geometry */
+/** @typedef {import('../types.js').NationRecord} NationRecord */
 
 /** CAST BAND_RANK. @type {Readonly<Record<Exclude<SeverityBand, 'unstated'>, number>>} */
 const BAND_RANK = Object.freeze({ minor: 0, moderate: 1, severe: 2, extreme: 3 });
@@ -180,4 +181,29 @@ export function languageBlockFor(sourceLanguage, lang) {
  */
 export function joinAlert(entry, text, geometry) {
   return { ...entry, sourceLanguage: text ?? {}, geometry: geometry ?? null };
+}
+
+/**
+ * Alerts page grouping: alerts whose `nationIds` include the Nation; alerts elsewhere in a jurisdiction
+ * the Nation belongs to (or a marine alert for a coastal Nation's waters) as nearby; the rest elsewhere.
+ * @template {DashboardAlert | DashboardAlertIndexEntry} T
+ * @param {T[]} alerts
+ * @param {NationRecord} nation
+ * @returns {{ forNation: T[], nearby: T[], elsewhere: T[] }}
+ */
+export function groupForNation(alerts, nation) {
+  /** @type {T[]} */
+  const forNation = [];
+  /** @type {T[]} */
+  const nearby = [];
+  /** @type {T[]} */
+  const elsewhere = [];
+  const js = new Set(nation.jurisdictions);
+  const marine = new Set(nation.nws?.marineZones ?? []);
+  for (const a of alerts) {
+    if (a.nationIds.includes(nation.id)) forNation.push(a);
+    else if (a.jurisdictions.some((j) => j !== 'MARINE' && js.has(j)) || a.zones.some((z) => marine.has(z))) nearby.push(a);
+    else elsewhere.push(a);
+  }
+  return { forNation, nearby, elsewhere };
 }

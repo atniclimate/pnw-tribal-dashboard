@@ -79,7 +79,8 @@
         "typedZoneKey",
         "sortAlerts",
         "toIndexEntry",
-        "joinAlert"
+        "joinAlert",
+        "groupForNation"
       ]
     },
     {

@@ -91,7 +91,7 @@ test.describe('directory', () => {
     expect((copied.split('\n')[0] ?? '').trim()).toMatch(/^Filter: Jurisdiction: Oregon; Type: State and Provincial\. \d+ of \d+ lines\.$/);
     expect(copied).toContain('Oregon Department of Emergency Management');
 
-    // Print: the note is in the page that print.css keeps; verify the PDF text.
+    // Print: the note is in the page that the @media print rules keep; verify the PDF text.
     await page.emulateMedia({ media: 'print' });
     await expect(page.locator('[data-filter-note]')).toBeVisible();
     const out = test.info().outputPath('contacts-print.pdf');

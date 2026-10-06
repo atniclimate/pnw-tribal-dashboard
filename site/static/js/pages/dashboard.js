@@ -4,6 +4,7 @@ import { initChrome, setNationChip } from '../ui/chrome.js';
 import { initEmbed } from '../core/embed.js';
 import { mountPanel } from '../ui/panel.js';
 import { h } from '../core/dom.js';
+import { fetchLocal } from '../core/net.js';
 import { loadSources } from '../core/sources.js';
 import { linkWithState, onStateChange, writeState } from '../core/url-state.js';
 import { isExpired } from '../alerts/lifecycle.js';
@@ -101,6 +102,9 @@ export async function main() {
         retry.addEventListener('click', () => location.reload()); body.append(h('p', {}, status.detail ?? ''), retry);
       } });
   }
+  // Early snapshot requests for the first alerts load only (paths mirror LIVE_FILES; unit-tested).
+  /** @type {{ gen: number, index: Promise<import('../types.js').NetResult>, tsunami: Promise<import('../types.js').NetResult> } | null} */
+  let early = { gen: 1, index: fetchLocal('data/live/alerts.json', { priority: 0, signal: lifetime.signal }), tsunami: fetchLocal('data/live/tsunami.json', { priority: 0, signal: lifetime.signal }) };
   const [svc, banner, bannerUi, lists, cards, nationData, pickerUi] = await Promise.all([
     import('../alerts/service.js'), import('../alerts/banner.js'), import('../ui/alert-banner.js'),
     import('../ui/alert-list.js'), import('../ui/alert-card.js'), import('../data/nations.js'),
@@ -325,7 +329,8 @@ export async function main() {
       announce(scopeName + ' selected. Source status and data times are shown in each panel.');
     }
     refreshAlerts = async () => {
-      try { await accept(await svc.loadAllAlerts({ scope, registry: { index: null }, page: PAGE, signal, onSnapshot: (result) => { void accept(result); } })); }
+      const prefetch = early && early.gen === mine ? early : null; early = null;
+      try { await accept(await svc.loadAllAlerts({ scope, registry: { index: null }, page: PAGE, signal, prefetch, onSnapshot: (result) => { void accept(result); } })); }
       catch {
         if (mine !== generation || signal.aborted) return false;
         const statuses = new Map(latest.statuses);

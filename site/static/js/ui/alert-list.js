@@ -11,8 +11,7 @@
  * Owner: lane L11.
  */
 import { h } from '../core/dom.js';
-import { sortAlerts } from '../alerts/model.js';
-import { groupForNation } from '../alerts/relevance.js';
+import { groupForNation, sortAlerts } from '../alerts/model.js';
 import { alertCard, expandCard } from './alert-card.js';
 
 /** @typedef {import('../types.js').DashboardAlert} DashboardAlert */

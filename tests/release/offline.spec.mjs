@@ -3,6 +3,7 @@ import { expect, test } from '@playwright/test';
 import { fileURLToPath } from 'node:url';
 import { mkdir } from 'node:fs/promises';
 import { startServer } from '../../scripts/dev/serve.mjs';
+import { classifyPageErrors, describePageError, installRuntimeErrorSink } from './support/runtime-diagnostics.mjs';
 
 /** @type {import('node:http').Server | undefined} */
 let server;
@@ -18,16 +19,12 @@ test.beforeAll(async () => {
 test.afterAll(stopServer);
 
 test('the assembled worker preserves saved pages, shows offline status, and falls back for unvisited pages', async ({ page, context }, testInfo) => {
-  await context.addInitScript(() => {
-    /** @type {string[]} */
-    const errors = [];
-    Reflect.set(globalThis, '__releaseRuntimeErrors', errors);
-    globalThis.addEventListener('error', (event) => errors.push(event.message));
-    globalThis.addEventListener('unhandledrejection', (event) => errors.push(String(event.reason)));
-  });
+  // The sink reports window error/unhandledrejection through a context binding, so documents that are torn
+  // down by a navigation or the offline switch still count. The in-page array is kept and read as before.
+  const runtimeErrors = await installRuntimeErrorSink(context);
   await context.route((url) => url.hostname !== 'localhost' && url.hostname !== '127.0.0.1', (route) => route.abort('failed'));
-  const errors = /** @type {{ name: string, message: string }[]} */ ([]);
-  page.on('pageerror', (error) => errors.push({ name: error.name, message: error.message }));
+  const errors = /** @type {Error[]} */ ([]);
+  page.on('pageerror', (error) => errors.push(error));
   await page.goto('./');
   await expect(page.locator('h1').first()).toContainText(/Cascadia|Dashboard/);
   // Browsers treat loopback as secure. Only this artifact test registers on HTTP;
@@ -57,6 +54,7 @@ test('the assembled worker preserves saved pages, shows offline status, and fall
   });
   expect(savedPages).toContain('/pnw-tribal-dashboard/contacts/');
   expect(savedPages).toContain('/pnw-tribal-dashboard/safety/');
+  expect(runtimeErrors, 'window errors or unhandled rejections before going offline').toEqual([]);
   const expectedSnapshot = await page.evaluate(async () => {
     const response = await globalThis.fetch('/pnw-tribal-dashboard/data/live/alerts.json');
     return response.ok ? await response.text() : null;
@@ -88,16 +86,18 @@ test('the assembled worker preserves saved pages, shows offline status, and fall
       } else expect(snapshot.status).toBe(503);
     }
     expect(await page.evaluate(() => Reflect.get(globalThis, '__releaseRuntimeErrors'))).toEqual([]);
+    expect(runtimeErrors, `window errors or unhandled rejections through ${path}`).toEqual([]);
   }
   await page.goto('news/');
   await expect(page.locator('body')).toHaveAttribute('data-page', 'offline');
   expect(await page.evaluate(() => Reflect.get(globalThis, '__releaseRuntimeErrors'))).toEqual([]);
-  // Playwright's WebKit _onConsoleMessage promotes native fetch cancellation
-  // diagnostics to pageerror (source=javascript), even when fetch is caught.
-  // Keep those specific local network diagnostics as evidence; real window
-  // error/unhandledrejection events above and all other pageerrors remain fatal.
-  const nativeDiagnostics = errors.filter((error) => disconnectedServer && error.name === 'Fetch API cannot load http'
-    && /^\/localhost:8089\/pnw-tribal-dashboard\/data\/(?:live|ref|geo|registry|curated)\/[a-z0-9/_-]+\.json due to access control checks\.$/.test(error.message));
-  if (nativeDiagnostics.length) await testInfo.attach('webkit-native-network-diagnostics', { body: JSON.stringify(nativeDiagnostics, null, 2), contentType: 'application/json' });
-  expect(errors.filter((error) => !nativeDiagnostics.includes(error))).toEqual([]);
+  expect(runtimeErrors, 'window errors or unhandled rejections over the whole run').toEqual([]);
+  // Playwright's WebKit driver promotes the engine's own "Fetch API cannot load <url> due to access control
+  // checks." console diagnostic to a pageerror, even when the page caught the fetch. Such a record is evidence
+  // only when its stack proves the fetch came from the guarded call site in js/core/net.js (see
+  // support/runtime-diagnostics.mjs, and offline-diagnostics.spec.mjs for the negative controls). Real window
+  // error/unhandledrejection events (the sink above) and every other pageerror remain fatal.
+  const { diagnostics, fatal } = classifyPageErrors(errors, { webkit: disconnectedServer, origin: new URL(/** @type {string} */ (testInfo.project.use.baseURL)).origin });
+  if (diagnostics.length) await testInfo.attach('webkit-native-network-diagnostics', { body: JSON.stringify(diagnostics.map(describePageError), null, 2), contentType: 'application/json' });
+  expect(fatal.map(describePageError)).toEqual([]);
 });
