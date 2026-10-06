@@ -199,16 +199,6 @@ caption { caption-side: top; text-align: left; padding-bottom: var(--space-2); c
 }
 .skip-link:focus { top: var(--space-2); }
 
-.eyebrow {
-  margin: 0 0 var(--space-2);
-  color: var(--red-on-dark);
-  font-family: var(--font-display);
-  font-weight: var(--fw-ui);
-  font-size: var(--type-caption-size);
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-}
-
 /* French ECCC blocks keep their language for hyphenation and screen readers */
 [lang='fr-CA'] { hyphens: manual; }
 

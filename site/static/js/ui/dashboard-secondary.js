@@ -21,7 +21,7 @@ import { writeState } from '../core/url-state.js';
 export async function mountSecondaryPanels(options) {
   const landscape = document.querySelector('.dashboard-landscape');
   const flags = document.documentElement.dataset;
-  if (landscape && !landscape.childElementCount && flags.lowdata !== '1' && flags.embed !== '1' && !flags.panelOnly && navigator.onLine && !matchMedia('(forced-colors: active)').matches) {
+  if (landscape && !landscape.childElementCount && flags.lowdata !== '1' && flags.embed !== '1' && !flags.panelOnly && innerWidth >= 640 && navigator.onLine && !matchMedia('(forced-colors: active)').matches) {
     const image = new Image(); image.alt = ''; image.width = 1000; image.height = 750;
     image.decoding = 'async'; image.fetchPriority = 'low';
     image.addEventListener('load', () => { landscape.removeAttribute('hidden'); document.querySelector('[data-landscape-credit]')?.removeAttribute('hidden'); }, { once: true });

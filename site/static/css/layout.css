@@ -116,12 +116,6 @@ main > * { min-width: 0; }
 .view { display: flex; flex-direction: column; gap: var(--space-5); }
 .panel-note { color: var(--ink-muted); }
 
-/* Two-up groups for wide screens; one column below 960 px */
-.layout-columns { display: grid; gap: var(--space-5); grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 960px) {
-  .layout-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .layout-columns > .span-all { grid-column: 1 / -1; }
-}
 
 /* Footer */
 .site-footer {

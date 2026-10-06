@@ -111,7 +111,8 @@ describe('assemble', () => {
     assert.match(await readFile(path.join(out, 'index.html'), 'utf8'), new RegExp(`href="v/${v2}/js/pages/dashboard.js".*src="v/${v2}/js/pages/dashboard.js"`));
     assert.match(await readFile(path.join(out, 'alerts', 'index.html'), 'utf8'), new RegExp(`src="\\.\\./v/${v2}/js/pages/alerts.js"`));
     assert.match(await readFile(path.join(out, '404.html'), 'utf8'), new RegExp(`href="v/${v2}/css/site.css"`));
-    assert.equal(await readFile(path.join(out, 'v', v2, 'js', 'pages', 'dashboard.js'), 'utf8'), "import '../core/net.js'; export const v = 2;\n");
+    assert.equal(await readFile(path.join(out, 'v', v2, 'js', 'pages', 'dashboard.js'), 'utf8'), "import '../core/net.js';\nexport const v = 2;\n",
+      'shipped modules are re-emitted without comments; their import paths are unchanged');
     assert.equal(await readFile(path.join(out, 'v', v1, 'js', 'pages', 'dashboard.js'), 'utf8'), "import '../core/net.js'; export const v = 1; const s = 'static/x';\n",
       'the previous generation comes from git, and JavaScript is never rewritten');
     assert.equal(await readFile(path.join(out, 'v', v2, 'css', 'site.css'), 'utf8'), '.a { background: url(../img/a.png); }\n');

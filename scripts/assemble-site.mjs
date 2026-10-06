@@ -7,7 +7,7 @@
  *
  * 1. Copy the allowlist: site/** except static/ (data/curated and data/live included; classic/ included
  *    until its removal date).
- * 2. Copy site/static/ to _site/v/<sha12>/.
+ * 2. Copy site/static/ to _site/v/<sha12>/ and remove comments from its modules (stripComments).
  * 3. Rewrite href and src attribute values that begin with `./static/` or `(../)*static/` in HTML files
  *    only, to the same prefix plus `v/<sha12>/`. JavaScript and CSS are never rewritten, and neither is
  *    text inside script, style, or comments.
@@ -145,7 +145,7 @@ async function readPrevious(location, fetchImpl) {
 /**
  * @param {{
  *   out: string, sha: string, previous: string | null,
- *   site?: string, repo?: string, swDisabled?: boolean, now?: Date,
+ *   site?: string, repo?: string, swDisabled?: boolean, now?: Date, keepComments?: boolean,
  *   fetchImpl?: (input: string, init?: RequestInit) => Promise<Response>, log?: (m: string) => void,
  * }} opts
  * @returns {Promise<{ sha12: string, files: number, retained: string | null }>}
@@ -173,7 +173,10 @@ export async function assemble(opts) {
   for (const name of ALLOWLIST.filter((n) => present.includes(n))) {
     await cp(path.join(site, name), path.join(out, name), { recursive: true });
   }
-  if (present.includes('static')) await cp(path.join(site, 'static'), path.join(out, 'v', sha12), { recursive: true });
+  if (present.includes('static')) {
+    await cp(path.join(site, 'static'), path.join(out, 'v', sha12), { recursive: true });
+    if (!opts.keepComments) log(`removed comments from ${await stripComments(path.join(out, 'v', sha12))} shipped modules`);
+  }
 
   let files = 0;
   for await (const file of walk(out)) {
@@ -224,6 +227,43 @@ export async function assemble(opts) {
   files++;
   log(`assembled ${files} files into ${out} (v/${sha12}/${info.swDisabled ? ', service worker disabled' : ''})`);
   return { sha12, files, retained };
+}
+
+/**
+ * Shipped modules carry no comments; JSDoc types and notes stay in source. The TypeScript compiler parses
+ * each module and re-emits it with comments and layout removed, nothing else (no type checking, no
+ * module or syntax transform). A classic script would gain "use strict", so any emitted file that adds
+ * it keeps its original text. Vendor files are never touched.
+ * @param {string} dir the versioned asset directory, v/<sha12>/
+ * @returns {Promise<number>} modules rewritten
+ */
+export async function stripComments(dir) {
+  const tmp = `${dir}.strip`;
+  await rm(tmp, { recursive: true, force: true });
+  const config = `${dir}.strip.json`;
+  const js = path.join(dir, 'js');
+  if (!await exists(js)) return 0;
+  await writeFile(config, JSON.stringify({
+    compilerOptions: { allowJs: true, noCheck: true, removeComments: true, target: 'esnext', module: 'preserve', noResolve: true,
+      isolatedModules: true, skipLibCheck: true, types: [], rootDir: js, outDir: tmp },
+    include: [`${js.split(path.sep).join('/')}/**/*.js`], exclude: [`${js.split(path.sep).join('/')}/vendor/**`],
+  }));
+  try {
+    execFileSync(process.execPath, [path.join(ROOT, 'node_modules', 'typescript', 'bin', 'tsc'), '-p', config], { cwd: ROOT, stdio: 'pipe', windowsHide: true });
+  } catch (e) {
+    const out = /** @type {{ stdout?: Buffer }} */ (e).stdout?.toString() ?? '';
+    throw new Error(`comment removal failed: ${out.split('\n').slice(0, 5).join(' ')}`);
+  } finally { await rm(config, { force: true }); }
+  let n = 0;
+  for await (const file of walk(tmp)) {
+    const target = path.join(js, path.relative(tmp, file));
+    const original = await readFile(target, 'utf8');
+    const emitted = await readFile(file, 'utf8');
+    if (emitted.startsWith('"use strict";') && !original.trimStart().startsWith('"use strict";')) continue;
+    await writeFile(target, emitted); n++;
+  }
+  await rm(tmp, { recursive: true, force: true });
+  return n;
 }
 
 /** @param {string} p */

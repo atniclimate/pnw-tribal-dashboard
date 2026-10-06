@@ -79,6 +79,11 @@ export async function main() {
   const announce = (message) => { if (feedback) feedback.textContent = message; };
   /** @type {Element | null} */
   let returnFocus = null;
+  const closeDetail = () => writeState({ a: undefined, g: undefined }, { push: true });
+  detail?.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || e.defaultPrevented || e.isComposing) return;
+    e.stopPropagation(); closeDetail();
+  });
 
   /** @returns {AlertsResult} */
   function emptyAlerts() { return { alerts: [], statuses: new Map(), diagnostics: { testOrExerciseExcluded: 0, itemsFailed: 0, unknownZoneKeys: 0, truncated: false } }; }
@@ -205,18 +210,25 @@ export async function main() {
     returnFocus = document.activeElement;
     writeState({ [key]: id, [key === 'a' ? 'g' : 'a']: undefined }, { push: true });
     if (key === 'a') void map?.focusAlert?.(id); else map?.focusGauge?.(id);
-    detail?.scrollIntoView({ block: 'nearest' });
+    // Stacked under the map below 1040 px: show the detail heading.
+    requestAnimationFrame(() => detail?.scrollIntoView({ block: innerWidth < 1040 ? 'start' : 'nearest' }));
   }
   async function showDetail() {
     detailAbort.abort(); detailAbort = new AbortController();
     renderCleanups.get('detail')?.(); renderCleanups.delete('detail');
     if (!detail) return;
+    const wasOpen = !detail.hidden;
     detail.replaceChildren();
     const id = typeof state.g === 'string' ? state.g : typeof state.a === 'string' ? state.a : null;
     detail.hidden = !id;
-    if (!id) { map?.clearSelection?.(); if (returnFocus instanceof HTMLElement && returnFocus.isConnected) returnFocus.focus({ preventScroll: true }); returnFocus = null; map?.resize?.(); return; }
+    if (!id) {
+      map?.clearSelection?.();
+      // A canvas selection leaves focus on body: return to the map region.
+      (returnFocus instanceof HTMLElement && returnFocus.isConnected && returnFocus !== document.body ? returnFocus : wasOpen ? slot('map') : null)?.focus({ preventScroll: true });
+      returnFocus = null; map?.resize?.(); return;
+    }
     const close = h('button', { class: 'btn btn--secondary', type: 'button' }, 'Close Details');
-    close.addEventListener('click', () => writeState({ a: undefined, g: undefined }, { push: true }));
+    close.addEventListener('click', closeDetail);
     detail.append(close);
     if (state.g) {
       const gauge = gaugeData?.gauges.find((g) => g.id === id);

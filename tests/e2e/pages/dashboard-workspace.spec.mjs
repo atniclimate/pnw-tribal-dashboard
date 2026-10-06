@@ -63,13 +63,17 @@ test('Nation changes update one document, map camera, forecast, contacts, and br
 });
 test('archival landscape waits for alerts, map key expands, and the phone label clears zoom controls', async ({ page }, testInfo) => {
   await setup(page); await page.goto('./?n=' + LUMMI);
-  await expect(page.locator('.dashboard-landscape img')).toBeVisible();
+  // Phones below 640 px never request the decorative photograph.
+  const phone = (page.viewportSize()?.width ?? 1280) < 640;
+  if (phone) await expect(page.locator('.dashboard-banner__headline')).toBeVisible();
+  else await expect(page.locator('.dashboard-landscape img')).toBeVisible();
   const times = await page.evaluate(() => ({
     alert: performance.getEntriesByName('alerts-painted')[0]?.startTime,
     image: performance.getEntriesByType('resource').find((entry) => entry.name.endsWith('/lake-chelan-nps.jpg'))?.startTime,
   }));
-  if (times.alert === undefined || times.image === undefined) throw new Error('Missing alert or image timing');
-  expect(times.image).toBeGreaterThanOrEqual(times.alert);
+  if (times.alert === undefined) throw new Error('Missing alert timing');
+  if (phone) expect(times.image).toBeUndefined();
+  else expect(times.image ?? -1).toBeGreaterThanOrEqual(times.alert);
   await expect(page.locator('[data-map-mode]')).toHaveAttribute('data-map-mode', 'interactive');
   const key = page.locator('.map-legend-disclosure');
   await expect(key).not.toHaveAttribute('open', '');
