@@ -70,7 +70,11 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium webkit
+      - name: Install the project's browser
+        timeout-minutes: 7
+        env:
+          BROWSER: ${{ matrix.project == 'webkit-iphone' && 'webkit' || 'chromium' }}
+        run: bash scripts/ci/install-browsers.sh "$BROWSER"
       - name: Run browser scenarios
         env:
           BROWSER_PROJECT: ${{ matrix.project }}
@@ -94,7 +98,9 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium webkit
+      - name: Install release-check browsers
+        timeout-minutes: 7
+        run: bash scripts/ci/install-browsers.sh chromium webkit
       - run: npm run compile
       - name: Prepare captured alerts for offline checks
         run: node scripts/snapshot/run.mjs --out site/data/live --fixtures tests/fixtures/upstream --tasks alerts,tsunami --force --now 2026-10-05T08:30:00Z

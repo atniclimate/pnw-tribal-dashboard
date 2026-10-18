@@ -1,7 +1,7 @@
 # Deploy the Cascadia Tribal Hazard Dashboard to GitHub Pages (blueprint 2.1, 2.7, 6.5). Owner: lane L9.
 #
-# Every deployment requires CTHD_PAGES_ACTIONS=true and successful CI for the exact main commit.
-# Source changes deploy after CI completes; scheduled runs refresh data on that verified commit.
+# Source changes require successful CI for the exact main commit.
+# Scheduled runs refresh data using the already published revision, independently of newer CI.
 #
 # Compile curated data, write live snapshots (carrying forward any failed task), validate them, assemble
 # _site/ with the versioned asset directory and the retained previous generation, then upload and deploy.
@@ -46,7 +46,7 @@ env:
 
 jobs:
   release-check:
-    name: Select Verified Main Commit
+    name: Select Verified Release Commit
     if: vars.CTHD_PAGES_ACTIONS == 'true' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'))
     runs-on: ubuntu-latest
     timeout-minutes: 3
@@ -57,12 +57,27 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          CI_SHA: ${{ github.event.workflow_run.head_sha }}
         shell: bash
         run: |
-          sha=$(gh api "repos/$REPOSITORY/commits/main" --jq .sha)
-          conclusion=$(gh api --method GET "repos/$REPOSITORY/actions/workflows/ci.yml/runs" -f head_sha="$sha" -f event=push -f per_page=1 --jq '.workflow_runs[0].conclusion // "pending"')
-          if [ "$conclusion" != success ]; then
-            echo "Main commit $sha has not passed CI ($conclusion); keeping the current deployment."
+          if [ "$EVENT_NAME" = schedule ]; then
+            sha=$(curl --fail --silent --show-error --connect-timeout 10 --max-time 30 --retry 1 \
+              "${SITE_URL}build-info.json?run=${GITHUB_RUN_ID}&attempt=${GITHUB_RUN_ATTEMPT}" | jq -er '.sha | strings')
+          else
+            sha=$(gh api "repos/$REPOSITORY/commits/main" --jq .sha)
+            if [ "$EVENT_NAME" = workflow_run ] && [ "$sha" != "$CI_SHA" ]; then
+              echo "CI completed for an older commit; waiting for current main to pass."
+              exit 0
+            fi
+            conclusion=$(gh api --method GET "repos/$REPOSITORY/actions/workflows/ci.yml/runs" -f head_sha="$sha" -f event=push -f branch=main -f per_page=1 --jq '.workflow_runs[0].conclusion // "pending"')
+            if [ "$conclusion" != success ]; then
+              echo "Main commit $sha has not passed CI ($conclusion); keeping the current deployment."
+              exit 1
+            fi
+          fi
+          if [[ ! "$sha" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "No valid release commit was found; keeping the current deployment." >&2
             exit 1
           fi
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
@@ -70,7 +85,7 @@ jobs:
   deploy:
     name: Build and Deploy
     needs: release-check
-    if: vars.CTHD_PAGES_ACTIONS == 'true'
+    if: vars.CTHD_PAGES_ACTIONS == 'true' && needs.release-check.outputs.sha != ''
     runs-on: ubuntu-latest
     timeout-minutes: 12
     environment:

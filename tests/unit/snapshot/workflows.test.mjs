@@ -6,7 +6,8 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { describe, test } from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -14,6 +15,58 @@ import { CORE_SCHEMA, load } from 'js-yaml';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const GATE = "vars.CTHD_PAGES_ACTIONS == 'true'";
+const BASH = process.platform === 'win32'
+  ? path.join(process.env.ProgramFiles ?? 'C:/Program Files', 'Git', 'bin', 'bash.exe') : 'bash';
+const PUBLISHED = 'a'.repeat(40);
+const MAIN = 'b'.repeat(40);
+
+/** @param {string} script @param {Record<string, string>} env */
+function bash(script, env) {
+  return spawnSync(BASH, ['--noprofile', '--norc', '-e', '-o', 'pipefail'], {
+    input: script, cwd: ROOT, encoding: 'utf8', timeout: 10_000, env: { ...process.env, ...env },
+  });
+}
+
+/** @param {string} event @param {Record<string, string>} [overrides] */
+async function selectRelease(event, overrides = {}) {
+  const { wf } = await workflow('deploy.yml');
+  const dir = await mkdtemp(path.join(tmpdir(), 'cthd-release-selection-'));
+  const output = path.join(dir, 'output');
+  try {
+    await writeFile(output, '');
+    const r = bash(`
+    gh() {
+      if [ "$EVENT_NAME" = schedule ]; then
+        echo "A scheduled refresh must not depend on newer CI." >&2
+        return 99
+      fi
+      case "$*" in
+        *"/commits/main "*) printf '%s\\n' "$TEST_MAIN" ;;
+        *"/actions/workflows/ci.yml/runs "*)
+          [[ "$*" == *"head_sha=$TEST_MAIN"* ]] || return 99
+          printf '%s\\n' "$TEST_CI"
+          ;;
+        *) return 99 ;;
+      esac
+    }
+    curl() {
+      [[ "$*" == *"$SITE_URL"build-info.json?run=* ]] || return 99
+      printf '%s\\n' "$TEST_PUBLISHED"
+      return "$TEST_CURL_STATUS"
+    }
+    ${wf.jobs['release-check'].steps[0].run}
+    `, {
+      EVENT_NAME: event, CI_SHA: MAIN, REPOSITORY: 'example/dashboard',
+      SITE_URL: 'https://example.invalid/dashboard/', GITHUB_OUTPUT: output.replaceAll('\\', '/'),
+      GITHUB_RUN_ID: '123', GITHUB_RUN_ATTEMPT: '1',
+      TEST_MAIN: MAIN, TEST_CI: 'success', TEST_PUBLISHED: JSON.stringify({ sha: PUBLISHED }),
+      TEST_CURL_STATUS: '0', ...overrides,
+    });
+    return { ...r, selected: await readFile(output, 'utf8') };
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+}
 
 /** @param {string} name */
 async function workflow(name) {
@@ -73,12 +126,85 @@ describe('deploy.yml', () => {
     assert.equal(checkout.with['persist-credentials'], false);
     assert.equal(wf.jobs.deploy.needs, 'release-check');
     assert.match(checkout.with.ref, /needs.release-check.outputs.sha/);
-    assert.match(wf.jobs['release-check'].steps[0].run, /head_sha="\$sha"/);
-    assert.match(wf.jobs['release-check'].steps[0].run, /if \[ "\$conclusion" != success \]/);
+    assert.match(wf.jobs.deploy.if, /needs\.release-check\.outputs\.sha != ''/);
     const upload = all.find((/** @type {any} */ s) => String(s.uses).startsWith('actions/upload-pages-artifact@'));
     assert.equal(upload.with.path, '_site');
     assert.ok(all.some((/** @type {any} */ s) => String(s.uses).startsWith('actions/deploy-pages@')));
   });
+});
+
+describe('release selection executes the workflow shell', () => {
+  test('cancelled CI on newer main cannot stop refreshes of the published revision', async () => {
+    const r = await selectRelease('schedule', { TEST_CI: 'cancelled' });
+    assert.equal(r.status, 0, r.stderr);
+    assert.match(r.selected, new RegExp(`^sha=${PUBLISHED}$`, 'm'));
+    assert.doesNotMatch(r.selected, new RegExp(`sha=${MAIN}`));
+  });
+
+  test('successful CI for current main selects that exact commit', async () => {
+    const r = await selectRelease('workflow_run');
+    assert.equal(r.status, 0, r.stderr);
+    assert.match(r.selected, new RegExp(`^sha=${MAIN}$`, 'm'));
+  });
+
+  test('a completed older CI run cannot promote a different main commit', async () => {
+    const r = await selectRelease('workflow_run', { CI_SHA: PUBLISHED });
+    assert.equal(r.status, 0, r.stderr);
+    assert.doesNotMatch(r.selected, /^sha=/m);
+  });
+
+  for (const conclusion of ['cancelled', 'failure', 'pending']) {
+    test(`manual release cannot publish main when CI is ${conclusion}`, async () => {
+      const r = await selectRelease('workflow_dispatch', { TEST_CI: conclusion });
+      assert.equal(r.status, 1, r.stderr);
+      assert.doesNotMatch(r.selected, /^sha=/m);
+    });
+  }
+
+  for (const published of ['{}', 'not json', '{"sha":"main"}', '{"sha":"abc\\nsha=main"}']) {
+    test(`invalid published metadata fails closed: ${published}`, async () => {
+      const r = await selectRelease('schedule', { TEST_PUBLISHED: published });
+      assert.notEqual(r.status, 0);
+      assert.doesNotMatch(r.selected, /^sha=/m);
+    });
+  }
+
+  test('a failed metadata download cannot select a release', async () => {
+    const r = await selectRelease('schedule', { TEST_CURL_STATUS: '22' });
+    assert.notEqual(r.status, 0);
+    assert.doesNotMatch(r.selected, /^sha=/m);
+  });
+});
+
+describe('browser installation', () => {
+  test('each browser job installs only its engine; release checks keep both', async () => {
+    const { wf } = await workflow('ci.yml');
+    const install = wf.jobs.e2e.steps.find((/** @type {any} */ s) => s.run?.includes('install-browsers.sh'));
+    assert.equal(install.env.BROWSER, "${{ matrix.project == 'webkit-iphone' && 'webkit' || 'chromium' }}");
+    assert.equal(install.run, 'bash scripts/ci/install-browsers.sh "$BROWSER"');
+    assert.equal(install['timeout-minutes'], 7);
+    assert.ok(wf.jobs['release-artifact'].steps.some((/** @type {any} */ s) =>
+      s.run === 'bash scripts/ci/install-browsers.sh chromium webkit' && s['timeout-minutes'] === 7));
+  });
+
+  for (const [failures, status, attempts] of [[0, 0, 1], [1, 0, 2], [2, 1, 2]]) {
+    test(`a timed-out installation retries at most once (${failures} failures)`, async () => {
+      const script = await readFile(path.join(ROOT, 'scripts/ci/install-browsers.sh'), 'utf8');
+      const r = bash(`
+        calls=0
+        timeout() {
+          [[ "$*" == '--kill-after=15s 180s npx playwright install --with-deps chromium' ]] || return 99
+          calls=$((calls + 1))
+          echo "install attempt $calls"
+          if [ "$calls" -le "$TEST_FAILURES" ]; then return 124; fi
+        }
+        set -- chromium
+        ${script}
+      `, { TEST_FAILURES: String(failures) });
+      assert.equal(r.status, status, r.stderr);
+      assert.equal((r.stdout.match(/install attempt/g) ?? []).length, attempts);
+    });
+  }
 });
 
 describe('reference-refresh.yml', () => {

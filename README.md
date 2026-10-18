@@ -6,7 +6,7 @@ Weather, flood, and hazard information for Tribal Nations and First Nations acro
 
 ## Status
 
-The multi-page dashboard is published from `site/` by GitHub Actions. Deployments require passing CI for the exact source commit. Public agency snapshots refresh every ten minutes, with failed or stale sources identified on the page. The previous dashboard remains available at [Classic](https://atniclimate.github.io/pnw-tribal-dashboard/classic/).
+The multi-page dashboard is published from `site/` by GitHub Actions. New releases require passing CI for the exact source commit. Public agency snapshots are scheduled to refresh every ten minutes using the published revision, even while newer code awaits CI. GitHub can delay scheduled runs; failed or stale sources are identified on the page. The previous dashboard remains available at [Classic](https://atniclimate.github.io/pnw-tribal-dashboard/classic/).
 
 Choose a Nation to view local alerts, forecasts, rivers, and verified contacts. Share the resulting URL to preserve that selection. Safety currently provides official agency resources; additional editorial guidance awaits review.
 
@@ -50,6 +50,8 @@ npm run dev       # serves the new dashboard locally
 npm run verify    # lint, typecheck, tests, data validation, and checks
 npm run test:e2e  # browser checks; CI also includes WebKit
 ```
+
+Workflow tests also require Bash and jq. On Windows, they use Bash from Git for Windows.
 
 ## Data
 
